@@ -138,7 +138,7 @@
 }{}
 \usepackage{sources}
 \usepackage{mathOp}
-\title{Fisica stellare}
+\title{Compact stars}
 
 % Let's get started
 \begin{document}
@@ -165,7 +165,7 @@
 %   % \end{columns}
 %\end{frame}
 
-\begin{frame}[fragile]{Fisica stellare: argomenti del corso}%label={}
+\begin{frame}[fragile]{Stelle Compatte: argomenti del corso}%label={}
     %\framesubtitle{Main onlyparts TOC}
    %\begin{columns}[T]%list of frame a inizio sezione
     % \begin{column}{0.45\textwidth}
@@ -190,7 +190,7 @@
  \end{frame}
 
 \frameinlbffalse
-\begin{frame}{Meta}
+\begin{frame}{Meta} 
     argomenti del corso: toc parts a sinistra e important frames a destra
     todo, must: before reglez; frame importanti
     listofframe all'inizio di ogni sezione per frames con sottotitolo
@@ -199,21 +199,25 @@ Must/Todo:
 Update to last reglez
 \end{frame}
 
-\begin{frame}{Perch\'e studio queste cose?? Sviluppi; futuro.}
-Concretezza, concentrazione, indipendenza
-\end{frame}
+\part{Aura}
+\input{aura}
 
 \part{Intro}%\linkdest{intro}
 \section{RegLez e Quad e Refs}
 \input{intro}
-\section{Memoria, esercizi}\linkdest{succo}
+\input{RegLez}
+
+\section{Mappa}\linkdest{succo}
 \begin{frame}{Succo's TOC}
     \tableofcontents[currentsection,sectionstyle=show/hide,subsectionstyle=show/show/hide]%shaded
 \end{frame}
 \input{succo}
 
-\part{Pulsar}\linkdest{}
+\part{General Relativity}
+\input{genrel}
 
+\part{Neutron stars}\linkdest{pulsar}
+%\input{Pulsar}
 
 
 \end{document}
