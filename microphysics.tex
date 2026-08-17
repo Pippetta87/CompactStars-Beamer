@@ -1,1 +1,178 @@
-\section{}<++>
+\section{Potenziali termodinamici - ensemble}
+
+\subsection{Equazione di Eulero}
+
+\begin{frame}{Equazione di Eulero $U=-PV+TS+\sum_i\mu_iN_i$}
+    Internal energy $U(V,S,N_i)$ is extensive, volume, entropy and $N_i$ are also extensive, $P, T, \mu_i$ are intensive:
+\begin{align*}
+    &-P=\PDy{V}{U}|_{S,N_i},\ T=\PDy{S}{U}|_{V,N_i},\ \mu_i=\PDy{N_i}{U}|_{S,V}\tag{U homogeneous function}\\
+            &\rightarrow U=-PV+TS+\sum_i\mu_iN_i\\
+\end{align*}
+\end{frame}
+
+\subsection{Ensemble: $\mu$C $U(V,S,N_i)$, C $F(V,T,N_i)$, GC $\Omega(T,V,\mu_i)$.}
+
+\begin{frame}{Potenziali termodinamici}
+    Un potenziale termodinamico \'e una funzione di stato ottenuta, eventualmente tramite trasformazioni di Legendre, scegliendo come variabili naturali quelle controllate dall'ensemble; all'equilibrio, sotto i corrispondenti vincoli, il potenziale appropriato \'e stazionario/minimo.
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+    Ensemble microcanonico: sistema isolato per cui sono fissate le quantit\'a estensive conservate, tipicamente $(N,V,E)$: thermodynamics potential is U
+        \begin{align*}
+            &dU=-P\,dV+TdS+\sum_i\mu_i\,dN_i\tag{internal energy: $U(V,S,N_i)$}\\
+            &-P=\PDy{V}{U}|_{S,N_i}\tag{fissa P}\\
+            &T=\PDy{S}{U}|_{V,N_i}\\
+            &\mu_i=\PDy{N_i}{U}|_{S,V}
+        \end{align*}
+    Ensemble Canonico: variabili fissate $V, T, N_i$ il potenziale termodinamico \'e F
+        \begin{align*}
+            &F(V,T,N_i)=U-TS:\\
+            &dF=-P\,dV-S\,dT+\sum_i\mu_i\,dN_i\\
+            &-P=\PDy{V}{F}|_{T,N_i}\tag{fissa P}\\
+            &-S=\PDy{T}{F}|_{V,N_i}\tag{fissa S}\\
+            &\mu_i=\TDy{N_i}{F}|_{V,T,N_j}\tag{fissa $\mu_i$}
+        \end{align*}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+    Ensemble Gran-Canonico: variabili fissate $T,V,\mu_i$
+        \begin{align*}
+            &\Omega(T,V,\mu_i)=F-\sum_i\mu_iN_i=U-TS-\sum_i\mu_iN_i\\
+            &\Omega=-PV\tag{by Euler eq}\\
+            &d\Omega=-P\,dV-S\,dT-\sum_iN_i\,d\mu_i\\
+            &-P=\PDy{V}{\Omega}|_{T,\mu_i}\tag{fissa P}\\
+            &-S=\PDy{T}{\Omega}|_{T,\mu_i}\tag{fissa S}\\
+            &-N_i=\TDy{\mu_i}{\Omega}|_{V,T,N_j}\tag{fissa $\mu_i$}
+        \end{align*}
+
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+\subsection{Limite termodinamico: $V\to\infty$}
+
+\begin{frame}{Bulk matter: $\mu C$}    
+Nel $\lim_{V\to\infty}$ le grandezze termodinamiche non dipendono da V: bulk matter.
+\begin{align*}
+    &\epsilon=\frac{U}{V},\ s=\frac{S}{V},\ n_i=\frac{N_i}{V}\\
+    &\epsilon(s,n_i)=-P+Ts+\sum_i\mu_in_i\tag{Euler eq}\\
+    &T=\PDy{s}{\epsilon}|_{n_i}\\
+    &\mu_i=\PDy{\epsilon}{n_i}|_{s,n_j}\\
+    &P=-\epsilon+Ts+\sum_i\mu_in_i\tag{Inversione Eulero}\\
+    &nn_i\PDof{n_i}(\frac{\epsilon}{n})=n_i\PDy{n_i}{\epsilon}-\epsilon \frac{n_i}{n}=n_i\mu_i-\epsilon \frac{n_i}{n}\tag{trick}\\
+    &\Rightarrow \sum_i\mu_in_i=\sum_inn_i\PDof{n_i}(\frac{\epsilon}{n})+\epsilon\\
+    &\Rightarrow P=Ts+\sum_inn_i\PDof{n_i}(\frac{\epsilon}{n})\tag{N averall conserved such baryon}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Bulk matter: $C$}
+    \begin{align*}
+        &F(T,V,N_i)=U-TS=-PV+\sum_i\mu_iN_i\\
+        &\Rightarrow f(T,n_i)=\lim_{V\to\infty}\frac{F}{V}=-P+\sum_i\mu_in_i\\
+        &s=-\PDof{T}{f}|_{n_i},\ \mu_i=\PDy{n_i}{f}|_{T,n_j}\\
+        &\Rightarrow P=-f+\sum_in_i\PDy{n_i}{f}
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Bulk matter: $GC$ - Important for hot dense mater}
+    \begin{align*}
+        &P(T,\mu_i)=-\frac{\Omega}{V}:\ s=\PDy{T}{P}|_{\mu_i},\ n_i=\PDy{\mu_i}{P}|_{T,\mu_j}\\
+        &\epsilon(T,\mu_i)=-P+Ts+\sum_i\mu_in_i=-P+T\PDy{T}{P}+\sum_i\mu_i\PDy{\mu_i}{P}
+    \end{align*}
+\end{frame}
+
+\section{Equilibrio chimico - $\beta$-equilibrio}
+
+\subsection{Conserved quantities}
+
+\begin{frame}{Chemical equilibrium}
+    \begin{align*}
+        &dU=-P\,dV+TdS+\sum_i\mu_i\,dN_i\\
+        &\Rightarrow dU=\sum_i\mu_i\,dN_i\tag{Any work $PdV=0$, any heat exchange $\delta Q=TdS=0$}\\
+        &dU=0\Rightarrow\sum_i\mu_i\,dN_i=0\tag{equilibrium}\\
+        &\Pproton+\Pelectron\to\Pneutron+\APnue\tag{neutronization}\\
+        &\Rightarrow \mu_{\Pnue}+\mu_{\Pneutron}-\mu_{\Pelectron}+\mu_{\Pproton}=0\\
+        &\Pneutron\to\Pproton+\Pelectron+\APnue\tag{nucleons+electrons}\\
+        &\Rightarrow\mu_{\Pneutron}=\mu_{\Pproton}+\mu_{\Pelectron}+\mu_{\APnue}\\
+        &\Rightarrow\mu_{\APnue}=-\mu_{\Pnue},\ \mu_{\APelectron}=-\mu_{\Pelectron}, \mu_{\Pphoton}=0
+    \end{align*}
+    Chemical potential of anti-particle is negative of that of particle. As P/AP annihilate in pure energy in form of photons $\mu_{Pphoton}=0$.
+\end{frame}
+
+\begin{frame}{Number of indep quantities required to describe mixture of baryons and leptons?}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Conserved Quantum Numbers}
+                \begin{itemize}
+                \item Electrodynamics conserve charges
+                \item Weak interactions conserve barion B, and lepton L number (Flavor mixing between 3 different neutrino flavors break individual lepton flavor but not total lepton number)
+                \item Strong interactions conserve baryon number B and flavor number of Quarks (Up,Down, Strange, Charm, Bottom, Top - Quark number)
+            \end{itemize}
+            Tutte le reazioni tra barioni e leptoni conservano il numero barionico B, il numero leptonico L e la carica Q: scegliendo i numeri corrispondenti $N_B$, $N_L$, $N_Q$ il sistema quantistico \'e completamente specificato - one can decompose chemical potential of particle $i$ in terms of the quantum numbers of the particle $\mu_i=B_i\mu_B+L_i\mu_L+Q_i\mu_Q$: all we need are the quantum number $N_B, N_L, N_Q$ to define chemical composition or chemical potential (in ensemble gran canonico $\Omega(T,V,\mu_i)$).
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Connection between chemical potential and composition}
+                We are in gran-canonical ens.: $\Omega(T,V,\mu_i)$ and $P(T,\mu_B,\mu_L,\mu_Q)=-\frac{\Omega}{V}$; there are additional astrophysical constraints: charge density $n_Q=\frac{N_Q}{V}=0$ - questo fissa il potenziale chimico di carica
+                \begin{align*}
+                    &n_Q=\PDy{\mu_Q}{P}=\sum_i\PDy{\mu_i}{P}\PDy{\mu_Q}{\mu_i}=\sum_in_iQ_i=0\\
+                    &\Rightarrow\PDy{\mu_Q}{P(T,\mu_B,\mu_L,\mu_Q)}=0
+                \end{align*}
+                Connection between chemical potential and averall charge density is not trivial and depends also on interactions between particles, as all terms in thermodynamic potential that depends on $\mu_Q$ have to be considered.
+                For ''cold'' matter neutrinos escape: $\mu_{\Pnue}=\mu_{\Pnum}=\mu_{\Pnut}$, lepton number is not conserved and $\mu_L=0$ \keyword{$\beta$-equilibrio}. For cold degenerate matter $K_BT\ll E_F$: one can set $T=0$ and system can be described in terms of chemical potential $\mu_B$ or baryon density $n_B$ alone, ie $P(T,\mu_B)\to P(\mu_B)$.
+                \keyword{$\mu_L=0$ non implica $\mu_e=0$}: $\mu_e=0*\mu_B+1*\mu_L+(-1)*\mu_Q=-\mu_Q$.
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{connection between the chemical potential and the overall charge density is a nontrivial}
+    \begin{itemize}
+        \item Gas non interagente a $T=0$. $n_i=\frac{k_{F,i}^3}{3\pi^2}$, $\mu_i=\sqrt{k_{F,i}^2+m_i^2}$ quindi $n_i(\mu_i)$ e poich\'e $\mu_i=B_i\mu_B+L_i\mu_L+Q_i\mu_Q$ da cui ho $n_Q(\mu_Q)=\sum_iQ_i\mu_i(B_i\mu_B+L_i\mu_L+Q_i\mu_Q)$ e risolvere $n_Q(\mu_Q)=0$
+        \item Relativistic Mean Field theory - Si parte da lagrangiana in cui protoni e neutroni interagiscono tramite campi mesonici, $\sigma$ attrattivo, $\omega_{\mu}$ repulsivo, $\rho_{\mu}$ isovettoriale. In approssimazione di campo medio:
+            \begin{align*}
+                &\Omega=\Omega_{Fermions}(T,\mu_i^*,m_i^*)+\Omega_{fields}(\sigma,\omega_0,\rho_0)\\
+                &\PDy{\sigma}{\Omega}=0,\ \PDy{\omega_0}{\Omega}=0,\ \PDy{\rho_0}{\Omega}=0\tag{stazionariet\'a potenziale determina campi}
+            \end{align*}
+    \end{itemize}
+\end{frame}
+
+\subsection{$\beta$-equilibrium}
+
+\begin{frame}{Gas neutroni/protoni/elettroni}
+    \begin{itemize}
+        \item Neutronization - The weak reaction $\Pelectron+\Pproton\to\Pneutron+\Pnue$ proceed onlu if $\Delta m=m_n-m_p=(393.57-928.28)\si{\mega\ev}=\SI{1.29}{\mega\ev}$,
+        \item $\beta$ decay - $\Pneutron\to\Pproton+\Pelectron+\APnue$ is blocked if density is high enough such energy level are occupied.
+    \end{itemize}
+    If we assume chemical equilibrium, with $T=0$, $\mu_{\nu}=0$: $\mu_e+\mu_p=\mu_n$. A $T=0$ tutti i livelli sono occupati fino all'energia di Fermi: $k_{F,i}$ impulso di Fermi, $g_i=2s_i+1$
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+    \begin{align*}
+        &\mu_i=E_{F,i}=\sqrt{k_{F,i}^2+m_i^2}\tag{$T=0$: energy needed to take fermion}\\
+        &\sqrt{k_{F,e}^2+m_e^2}+\sqrt{k_{F,p}^2+m_p^2}=\sqrt{k_{F,n}^2+m_n^2}\tag{equilibrium}\\
+        &n_i=g_i\int_0^{k_{F,i}}\frac{d^3k}{(2\pi)^3}=\frac{g_i}{6\pi^2}k_{F,i}^3\tag{number density}\\
+        &n_e=n_p\Rightarrow g_ek_{F,e}^3=g_pk_{F,p}^3\tag{charge neutrality}\\
+        &g_e=g_p=2\Rightarrow k_{F,e}=k_{F,p}\tag{thermod. quant. as funct of $\mu_B$/$n_B$}\\
+        &P=P_e+P_p+P_n\\
+        &\epsilon=\epsilon_e+\epsilon_p+\epsilon_n\\
+        &n_B=n_p+n_n\\
+        &n_Q=n_p-n_e=0
+    \end{align*}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item A gas of \Pproton-\Pelectron is energ-favor. at low density. $m_p+m_e=\SI{938.79}{\mega\ev}<m_n=\SI{939.57}{\mega\ev}$.
+                \item At some critical $n_e=n_p$ ($n_Q=n_p-n_e=0$) Fermi energy of electrons and protons sum up to \Pneutron rest mass ($k_{F,n}=0$):
+                    \begin{align*}
+                        &\sqrt{k_{F,e}^2+m_e^2}+\sqrt{k_{F,p}^2+m_p^2}=m_n\tag{\Pneutron at rest}\\
+                        &K_{F,p}\ll m_p\Rightarrow\sqrt{k_{F,p}^2+m_p^2}\approx m_p\tag{\Pproton non rel}\\
+                        &\Rightarrow\sqrt{k_{F,e}^2+m_e^2}\approx m_p\tag{$n_e$ neutronization}
+                    \end{align*}
+            \end{itemize}
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+\section{Dense Matter - Fermi gas}
+
+

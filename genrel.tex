@@ -2,28 +2,28 @@
 
 \begin{frame}{Equazione delle Geodesiche}
     \begin{itemize}
-        \item $\tensor{g}{_\mu_\nu}\,d\tensor{x}{^\mu}\,d\tensor{x}{^\nu}$ e metrica locale $(+---)$: $ds^2=c^2\,d\tau^2>0$
-        \item Equazione Geodetica \lbt{\TtwoDy{\tau}{\tensor{x}{^\mu}}+\tensor{\Gamma}{^\mu_\alpha_\beta}\TDy{\tau}{\tensor{x}{^\alpha}}\TDy{\tau}{\tensor{x}{^\beta}}}{\tensor{u}{^\nu}\tensor{\nabla}{_\nu}\tensor{u}{^\mu}=0}
+        \item $\tensor{g}{_{\mu\nu}}\,d\tensor{x}{^\mu}\,d\tensor{x}{^\nu}$ e metrica locale $(+---)$: $ds^2=c^2\,d\tau^2>0$
+        \item Equazione Geodetica \lbt{\TtwoDy{\tau}{\tensor{x}{^\mu}}+\tensor{\Gamma}{^\mu_{\alpha\beta}}\TDy{\tau}{\tensor{x}{^\alpha}}\TDy{\tau}{\tensor{x}{^\beta}}}{\tensor{u}{^\nu}\tensor{\nabla}{_\nu}\tensor{u}{^\mu}=0}
             \item A straight line in Minkowski space maximizes proper time; in general a geodesic that in not null is an extremal path of $d\tau=\int_A^B\,d\tau$: to prove this let's consider geodesic path $\tensor{x}{^\mu}(\tau)$ and $\tensor{x}{^\mu}(\tau)+\delta\tensor{x}{^\mu}(\tau)$ a neighboring path with same end points A,B:
             \begin{align*}
-                &d\tau^2=\tensor{g}{_\mu_\nu}\,d\tensor{x}{^\mu}\,d\tensor{x}{^\nu}\Rightarrow 2\,d\tau\delta(d\tau)=\delta\tensor{g}{_\mu_\nu}\,d\tensor{x}{^\mu}\,d\tensor{x}{^\nu}+2\tensor{g}{_\mu_\nu}\,d\tensor{x}{^\mu}\delta(d\tensor{x}{^\nu})\\
-                &=d\tensor{x}{^\mu}\,d\tensor{x}{^\nu}\tensor{g}{_\mu_\nu_,_\lambda}\delta(\tensor{x}{^\lambda})+2\tensor{g}{_\mu_\nu}\,d\tensor{x}{^\mu}\,d\delta(\tensor{x}{^\nu})\ \Rightarrow\ \delta(d\tau)=(\frac{1}{2}\tensor{u}{^\mu}\tensor{u}{^\nu}\tensor{g}{_\mu_\nu_,_\lambda}\delta\tensor{x}{^\lambda}+\tensor{g}{_\mu_\lambda}\tensor{u}{^\mu}\TDof{\tau}\delta\tensor{x}{^\lambda})\,d\tau\\
-                &\delta\int_A^Bd\tau=\int_A^B[\frac{1}{2}\tensor{u}{^\mu}\tensor{u}{^\nu}\tensor{g}{_\mu_\nu_,_\lambda}-\TDof{\tau}(\tensor{g}{_\mu_\lambda}\tensor{u}{^\mu})]\delta\tensor{x}{^\lambda}\,d\tau\\
-                &\TDof{\tau}(\tensor{g}{_\mu_\lambda}\tensor{u}{^\mu})-\frac{1}{2}\tensor{u}{^\mu}\tensor{u}{^\nu}\tensor{g}{_\mu_\nu_,_\lambda}=0\\
-                &\TDof{\tau}(\tensor{g}{_\mu_\lambda}\tensor{u}{^\mu})=\tensor{g}{_\mu_\lambda}\TDy{\tau}{\tensor{u}{^\mu}}+\tensor{g}{_\mu_\lambda_,_\nu}\tensor{u}{^\mu^\nu},\ \tensor{g}{_\mu_\lambda_,_\mu}\tensor{u}{^\mu}\tensor{u}{^\mu}=\frac{1}{2}(\tensor{g}{_\mu_\lambda_,_\nu}+\tensor{g}{_\lambda_\nu_,_\mu})\tensor{u}{^\mu}\tensor{u}{^\nu}\\
-                &\Rightarrow\tensor{g}{_\mu_\lambda}\TDy{\tau}{\tensor{u}{^\mu}}+\tensor{\Gamma}{_\lambda_\mu_\nu}\tensor{u}{^\mu}\tensor{u}{^\nu}=0
+                &d\tau^2=\tensor{g}{_{\mu\nu}}\,d\tensor{x}{^\mu}\,d\tensor{x}{^\nu}\Rightarrow 2\,d\tau\delta(d\tau)=\delta\tensor{g}{_{\mu\nu}}\,d\tensor{x}{^\mu}\,d\tensor{x}{^\nu}+2\tensor{g}{_{\mu\nu}}\,d\tensor{x}{^\mu}\delta(d\tensor{x}{^\nu})\\
+                &=d\tensor{x}{^\mu}\,d\tensor{x}{^\nu}\tensor{g}{_{\mu\nu,\lambda}}\delta(\tensor{x}{^\lambda})+2\tensor{g}{_{\mu\nu}}\,d\tensor{x}{^\mu}\,d\delta(\tensor{x}{^\nu})\ \Rightarrow\ \delta(d\tau)=(\frac{1}{2}\tensor{u}{^\mu}\tensor{u}{^\nu}\tensor{g}{_{\mu\nu,\lambda}}\delta\tensor{x}{^\lambda}+\tensor{g}{_{\mu\lambda}}\tensor{u}{^\mu}\TDof{\tau}\delta\tensor{x}{^\lambda})\,d\tau\\
+                &\delta\int_A^Bd\tau=\int_A^B[\frac{1}{2}\tensor{u}{^\mu}\tensor{u}{^\nu}\tensor{g}{_{\mu\nu,\lambda}}-\TDof{\tau}(\tensor{g}{_{\mu\lambda}}\tensor{u}{^\mu})]\delta\tensor{x}{^\lambda}\,d\tau\\
+                &\TDof{\tau}(\tensor{g}{_{\mu\lambda}}\tensor{u}{^\mu})-\frac{1}{2}\tensor{u}{^\mu}\tensor{u}{^\nu}\tensor{g}{_{\mu\nu,\lambda}}=0\\
+                &\TDof{\tau}(\tensor{g}{_{\mu\lambda}}\tensor{u}{^\mu})=\tensor{g}{_{\mu\lambda}}\TDy{\tau}{\tensor{u}{^\mu}}+\tensor{g}{_{\mu\lambda,\nu}}\tensor{u}{^{\mu\nu}},\ \tensor{g}{_{\mu\lambda,\mu}}\tensor{u}{^\mu}\tensor{u}{^\mu}=\frac{1}{2}(\tensor{g}{_{\mu\lambda,\nu}}+\tensor{g}{_{\lambda\nu,\mu}})\tensor{u}{^\mu}\tensor{u}{^\nu}\\
+                &\Rightarrow\tensor{g}{_{\mu\lambda}}\TDy{\tau}{\tensor{u}{^\mu}}+\tensor{\Gamma}{_{\lambda\mu\nu}}\tensor{u}{^\mu}\tensor{u}{^\nu}=0
             \end{align*}
-            Multiplying by $\tensor{g}{^\sigma^\lambda}$ and summing over $\lambda$ we obtain geodesic eq: $\TDy{\tau}{\tensor{u}{^\sigma}}+\tensor{\Gamma}{^\sigma_\mu_\nu}\tensor{u}{^\mu}\tensor{u}{^\nu}=0$.
+            Multiplying by $\tensor{g}{^{\sigma\lambda}}$ and summing over $\lambda$ we obtain geodesic eq: $\TDy{\tau}{\tensor{u}{^\sigma}}+\tensor{\Gamma}{^\sigma_{\mu\nu}}\tensor{u}{^\mu}\tensor{u}{^\nu}=0$.
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Covariant Derivative and Christoffel symbols}
     \begin{itemize}
-            \item Time-like geodesic $\TtwoDy{\tau}{\tensor{x}{^\mu}}+\tensor{\Gamma}{^\mu_\nu_\lambda}\TDy{\tau}{\tensor{x}{^\nu}}\TDy{\tau}{\tensor{x}{^\lambda}}=0$.
+            \item Time-like geodesic $\TtwoDy{\tau}{\tensor{x}{^\mu}}+\tensor{\Gamma}{^\mu_{\nu\lambda}}\TDy{\tau}{\tensor{x}{^\nu}}\TDy{\tau}{\tensor{x}{^\lambda}}=0$.
         \item Tensore di Ricci e simboli di Christoffel:
             \begin{align*}
-                &\tensor{R}{_\mu_\nu}=\tensor{\Gamma}{^\alpha_\mu_\alpha_,_\nu}-\tensor{\Gamma}{^\alpha_\mu_\nu_,_\alpha}-\tensor{\Gamma}{^\alpha_\mu_\nu}\tensor{\Gamma}{^\beta_\alpha_\beta}+\tensor{\Gamma}{^\alpha_\mu_beta}\tensor{\Gamma}{^\beta_\nu_\alpha}\tag{attenzione al segno del tensore di Riemann}\\
-                &\tensor{\Gamma}{^\rho_\mu_\nu}=\frac{1}{2}\tensor{g}{^\rho^\sigma}(\tensor{\partial}{_\mu}\tensor{g}{_\sigma_\nu}+\tensor{\partial}{_\nu}\tensor{g}{_\sigma_nu}-\tensor{\partial}{_\sigma}\tensor{g}{_\mu_\nu}),\ \tensor{\Gamma}{^\rho_\mu_\nu}=\tensor{\Gamma}{^\rho_\nu_\mu},\ \tensor{\Gamma}{^\alpha_\mu_\alpha_,_\nu}=\tensor{\partial}{_\nu}\tensor{\Gamma}{^\alpha_\mu_\alpha}
+                &\tensor{R}{_{\mu\nu}}=\tensor{\Gamma}{^\alpha_{\mu\alpha,\nu}}-\tensor{\Gamma}{^\alpha_{\mu\nu,\alpha}}-\tensor{\Gamma}{^\alpha_{\mu\nu}}\tensor{\Gamma}{^\beta_{\alpha\beta}}+\tensor{\Gamma}{^\alpha_{\mu\beta}}\tensor{\Gamma}{^\beta_{\nu\alpha}}\tag{attenzione al segno del tensore di Riemann}\\
+                &\tensor{\Gamma}{^\rho_{\mu\nu}}=\frac{1}{2}\tensor{g}{^{\rho\sigma}}(\tensor{\partial}{_\mu}\tensor{g}{_{\sigma\nu}}+\tensor{\partial}{_\nu}\tensor{g}{_{\sigma\mu}}-\tensor{\partial}{_\sigma}\tensor{g}{_{\mu\nu}}),\ \tensor{\Gamma}{^\rho_{\mu\nu}}=\tensor{\Gamma}{^\rho_{\nu\mu}},\ \tensor{\Gamma}{^\alpha_{\mu\alpha,\nu}}=\tensor{\partial}{_\nu}\tensor{\Gamma}{^\alpha_{\mu\alpha}}
             \end{align*}
             \item Geodesic deviation. $\gamma_s(t)$ famiglia di geodetiche parametrizzate da parametro affine t: supponiamo che definiscano una superficie $\tensor{x}{^\mu}(s,t)$, quindi abbiamo due campi vettoriali naturali, il vettore tangente $\tensor{T}{^\mu}=\TDy{t}{\tensor{x}{^\mu}}$ e i vettori deviazione $\tensor{S}{^\mu}=\TDy{s}{\tensor{x}{^\mu}}$
                 \begin{align*}
@@ -52,7 +52,7 @@
             \begin{itemize}
                 \item Conservazione carica: $\Sigma_1,\Sigma_2$ superficie spaziale iniziale e finale, $B$ superficie timelike
                     \begin{align*}
-                        &\tansor{\nabla}{_\mu}\tensor{J}{^\mu}=\int_{\Omega}\tensor{\nabla}{_\mu}\tensor{J}{^\mu}\,dV
+                        &\tensor{\nabla}{_\mu}\tensor{J}{^\mu}=\int_{\Omega}\tensor{\nabla}{_\mu}\tensor{J}{^\mu}\,dV
                     \end{align*}
                     se $\tensor{J}{^\mu}\tensor{n}{_\mu}=0$ allora $Q[\Sigma_1]=Q[\Sigma_2]$
                 \item Energia conservata in spaziotempo stazionario:
@@ -78,11 +78,11 @@
 
 \begin{frame}{Einstein Eqs}
     \begin{itemize}
-         \item Il tensore di Riemann \'e definito dalla non commutazione delle derivate covarianti: $(\nabla_{\mu}\nabla_{\nu}-\nabla_{\nu})\tensor{V}{^\rho}=\tensor{R}{^\rho_\sigma_\mu_\nu}$. Variazione vettore trasportato lungo percorso chiuso:
-            \item Tensore Ricci $\tensor{R}{_\mu_\nu}=\tensor{R}{^\alpha_\mu_alpha_\nu}$: 
-            \item Tensore di Einstein: $\tensor{G}{_\mu_\nu}=\tensor{R}{_\mu_\nu}-\frac{1}{2}\tensor{g}{_\mu_\nu}R$
-             \item Tensore energia-impulso/stress-energy: $\tensor{T}{_0_0}$ densit\'a di energia, $\tensor{T}{_0_i}$ flusso di energia nella direzione i, $\tensor{T}{_i_0}$ densit\'a di quantit\'a di moto nella direzione i, $\tensor{T}{_i_j}$ flusso della quantit\'a di moto i attraverso una superficie normale a j.
-            \item Einstein Field Eqs.: $\tensor{G}{_\mu_\nu}=\frac{8\pi G}{c^4}\tensor{T}{_\mu_\nu}$ 
+         \item Il tensore di Riemann \'e definito dalla non commutazione delle derivate covarianti: $(\nabla_{\mu}\nabla_{\nu}-\nabla_{\nu})\tensor{V}{^\rho}=\tensor{R}{^\rho_{\sigma\mu\nu}}$. Variazione vettore trasportato lungo percorso chiuso:
+            \item Tensore Ricci $\tensor{R}{_{\mu\nu}}=\tensor{R}{^\alpha_\mu_\alpha_\nu}$: 
+            \item Tensore di Einstein: $\tensor{G}{_{\mu\nu}}=\tensor{R}{_{\mu\nu}}-\frac{1}{2}\tensor{g}{_{\mu\nu}}R$
+             \item Tensore energia-impulso/stress-energy: $\tensor{T}{_{00}}$ densit\'a di energia, $\tensor{T}{_{0i}}$ flusso di energia nella direzione i, $\tensor{T}{_{i0}}$ densit\'a di quantit\'a di moto nella direzione i, $\tensor{T}{_{ij}}$ flusso della quantit\'a di moto i attraverso una superficie normale a j.
+            \item Einstein Field Eqs.: $\tensor{G}{_{\mu\nu}}=\frac{8\pi G}{c^4}\tensor{T}{_{\mu\nu}}$ 
     \end{itemize}
 \end{frame}
 
@@ -90,38 +90,38 @@
 
 \begin{frame}{Metric in static isotropic spacetime}
     \begin{itemize}
-        \item $\tensor{g}{_\mu_\nu}$ indep of time. $\tensor{g}{_0_m}=0$ as $ds^2=\tensor{g}{_0_0}\,dt^2+2\tensor{g}{_0_m}\,dtdx^m+\tensor{g}{_m_n}\,dx^mdx^n$ has to be invariant under time inversion in static regions. (Inoltre $\tensor{g}{_0_m}$ si comporta come vettore spaziale sotto rotazione e non fosse nullo violerebbe isotropia).
+        \item $\tensor{g}{_{\mu\nu}}$ indep of time. $\tensor{g}{_{0m}}=0$ as $ds^2=\tensor{g}{_{00}}\,dt^2+2\tensor{g}{_{0m}}\,dtdx^m+\tensor{g}{_{mn}}\,dx^mdx^n$ has to be invariant under time inversion in static regions. (Inoltre $\tensor{g}{_{0m}}$ si comporta come vettore spaziale sotto rotazione e non fosse nullo violerebbe isotropia).
         \item Sfera ha raggio fisico $R=\sqrt{W(r)}r$. Raggio Areale - We choose $x^1=r$, $x^2=\theta$, $x^3=\phi$: $d\tau^2=U(r)\,dt^2-V(r)dr^2-W(r)r^2(d\theta^2+\sin^2{\theta}d\phi^2)$; $dt=dr=0$ si trova $R=\sqrt{W(r)}r$ (Area intrinseca di sfera in spaziotempo: $A=4\pi R^2=A(r)=4\pi w(r)r^2$)
             \item Distanza radiale propria: $dt=d\theta=d\phi=0$ si ha $dl^2=V(r)\,dr^2$ quindi $l(r_1,r_2)=\int_{r_1}^{r_2}\sqrt{V(r)}\,dr$
                 \item Cambio variabile r tale che $W(r)=1$ con $d\tau^2=\exp{2\nu(r)}\,dt^2-\exp{2\lambda(r)}\,dr^2-r^2\,d\theta^2-r^2\sin^2{\theta}\,d\phi^2$.
         \item Componenti tensore metrico:
             \begin{align*}
-                &\tensor{g}{_0_0}=\exp{2\nu(r)},\ \tensor{g}{_1_1}=-\exp{2\lambda(r)},\ \tensor{g}{_2_2}=-r^2,\ \tensor{g}{_3_3}=-r^2\sin^2{\theta},\ \tensor{g}{_\mu_\nu}=0\ \mu\neq\nu\\
+                &\tensor{g}{_{00}}=\exp{2\nu(r)},\ \tensor{g}{_{11}}=-\exp{2\lambda(r)},\ \tensor{g}{_{22}}=-r^2,\ \tensor{g}{_{33}}=-r^2\sin^2{\theta},\ \tensor{g}{_{\mu\nu}}=0\ \mu\neq\nu\\
              \end{align*}
-         \item Tensore di Ricci $\tensor{R}{_\mu_\nu}=\tensor{R}{^\alpha_\mu_\alpha_\nu}$
+         \item Tensore di Ricci $\tensor{R}{_{\mu\nu}}=\tensor{R}{^\alpha_{\mu\alpha\nu}}$
             \begin{align*}
-                &\tensor{R}{_0_0}=(-\nu''+\lambda'\nu'-\nu'^2-\frac{2\nu'}{r})\exp{2(\nu-\lambda)},\ \tensor{R}{_1_1}=\nu''-\lambda'\vu'+\nu'^2-\frac{2\lambda'}{r},\ \tensor{R}{_2_2}=(1+r\nu'-r\lambda')\exp{-2\lambda}-1,\\
-                &\tensor{R}{_3_3}=\tensor{R}{_2_2}\sin^2{\theta}
+            &\tensor{R}{_{00}}=(-\nu''+\lambda'\nu'-(\nu')^2-\frac{2\nu'}{r})\exp{2(\nu-\lambda)},\ \tensor{R}{_{11}}=\nu''-\lambda'\nu'+(\nu')^2-\frac{2\lambda'}{r},\ \tensor{R}{_{22}}=(1+r\nu'-r\lambda')\exp{-2\lambda}-1,\\
+                &\tensor{R}{_{33}}=\tensor{R}{_{22}}\sin^2{\theta}
              \end{align*}
         \item Simboli Christoffel
             \begin{align*}
-                &\tensor{\Gamma}{^\rho_\mu_\nu}=\frac{1}{2}\tensor{g}{^\rho^\sigma}(\tensor{\partial}{_\mu}\tensor{g}{_\sigma_\nu}+\tensor{\partial}{_\nu}\tensor{g}{_\sigma_\mu}-\tensor{\partial}{_\sigma}\tensor{g}{_\mu_\nu})\\
-                &\tensor{\partial}{_r}\tensor{g}{_0_0}=2\nu'\exp{2\nu},\ \tensor{\partial}{_r}\tensor{g}{_1_1}=-2\lambda'\exp{2\lambda},\ \tensor{\partial}{_r}\tensor{g}{_2_2}=-2r,\ \tensor{\partial}{_r}\tensor{g}{_3_3}=-2r\sin^2{\theta},\ \tensor{\partial}{_\theta}\tensor{g}{_3_3}=-2r^2\sin{\theta}\cos{\theta}\\
-                &\tensor{\Gamma}{^1_0_0}=\nu'\exp{2(\nu-\lambda)},\ \tensor{\Gamma}{^1_1_0}=\nu',\ \tensor{\Gamma}{^1_1_1}=\lambda',\ \tensor{\Gamma}{^2_1_2}=\tensor{\Gamma}{^3_1_3}=\frac{1}{r}\\
-                &\tensor{\Gamma}{^1_2_2}=-r\exp{-2\lambda},\ \tensor{\Gamma}{^3_2_3}=\cot{\theta},\ \tensor{\Gamma}{^1_3_3}=-r\sin^2{\theta}\exp{-2\lambda},\ \tensor{\Gamma}{^2_3_3}=-\sin{\theta}\cos{\theta}\\
+                &\tensor{\Gamma}{^\rho_{\mu\nu}}=\frac{1}{2}\tensor{g}{^{\rho\sigma}}(\tensor{\partial}{_\mu}\tensor{g}{_{\sigma\nu}}+\tensor{\partial}{_\nu}\tensor{g}{_{\sigma\mu}}-\tensor{\partial}{_\sigma}\tensor{g}{_{\mu\nu}})\\
+                &\tensor{\partial}{_r}\tensor{g}{_{00}}=2\nu'\exp{2\nu},\ \tensor{\partial}{_r}\tensor{g}{_{11}}=-2\lambda'\exp{2\lambda},\ \tensor{\partial}{_r}\tensor{g}{_{22}}=-2r,\ \tensor{\partial}{_r}\tensor{g}{_{33}}=-2r\sin^2{\theta},\ \tensor{\partial}{_\theta}\tensor{g}{_{33}}=-2r^2\sin{\theta}\cos{\theta}\\
+                &\tensor{\Gamma}{^1_{00}}=\nu'\exp{2(\nu-\lambda)},\ \tensor{\Gamma}{^1_{10}}=\nu',\ \tensor{\Gamma}{^1_{11}}=\lambda',\ \tensor{\Gamma}{^2_{12}}=\tensor{\Gamma}{^3_{13}}=\frac{1}{r}\\
+                &\tensor{\Gamma}{^1_{22}}=-r\exp{-2\lambda},\ \tensor{\Gamma}{^3_{23}}=\cot{\theta},\ \tensor{\Gamma}{^1_{33}}=-r\sin^2{\theta}\exp{-2\lambda},\ \tensor{\Gamma}{^2_{33}}=-\sin{\theta}\cos{\theta}\\
              \end{align*}
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Sch: metric outside static static spherical star}
     \begin{itemize}
-        \item In empty space outside static star: Einstein eq. $\tensor{G}{_\mu_\nu}=0$, quindi $\tensor{R}{_\mu_\nu}=\frac{1}{2}\tensor{g}{_\mu_\nu}R$.
+        \item In empty space outside static star: Einstein eq. $\tensor{G}{_{\mu\nu}}=0$, quindi $\tensor{R}{_{\mu\nu}}=\frac{1}{2}\tensor{g}{_{\mu\nu}}R$.
         \item $R=\tensor{R}{^\alpha_\alpha}=\frac{1}{2}R$ quindi $R=0$
-        \item Tensore di Ricci $\tensor{R}{_\mu_\nu}$
+        \item Tensore di Ricci $\tensor{R}{_{\mu\nu}}$
             \begin{align*}
-                &\tensor{R}{_0_0}=\tensor{R}{_1_1}=0,\ \Rightarrow \lambda'+\nu'=0,\ \tensor{R}{_2_2}=0\ \Rightarrow (1+2r\nu')\exp{2\nu}=1\\
-                &\lambda+\nu=0 \tensor{g}{_1_1}=-\exp{2\lambda}=-\exp{-2\nu}=-\invers{(1-\frac{2GM}{r})}\tag{$(r>R)$; large r space unaffected by star: $\lambda\to\nu\to0$}\\
-                &\tensor{g}{_0_0}=\exp{2\nu}=1-\frac{2GM}{r}\tag{Integrating primes, $r>R$}\\
+                &\tensor{R}{_{00}}=\tensor{R}{_{11}}=0,\ \Rightarrow \lambda'+\nu'=0,\ \tensor{R}{_{22}}=0\ \Rightarrow (1+2r\nu')\exp{2\nu}=1\\
+                &\lambda+\nu=0 \tensor{g}{_{11}}=-\exp{2\lambda}=-\exp{-2\nu}=-\invers{(1-\frac{2GM}{r})}\tag{$(r>R)$; large r space unaffected by star: $\lambda\to\nu\to0$}\\
+                &\tensor{g}{_{00}}=\exp{2\nu}=1-\frac{2GM}{r}\tag{Integrating primes, $r>R$}\\
                 &\Rightarrow d\tau^2=(1-\frac{2GM}{r})\,dt^2-\invers{(1-\frac{"GM}{r})}\,dr^2-r^2\,d\theta^2-r^2\sin^2{\theta}\,d\phi^2\tag{$r>R$}
             \end{align*}
             R raggio stellare, M costante di integrazione: in Apprx Newtoniana M coincide con massa stellare.
