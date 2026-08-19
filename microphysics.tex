@@ -138,41 +138,152 @@ Nel $\lim_{V\to\infty}$ le grandezze termodinamiche non dipendono da V: bulk mat
 
 \subsection{$\beta$-equilibrium}
 
-\begin{frame}{Gas neutroni/protoni/elettroni}
+\begin{frame}{Gas \Pproton/\Pelectron: sotto $n_c$ domina $m_p+m_e<m_n$. }
     \begin{itemize}
-        \item Neutronization - The weak reaction $\Pelectron+\Pproton\to\Pneutron+\Pnue$ proceed onlu if $\Delta m=m_n-m_p=(393.57-928.28)\si{\mega\ev}=\SI{1.29}{\mega\ev}$,
+        \item Neutronization - The weak reaction $\Pelectron+\Pproton\to\Pneutron+\Pnue$ proceed only if $\Delta m=m_n-m_p=(393.57-928.28)\si{\mega\ev}=\SI{1.29}{\mega\ev}$ is compensated by kinetic energy.
         \item $\beta$ decay - $\Pneutron\to\Pproton+\Pelectron+\APnue$ is blocked if density is high enough such energy level are occupied.
-    \end{itemize}
     If we assume chemical equilibrium, with $T=0$, $\mu_{\nu}=0$: $\mu_e+\mu_p=\mu_n$. A $T=0$ tutti i livelli sono occupati fino all'energia di Fermi: $k_{F,i}$ impulso di Fermi, $g_i=2s_i+1$
-    \begin{columns}[T]
-        \begin{column}{0.5\textwidth}
     \begin{align*}
         &\mu_i=E_{F,i}=\sqrt{k_{F,i}^2+m_i^2}\tag{$T=0$: energy needed to take fermion}\\
         &\sqrt{k_{F,e}^2+m_e^2}+\sqrt{k_{F,p}^2+m_p^2}=\sqrt{k_{F,n}^2+m_n^2}\tag{equilibrium}\\
         &n_i=g_i\int_0^{k_{F,i}}\frac{d^3k}{(2\pi)^3}=\frac{g_i}{6\pi^2}k_{F,i}^3\tag{number density}\\
         &n_e=n_p\Rightarrow g_ek_{F,e}^3=g_pk_{F,p}^3\tag{charge neutrality}\\
-        &g_e=g_p=2\Rightarrow k_{F,e}=k_{F,p}\tag{thermod. quant. as funct of $\mu_B$/$n_B$}\\
+        &g_e=g_p=2\Rightarrow k_{F,e}=k_{F,p}\tag{thermod. quant. as f. of $\mu_B$/$n_B$}\\
         &P=P_e+P_p+P_n\\
         &\epsilon=\epsilon_e+\epsilon_p+\epsilon_n\\
         &n_B=n_p+n_n\\
         &n_Q=n_p-n_e=0
     \end{align*}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{itemize}
                 \item A gas of \Pproton-\Pelectron is energ-favor. at low density. $m_p+m_e=\SI{938.79}{\mega\ev}<m_n=\SI{939.57}{\mega\ev}$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Gas neutroni/protoni/elettroni: neutronization. Formazione nuclei}
+            \begin{itemize}
                 \item At some critical $n_e=n_p$ ($n_Q=n_p-n_e=0$) Fermi energy of electrons and protons sum up to \Pneutron rest mass ($k_{F,n}=0$):
                     \begin{align*}
                         &\sqrt{k_{F,e}^2+m_e^2}+\sqrt{k_{F,p}^2+m_p^2}=m_n\tag{\Pneutron at rest}\\
-                        &K_{F,p}\ll m_p\Rightarrow\sqrt{k_{F,p}^2+m_p^2}\approx m_p\tag{\Pproton non rel}\\
-                        &\Rightarrow\sqrt{k_{F,e}^2+m_e^2}\approx m_p\tag{$n_e$ neutronization}
+                        &K_{F,p}\ll m_p\Rightarrow\sqrt{k_{F,p}^2+m_p^2}\approx m_p\tag{\Pproton NR}\\
+                        &\Rightarrow\sqrt{k_{F,e}^2+m_e^2}\approx m_n-m_p\tag{$n_e$ neutronization}\\
+                        &\Rightarrow n_c=\frac{1}{3\pi^2}((m_n-m_p)^2+m_e^2)\expy{\frac{3}{2}}\approx\SI{7.4e30}{\per\cubic\cm}
                     \end{align*}
-            \end{itemize}
-        \end{column}
-    \end{columns}
-    
+    Con aumentare della densit\'a si ha $n_n\gg n_p$ e si forma la materia neutronica.
+        \item Condizione asintotica equilibrio $K_F\gg m_N$ (limite UR). La condizione $\sqrt{k_{F,e}^2+m_e^2}+\sqrt{k_{F,p}^2+m_p^2}=m_n$ si riduce a $k_{F,n}\approx k_{F,e}+k_{F,p}=2k_{F,p}$: essendo $n\propto gk_F^3$ con $g_n=g_p=2$ e quindi nel limite di alte densit\'a $n_n=8n_p$ o $\frac{n_n}{n_B}=\frac{8}{9}$.
+    \end{itemize}
+    La materia densa, oltre $\rho_c=m_pn_c\approx\SI{1.2e7}{\gram\per\cubic\cm}$, in $\beta$-equilibrio \'e composta principalmente da neutroni in quanto la neutralit\'a imporrebbe di aggiungere coppia \Pproton/\Pelectron, sopra la densit\'a critica non \'e energeticamente conveniente.
 \end{frame}
 
-\section{Dense Matter - Fermi gas}
+\begin{frame}{Realistic neutron matter: formazione nuclei}
+    \begin{itemize}
+        \item In realt\'a lo stato di minimo dei nucleoni \'e sono i nuclei: materia in $\beta$-equilibrio consiste di nuclei in gas di elettroni che garantisce neutralit\'a, ma i nuclei presenti non sono quelli con minor massa per barione. We need to find nucleus (A,Z) scanning through nuclear chart which minimizes total energy of the system for given baryon number density. Vedi termine $\frac{Z}{A}\mu_e$ dovuto agli elettroni per neutralit\'a di carica.
+    \item In addition nuclei will form regular lattice to minimize coulomb energy, ie lattice energy has to be included; lattice energy is important for composition of nuclei not for EOS.
+    \item At low density $^{56}Fe$, the one with lowest mass per baryon, is present in $\beta$-equilibrated matter; with increasing baryon density nuclei become more neutron rich (\xaumenta{n_B}, \xaumenta{n_e}, aumenta probabilit\'a di convertire protone in neutrone) until highest possible \Pneutron/\Pproton ration is achieved: there the baryon density is called neutron-drip density $\rho\approx\SI{4e11}{\gram\per\cubic\cm}$.
+    \item Neutron drip density depends upon nuclear model used to determine binding energy of unknown neutron rich nucleus (in particular the ones close to neutron dripline)
+    \item Nuclei con B streaordinariamente alta saranno favoriti in materia in $\beta$-equilibrio: closed shell of neutrons to a magic number $N=2,8,20,50,82,126$; modelli indicano come pi\'u favoriti $N=50,82$.
+    \end{itemize}
 
+\end{frame}
 
+\begin{frame}{Composizione materia in $\beta$-equilibrio}\frameinlbftrue
+    \begin{itemize}
+        \item $\rho<\SI{e4}{\gram\per\cubic\cm}$: gas of atoms - Atmospheres of compact stars.
+        \item $\rho=\SI{e4}{\gram\per\cubic\cm}$: si forma gas di elettroni liberi e reticolo di nuclei di $^{56}Fe$.
+        \item $\rho=\SI{2e6}{\gram\per\cubic\cm}$: elettroni diventano relativistici.
+        \item $\rho<\SI{8e6}{\gram\per\cubic\cm}$: si forma un reticolo di nuclei oltre $^{56}Fe$ con attorno gas di elettroni; i nuclei diventano sempre pi\'u neutron rich all'aumentare della densit\'a.
+        \item $\rho<\SI{4e11}{\gram\per\cubic\cm}$: neutron drip density - densit\'a limite per emissione di neutroni da èparte di neutron rich nuclei.
+    \end{itemize}
+\end{frame}
+
+\section{EOS fermionic matter at $T=0$}
+
+\begin{frame}{}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item EOS for degenerate matter in compact star: $P(\epsilon)$ or $P(n)$
+                \item EOS to describe nuclear matter: binding energy per baryon as a function of baryon number density $\frac{E_b}{A}(n_B)=\frac{\epsilon}{n_B}-m_N$
+                \item Energy per particle $\frac{E}{A}$ is a thermodynamic potential in T.L. function of number density and entropy per particle: possiamo usare formula di Eulero $\epsilon=Ts-P+\mu_Bn_B\xrightarrow{T=0}-P+\mu_Bn_B$ e $\mu_B=\frac{\epsilon}{n_B}$ o direttamente $P=Ts+\sum_inn_i\PDof{n_i}(\frac{\epsilon}{n})$.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{align*}
+                &\PDof{n_B}(\frac{E}{A})=\PDof{n_B}(\frac{\epsilon}{n_B})=\frac{1}{n_B}\frac{\epsilon}{n_B}-\frac{\epsilon}{n_B^2}\\
+                &\Rightarrow\PDof{n_B}(\frac{\epsilon}{A})=\frac{\mu_B}{n_N}-\frac{\epsilon}{n_B^2}=\frac{P}{n_B^2}\\
+                &\Rightarrow P=n_B^2\PDof{n_B}(\frac{E}{A})
+            \end{align*}
+            Energy per particle as function of number density is proportional to pressure: a minimum in energy per particle corresponds to vanishing pressure, ie stable equilibrated matter.
+        \end{column}
+    \end{columns}
+    \begin{itemize}
+        \item Le espressioni $P(\epsilon)$ o $P(n)$ non sono potenziali termodinamici e non contengono tutte le informazioni termodinamiche al contrario dell'espressione $\frac{E_B}{A}$: infatti calcolando la densit\'a di energia usando EOS nella forma $P(n)$ tramite la precedente equazione per P la costante di integrazione resta indeterminata; questo non \'e il caso per $P(\mu,T)$:
+            \begin{align*}
+                &\epsilon(\mu,T)=-P(\mu,T)+\mu n+Ts\\
+                &n=(\PDy{\mu}{P(\mu,T)}),\ s=(\PDy{T}{P(\mu,T)})
+            \end{align*}
+            Infatti nell'ensemble grancanonico $P=-\frac{\Omega}{V}$ direttamente legata a potenziale termodinamico (funzione di stato dalle cui derivate ottengo tutte le grandezze termodinamiche).
+    \end{itemize}
+\end{frame}
+
+\section{Dense Matter - Fermi gas - Polytropes}
+
+\begin{frame}{Fermi Gas of electrons and nucleons: NR limit}
+    \begin{columns}[T]
+        \begin{column}{0.45\textwidth}
+            \begin{align*}
+                &P_e=\frac{g_e}{3(2\pi)^3}\int\,d^3k\scap{k}{v}_e\tag{electrons P}\\
+                &v_e=\frac{k}{E_e(k)},\ E_e(k)=\sqrt{k^2+m_e^2}\\
+                &\Rightarrow P_E=\frac{g_e}{6\pi^2}\int_0^{k_{F,e}}dk \frac{k^4}{E_e(k)}\\
+                &\epsilon=\frac{g}{(2\pi)^3}\int d^3kE(k)
+            \end{align*}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{align*}
+                &T^{ij}=g_e\int\frac{d^3k}{(2\pi)^3}k^iv^j f(\vec{k})\\
+                &T^{xx}=T^{yy}=T^{zz}=P\\
+                &T^{xx}+T^{yy}+T^{zz}=\frac{g_e}{(2\pi)^3}\int\,d^3k\scap{k}{v}_e\\
+                &\dot{x}=\PDy{\vec{p}}{H} (E=\hbar\omega, \vec{p}=\hbar\vec{k},\vec{v}_g=\PDy{\vec{k}}{\omega})\Rightarrow v_e=\nabla_{\vec{v}}E_e
+            \end{align*}
+        \end{column}
+    \end{columns}
+    \begin{itemize}
+        \item Limite NR $k_{F,e}\ll m_e$, $v_e\approx \frac{k}{m_e}$, $E_e\approx m_e$: $P_e^{NR}=\frac{g_e}{6\pi^2}\int_0^{k_{F,e}}dk \frac{k^4}{m_e}=\frac{g_e}{30\pi^2}\frac{k_{F,e}^5}{m_e}$
+        \item Number density $n_e=\frac{g_e}{(2\pi)^3}\int d^3k=\frac{g_e}{2\pi^2}\int_0^{k_{F,e}}k^2\,dk=\frac{g_e}{6\pi^2}k_{F,e}^3$
+        \item $P_e^{NR}=\frac{1}{5}(\frac{6\pi^2}{g_e})\expy{\frac{2}{3}}\frac{n_e\expy{\frac{5}{3}}}{m_e}$: pressure inversely proportional to fermion mass, the contribution from nucleons is suppressed by a factor $\frac{m_e}{m_N}$ (from nucleons is suppressed by a factor $\frac{m_e}{Am_N}$) and can be ignored.
+        \item Charge neutrality: $n_e=n_p=Zn_A=\frac{Z}{A}n_N$.
+        \item Energy in NR limit $E(k)\approc m$: $\epsilon^{NR}\approx m \frac{g}{(2\pi)^3}\int d^3k=mn=\rho$, quindi la densit\'a di energia \'e dominata dai nucleoni $\epsilon^{NR}=\rho_A=m_A\rho_A\approx\rho_N=m_Nn_N$ and ignoring binding energy we have $m_A\approx Am_N$.
+        \item Total pressure in terms of mass density: $P^{NR}=\frac{1}{5}(\frac{6\pi^2}{g_e})\espy{\frac{2}{3}}\frac{1}{m_e}(\frac{Z\rho_N}{Am_N})\expy{\frac{5}{3}}\propto(\frac{Z}{A})\expy{\frac{5}{3}}\rho_N\expy{\frac{5}{3}}$ - EOS in NR limit is a power law with exponent $\frac{5}{3}$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Fermi Gas of electrons and nucleons: R limit}
+    \begin{columns}[T]
+        \begin{column}{0.45\textwidth}
+            \begin{align*}
+                &P_e=\frac{g_e}{3(2\pi)^3}\int\,d^3k\scap{k}{v}_e\tag{electrons P}\\
+                &v_e=\frac{k}{E_e(k)},\ E_e(k)=\sqrt{k^2+m_e^2}\\
+                &\Rightarrow P_E=\frac{g_e}{6\pi^2}\int_0^{k_{F,e}}dk \frac{k^4}{E_e(k)}\\
+                &\epsilon=\frac{g}{(2\pi)^3}\int d^3kE(k)
+            \end{align*}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{align*}
+                &T^{ij}=g_e\int\frac{d^3k}{(2\pi)^3}k^iv^j f(\vec{k})\\
+                &T^{xx}=T^{yy}=T^{zz}=P\\
+                &T^{xx}+T^{yy}+T^{zz}=\frac{g_e}{(2\pi)^3}\int\,d^3k\scap{k}{v}_e\\
+                &\dot{x}=\PDy{\vec{p}}{H} (E=\hbar\omega, \vec{p}=\hbar\vec{k},\vec{v}_g=\PDy{\vec{k}}{\omega})\Rightarrow v_e=\nabla_{\vec{v}}E_e
+            \end{align*}
+        \end{column}
+    \end{columns}
+    \begin{itemize}
+        \item Limite NR $k_{F,e}\gg m_e$, $k_{F,e}\ll m_N$: relativistic \Pelectron, non-relativistic \Pnucleon. $v_e\approx c=1$, $E^{R}_e\approx k$: $P_e^R=\frac{g_e}{6\pi^2}\int_0^{k_{F,e}}dk k^3=\frac{g_e}{24\pi^2}k_{F,e}^4$
+        \item Number density $n_e=\frac{g_e}{(2\pi)^3}\int d^3k=\frac{g_e}{2\pi^2}\int_0^{k_{F,e}}k^2\,dk=\frac{g_e}{6\pi^2}k_{F,e}^3$
+        \item $P_e^R=\frac{1}{4}(\frac{6\pi^2}{g_e})\expy{\frac{1}{3}}n_e\expy{\frac{4}{3}}$:
+            \begin{align*}
+                &P_e^R=\frac{g_e}{24\pi^2}k_{F,e}^4=\frac{1}{4}n_ek_{F,e},\ P_N^{NR}=\frac{g_N}{30\pi^2}\frac{k_{F,N}^5}{m_N}=\frac{1}{5}n_N \frac{k_{F,N}^2}{m_N}\\
+                &\Rightarrow \frac{P_p^{NR}}{P_e^R}=\frac{4}{5}\frac{k_{F,e}}{m_N}\ll1\ (n_e=n_p,\ g_p=g_e=2)
+            \end{align*}
+        \item Charge neutrality: $n_e=n_p=Zn_A=\frac{Z}{A}n_N$.
+        \item Energy in NR limit $E(k)\approc m$: $\epsilon^{NR}\approx m \frac{g}{(2\pi)^3}\int d^3k=mn=\rho$, quindi la densit\'a di energia \'e dominata dai nucleoni $\epsilon^{NR}=\rho_A=m_A\rho_A\approx\rho_N=m_Nn_N$ and ignoring binding energy we have $m_A\approx Am_N$.
+        \item Total pressure in terms of mass density: $P^{NR}=\frac{1}{5}(\frac{6\pi^2}{g_e})\espy{\frac{2}{3}}\frac{1}{m_e}(\frac{Z\rho_N}{Am_N})\expy{\frac{5}{3}}\propto(\frac{Z}{A})\expy{\frac{5}{3}}\rho_N\expy{\frac{5}{3}}$.
+    \end{itemize}
+\end{frame}
