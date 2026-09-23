@@ -250,8 +250,8 @@ Nel $\lim_{V\to\infty}$ le grandezze termodinamiche non dipendono da V: bulk mat
         \item Number density $n_e=\frac{g_e}{(2\pi)^3}\int d^3k=\frac{g_e}{2\pi^2}\int_0^{k_{F,e}}k^2\,dk=\frac{g_e}{6\pi^2}k_{F,e}^3$
         \item $P_e^{NR}=\frac{1}{5}(\frac{6\pi^2}{g_e})\expy{\frac{2}{3}}\frac{n_e\expy{\frac{5}{3}}}{m_e}$: pressure inversely proportional to fermion mass, the contribution from nucleons is suppressed by a factor $\frac{m_e}{m_N}$ (from nucleons is suppressed by a factor $\frac{m_e}{Am_N}$) and can be ignored.
         \item Charge neutrality: $n_e=n_p=Zn_A=\frac{Z}{A}n_N$.
-        \item Energy in NR limit $E(k)\approc m$: $\epsilon^{NR}\approx m \frac{g}{(2\pi)^3}\int d^3k=mn=\rho$, quindi la densit\'a di energia \'e dominata dai nucleoni $\epsilon^{NR}=\rho_A=m_A\rho_A\approx\rho_N=m_Nn_N$ and ignoring binding energy we have $m_A\approx Am_N$.
-        \item Total pressure in terms of mass density: $P^{NR}=\frac{1}{5}(\frac{6\pi^2}{g_e})\espy{\frac{2}{3}}\frac{1}{m_e}(\frac{Z\rho_N}{Am_N})\expy{\frac{5}{3}}\propto(\frac{Z}{A})\expy{\frac{5}{3}}\rho_N\expy{\frac{5}{3}}$ - EOS in NR limit is a power law with exponent $\frac{5}{3}$.
+        \item Energy in NR limit $E(k)\approx m$: $\epsilon^{NR}\approx m \frac{g}{(2\pi)^3}\int d^3k=mn=\rho$, quindi la densit\'a di energia \'e dominata dai nucleoni $\epsilon^{NR}=\rho_A=m_A\rho_A\approx\rho_N=m_Nn_N$ and ignoring binding energy we have $m_A\approx Am_N$.
+        \item Total pressure in terms of mass density: $P^{NR}=\frac{1}{5}(\frac{6\pi^2}{g_e})\expy{\frac{2}{3}}\frac{1}{m_e}(\frac{Z\rho_N}{Am_N})\expy{\frac{5}{3}}\propto(\frac{Z}{A})\expy{\frac{5}{3}}\rho_N\expy{\frac{5}{3}}$ - EOS in NR limit is a power law with exponent $\frac{5}{3}$.
     \end{itemize}
 \end{frame}
 
@@ -270,20 +270,238 @@ Nel $\lim_{V\to\infty}$ le grandezze termodinamiche non dipendono da V: bulk mat
                 &T^{ij}=g_e\int\frac{d^3k}{(2\pi)^3}k^iv^j f(\vec{k})\\
                 &T^{xx}=T^{yy}=T^{zz}=P\\
                 &T^{xx}+T^{yy}+T^{zz}=\frac{g_e}{(2\pi)^3}\int\,d^3k\scap{k}{v}_e\\
-                &\dot{x}=\PDy{\vec{p}}{H} (E=\hbar\omega, \vec{p}=\hbar\vec{k},\vec{v}_g=\PDy{\vec{k}}{\omega})\Rightarrow v_e=\nabla_{\vec{v}}E_e
+                &\dot{x}=\PDy{\vec{p}}{H} (E=\hbar\omega, \vec{p}=\hbar\vec{k},\vec{v}_g=\PDy{\vec{k}}{\omega})\Rightarrow v_e=\nabla_{\vec{v}}E_e\\
+                &n_e=n_p=Zn_A=\frac{Z}{A}n_N\tag{charge netrality}
             \end{align*}
         \end{column}
     \end{columns}
     \begin{itemize}
-        \item Limite NR $k_{F,e}\gg m_e$, $k_{F,e}\ll m_N$: relativistic \Pelectron, non-relativistic \Pnucleon. $v_e\approx c=1$, $E^{R}_e\approx k$: $P_e^R=\frac{g_e}{6\pi^2}\int_0^{k_{F,e}}dk k^3=\frac{g_e}{24\pi^2}k_{F,e}^4$
-        \item Number density $n_e=\frac{g_e}{(2\pi)^3}\int d^3k=\frac{g_e}{2\pi^2}\int_0^{k_{F,e}}k^2\,dk=\frac{g_e}{6\pi^2}k_{F,e}^3$
-        \item $P_e^R=\frac{1}{4}(\frac{6\pi^2}{g_e})\expy{\frac{1}{3}}n_e\expy{\frac{4}{3}}$:
+        \item Limite R $k_{F,e}\gg m_e$, $k_{F,e}\ll m_N$: relativistic \Pelectron, non-relativistic nucleon. $v_e\approx c=1$, $E^{R}_e\approx k$:             
             \begin{align*}
-                &P_e^R=\frac{g_e}{24\pi^2}k_{F,e}^4=\frac{1}{4}n_ek_{F,e},\ P_N^{NR}=\frac{g_N}{30\pi^2}\frac{k_{F,N}^5}{m_N}=\frac{1}{5}n_N \frac{k_{F,N}^2}{m_N}\\
-                &\Rightarrow \frac{P_p^{NR}}{P_e^R}=\frac{4}{5}\frac{k_{F,e}}{m_N}\ll1\ (n_e=n_p,\ g_p=g_e=2)
+                &P_e^R=\frac{g_e}{6\pi^2}\int_0^{k_{F,e}}dk k^3=\frac{g_e}{24\pi^2}k_{F,e}^4=\frac{1}{4}(\frac{6\pi^2}{g_e})\expy{\frac{1}{3}}n_e\expy{\frac{4}{3}}\\
+                &P_e^R=\frac{g_e}{24\pi^2}k_{F,e}^4=\frac{1}{4}n_ek_{F,e},\ P_N^{NR}=\frac{g_N}{30\pi^2}\frac{k_{F,N}^5}{m_N}=\frac{1}{5}n_N \frac{k_{F,N}^2}{m_N}\Rightarrow \frac{P_p^{NR}}{P_e^R}=\frac{4}{5}\frac{k_{F,e}}{m_N}\ll1\\
+                &(n_e=\frac{g_e}{(2\pi)^3}\int d^3k=\frac{g_e}{2\pi^2}\int_0^{k_{F,e}}k^2\,dk=\frac{g_e}{6\pi^2}k_{F,e}^3,\ n_e=n_p,\ g_p=g_e=2)
             \end{align*}
-        \item Charge neutrality: $n_e=n_p=Zn_A=\frac{Z}{A}n_N$.
-        \item Energy in NR limit $E(k)\approc m$: $\epsilon^{NR}\approx m \frac{g}{(2\pi)^3}\int d^3k=mn=\rho$, quindi la densit\'a di energia \'e dominata dai nucleoni $\epsilon^{NR}=\rho_A=m_A\rho_A\approx\rho_N=m_Nn_N$ and ignoring binding energy we have $m_A\approx Am_N$.
-        \item Total pressure in terms of mass density: $P^{NR}=\frac{1}{5}(\frac{6\pi^2}{g_e})\espy{\frac{2}{3}}\frac{1}{m_e}(\frac{Z\rho_N}{Am_N})\expy{\frac{5}{3}}\propto(\frac{Z}{A})\expy{\frac{5}{3}}\rho_N\expy{\frac{5}{3}}$.
+        \item Energy in R limit $E(k)\approx k$: $\epsilon^R=\rho_A=m_A\rho_A\approx\rho_N=m_Nn_N$ and ignoring binding energy we have $m_A\approx Am_N$.
+        \item EOS: $P^R_e=\frac{1}{4}(\frac{6\pi^2}{g_e})\expy{\frac{1}{3}}(\frac{Z\rho_N}{Am_N})\expy{\frac{4}{3}}\propto(\frac{Z}{A})\expy{\frac{4}{3}}\rho_N\expy{\frac{4}{3}}$.
     \end{itemize}
 \end{frame}
+
+\begin{frame}{EOS pure neutron gas}
+    \begin{columns}[T]
+        \begin{column}{0.53\textwidth}
+            \begin{align*}
+                &P_n^{NR}=\frac{g_n}{6\pi^2}\int_0^{k_{F,n}}dk \frac{k^4}{m_n}=\frac{g_n}{30\pi^2}\frac{k_{F,n}^5}{m_n}\tag{NR: $k_F\ll m_n$}\\
+                &\epsilon^{NR}_n=\rho_n=m_nn_n\ (n_n=\frac{g_n}{(2\pi)^3}\int d^3k=\frac{g_n}{6\pi^2}k_{F,n}^3)\\
+                &P^{NR}_n=\frac{1}{5}(\frac{6\pi^2}{g_n})\expy{\frac{2}{3}}\frac{1}{m_n}(\frac{\rho_n}{m_n})\expy{\frac{5}{3}}\propto\rho_n\expy{\frac{5}{3}}\tag{EOS}
+            \end{align*}
+        \end{column}
+        \begin{column}{0.47\textwidth}
+            \begin{align*}
+                &P_e^R=\frac{g_n}{6\pi^2}\int_0^{k_{F,n}}dk k^3\tag{UR: $k_{F,n}\gg m_n$}\\
+                &=\frac{g_n}{24\pi^2}k_{F,n}^4=\frac{1}{4}(\frac{6\pi^2}{g_n})\expy{\frac{1}{3}}n_n\expy{\frac{4}{3}}\ (n_n=\frac{g_n}{6\pi^2}k_{F,n}^3)\\
+                &\epsilon=\frac{g}{(2\pi)^3}\int d^3kE\xrightarrow{E_n^R\approx k}\frac{g_n}{(2\pi)^3}\int kd^3k\tag{$\epsilon^R_n$}\\
+                &\Rightarrow\epsilon^R_n=\frac{g_n}{2\pi^2}\int_0^{k_{F,n}}dkk^3=\frac{g_n}{8\pi^2}k_{F,n}^4
+            \end{align*}
+            EOS approaches in UR limit the EOS of free gas of massless particles $P^R=\frac{1}{3}\epsilon^R$
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Parametrization EOS of free fermion gas - Politrope}
+    \begin{itemize}
+        \item Parametrization of free fermion gas EOS: $P\propto n^{\Gamma}=(\frac{\rho}{m})^{\Gamma}$.
+        \item For the TOV we need relation between pressure-energy density: ansaz $P\propto\epsilon^{\gamma}$.
+        \item Non Relativistic limit: $P\propto n\expy{\frac{5}{3}}\propto\epsilon\expy{\frac{5}{3}}$ quindi $\Gamma=\gamma=\frac{5}{3}$.
+        \item Relativistic limit: $P\propto n\expy{\frac{4}{3}}\propto\epsilon\expy{\frac{4}{3}}$ quindi $\Gamma=\gamma=\frac{4}{3}$.
+        \item Ultra-relativistic limit for single fermion gas: $P\propto n\expy{\frac{4}{3}}$, $P=\frac{1}{3}\epsilon$ quindi $\Gamma=\frac{4}{3}$, $\gamma=1$.
+    \end{itemize}
+    $\rho$ stands for density of non-relativistic species, $\epsilon$ denotes the more general energy density.
+\end{frame}
+
+\begin{frame}{EOS of free Fermi gas in analitic parametric form}
+    \begin{align*}
+        &P=\frac{g}{3(2\pi)^3}\int d^3k \frac{k^2}{E(k)}=\frac{g}{2\pi^2}\int_0^{k_F}dk \frac{k^4}{\sqrt{k^2+m^2}}=\frac{g}{24\pi^2}\left\{k_FE_F(k_F^2-\frac{3}{2}m^2)+\frac{3}{2}m^4\ln{\frac{k_F+E_F}{m}}\right\}\\
+        &\epsilon=\frac{g}{(2\pi)^3}\int d^3kE(k)=\frac{g}{2\pi^2}\int_0^{k_F}dkk^2\sqrt{k^2+m^2}=\frac{g}{8\pi^2}\left\{k_FE_F(k_F^2+\frac{1}{2}m^2+\frac{1}{2}m^4\ln{\frac{k_F+E_F}{m}})\right\}
+    \end{align*}
+    For given Fermi moment $k_F$ or number density n, using $n=\frac{g}{2\pi^2}k_F^3$, pressure and energy density can be computed parametrically.
+\end{frame}
+
+\begin{frame}{Politrope}
+    \begin{itemize}
+        \item $P=Kn^{\Gamma}$, dimension of K depends on $\Gamma$. Extension to density dependent $\Gamma=\PDly{n}{P}$, usefull in transition from NR to R regimes.
+        \item We can't derive $\epsilon$ and $\mu$ from polytrope: i potenziali termodinamici sono della forma $\epsilon(n)$ o $P(\mu)$.
+        \item Invertendo $P=n^2\TDy{n}{\frac{\epsilon}{n}}$ la densit\'a di energia pu\'o essere riscritta in funzione della pressione $\TDy{n}{\frac{\epsilon}{n}}=\frac{P}{n^2}=Kn^{\Gamma-2}$ e integrando $\frac{\epsilon}{n}=\frac{K}{\Gamma-1}n^{\Gamma-1}+\const{}$, compare una costante da determinare, per limite bassa densit\'a l'energia per particella $\frac{E}{N}$ \'e la massa della particella $\frac{E}{N}=\frac{\epsilon}{n}\to m$ for $n\to0$, quindi la costante di integrazione pu\'o essere associata alla massa della particella per $\Gamma>1$, quindi la densit\'a di energia $\epsilon=mn+\frac{K}{\Gamma-1}n^{\Gamma}$; adesso possiamo calcolare $\mu=\TDy{n}{\epsilon}=m+\frac{K\Gamma}{\Gamma-1}n^{\Gamma-1}$
+        \item Acausal behaviour at high density: at high density speed of sound in the medium, for polytropic EOS, can exceed speed of light.
+            \begin{align*}
+                &c_s^2=\PDy{\epsilon}{P}|_s=\PDy{n}{P}\TDy{\epsilon}{n}\to\Gamma-1\tag{$n\to\infty$}
+            \end{align*}
+            For $\Gamma=2$, the stiffest EOS compatible with causality, $c_s=1$ and $P=\epsilon$; note that for a fermi gas in UR limit, ie for high density, $c_s=\frac{1}{\sqrt{3}}$
+    \end{itemize}
+\end{frame}
+
+\section{Superfluidit\'a}
+
+\begin{frame}{Biblio}
+    \begin{itemize}
+        \item An introduction to Ginzburg-Landau theory of phase-transitions and non-equilibrium patterns - Hohenberg 2015: Review
+        \item Introduction to Superconductivity - Tinkham: Ch 1 Historical Overview, Ch 2 Introduction to electrodynamics of superconductors, Ch 3 The BCS theory, Ch 4 Ginzburg-Landau Theory
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Relazione tra Landau-Ginzburg e BCS}
+    \begin{itemize}
+        \item BCS (1957) \'e una teoria microscopica del pairing, Ginzburg-Landau (1950) \'e sua descrizione efficace macroscopica vicino a $T_c$; Gor'kov mostr\'o che le LG possono essere ricavate da BCS.
+        \item In BCS l'oggetto microscopico centrale \'e il parametro di pairing $\Delta(\vec[\mathbf] r) \propto \pairfield$
+        \item In GL si introduce fenomenologicamente un parametro d'ordine complesso $\psi_{GL}(\vec[\mathbf]{r})=|\psi_{GL}|\exp{i\theta}$: vicino alla temperatura di transizione $\psi_{GL}(\vec[\mathbf] r)\propto\Delta(\vec[\mathbf] r)$
+    \end{itemize}
+\end{frame}
+
+\subsection{Superconductivity/Superfluidity: Fenomenologia}
+
+\begin{frame}{Fenomenologia superconduttori}
+    \begin{itemize}
+        \item La resistenza di vari materiali si annulla per $T<T_c$ dipendente dal materiale.
+        \item Meissner Effect: campo magnetico \'e espulso da campione per $T<T_c$: questo non \'e spiegato da resistenza nulla che tenderebbe a ''congelare'' il campo magnetico. Superconductivity will be destroied by critical magnetic field $H_c$: $H_c$ is determined equating magnetic energy density to $\frac{H^2}{8\pi}$ to Helmoholtz free-ergy difference between normal/condensed state $\frac{H^2}{8\pi}=f_n(T)-f_s(T)$ where $f$ is Helmholtz free-energy per unit volume in the respective phase with zero-field. Approximated by parabolic law $H_c(T)\approx H_c(0)[1-(\frac{T}{T_c})^2]$.
+        \item The transition a zero field at $T_c$ is of second order, the transition in the presence of field is of first order since there is a discontinuos change in thermodynamics state of system and associated latent heat.
+        \item London eqs: $n_s$ numeric density of superconducting electrons, $\vec{h},\vec{e}$ microscopic fields
+            \begin{columns}[T]
+                \begin{column}{0.5\textwidth}
+                    \begin{align*}
+                        &\vec{E}=\PDy{t}{\Lambda\vec{J}_s},\ \vec{h}=-c\nabla\wedge(\Lambda\vec{J}_s),\ \Lambda=\frac{4\pi^2\lambda^2}{c^2}=\frac{m}{n_se^2}\\
+                        &\vec{p}\to m\vec{v}+\frac{e\vec{A}}{c}\Rightarrow\exv{\vec{v}_s}=-\frac{a\vec{A}}{mc},\ \vec{E}=\nabla\phi-\frac{1}{c}\PDy{t}{\vec{A}}\\
+                        &\vec{J}_s=n_se\exv{\vec{v}_s}=-\frac{n_se^2\vec{A}}{mc}=-\frac{\vec{A}}{\Lambda c}
+                    \end{align*}
+                \end{column}
+                \begin{column}{0.5\textwidth}
+                    $\vec{e}$: Any electric field accelerates superconducting electrons. $\vec{h}$: since $\nabla\wedge\vec{h}=\frac{4\pi\vec{J}}{c}$ we have exponentilly screened interior, $\nabla^2\vec{h}=\frac{\vec{h}}{\lambda^2}$, with penetration depth $\lambda$. In absence of field we have zero net momentum of GS. Time derivative of eq for $\vec{J}_s$ give $\vec{e}$, curl gives $\vec{h}$. $\lambda_L(0)=\sqrt{\frac{mc^2}{4\pi ne^2}}$.
+                \end{column}
+            \end{columns}
+        \item Pippard: coherence length $\xi_0$ of s. wf - $\vec{J}(\vec{r})=\frac{3\sigma}{4\pi l}\int \frac{\vec{R}[\vec{R}\cdot\vec{R}(\vec{r'})]\exp{-\frac{R}{l}}}{R^4}\,d\vec{r'}$, $\vec{R}=\vec{r}-\vec{r'}$ (Chamber's Ohm law gen.)
+            \begin{columns}[T]
+                \begin{column}{0.5\textwidth}
+                    \begin{align*}
+                        &\Delta p\approx \frac{kT_c}{v_f}\Rightarrow\Delta x\geq \frac{\hbar}{\Delta p}\approx \frac{\hbar v_F}{kT_c}\Rightarrow \xi_0=a\frac{\hbar v_F}{kT_c}\\
+                        &\vec{J}_s(\vec{r})=\frac{3}{4\pi\xi_0\Lambda c}\int \frac{\vec{R}[\vec{R}\cdot\vec{A}(\vec{r'})]\exp{-\frac{R}{\xi}}\,d\vec{r'}}{R^4},\ \frac{1}{\xi}=\frac{1}{\xi_0}+\frac{1}{l}
+                    \end{align*}
+                \end{column}
+                \begin{column}{0.5\textwidth}
+                    Current at $\vec{r}$ deps on $\vec{E}(\vec{r'})$ throughout volume radius $\approx l$ about $\vec{r}$ - typic. $\xi_0\gg\lambda_L(0)$ - $\xi_0$ smallest size wave packet that superconductin charge carriers can form; BCS: $a\approx0.18$.
+                \end{column}
+            \end{columns}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Fenomenologia Superfluidi/superconduttori}
+    \begin{block}{Specific Heat}
+        Superconductors: energy gap $\Delta\approx kT_c$ between GS and quasi-particle excitations - Specific heat of electrons for $T\ll T_c$ dominated by exponential $C_{es}\approx \gamma T_ca\exp{-b \frac{T_c}{T}}$ where normal state elettronic specific heat is $C_{en}=\gamma T$: exponential deps. ($b\approx1.5$) implies min. excitation energy per particle of $\approx1.5kT_C$ - popolazione eccitazione soppressa di fattore di Boltzman $\exp{-\frac{\Delta}{kT}}$. Il calore specifico misura la dipendenza dell'energia immagazzinata nelle eccitazioni da T
+    \end{block}
+    \begin{block}{EM absorption in region $\hbar\omega\approx kT_c$}
+        Far-IR and microwave measurements shows energy gap $\approx3-4kT_c$: questo risultato \'e consistente con quello calorimetrico solo se le eccitazioni sono prodotte in coppia come atteso se obbescono alla statistica di Fermi.
+    \end{block}
+    \begin{block}{BCS Theory - Cooper pair with spatial extension $\xi_0$ are superconducting charge carriers}
+        Weak attractive interaction between electrons, such second order phonon-electron int., causes instability in Fermi's sea GS to formation of electron bound pairs occuping states with opposite momentum and spin.
+        La teoria prevede energia minima $E_g=2\Delta(T)$ per rompere la coppia creando due eccitazioni di quasi-particella; $\Delta(T_c)=0$ e aumenta per $T\ll T_c$ con $E_g(0)=2\Delta(0)=3.528kT_c$
+    \end{block}
+    \begin{block}{GL Theory - $\psi$ parametro d'ordine}
+        \begin{columns}[T]
+            \begin{column}{0.5\textwidth}
+                \begin{align*}
+                    &f_s-f_n=a(T)|\psi|^2+\frac{b}{2}|\psi|^4(+c|\psi|^6+\ldots)\\
+                    &
+                \end{align*}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                Local density of superconducting electrons $n_s=|\psi|^2$ - Transizione continua: $\alpha(T-T_c)$; minimo a $|\psi|^2=-\frac{\alpha}{\beta}$
+            \end{column}
+        \end{columns}
+        
+    \end{block}
+\end{frame}
+
+\begin{frame}{MQ Wizard}
+    \begin{block}{Spazio di Hilbert per stato a due particelle a partire da stati a particella singola}
+    Per un sistema costituito da due particelle, lo spazio di Hilbert totale e il prodotto tensoriale degli spazi a singola particella $\mathcal{H}=\mathcal{H}_1\otimes\mathcal{H}_2$.
+
+    Se la prima particella si trova nello stato $\ket{\vb{k}_1}\in\mathcal{H}_1$ e la seconda nello stato $\ket{\vb{k}_2}\in\mathcal{H}_2$, il corrispondente stato prodotto a due particelle \'e $\ket{\vb{k}_1,\vb{k}_2}=\ket{\vb{k}_1}\otimes\ket{\vb{k}_2}$. Nella rappresentazione delle coordinate si ha $\Psi(\vb{r}_1,\vb{r}_2)=\braket{\vb{r}_1,\vb{r}_2|\vb{k}_1,\vb{k}_2}$, con $\ket{\vb{r}_1,\vb{r}_2}=\ket{\vb{r}_1}\otimes\ket{\vb{r}_2}$. Poich\'e il prodotto scalare sullo spazio prodotto fattorizza $\braket{\vb{r}_1,\vb{r}_2|\vb{k}_1,\vb{k}_2}=\braket{\vb{r}_1|\vb{k}_1}\braket{\vb{r}_2|\vb{k}_2}$, la funzione d'onda a due particelle \'e quindi il prodotto delle funzioni
+d'onda a singola particella $\Psi(\vb{r}_1,\vb{r}_2)=\phi_{\vb{k}_1}(\vb{r}_1)\phi_{\vb{k}_2}(\vb{r}_2)$. Nel caso di stati a onda piana $\phi_{\vb{k}}(\vb{r})=\frac{1}{\sqrt{\Omega}}e^{i\vb{k}\cdot\vb{r}}$, segue $\Psi(\vb{r}_1,\vb{r}_2)=\frac{1}{\Omega}e^{i\vb{k}_1\cdot\vb{r}_1}e^{i\vb{k}_2\cdot\vb{r}_2}$. L'utilizzo di stati prodotto non implica che l'interazione tra le particelle sia nulla: per $V\neq0$ essi possono essere usati come base di espansione, mentre gli autostati dell'Hamiltoniana completa sono in generale sovrapposizioni di pi\'u stati prodotto.
+    \end{block}
+\end{frame}
+
+\begin{frame}{Cooper pairs}
+    \begin{itemize}
+        \item Model of pair of electrons added to Fermi sea at $T=0$, and they interact with each other but not with sea.
+        \item Weak attraction can bind pairs of Fermions into bound state: Because of the Fermi sea, even an arbitrarily weak attraction can lower the energy of two fermions below $2E_F$, producing a bound Cooper pair.
+        \item Two fermions must have equal and opposite momenta:
+            \begin{columns}[T]
+                \begin{column}{0.5\textwidth}
+                    $\vec{k}$ momento relativo dei due fermioni, $\vec{K}$ momento totale della coppia
+                    \begin{align*}
+                        &\vec{k}_1=\vec{k}+\frac{\vec{K}}{1},\ \vec{k}_2=-\vec{k}+\frac{K}{2}
+                    \end{align*}
+                \end{column}
+                \begin{column}{0.5\textwidth}
+                    In BCS standard questo passaggio \'e giustificato da energetica e simmetria: si accoppiano stati time-reversed $(\vec{k},\shortuparrow)$, $(-\vec{k},\shortdownarrow)$.
+                \end{column}
+            \end{columns}
+                    \begin{align*}
+                        &E_{kin}=\frac{\hbar^2}{2m}[(\vec{k}+\frac{\vec{K}}{2})^2+(-\vec{k}+\frac{\vec{K}}{2})^2]=\frac{\hbar^2k^2}{m}+\frac{\vec{K}^2}{4m}\tag{Energia minima per $K=0$}
+                    \end{align*}
+                \item Funzione d'onda orbitale della forma $\psi_0(\vec{r}_1,\vec{r}_2)=\sum_{\vec{k}}\exp{i\scap{k}{r}_1}\exp{-i\scap{k}{r}_2}$
+                \item Antisymmetry of total wavefunction to exchange of pair of fermions: searching for bound state we use $\cos{\vec{k}(\vec{r}_2-\vec{r}_2)}$ hence we have to use the antisimmetric singlet of spin as it gives higher probability to found the two particles near each other: $\psi_0(\vec{r}_1-\vec{r}_2)=[\sum_{k>k_F}g_{\vec{k}}\cos{\vec{k}(\vec{r}_1-\vec{r}_2)}](\alpha_1\beta_2-\beta_1\alpha_2)$
+                \item Inserting into \schr{} eq: $V_{kk'}=\invers{\Omega}\int V(r)\exp{i(\vec{k'}-\vec{k})\cdot\vec{r}}$
+                    \begin{columns}[T]
+                        \begin{column}{0.5\textwidth}
+                    \begin{equation*}
+                        (E-2\epsilon_k)g_k=\sum_{k'>k_F}V_{kk'}g_{k'}
+                    \end{equation*}
+                        \end{column}
+                        \begin{column}{0.5\textwidth}
+                            \begin{align*}
+                                &(H_0+V)\psi=E\psi,\ H_0=-\frac{\hbar^2}{2m}(\nabla_1^2+\nabla_2^2)\\
+                                &H_0\phi_k=2\epsilon_k\phi_k
+                            \end{align*}
+                        \end{column}
+                    \end{columns}
+                    
+                    con $\epsilon_{k}=\frac{\hbar^2k^2}{2m}$ energia onda piana imperturbata. Per $V=0$ autostato \'e coppia con $\vec{k}$ ed $E=2\epsilon_{k}$. Quando $V\neq0$ l'interazione collega $(\vec{k},-\vec{k})\leftrightarrow(\vec{k'},-\vec{k'})$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Bound pair state - Cooper Approx}
+    \begin{itemize}
+        \item If a set of $g_k$ exists satisfying $(E-2\epsilon_k)g_k=\sum_{k'>k_F}V_{kk'}g_{k'}$: a bound-state exists.
+        \item Cooper Approx: $V_{kk'}=$\lbt{-V\quad E_F<E<E_F+\hbar\omega_c}{0}: due elettroni indipendenti posti appena sopra il mare di Fermi hanno energia $2E_F$ quindi binding energy $E_B=2E_F-E>0$.
+        \item Summing both side of bound-state energy equation and using Copper Approx: $\frac{1}{V}=\sum_{k>k_F}\invers{[2\epsilon_k-E]}$.
+        \item Passiamo al continuo di livelli energetici: $\sum\to\int N(\epsilon)\,d\epsilon$ con $N(0)$ densit\'a di stati attorno all'energia di Fermi per elettroni con 1 orientazione di spin: $\hbar\omega_c$ piccolo considero $N(\epsilon)\approx N(E_F)\approx N(0)$, quindi
+            \begin{align*}
+                &\frac{1}{V}=N(0)\int_{E_F}^{E_F+\hbar\omega_c}\frac{d\epsilon}{2\epsilon-E}=\frac{1}{2}N(0)\ln{\frac{2E_F-E+2\hbar\omega_c}{2E_F-E}}
+            \end{align*}
+        \item Weak coupling approx $VN(0)\ll1$ (in most classic superconductors it's found that $N(0)V<0.3$)
+            \begin{align*}
+                &E\approx 2E_F-2\hbar\omega_c\exp{-\frac{2}{N(0)V}}
+            \end{align*}
+            cio\'e esiste stato legato con energia negativa risp. superficie di Fermi costituito da elettroni con $k>k_F$.
+        \item Electron states within range $\approx E'$ above $E_F$ are those most involved in bound states formation:
+            \begin{columns}[T]
+                \begin{column}{0.5\textwidth}
+                    \begin{align*}
+                        &\psi(r)\propto\sum_{k\geq k_F}\frac{\cos{\scap{k}{r}}}{2\xi_{\vec{k}}+E'},\ \xi_{\vec{k}}=\epsilon_{\vec{k}}-E_F,\ E'=2E_F-E>0\\
+                        &E'\approx2\hbar\omega_c\exp{-\frac{2}{N(0)V}}\ll\hbar\omega_c
+                    \end{align*}
+                \end{column}
+                \begin{column}{0.5\textwidth}
+                    Spherical symmetry: S-state as well singlet spin state - Weight factor $\invers{2\xi_{k}+E'}$ has maximum at $\frac{1}{E'}$ where $\xi_k=0$. La regione vicina al cutoff $E_F+\hbar\omega_c$ \'e molto lontana dagli stati che dominano la coppia; superfluido neutronico non ha cutoff fononico dei superconduttori.
+                \end{column}
+            \end{columns}
+        \item Size of bound pairs (Pippard): Coppia molto selettiva in $k$ \'e distante in $r$ - $\Delta r\geq \frac{1}{\Delta k}\approx\frac{\hbar \nu_F}{E'}$.
+                    \begin{align*}
+                        &\epsilon_k-E_F\approx\TDy{k}{\epsilon}|_{k_F}(k-k_F),\ \frac{1}{\hbar}\TDy{k}{\epsilon}=v_F:\ \Rightarrow \xi_k=\epsilon_k-E_F=\hbar v_F(k-k_F)\Rightarrow \Delta\xi\approx E'\Rightarrow \Delta k\approx \frac{E'}{\hbar v_f}
+                    \end{align*}
+    \end{itemize}
+\end{frame}
+
+\subsection{Superfluidity: BCS}
+
+\subsection{Superfluidity: Landau-Ginzburg}
+

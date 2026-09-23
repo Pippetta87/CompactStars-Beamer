@@ -8,7 +8,7 @@
 %
 \subtitle{Stelle Compatte: Pulsar, Stelle Neutroni Rotanti, Modello dipolo, TOV, Mean Field Theory.}
 
-\date{2026 12 Giugno, \today}
+\date{2026 24 Agosto, \today}
 
 \subject{Stelle di Neutroni (e Nane Bianche): Dipolo Magnetico rotante (Pulsar), equilibrio idrostatico in RG e massa limite, nuclear matter, strange stars.}
 
@@ -314,14 +314,22 @@
 \makeatother%
 %%%Display section subsection (title page) at beginning section subsection
 \AtBeginSection{
+\addtocounter{sectionkey}{1}%using \thesection
 \frameinlbffalse
 \frame{\sectionpage}
-\frameinlbffalse
-\begin{frame}{Lista frame importanti di questa sezione}
+\begin{frame}{Lista frame/keywords importanti di questa sezione}
    %\listofsecframes
-   \listofcherryframes
+   
+\begin{columns}[T]
+    \begin{column}{0.4\textwidth}
+        \listofcherryframes
+    \end{column}
+    \begin{column}{0.6\textwidth}
+        \listofkeywords
+    \end{column}
+\end{columns}
+
 \end{frame}
-%%\addtocounter{sectionkey}{1}%using \thesection
 }
 \AtBeginSubsection{
 \frameinlbffalse
@@ -334,42 +342,28 @@
 \leavevmode%
 \hbox{%Refintro
     \begin{beamercolorbox}[wd=.07\paperwidth,ht=5.5ex,dp=0ex,center]{author in head/foot}%
-        \hyperlink{rl1617}{17}-\hyperlink{rl1819}{19}-\hyperlink{rl2122}{22}-\hyperlink{rl2324}{24}|\hyperlink{succo}{S()}-\hyperlink{quadnerorosa}{Q(N)}%
+        \hyperlink{succo}{S()}-\hyperlink{}{Q}%
     \end{beamercolorbox}%
 }%
 \hbox{%
-    \begin{beamercolorbox}[wd=.15\paperwidth,ht=5.5ex,dp=0ex,center]{author in head/foot}%refs Part 2
-        %\ifthenelse{\value{page}<\getpagerefnumber{stellarsolve}\and\value{page}>\getpagerefnumber{stellarstructure}}{ \hyperlink{stellarstructure}{\emph{SSE}}}{\hyperlink{stellarstructure}{\textbf{SSE}}}
-%%\value{page},\numexpr\getpagerefnumber{stellarstructure}\relax
-        \hyperlink{stellarstructure}{SSE}:\hyperlink{stellarstructure}{EqS}-\hyperlink{transport}{trans}(\hyperlink{trarad}{rad}(\hyperlink{kapparad}{$\kappa$})-\hyperlink{tracond}{cond}-\hyperlink{traconv}{$\alpha$}-\hyperlink{}{$L_G$}--\hyperlink{epsilonpp}{$PP$}-\hyperlink{epsiloncno}{CNO}-\hyperlink{epsilonheavy}{late}-\hyperlink{epsilonnu}{$\nu$})%
+    \begin{beamercolorbox}[wd=.15\paperwidth,ht=5.5ex,dp=0ex,center]{author in head/foot}%refs RG
+        \hyperlink{linkdesttoRG}{RG}:%
     \end{beamercolorbox}%Equazioni struttura stellare, input, stabilit\'a
 }%
 \hbox{%
-    \begin{beamercolorbox}[wd=.1\paperwidth,ht=5.5ex,dp=0ex,center]{author in head/foot}%refs Part 2
-        %\ifthenelse{\value{page}<\getpagerefnumber{stellarsolve}\and\value{page}>\getpagerefnumber{stellarstructure}}{ \hyperlink{stellarstructure}{\emph{SSE}}}{\hyperlink{stellarstructure}{\textbf{SSE}}}
-%%\value{page},\numexpr\getpagerefnumber{stellarstructure}\relax
-        \hyperlink{stellarplasmamodel}{m\&M}(\hyperlink{opacitysources}{$\kappa$}-\hyperlink{diffusion}{diff})-\hyperlink{reactionrates}{$\exv{\sigma v}$})%
+    \begin{beamercolorbox}[wd=.1\paperwidth,ht=5.5ex,dp=0ex,center]{author in head/foot}%refs microphysics
+        \hyperlink{linktomicrophysics}{$\micro$ph}%
     \end{beamercolorbox}%Equazioni struttura stellare, input, stabilit\'a
 }%
 \hbox{%
-    \begin{beamercolorbox}[wd=.12\paperwidth,ht=5.5ex,dp=0ex,center]{author in head/foot}%refs nummod
-\hyperlink{ormagandqual}{OM}-\hyperlink{poly}{poly}-\hyperlink{homology}{hom}-\hyperlink{stellarsolve}{nsol}%
+    \begin{beamercolorbox}[wd=.12\paperwidth,ht=5.5ex,dp=0ex,center]{author in head/foot}%refs Compact object WD
+\hyperlink{linktowd}{WD}%
 \end{beamercolorbox}%Soluzione modelli stellari
 }%
 \hbox{%
-    \begin{beamercolorbox}[wd=.1\paperwidth,ht=5.5ex,dp=0ex,center]{author in head/foot}%refs star formation to pre-MS
-	\hyperlink{starformation}{$*$Formation}:\hyperlink{protostellar}{proto}-\hyperlink{preMS}{pMS}%
+    \begin{beamercolorbox}[wd=.1\paperwidth,ht=5.5ex,dp=0ex,center]{author in head/foot}%refs compact object NS
+	\hyperlink{linktoNS}{NS}%
 \end{beamercolorbox}%
-}%
-\hbox{%
-   \begin{beamercolorbox}[wd=.3\paperwidth,ht=5.5ex,dp=0ex,center]{author in head/foot}%refs stellarevolution
-            \hyperlink{stellarevolution}{Evol}:\hyperlink{preMS}{PMS}-\hyperlink{MS}{MS}-\hyperlink{LMS}{LMS}-\hyperlink{UMS}{UMS}-\hyperlink{MSdeps}{deps}-\hyperlink{malure}{M-L}-\hyperlink{postMS}{postMS}-\hyperlink{ZAHB}{ZAHB}-\hyperlink{HBlowM}{HBlowM}-\hyperlink{HBIM}{HB-I/M}-\hyperlink{HBpulsating}{HB-puls}-\hyperlink{AGB}{AGB}-\hyperlink{WD}{WD}-\hyperlink{lateintM}{lateintm}-\hyperlink{SN}{SN}\hyperlink{sun}{$\odot$}%
-        \end{beamercolorbox}%Equazioni struttura stellare
-    }%
-    \hbox{%
-        \begin{beamercolorbox}[wd=.12\paperwidth,ht=5.5ex,dp=0ex,center]{author in head/foot}%refs 
-	\hyperlink{MW}{MW}:\hyperlink{BBN}{BBN}|\hyperlink{}{?}|\hyperlink{starpop}{pop}:\hyperlink{oldPPS}{oPPS}-\hyperlink{youngPPS}{yPPS}-\hyperlink{ageindicator}{age}-\hyperlink{USP}{uSP}%
-\end{beamercolorbox}%Popolazione stellare/ Galassia
 }%
 \hbox{%
     \begin{beamercolorbox}[wd=.02\paperwidth,ht=5.5ex,dp=0ex,center]{author in head/foot}%
