@@ -2,16 +2,175 @@
     
 \end{frame}
 
+\begin{frame}{Convenzioni elettromagnetiche: idea generale}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+\small
+\[
+\boxed{\text{Le differenze stanno soprattutto nei fattori }4\pi,\ \varepsilon_0,\ \mu_0,\ c}
+\]
+
+\begin{itemize}
+  \item \textbf{SI}: mantiene espliciti \(\varepsilon_0,\mu_0\).
+  \item \textbf{cgs gaussiano}: assorbe \(\varepsilon_0,\mu_0\); compaiono fattori \(4\pi\).
+  \item \textbf{Heaviside--Lorentz}: unità razionalizzate; i \(4\pi\) spariscono da Maxwell.
+  \item \textbf{Unità naturali}: spesso \(\hbar=c=1\); usate in QFT/fisica nucleare.
+\end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+\small
+\[
+\begin{array}{c|c|c}
+\text{sistema} & V(r) & \alpha \\ \hline
+\text{SI} &
+\dfrac{q_1q_2}{4\pi\varepsilon_0 r} &
+\dfrac{e^2}{4\pi\varepsilon_0\hbar c}
+\\[3mm]
+\text{cgs gaussiano} &
+\dfrac{q_1q_2}{r} &
+\dfrac{e^2}{\hbar c}
+\\[3mm]
+\text{Heaviside--Lorentz} &
+\dfrac{q_1q_2}{4\pi r} &
+\dfrac{e^2}{4\pi\hbar c}
+\end{array}
+\]
+
+In unità naturali \(\hbar=c=1\):
+\[
+\boxed{
+V(r)=\frac{\alpha}{r}
+}
+\]
+
+In fisica nucleare:
+\[
+\boxed{
+\alpha\hbar c \simeq 1.44\ \mathrm{MeV\,fm}
+}
+\]
+            
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Maxwell: SI vs cgs gaussiano - Energia elettromagnetica}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+\small
+\[
+\begin{array}{c|c|c}
+ & \text{SI} & \text{cgs gaussiano} \\ \hline
+\nabla\cdot\mathbf E &
+\dfrac{\rho}{\varepsilon_0} &
+4\pi\rho
+\\[3mm]
+\nabla\cdot\mathbf B &
+0 & 0
+\\[2mm]
+\nabla\times\mathbf E &
+-\dfrac{\partial\mathbf B}{\partial t} &
+-\dfrac1c\dfrac{\partial\mathbf B}{\partial t}
+\\[3mm]
+\nabla\times\mathbf B &
+\mu_0\mathbf J+\mu_0\varepsilon_0
+\dfrac{\partial\mathbf E}{\partial t}
+&
+\dfrac{4\pi}{c}\mathbf J+
+\dfrac1c\dfrac{\partial\mathbf E}{\partial t}
+\end{array}
+\]
+        \end{column}
+        \begin{column}{0.5\textwidth}
+\small
+\[
+\begin{array}{c|c|c}
+\text{sistema} & u_{\rm EM} & \mathbf S \\ \hline
+\text{SI} &
+\dfrac12\left(\varepsilon_0E^2+\dfrac{B^2}{\mu_0}\right)
+&
+\dfrac1{\mu_0}\mathbf E\times\mathbf B
+\\[4mm]
+\text{cgs gaussiano} &
+\dfrac{E^2+B^2}{8\pi}
+&
+\dfrac{c}{4\pi}\mathbf E\times\mathbf B
+\\[4mm]
+\text{Heaviside--Lorentz} &
+\dfrac12(E^2+B^2)
+&
+\mathbf E\times\mathbf B
+\end{array}
+\]
+
+Per una sfera uniformemente carica in cgs:
+\[
+\boxed{
+U_{\rm Coul}=\frac35\frac{Q^2}{R}
+}
+\]
+            
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Promemoria per fisica nucleare}
+\small
+\begin{itemize}
+  \item In cgs/nucleare:
+  \[
+  e^2=\alpha\hbar c\simeq1.44\ \mathrm{MeV\,fm}.
+  \]
+
+  \item Energia Coulombiana di una sfera con \(Z\) protoni:
+  \[
+  \boxed{
+  U_{\rm Coul}
+  =
+  \frac35\frac{Z^2e^2}{R}
+  }
+  \]
+
+  \item In unità naturali:
+  \[
+  \hbar=c=1,
+  \qquad
+  e^2=
+  \begin{cases}
+  \alpha & \text{gaussiano},\\
+  4\pi\alpha & \text{Heaviside--Lorentz}.
+  \end{cases}
+  \]
+
+  \item Attenzione: quando un testo scrive \(e^2\), bisogna capire
+  se usa convenzione gaussiana o razionalizzata.
+\end{itemize}
+\end{frame}
+
 \begin{frame}{Fermi energy}
 La definizione di energia di Fermi non \'e completamente universale.
     \begin{itemize}
         \item In fisica relativistica, nucleare e delle stelle compatte \'e comune definire l'energia di Fermi come l'energia totale della particella alla superficie di Fermi: $E_F=\sqrt{p_F^2c^2+m^2c^4}$ oppure, in unità naturali $\hbar=c=1$ $E_F=\sqrt{k_F^2+m^2}$.
 Con questa convenzione la massa a riposo \'e inclusa. Per un gas di Fermi libero a temperatura nulla vale inoltre $\mu(T=0)=E_F$.
-\item In trattazioni non relativistiche, invece, con energia di Fermi si indica spesso la sola energia cinetica $\epsilon_F=\frac{p_F^2}{2m}$.
+\item In trattazioni non relativi stiche, invece, con energia di Fermi si indica spesso la sola energia cinetica $\epsilon_F=\frac{p_F^2}{2m}$.
     L'analogo relativistico della sola parte cinetica \'e $E_F^{\mathrm{kin}}=\sqrt{p_F^2c^2+m^2c^4}-mc^2$, così che $E_F^{\mathrm{tot}}=mc^2+E_F^{\mathrm{kin}}$. Quando si considera il grado di degenerazione, la scala energetica rilevante \'e la parte cinetica dell'energia di Fermi, $k_B T_F = E_F^{\mathrm{kin}}$ e il regime fortemente degenere \'e caratterizzato da $\frac{T}{T_F}=\frac{k_B T}{E_F^{\mathrm{kin}}}\ll 1$. Usare invece l'energia di Fermi comprensiva della massa a riposo renderebbe fuorviante il confronto, soprattutto per particelle massive come protoni e neutroni.
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Energia di un nucleo legato}
+
+Per un sistema di \(A\) nucleoni, schematicamente: $E_{tot}=A m_N + T + V$ dove $T>0$ \'e l'energia cinetica interna dei nucleoni e \(V\) contiene le interazioni nucleari. Definiamo l'energia di legame rispetto a \(A\) nucleoni liberi a riposo: $E_b\equiv E_{tot}-A m_N=T+V$. Per un sistema legato: $E_b<0$; quindi l'energia cinetica dei nucleoni legati non è trascurata: il legame richiede semplicemente che $T+V<0$ ossia che il contributo attrattivo dell'interazione prevalga sull'energia cinetica. Con la convenzione alternativa \(B>0\) per la binding energy: $B=-E_b$.
+
+Energia per nucleone e densit\'a di energia. Per materia nucleare uniforme a densit\'a barionica \(n_B\), $\varepsilon=\varepsilon_{rest}+\varepsilon_{kin}+\varepsilon_{int}$ \'e la densit\'a di energia totale; poich\'e $\varepsilon_{rest}=n_B m_N$, si ha $\frac{\varepsilon}{n_B}=m_N+\frac{T}{A}+\frac{V}{A}$ e quindi, per definizione, $\frac{E_b}{A}=\frac{\varepsilon}{n_B}-m_N=\frac{T}{A}+\frac{V}{A}$. 
+Alla saturazione della symmetric nuclear matter: $\frac{E_b}{A}(n_0)\simeq -16~\mathrm{MeV}$ per cui $\frac{\varepsilon(n_0)}{n_0}\simeq m_N-16~\mathrm{MeV}$
+
+Moto di Fermi ed energia di legame. Alla densit\'a di saturazione, $k_{F,0}\simeq 260~\mathrm{MeV}$. Nel semplice modello di gas di Fermi non relativistico: $T_F=\frac{k_F^2}{2m_N}\simeq 36~\mathrm{MeV}$, mentre l'energia cinetica media \'e $\frac{T}{A}=\frac{3}{5}T_F\simeq 22~\mathrm{MeV}$, quindi i nucleoni nel ground state hanno una notevole Fermi motion.
+
+Poich\'e $\frac{E_b}{A}=\frac{T}{A}+\frac{V}{A}\simeq -16~\mathrm{MeV}$, schematicamente si pu\'o avere $\frac{T}{A}\sim +22~\mathrm{MeV}$, $\frac{V}{A}\sim -38~\mathrm{MeV}$. $E_b/A=-16~\mathrm{MeV}$ \'e il bilancio netto $T/A+V/A$ non il solo contributo potenziale.
+
+\end{frame}
 
 \begin{frame}{Constituents of NS: degenerate leptons, baryons and quarks.}
     \begin{itemize}

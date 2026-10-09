@@ -80,7 +80,7 @@
 \end{frame}
 
 \begin{frame}{Nuclear shell model}
-    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},rotate=90,clip,keepaspectratio,width=0.95\textwidth]{Schaffner/magic-numbers-shell}\label{fig:Schaffner-magic-numbers-shell}\end{figure}
+    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},rotate=90,clip,keepaspectratio,width=0.95\textwidth]{Schaffner_magic-numbers-shell}\label{fig:Schaffner-magic-numbers-shell}\end{figure}
     Il pattern che emerge dal modello per composizione di Oter Crust of NS \'e analogo a quello dei numeri magici per chiusura shell protoni/neutroni del modello nucleare a shell.
     \begin{columns}[T]
         \begin{column}{0.5\textwidth}
@@ -166,7 +166,7 @@
     \begin{itemize}
         \item Tipicamente in OC abbiamo $Z\approx\numrange{26}{46}$
         \item La carica dei nuclei \'e determinata dal beta-equilibrio: per densit\'a superiori a \SI{6e11}{\gram\per\cubic\cm} si hanno piccoli discostamenti di carica nucleare dovuti alle differenze nei modelli nucleari.
-    \end{itemize}<++>
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{EOS of NS Outer Crust.}
@@ -354,7 +354,7 @@
 
 \end{frame}
 
-\begin{frame}{Stima spessore crosta e pasta}
+\begin{frame}{Stima spessore crosta}
     \begin{itemize}
         \item For inner pressure we take pressure of NR neutrons, instead of pressure of UR electron as in outer crust. At inner boundary of inner crust (gas degenere NR, $T=0$)
             \begin{columns}[T]
@@ -371,18 +371,290 @@
             \end{columns}
                    
         \item \xaumenta{M_*}, \xdiminuisce{\Delta R_{crust}} - Usando la relazione $\frac{\Delta R}{R}\approx \frac{1-2C}{C}\frac{P_b}{\epsilon_b}$: \SI{80}{\meter} for a $2\msun{}$ star with $R=\SI{10}{\kilo\meter}$ and $C=0.3$, and \SI{400}{\meter} for a $1.4\msun{}$ star with $R=\SI{15}{\kilo\meter}$ and $C=0.15$.
-        \item Pasta in the Crust (Ravehall '83)- Asymmetrical Wigner-Seitz cells: cells gettin closer can marge in one direction to for a rod of nuclear matter, when this happen for several chains along same direction we have a spaghetti-like structure surrounded by liquid neutron. Increasing further density many rods form a plate, giving rise to a lasagna-like structure of nuclear matter plates alternating with pure neutron matter plate. Aumentando ancora la densit\'a si invertono i ruoli tra nuclear matter densa e dripping di liquido neutronico: la lasagna \'e self-inverted, per gli spaghetti avro rods di neutroni liquidi circondati da materia nucleare densa, infine bolle di neutroni liquidi circondati da materia nucleare densa.
-        \item Condizioni stabilit\'a pasta-phase: considero energia singola cella
+            
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Pasta in the Crust}
+    \begin{itemize}
+        \item Pasta in the Crust (Ravehall '83)- Asymmetrical Wigner-Seitz cells: cells gettin closer can marge in one direction to form rods of dense nuclear matter (dnm) - several chains along same direction form spaghetti-like structure surrounded by liquid neutron. Increasing further density many rods form a plate, givin rise to a lasagna-like structure of dnm plates surrounded by pure neutron matter plate. A densit\'a maggiori si invertono i ruoli tra d.n.m. e dripping di liquido neutronico: lasagna \'e self-inverted, per gli spaghetti ho rods di neutroni liquidi circondati da dnm, infine bolle di neutroni liquidi circondati da dnm.
+        \item Condizioni stabilit\'a pasta-phase: energia singola cella $\frac{E_{tot}}{V}=\epsilon_t=\epsilon_b+\epsilon_s+\epsilon_C+\epsilon_e$: bulk, superficie, Coulomb, elettroni, minimizzo risp. raggio $R_N$ della struttura nucleare: bulk e electron non dipendono da $R_N$ quindi non influenzano il minimo. $dq=4\pi r^2\rho\,dr$, $\phi(r)=\frac{1}{4\pi\epsilon_0}\frac{q(r)}{r}$, en. potenziale $dU=\phi(r)\,dq$: $U\propto \frac{Q^2}{R_N}$.
+        \item $n_e(r)$ uniforme (lunghezza onda compton $(\frac{\hbar}{m_ec}=)\frac{1}{2\pi m_e}\approx\SI{e-12}{\meter}$, $R_{WS}\approx\SIrange{10}{20}{\femto\meter}$, o pi\'u formalmente $C_C^{screen}=\frac{e^2}{r}\exp{-\frac{r}{\lambda_{TF}}}$, dove $\lambda_{TF}=\frac{\pi^2}{2e}(k_F\sqrt{k_F^2+m_e^2})\expy{-\frac{1}{2}}$ e $k_F=(3\pi^2\rho_e)\expy{\frac{1}{3}}$: se $\lambda_{TF}\gg L$, lunghezza d'onda della materia nucleare, il gas elettronico non riesce a schermare localmente rods etc e resta quasi uniforme).
+        \item $\epsilon_{surf}\propto \frac{R_N^2}{R_N^3}=\frac{1}{R_N}$, $\epsilon_C\propto \frac{R_N^5}{R_N^3}=R_N^2$.
+        \item Minimiziamo la somma dei due termini: $\TDof{R_N}(\frac{C_s}{R_N}+C_cR_N^2)=0$ che da $\epsilon_s=2\epsilon_c$ e questo vale per le paste di dimensione superiore considerando la densit\'a di energia.
             \begin{columns}[T]
-                \begin{column}{0.25\textwidth}
-                    \begin{align*}
-                        &\frac{E_{tot}}{V}=\epsilon_t=\epsilon_b+\epsilon_s+\epsilon_C+\epsilon_e
-                    \end{align*}
+                \begin{column}{0.55\textwidth}
+\begin{align*}
+& Q \propto R_N^3,\ E_c\propto\frac{Q^2}{R_N}\propto R_N^5:\ \epsilon_c\propto R_N^2\tag{sfera}\\
+& \frac{Q}{L} \propto R_N^2,\ \frac{E_c}{L}\propto\left(\frac{Q}{L}\right)^2\propto R_N^4:\ \epsilon_c\propto R_N^2\tag{rod}\\
+& \frac{Q}{A} \propto R_N,\ \frac{E_{\rm C}}{A}\propto\left(\frac{Q}{A}\right)^2 R_N\propto R_N^3:\ \epsilon_c\propto R_N^2\tag{slab}
+\end{align*}
                 \end{column}
-                \begin{column}{0.75\textwidth}
-                    Densit\'a energia cella: bulk, superficie, Coulomb, elettroni. Energia minimizzata rispetto al raggio $R_N$ della struttura nucleare: bulk e electron non dipendono da $R_N$ quindi non influenzano il minimo: $n_e(r)$ uniforme (lunghezza onda compton $\frac{1}{2\pi m_e}\approx\SI{e-12}{\meter}$, $R_{WS}\approx\SIrange{10}{20}{\femto\meter}$)
+                \begin{column}{0.45\textwidth}
+                    rod di raggio $R_N$: $S_{rod}=2\pi R_N^2L$, $V_{rod}=\pi R_N^2L$ quindi $\frac{S_{rod}}{V_{rod}}\propto \frac{1}{R_N}$, per slab $S_{slab}=A^2$, $V_{slab}=2R_NA^2$ quindi $\frac{S_{slab}}{V_{slab}}\propto \frac{1}{R_N}$.
+                    Crosta interna ricca di neutroni ($N\gg Z$) bisogna sapere come la tensione superficiale cambia con l'asimmetria di isospin
+                    
+                \end{column}
+            \end{columns}
+    \end{itemize}
+\end{frame}
+
+\subsection{Outer core}
+
+\begin{frame}{Nuclear Matter}
+    \begin{itemize}
+        \item Infinite Symmetric nuclear matter: $A\to\infty$, $N=Z$, interazione coulombiana spenta. Binding energy per particles $\frac{E_b}{A}=a_v+a_sA\expy{-\frac{1}{3}}+a_cZ^2A\expy{-\frac{2}{3}}+a_{sym}\frac{(N-Z)^2}{A^2}+\frac{\delta(A)}{A}$ che si riduce a $\frac{E_b}{A}|_{n.m.}=a_V=-\SI{16}{\mega\ev}$.
+        \item Esperimenti di scattering su $^{208}Pb$ mostrano che dopo la superficie di \SI{1}{\femto\meter} la densit\'a \'e costante $n_0=\frac{A}{V}=\frac{3A}{4\pi R^3}=\frac{3}{4\pi r_0^3}$: fit from mean-field model $n_0\approx\SIrange{0.15}{0.16}{\per\cubic\femto\meter}$ or $\rho_0=m_Nn_0\approx\SIrange{140}{150}{\mega\ev\per\cubic\femto\meter}$, ie $\rho_0\approx\SIrange{2.5e14}{2.7e14}{\gram\per\cubic\cm}$, where $m_N=\SI{939}{\mega\ev}$. The Fermi momentum at saturation density is $k_{F,0}=(\frac{6\pi^2n_0}{\gamma})\expy{\frac{1}{3}}=\SI{260}{\mega\ev}$. $\gamma$ \'e il fattore di degenerazione per neutroni e protoni: $2I+1$ isospin e $2S+1$ di spin.
+        \item EOS of nuclear matter $\epsilon(n_B)$: $\frac{E_b}{A}(n_B)=\frac{\epsilon(n_B)}{n_B}-m_N$, we also know that $\frac{\epsilon(n_0)}{A}=-\SI{16}{\mega\ev}$. As nuclear matter is stable at $n_0$: $\PDy{n_0}{\epsilon}|_{n_0}=0$ (energia per nucleone $e(n_B)=\frac{\epsilon(n_B)}{n_B}$, quindi $\epsilon=n_Be$, quindi $\TDy{n_B}{\epsilon}=e+n_N\TDy{n_B}{e}$ e $P=n_B(e+n_B\TDy{n_B}{e})-n_Be$ da cui $P=n_B^2\TDy{(E/A)}{n_B}$).
+        \item Incompressibility - $K_{\infty}=k_{F,0}^2\TtwoDy{k_{F,0}}{(E/A)}|_{k_{F,0}}=9n_0^2\TtwoDy{n_0}{(E/A)}|_{n_0}$: related to excitation energy of nuclei (giant monopole, dipole res, $E_{ex}$ several \si{\mega\ev}, compression mode). Il valore sperimentale ricavato da fit della leptodermus expansion $K_A\approx K_{\infty}+K_{surf}A\expy{-\frac{1}{3}}+K_{\tau}(\frac{N-Z}{A})^2+K_C \frac{Z^2}{A\expy{\frac{4}{3}}}+\ldots$ con dati risonanze da $K_{\infty}\approx\SI{240+-20}{\mega\ev}$. $K_{\infty}$ non controlla espansione EOS in potenze di $(n-n_0)$ per alte densit\'a, ma solo attorno a densit\'a di saturazione $n_0$.
+        \item Hugenholtz-van Hove theorem - Fermi energy of Fermi gas with interactions at $T=0$ \'e l'energia media pi\'u la pressione per particella: $E_F=\TDy{n_B}{\epsilon}=\frac{\epsilon+P}{n_B}$; using $\epsilon=-P+\mu n$ so at $T=0$ Fermi energy is equal to chemical potential even if interactions are included.
+        \item At saturation density $P=0$: $E_F(n_0)=\frac{\epsilon}{n_B}|_{n_0}=\frac{\epsilon_b}{A}(n_0)+m_N=\SI{923}{\mega\ev}$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Dirac phenomenology: effective mass to include interactions}
+    \begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+            \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{/Schaffner/EOS_kinf_mstar}\label{fig:/Schaffner/EOS_kinf_mstar}\end{figure}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+    \begin{itemize}
+        \item Dirac phenomenology - $E_F=\sqrt{k_F^2+m^2}$, which will be modified when including interactions: shift in the mass of particle by some scalar potential $m^*=m-S(n)$ and 4-moment shifted by vectorial potential $\tensor{k^*}{^\mu}=\tensor{k}{^\mu}-\tensor{V}{^\mu}(n)$.
+        \item Consideriamo shift di energia con materia nucleare isotropa (spatial components of V null): $E_F=\sqrt{k_F^2+(m+S(n))^2}+\tensor{V}{^0}(n)=\sqrt{k_F^2+m^{*2}}+\tensor{V}{^0}(n)$ - at low density scalar potential dominate so nuclear matter is bound, at high density the repulsive vector potential becomes larger than scalar so nuclear matter get unbound, ie pressione positiva alla compressione: at saturation density $n_0$ $E_{F,0}=\SI{923}{\mega\ev}$ so if we fix $m^*$ we fix $\tensor{V}{^0}$.
+    \end{itemize}
+            
+        \end{column}
+    \end{columns}
+    \begin{itemize}
+        \item Combined potential felt by nucleons within a nucleus at zero momentum is $U_N(n_0)=S(n_0)+\tensor{V}{^0}(n_0)\approx-\SI{50}{\mega\ev}$; infatti usando il T. HvH, in NR limit, $\frac{E_b}{A}=E_{kin}(n_0)+U_N(n_0)=\frac{k_{F,0}^2}{2m}+U_N(n_0)$ ovvero $U_N(n_0)\approx \frac{E_b}{A}-\frac{k_{F,0}}{2m}=(-16-35)\si{\mega\ev}\approx-\SI{50}{\mega\ev}$ con $k_{F,0}\approx\SI{260}{\mega\ev}$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Pure neutron matter}
+    \begin{columns}[T]
+        \begin{column}{0.45\textwidth}
+    \begin{itemize}
+        \item Frazione protonica $x_p=\frac{Z}{A}$: per materia nucleare simmetrica $x_p=\frac{1}{2}$, per pure neutron matter $x_p=0$
+        \item Asimmetria $\delta=\frac{n_n-n_p}{n_n+n_p}=1-2x_p$: $\delta=1$ pure neutron matter, $\delta=0$ materia simmetrica
+        \item Neutron Drip line alla fine della crosta esterna: $\frac{Z}{A}\approx0.3$ quindi $\delta=1-2*0.3=0.4$; fine crosta interna cella WS ha $Z=40$, $N=1800$: $\frac{Z}{A}\approx\num{0.022}$, $x_p\approx\num{0.02}$, $\delta\approx\num{0.956}$
+        \item Nuclei N-rich conosciuti: $^8He$ $\frac{Z}{A}=0.25$,$^{11}Li$ $\frac{Z}{A}\approx0.27$, $^{14}Be$ $\frac{Z}{A}\approx0.29$ sono ancora lontani da $\frac{Z}{A}\approx\num{0.02}$ - I nuclei N rich sono esotici
+        \item I nuclei doppiamente magici usati nel fit della formula semiempirica di massa: $^{132}Sn$, $\frac{50}{132}\approx\num{0.38}$, $^{208}Pb$, $\frac{82}{208}\approx\num{0.39}$
+        \item I nuclei ordinari vincolano bene a bassi valori di $\delta$: $\frac{E_b}{A}(n,\delta)\approx \frac{E}{A}(n,0)+S(n)\delta^2+\ldots$ mentre PNM corrisp. $\delta=1$
+    \end{itemize}
+        $\frac{E_{PNM}}{A}-\frac{E_{SNM}}{A}\approx J$: differenza tra $\delta=0$ e $\delta=1$
+            \begin{align*}
+                &\frac{E_b}{A}(n,\delta)\approx E_0(n)+S(n)\delta^2,\ E_0(n_0)\approx-\SI{16}{\mega\ev}\\
+                &\frac{E}{A}(n_0,\delta=1)\approx-\SI{16}{\mega\ev}+J\Rightarrow \frac{E}{A}|_{PNM}(n_0)\approx\SI{16}{\mega\ev}
+            \end{align*}
+        \end{column}
+        \begin{column}{0.55\textwidth}
+            \begin{itemize}
+                \item Simmetria forza forte per $\Pproton\leftrightarrow\Pneutron$, o stabilit\'a materia simmetrica: $\frac{E}{A}(n_B,\delta)=\frac{E}{A}(n_B,0)+\frac{1}{2}\PtwoDy{\delta}{E/A}|_{\delta=0}\delta^2+O(\delta^4)$. Symmetry energy $S(n_B)=\frac{1}{2}\PtwoDy{\delta}{E/A}|_{\delta=0}$
+                \item Espansione attorno $n_0$:
+                    \begin{align*}
+                        &S(n_B)\approx S(n_0)+\PDy{n_B}{S}|_{n_0}(n_B-n_0)+\ldots\\
+                        &=J+L \frac{n_B-n_0}{3n_0}+\ldots\\
+                        &J=S(n_0)\approx\SI{32.3+-0.5}{\mega\ev}\tag{sym energy sat inf nuc mat}\\
+                        &L=3n_0\PDy{n_0}{S}|_{n_0}\approx\SI{53.5+-15.0}{\mega\ev}\tag{pendenza risp densit\'a a $n_0$}
+                    \end{align*}
+                \item $P_{PNM}(n_0)\approx \frac{n_0L}{3}$
+                    %Per materia simmetrica: $P=n^2\PDy{n}{E/A}$ ($E_0=\frac{E}{A}(n,\delta=0)$) quindi $P_{SNM}(n_0)=0$. Per materia asimmetrica: $\frac{E}{A}(n,\delta)\approx E_0(n)+S(n)\delta^2$ quindi $\PDy{n}{E/A}=E_0'(n)+S'(n)\delta^2$, $E_0'(n_0)=0$, $S?(n_0)\neq0$ quindi $P(n_0,\delta)\approx n_0^2S'(n_0)\delta^2$
+                    \begin{align*}
+                        &E_0=\frac{E}{A}(n,\delta=0)\tag{materia simmetrica}\\
+                        &P=n^2\PDy{n}{(E/A)}\ \Rightarrow\ P_{SNM}(n_0)=0\\
+                        &\frac{E}{A}(n,\delta)\approx E_0(n)+S(n)\delta^2\tag{materia asimmetrica}\\
+                        &\PDy{n}{E/A}=E_0'(n)+S'(n)\delta^2\Rightarrow P(n_0,\delta)\approx n_0^2S'(n_0)\delta^2\\
+                        &S'(n_0)=\frac{L}{3n_0}:\ P(n_0,\delta)\approx \frac{n_0L}{3}\delta^2\\
+                        &a_{sym}\approx\SI{23}{\mega\ev}<J\tag{SM: sym term has bulk+surf}
+                    \end{align*}
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{$L$ determina pressione PNM vicino $n_0$}
+    \begin{itemize}
+        \item $P=n_B^2\PDy{n_B}{(E/A)}$: $\frac{E}{A}|_{PNM}\approx E_0(n)+S(n)$, alla saturazione $E'_0(n_0)=0$, quindi $P_{PNM}=n_0^2S'(n_0)$ ma $S'(n_0)=\frac{L}{3n_0}$: $P_{PNM}(n_0)=\frac{L}{3}n_0$.
+        \item Confronto tra pressione PNM vicino $n_0$ e densit\'a di energia: $\frac{\epsilon}{n_0}=m_N+\frac{E_b}{A}\approx m_N-\SI{16}{\mega\ev}+J$ quindi $\epsilon\approx n_0(\SI{923}{\mega\ev}+J)$, il rapporto $\frac{P}{\epsilon}=\frac{L/3n_0}{(\SI{923}{\mega\ev}+J)n_0}$. Con $L=\SI{53.5}{\mega\ev}$, $J=\SI{23.3}{\mega\ev}$ si ha $\frac{P}{\epsilon}\approx\num{0.019}$: la pressione di PNM \'e molto minore di densit\'a di energia a $n_0$.
+        \item With ratio $P/\epsilon$ we can estimate thickness of outer part of NS up to $n_0$: using $\frac{\Delta R}{R}\approx \frac{1-2C}{C}\frac{P}{\epsilon}\approx\numrange{3}{6}\%$, con $C=\numrange{0.2}{0.3}$: most of NS is beyond saturation. Pressure is very low at $n_0$: increase of P and stiffening of EOS is needed for NS of $2\msun$.
+        \item Quali NS arrivano fino a $n_0$: $\frac{\Delta R}{R}\approx1$ e usando espressione precedente si trova $C\approx \frac{1}{50}\approx0.02$. Usnado modello pi\'u accurato: $M\approx0.2\msun$, $R\approx\SI{20}{\kilo\meter}$, la compattezza $C=\frac{GM}{c^2R}$, usando $\frac{G\msun}{c^2}\approx\SI{1.477}{\kilo\meter}$, quindi $C\approx \frac{1}{70}$ vicino a stima grezza. La fisica a $n_0$ non basta a sostenere normale NS.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Scattering elastico}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{align*}
+                &\psi(\vec{r})\xrightarrow{r\to\infty}\exp{ikz}+f(\theta)\frac{\exp{ikr}}{r}=\psi_{inc}+\psi_{sc}\tag{sc wf asint}\\
+                &f(\theta)=\sum_{l=0}(2l+1)f_l(k)P_l(\cos{\theta})\tag{sviluppo onde parziali}\\
+                &f_l(k)=\frac{\exp{2i\delta_l}-1}{2ik}=\frac{\exp{i\delta_l}\sin{\delta_l}}{k}=\frac{1}{k\cot{\delta_l}-ik}\\
+                &k\cot{\delta_0(k)}=-\frac{1}{a_s}+\frac{1}{2}r_ek^2+\ldots\tag{effective range expansion}\\
+                &\Rightarrow f_0(k)\approx \frac{1}{-\frac{1}{a_s}+\frac{1}{2}r_ek^2-ik}\xrightarrow{k\to0}-a_s
+            \end{align*}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item Poli $f_0(k)$: $-\frac{1}{a}-ik=0$ quindi $k=\frac{i}{a}$ - per $a>0$ la funzione d'onda radiale asintotica $\propto\exp{-\kappa r}$, con $\kappa=\frac{1}{a}$, funzione d'onda normalizzabile - stato legato $E=-\frac{\hbar^2\kappa^2}{2\mu}<0$; per $a<0$ $k=i\kappa$ con $\kappa=\frac{1}{|a|}$ - stato virtuale con funzione d'onda non normalizzabile ma $E<0$ (virtual state \'e un tipo specifico di polo sottosoglia).
+            \end{itemize}
+        \end{column}
+    \end{columns}
+    \begin{itemize}
+        \item In s-wave $f(\theta)\approx f_0(k)$: sezione d'urto differenziale isotropa $\TDy{\Omega}{\sigma}=|f_0|^2$ - $\sigma_s=\int\,d\Omega|f_0|^2=4\pi|f_0|^2$; $f_0=\frac{\exp{i\delta_0}\sin{\delta_0}}{k}$ quindi $\sigma_s=\frac{4\pi}{k^2}\sin^2{\delta_0}$ e $|f_0|_{max}=\frac{1}{k}$ da cui $\sigma_a^{max}=4\pi \frac{1}{k^2}$.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Pure Nuclear Matter EOS: from 2B to bulk matter}
+            \begin{itemize}
+                \item A basse densit\'a le propriet\'a di PNM possono essere ricavate da scatterin a due corpi NN:
+                \item I nucleoni sono fermioni di spin $\frac{1}{2}$ quindi la funzione d'onda del sistema di due nucleoni \'e antisimmetrica sotto scambio di coppie: $P_{12}\psi=-\psi$. $\Psi=\psi(\vec{r}_1,\vec{r}_2)\chi_{spin}\chi_{iso}$: stato s-wave $L=0$ quindi $\chi_{spin}\chi_{iso}$ antisimmetrica, $S=1$, $I=0$ ($^3S_1$ spin triplet) o $S=0$, $I=1$ ($^1S_0$ spin singlet); per nn si ha necessariamente $I=1$, $I_3=-1$ quindi isospin simmetrico e spin antisimmetrico; il canale $^3S_1$, $I=0$ \'e il deutone \Pproton\Pneutron (pi\'u componente $^3D_1$ dovuto alla forza tensoriale)
+                \item \Pneutron\Pneutron non forma stato legato ma c'\'e ''risonanza sotto-soglia''/near-threshold virtual state: $a_{nn}\approx-\SI{18.5}{\femto\meter}$, $r_e\approx\SI{2.7}{\femto\meter}$, $|a_{nn}|\gg r_e$ cio\'e scattering length maggiore del range di interazione nucleare quindi il sistema \Pneutron\Pneutron nel canale $^1S_0$ \'e vicino alla formazione di uno stato legato, $k_{pole}=-\frac{i}{|a|}$ stato virtuale vicino a $E=0$ (distanza energetica caratteristica dalla soglio $\frac{\hbar^2}{m_na^2}\approx\SI{0.1}{\mega\ev}$): $a<0$ indica che non \'e presente un vero shallow bound state - se $a_s$ fosse grande e positivo avrei stato debolmente legato con $E_B=\frac{\hbar^2}{ma^2}$
+                \item Unitary gas - regime quasi-universale del gas di fermi fortemente interagente: si ha quando $k_F|a_s|$ grande e $k_Fr_e$ rimane relativamente piccolo e $r_e\ll\invers{k_F}$ cio\'e distanze molto maggiori di range forza forte. $a\gg \frac{1}{k_F}$: scattering length molto pi\'u grande della distanza caratteristica associata alla densit\'a, $f_0(k)\approx \frac{1}{-ik}=\frac{i}{k}$ - lo scattering non dipende pi\'u dai dettagli microscopici del potenziale nucleare, $\sigma_s=4\pi|f_0|^2\approx \frac{4\pi}{k^2}$ (limite massimo consentito da unitariet\'a per s-wave).
+                \item Densit\'a critica $a_sk_F\approx1$, regime quasi-unitario $k_Fa_s\gg1$: $n=\frac{k_F^3}{3\pi^2}$, $d\approx n\expy{-\frac{1}{3}}$, quindi $d\approx \frac{3.09}{k_F}\approx \frac{\pi}{k_F}$ - $k_F\approx \frac{\pi}{a_s}\approx\SI{33.5}{\mega\ev}\approx\SI{0.17}{\per\femto\meter}$ (pi\'u precisamente $d=\frac{\lambda_F}{2}=\frac{\pi}{k_F}$).
+                \item Range densit\'a unitary Fermi gas in NS: $\num{e-3}n_0(\text{ordine grandezza dripline})<n<0.1n_0$ - A densit\'a pi\'u alte non basta 2B interaction
+            \end{itemize}
+\end{frame}
+
+\begin{frame}{Unitary Fermi Gas: gas diluito fortemente interagente e oltre}
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+    \begin{itemize}
+        \item Biblio: ''Low-Density Neutron Matter and the Unitary Limit''
+        \item Quando $a\to\infty$, $r_e\to0$ non rimane alcuna lunghezza microscopica dell'interazione: la sola scala di lunghezza del sistema a molti corpi \'e $\invers{k_F}$
+        \item Energia proporzionale a energia di Fermi $\frac{E}{N}\propto E_F$: uni scala disponibile $E_F=\frac{\hbar^2k^2}{2m_n}$ (gas Fermi libero a $T=0$ $(\frac{E}{N})_{FG}=\frac{3}{5}E_F$): $(\frac{E}{N})_{UG}=\xi(\frac{E}{N})_{FG}=\xi \frac{3\hbar^2k_F^2}{10m_n}$, $\xi$ \'e il Bertsch parameter.
+        \item \(\xi\) non dipende dal dettaglio del potenziale microscopico: nel limite unitario \'e un numero universale per gas di fermioni a due componenti con interazione a corto raggio. Gli esperimenti con atomi ultrafreddi, ie \(^{6}\mathrm{Li}\), possono portare il sistema molto vicino a $ |a|\to\infty$ mediante una Feshbach resonance: $\xi\approx\num{0.37}$.
+        \item Neutron Matter reale: correzioni $\invers{a_{nn}}$, $r_e$, etc: $\frac{E}{N}=\frac{3}{5}E_F[\xi+\frac{c_1}{k_Fa_{nn}}+c_2k_Fr_e+\ldots]$
+        \item Approx Unitary Fermi Gas valida per $n\leq\SI{0.02}{\per\femto\meter}\approx\frac{0.02}{0.16}n_0$ circa $10\%n_0$: non bastano $a_s$ e $r_e$ ma servono anche interazioni a 3-corpi calibrate su $^3H$, $^3He$, $^4He$
+        \item Chiral effective field theory $\chi$EFT: si tengono gradi di libert\'a rilevanti a scala energetica considerata (EFT) $V=V_{LO}+V_{NLO}+V_{N^2LO}+\ldots$ e la simmetria chirale che vincola la forma delle interazioni nucleoni-pioni.
+    \end{itemize}
+            
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/EOS_chiEFT}\label{fig:Schaffner_EOS_chiEFT}\end{figure}
+            \begin{itemize}
+                \item Fino $n\approx\SI{0.2}{\per\cubic\femto\meter}$ $E/A$ sono dello stesso ordine di grandezza
+                \item La curva inferiore \'e unitary Fermi gas: salendo in densit\'a i calcoli realistici includono effetti del range finito, partial waves superiori e effetti a 3 neutroni.
+            \end{itemize}
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Collegamento symmetric nuclear matter to pure nuclear matter}
+\begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+    \begin{itemize}
+        \item Ansatz $\frac{E_b}{A}(n_B,\delta)=\frac{E_b}{A}(n_B,0)+S(n_B)\delta^2$, come suggerito da simmetria interazione forte per $\Pproton\leftrightarrow\Pneutron$ $E(\delta)=E(-\delta)$ \'e funzione pari.
+    \end{itemize}
+        
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \begin{table}
+\centering
+\begin{tabular}{lcc}
+\hline
+\textbf{Modello / approccio}
+& \(\boldsymbol{J}\) [MeV]
+& \(\boldsymbol{L}\) [MeV]
+\\
+\hline
+FRDM2012
+& \(32.3 \pm 0.5\)
+& \(53.5 \pm 15\)
+\\
+Chiral EFT
+& \(28.9\text{--}34.9\)
+& \(43.0\text{--}66.0\)
+\\
+\hline
+\end{tabular}
+\end{table}
+        
+    \end{column}
+\end{columns}
+    \begin{itemize}
+        \item Ponendo $\delta=1$ si ha PNM: $\frac{E_b}{A}(n_B,1)=\frac{E_b}{A}(n_N,0)+S(n_B)$ quindi in approssimazione quadratica $S(n_B)\approx \frac{E}{A}|_{PNM}-\frac{E}{A}|_{SNM}$ - vincoliamo la symmetry energy con calcoli microscopici per PNM.
+        \item Alla saturazione $J=S(n_0)\approx\frac{E}{A}|_{PNM,n_0}-\frac{E}{A}|_{SNM,n_0}$, poich\'e $\frac{E}{A}|_{SNM,n_0}\approx-\SI{16}{\mega\ev}$ e $\frac{E}{A}\approx\SIrange{15}{20}{\mega\ev}$: $J\approx\SIrange{30}{35}{\mega\ev}$; $L\approx3n_0\TDy{n}{(E/A)_{PNM}}|_{n_0}$.
+    \end{itemize}
+
+\end{frame}
+
+\subsection{Relazione massa-raggio e stabilit\'a}
+
+\begin{frame}{Densit\'a di energia all'aumentare della densit\'a }
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item Soluzione TOV (equilibrio idrostatico$\neq$equilibrio dinamico) risolvendo dal centro con $P_c=P(\epsilon_c)$.
+                \item Transition OC-IC: $\frac{\epsilon}{\epsilon_0}\approx0.002$ different model give almost constant value, Crust-Core: $\frac{\epsilon_c}{\epsilon_0}\approx0.3$ differs from model to model - Transition point is not well determined but EOS is almost the same, ie PNM, for all models.
+                \item EOS of Outer Crust is power-law, the onset of inner crust show sudden decrease of slope due onset of liquid neutrons. In Core pressure increases strongly with energy density.
+                \item A: WD reach maximum mass for $\frac{\epsilon_c}{\epsilon_0}\approx\num{4e-6}$ (\SI{e9}{\gram\per\cubic\cm}), D-E: stable NS, $\frac{\epsilon_c}{\epsilon_0}\approx\numrange{0.5}{8}$ (EOS known up to \num{1.3}).
+                \item $\epsilon=\epsilon_{rest}+\epsilon_{kin}+\epsilon_{int}$: baryon number density start to deviate from $\rho\approx\epsilon$ at $n_0$ and as interaction between neutrons has to be repulsive the increase in number density is lower than that in energy density.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/EOS_WD_NS}\label{fig:Schaffner_EOS_WD_NS}\end{figure}
+            \begin{figure}[!ht]
+                \includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/energydensity_vs_baryon}\label{fig:Schaffner_energydensity_vs_baryon}
+            \end{figure}
+        \end{column}
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Polytropic power (adiabatic index) vs energy density}
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item Una transizione di fase di primo ordine \'e caratterizzata dalla discontinuità di una derivata prima del potenziale termodinamico. A \(T=0\), per due fasi in equilibrio vale $P_1=P_2$, $\mu_1=\mu_2$, mentre la densit\'a barionica pu\'o presentare un salto, $n_1\neq n_2$, e analogamente pu\'o essere discontinua la densit\'a di energia. Nella regione di coesistenza idealizzata la pressione resta costante mentre cambia la densit\'a, per cui $\Gamma=\frac{n_B}{P}\frac{dP}{dn_B}\simeq 0$.
+            \item Polytropic power $\Gamma=\TDly{n_B}{P}$: transizione del prim'ordine, cambia densit\'a a pressione costante, quindi $\Gamma\approx0$.
+            \item From the left: dip for transition $^{56}Fe\to^{62}Ni\to^{64}Ni$ in outer crust; after A we have transition to heavier and more neutron rich nuclei with deeper dip.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/Gamma_vs_energydensity}\label{fig:Schaffner_Gamma_vs_energydensity}
+            \end{figure}
+        \end{column}
+    \end{columns}
+    \begin{itemize}
+        \item Even if there is no dip $\Gamma\approx \frac{4}{3}$, lower limit for stability of polytropes, at beginnin of inner crust $\Gamma\approx0.5$ due to onset of neutron liquid: when neutron level starts to be populated occupy lowest levels in  momentum first, giving no pressure contrib. but n_B keeps increasing so that $\Gamma$ drops.
+        \item The wiggle before the core is due to transition from lattice structure of the crust to uniform liquid in the core; max of $\Gamma\approx3.5$ is reached for density of core of NS; then drops to two showing EOS dominated by interactions.
+        \item The correct EOS for high density is not the one based on nucleons but rather the EOS taking into account of quarks and gluons: the correct high density limit $\Gamma=\frac{4}{3}$ is the value of UR free particles.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Stabilit\'a dinamica nel diagramma Massa-Raggio}
+            \begin{figure}[!ht]
+                \includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.3\textwidth]{Schaffner/M_vs_energydensity}\label{fig:Schaffner_M_vs_energydensity}~
+                \includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.3\textwidth]{Schaffner/R_vs_energydensity}\label{fig:Schaffner_R_vs_energydensity}~
+                \includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.3\textwidth]{Schaffner/M_vs_R}\label{fig:Schaffner_M_vs_R}
+            \end{figure}
+            \begin{itemize}
+                \item Stab. sol. eq. idro. a perturbazioni radiali $\xi(r,t)=\xi_n(r)\exp{i\omega_nt}$: eq. di E. linearizzate vincolano perturbazioni metriche \(\delta\Phi,\delta\Lambda\) e della massa \(\delta m\) alle perturbazioni della materia; conservazione barionica e EOS permettono di esprimere \(\delta P\) e \(\delta\varepsilon\) mediante spostamento radiale \(\xi\). Sostituendo queste relazioni in eq. radiale del moto, rimane una equazione differenziale per \(\xi(r,t)\): decomposizione in modi normali da Sturm--Liouville.
+                \item Autovalori $\omega_0^2<\omega_1^2<\omega_2^2<\ldots$, autof. modo n con autov. $\omega_n$ possiede n nodi radiali: $\omega_n^2>0$ modo oscillante, $\omega_n<0$ modo radialmente instabile.
+                \item Per EOS fissata si costruisce famiglia di NS al variare della densit\'a di energia centrale $\epsilon_c$: risolvendo TOV si ottiene $M(\epsilon_c)$, $R(\epsilon_c)$. Turning-point argument: cambia numero di modi instabili quando M ha estremo $dM/d\epsilon_c=0$. Su un ramo normalmente stabile $dM/d\epsilon_c>0$, regione stabile, e attraversando un estremo di M un $\omega_n^2$ cambia segno: se $dR/d\epsilon_c|_{extr}<0$ cambia segno un modo pari, altrimenti un modo dispari. A:Limite Chandra - $\omega_0^2(<\omega_1^2)>0\ldots$, $M(\epsilon_c)$ raggiunge max($dM/d\epsilon_c=0$), $dR/d\epsilon_c<0$ cambia segno modo pari, ie $\omega_0^2$, quindi si entra in ramo instabile; B: M ha minimo con $dR/d\epsilon_c>0$, quindi cambia segno modo dispari, ie $\omega_1^2<0$; C: max in M while R incresing with $\epsilon_c$ quindi cambia segno modo dispari, ie $\omega_1^2>0$; D: ramo NS, M ha min e $dR/d\epsilon_c<0$, cambia segno modo pari, ie $\omega_0^2>0$, $M_{min}=0.09\msun$, $R=\SI{250}{\kilo\meter}$; E: massa max NS, $dR/d\epsilon_c<0$ quindi cambia segno modo pari, ie $\omega_0^2<0$, entriamo in ramo instabile - $M=2.4\msun{}$ max NS.
+            \end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Direttamente da curva $M(R)$}
+            \begin{itemize}
+                \item Si percorre la curva aumentando la densit\'a centrale da destra a sinistra
+                \item Percorrenza antioraria \'e equivalente a raggio decrescento all'aumentare di $\epsilon_c$: antioraria-modo diventa instabile, oraria-modo diventa stabile
+            \end{itemize}
+            \begin{columns}[T]
+                \begin{column}{0.5\textwidth}
+            \begin{figure}[!ht]
+                \includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/M_vs_R}\label{fig:Schaffner_M_vs_R2}
+            \end{figure}
+                \end{column}
+                \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item A: max M, antiorario - modo diventa instabile. Sequenza dopo A \'e instabile.
+                \item B: min M, antiorario - modo diventa instabile
+                \item C: max M, orario - modo diventa stabile
+                \item D: min M; orario - modo diventa stabile. Here radius decreases with increasing central energy density. La sequenza dopo D \'e stabile.
+            \end{itemize}
                 \end{column}
             \end{columns}
             
-    \end{itemize}
 \end{frame}
