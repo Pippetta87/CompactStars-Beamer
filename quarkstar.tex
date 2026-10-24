@@ -1,0 +1,2191 @@
+\section{QCD}
+
+\subsection{Teoria di Dirac}
+
+\begin{frame}{Collegamenti fra teoria di Dirac, QED, QCD e RMF}
+  \begin{description}
+    \item[Teoria di Dirac]
+      Descrizione relativistica dei fermioni di spin $1/2$:
+      struttura spinoriale, antiparticelle e termine di massa.
+    \item[QED]
+      Interazione elettromagnetica dei fermioni carichi,
+      mediata dal campo del fotone $A_\mu$.
+    \item[QCD]
+      Interazione forte dei quark, mediata dai campi
+      gluonici $G_\mu^a$.
+    \item[RMF]
+      Descrizione efficace relativistica di nuclei e materia
+      adronica mediante barioni accoppiati a campi medi.
+  \end{description}
+  QED e QCD sono teorie fondamentali delle interazioni; la RMF è una descrizione efficace a gradi di libertà adronici.
+\end{frame}
+
+\begin{frame}{Da Dirac alle interazioni: la derivata covariante}
+  Per un fermione libero:
+  \[
+    \mathcal{L}_{D}
+    =\bar\psi(i\gamma^\mu\partial_\mu-m)\psi.
+  \]
+  In QED e QCD l'interazione si introduce sostituendo
+  la derivata ordinaria con una derivata covariante:
+  \[
+    \partial_\mu\longrightarrow D_\mu.
+  \]
+  \textbf{QED:}
+  \[
+    D_\mu=\partial_\mu+ieQ A_\mu,
+    \qquad
+    \mathcal{L}_{\mathrm{int}}
+    =-eQ\,\bar\psi\gamma^\mu\psi A_\mu,
+  \]
+  dove $e>0$ e $Q$ è la carica in unità di $e$.
+  \textbf{QCD:}
+  \[
+    D_\mu=\partial_\mu+ig_sT^aG_\mu^a,
+    \qquad
+    \mathcal{L}_{\mathrm{int}}
+    =-g_s\,\bar q\gamma^\mu T^a q\,G_\mu^a.
+  \]
+  A questi termini si aggiunge la dinamica dei campi
+  elettromagnetico e gluonico.
+\end{frame}
+
+\begin{frame}{QED e QCD: stessa struttura spinoriale, diverse simmetrie}
+  \small
+  \begin{tabular}{@{}p{0.22\textwidth}p{0.33\textwidth}p{0.35\textwidth}@{}}
+    \hline
+    & \textbf{QED} & \textbf{QCD} \\
+    \hline
+    Simmetria di gauge
+      & $U(1)$
+      & $SU(3)$ del colore \\[0.5em]
+    Fermioni
+      & Leptoni carichi e quark
+      & Quark \\[0.5em]
+    Mediatori
+      & Fotone
+      & Otto gluoni \\[0.5em]
+    Carica
+      & Carica elettrica
+      & Colore \\[0.5em]
+    Mediatori carichi
+      & Fotone elettricamente neutro
+      & Gluoni portatori di colore \\
+    \hline
+  \end{tabular}
+  Un quark porta contemporaneamente carica elettrica e colore:
+  può quindi interagire sia mediante QED sia mediante QCD.
+  \medskip
+  La QCD contiene anche auto-interazioni gluoniche,
+  dovute alla struttura non abeliana di $SU(3)$.
+\end{frame}
+
+\begin{frame}{Dalla QCD alla descrizione adronica}
+  La QCD impiega quark e gluoni come gradi di libertà
+  fondamentali.
+  Alle energie caratteristiche della fisica nucleare,
+  la dinamica forte è generalmente non perturbativa:
+  si utilizzano spesso descrizioni in termini di adroni.
+  \[
+    \underbrace{q,\;G_\mu^a}_{\text{quark e gluoni}}
+    \quad\longrightarrow\quad
+    \underbrace{N,\;\Lambda,\;\Sigma,\ldots}_{\text{barioni}},
+    \quad
+    \underbrace{\pi,\;\sigma,\;\omega,\;\rho,\ldots}
+                _{\text{campi mesonici efficaci}}.
+  \]
+  I barioni di spin $1/2$, pur essendo compositi,
+  possono essere rappresentati da campi di Dirac.
+  \medskip
+  \alert{La RMF non deriva dalla sola equazione di Dirac:
+  richiede una scelta di interazioni efficaci e una
+  approssimazione di campo medio.}
+  \medskip
+  I suoi parametri sono normalmente calibrati su dati
+  nucleari e proprietà della materia nucleare.
+\end{frame}
+
+\begin{frame}{RMF: barioni di Dirac in campi scalari e vettoriali}
+  Un modello schematico contiene un barione $B$,
+  un campo scalare $\sigma$ e un campo vettoriale $\omega_\mu$:
+  \[
+    \mathcal{L}_B
+    =\bar B\left[
+       i\gamma^\mu\partial_\mu
+       -(m_B-g_{\sigma B}\sigma)
+       -g_{\omega B}\gamma^\mu\omega_\mu
+    \right]B.
+  \]
+  Nell'approssimazione di campo medio:
+  \[
+    \sigma\longrightarrow\bar\sigma,
+    \qquad
+    \omega_\mu\longrightarrow\bar\omega_\mu.
+  \]
+  I campi medi sono determinati in modo autoconsistente
+  dalle sorgenti barioniche.
+  \medskip
+  L'equazione di Dirac diventa
+  \[
+    \left[
+      \gamma^\mu(i\partial_\mu-g_{\omega B}\bar\omega_\mu)
+      -m_B^*
+    \right]B=0,
+    \qquad
+    \boxed{m_B^*=m_B-g_{\sigma B}\bar\sigma.}
+  \]
+  Il campo scalare modifica la massa efficace;
+  quello vettoriale modifica il quadrimpulso efficace.
+\end{frame}
+
+\begin{frame}{RMF: energie dei barioni e potenziali chimici}
+  In materia uniforme, statica e isotropa:
+  \[
+    \bar\omega_\mu=(\bar\omega_0,\mathbf{0}).
+  \]
+  Nel modello schematico $\sigma$--$\omega$, il ramo
+  di energia positiva è
+  \[
+    \boxed{
+      E_B(\mathbf p)
+      =g_{\omega B}\bar\omega_0
+       +\sqrt{\mathbf p^2+(m_B^*)^2}.
+    }
+  \]
+  Per $T=0$, nel modello con accoppiamenti costanti:
+  \[
+    \mu_B=E_B(k_{F,B}).
+  \]
+  \medskip
+  Per un iperone $Y$ che compare continuamente,
+  la soglia soddisfa
+  \[
+    \mu_Y=E_Y(0)
+    =g_{\omega Y}\bar\omega_0+m_Y^*,
+  \]
+  assumendo $m_Y^*>0$.
+  \medskip
+  Per esempio, in equilibrio debole per il $\Lambda$:
+  \[
+    \mu_\Lambda=\mu_n.
+  \]
+  I campi medi collegano così la dinamica di Dirac
+  alla composizione della materia.
+\end{frame}
+
+\begin{frame}{Collegamento con la scomposizione chirale}
+  Per un generico campo di Dirac $\psi$:
+  \[
+    \psi=\psi_L+\psi_R,
+    \qquad
+    \bar\psi_L=\bar\psi P_R,
+    \qquad
+    \bar\psi_R=\bar\psi P_L.
+  \]
+  \textbf{Termini scalari: accoppiano le due chiralità.}
+  \[
+    \bar\psi\psi
+    =\bar\psi_L\psi_R+\bar\psi_R\psi_L.
+  \]
+  Questa struttura compare nel termine di massa e,
+  in RMF, nell'accoppiamento scalare
+  $g_\sigma\sigma\bar\psi\psi$.
+  \medskip
+  \textbf{Correnti vettoriali: separano i due settori.}
+  \[
+    \bar\psi\gamma^\mu\psi
+    =\bar\psi_L\gamma^\mu\psi_L
+     +\bar\psi_R\gamma^\mu\psi_R.
+  \]
+  Questa struttura compare nelle interazioni QED,
+  QCD e nell'accoppiamento vettoriale della RMF.
+  \medskip
+  \alert{La struttura chirale è comune; il significato fisico
+  dei campi e degli accoppiamenti dipende dalla teoria.}
+\end{frame}
+\begin{frame}{Equazione di Dirac e spinori}
+  L'equazione di Dirac descrive un campo fermionico di spin $1/2$:
+  \[
+    (i\gamma^\mu\partial_\mu-m)q(x)=0.
+  \]
+  Le matrici $\gamma^\mu$ soddisfano l'algebra di Clifford:
+  \[
+    \{\gamma^\mu,\gamma^\nu\}
+    =2g^{\mu\nu}\mathbf{1},
+    \qquad
+    g^{\mu\nu}=\operatorname{diag}(1,-1,-1,-1).
+  \]
+  Il campo $q(x)$ è uno \alert{spinore di Dirac}, con quattro
+  componenti complesse:
+  \[
+    q(x)=
+    \begin{pmatrix}
+      q_1(x)\\ q_2(x)\\ q_3(x)\\ q_4(x)
+    \end{pmatrix}.
+  \]
+  Sotto una trasformazione di Lorentz $x'=\Lambda x$:
+  \[
+    q'(x')=S(\Lambda)q(x).
+  \]
+  Lo spinore si trasforma mediante $S(\Lambda)$, non come
+  un quadrivettore.
+\end{frame}
+
+\begin{frame}{Perché introdurre il coniugato di Dirac?}
+  Il coniugato hermitiano è lo spinore riga
+  \[
+    q^\dagger=(q_1^*,q_2^*,q_3^*,q_4^*).
+  \]
+  Tuttavia $q^\dagger q$ non è uno scalare di Lorentz:
+  le trasformazioni spinoriali dei boost non sono unitarie.
+  Si introduce quindi il \alert{coniugato di Dirac}:
+  \[
+    \boxed{\bar q\equiv q^\dagger\gamma^0.}
+  \]
+  Poiché
+  \[
+    S^\dagger\gamma^0=\gamma^0S^{-1},
+  \]
+  esso si trasforma come
+  \[
+    \bar q'(x')=\bar q(x)S^{-1}(\Lambda).
+  \]
+  Pertanto
+  \[
+    \bar q'q'
+    =\bar qS^{-1}Sq
+    =\bar qq:
+    \qquad
+    \boxed{\bar qq\text{ è uno scalare di Lorentz}.}
+  \]
+\end{frame}
+
+\begin{frame}{Chiralità e proiettori chirali}
+  Si definisce la matrice
+  \[
+    \gamma^5=i\gamma^0\gamma^1\gamma^2\gamma^3,
+  \]
+  che soddisfa
+  \[
+    (\gamma^5)^2=\mathbf{1},
+    \qquad
+    (\gamma^5)^\dagger=\gamma^5,
+    \qquad
+    \{\gamma^5,\gamma^\mu\}=0.
+  \]
+  I proiettori sulle componenti di chiralità definita sono
+  \[
+    \boxed{
+      P_L=\frac{\mathbf{1}-\gamma^5}{2},
+      \qquad
+      P_R=\frac{\mathbf{1}+\gamma^5}{2}.
+    }
+  \]
+  Essi verificano
+  \[
+    P_L^2=P_L,\quad P_R^2=P_R,\quad
+    P_LP_R=P_RP_L=0,\quad
+    P_L+P_R=\mathbf{1}.
+  \]
+  Ogni spinore ammette dunque la scomposizione
+  \[
+    q=q_L+q_R,
+    \qquad q_L=P_Lq,\qquad q_R=P_Rq,
+  \]
+  con $\gamma^5q_L=-q_L$ e $\gamma^5q_R=+q_R$.
+\end{frame}
+
+\begin{frame}{Coniugazione hermitiana e coniugazione di Dirac}
+  \textbf{Coniugazione hermitiana.}
+  Poiché $\gamma^5$ è hermitiana,
+  \[
+    P_L^\dagger=P_L,
+    \qquad P_R^\dagger=P_R.
+  \]
+  Quindi
+  \[
+    (q_L)^\dagger=q^\dagger P_L,
+    \qquad
+    (q_R)^\dagger=q^\dagger P_R.
+  \]
+  \medskip
+  \textbf{Coniugazione di Dirac.}
+  L'anticommutazione $\{\gamma^0,\gamma^5\}=0$ implica
+  \[
+    P_L\gamma^0=\gamma^0P_R,
+    \qquad
+    P_R\gamma^0=\gamma^0P_L.
+  \]
+  Pertanto
+  \[
+    \overline{q_L}
+    =(P_Lq)^\dagger\gamma^0
+    =q^\dagger P_L\gamma^0
+    =q^\dagger\gamma^0P_R
+    =\bar qP_R.
+  \]
+  In conclusione:
+  \[
+    \boxed{\bar q_L\equiv\overline{q_L}=\bar qP_R,
+    \qquad
+    \bar q_R\equiv\overline{q_R}=\bar qP_L.}
+  \]
+\end{frame}
+
+\begin{frame}{Scomposizione chirale dello scalare $\bar qq$}
+  Sviluppando $q=q_L+q_R$ e $\bar q=\bar q_L+\bar q_R$:
+  \[
+    \bar qq
+    =\bar q_Lq_L+\bar q_Lq_R
+     +\bar q_Rq_L+\bar q_Rq_R.
+  \]
+  I termini con lo stesso pedice si annullano:
+  \[
+    \bar q_Lq_L=\bar qP_RP_Lq=0,
+    \qquad
+    \bar q_Rq_R=\bar qP_LP_Rq=0.
+  \]
+  I termini misti, invece, contengono proiettori uguali:
+  \[
+    \bar q_Lq_R=\bar qP_R^2q=\bar qP_Rq,
+  \]
+  \[
+    \bar q_Rq_L=\bar qP_L^2q=\bar qP_Lq.
+  \]
+  Di conseguenza
+  \[
+    \boxed{\bar qq=\bar q_Lq_R+\bar q_Rq_L.}
+  \]
+  \alert{Il pedice di $\bar q_L$ indica la componente originaria
+  $q_L$, mentre il proiettore a destra di $\bar q$ è $P_R$.}
+\end{frame}
+
+\begin{frame}{Il termine di massa accoppia le due chiralità}
+  La lagrangiana libera di Dirac è
+  \[
+    \mathcal{L}=\bar q(i\gamma^\mu\partial_\mu-m)q.
+  \]
+  Usando $P_R\gamma^\mu=\gamma^\mu P_L$, il termine cinetico
+  si separa:
+  \[
+    \bar qi\gamma^\mu\partial_\mu q
+    =\bar q_Li\gamma^\mu\partial_\mu q_L
+     +\bar q_Ri\gamma^\mu\partial_\mu q_R.
+  \]
+  Il termine di massa, invece, è
+  \[
+    -m\bar qq=-m(\bar q_Lq_R+\bar q_Rq_L).
+  \]
+  Le equazioni per le componenti chirali sono quindi
+  \[
+    \boxed{
+      i\gamma^\mu\partial_\mu q_L=mq_R,
+      \qquad
+      i\gamma^\mu\partial_\mu q_R=mq_L.
+    }
+  \]
+  Per $m=0$ le due equazioni si disaccoppiano;
+  per $m\neq0$ la massa collega $q_L$ e $q_R$.
+\end{frame}
+
+\begin{frame}{Esempio esplicito: rappresentazione chirale}
+  Nella rappresentazione chirale, o di Weyl,
+  \[
+    \gamma^5=
+    \begin{pmatrix}
+      -\mathbf{1}_2&0\\
+      0&\mathbf{1}_2
+    \end{pmatrix},
+    \qquad
+    \gamma^0=
+    \begin{pmatrix}
+      0&\mathbf{1}_2\\
+      \mathbf{1}_2&0
+    \end{pmatrix}.
+  \]
+  Scrivendo $q$ mediante due spinori a due componenti,
+  \[
+    q=\begin{pmatrix}\chi_L\\ \chi_R\end{pmatrix},
+    \qquad
+    q_L=\begin{pmatrix}\chi_L\\0\end{pmatrix},
+    \qquad
+    q_R=\begin{pmatrix}0\\\chi_R\end{pmatrix},
+  \]
+  si ottiene
+  \[
+    \bar q=q^\dagger\gamma^0
+    =(\chi_R^\dagger,\chi_L^\dagger).
+  \]
+  Dunque, direttamente,
+  \[
+    \boxed{\bar qq
+    =\chi_R^\dagger\chi_L+\chi_L^\dagger\chi_R.}
+  \]
+  Questo rende esplicito l'accoppiamento fra le due
+  componenti chirali.
+\end{frame}
+
+
+%==========================================================
+\section{Spinori di Dirac e campi quantistici}
+%==========================================================
+
+%----------------------------------------------------------
+\begin{frame}{Spinori di Dirac e campi quantistici}
+\small
+
+Il campo di quark $q(x)$ è esso stesso un
+\textbf{campo spinoriale di Dirac}.
+
+Spinori e campi non sono quindi oggetti alternativi.
+
+\medskip
+
+Occorre distinguere:
+
+\begin{itemize}
+\setlength{\itemsep}{0.8em}
+
+\item \textbf{Spinore $u_s(\mathbf p)$}: descrive la struttura
+spinoriale di una soluzione libera con momento e
+spin determinati.
+
+\item \textbf{Campo quantistico $q(x)$}: descrive i gradi
+di libertà dei quark e permette di rappresentare
+creazione e annichilazione di particelle.
+
+\item \textbf{Campi chirali $q_L(x),q_R(x)$}: sono
+le proiezioni sinistra e destra dello stesso
+campo quantistico.
+
+\end{itemize}
+
+\begin{block}{Idea fondamentale}
+Il campo quantistico può essere sviluppato
+in modi la cui struttura spinoriale è
+descritta dagli spinori $u_s$ e $v_s$.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Equazione di Dirac per una particella libera}
+\small
+
+L'equazione di Dirac libera è
+\begin{equation}
+\boxed{
+(i\gamma^\mu\partial_\mu-m)\psi(x)=0.
+}
+\end{equation}
+
+Una soluzione di onda piana a energia positiva è
+\begin{equation}
+\boxed{
+\psi(x)=u_s(\mathbf p)e^{-ip_\mu x^\mu}.
+}
+\end{equation}
+
+Lo spinore $u_s(\mathbf p)$ possiede quattro componenti:
+\begin{equation}
+u_s(\mathbf p)=
+\begin{pmatrix}
+u_1\\u_2\\u_3\\u_4
+\end{pmatrix}.
+\end{equation}
+
+Le componenti sono numeri complessi, determinati
+dall'equazione di Dirac e dalle condizioni scelte.
+
+\begin{block}{Interpretazione}
+$u_s(\mathbf p)$ descrive la struttura spinoriale
+di un modo con momento e spin definiti.
+
+Non è un operatore di creazione o annichilazione.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Componenti chirali di uno spinore libero}
+\small
+
+Nella rappresentazione chirale:
+\begin{equation}
+\boxed{
+u_s(\mathbf p)=
+\begin{pmatrix}
+\chi_L\\
+\chi_R
+\end{pmatrix}.
+}
+\end{equation}
+
+I proiettori chirali sono
+\begin{equation}
+P_L=\frac{1-\gamma^5}{2},
+\qquad
+P_R=\frac{1+\gamma^5}{2}.
+\end{equation}
+
+Pertanto:
+\begin{equation}
+\boxed{
+u_L=P_Lu=
+\begin{pmatrix}\chi_L\\0\end{pmatrix},
+\qquad
+u_R=P_Ru=
+\begin{pmatrix}0\\\chi_R\end{pmatrix}.
+}
+\end{equation}
+
+Possiamo calcolare le norme:
+\begin{equation}
+\boxed{
+\begin{aligned}
+\|u_L\|^2&=u^\dagger P_Lu,\\
+\|u_R\|^2&=u^\dagger P_Ru.
+\end{aligned}}
+\end{equation}
+
+Le norme descrivono i pesi chirali di uno
+specifico spinore libero.
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Dal campo classico al campo quantizzato}
+\small
+
+Nella teoria quantistica dei campi, l'oggetto
+fondamentale è un campo spinoriale
+\begin{equation}
+\boxed{q_\alpha(x),\qquad \alpha=1,\ldots,4.}
+\end{equation}
+
+A differenza dello spinore numerico
+$u_s(\mathbf p)$, le componenti del campo
+quantizzato sono \textbf{operatori}.
+
+\medskip
+
+Per un campo fermionico libero:
+\begin{equation}
+\boxed{
+\begin{aligned}
+q(x)=\sum_s\int
+\frac{d^3p}{(2\pi)^3\sqrt{2E_{\mathbf p}}}
+\Big[
+&a_s(\mathbf p)u_s(\mathbf p)e^{-ip\cdot x}\\
++{}&
+b_s^\dagger(\mathbf p)v_s(\mathbf p)e^{ip\cdot x}
+\Big].
+\end{aligned}}
+\end{equation}
+
+La normalizzazione degli operatori e dei
+modi è scelta coerentemente con questa espansione.
+
+\begin{block}{Collegamento}
+Il campo $q(x)$ è costruito utilizzando
+spinori $u_s,v_s$ moltiplicati per
+operatori quantistici.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Significato dell'espansione in modi}
+\small
+
+Nell'espansione del campo quantizzato:
+\begin{equation}
+q(x)\sim
+\sum_s\int d^3p\,
+\left[
+a_su_se^{-ipx}+b_s^\dagger v_se^{ipx}
+\right],
+\end{equation}
+i diversi fattori hanno ruoli distinti.
+
+\medskip
+
+\begin{description}
+\setlength{\itemsep}{0.6em}
+
+\item[$q(x)$] Campo quantistico di Dirac.
+
+\item[$u_s(\mathbf p)$] Spinore del settore delle
+particelle, associato ai modi a frequenza positiva.
+
+\item[$v_s(\mathbf p)$] Spinore del settore delle
+antiparticelle.
+
+\item[$a_s(\mathbf p)$] Operatore di annichilazione
+di una particella.
+
+\item[$b_s^\dagger(\mathbf p)$] Operatore di creazione
+di un'antiparticella.
+
+\end{description}
+
+\begin{block}{Distinzione}
+Gli spinori determinano la struttura del modo;
+gli operatori descrivono le occupazioni quantistiche.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Il campo di quark nella QCD}
+\small
+
+Per due sapori leggeri definiamo
+\begin{equation}
+\boxed{
+q(x)=
+\begin{pmatrix}
+u(x)\\d(x)
+\end{pmatrix}.
+}
+\end{equation}
+
+Qui $u(x)$ e $d(x)$ sono \textbf{campi quantistici}
+dei quark up e down.
+
+Non vanno confusi con lo spinore libero
+$u_s(\mathbf p)$.
+
+\medskip
+
+Ogni campo di quark possiede tre indici:
+\begin{equation}
+\boxed{q_{fa\alpha}(x)}
+\end{equation}
+
+\begin{itemize}
+\item $f=u,d$: indice di sapore;
+\item $a=1,2,3$: indice di colore;
+\item $\alpha=1,\ldots,4$: indice spinoriale di Dirac.
+\end{itemize}
+
+Quindi ogni sapore possiede quattro componenti
+di Dirac per ciascuno dei tre colori.
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Proiezione chirale dei campi quantistici}
+\small
+
+La proiezione chirale agisce anche
+sugli operatori di campo:
+\begin{equation}
+\boxed{
+q_L(x)=P_Lq(x),
+\qquad
+q_R(x)=P_Rq(x).
+}
+\end{equation}
+
+Per il doppietto di sapore:
+\begin{equation}
+\boxed{
+q_L=
+\begin{pmatrix}
+u_L\\d_L
+\end{pmatrix},
+\qquad
+q_R=
+\begin{pmatrix}
+u_R\\d_R
+\end{pmatrix}.
+}
+\end{equation}
+
+Le componenti $q_L,q_R$ sono ancora
+operatori quantistici di campo.
+
+\medskip
+
+Confrontiamo:
+\begin{equation}
+\underbrace{u_L=P_Lu}_{\text{spinore numerico}},
+\qquad
+\underbrace{q_L=P_Lq}_{\text{campo quantistico}}.
+\end{equation}
+
+\begin{alertblock}{Punto importante}
+L'operazione matematica è identica.
+
+Cambia la natura dell'oggetto:
+spinore numerico oppure campo operatore.
+\end{alertblock}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Chiralità e spazio dei sapori}
+\small
+
+Le trasformazioni chirali della QCD sono
+\begin{equation}
+\boxed{
+q_L\longrightarrow Lq_L,
+\qquad
+q_R\longrightarrow Rq_R,
+}
+\end{equation}
+dove
+\begin{equation}
+L\in SU(2)_L,\qquad R\in SU(2)_R.
+\end{equation}
+
+È necessario distinguere gli spazi
+su cui agiscono gli operatori.
+
+\medskip
+
+\begin{itemize}
+\setlength{\itemsep}{0.8em}
+
+\item I proiettori $P_L,P_R$ agiscono
+sugli \textbf{indici spinoriali di Dirac}.
+
+\item Le matrici $L,R$ agiscono
+sugli \textbf{indici di sapore} $u,d$.
+
+\item Le trasformazioni di colore $SU(3)_c$
+agiscono invece sugli \textbf{indici di colore}.
+
+\end{itemize}
+
+Queste operazioni riguardano spazi
+interni differenti.
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Perché la QCD utilizza i campi $q_L,q_R$?}
+\small
+
+La simmetria chirale è una proprietà
+della lagrangiana della QCD:
+\begin{equation}
+\boxed{
+\mathcal L_q=
+\bar q(i\gamma^\mu D_\mu-M)q.
+}
+\end{equation}
+
+Nel limite chirale $M=0$:
+\begin{equation}
+\boxed{
+\mathcal L_q=
+\bar q_Li\gamma^\mu D_\mu q_L+
+\bar q_Ri\gamma^\mu D_\mu q_R.
+}
+\end{equation}
+
+La separazione dei due termini permette
+trasformazioni globali indipendenti:
+\begin{equation}
+q_L\to Lq_L,\qquad q_R\to Rq_R.
+\end{equation}
+
+Pertanto la simmetria è
+\begin{equation}
+\boxed{SU(2)_L\times SU(2)_R.}
+\end{equation}
+
+\begin{block}{Interpretazione}
+Si utilizzano i campi quantistici perché
+vogliamo studiare una proprietà della teoria,
+non uno specifico stato di particella libera.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Il condensato chirale della QCD}
+\small
+
+La rottura spontanea della simmetria chirale
+è descritta dal valore di aspettazione
+\begin{equation}
+\boxed{
+\langle0|\bar q(x)q(x)|0\rangle\neq0.
+}
+\end{equation}
+
+La quantità $\bar q q$ è un
+\textbf{operatore composto da campi quantistici}.
+
+In particolare:
+\begin{equation}
+\boxed{
+\bar q q=\bar q_Lq_R+\bar q_Rq_L.
+}
+\end{equation}
+
+Il condensato collega le componenti
+chirali sinistra e destra.
+
+\medskip
+
+La quantità
+\begin{equation}
+\langle\bar q_Lq_R\rangle
+\end{equation}
+non è la norma di uno spinore.
+
+È una correlazione del vuoto quantistico
+della teoria interagente.
+
+\begin{alertblock}{Distinzione}
+Il condensato chirale non descrive
+la proporzione di chiralità sinistra
+e destra in un singolo quark.
+\end{alertblock}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Bilineari spinoriali e condensati}
+\small
+
+Confrontiamo due quantità matematicamente
+simili, ma fisicamente differenti.
+
+\begin{block}{Spinore libero}
+\begin{equation}
+\boxed{u^\dagger P_Lu}
+\end{equation}
+
+Misura la norma quadrata della componente
+sinistra di uno specifico spinore.
+
+Le componenti di $u$ sono numeri complessi.
+\end{block}
+
+\begin{block}{Vuoto quantistico della QCD}
+\begin{equation}
+\boxed{
+\langle0|\bar q_Lq_R|0\rangle
+}
+\end{equation}
+
+È un valore di aspettazione di un
+operatore composto da campi quantistici.
+
+Descrive una proprietà del vuoto interagente.
+\end{block}
+
+In particolare:
+\begin{equation}
+\boxed{
+\langle\bar q q\rangle\neq0
+\;\not\Rightarrow\;
+\|u_L\|\neq\|u_R\|.
+}
+\end{equation}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Dal campo allo stato di una particella}
+\small
+
+Nel caso libero, il campo quantistico
+può collegare uno stato con una particella
+allo stato di vuoto.
+
+Sia $|\mathbf p,s\rangle$ uno stato
+con momento e spin definiti.
+
+Allora, a meno della normalizzazione:
+\begin{equation}
+\boxed{
+\langle0|q(x)|\mathbf p,s\rangle
+\propto
+u_s(\mathbf p)e^{-ip\cdot x}.
+}
+\end{equation}
+
+Il lato sinistro è un elemento di matrice
+di un operatore di campo.
+
+Il lato destro è uno spinore numerico
+moltiplicato per una fase.
+
+\begin{block}{Interpretazione}
+Lo spinore $u_s(\mathbf p)$ rappresenta
+l'ampiezza spinoriale associata
+all'annichilazione della particella
+da parte del campo.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Particelle libere e quark interagenti}
+\small
+
+Nel caso libero è possibile sviluppare
+il campo quantistico in modi di Dirac:
+\begin{equation}
+q(x)\sim
+\sum_s\int d^3p\,
+\left[
+a_su_se^{-ipx}+b_s^\dagger v_se^{ipx}
+\right].
+\end{equation}
+
+Nella QCD interagente, invece:
+
+\begin{itemize}
+\setlength{\itemsep}{0.7em}
+
+\item Il campo di quark interagisce con
+il campo gluonico.
+
+\item Lo sviluppo in modi liberi non descrive
+esattamente la dinamica completa.
+
+\item Gli spinori liberi rimangono importanti
+nella teoria perturbativa.
+
+\item A causa del confinamento, un quark isolato
+non è uno stato fisico asintotico ordinario.
+
+\end{itemize}
+
+\begin{block}{Conseguenza}
+Nella QCD la descrizione fondamentale
+è formulata mediante operatori di campo
+e osservabili costruite da essi.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Quando usare spinori e campi?}
+\footnotesize
+
+\begin{description}
+\setlength{\itemsep}{0.9em}
+
+\item[Particella libera:]
+\begin{equation}
+(\gamma^\mu p_\mu-m)u_s(p)=0.
+\end{equation}
+Spinori, soluzioni, elicità, norme chirali.
+
+\item[Teoria quantistica dei campi:]
+\begin{equation}
+\mathcal L=\bar q(i\gamma^\mu D_\mu-M)q.
+\end{equation}
+Campi quantistici, interazioni,
+creazione e annichilazione.
+
+\item[Simmetria chirale:]
+\begin{equation}
+q_L\to Lq_L,\qquad q_R\to Rq_R.
+\end{equation}
+Trasformazioni che lasciano invariata
+la lagrangiana.
+
+\item[Rottura spontanea:]
+\begin{equation}
+\langle0|\bar q q|0\rangle\neq0.
+\end{equation}
+Proprietà del vuoto della teoria interagente.
+
+\end{description}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Spinori e campi: conclusione}
+\small
+
+\begin{equation}
+\boxed{
+\begin{gathered}
+\text{Campo quantistico }q(x)\\
+\Downarrow\\
+\text{Sviluppo in modi spinoriali}\\
+u_s(\mathbf p),\ v_s(\mathbf p)
+\end{gathered}}
+\end{equation}
+
+\medskip
+
+La proiezione chirale può agire su entrambi:
+\begin{equation}
+\boxed{
+\begin{aligned}
+u_L&=P_Lu,\qquad &u_R&=P_Ru,\\
+q_L&=P_Lq,\qquad &q_R&=P_Rq.
+\end{aligned}}
+\end{equation}
+
+Ma le quantità
+\begin{equation}
+u^\dagger P_Lu
+\qquad\text{e}\qquad
+\langle\bar q_Lq_R\rangle
+\end{equation}
+hanno significati differenti.
+
+\begin{block}{Risultato essenziale}
+La prima descrive uno specifico spinore
+di particella libera.
+
+La seconda descrive una proprietà
+del vuoto quantistico della QCD,
+connessa alla rottura spontanea
+della simmetria chirale.
+\end{block}
+
+\end{frame}
+
+
+%==========================================================
+\subsection{Rottura spontanea della simmetria chirale}
+%==========================================================
+
+%----------------------------------------------------------
+\begin{frame}{Simmetria chirale: idea fondamentale}
+\small
+
+La lagrangiana della QCD può possedere una simmetria
+che il suo stato fondamentale, cioè il vuoto,
+non rispetta.
+
+Questo è il significato della
+\textbf{rottura spontanea della simmetria chirale}.
+
+\medskip
+
+La sequenza concettuale è:
+\begin{equation}
+\boxed{
+\begin{gathered}
+m_u=m_d=0\\
+\Downarrow\\
+SU(2)_L\times SU(2)_R\\
+\Downarrow\\
+\langle\bar q q\rangle\neq0\\
+\Downarrow\\
+SU(2)_L\times SU(2)_R
+\longrightarrow SU(2)_V\\
+\Downarrow\\
+3\text{ generatori rotti}\\
+\Downarrow\\
+\pi^+,\ \pi^0,\ \pi^-
+\end{gathered}}
+\end{equation}
+
+I tre pioni sono bosoni di Goldstone nel limite
+chirale esatto e pseudo-Goldstone nella QCD reale.
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Componenti chirali dei campi di Dirac}
+\small
+
+Un campo di Dirac può essere scomposto in due
+componenti di chiralità definita:
+\begin{equation}
+\boxed{q=q_L+q_R}.
+\end{equation}
+
+I proiettori chirali sono
+\begin{equation}
+P_L=\frac{1-\gamma^5}{2},
+\qquad
+P_R=\frac{1+\gamma^5}{2}.
+\end{equation}
+
+Definiamo
+\begin{equation}
+q_L=P_Lq,\qquad q_R=P_Rq.
+\end{equation}
+
+Le due componenti soddisfano
+\begin{equation}
+\boxed{
+\gamma^5q_L=-q_L,\qquad
+\gamma^5q_R=+q_R.
+}
+\end{equation}
+
+\begin{block}{Chiralità ed elicità}
+La chiralità è definita dagli autovalori di
+$\gamma^5$.
+
+Per stati liberi di particella massless, a energia
+positiva, chiralità ed elicità coincidono.
+Per particelle massive, in generale, no.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Doppietti chirali di sapore}
+\small
+
+Consideriamo i due quark più leggeri,
+up e down, organizzati nel doppietto
+\begin{equation}
+q=
+\begin{pmatrix}
+u\\d
+\end{pmatrix}.
+\end{equation}
+
+Applicando i proiettori chirali:
+\begin{equation}
+\boxed{
+q_L=
+\begin{pmatrix}
+u_L\\d_L
+\end{pmatrix},
+\qquad
+q_R=
+\begin{pmatrix}
+u_R\\d_R
+\end{pmatrix}.
+}
+\end{equation}
+
+Le due operazioni agiscono su spazi diversi:
+\begin{itemize}
+\item I proiettori $P_L,P_R$ agiscono sugli
+indici spinoriali di Dirac.
+\item Le trasformazioni di sapore agiscono
+sugli indici $u,d$.
+\end{itemize}
+
+Considereremo inizialmente il limite chirale
+\begin{equation}
+\boxed{m_u=m_d=0}.
+\end{equation}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{La lagrangiana dei quark nella QCD}
+\small
+
+La parte della lagrangiana QCD relativa ai quark è
+\begin{equation}
+\boxed{
+\mathcal L_q=
+\bar q(i\gamma^\mu D_\mu-M)q,
+}
+\end{equation}
+dove
+\begin{equation}
+M=
+\begin{pmatrix}
+m_u&0\\
+0&m_d
+\end{pmatrix}
+\end{equation}
+è la matrice delle masse.
+
+La derivata covariante $D_\mu$ contiene
+l'interazione con i gluoni.
+
+\medskip
+
+Nel limite $m_u=m_d=0$:
+\begin{equation}
+\mathcal L_q=\bar q\,i\gamma^\mu D_\mu q.
+\end{equation}
+
+Scomponendo nelle due chiralità:
+\begin{equation}
+\boxed{
+\mathcal L_q=
+\bar q_Li\gamma^\mu D_\mu q_L+
+\bar q_Ri\gamma^\mu D_\mu q_R.
+}
+\end{equation}
+
+\begin{alertblock}{Osservazione}
+Nel limite massless non compaiono termini
+che mescolino le due chiralità.
+\end{alertblock}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Trasformazioni chirali indipendenti}
+\small
+
+Poiché i termini sinistro e destro sono separati,
+possiamo considerare le trasformazioni globali
+\begin{equation}
+\boxed{
+q_L\longrightarrow Lq_L,\qquad
+q_R\longrightarrow Rq_R,
+}
+\end{equation}
+con
+\begin{equation}
+L\in SU(2)_L,\qquad R\in SU(2)_R.
+\end{equation}
+
+Le matrici agiscono sullo spazio dei sapori:
+\begin{equation}
+L=\exp\left(
+i\theta_L^a\frac{\tau^a}{2}
+\right),\qquad
+R=\exp\left(
+i\theta_R^a\frac{\tau^a}{2}
+\right),
+\end{equation}
+dove $\tau^a$ sono le matrici di Pauli.
+
+\begin{block}{Significato di $L\neq R$}
+I parametri $\theta_L^a$ e $\theta_R^a$
+possono essere scelti indipendentemente.
+
+Le componenti sinistre e destre non devono
+subire la stessa trasformazione di sapore.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Perché la lagrangiana rimane invariata?}
+\small
+
+Consideriamo il termine sinistro:
+\begin{equation}
+\mathcal L_L=
+\bar q_Li\gamma^\mu D_\mu q_L.
+\end{equation}
+
+Sotto $q_L\to Lq_L$:
+\begin{equation}
+\bar q_L\longrightarrow\bar q_LL^\dagger.
+\end{equation}
+
+Poiché $L$ è globale e agisce sui sapori,
+\begin{equation}
+D_\mu(Lq_L)=LD_\mu q_L.
+\end{equation}
+
+Pertanto
+\begin{align}
+\mathcal L_L'
+&=\bar q_LL^\dagger
+i\gamma^\mu D_\mu(Lq_L)\nonumber\\
+&=\bar q_LL^\dagger L
+i\gamma^\mu D_\mu q_L\nonumber\\
+&=\mathcal L_L,
+\end{align}
+grazie a $L^\dagger L=\mathbf1$.
+
+Analogamente, il termine destro è invariante
+grazie a $R^\dagger R=\mathbf1$.
+
+\begin{equation}
+\boxed{SU(2)_L\times SU(2)_R}
+\end{equation}
+
+Non è necessario imporre $L=R$.
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Trasformazioni vettoriali e assiali}
+\small
+
+Distinguiamo due classi di trasformazioni.
+
+\begin{block}{Trasformazioni vettoriali}
+Quando
+\begin{equation}
+L=R=V,
+\end{equation}
+abbiamo
+\begin{equation}
+q_L\to Vq_L,\qquad q_R\to Vq_R.
+\end{equation}
+
+Quindi
+\begin{equation}
+\boxed{q\longrightarrow Vq}.
+\end{equation}
+
+Queste trasformazioni formano il sottogruppo
+$SU(2)_V$, associato all'isospin.
+\end{block}
+
+\begin{block}{Trasformazioni assiali}
+Una trasformazione puramente assiale può
+essere parametrizzata come
+\begin{equation}
+L=A,\qquad R=A^\dagger.
+\end{equation}
+
+Le componenti sinistre e destre vengono
+trasformate in maniera opposta.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Il termine di massa mescola le chiralità}
+\small
+
+Consideriamo la parte di massa della lagrangiana:
+\begin{equation}
+\mathcal L_m=-\bar qMq.
+\end{equation}
+
+Se $m_u=m_d=m_q$, allora
+\begin{equation}
+\mathcal L_m=-m_q\bar q q.
+\end{equation}
+
+Utilizzando i proiettori chirali:
+\begin{equation}
+\boxed{
+\bar q q=
+\bar q_Lq_R+\bar q_Rq_L.
+}
+\end{equation}
+
+Quindi
+\begin{equation}
+\boxed{
+\mathcal L_m=
+-m_q(\bar q_Lq_R+\bar q_Rq_L).
+}
+\end{equation}
+
+\begin{alertblock}{Conseguenza}
+Il termine di massa collega la componente
+sinistra a quella destra.
+
+A differenza del termine cinetico, non è
+invariante sotto trasformazioni chirali
+indipendenti arbitrarie.
+\end{alertblock}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Rottura esplicita della simmetria chirale}
+\small
+
+Sotto
+\begin{equation}
+q_L\to Lq_L,\qquad q_R\to Rq_R,
+\end{equation}
+il termine misto si trasforma come
+\begin{equation}
+\boxed{
+\bar q_Lq_R
+\longrightarrow
+\bar q_LL^\dagger Rq_R.
+}
+\end{equation}
+
+Perché rimanga invariato, in generale,
+dobbiamo avere
+\begin{equation}
+L^\dagger R=\mathbf1
+\quad\Longrightarrow\quad L=R.
+\end{equation}
+
+Quindi, per masse comuni non nulle:
+\begin{equation}
+\boxed{
+SU(2)_L\times SU(2)_R
+\ \xrightarrow{\ m_q\neq0\ }\ SU(2)_V.
+}
+\end{equation}
+
+\begin{block}{Rottura esplicita}
+La simmetria completa non è più una proprietà
+della lagrangiana: viene rotta direttamente
+dal termine di massa.
+\end{block}
+
+Se $m_u\neq m_d$, anche l'isospin $SU(2)_V$
+è esplicitamente rotto.
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Il condensato chirale del vuoto}
+\small
+
+Torniamo al limite
+\begin{equation}
+m_u=m_d=0.
+\end{equation}
+
+La lagrangiana possiede allora la simmetria
+$SU(2)_L\times SU(2)_R$.
+
+Il vuoto della QCD è però caratterizzato da
+un valore di aspettazione non nullo:
+\begin{equation}
+\boxed{
+\langle\bar q q\rangle
+=
+\langle0|\bar q q|0\rangle\neq0.
+}
+\end{equation}
+
+Questo è il \textbf{condensato chirale}.
+
+Poiché
+\begin{equation}
+\bar q q=\bar q_Lq_R+\bar q_Rq_L,
+\end{equation}
+il condensato collega le due componenti
+chirali.
+
+\begin{block}{Interpretazione}
+Il condensato non misura semplicemente
+il numero di coppie quark--antiquark nel vuoto.
+
+È un parametro d'ordine che descrive
+una proprietà quantistica dello stato fondamentale.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Il condensato come matrice di sapore}
+\small
+
+Per studiare le proprietà di trasformazione,
+introduciamo la matrice
+\begin{equation}
+\boxed{
+\Phi_{ij}=
+\langle\bar q_{R,j}q_{L,i}\rangle,
+}
+\end{equation}
+con $i,j=u,d$.
+
+Sotto $SU(2)_L\times SU(2)_R$:
+\begin{equation}
+\boxed{
+\Phi\longrightarrow L\Phi R^\dagger.
+}
+\end{equation}
+
+Consideriamo ora un vuoto con condensato
+proporzionale all'identità:
+\begin{equation}
+\boxed{
+\Phi_0=v\mathbf1_2,\qquad v\neq0.
+}
+\end{equation}
+
+In questo modo il condensato non distingue
+i sapori $u$ e $d$, ma collega le loro
+componenti chirali sinistre e destre.
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Quali trasformazioni lasciano invariato il vuoto?}
+\small
+
+Il condensato si trasforma secondo
+\begin{equation}
+\Phi_0\longrightarrow L\Phi_0R^\dagger.
+\end{equation}
+
+Perché il vuoto sia invariante, deve valere
+\begin{equation}
+L\Phi_0R^\dagger=\Phi_0.
+\end{equation}
+
+Sostituendo $\Phi_0=v\mathbf1_2$:
+\begin{equation}
+vLR^\dagger=v\mathbf1_2.
+\end{equation}
+
+Poiché $v\neq0$:
+\begin{equation}
+LR^\dagger=\mathbf1_2
+\quad\Longrightarrow\quad
+\boxed{L=R}.
+\end{equation}
+
+Dunque il vuoto conserva soltanto
+il sottogruppo vettoriale:
+\begin{equation}
+\boxed{
+SU(2)_L\times SU(2)_R
+\longrightarrow SU(2)_V.
+}
+\end{equation}
+
+\begin{alertblock}{Rottura spontanea}
+La lagrangiana ammette $L$ e $R$
+indipendenti, mentre il vuoto selezionato
+dalla dinamica è invariante solo per $L=R$.
+\end{alertblock}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Perché la rottura è spontanea?}
+\small
+
+Nel limite chirale esatto:
+\begin{equation}
+m_u=m_d=0.
+\end{equation}
+
+La lagrangiana non contiene un termine
+di massa che selezioni esplicitamente
+una particolare orientazione chirale.
+
+Tuttavia, la dinamica della QCD produce
+\begin{equation}
+\langle\bar q q\rangle\neq0.
+\end{equation}
+
+Il sistema sceglie così uno stato fondamentale
+che non possiede tutte le simmetrie
+della lagrangiana.
+
+\begin{block}{Analogia con il ferromagnete}
+Le interazioni possono essere invarianti
+sotto rotazioni spaziali.
+
+Lo stato magnetizzato seleziona però
+una direzione privilegiata.
+\end{block}
+
+Analogamente, il condensato chirale
+seleziona una orientazione nello spazio
+delle trasformazioni chirali.
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Teorema di Goldstone}
+\small
+
+Il teorema di Goldstone lega la rottura
+spontanea di una simmetria globale continua
+alla comparsa di eccitazioni bosoniche
+senza massa.
+
+Per $SU(2)$ il numero dei generatori è
+\begin{equation}
+\dim SU(2)=3.
+\end{equation}
+
+Prima della rottura:
+\begin{equation}
+SU(2)_L\times SU(2)_R
+\quad\Rightarrow\quad 3+3=6.
+\end{equation}
+
+Dopo la rottura:
+\begin{equation}
+SU(2)_V\quad\Rightarrow\quad3.
+\end{equation}
+
+Il numero dei generatori rotti è
+\begin{equation}
+\boxed{
+N_{\rm broken}=6-3=3.
+}
+\end{equation}
+
+Nel vuoto relativistico della QCD,
+questi corrispondono a tre bosoni
+di Goldstone massless.
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Identificazione dei bosoni di Goldstone}
+\small
+
+I tre modi di Goldstone associati alla
+rottura chirale hanno i numeri quantici
+dei pioni.
+
+Formano un tripletto di isospin:
+\begin{equation}
+\boxed{I=1,\qquad J^P=0^-}.
+\end{equation}
+
+Le tre componenti sono
+\begin{equation}
+\boxed{
+\pi^+,\qquad\pi^0,\qquad\pi^-.
+}
+\end{equation}
+
+Nel limite chirale esatto:
+\begin{equation}
+\boxed{m_\pi=0}.
+\end{equation}
+
+\begin{block}{Significato fisico}
+I pioni possono essere interpretati come
+eccitazioni collettive dell'orientazione
+chirale del condensato.
+
+Non sono introdotti arbitrariamente:
+la loro comparsa è legata alla struttura
+di simmetria della QCD.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Campo pionico e orientazione del condensato}
+\small
+
+Le oscillazioni dell'orientazione del condensato
+possono essere descritte dalla matrice
+\begin{equation}
+\boxed{
+U(x)=\exp\left(
+\frac{i\tau^a\pi^a(x)}{f_\pi}
+\right),
+}
+\end{equation}
+con somma implicita su $a=1,2,3$.
+
+La costante di decadimento pionica è
+\begin{equation}
+f_\pi\simeq92\ \mathrm{MeV}.
+\end{equation}
+
+Per piccoli campi:
+\begin{equation}
+U(x)\simeq
+\mathbf1+
+\frac{i\tau^a\pi^a(x)}{f_\pi}
++\cdots.
+\end{equation}
+
+Le tre componenti reali sono
+\begin{equation}
+\pi^1(x),\quad\pi^2(x),\quad\pi^3(x).
+\end{equation}
+
+Le combinazioni fisiche sono
+\begin{equation}
+\boxed{
+\pi^\pm=\frac{\pi^1\mp i\pi^2}{\sqrt2},
+\qquad
+\pi^0=\pi^3.
+}
+\end{equation}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Lagrangiana efficace dei pioni}
+\small
+
+Nel limite chirale esatto, la lagrangiana
+efficace dei pioni inizia con
+\begin{equation}
+\boxed{
+\mathcal L_{\mathrm{eff}}=
+\frac{f_\pi^2}{4}
+\operatorname{Tr}
+\left(
+\partial_\mu U\,
+\partial^\mu U^\dagger
+\right)+\cdots.
+}
+\end{equation}
+
+Sviluppando al secondo ordine nei campi:
+\begin{equation}
+\mathcal L_{\mathrm{eff}}
+=
+\frac12
+\partial_\mu\pi^a\partial^\mu\pi^a
++\cdots.
+\end{equation}
+
+Non compare un termine quadratico di massa
+\begin{equation}
+-\frac12m_\pi^2\pi^a\pi^a.
+\end{equation}
+
+Quindi
+\begin{equation}
+\boxed{m_\pi=0}
+\end{equation}
+nel limite chirale esatto.
+
+\begin{block}{Interpretazione}
+Le orientazioni equivalenti del condensato
+hanno la stessa energia.
+
+Le variazioni spaziali e temporali costano
+energia, ma una rotazione uniforme
+dell'orientazione non ne richiede.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Pioni reali: bosoni pseudo-Goldstone}
+\small
+
+Nella QCD reale:
+\begin{equation}
+m_u\neq0,\qquad m_d\neq0.
+\end{equation}
+
+Il termine di massa rompe esplicitamente
+la simmetria chirale.
+
+Le diverse orientazioni del condensato
+non sono quindi più esattamente degeneri.
+
+Di conseguenza, i pioni acquistano
+una massa non nulla:
+\begin{equation}
+\boxed{m_\pi\neq0}.
+\end{equation}
+
+Poiché $m_u,m_d$ sono piccoli rispetto
+alle scale adroniche, i pioni rimangono
+relativamente leggeri.
+
+\begin{block}{Bosoni pseudo-Goldstone}
+I pioni sono Goldstone esatti soltanto nel
+limite $m_u=m_d=0$.
+
+Nel mondo reale sono
+\textbf{bosoni pseudo-Goldstone}.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Relazione di Gell-Mann--Oakes--Renner}
+\small
+
+La relazione di Gell-Mann--Oakes--Renner
+(GMOR) collega la massa pionica alle masse
+dei quark e al condensato chirale.
+
+Al primo ordine nelle masse dei quark:
+\begin{equation}
+\boxed{
+f_\pi^2m_\pi^2
+\simeq
+-(m_u+m_d)
+\langle\bar q q\rangle_0.
+}
+\end{equation}
+
+Qui $\langle\bar q q\rangle_0$ indica
+il condensato \emph{per singolo sapore}
+nel limite chirale:
+\begin{equation}
+\langle\bar q q\rangle_0
+=
+\langle\bar u u\rangle_0
+=
+\langle\bar d d\rangle_0.
+\end{equation}
+
+Nella convenzione usuale,
+il condensato è negativo.
+
+Ne segue
+\begin{equation}
+\boxed{
+m_\pi^2\propto m_u+m_d.
+}
+\end{equation}
+
+Pertanto:
+\begin{equation}
+m_u,m_d\to0
+\quad\Longrightarrow\quad
+m_\pi\to0.
+\end{equation}
+
+La relazione riceve correzioni
+di ordine superiore nella teoria chirale.
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Condensato chirale e materia nucleare densa}
+\small
+
+Nel vuoto ordinario della QCD:
+\begin{equation}
+\langle\bar q q\rangle\neq0.
+\end{equation}
+
+All'aumentare della temperatura o della
+densità barionica, il condensato può modificarsi.
+
+La riduzione del parametro d'ordine è
+associata alla tendenza verso la
+\textbf{restaurazione chirale}.
+
+\medskip
+
+È necessario distinguere:
+
+\begin{itemize}
+\item \textbf{Rottura chirale}: il vuoto possiede
+un condensato che rompe $SU(2)_A$.
+\item \textbf{Restaurazione chirale}: la rottura
+spontanea si attenua o scompare nel limite
+di simmetria esatta.
+\item \textbf{Deconfinamento}: i gradi di libertà
+termodinamici non sono più descritti
+principalmente mediante adroni confinati.
+\end{itemize}
+
+Restaurazione chirale e deconfinamento
+sono fenomeni collegati, ma distinti.
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Condensato chirale e condensazione pionica}
+\small
+
+Occorre distinguere due tipi di condensazione.
+
+\begin{block}{Condensato chirale}
+\begin{equation}
+\boxed{\langle\bar q q\rangle\neq0}.
+\end{equation}
+
+È uno scalare associato alla rottura
+spontanea della simmetria chirale.
+\end{block}
+
+\begin{block}{Condensazione pionica}
+Coinvolge un parametro d'ordine con
+numeri quantici pionici, per esempio
+\begin{equation}
+\boxed{
+\langle\bar q\,i\gamma^5\tau^a q\rangle
+\neq0.
+}
+\end{equation}
+
+Può essere associata a un campo pionico
+macroscopico nel mezzo.
+\end{block}
+
+La condensazione pionica discussa nei
+modelli di materia nucleare densa,
+come quelli di Migdal, non coincide
+con il condensato chirale del vuoto.
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Rottura chirale: schema conclusivo}
+\small
+
+\begin{equation}
+\boxed{
+\begin{gathered}
+\mathcal L_{\rm QCD}\quad(m_u=m_d=0)\\
+\Downarrow\\
+SU(2)_L\times SU(2)_R\\
+\Downarrow\\
+\langle\bar q_Lq_R+\bar q_Rq_L\rangle\neq0\\
+\Downarrow\\
+SU(2)_L\times SU(2)_R\to SU(2)_V\\
+\Downarrow\\
+3\text{ generatori assiali rotti}\\
+\Downarrow\\
+3\text{ bosoni di Goldstone}
+\end{gathered}}
+\end{equation}
+
+\medskip
+
+Nel mondo reale, le piccole masse dei quark
+introducono la rottura esplicita:
+\begin{equation}
+\boxed{
+m_u,m_d\neq0
+\quad\Longrightarrow\quad
+m_\pi\neq0.
+}
+\end{equation}
+
+\begin{block}{Conclusione}
+La massa relativamente piccola dei pioni
+è una conseguenza della simmetria chirale
+della QCD, della sua rottura spontanea
+e della debole rottura esplicita.
+\end{block}
+
+\end{frame}
+
+\section{RMF}
+
+
+\begin{frame}{Relativistic Mean-Field Theory: letteratura introduttiva}
+\footnotesize
+
+\begin{enumerate}
+\setlength{\itemsep}{0.7em}
+
+\item \textbf{A. Schmitt, \emph{The Physics of Compact Stars} (2009).}\\
+\href{https://hep.itp.tuwien.ac.at/~aschmitt/stars.pdf}
+     {\textcolor{blue}{Dispense PDF}}.
+Sez.~III.A--B: modello di Walecka, campi scalari e vettoriali,
+massa efficace, estensione agli iperoni.\\
+Versione ampliata:
+\emph{Dense Matter in Compact Stars: A Pedagogical Introduction}
+(Springer, 2010),
+\href{https://arxiv.org/abs/1001.3294}
+     {\textcolor{blue}{arXiv:1001.3294}}.
+
+\item \textbf{A. Sorensen, materiale didattico e tesi di dottorato.}\\
+\href{https://agnieszkasorensen.com/teaching.html}
+     {\textcolor{blue}{Materiale online}}.
+Introduzione ai modelli di campo medio;
+dal potenziale di Yukawa alla descrizione relativistica
+delle interazioni nucleari.
+
+\item \textbf{I. Vidaña,
+\emph{Hyperons: The Strange Ingredients of the Nuclear
+Equation of State} (2018).}\\
+\href{https://arxiv.org/abs/1803.00504}
+     {\textcolor{blue}{arXiv:1803.00504}}.
+Interazioni iperone--nucleone e iperone--iperone,
+vincoli dagli ipernuclei, modelli relativistici
+e microscopici, hyperon puzzle.
+
+\item \textbf{D. Chatterjee, I. Vidaña,
+\emph{Do Hyperons Exist in the Interior of Neutron Stars?}
+(2016).}\\
+\href{https://arxiv.org/abs/1510.06306}
+     {\textcolor{blue}{arXiv:1510.06306}}.
+Comparsa degli iperoni, effetti sulla EOS,
+massa massima stellare e possibili soluzioni
+dell'hyperon puzzle.
+
+\end{enumerate}
+
+\medskip
+\textbf{Percorso consigliato:}
+Schmitt $\rightarrow$ Vidaña (2018)
+$\rightarrow$ Chatterjee--Vidaña (2016).
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Mean-Field Theory, RMF e modello di Walecka}
+\small
+
+\begin{description}
+\setlength{\itemsep}{0.8em}
+
+\item[Mean-Field Theory (MFT)]
+Approssimazione in cui un sistema interagente
+a molti corpi viene descritto mediante campi
+medi autoconsistenti.
+
+\item[Relativistic Mean-Field Theory (RMF)]
+Applicazione relativistica ai sistemi adronici:
+i barioni sono descritti da campi di Dirac
+che interagiscono con campi mesonici medi.
+
+\item[Modello di Walecka ($\sigma$--$\omega$)]
+Esempio elementare di RMF:
+\begin{itemize}
+\item campo scalare $\sigma$: attrazione,
+      massa efficace $m_N^*$;
+\item campo vettoriale $\omega^\mu$: repulsione,
+      energia potenziale $V_N$.
+\end{itemize}
+
+\end{description}
+
+\begin{equation}
+\boxed{
+m_N^*=m_N-g_\sigma\bar\sigma,
+\qquad
+V_N=g_\omega\bar\omega_0.
+}
+\end{equation}
+
+\begin{block}{Applicazione alle stelle compatte}
+Equazioni dei campi e dei barioni
+$\rightarrow$ materia in equilibrio
+$\rightarrow$ EOS $P(\varepsilon)$
+$\rightarrow$ equazioni TOV
+$\rightarrow M(R)$.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Modello di Walecka: equazioni del moto}
+\footnotesize
+
+La lagrangiana del modello lineare $\sigma$--$\omega$ è
+\begin{align}
+\mathcal L={}&
+\bar N(i\gamma^\mu\partial_\mu-m_N
++g_\sigma\sigma-g_\omega\gamma^\mu\omega_\mu)N
+\nonumber\\
+&+\frac12\partial_\mu\sigma\partial^\mu\sigma
+-\frac12m_\sigma^2\sigma^2
+\nonumber\\
+&-\frac14W_{\mu\nu}W^{\mu\nu}
++\frac12m_\omega^2\omega_\mu\omega^\mu,
+\end{align}
+con $W_{\mu\nu}=\partial_\mu\omega_\nu-
+\partial_\nu\omega_\mu$.
+
+\medskip
+
+Le equazioni di Eulero--Lagrange forniscono:
+\begin{equation}
+\boxed{
+\begin{aligned}
+(i\gamma^\mu\partial_\mu-m_N
+ +g_\sigma\sigma
+ -g_\omega\gamma^\mu\omega_\mu)N&=0,\\
+(\Box+m_\sigma^2)\sigma
+ &=g_\sigma\bar NN,\\
+\partial_\nu W^{\nu\mu}+m_\omega^2\omega^\mu
+ &=g_\omega\bar N\gamma^\mu N.
+\end{aligned}}
+\end{equation}
+
+\begin{block}{Approssimazione di campo medio}
+Per materia uniforme, statica e isotropa:
+\[
+\sigma\to\bar\sigma,\qquad
+\omega^\mu\to(\bar\omega_0,\mathbf0).
+\]
+Le sorgenti fermioniche diventano valori medi:
+$\langle\bar NN\rangle=n_s$ e
+$\langle N^\dagger N\rangle=n_B$.
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Equazioni RMF autoconsistenti}
+\small
+
+Nel modello lineare di Walecka:
+\begin{equation}
+\boxed{
+\begin{aligned}
+m_\sigma^2\bar\sigma&=g_\sigma n_s,\\
+m_\omega^2\bar\omega_0&=g_\omega n_B.
+\end{aligned}}
+\end{equation}
+
+Per materia nucleare simmetrica a $T=0$,
+con degenerazione $\gamma=4$:
+\begin{equation}
+n_B=\frac{\gamma k_F^3}{6\pi^2},
+\end{equation}
+\begin{equation}
+\boxed{
+n_s=
+\frac{\gamma}{2\pi^2}
+\int_0^{k_F}dk\,k^2
+\frac{m_N^*}{\sqrt{k^2+m_N^{*2}}}.
+}
+\end{equation}
+
+La massa efficace soddisfa
+\begin{equation}
+\boxed{
+m_N^*=m_N-\frac{g_\sigma^2}{m_\sigma^2}
+n_s(m_N^*,k_F).
+}
+\end{equation}
+
+\begin{block}{Autoconsistenza}
+Il campo scalare determina $m_N^*$,
+ma $n_s$ dipende a sua volta da $m_N^*$:
+occorre risolvere un'equazione non lineare.
+\end{block}
+
+Il campo vettoriale segue direttamente da
+$\bar\omega_0=g_\omega n_B/m_\omega^2$.
+
+\end{frame}
+
+%----------------------------------------------------------
+\begin{frame}{Soluzione iterativa e costruzione della EOS}
+\footnotesize
+
+Per ogni densità barionica fissata $n_B$:
+
+\begin{enumerate}
+\setlength{\itemsep}{0.35em}
+\item Calcolare $k_F=(6\pi^2 n_B/\gamma)^{1/3}$.
+\item Scegliere una stima iniziale $m_N^{*(0)}$.
+\item Calcolare $n_s(m_N^{*(j)},k_F)$.
+\item Aggiornare:
+\[
+m_N^{*(j+1)}
+=m_N-\frac{g_\sigma^2}{m_\sigma^2}
+n_s(m_N^{*(j)},k_F).
+\]
+\item Ripetere fino alla convergenza;
+calcolare $\bar\sigma$ e $\bar\omega_0$.
+\end{enumerate}
+
+\medskip
+
+Dalla soluzione autoconsistente:
+\begin{align}
+\varepsilon={}&
+\frac{\gamma}{2\pi^2}\int_0^{k_F}
+dk\,k^2E^*(k)
++\frac12m_\sigma^2\bar\sigma^2
++\frac12m_\omega^2\bar\omega_0^2,\\
+P={}&
+\frac{\gamma}{6\pi^2}\int_0^{k_F}
+dk\,\frac{k^4}{E^*(k)}
+-\frac12m_\sigma^2\bar\sigma^2
++\frac12m_\omega^2\bar\omega_0^2,
+\end{align}
+con $E^*(k)=\sqrt{k^2+m_N^{*2}}$.
+
+\begin{block}{Risultato}
+Ripetendo per diversi $n_B$ otteniamo
+$\{\varepsilon(n_B),P(n_B)\}$,
+cioè la EOS parametrica $P(\varepsilon)$.
+\end{block}
+
+\end{frame}
+
+\section{Quark Stars}

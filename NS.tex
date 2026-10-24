@@ -80,7 +80,7 @@
 \end{frame}
 
 \begin{frame}{Nuclear shell model}
-    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},rotate=90,clip,keepaspectratio,width=0.95\textwidth]{Schaffner_magic-numbers-shell}\label{fig:Schaffner-magic-numbers-shell}\end{figure}
+    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},rotate=90,clip,keepaspectratio,width=0.95\textwidth]{Schaffner/magic-numbers-shell}\label{fig:Schaffner-magic-numbers-shell}\end{figure}
     Il pattern che emerge dal modello per composizione di Oter Crust of NS \'e analogo a quello dei numeri magici per chiusura shell protoni/neutroni del modello nucleare a shell.
     \begin{columns}[T]
         \begin{column}{0.5\textwidth}
@@ -399,6 +399,8 @@
     \end{itemize}
 \end{frame}
 
+\section{Neutron Star Core}
+
 \subsection{Outer core}
 
 \begin{frame}{Nuclear Matter}
@@ -656,5 +658,513 @@ Chiral EFT
             \end{itemize}
                 \end{column}
             \end{columns}
-            
+\end{frame}
+
+\subsection{Recap particelle}
+
+\begin{frame}{Leptoni}
+\begin{table}
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccclll}
+\hline
+\textbf{Leptone}
+& \(\boldsymbol{mc^2}\) [MeV]
+& \(\boldsymbol{Q}\)
+& \textbf{Potenziale chimico}
+& \(\boldsymbol{\tau_0}\) \textbf{(vuoto)}
+& \textbf{Decadimenti principali}
+& \textbf{Materia fredda}\\
+\hline
+\(e^-\)
+& \(0.511\)
+& \(-1\)
+& \(\mu_e\)
+& Stabile
+& ---
+& Presente, degenere\\
+
+\(\mu^-\)
+& \(105.66\)
+& \(-1\)
+& \(\mu_\mu=\mu_e\)
+& \(2.197\times10^{-6}\,\mathrm{s}\)
+& \(\mu^-\to e^-+\bar\nu_e+\nu_\mu\)
+& Presente se \(\mu_e\geq m_\mu c^2\)\\
+
+\(\tau^-\)
+& \(1776.9\)
+& \(-1\)
+& \(\mu_\tau=\mu_e\)
+& \(2.903\times10^{-13}\,\mathrm{s}\)
+& \shortstack[l]{
+  \(\tau^-\to\pi^-\pi^0\nu_\tau\) (\(25.5\%\))\\
+  \(\tau^-\to e^-\bar\nu_e\nu_\tau\) (\(17.8\%\))\\
+  \(\tau^-\to\mu^-\bar\nu_\mu\nu_\tau\) (\(17.4\%\))\\
+  \(\tau^-\to\pi^-\nu_\tau\) (\(10.8\%\))
+  }
+& Generalmente assente\\
+\hline
+\(\nu_e\)
+& ---
+& \(0\)
+& \(0\)
+& ---
+& Nessun decadimento osservato
+& Non intrappolato\\
+
+\(\nu_\mu\)
+& ---
+& \(0\)
+& \(0\)
+& ---
+& Nessun decadimento osservato
+& Non intrappolato\\
+
+\(\nu_\tau\)
+& ---
+& \(0\)
+& \(0\)
+& ---
+& Nessun decadimento osservato
+& Non intrappolato\\
+\hline
+\end{tabular}%
+}
+\caption{Proprietà dei leptoni e principali decadimenti
+nel vuoto. Tutti hanno spin \(1/2\) e numero barionico
+\(B=0\). I neutrini sono considerati non intrappolati.}
+\end{table}
+\end{frame}
+
+\begin{frame}{Mesoni}
+    \begin{table}
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccll}
+\hline
+\textbf{Mesone}
+& \(\boldsymbol{mc^2}\) [MeV]
+& \(\boldsymbol{Q}\)
+& \(\boldsymbol{S}\)
+& \textbf{Potenziale chimico}
+& \(\boldsymbol{\tau_0}\) \textbf{(vuoto)}
+& \textbf{Decadimenti principali (BR)}\\
+\hline
+\(\pi^-\)
+& \(139.57\)
+& \(-1\)
+& \(0\)
+& \(\mu_{\pi^-}=\mu_e\)
+& \(2.603\times10^{-8}\,\mathrm{s}\)
+& \(\pi^-\to\mu^-+\bar\nu_\mu\) (\(99.99\%\))\\
+
+\(\pi^0\)
+& \(134.98\)
+& \(0\)
+& \(0\)
+& \(0\)
+& \(8.43\times10^{-17}\,\mathrm{s}\)
+& \shortstack[l]{
+  \(\pi^0\to\gamma+\gamma\) (\(98.82\%\))\\
+  \(\pi^0\to e^+e^-\gamma\) (\(1.17\%\))
+  }\\
+\hline
+\(K^-\)
+& \(493.68\)
+& \(-1\)
+& \(-1\)
+& \(\mu_{K^-}=\mu_e\)
+& \(1.238\times10^{-8}\,\mathrm{s}\)
+& \shortstack[l]{
+  \(K^-\to\mu^-+\bar\nu_\mu\) (\(63.56\%\))\\
+  \(K^-\to\pi^-+\pi^0\) (\(20.67\%\))\\
+  \(K^-\to\pi^-\pi^-\pi^+\) (\(5.58\%\))
+  }\\
+
+\(K^0,\bar K^0\)
+& \(497.61\)
+& \(0\)
+& \(\pm1\)
+& \(0\)
+& \textit{Vedi sotto}
+& \textit{Mixing } \(K^0-\bar K^0\)\\
+
+\(K_S^0\)
+& \(497.61\)
+& \(0\)
+& ---
+& \(0\)
+& \(8.954\times10^{-11}\,\mathrm{s}\)
+& \shortstack[l]{
+  \(K_S^0\to\pi^+\pi^-\) (\(69.2\%\))\\
+  \(K_S^0\to\pi^0\pi^0\) (\(30.7\%\))
+  }\\
+
+\(K_L^0\)
+& \(497.61\)
+& \(0\)
+& ---
+& \(0\)
+& \(5.1\times10^{-8}\,\mathrm{s}\)
+& \shortstack[l]{
+  \(K_L^0\to\pi^\pm e^\mp\nu\) (\(40.55\%\))\\
+  \(K_L^0\to\pi^\pm\mu^\mp\nu\) (\(27.04\%\))\\
+  \(K_L^0\to3\pi^0\) (\(19.52\%\))
+  }\\
+\hline
+\end{tabular}%
+}
+\caption{Proprietà dei principali mesoni leggeri e decadimenti
+nel vuoto. Tutti hanno \(B=0\), spin \(J=0\) e parità
+\(P=-1\). Per i mesoni carichi positivi valgono
+i canali di decadimento coniugati.}
+\end{table}
+I mesoni carichi positivi sono le antiparticelle
+dei corrispondenti mesoni negativi e decadono
+attraverso canali coniugati per carica
+(ad esempio, $\pi^+\to\mu^++\nu_\mu$).
+\end{frame}
+
+\begin{frame}{Iperoni: propriet\'a e potenziale chimico in ColdNuclearMatter}
+    \begin{table}
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccccl}
+\hline
+\textbf{Iperone}
+& \textbf{Quark}
+& \(\boldsymbol{mc^2}\) [MeV]
+& \(\boldsymbol{Q}\)
+& \(\boldsymbol{S}\)
+& \(\boldsymbol{J^P}\)
+& \textbf{Potenziale chimico}
+& \(\boldsymbol{\tau_0}\) \textbf{(vuoto)}
+\\
+\hline
+\(\Lambda^0\) & \(uds\) & \(1115.68\) & \(0\)  & \(-1\)
+& \(\frac12^+\) & \(\mu_n\)
+& \(2.617\times10^{-10}\,\mathrm{s}\)\\
+
+\(\Sigma^+\) & \(uus\) & \(1189.37\) & \(+1\) & \(-1\)
+& \(\frac12^+\) & \(\mu_n-\mu_e\)
+& \(8.018\times10^{-11}\,\mathrm{s}\)\\
+
+\(\Sigma^0\) & \(uds\) & \(1192.64\) & \(0\) & \(-1\)
+& \(\frac12^+\) & \(\mu_n\)
+& \(7.4\times10^{-20}\,\mathrm{s}\)\\
+
+\(\Sigma^-\) & \(dds\) & \(1197.45\) & \(-1\) & \(-1\)
+& \(\frac12^+\) & \(\mu_n+\mu_e\)
+& \(1.479\times10^{-10}\,\mathrm{s}\)\\
+\hline
+\(\Xi^0\) & \(uss\) & \(1314.86\) & \(0\) & \(-2\)
+& \(\frac12^+\) & \(\mu_n\)
+& \(2.90\times10^{-10}\,\mathrm{s}\)\\
+
+\(\Xi^-\) & \(dss\) & \(1321.71\) & \(-1\) & \(-2\)
+& \(\frac12^+\) & \(\mu_n+\mu_e\)
+& \(1.639\times10^{-10}\,\mathrm{s}\)\\
+\hline
+\(\Omega^-\) & \(sss\) & \(1672.45\) & \(-1\) & \(-3\)
+& \(\frac32^+\) & \(\mu_n+\mu_e\)
+& \(8.21\times10^{-11}\,\mathrm{s}\)\\
+\hline
+\end{tabular}%
+}
+\caption{Proprietà degli iperoni fondamentali.
+Tutti hanno numero barionico \(B=1\).
+\(S\) indica la stranezza, \(Q\) la carica elettrica.}
+\end{table}
+\end{frame}
+
+\begin{frame}{Iperoni: decadimenti principali}
+    \begin{table}
+\centering
+\scriptsize
+\begin{tabular}{ll}
+\hline
+\textbf{Iperone} & \textbf{Decadimenti principali nel vuoto (BR)}\\
+\hline
+\(\Lambda^0\)
+& \(\Lambda^0\to p+\pi^-\) (\(64.1\%\))\\
+& \(\Lambda^0\to n+\pi^0\) (\(35.9\%\))\\
+\hline
+\(\Sigma^+\)
+& \(\Sigma^+\to p+\pi^0\) (\(51.5\%\))\\
+& \(\Sigma^+\to n+\pi^+\) (\(48.4\%\))\\
+
+\(\Sigma^0\)
+& \(\Sigma^0\to\Lambda^0+\gamma\) (\(\sim100\%\))\\
+
+\(\Sigma^-\)
+& \(\Sigma^-\to n+\pi^-\) (\(99.85\%\))\\
+\hline
+\(\Xi^0\)
+& \(\Xi^0\to\Lambda^0+\pi^0\) (\(99.52\%\))\\
+
+\(\Xi^-\)
+& \(\Xi^-\to\Lambda^0+\pi^-\) (\(99.89\%\))\\
+\hline
+\(\Omega^-\)
+& \(\Omega^-\to\Lambda^0+K^-\) (\(67.7\%\))\\
+& \(\Omega^-\to\Xi^0+\pi^-\) (\(24.3\%\))\\
+& \(\Omega^-\to\Xi^-+\pi^0\) (\(8.6\%\))\\
+\hline
+\end{tabular}
+\caption{Principali canali di decadimento degli iperoni.
+I decadimenti sono deboli, eccetto quello
+elettromagnetico della \(\Sigma^0\).}
+\end{table}
+\end{frame}
+
+\subsection{Inner Core: Hyperon Matter}
+
+\begin{frame}{Numeri quntici conservati in $\beta$-equilibrio: membri pesanti della famiglia.}
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item Conservazione: Numero Barionico, Carica implica all'equilibrio $\mu_i=B_i\mu_B+Q_i\mu_Q$.
+                \item $\beta$-equilibrio con fuga dei neutrini: equilibrio reazioni $\beta$ tipo $\Pneutron\to\Pproton\Pelectron\APnue$ impone $\mu_n=\mu_p+\mu_e$.
+                \item Per specie non interagente $\mu_i=E_{F,i}^{tot}=\sqrt{k_{F,i}^2+m_i^2}$. La comparsa di una nuova particella diventa possibile per $\mu_i\geq E_i(0)$.
+                \item Nuovi Leptoni oltre \Pelectron: \Pmuon, $m_{\Pmuon}=\SI{105.7}{\mega\ev}$, elettroni e muoni hanno stessi numeri quantici conservati $\mu_{\Pmuon}=\mu_e$, presenti per $\mu_e\geq m_{\Pmuon}$ e $n_p=n_e+n_{\Pmuon}$; \Ptauon, $m_{\Ptauon}=\SI{1776.9}{\mega\ev}$ non compare in modelli NS standard.
+                \item Mesoni (\Pquark\APquark, stabili per interazioni forti, decadono attraverso interazioni deboli): \Pgpz, $m_{\Pgpz}=\SI{135.0}{\mega\ev}$, \Pgppm $m_{\Pgppm}=\SI{139.6}{\mega\ev}$, \PKpm, $m_{\PKpm}=\SI{493.7}{\mega\ev}$, \PKz, $m_{\PKz}=\SI{497.6}{\mega\ev}$; per i mesoni negativi $B_{\Pgpm}=B_{\PKm}=0$, $Q_{\Pgpm}=Q_{\PKm}=-1$ da cui $\mu_e=\mu_{\PKp}=\mu_{\Pgpm}$. Mesoni sono Bosoni: eccitazione modi mesonici $\omega_{\Pgpm}(k=0)=\mu_e$, $\omega_{\PKm}(k=0)=\mu_e$.
+                \item Iperone $\Lambda$: $m_{\Lambda}=\SI{1116}{\mega\ev}$, \SI{176}{\mega\ev} pi\'u pesanti di \Pneutron, $B_{\Lambda}=1$, $Q_{\Lambda}=0$, equilibrio chimico: $\mu_{\Lambda}=\mu_n$. Soglia $\mu_n\approx m_{\Lambda}$ trascurando interazioni. Heavier hyperons: $S=-1$: $\Sigma$ $m_{\PSigma}\approx\SI{1190}{\mega\ev}$, $S=-2$: $m_{\PXizero,\PXiminus}=\num{1315},\num{1322}\si{\mega\ev}$, $S=-3$: \POmega.
+
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \begin{align*}
+                &\Pneutron\leftrightarrow\Pproton+\Pelectron+\APnue\tag{$\mu_n=\mu_p+\mu_e$}\\
+                &\Pneutron\leftrightarrow\Pproton+\Pgpm\tag{$\mu_n=\mu_p+\mu_{\Pgpm}$}\\
+                &\PKm\leftrightarrow\Pmuon+\APnum\tag{$\mu_{\PKm}=\mu_{\Pmuon}$}\\
+                &\Pneutron\leftrightarrow\Pproton+\Pmuon+\APnum\tag{$\mu_n=\mu_p+\mu_{\Pmuon}$}
+            \end{align*}
+            \begin{itemize}
+                \item EOS Softening - La comparsa di nuove specie permette di redistribuire B e energia: a part\'a di densit\'a la pressione risulta inferiore rispetto a quella composta dalle specie piu leggere.
+                \item Hyperon Puzzle: La comparsa di iperoni rende troppo soft per stabilit\'a EOS di NS con $M\geq2\msun{}$, che sono osservate; ma le interazioni repulsive possono cambiare la conclusione.
+            \end{itemize}
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+\begin{frame}{Reazioni produzione muoni}
+    \begin{table}
+\centering
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lll}
+\hline
+\textbf{Processo}
+& \textbf{Reazione}
+& \textbf{Soglia termodinamica}\\
+\hline
+Direct Urca
+& \(n\to p+\mu^-+\bar\nu_\mu\)
+& \(\mu_n-\mu_p=m_\mu c^2\)\\
+
+Modified Urca
+& \(n+N\to p+N+\mu^-+\bar\nu_\mu\)
+& \(\mu_n-\mu_p=m_\mu c^2\)\\
+
+Conversione leptonica
+& \(e^-+N\to\mu^-+N+\nu_e+\bar\nu_\mu\)
+& \(\mu_e=m_\mu c^2\)\\
+\hline
+\end{tabular}%
+}
+\caption{Processi deboli di produzione dei muoni nella materia
+nucleare fredda, trasparente ai neutrini.
+\(N=n,p\) indica un nucleone spettatore.
+Le soglie indicano la comparsa termodinamica dei muoni,
+non necessariamente l'apertura cinematica dei singoli processi.}
+\end{table}
+\end{frame}
+
+
+\begin{frame}{Gas \(npe\) ideale in equilibrio beta}
+
+
+\begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+\textbf{Ipotesi:} \(T=0\), particelle non interagenti, neutrini non intrappolati, neutralità elettrica.
+\[
+\mu_n=\mu_p+\mu_e,\qquad
+n_p=n_e \ \Rightarrow\ k_{F,p}=k_{F,e}.
+\]
+
+\textbf{Nucleoni non relativistici, elettroni ultrarelativistici}
+\[
+k_{F,N}\ll m_N,\qquad k_{F,e}\gg m_e.
+\]
+\vspace{-0.3cm}
+\begin{align*}
+\sqrt{m_n^2+k_{F,n}^2}
+&=\sqrt{m_p^2+k_{F,e}^2}
+ +\sqrt{m_e^2+k_{F,e}^2}\\
+m_n+\frac{k_{F,n}^2}{2m_n}
+&\simeq m_p+\frac{k_{F,e}^2}{2m_p}+k_{F,e}.
+\end{align*}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        Assumendo \(m_n\simeq m_p\), \(k_{F,e}\ll m_p\):
+\[
+\mu_e\simeq k_{F,e}
+\simeq\frac{k_{F,n}^2}{2m_n}
+=E_{F,n}^{(\mathrm{nr})}
+\simeq56\,\mathrm{MeV}
+\left(\frac{n_B}{n_0}\right)^{2/3}
+\]
+\[
+\frac{n_e}{n_B}
+\simeq\left(\frac{k_{F,e}}{k_{F,n}}\right)^3
+\simeq\left(\frac{k_{F,n}}{2m_n}\right)^3
+\simeq5.1\times10^{-3}\frac{n_B}{n_0}.
+\]
+    \end{column}
+\end{columns}
+
+\begin{table}
+\centering
+\scriptsize
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{cccccc}
+\hline
+\(\boldsymbol{n_B/n_0}\)
+& \(\boldsymbol{k_{F,n}}\)
+& \(\boldsymbol{\mu_B}\)
+& \(\boldsymbol{E_{F,n}^{(\mathrm{nr})}}\)
+& \(\boldsymbol{\mu_e}\)
+& \(\boldsymbol{n_e/n_B}\)\\
+& [MeV] & [MeV] & [MeV] & [MeV] & \\
+\hline
+0.5 & 257 & 974  & 35  & 35  & \(2.6\times10^{-3}\)\\
+1.0 & 324 & 994  & 56  & 54  & \(4.6\times10^{-3}\)\\
+2.0 & 409 & 1024 & 89  & 82  & \(8.2\times10^{-3}\)\\
+3.0 & 468 & 1050 & 117 & 105 & \(1.1\times10^{-2}\)\\
+\hline
+\end{tabular}%
+}
+\end{table}
+\vspace{-0.3cm}
+{\scriptsize
+\(n_0=0.15\,\mathrm{fm}^{-3}\), \(\mu_B=\mu_n\).
+La tabella riporta il calcolo del gas libero
+senza le approssimazioni analitiche sopra utilizzate.
+}
+Il potenziale chimico degli elettroni pu\'o essere alto con densit\'a elettronica bassa. I muoni compaiono attorno a $n_B=3n_0$.
+\end{frame}
+
+\begin{frame}{Hyperon \PLambda, \PSigmaminus threshold}
+    \begin{itemize}
+        \item Critical condition for \PLambda onset, ignoring interactions: $\mu_{\Lambda}=m_{\Lambda}=\mu_n$ ($B=1$, $Q=0$). \PLambda pu\'o comparire quando diventa energeticamente favorevole sostituire neutrone che occupa stato vicino alla superficie di Fermi con \PLambda nel primo stato disponibile.
+        \item In gas of free neutrons: $m_{\Lambda}=\mu_n=\sqrt{m_n^2+k_{F,c}^2}$ con $k_{F,c}=\sqrt{m_{\Lambda}^2-m_n^2}=\SI{602}{\mega\ev}$ critical Fermi momentum of neutrons, corresponding to critical density $n_c=\frac{1}{3\pi^2}k_{F,c}^3=\SI{0.96}{\per\cubic\femto\meter}=6.4n_0$.
+        \item $m_{\PSigmaminus}=\SI{1197}{\mega\ev}>m_{\Lambda}$ ma $B_{\Sigma}=1$, $Q_{\Sigma}=-1$: $\mu_{\PSigmaminus}=\mu_B+\mu_e$ quindi la soglia \'e $m_{\Sigma}=\mu_B+\mu_e=\SI{1072}{\mega\ev}+\SI{125}{\mega\ev}$.
+    \end{itemize}
+    \begin{columns}[T]
+        \begin{column}{0.55\textwidth}
+\begin{table}
+\centering
+\small
+\begin{tabular}{lcccc}
+\hline
+\textbf{Particella}
+& \(\boldsymbol{n_c}\) [fm\(^{-3}\)]
+& \(\boldsymbol{n_c/n_0}\)
+& \(\boldsymbol{\mu_Q}\) [MeV]
+& \(\boldsymbol{\mu_B}\) [MeV]\\
+\hline
+\(\mu^-\)    & 0.457 & 3.0 & -106 & 1050\\
+\(\Sigma^-\) & 0.616 & 4.1 & -125 & 1072\\
+\(\Lambda\)  & 1.26  & 8.4 & -123 & 1116\\
+\hline
+\end{tabular}
+\caption{Densità critiche di comparsa di nuove particelle
+nella materia stellare fredda, per un gas di particelle
+non interagenti (\(n_0=0.15\,\mathrm{fm}^{-3}\)).
+Nessun'altra specie compare fino a \(20n_0\).}
+\end{table}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{itemize}
+                \item \PSigmaminus appare prima di \PLambda perch\'e contiene potenziale chimico elettrone.
+                \item Il potenziale chimico dell'elettrone raggiunge il picco all'onset di \PSigmaminus a $\mu_e^{max}=\SI{125}{\mega\ev}$i: minore della massa del pione e dei mesoni pi\'u pesanti. La situazione cambia quando si tiene conto delle interazioni.
+            \end{itemize}
+        \end{column}
+    \end{columns}
+    \begin{itemize}
+        \item Interactions have to be included to reproduce observed pulsar up to $2\msun$ but also appearence of $\PSigmaminus$ with nearly zero momentum from high Fermi momentum \Pelectron and \Pneutron, ie less momentum in the system result in smaller increase of pressure with baryon number density.
+        \item 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Hyper-nuclei}
+    \begin{columns}[T]
+        \begin{column}{0.50\textwidth}
+            \begin{itemize}
+                \item Produzione: $\PKminus+^AZ\to^A_{\Lambda}Z\Pgpm$, $\Pgpp+^AZ\to^A_{\Lambda}Z+\PKplus$ - le reazioni conservano la stranezza e trasformano neutrone in iperone $\Lambda$.
+                \item Potenziale di \PLambda in funzione della densit\'a: modello fenomenologico $U(n)=-a(\frac{n}{n_0})+b(\frac{n}{n_0})\expy{\gamma}$, primo termine attrattivo secondo repulsivo al crescere della densit\'a. Riscriviamo il potenziale imponendo che il potenziale abbia minimo in $n_0$: $U(n)=U_0[\frac{\gamma}{\gamma-1}\frac{n}{n_0}-\frac{1}{\gamma-1}(\frac{n}{n_0})\expy{\gamma}]$. Per $\gamma=2$: $U_{\PLambda}(n)=-30[2x-x^2]\si{\mega\ev}$ ($x=1$: $U_{\PLambda}=\SI{-30}{\mega\ev}$, $x=2$ $U_{\PLambda}=0$, $x=3$ $U_{\PLambda}(x)=-\SI{90}{\mega\ev}$).
+                \item Quark counting rule: Nucleone $U_N\approx\SI{-50}{\mega\ev}$, $U_{\PLambda}\approx\SI{-30}{\mega\ev}$, $U_{\PSigma}\approx\SI{30+-20}{\mega\ev}$, $U_{\PXi}\approx\SI{-15}{\mega\ev}$, la comparsa di \PSigmaminus \'e favorita da $\mu_{\PSigmaminus}=\mu_n+\mu_{e}$ ma se interazione \'e repulsiva in materia nucleare la comparsa \'e ritardata/soppressa, per \PXi il potenziale attrattivo ne favorisce la comparsa rispetto al gas libero. Il potenziale attrattivo sembra diminuire col numero di quark non-strange (3 per nulceone, 2 per \PLambda e 1 per \PXi).
+                \item Alcuni ipernuclei doppi come $^6_{\PLambda\PLambda}He$ suggeriscono debole attrazione \PLambda\PLambda.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.50\textwidth}
+            \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.90\textwidth]{Schaffner/BE_LambdaNuclei}\label{fig:Schaffner_BE_LambdaNuclei}\end{figure}
+            \begin{itemize}
+                \item $R=r_0A\expy{\frac{1}{3}}$ - energia cinetica di particella confinata in raggio R: $k=\frac{2\pi}{\lambda}=\frac{\pi}{R}$, $p=\hbar k$, $E_{kin}=\frac{p^2}{2m}\propto A\expy{-\frac{3}{2}}$ - livelli buca sferica: $V_0-B_{\PLambda}=\frac{\hbar^2 k^2}{2m_{\PLambda}}$, $B_{\PLambda}(A)\approx V_0-\frac{\pi^2\hbar^2}{2m_{\PLambda}r_0^2}A\expy{-\frac{2}{3}}$.
+            \end{itemize}
+        \end{column}
+    \end{columns}
+            \begin{itemize}
+                \item curve: stati orbitali di \PLambda in potenziale nucleare (shell-model con potenziale Saxon-Woods) trascurando split spin-orbita.
+                \item $A\to\infty$: energia di legame $B\approx\SI{30}{\mega\ev}$, quindi in materia nucleare uniforme $U_{\PLambda}(n_0)=-\SI{30}{\mega\ev}$.
+            \end{itemize}
+\end{frame}
+
+\begin{frame}{Densit\'a critica per iperoni interagenti}
+    \begin{itemize}
+        \item Per \PLambda passiamo dalla condizione $\mu_{\PLambda}=\mu_n$ a $\mu_n=E_{\PLambda}(0;n)$ dove $E_{\PLambda}(0;n)=m_{\PLambda}+U_{\PLambda}(n)$ per primo \PLambda $k_{F,\PLambda}=0$ e il potenziale chimico neutronico \'e approssimato a $\mu_n(n)=\sqrt{k_{F,n}^2+m_n^2}+U_n(n)$, cio\'e $\sqrt{k_{F,n}^2+m_n^2}+U_n(n)=m_{\PLambda}+U_{\PLambda}(n)$.
+        \item Conta la differenza tra i potenziali: $\Delta U_n^{crit}(n)=U_n(n)-U_{\PLambda}(n)=m_{\PLambda}-\sqrt{k_{F,c}^2+m_n^2}$: se aumentando densit\'a potenziale neutronico \'e pi\'u repulsivo di quello del \PLambda, $U_n(n)>U_{\PLambda}(n)$, pu\'o diventare favorevole sostituire parte dei neutroni con iperoni. Per $x=1$ i neutroni hanno $k_{F,n}\approx\SI{324}{\mega\ev}$ quindi per comparsa \PLambda $\Delta U_{crit}=\SI{123}{\mega\ev}$, per $x=2$ i neutroni hanno $k_{F,n}\approx\SI{410}{\mega\ev}$ quindi per comparsa \PLambda $\Delta U_{crit}=\SI{92}{\mega\ev}$, per $x=3$ i neutroni hanno $k_{F,n}\approx\SI{470}{\mega\ev}$ quindi per comparsa \PLambda $\Delta U_{crit}=\SI{66}{\mega\ev}$: pi\'u sale densit\'a meno deve contribuire la differenza dei potenziali per compensare maggiore massa di \PLambda.
+        \item Per $\gamma=2$: $\Delta U(n)=U_n-U_{\PLambda}=(U_{n,0}-U_{\PLambda,0})(2x-x^2)=-20(2x-x^2)\si{\mega\ev}$ con $\Delta U(3n_0)=\SI{60}{\mega\ev}$ vicino alla formula fisica. Per $\gamma>2$ il contributo repulsivo neutronico cresce molto pi\'u rapidamente: incertezza su $\gamma$ produce incertezza sulla densit\'a di soglia.
+        \item Energia di Simmetria: $\frac{E}{A}(n,\delta)=E_0(n)+S(n)\delta^2+\ldots$, $\delta=\frac{n_n-n_p}{n_B}$ quindi $\frac{E}{A}(n,1)\approx E_0(n)+S(n)$ con $S(n)>0$ pu\'o favorire la comparsa di nuove specie barioniche, e dato che $\mu_n=\TDy{n_n}{\epsilon}$ il contributo dell'energia di simmetria a $\mu_n$ dipende anche dalla sua derivata prima rispetto alla densit\'a.
+        \item Quando compare \PSigma? Per gas libero $n_c^{\PSigmaminus}\approx4.1n_0$, $n_c^{\PLambda}\approx8.4n_0$; adesso sappiamo che $U_{\PLambda}(n_0)\approx\SI{-30}{\mega\ev}$, $U_{\PSigma}(n_0)\approx\SI{+30}{\mega\ev}$ e per le condizioni di comparsa: $\mu_n=U_{\PLambda}(n)+m_{\PLambda}$, $\mu_n+\mu_e=U_{\PSigmaminus}(n)+m_{\PSigmaminus}$. La repulsione nucleare aumenta energia di soglia per \PSigmaminus.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Hyperon Puzzle}
+    \begin{itemize}
+        \item \PLambda fells less repulsive potential then neutron-neutron: \PLambda becomes favored at high density $n\geq\numrange{2}{3}n_0$ (quark-counting rule: less hight repulsive potential).
+        \item Nella materia nucleare simmetrica protoni e neutroni risentono di contributi isoscalari identici. La differenza energetica legata all'asimmetria protoni-neutroni \'e descritta dall'energia di simmetria $S(n_0)=\SI{32}{\mega\ev}$ molto piccola rispetto ai contributi scalari e vettoriali, centinaia di \si{\mega\ev}: in $\beta$-equilibrio la materia pu\'o rimanere neutron-rich con $\delta\approx1$.
+        \item Sembra ragionevole che la repulsione isoscalare di \PLambda si inferiore a quella dei nucleoni: una volta raggiunta la soglia, aumentando $n_B$, diventa favorevole trasformare neutroni in \PLambda.
+        \item Quark-counting rule in RMF: $g_{\omega\PLambda}=\frac{2}{3}g_{\omega N}$, il campo vettoriale $\omega$ contribuisce alla repulsione alle alte densit\'a.
+        \item Se l'energia si distribuisce tra pi\'u specie la densit\'a di energia aumenta meno rapidamente con l'aumento della densit\'a: EOS diventa pi\'u soft.
+        \item Modello con EOS dominato da interazioni $M_{max\propto yM_{Landau}}$, $y\gg1$ intensit\'a interazione repulsiva: $M_{max}^{\PLambda}\approx \frac{2}{3}M_{max}^{nucl}$. L'EOS diventa troppo soffice per sostenere una NS di $2\msun{}$ osservata.
+        \item Soluzioni: ritardare comparsa di \PLambda $n_c^{\PLambda}>n_{max}^{star}$ ma contrasta con interazioni \PLambda\Pneutron attrattiva; repulsione YY pi\'u intensa ad alte densit\'a limita popolazione iperionica e rendere EOS pi\'u rigida e anche interazioni a 3 corpi NN\PLambda; prima che comparsi di \PLambda renda EOS troppo soffice la materia subisce transizione di fase con nuovi gradi di libert\'a, i quark.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{$2\msun{}$ NS structure}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item Crosta Esterna(\SIrange{13.1}{12.9}{\kilo\meter},$\num{e-3}\epsilon_0$): lattice of nuclei in electron gas.
+                \item Inner Crust (\SI{12.5}{\kilo\metere}, $0.5\epsilon_0$): lattice of nuclei in liquid of neutrons and electrons.
+                \item Outer Core (\SI{9.8}{\kilo\meter}, $2\epsilon_0$): neutron matter with admixture of protons and electrons. $\epsilon_0$ at \SI{12}{\kilo\meter}.
+                \item Inner Core ($3.6\epsilon_0$): hyperon may be present at $(2-3)\epsilon_0$, quark at $3\epsilon_0$ at \SI{5.9}{\kilo\meter}.
+                \item GW from NS merger implies max radius \SI{13}{\kilo\meter}
+                \item Upper bound on max energy density: causality. Stiffest EOS has $c_s=1$, and for $2\msun{}$ NS, $\epsilon_{max}\approx 13.5\epsilon_0$
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/NS_structure}\label{fig:Schaffner_NS_structure}\end{figure}
+            \begin{itemize}
+                \item Linee separano le diverse regioni, i colori le composizioni
+            \end{itemize}
+        \end{column}
+    \end{columns}
+    
 \end{frame}

@@ -220,3 +220,13 @@ Poich\'e $\frac{E_b}{A}=\frac{T}{A}+\frac{V}{A}\simeq -16~\mathrm{MeV}$, schemat
         \end{align*}
     \end{block}
 \end{frame}
+
+\begin{frame}{Beta-equilibrio per gas di protoni, elettroni, neutroni: onset neutron liquid}
+    \begin{itemize}
+        \item $\mu_n=m_n=\mu_p+\mu_e$
+        \item Per particella i con numeri quantici arbitrari: $\mu_i=\mu_BB_i+\mu_QQ_i$ dove $\mu_B$ \'e il potenziale chimico barionico e $\mu_Q$ \'e il potenziale chimico di carica.
+        \item Charge neutrality: $n_e=n_p$ quindi $K_{F,e}=K_{F,p}$
+        \item Electron chemical potential is about nonrelativistic Fermi energy of neutrons $E_{F,n}^{(nr)}$ - Chemical equilibrium for free gas: $\sqrt{k_{F,n}^2+m_n^2}=\sqrt{k_{F,p}^2+m_p^2}+\sqrt{k_{F,e}^2+m_e^2}$, using non-relativistic approx for Nucleons $k_{F,N}\ll m_N$ and relativistic approx for electrons $k_{F,e}\gg m_e$: $m_n+\frac{k_{F,n}^2}{2m_n}\approx m_p+\frac{k_{F,p}^2}{2m_p}+k_{F,e}$. For $m_n\approx m_p$ and $k_{F,e}\ll m_p$: $\mu_e=\frac{k_{F,n}^2}{2m_n}\approx E_{F,n}^{(nr)}\approx\SI{56}{\mega\ev}(\frac{n_B}{n_0})\expy{\frac{2}{3}}$, avendo $E_{F,n}(n_0)=\frac{(\hbar c)^2}{2m_nc^2}(3\pi^2n_0)\expy{\frac{2}{3}}$, momento di Fermi $k_{F,n_0}=(3\pi^2*0.15)\expy{\frac{1}{3}}=\SI{1.64}{\per\femto\meter}$ e, convertendo in MeV, $p_{F,n_0}c=1.64*197.3=\SI{324}{\mega\ev}$, infine $E_{F,n_0}^{(nr)}=\frac{(p_{F,n_0}c)^2}{2m_nc^2}=\frac{(\SI{324}{\mega\ev})^2}{2*(\SI{939.565}{\mega\ev})}=\SI{56}{\mega\ev}$.
+        \item Frazione elettroni - $\frac{n_e}{n_B}=(\frac{k_{F,e}}{k_{F,n}})^3$, al punto precedente abbiamo trovato $k_{F,e}=E_{F,n}^{(nr)}=\frac{k_{F,n}^2}{2m_n}$: $\frac{k_{F,e}}{k_{F,n}}=\frac{k_{F,n}}{2m_n}$ da cui $\frac{n_e}{n_B}=(\frac{k_{F,n}}{2m_n})^3\approx\num{5.1e-3}\frac{n_B}{n_0}$ (piccola densit\'a elettronica non implica piccolo potenziale chimico).
+    \end{itemize}
+\end{frame}
