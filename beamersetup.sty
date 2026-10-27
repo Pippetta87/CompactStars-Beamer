@@ -279,39 +279,92 @@
 %
 \makeatletter
 %%% number, shortname, page.
-\providecommand\beamer@partintoc[3]{%
+\def\beamer@partintoc#1#2#3{%
 \ifnum\c@tocdepth=-1\relax
 % requesting onlyparts.
-    \makebox[0.1\paperwidth]{Part #1:} \parbox{0.45\paperwidth}{#2(#3)}
+    \makebox[0.1\paperwidth]{Part #1:} \parbox{0.45\paperwidth}{#2(#3)}%
 \par
 \fi
 }%
+%\makeatletter
+%%%% number, shortname, page.
+%\providecommand\beamer@partintoc[3]{%
+%\ifnum\c@tocdepth=-1\relax
+%% requesting onlyparts.
+%    \makebox[0.1\paperwidth]{Part #1:} \parbox{0.45\paperwidth}{#2(#3)}
+%\par
+%\fi
+%}%
 %
 \define@key{beamertoc}{onlyparts}[]{%
 \c@tocdepth=-1\relax
 }
 %
-\makeatletter
+%
 \@addtoreset{section}{part}
 \@addtoreset{subsection}{part}
 \@addtoreset{subsection}{section}
-\makeatletter
+%
+%\AtBeginPart{%
+%    \linkdest{linkpart-\thepart}
+%%\addtocontents{toc}{\protect\beamer@partintoc{\the\c@part}{\beamer@partnameshort}{\the\c@page}}%
+%    \addtocontents{toc}{\protect\mycontentsline{section}{\parbox{0.48\textwidth}{ \protect\beamer@partintoc{\the\c@part}{\beamer@partnameshort}{\the\c@page}}}{}{linkpart-\thepart}}
+%
+%%%\addtocontents{toc}{\mycontentsline{section}{contenuto}{mannaggia}{sdsd}}%
+%\makeatother%
+%%
+%\frameinlbffalse
+%\frame{\partpage}
+%\frameinlbffalse
+%\begin{frame}[shrink,t]{Outline: \insertpart}%\insertpart
+%    %\tableofcontents%sectionstyle=show/shaded
+%    \vspace*{-1cm}
+%    \begin{columns}[T, onlytextwidth]
+%    \begin{column}{.3\textwidth}
+%      \tableofcontents[sections={1-4}]
+%    \end{column}
+%    \begin{column}{.3\textwidth}
+%      \tableofcontents[sections={5-8}]
+%    \end{column}
+%    \begin{column}{.3\textwidth}
+%      \tableofcontents[sections={9-}]
+%    \end{column}
+%  \end{columns}
+%%Alternativa a allowframebreask
+%%  \frametitle<1>{Indice (1/2)}
+%%  \frametitle<2>{Indice (2/2)}
+%%
+%%  \only<1>{ \tableofcontents[sections={1-4}] }
+%%  \only<2>{ \tableofcontents[sections={5-8}] }
+%\end{frame}
+%}
+%
+%
 \AtBeginPart{%
-    \linkdest{linkpart-\thepart}
-%\addtocontents{toc}{\protect\beamer@partintoc{\the\c@part}{\beamer@partnameshort}{\the\c@page}}%
-    \addtocontents{toc}{\protect\mycontentsline{section}{\parbox{0.48\textwidth}{ \protect\beamer@partintoc{\the\c@part}{\beamer@partnameshort}{\the\c@page}}}{}{linkpart-\thepart}}
-
-%%\addtocontents{toc}{\mycontentsline{section}{contenuto}{mannaggia}{sdsd}}%
-%
-\frameinlbffalse
-\frame{\partpage}
-\frameinlbffalse
-\begin{frame}[allowframebreaks]{Outline: \insertpart}%\insertpart
-    \tableofcontents%sectionstyle=show/shaded
-\end{frame}
+    \linkdest{linkpart-\thepart}%
+    \addtocontents{toc}{\protect\mycontentsline{section}{\parbox{0.48\textwidth}{\protect\beamer@partintoc{\the\c@part}{\beamer@partnameshort}{\the\c@page}}}{}{linkpart-\thepart}}%
+    \frameinlbffalse
+    \frame{\partpage}%
+    \frameinlbffalse
+    % 1. Rimuovi [shrink] e usa [t] per allineare in alto
+    % 2. Rimuovi le columns e usa multicols
+    % 1. Elimina lo spazio automatico sopra le colonne di multicol
+        \setlength{\multicolsep}{0pt} 
+        
+        % 2. (Opzionale) Se hai ancora i vspace di compensazione della volta scorsa, 
+        % riducili o commentali. Se il titolo si sovrappone, usa un valore piccolo come -1mm.
+        % \vspace*{-1mm} 
+    \begin{frame}[t]{Outline: \insertpart}
+        \vspace*{0.2cm}
+        \footnotesize % O \small, per sicurezza
+        \begin{multicols}{2}
+                       % 3. "Mangia" lo spazio iniziale del primo elemento del TOC
+            \vspace*{-1.5cm} 
+           % 3. Aggiungi part=\thepart per limitare alla parte corrente
+            \tableofcontents[part=\thepart]
+        \end{multicols}
+    \end{frame}%
 }
-%
-\makeatother%
 %%%Display section subsection (title page) at beginning section subsection
 \AtBeginSection{
 \addtocounter{sectionkey}{1}%using \thesection

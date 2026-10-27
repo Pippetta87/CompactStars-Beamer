@@ -1,0 +1,4860 @@
+\section{Stelle ibride: EOS nucleonica e QCD}
+\subsection{Regioni di densita' e vincoli teorici}
+
+% 01
+\begin{frame}{Capitolo 9: il problema delle stelle ibride}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Basse densita'}
+\begin{itemize}
+\item Descrizione con nucleoni, nuclei ed elettroni.
+\item EOS nucleonica vincolata dall'interazione nucleare.
+\item Vicino alla densita' di saturazione $n_0$.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Altissime densita'}
+\begin{itemize}
+\item Gradi di liberta': quark e gluoni.
+\item QCD perturbativa, affidabile solo a potenziali chimici elevati.
+\item EOS di materia di quark: $P_{\rm pQCD}(\mu_q)$.
+\end{itemize}
+\end{column}
+\end{columns}
+\medskip
+La regione intermedia non e' fissata univocamente da questi due limiti.
+\medskip
+Scopo del capitolo: costruire EOS che li colleghino e studiarne le soluzioni TOV.
+\end{frame}
+
+% 02
+\begin{frame}{Transizione adroni--quark: che cosa sappiamo?}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Il passaggio fra gradi di liberta' adronici e quark puo' essere:
+\begin{itemize}
+\item un \emph{crossover} liscio;
+\item una transizione continua con non analiticita' delle derivate;
+\item una transizione del primo ordine con salto della densita' di energia.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+Le informazioni della QCD a $T$ elevata e $\mu_B$ piccolo non determinano la natura della transizione a
+\[
+T\simeq0,\qquad \mu_B\gg0.
+\]
+L'interpolazione fra le EOS non costituisce, da sola, prova di deconfinamento o di una transizione di fase.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 03
+\begin{frame}{Scala nucleare: densita' di saturazione}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Per materia nucleare simmetrica a $T=0$:
+\[
+n_{\rm sat}\simeq 0.15\text{--}0.16\,\mathrm{fm}^{-3}.
+\]
+Massa media del nucleone:
+\[
+m_N\simeq 939\,\mathrm{MeV}.
+\]
+La scala di densita' di energia e'
+\[
+\varepsilon_0\simeq m_N n_{\rm sat}.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+Usando $n_{\rm sat}=0.15\,\mathrm{fm}^{-3}$:
+\[
+\begin{aligned}
+\varepsilon_0&\simeq 939\times0.15\\
+&\simeq 141\,\mathrm{MeV\,fm}^{-3}.
+\end{aligned}
+\]
+Il libro arrotonda a
+\[
+\varepsilon_0\simeq140\,\mathrm{MeV\,fm}^{-3}.
+\]
+Questa scala serve a esprimere le densita' dei capitoli 7--9.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 04
+\begin{frame}{Crosta e materia neutronica: gerarchia delle densita'}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Crosta esterna}
+\[
+\varepsilon\lesssim10^{-3}\varepsilon_0.
+\]
+Reticolo di nuclei ed elettroni degeneri; assenza di neutroni liberi.
+\medskip
+\textbf{Crosta interna}
+\[
+10^{-3}\varepsilon_0\lesssim\varepsilon
+\lesssim\varepsilon_0/2.
+\]
+Reticolo di nuclei, elettroni e neutroni oltre il \emph{neutron drip}.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Materia nucleonica ricca di neutroni}
+\[
+\varepsilon\gtrsim\varepsilon_0/2.
+\]
+Si passa verso il fluido nucleonico del core.
+\medskip
+A densita' prossime e poco superiori a $\varepsilon_0$, il testo assume un'incertezza nucleonica che puo' gia' raggiungere circa il $20\%$.
+\medskip
+Le soglie indicate sono ordini di grandezza della descrizione utilizzata.
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Energia di simmetria: origine di $m_N-16+32$}
+
+% 05
+\begin{frame}{Composizione nucleonica e asimmetria isospinica}
+\small
+Definiamo
+\[
+n_B=n_n+n_p,\qquad Y_p=\frac{n_p}{n_B},
+\]
+\[
+\delta\equiv\frac{n_n-n_p}{n_B}=1-2Y_p.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Materia simmetrica}
+\[
+n_n=n_p,\quad Y_p=\frac12,\quad\delta=0.
+\]
+Per simmetria di isospin, trascurando piccole rotture, $e(n_B,\delta)$ e' pari in $\delta$.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Materia neutronica pura}
+\[
+n_p=0,\quad Y_p=0,\quad\delta=1.
+\]
+La differenza energetica e' dominata dall'energia di simmetria, non dalla sola massa a riposo.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 06
+\begin{frame}{Derivazione dell'approssimazione parabolica}
+\small
+Sia $e(n_B,\delta)=\varepsilon(n_B,\delta)/n_B$ l'energia \emph{totale} per barione, inclusa la massa a riposo.
+\medskip
+Espandiamo a densita' fissata attorno a $\delta=0$:
+\[
+\begin{aligned}
+e(n_B,\delta)={}&e(n_B,0)
++\left.\frac{\partial e}{\partial\delta}\right|_0\delta\\
+&+\frac12\left.\frac{\partial^2e}{\partial\delta^2}\right|_0\delta^2
++O(\delta^4).
+\end{aligned}
+\]
+La simmetria approssimata $n_n\leftrightarrow n_p$ implica $e(n_B,\delta)=e(n_B,-\delta)$: il termine lineare e' nullo.
+\[
+{e(n_B,\delta)\simeq e(n_B,0)+S(n_B)\delta^2},
+\qquad
+S(n_B)=\frac12\left.\frac{\partial^2e}{\partial\delta^2}\right|_0.
+\]
+\end{frame}
+
+% 07
+\begin{frame}{Da $m_N-16$ alla materia neutronica pura}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Input fenomenologici a saturazione}
+\[
+e(n_{\rm sat},0)\simeq m_N-16\,\mathrm{MeV},
+\]
+\[
+S(n_{\rm sat})\equiv J\simeq32\,\mathrm{MeV}.
+\]
+$16$ MeV: legame per nucleone della materia simmetrica infinita.
+\medskip
+$32$ MeV: coefficiente di simmetria \emph{della materia nucleare} a saturazione.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Materia di neutroni puri}
+\[
+\delta=1\quad\Longrightarrow\quad \delta^2=1.
+\]
+\[
+\begin{aligned}
+e_{\rm PNM}(n_{\rm sat})
+&\simeq e(n_{\rm sat},0)+J\\
+&\simeq m_N-16+32\\
+&=m_N+16\\
+&\simeq955\,\mathrm{MeV}.
+\end{aligned}
+\]
+\end{column}
+\end{columns}
+\medskip
+\textit{Precisazione:} sono valori fenomenologici approssimati, non una previsione diretta della pQCD.
+\end{frame}
+
+% 08
+\begin{frame}{Come nasce il termine di simmetria nelle masse nucleari?}
+\small
+Per un nucleo con $A$ nucleoni e $Z$ protoni, la formula semiempirica include
+\[
+E_b\supset a_vA-a_{\rm sym}^{(A)}\frac{(A-2Z)^2}{A}.
+\]
+Poiche' $\delta=(A-2Z)/A$, dividendo per $A$ e trascurando superficie, Coulomb e pairing:
+\[
+\frac{E_b}{A}\simeq a_v-a_{\rm sym}^{\rm bulk}\delta^2.
+\]
+L'energia totale per barione e'
+\[
+\begin{aligned}
+e&\simeq m_N-\frac{E_b}{A}\\
+&\simeq m_N-a_v+a_{\rm sym}^{\rm bulk}\delta^2.
+\end{aligned}
+\]
+Nel limite della materia nucleare: $a_v\simeq16$ MeV e $a_{\rm sym}^{\rm bulk}=J\simeq32$ MeV.
+\medskip
+\textit{Nota:} il coefficiente di simmetria di un nucleo finito non coincide esattamente con $J$ perche' include effetti di superficie.
+\end{frame}
+
+% 09
+\begin{frame}{Energia per barione e potenziale chimico non coincidono sempre}
+\small
+Per materia fredda con un solo numero barionico conservato:
+\[
+\mu_B=\frac{d\varepsilon}{dn_B},\qquad P=n_B\mu_B-\varepsilon,
+\]
+quindi
+\[
+{\mu_B=\frac{\varepsilon}{n_B}+\frac{P}{n_B}=e+\frac{P}{n_B}.}
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Materia \emph{simmetrica} alla saturazione:
+\[
+P(n_{\rm sat},\delta=0)=0
+\]
+e percio' $\mu_B=e\simeq m_N-16$ MeV.
+\end{column}
+\begin{column}{0.49\textwidth}
+Materia \emph{neutronica} alla stessa densita':
+\[
+P_{\rm PNM}(n_{\rm sat})>0
+\]
+in generale, dunque $\mu_n>e_{\rm PNM}$.
+\end{column}
+\end{columns}
+\medskip
+Il valore $955$ MeV del testo fornisce la \emph{scala} $E/A$, non necessariamente il potenziale chimico esatto.
+\end{frame}
+
+% 10
+\begin{frame}{Correzione esplicita: il ruolo della pendenza $L$}
+\small
+Scriviamo
+\[
+e(n_B,\delta)\simeq e_{\rm sat}(n_B)+S(n_B)\delta^2.
+\]
+Per neutroni puri a $n_{\rm sat}$, $\delta=1$, mentre $e_{\rm sat}'(n_{\rm sat})=0$.
+\[
+\begin{aligned}
+P_{\rm PNM}(n_{\rm sat})
+&=n_{\rm sat}^2\left.\frac{d e_{\rm PNM}}{dn_B}\right|_{n_{\rm sat}}\\
+&\simeq n_{\rm sat}^2 S'(n_{\rm sat}).
+\end{aligned}
+\]
+Definendo $L=3n_{\rm sat}S'(n_{\rm sat})$:
+\[
+P_{\rm PNM}(n_{\rm sat})\simeq\frac{n_{\rm sat}L}{3},
+\qquad
+{\mu_n\simeq m_N+16+\frac L3.}
+\]
+La stima del libro $\mu_B\sim955$ MeV trascura questo termine di pressione.
+\end{frame}
+
+\subsection{Vincolo perturbativo ad altissime densita'}
+
+% 11
+\begin{frame}{Limite pQCD: quanto e' distante dalla saturazione?}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Il testo prende come scala indicativa:
+\[
+\mu_q\simeq900\,\mathrm{MeV},
+\]
+con
+\[
+\mu_B=3\mu_q\simeq2.7\,\mathrm{GeV}.
+\]
+All'estremo nucleonico:
+\[
+\mu_B\sim0.95\,\mathrm{GeV}.
+\]
+Differenza nei potenziali chimici: meno di un fattore $3$.
+\end{column}
+\begin{column}{0.49\textwidth}
+Ma la densita' di energia cresce approssimativamente come
+\[
+\varepsilon_{\rm free}\propto\mu_q^4.
+\]
+Ne consegue un divario assai maggiore fra densita' nucleari e densita' a cui la pQCD e' controllata.
+\medskip
+La materia nel core delle stelle osservate ricade in gran parte nella regione intermedia.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 12
+\begin{frame}{Densita' del gas libero a $\mu_q=900$ MeV}
+\small
+Tre sapori massless, $T=0$:
+\[
+P_{\rm SB}=\frac{3\mu_q^4}{4\pi^2},
+\qquad \varepsilon_{\rm SB}=3P_{\rm SB}=\frac{9\mu_q^4}{4\pi^2}.
+\]
+Ripristinando $\hbar c$:
+\[
+\varepsilon_{\rm SB}[\mathrm{MeV\,fm^{-3}}]
+=\frac{9(900\,\mathrm{MeV})^4}{4\pi^2(\hbar c)^3},
+\quad \hbar c\simeq197.327\,\mathrm{MeV\,fm}.
+\]
+Numericalmente:
+\[
+\varepsilon_{\rm SB}\simeq1.95\times10^4\,\mathrm{MeV\,fm^{-3}}
+\simeq140\,\varepsilon_0.
+\]
+Con le correzioni interagenti, il libro stima $\varepsilon_{\rm pQCD}\sim70\text{--}100\,\varepsilon_0$.
+\end{frame}
+
+\subsection{Figura 9.1: il divario fra le EOS}
+
+% 13
+\begin{frame}{Figura 9.1: EOS nucleonica, regione incerta e pQCD}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.63\textwidth}
+    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/EOS-crust-pQCD}\label{fig:Schaffner_EOS-crust-pQCD}\end{figure}
+\end{column}
+\begin{column}{0.35\textwidth}
+\textbf{Asse verticale}
+\[
+P\ [\mathrm{MeV\,fm^{-3}}].
+\]
+\textbf{Asse orizzontale}
+\[
+\widetilde\mu_q=\mu_q-\frac{\mu_{\rm Fe}}3.
+\]
+Entrambi gli assi: scala logaritmica.
+\medskip
+A sinistra: croste e materia nucleonica. A destra: pQCD.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 14
+\begin{frame}{Perche' traslare il potenziale chimico dei quark?}
+\small
+Il potenziale chimico di riferimento del ferro e' assunto come
+\[
+\mu_{\rm Fe}\simeq930\,\mathrm{MeV},\qquad \frac{\mu_{\rm Fe}}3\simeq310\,\mathrm{MeV}.
+\]
+Definendo $\widetilde\mu_q=\mu_q-\mu_{\rm Fe}/3$,
+\[
+\mu_q=310\,\mathrm{MeV}+\widetilde\mu_q,
+\qquad \mu_B=930\,\mathrm{MeV}+3\widetilde\mu_q.
+\]
+Esempio:
+\[
+\widetilde\mu_q=10\,\mathrm{MeV}
+\quad\Longrightarrow\quad\mu_B\simeq960\,\mathrm{MeV}.
+\]
+La traslazione rende leggibili su scala logaritmica piccoli incrementi di potenziale chimico rispetto alla materia nucleare stabile.
+\end{frame}
+
+% 15
+\begin{frame}{Lettura dei confini nella Figura 9.1}
+\small
+Le linee verticali delimitano indicativamente:
+\[
+\begin{array}{ll}
+\widetilde\mu_q\simeq3\,\mathrm{MeV} & \text{fine crosta esterna},\\[2mm]
+\widetilde\mu_q\simeq7.4\,\mathrm{MeV} & \text{fine crosta interna},\\[2mm]
+\widetilde\mu_q\simeq16\,\mathrm{MeV} & \text{estremo nucleonico}.
+\end{array}
+\]
+Il margine inferiore pQCD si trova molto piu' a destra ($\widetilde\mu_q\sim560$ MeV nel grafico).
+\medskip
+La zona centrale, con il punto interrogativo, richiede una EOS interpolata; non equivale a una regione sperimentalmente accertata di quark liberi.
+\medskip
+La fascia vicina all'asse orizzontale segnala che le densita' centrali delle stelle di massa massima ricadono proprio nell'intervallo incerto.
+\end{frame}
+
+\section{Interpolazione con politropiche a tratti}
+\subsection{Termodinamica a temperatura zero}
+
+% 16
+\begin{frame}{Politropiche a tratti: definizione}
+\small
+Per ogni intervallo di densita' si assume
+\[
+{P(n)=Kn^{\Gamma}},
+\]
+con $n=n_B$, $K$ costante e $\Gamma$ indice politropico.
+\[
+\Gamma=\frac{d\ln P}{d\ln n}.
+\]
+In una EOS a tratti:
+\[
+P(n)=\begin{cases}
+K_1n^{\Gamma_1},&n_0\leq n<n_1,\\
+K_2n^{\Gamma_2},&n_1\leq n<n_2,\\
+\cdots&\cdots
+\end{cases}
+\]
+Le costanti di ciascun segmento devono essere determinate con condizioni di raccordo termodinamico.
+\end{frame}
+
+% 17
+\begin{frame}{Identita' termodinamiche essenziali}
+\small
+A temperatura zero, materia neutra in equilibrio con un'unica carica conservata indipendente:
+\[
+d\varepsilon=\mu\,dn,\qquad
+P=\mu n-\varepsilon,\qquad dP=n\,d\mu.
+\]
+Da esse seguono
+\[
+{\mu=\frac{d\varepsilon}{dn}},
+\qquad
+{n=\frac{dP}{d\mu}}.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+La forma $P(n)$ \emph{non basta} a definire autonomamente l'energia: occorre integrare l'identita' termodinamica.
+\end{column}
+\begin{column}{0.49\textwidth}
+La continuita' di $P(\mu)$ e della sua derivata garantisce un raccordo senza salto della densita' barionica.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 18
+\begin{frame}{Derivazione dell'identita' (9.2)}
+\small
+Partiamo da
+\[
+P=n\mu-\varepsilon,
+\qquad\mu=\frac{d\varepsilon}{dn}.
+\]
+Sostituiamo il potenziale chimico:
+\[
+P=n\frac{d\varepsilon}{dn}-\varepsilon.
+\]
+Dividendo per $n^2$:
+\[
+\frac P{n^2}=\frac1n\frac{d\varepsilon}{dn}-\frac{\varepsilon}{n^2}.
+\]
+Il membro destro e' la derivata di un rapporto:
+\[
+{P=n^2\frac{d}{dn}\left(\frac{\varepsilon}{n}\right).}
+\]
+\end{frame}
+
+% 19
+\begin{frame}{Dalla politropica alla densita' di energia (9.3)}
+\small
+Assumiamo in un intervallo
+\[
+P(n)=Kn^\Gamma.
+\]
+Dall'identita' precedente:
+\[
+Kn^\Gamma=n^2\frac{d}{dn}\left(\frac{\varepsilon}{n}\right).
+\]
+Dividiamo per $n^2$:
+\[
+{\frac{d}{dn}\left(\frac{\varepsilon}{n}\right)=Kn^{\Gamma-2}.}
+\]
+Per $\Gamma\ne1$, integriamo:
+\[
+\frac{\varepsilon}{n}=K\int n^{\Gamma-2}dn+c
+=\frac{K}{\Gamma-1}n^{\Gamma-1}+c.
+\]
+\end{frame}
+
+% 20
+\begin{frame}{Densita' di energia politropica (9.4)}
+\small
+Moltiplicando il risultato integrato per $n$:
+\[
+{\varepsilon(n)=\frac{K}{\Gamma-1}n^\Gamma+cn.}
+\]
+Poiche' $P=Kn^\Gamma$,
+\[
+{\varepsilon(n)=\frac{P(n)}{\Gamma-1}+cn.}
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Il primo termine e' determinato dalla legge politropica $P(n)$.
+\end{column}
+\begin{column}{0.49\textwidth}
+Il termine $cn$ integra l'informazione sull'energia per barione al raccordo; in generale $c\ne m_N$.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 21
+\begin{frame}{Potenziale chimico della politropica (9.5)}
+\small
+Per definizione:
+\[
+\mu(n)=\frac{d\varepsilon(n)}{dn}.
+\]
+Derivando termine a termine:
+\[
+\begin{aligned}
+\mu(n)&=\frac{d}{dn}\left[\frac{K}{\Gamma-1}n^\Gamma+cn\right]\\
+&=\frac{K\Gamma}{\Gamma-1}n^{\Gamma-1}+c.
+\end{aligned}
+\]
+Quindi
+\[
+{\mu(n)=c+\frac{K\Gamma}{\Gamma-1}n^{\Gamma-1}.}
+\]
+Verifica: $n\mu-\varepsilon=Kn^\Gamma=P$.
+\end{frame}
+
+\subsection{Raccordo al punto $(n_0,P_0,\mu_0)$}
+
+% 22
+\begin{frame}{Primo vincolo di raccordo: pressione}
+\small
+Sia $(n_0,P_0,\mu_0)$ il punto terminale dell'EOS nota.
+\medskip
+Per il segmento politropico imponiamo
+\[
+P(n_0)=P_0.
+\]
+Con $P(n)=Kn^\Gamma$:
+\[
+P_0=Kn_0^\Gamma
+\quad\Longrightarrow\quad
+{K=\frac{P_0}{n_0^\Gamma}.}
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+$\Gamma$ determina la forma del segmento.
+\end{column}
+\begin{column}{0.49\textwidth}
+$K$ non e' libero una volta scelta la pressione al raccordo.
+\end{column}
+\end{columns}
+\medskip
+Il simbolo $n_0$ qui identifica il \emph{punto di raccordo}, non necessariamente la densita' di saturazione nucleare.
+\end{frame}
+
+% 23
+\begin{frame}{Secondo vincolo: continuita' del potenziale (9.6)}
+\small
+Partiamo da
+\[
+\mu(n)=c+\frac{K\Gamma}{\Gamma-1}n^{\Gamma-1}.
+\]
+Imponiamo $\mu(n_0)=\mu_0$:
+\[
+\mu_0=c+\frac{K\Gamma}{\Gamma-1}n_0^{\Gamma-1}.
+\]
+Si ricava
+\[
+{c=\mu_0-\frac{K\Gamma}{\Gamma-1}n_0^{\Gamma-1}.}
+\]
+Inserendo $K=P_0/n_0^\Gamma$:
+\[
+{c=\mu_0-\frac{\Gamma}{\Gamma-1}\frac{P_0}{n_0}.}
+\]
+Le due condizioni fissano $K$ e $c$; rimane da scegliere $\Gamma$.
+\end{frame}
+
+% 24
+\begin{frame}{Controllo del raccordo: anche $\varepsilon$ e' continua}
+\small
+Alla densita' $n_0$,
+\[
+\varepsilon(n_0)=\frac{P_0}{\Gamma-1}+cn_0.
+\]
+Usiamo
+\[
+cn_0=\mu_0n_0-\frac{\Gamma}{\Gamma-1}P_0.
+\]
+Segue
+\[
+\begin{aligned}
+\varepsilon(n_0)
+&=\frac{P_0}{\Gamma-1}+\mu_0n_0
+-\frac{\Gamma P_0}{\Gamma-1}\\
+&=\mu_0n_0-P_0.
+\end{aligned}
+\]
+\[
+{\varepsilon_0+P_0=\mu_0n_0.}
+\]
+La densita' di energia coincide con quella dell'EOS nota se il punto soddisfa la stessa identita' termodinamica.
+\end{frame}
+
+\subsection{Da $P(n)$ a $P(\mu)$ e $\varepsilon(P)$}
+
+% 25
+\begin{frame}{Invertire il potenziale chimico: primo passaggio}
+\small
+Partiamo dalla (9.5):
+\[
+\mu-c=\frac{K\Gamma}{\Gamma-1}n^{\Gamma-1}.
+\]
+Isolando la potenza di $n$:
+\[
+n^{\Gamma-1}=\frac{\Gamma-1}{K\Gamma}(\mu-c).
+\]
+Elevando a $1/(\Gamma-1)$:
+\[
+{n(\mu)=\left[\frac{\Gamma-1}{K\Gamma}(\mu-c)\right]^{1/(\Gamma-1)}.}
+\]
+L'argomento della potenza deve rimanere positivo nel tratto fisico scelto.
+\end{frame}
+
+% 26
+\begin{frame}{Densita' in funzione di $\mu$: raccordo (9.7)}
+\small
+Sostituiamo
+\[
+c=\mu_0-\frac{K\Gamma}{\Gamma-1}n_0^{\Gamma-1}
+\]
+nel termine $\mu-c$:
+\[
+\mu-c=(\mu-\mu_0)+\frac{K\Gamma}{\Gamma-1}n_0^{\Gamma-1}.
+\]
+Pertanto
+\[
+{
+ n(\mu)=\left[n_0^{\Gamma-1}
+ +\frac{\Gamma-1}{K\Gamma}(\mu-\mu_0)
+ \right]^{1/(\Gamma-1)}.}
+\]
+Controllo immediato: $n(\mu_0)=n_0$.
+\end{frame}
+
+% 27
+\begin{frame}{Pressione in funzione di $\mu$: Eq. (9.8)}
+\small
+Partendo da $P=Kn^\Gamma$ e dalla (9.7):
+\[
+{
+P(\mu)=K\left[
+ n_0^{\Gamma-1}+\frac{\Gamma-1}{K\Gamma}(\mu-\mu_0)
+\right]^{\Gamma/(\Gamma-1)}.}
+\]
+Al raccordo $\mu=\mu_0$:
+\[
+P(\mu_0)=Kn_0^\Gamma=P_0.
+\]
+La funzione pressione e' quindi continua. Rimane da verificarne la derivata.
+\end{frame}
+
+% 28
+\begin{frame}{Verifica: $dP/d\mu=n$ in ogni segmento}
+\small
+Definiamo
+\[
+X(\mu)=n_0^{\Gamma-1}+\frac{\Gamma-1}{K\Gamma}(\mu-\mu_0).
+\]
+Allora $P(\mu)=KX^{\Gamma/(\Gamma-1)}$ e
+\[
+\begin{aligned}
+\frac{dP}{d\mu}
+&=K\frac{\Gamma}{\Gamma-1}X^{1/(\Gamma-1)}
+\frac{\Gamma-1}{K\Gamma}\\
+&=X^{1/(\Gamma-1)}=n(\mu).
+\end{aligned}
+\]
+Per $\mu=\mu_0$:
+\[
+{\left.\frac{dP}{d\mu}\right|_{\mu_0}=n_0.}
+\]
+Questa e' la condizione sulla pendenza usata per il raccordo liscio delle politropiche.
+\end{frame}
+
+% 29
+\begin{frame}{Dalla pressione alla densita' per le TOV}
+\small
+Per integrare le TOV occorre $\varepsilon(P)$.
+\medskip
+Da $P=Kn^\Gamma$:
+\[
+n=\left(\frac PK\right)^{1/\Gamma}.
+\]
+Poiche' $P_0=Kn_0^\Gamma$, equivalentemente
+\[
+{n(P)=n_0\left(\frac P{P_0}\right)^{1/\Gamma}.}
+\]
+Usiamo la densita' di energia gia' integrata:
+\[
+\varepsilon(n)=\frac{P(n)}{\Gamma-1}+cn.
+\]
+Sostituiremo $n(P)$ e poi il valore di $c$ fissato al raccordo.
+\end{frame}
+
+% 30
+\begin{frame}{EOS per le TOV: derivazione di (9.9)}
+\small
+Sostituendo $n(P)$:
+\[
+\varepsilon(P)=\frac{P}{\Gamma-1}+cn_0\left(\frac{P}{P_0}\right)^{1/\Gamma}.
+\]
+Dal vincolo sul potenziale:
+\[
+cn_0=\mu_0n_0-\frac{\Gamma}{\Gamma-1}P_0.
+\]
+Si ottiene
+\[
+{
+\begin{aligned}
+\varepsilon(P)={}&\frac{P}{\Gamma-1}\\
+&+\left(\mu_0n_0-\frac{\Gamma}{\Gamma-1}P_0\right)
+\left(\frac{P}{P_0}\right)^{1/\Gamma}.
+\end{aligned}}
+\]
+Il termine in $P^{1/\Gamma}$ conserva l'informazione termodinamica del raccordo.
+\end{frame}
+
+% 31
+\begin{frame}{Il caso speciale $\Gamma=1$}
+\small
+Le formule precedenti con $1/(\Gamma-1)$ richiedono $\Gamma\ne1$.
+\medskip
+Se $P=Kn$, l'equazione (9.2) diventa
+\[
+\frac{d}{dn}\left(\frac{\varepsilon}{n}\right)=\frac Kn.
+\]
+Integrando, con densita' di riferimento $n_{\rm ref}$,
+\[
+{\varepsilon(n)=Kn\ln\frac{n}{n_{\rm ref}}+cn.}
+\]
+Derivando:
+\[
+{\mu(n)=K\left[\ln\frac{n}{n_{\rm ref}}+1\right]+c.}
+\]
+Il segmento con $\Gamma=1$ si tratta dunque separatamente mediante un logaritmo.
+\end{frame}
+
+% 32
+\begin{frame}{Algoritmo di raccordo per piu' politropiche}
+\small
+\begin{enumerate}
+\item Partire dal punto nucleonico $(n_0,P_0,\mu_0)$.
+\item Scegliere $\Gamma_1$ e determinare $K_1,c_1$ imponendo $P_0,\mu_0$.
+\item Proseguire fino a un nuovo punto $(n_1,P_1,\mu_1)$.
+\item Scegliere $\Gamma_2$ e imporre le stesse condizioni per il secondo segmento.
+\item Raccordare all'EOS pQCD, controllando vincoli fisici lungo tutta la curva.
+\end{enumerate}
+\medskip
+Al raccordo liscio:
+\[
+P_-(\mu_i)=P_+(\mu_i),\qquad
+\left.\frac{dP_-}{d\mu}\right|_{\mu_i}
+=\left.\frac{dP_+}{d\mu}\right|_{\mu_i}=n_i.
+\]
+\end{frame}
+
+\subsection{Causalita', rigidita' e transizioni di fase}
+
+% 33
+\begin{frame}{Derivazione della velocita' del suono}
+\small
+A $T=0$, in un fluido barotropico:
+\[
+c_s^2=\frac{dP}{d\varepsilon}
+=\frac{dP/dn}{d\varepsilon/dn}
+\qquad(c=1).
+\]
+Per $P=Kn^\Gamma$:
+\[
+\frac{dP}{dn}=\Gamma Kn^{\Gamma-1}=\frac{\Gamma P}{n}.
+\]
+Dalla termodinamica:
+\[
+\frac{d\varepsilon}{dn}=\mu=\frac{\varepsilon+P}{n}.
+\]
+Quindi
+\[
+{c_s^2=\frac{\Gamma P}{\varepsilon+P}.}
+\]
+Causalita' e stabilita' locale richiedono $0\leq c_s^2\leq1$.
+\end{frame}
+
+% 34
+\begin{frame}{Raccordo liscio e transizione del primo ordine}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Interpolazione liscia}
+\[
+P_H(\mu_i)=P_Q(\mu_i),
+\]
+\[
+n_H(\mu_i)=n_Q(\mu_i).
+\]
+Per $\varepsilon=\mu n-P$ risulta anche $\varepsilon_H=\varepsilon_Q$ al punto.
+\medskip
+Nessun salto di densita' introdotto dal raccordo.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Primo ordine (Maxwell)}
+\[
+P_H(\mu_t)=P_Q(\mu_t),
+\]
+\[
+n_Q\ne n_H.
+\]
+A pressione e potenziale comuni,
+\[
+{\Delta\varepsilon=\mu_t\Delta n_B.}
+\]
+La pressione continua, ma la derivata $dP/d\mu$ salta.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 35
+\begin{frame}{Quali politropiche sono fisicamente ammissibili?}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Vincoli locali}
+\begin{itemize}
+\item $n=dP/d\mu>0$;
+\item stabilita' meccanica $dP/dn>0$;
+\item causalita' $c_s^2=dP/d\varepsilon\leq1$.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Vincolo globale}
+\[
+M_{\max}\gtrsim2M_\odot
+\]
+per essere compatibili con l'esistenza di stelle massicce osservate.
+\medskip
+Una EOS troppo soffice non sostiene grandi masse; una troppo rigida puo' violare la causalita'.
+\end{column}
+\end{columns}
+\medskip
+La rigidita' stellare si giudica da $P(\varepsilon)$ e dalla velocita' del suono, non dal solo valore di $\Gamma$ isolatamente.
+\end{frame}
+
+\section{Massa--raggio delle stelle ibride}
+\subsection{Figura 9.2 e vincoli astrofisici}
+
+% 36
+\begin{frame}{Figura 9.2: banda delle relazioni massa--raggio}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.64\textwidth}
+    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/MR-NS-hybrid}\label{fig:Schaffner_MR-NS-hybrid}\end{figure}
+\end{column}
+\begin{column}{0.34\textwidth}
+Banda grigia: famiglie di EOS interpolate fra limite nucleonico e pQCD.
+\medskip
+Curve I, II e III: tre politropiche rappresentative.
+\medskip
+Linee: buchi neri, Buchdahl, limite causale e compattezze costanti.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 37
+\begin{frame}{Tre sequenze rappresentative nella Figura 9.2}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.33\textwidth}
+\textbf{I: piu' compatta}
+\medskip
+Raggi relativamente piccoli.
+\[
+\varepsilon_{c,\max}\sim10\varepsilon_0.
+\]
+La configurazione di massa massima raggiunge densita' centrali elevate.
+\end{column}
+\begin{column}{0.33\textwidth}
+\textbf{II: massa massima maggiore}
+\[
+M_{\max}\simeq2.4M_\odot,
+\]
+\[
+\varepsilon_{c,\max}\sim5\varepsilon_0.
+\]
+Mostra come una EOS adeguatamente rigida possa sostenere masse elevate.
+\end{column}
+\begin{column}{0.33\textwidth}
+\textbf{III: raggi maggiori}
+\medskip
+Sequenza piu' a destra nel diagramma.
+\[
+\varepsilon_{c,\max}\sim5\varepsilon_0.
+\]
+Raggi piu' ampi alle masse considerate.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 38
+\begin{frame}{Densita' centrali: cosa sondano le osservazioni?}
+\small
+Per la famiglia di EOS del testo:
+\[
+\begin{array}{c|c|c}
+M & R & \varepsilon_c/\varepsilon_0\\ \hline
+1.4M_\odot & 11\text{--}14.5\,\mathrm{km} & 1.6\text{--}4\\[1mm]
+2.0M_\odot & 10\text{--}15\,\mathrm{km} & 2\text{--}8
+\end{array}
+\]
+Confronto fra scale:
+\[
+\varepsilon_c\sim\text{pochi }\varepsilon_0,
+\qquad \varepsilon_{\rm pQCD}\gtrsim70\,\varepsilon_0.
+\]
+Le osservazioni delle stelle compatte mettono alla prova la regione intermedia dell'EOS, non direttamente il regime di pQCD asintotica.
+\medskip
+{\scriptsize Intervalli del lavoro citato nel libro; non sono vincoli osservativi aggiornati.}
+\end{frame}
+
+% 39
+\begin{frame}{Compattezza, causalita' e massa osservata}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Compattezza}
+\[
+\mathcal C=\frac{GM}{Rc^2}.
+\]
+Rette di riferimento nel grafico:
+\[
+\mathcal C=0.1,\ 0.2,\ 0.3.
+\]
+Limiti esaminati nel capitolo 8:
+\[
+\mathcal C_{\rm BH}=\tfrac12,\quad
+\mathcal C_{\rm Buchdahl}=\tfrac49.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Vincoli sull'EOS}
+\[
+c_s^2\leq1,\qquad M_{\max}\geq2M_\odot.
+\]
+La causalita' impedisce una EOS arbitrariamente rigida.
+\medskip
+La massa massima osservata impedisce una EOS arbitrariamente soffice.
+\medskip
+La loro combinazione restringe la banda ammissibile nel diagramma $M$--$R$.
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Riepilogo}
+
+% 40
+\begin{frame}{Risultato del \S9.1: interpolare senza inventare la microfisica}
+\small
+\begin{enumerate}
+\item EOS nucleonica vincolata vicino a $\varepsilon_0$.
+\item EOS pQCD controllata solo intorno a $\varepsilon\gtrsim70\text{--}100\varepsilon_0$.
+\item Politropiche a tratti raccordate con continuita' di $P$, $\mu$ e $n$.
+\item Verifica di causalita', stabilita' e massa massima.
+\item Integrazione delle TOV per ottenere una banda di curve $M(R)$.
+\end{enumerate}
+\medskip
+Il raccordo liscio e' una \emph{parametrizzazione} dell'EOS intermedia, non una dimostrazione che la transizione adroni--quark sia un crossover.
+\end{frame}
+
+% 41
+\begin{frame}{Formule da ricordare: politropiche termodinamiche}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\[
+P(n)=Kn^\Gamma,
+\]
+\[
+\varepsilon(n)=\frac{Kn^\Gamma}{\Gamma-1}+cn,
+\]
+\[
+\mu(n)=\frac{K\Gamma}{\Gamma-1}n^{\Gamma-1}+c,
+\]
+\[
+c=\mu_0-\frac{\Gamma P_0}{(\Gamma-1)n_0}.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+\[
+n=\frac{dP}{d\mu},
+\]
+\[
+\varepsilon(P)=\frac{P}{\Gamma-1}
++\left(\mu_0n_0-\frac{\Gamma P_0}{\Gamma-1}\right)
+\left(\frac{P}{P_0}\right)^{1/\Gamma},
+\]
+\[
+c_s^2=\frac{\Gamma P}{\varepsilon+P}\leq1.
+\]
+\end{column}
+\end{columns}
+\medskip
+\textbf{Energia di simmetria:} $e_{\rm PNM}(n_{\rm sat})\simeq m_N-16+32=m_N+16\simeq955$ MeV.
+\end{frame}
+
+\section{Stelle ibride: EOS nucleonica e QCD}
+\subsection{Regioni di densita' e vincoli teorici}
+
+% 01
+\begin{frame}{Capitolo 9: il problema delle stelle ibride}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Basse densita'}
+\begin{itemize}
+\item Descrizione con nucleoni, nuclei ed elettroni.
+\item EOS nucleonica vincolata dall'interazione nucleare.
+\item Vicino alla densita' di saturazione $n_0$.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Altissime densita'}
+\begin{itemize}
+\item Gradi di liberta': quark e gluoni.
+\item QCD perturbativa, affidabile solo a potenziali chimici elevati.
+\item EOS di materia di quark: $P_{\rm pQCD}(\mu_q)$.
+\end{itemize}
+\end{column}
+\end{columns}
+\medskip
+La regione intermedia non e' fissata univocamente da questi due limiti.
+\medskip
+Scopo del capitolo: costruire EOS che li colleghino e studiarne le soluzioni TOV.
+\end{frame}
+
+% 02
+\begin{frame}{Transizione adroni--quark: che cosa sappiamo?}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Il passaggio fra gradi di liberta' adronici e quark puo' essere:
+\begin{itemize}
+\item un \emph{crossover} liscio;
+\item una transizione continua con non analiticita' delle derivate;
+\item una transizione del primo ordine con salto della densita' di energia.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+Le informazioni della QCD a $T$ elevata e $\mu_B$ piccolo non determinano la natura della transizione a
+\[
+T\simeq0,\qquad \mu_B\gg0.
+\]
+L'interpolazione fra le EOS non costituisce, da sola, prova di deconfinamento o di una transizione di fase.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 03
+\begin{frame}{Scala nucleare: densita' di saturazione}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Per materia nucleare simmetrica a $T=0$:
+\[
+n_{\rm sat}\simeq 0.15\text{--}0.16\,\mathrm{fm}^{-3}.
+\]
+Massa media del nucleone:
+\[
+m_N\simeq 939\,\mathrm{MeV}.
+\]
+La scala di densita' di energia e'
+\[
+\varepsilon_0\simeq m_N n_{\rm sat}.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+Usando $n_{\rm sat}=0.15\,\mathrm{fm}^{-3}$:
+\[
+\begin{aligned}
+\varepsilon_0&\simeq 939\times0.15\\
+&\simeq 141\,\mathrm{MeV\,fm}^{-3}.
+\end{aligned}
+\]
+Il libro arrotonda a
+\[
+\varepsilon_0\simeq140\,\mathrm{MeV\,fm}^{-3}.
+\]
+Questa scala serve a esprimere le densita' dei capitoli 7--9.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 04
+\begin{frame}{Crosta e materia neutronica: gerarchia delle densita'}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Crosta esterna}
+\[
+\varepsilon\lesssim10^{-3}\varepsilon_0.
+\]
+Reticolo di nuclei ed elettroni degeneri; assenza di neutroni liberi.
+\medskip
+\textbf{Crosta interna}
+\[
+10^{-3}\varepsilon_0\lesssim\varepsilon
+\lesssim\varepsilon_0/2.
+\]
+Reticolo di nuclei, elettroni e neutroni oltre il \emph{neutron drip}.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Materia nucleonica ricca di neutroni}
+\[
+\varepsilon\gtrsim\varepsilon_0/2.
+\]
+Si passa verso il fluido nucleonico del core.
+\medskip
+A densita' prossime e poco superiori a $\varepsilon_0$, il testo assume un'incertezza nucleonica che puo' gia' raggiungere circa il $20\%$.
+\medskip
+Le soglie indicate sono ordini di grandezza della descrizione utilizzata.
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Energia di simmetria: origine di $m_N-16+32$}
+
+% 05
+\begin{frame}{Composizione nucleonica e asimmetria isospinica}
+\small
+Definiamo
+\[
+n_B=n_n+n_p,\qquad Y_p=\frac{n_p}{n_B},
+\]
+\[
+\delta\equiv\frac{n_n-n_p}{n_B}=1-2Y_p.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Materia simmetrica}
+\[
+n_n=n_p,\quad Y_p=\frac12,\quad\delta=0.
+\]
+Per simmetria di isospin, trascurando piccole rotture, $e(n_B,\delta)$ e' pari in $\delta$.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Materia neutronica pura}
+\[
+n_p=0,\quad Y_p=0,\quad\delta=1.
+\]
+La differenza energetica e' dominata dall'energia di simmetria, non dalla sola massa a riposo.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 06
+\begin{frame}{Derivazione dell'approssimazione parabolica}
+\small
+Sia $e(n_B,\delta)=\varepsilon(n_B,\delta)/n_B$ l'energia \emph{totale} per barione, inclusa la massa a riposo.
+\medskip
+Espandiamo a densita' fissata attorno a $\delta=0$:
+\[
+\begin{aligned}
+e(n_B,\delta)={}&e(n_B,0)
++\left.\frac{\partial e}{\partial\delta}\right|_0\delta\\
+&+\frac12\left.\frac{\partial^2e}{\partial\delta^2}\right|_0\delta^2
++O(\delta^4).
+\end{aligned}
+\]
+La simmetria approssimata $n_n\leftrightarrow n_p$ implica $e(n_B,\delta)=e(n_B,-\delta)$: il termine lineare e' nullo.
+\[
+{e(n_B,\delta)\simeq e(n_B,0)+S(n_B)\delta^2},
+\qquad
+S(n_B)=\frac12\left.\frac{\partial^2e}{\partial\delta^2}\right|_0.
+\]
+\end{frame}
+
+% 07
+\begin{frame}{Da $m_N-16$ alla materia neutronica pura}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Input fenomenologici a saturazione}
+\[
+e(n_{\rm sat},0)\simeq m_N-16\,\mathrm{MeV},
+\]
+\[
+S(n_{\rm sat})\equiv J\simeq32\,\mathrm{MeV}.
+\]
+$16$ MeV: legame per nucleone della materia simmetrica infinita.
+\medskip
+$32$ MeV: coefficiente di simmetria \emph{della materia nucleare} a saturazione.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Materia di neutroni puri}
+\[
+\delta=1\quad\Longrightarrow\quad \delta^2=1.
+\]
+\[
+\begin{aligned}
+e_{\rm PNM}(n_{\rm sat})
+&\simeq e(n_{\rm sat},0)+J\\
+&\simeq m_N-16+32\\
+&=m_N+16\\
+&\simeq955\,\mathrm{MeV}.
+\end{aligned}
+\]
+\end{column}
+\end{columns}
+\medskip
+\textit{Precisazione:} sono valori fenomenologici approssimati, non una previsione diretta della pQCD.
+\end{frame}
+
+% 08
+\begin{frame}{Come nasce il termine di simmetria nelle masse nucleari?}
+\small
+Per un nucleo con $A$ nucleoni e $Z$ protoni, la formula semiempirica include
+\[
+E_b\supset a_vA-a_{\rm sym}^{(A)}\frac{(A-2Z)^2}{A}.
+\]
+Poiche' $\delta=(A-2Z)/A$, dividendo per $A$ e trascurando superficie, Coulomb e pairing:
+\[
+\frac{E_b}{A}\simeq a_v-a_{\rm sym}^{\rm bulk}\delta^2.
+\]
+L'energia totale per barione e'
+\[
+\begin{aligned}
+e&\simeq m_N-\frac{E_b}{A}\\
+&\simeq m_N-a_v+a_{\rm sym}^{\rm bulk}\delta^2.
+\end{aligned}
+\]
+Nel limite della materia nucleare: $a_v\simeq16$ MeV e $a_{\rm sym}^{\rm bulk}=J\simeq32$ MeV.
+\medskip
+\textit{Nota:} il coefficiente di simmetria di un nucleo finito non coincide esattamente con $J$ perche' include effetti di superficie.
+\end{frame}
+
+% 09
+\begin{frame}{Energia per barione e potenziale chimico non coincidono sempre}
+\small
+Per materia fredda con un solo numero barionico conservato:
+\[
+\mu_B=\frac{d\varepsilon}{dn_B},\qquad P=n_B\mu_B-\varepsilon,
+\]
+quindi
+\[
+{\mu_B=\frac{\varepsilon}{n_B}+\frac{P}{n_B}=e+\frac{P}{n_B}.}
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Materia \emph{simmetrica} alla saturazione:
+\[
+P(n_{\rm sat},\delta=0)=0
+\]
+e percio' $\mu_B=e\simeq m_N-16$ MeV.
+\end{column}
+\begin{column}{0.49\textwidth}
+Materia \emph{neutronica} alla stessa densita':
+\[
+P_{\rm PNM}(n_{\rm sat})>0
+\]
+in generale, dunque $\mu_n>e_{\rm PNM}$.
+\end{column}
+\end{columns}
+\medskip
+Il valore $955$ MeV del testo fornisce la \emph{scala} $E/A$, non necessariamente il potenziale chimico esatto.
+\end{frame}
+
+% 10
+\begin{frame}{Correzione esplicita: il ruolo della pendenza $L$}
+\small
+Scriviamo
+\[
+e(n_B,\delta)\simeq e_{\rm sat}(n_B)+S(n_B)\delta^2.
+\]
+Per neutroni puri a $n_{\rm sat}$, $\delta=1$, mentre $e_{\rm sat}'(n_{\rm sat})=0$.
+\[
+\begin{aligned}
+P_{\rm PNM}(n_{\rm sat})
+&=n_{\rm sat}^2\left.\frac{d e_{\rm PNM}}{dn_B}\right|_{n_{\rm sat}}\\
+&\simeq n_{\rm sat}^2 S'(n_{\rm sat}).
+\end{aligned}
+\]
+Definendo $L=3n_{\rm sat}S'(n_{\rm sat})$:
+\[
+P_{\rm PNM}(n_{\rm sat})\simeq\frac{n_{\rm sat}L}{3},
+\qquad
+{\mu_n\simeq m_N+16+\frac L3.}
+\]
+La stima del libro $\mu_B\sim955$ MeV trascura questo termine di pressione.
+\end{frame}
+
+\subsection{Vincolo perturbativo ad altissime densita'}
+
+% 11
+\begin{frame}{Limite pQCD: quanto e' distante dalla saturazione?}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Il testo prende come scala indicativa:
+\[
+\mu_q\simeq900\,\mathrm{MeV},
+\]
+con
+\[
+\mu_B=3\mu_q\simeq2.7\,\mathrm{GeV}.
+\]
+All'estremo nucleonico:
+\[
+\mu_B\sim0.95\,\mathrm{GeV}.
+\]
+Differenza nei potenziali chimici: meno di un fattore $3$.
+\end{column}
+\begin{column}{0.49\textwidth}
+Ma la densita' di energia cresce approssimativamente come
+\[
+\varepsilon_{\rm free}\propto\mu_q^4.
+\]
+Ne consegue un divario assai maggiore fra densita' nucleari e densita' a cui la pQCD e' controllata.
+\medskip
+La materia nel core delle stelle osservate ricade in gran parte nella regione intermedia.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 12
+\begin{frame}{Densita' del gas libero a $\mu_q=900$ MeV}
+\small
+Tre sapori massless, $T=0$:
+\[
+P_{\rm SB}=\frac{3\mu_q^4}{4\pi^2},
+\qquad \varepsilon_{\rm SB}=3P_{\rm SB}=\frac{9\mu_q^4}{4\pi^2}.
+\]
+Ripristinando $\hbar c$:
+\[
+\varepsilon_{\rm SB}[\mathrm{MeV\,fm^{-3}}]
+=\frac{9(900\,\mathrm{MeV})^4}{4\pi^2(\hbar c)^3},
+\quad \hbar c\simeq197.327\,\mathrm{MeV\,fm}.
+\]
+Numericalmente:
+\[
+\varepsilon_{\rm SB}\simeq1.95\times10^4\,\mathrm{MeV\,fm^{-3}}
+\simeq140\,\varepsilon_0.
+\]
+Con le correzioni interagenti, il libro stima $\varepsilon_{\rm pQCD}\sim70\text{--}100\,\varepsilon_0$.
+\end{frame}
+
+\subsection{Figura 9.1: il divario fra le EOS}
+
+% 13
+\begin{frame}{Figura 9.1: EOS nucleonica, regione incerta e pQCD}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.63\textwidth}
+\centering
+\includegraphics[width=\linewidth]{hybrid9_fig91.png}
+\end{column}
+\begin{column}{0.35\textwidth}
+\textbf{Asse verticale}
+\[
+P\ [\mathrm{MeV\,fm^{-3}}].
+\]
+\textbf{Asse orizzontale}
+\[
+\widetilde\mu_q=\mu_q-\frac{\mu_{\rm Fe}}3.
+\]
+Entrambi gli assi: scala logaritmica.
+\medskip
+A sinistra: croste e materia nucleonica. A destra: pQCD.
+\end{column}
+\end{columns}
+\vspace{1mm}
+{\scriptsize Figura 9.1 dal materiale allegato (Kurkela et al., 2014, come citato nel libro).}
+\end{frame}
+
+% 14
+\begin{frame}{Perche' traslare il potenziale chimico dei quark?}
+\small
+Il potenziale chimico di riferimento del ferro e' assunto come
+\[
+\mu_{\rm Fe}\simeq930\,\mathrm{MeV},\qquad \frac{\mu_{\rm Fe}}3\simeq310\,\mathrm{MeV}.
+\]
+Definendo $\widetilde\mu_q=\mu_q-\mu_{\rm Fe}/3$,
+\[
+\mu_q=310\,\mathrm{MeV}+\widetilde\mu_q,
+\qquad \mu_B=930\,\mathrm{MeV}+3\widetilde\mu_q.
+\]
+Esempio:
+\[
+\widetilde\mu_q=10\,\mathrm{MeV}
+\quad\Longrightarrow\quad\mu_B\simeq960\,\mathrm{MeV}.
+\]
+La traslazione rende leggibili su scala logaritmica piccoli incrementi di potenziale chimico rispetto alla materia nucleare stabile.
+\end{frame}
+
+% 15
+\begin{frame}{Lettura dei confini nella Figura 9.1}
+\small
+Le linee verticali delimitano indicativamente:
+\[
+\begin{array}{ll}
+\widetilde\mu_q\simeq3\,\mathrm{MeV} & \text{fine crosta esterna},\\[2mm]
+\widetilde\mu_q\simeq7.4\,\mathrm{MeV} & \text{fine crosta interna},\\[2mm]
+\widetilde\mu_q\simeq16\,\mathrm{MeV} & \text{estremo nucleonico}.
+\end{array}
+\]
+Il margine inferiore pQCD si trova molto piu' a destra ($\widetilde\mu_q\sim560$ MeV nel grafico).
+\medskip
+La zona centrale, con il punto interrogativo, richiede una EOS interpolata; non equivale a una regione sperimentalmente accertata di quark liberi.
+\medskip
+La fascia vicina all'asse orizzontale segnala che le densita' centrali delle stelle di massa massima ricadono proprio nell'intervallo incerto.
+\end{frame}
+
+\section{Interpolazione con politropiche a tratti}
+\subsection{Termodinamica a temperatura zero}
+
+% 16
+\begin{frame}{Politropiche a tratti: definizione}
+\small
+Per ogni intervallo di densita' si assume
+\[
+{P(n)=Kn^{\Gamma}},
+\]
+con $n=n_B$, $K$ costante e $\Gamma$ indice politropico.
+\[
+\Gamma=\frac{d\ln P}{d\ln n}.
+\]
+In una EOS a tratti:
+\[
+P(n)=\begin{cases}
+K_1n^{\Gamma_1},&n_0\leq n<n_1,\\
+K_2n^{\Gamma_2},&n_1\leq n<n_2,\\
+\cdots&\cdots
+\end{cases}
+\]
+Le costanti di ciascun segmento devono essere determinate con condizioni di raccordo termodinamico.
+\end{frame}
+
+% 17
+\begin{frame}{Identita' termodinamiche essenziali}
+\small
+A temperatura zero, materia neutra in equilibrio con un'unica carica conservata indipendente:
+\[
+d\varepsilon=\mu\,dn,\qquad
+P=\mu n-\varepsilon,\qquad dP=n\,d\mu.
+\]
+Da esse seguono
+\[
+{\mu=\frac{d\varepsilon}{dn}},
+\qquad
+{n=\frac{dP}{d\mu}}.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+La forma $P(n)$ \emph{non basta} a definire autonomamente l'energia: occorre integrare l'identita' termodinamica.
+\end{column}
+\begin{column}{0.49\textwidth}
+La continuita' di $P(\mu)$ e della sua derivata garantisce un raccordo senza salto della densita' barionica.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 18
+\begin{frame}{Derivazione dell'identita' (9.2)}
+\small
+Partiamo da
+\[
+P=n\mu-\varepsilon,
+\qquad\mu=\frac{d\varepsilon}{dn}.
+\]
+Sostituiamo il potenziale chimico:
+\[
+P=n\frac{d\varepsilon}{dn}-\varepsilon.
+\]
+Dividendo per $n^2$:
+\[
+\frac P{n^2}=\frac1n\frac{d\varepsilon}{dn}-\frac{\varepsilon}{n^2}.
+\]
+Il membro destro e' la derivata di un rapporto:
+\[
+{P=n^2\frac{d}{dn}\left(\frac{\varepsilon}{n}\right).}
+\]
+\end{frame}
+
+% 19
+\begin{frame}{Dalla politropica alla densita' di energia (9.3)}
+\small
+Assumiamo in un intervallo
+\[
+P(n)=Kn^\Gamma.
+\]
+Dall'identita' precedente:
+\[
+Kn^\Gamma=n^2\frac{d}{dn}\left(\frac{\varepsilon}{n}\right).
+\]
+Dividiamo per $n^2$:
+\[
+{\frac{d}{dn}\left(\frac{\varepsilon}{n}\right)=Kn^{\Gamma-2}.}
+\]
+Per $\Gamma\ne1$, integriamo:
+\[
+\frac{\varepsilon}{n}=K\int n^{\Gamma-2}dn+c
+=\frac{K}{\Gamma-1}n^{\Gamma-1}+c.
+\]
+\end{frame}
+
+% 20
+\begin{frame}{Densita' di energia politropica (9.4)}
+\small
+Moltiplicando il risultato integrato per $n$:
+\[
+{\varepsilon(n)=\frac{K}{\Gamma-1}n^\Gamma+cn.}
+\]
+Poiche' $P=Kn^\Gamma$,
+\[
+{\varepsilon(n)=\frac{P(n)}{\Gamma-1}+cn.}
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Il primo termine e' determinato dalla legge politropica $P(n)$.
+\end{column}
+\begin{column}{0.49\textwidth}
+Il termine $cn$ integra l'informazione sull'energia per barione al raccordo; in generale $c\ne m_N$.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 21
+\begin{frame}{Potenziale chimico della politropica (9.5)}
+\small
+Per definizione:
+\[
+\mu(n)=\frac{d\varepsilon(n)}{dn}.
+\]
+Derivando termine a termine:
+\[
+\begin{aligned}
+\mu(n)&=\frac{d}{dn}\left[\frac{K}{\Gamma-1}n^\Gamma+cn\right]\\
+&=\frac{K\Gamma}{\Gamma-1}n^{\Gamma-1}+c.
+\end{aligned}
+\]
+Quindi
+\[
+{\mu(n)=c+\frac{K\Gamma}{\Gamma-1}n^{\Gamma-1}.}
+\]
+Verifica: $n\mu-\varepsilon=Kn^\Gamma=P$.
+\end{frame}
+
+\subsection{Raccordo al punto $(n_0,P_0,\mu_0)$}
+
+% 22
+\begin{frame}{Primo vincolo di raccordo: pressione}
+\small
+Sia $(n_0,P_0,\mu_0)$ il punto terminale dell'EOS nota.
+\medskip
+Per il segmento politropico imponiamo
+\[
+P(n_0)=P_0.
+\]
+Con $P(n)=Kn^\Gamma$:
+\[
+P_0=Kn_0^\Gamma
+\quad\Longrightarrow\quad
+{K=\frac{P_0}{n_0^\Gamma}.}
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+$\Gamma$ determina la forma del segmento.
+\end{column}
+\begin{column}{0.49\textwidth}
+$K$ non e' libero una volta scelta la pressione al raccordo.
+\end{column}
+\end{columns}
+\medskip
+Il simbolo $n_0$ qui identifica il \emph{punto di raccordo}, non necessariamente la densita' di saturazione nucleare.
+\end{frame}
+
+% 23
+\begin{frame}{Secondo vincolo: continuita' del potenziale (9.6)}
+\small
+Partiamo da
+\[
+\mu(n)=c+\frac{K\Gamma}{\Gamma-1}n^{\Gamma-1}.
+\]
+Imponiamo $\mu(n_0)=\mu_0$:
+\[
+\mu_0=c+\frac{K\Gamma}{\Gamma-1}n_0^{\Gamma-1}.
+\]
+Si ricava
+\[
+{c=\mu_0-\frac{K\Gamma}{\Gamma-1}n_0^{\Gamma-1}.}
+\]
+Inserendo $K=P_0/n_0^\Gamma$:
+\[
+{c=\mu_0-\frac{\Gamma}{\Gamma-1}\frac{P_0}{n_0}.}
+\]
+Le due condizioni fissano $K$ e $c$; rimane da scegliere $\Gamma$.
+\end{frame}
+
+% 24
+\begin{frame}{Controllo del raccordo: anche $\varepsilon$ e' continua}
+\small
+Alla densita' $n_0$,
+\[
+\varepsilon(n_0)=\frac{P_0}{\Gamma-1}+cn_0.
+\]
+Usiamo
+\[
+cn_0=\mu_0n_0-\frac{\Gamma}{\Gamma-1}P_0.
+\]
+Segue
+\[
+\begin{aligned}
+\varepsilon(n_0)
+&=\frac{P_0}{\Gamma-1}+\mu_0n_0
+-\frac{\Gamma P_0}{\Gamma-1}\\
+&=\mu_0n_0-P_0.
+\end{aligned}
+\]
+\[
+{\varepsilon_0+P_0=\mu_0n_0.}
+\]
+La densita' di energia coincide con quella dell'EOS nota se il punto soddisfa la stessa identita' termodinamica.
+\end{frame}
+
+\subsection{Da $P(n)$ a $P(\mu)$ e $\varepsilon(P)$}
+
+% 25
+\begin{frame}{Invertire il potenziale chimico: primo passaggio}
+\small
+Partiamo dalla (9.5):
+\[
+\mu-c=\frac{K\Gamma}{\Gamma-1}n^{\Gamma-1}.
+\]
+Isolando la potenza di $n$:
+\[
+n^{\Gamma-1}=\frac{\Gamma-1}{K\Gamma}(\mu-c).
+\]
+Elevando a $1/(\Gamma-1)$:
+\[
+{n(\mu)=\left[\frac{\Gamma-1}{K\Gamma}(\mu-c)\right]^{1/(\Gamma-1)}.}
+\]
+L'argomento della potenza deve rimanere positivo nel tratto fisico scelto.
+\end{frame}
+
+% 26
+\begin{frame}{Densita' in funzione di $\mu$: raccordo (9.7)}
+\small
+Sostituiamo
+\[
+c=\mu_0-\frac{K\Gamma}{\Gamma-1}n_0^{\Gamma-1}
+\]
+nel termine $\mu-c$:
+\[
+\mu-c=(\mu-\mu_0)+\frac{K\Gamma}{\Gamma-1}n_0^{\Gamma-1}.
+\]
+Pertanto
+\[
+{
+ n(\mu)=\left[n_0^{\Gamma-1}
+ +\frac{\Gamma-1}{K\Gamma}(\mu-\mu_0)
+ \right]^{1/(\Gamma-1)}.}
+\]
+Controllo immediato: $n(\mu_0)=n_0$.
+\end{frame}
+
+% 27
+\begin{frame}{Pressione in funzione di $\mu$: Eq. (9.8)}
+\small
+Partendo da $P=Kn^\Gamma$ e dalla (9.7):
+\[
+{
+P(\mu)=K\left[
+ n_0^{\Gamma-1}+\frac{\Gamma-1}{K\Gamma}(\mu-\mu_0)
+\right]^{\Gamma/(\Gamma-1)}.}
+\]
+Al raccordo $\mu=\mu_0$:
+\[
+P(\mu_0)=Kn_0^\Gamma=P_0.
+\]
+La funzione pressione e' quindi continua. Rimane da verificarne la derivata.
+\end{frame}
+
+% 28
+\begin{frame}{Verifica: $dP/d\mu=n$ in ogni segmento}
+\small
+Definiamo
+\[
+X(\mu)=n_0^{\Gamma-1}+\frac{\Gamma-1}{K\Gamma}(\mu-\mu_0).
+\]
+Allora $P(\mu)=KX^{\Gamma/(\Gamma-1)}$ e
+\[
+\begin{aligned}
+\frac{dP}{d\mu}
+&=K\frac{\Gamma}{\Gamma-1}X^{1/(\Gamma-1)}
+\frac{\Gamma-1}{K\Gamma}\\
+&=X^{1/(\Gamma-1)}=n(\mu).
+\end{aligned}
+\]
+Per $\mu=\mu_0$:
+\[
+{\left.\frac{dP}{d\mu}\right|_{\mu_0}=n_0.}
+\]
+Questa e' la condizione sulla pendenza usata per il raccordo liscio delle politropiche.
+\end{frame}
+
+% 29
+\begin{frame}{Dalla pressione alla densita' per le TOV}
+\small
+Per integrare le TOV occorre $\varepsilon(P)$.
+\medskip
+Da $P=Kn^\Gamma$:
+\[
+n=\left(\frac PK\right)^{1/\Gamma}.
+\]
+Poiche' $P_0=Kn_0^\Gamma$, equivalentemente
+\[
+{n(P)=n_0\left(\frac P{P_0}\right)^{1/\Gamma}.}
+\]
+Usiamo la densita' di energia gia' integrata:
+\[
+\varepsilon(n)=\frac{P(n)}{\Gamma-1}+cn.
+\]
+Sostituiremo $n(P)$ e poi il valore di $c$ fissato al raccordo.
+\end{frame}
+
+% 30
+\begin{frame}{EOS per le TOV: derivazione di (9.9)}
+\small
+Sostituendo $n(P)$:
+\[
+\varepsilon(P)=\frac{P}{\Gamma-1}+cn_0\left(\frac{P}{P_0}\right)^{1/\Gamma}.
+\]
+Dal vincolo sul potenziale:
+\[
+cn_0=\mu_0n_0-\frac{\Gamma}{\Gamma-1}P_0.
+\]
+Si ottiene
+\[
+{
+\begin{aligned}
+\varepsilon(P)={}&\frac{P}{\Gamma-1}\\
+&+\left(\mu_0n_0-\frac{\Gamma}{\Gamma-1}P_0\right)
+\left(\frac{P}{P_0}\right)^{1/\Gamma}.
+\end{aligned}}
+\]
+Il termine in $P^{1/\Gamma}$ conserva l'informazione termodinamica del raccordo.
+\end{frame}
+
+% 31
+\begin{frame}{Il caso speciale $\Gamma=1$}
+\small
+Le formule precedenti con $1/(\Gamma-1)$ richiedono $\Gamma\ne1$.
+\medskip
+Se $P=Kn$, l'equazione (9.2) diventa
+\[
+\frac{d}{dn}\left(\frac{\varepsilon}{n}\right)=\frac Kn.
+\]
+Integrando, con densita' di riferimento $n_{\rm ref}$,
+\[
+{\varepsilon(n)=Kn\ln\frac{n}{n_{\rm ref}}+cn.}
+\]
+Derivando:
+\[
+{\mu(n)=K\left[\ln\frac{n}{n_{\rm ref}}+1\right]+c.}
+\]
+Il segmento con $\Gamma=1$ si tratta dunque separatamente mediante un logaritmo.
+\end{frame}
+
+% 32
+\begin{frame}{Algoritmo di raccordo per piu' politropiche}
+\small
+\begin{enumerate}
+\item Partire dal punto nucleonico $(n_0,P_0,\mu_0)$.
+\item Scegliere $\Gamma_1$ e determinare $K_1,c_1$ imponendo $P_0,\mu_0$.
+\item Proseguire fino a un nuovo punto $(n_1,P_1,\mu_1)$.
+\item Scegliere $\Gamma_2$ e imporre le stesse condizioni per il secondo segmento.
+\item Raccordare all'EOS pQCD, controllando vincoli fisici lungo tutta la curva.
+\end{enumerate}
+\medskip
+Al raccordo liscio:
+\[
+P_-(\mu_i)=P_+(\mu_i),\qquad
+\left.\frac{dP_-}{d\mu}\right|_{\mu_i}
+=\left.\frac{dP_+}{d\mu}\right|_{\mu_i}=n_i.
+\]
+\end{frame}
+
+\subsection{Causalita', rigidita' e transizioni di fase}
+
+% 33
+\begin{frame}{Derivazione della velocita' del suono}
+\small
+A $T=0$, in un fluido barotropico:
+\[
+c_s^2=\frac{dP}{d\varepsilon}
+=\frac{dP/dn}{d\varepsilon/dn}
+\qquad(c=1).
+\]
+Per $P=Kn^\Gamma$:
+\[
+\frac{dP}{dn}=\Gamma Kn^{\Gamma-1}=\frac{\Gamma P}{n}.
+\]
+Dalla termodinamica:
+\[
+\frac{d\varepsilon}{dn}=\mu=\frac{\varepsilon+P}{n}.
+\]
+Quindi
+\[
+{c_s^2=\frac{\Gamma P}{\varepsilon+P}.}
+\]
+Causalita' e stabilita' locale richiedono $0\leq c_s^2\leq1$.
+\end{frame}
+
+% 34
+\begin{frame}{Raccordo liscio e transizione del primo ordine}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Interpolazione liscia}
+\[
+P_H(\mu_i)=P_Q(\mu_i),
+\]
+\[
+n_H(\mu_i)=n_Q(\mu_i).
+\]
+Per $\varepsilon=\mu n-P$ risulta anche $\varepsilon_H=\varepsilon_Q$ al punto.
+\medskip
+Nessun salto di densita' introdotto dal raccordo.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Primo ordine (Maxwell)}
+\[
+P_H(\mu_t)=P_Q(\mu_t),
+\]
+\[
+n_Q\ne n_H.
+\]
+A pressione e potenziale comuni,
+\[
+{\Delta\varepsilon=\mu_t\Delta n_B.}
+\]
+La pressione continua, ma la derivata $dP/d\mu$ salta.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 35
+\begin{frame}{Quali politropiche sono fisicamente ammissibili?}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Vincoli locali}
+\begin{itemize}
+\item $n=dP/d\mu>0$;
+\item stabilita' meccanica $dP/dn>0$;
+\item causalita' $c_s^2=dP/d\varepsilon\leq1$.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Vincolo globale}
+\[
+M_{\max}\gtrsim2M_\odot
+\]
+per essere compatibili con l'esistenza di stelle massicce osservate.
+\medskip
+Una EOS troppo soffice non sostiene grandi masse; una troppo rigida puo' violare la causalita'.
+\end{column}
+\end{columns}
+\medskip
+La rigidita' stellare si giudica da $P(\varepsilon)$ e dalla velocita' del suono, non dal solo valore di $\Gamma$ isolatamente.
+\end{frame}
+
+\section{Massa--raggio delle stelle ibride}
+\subsection{Figura 9.2 e vincoli astrofisici}
+
+% 36
+\begin{frame}{Figura 9.2: banda delle relazioni massa--raggio}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.64\textwidth}
+\centering
+\includegraphics[width=\linewidth]{hybrid9_fig92.png}
+\end{column}
+\begin{column}{0.34\textwidth}
+Banda grigia: famiglie di EOS interpolate fra limite nucleonico e pQCD.
+\medskip
+Curve I, II e III: tre politropiche rappresentative.
+\medskip
+Linee: buchi neri, Buchdahl, limite causale e compattezze costanti.
+\end{column}
+\end{columns}
+\vspace{1mm}
+{\scriptsize Figura 9.2 dal materiale allegato (Kurkela et al., 2014, come citato nel libro).}
+\end{frame}
+
+% 37
+\begin{frame}{Tre sequenze rappresentative nella Figura 9.2}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.33\textwidth}
+\textbf{I: piu' compatta}
+\medskip
+Raggi relativamente piccoli.
+\[
+\varepsilon_{c,\max}\sim10\varepsilon_0.
+\]
+La configurazione di massa massima raggiunge densita' centrali elevate.
+\end{column}
+\begin{column}{0.33\textwidth}
+\textbf{II: massa massima maggiore}
+\[
+M_{\max}\simeq2.4M_\odot,
+\]
+\[
+\varepsilon_{c,\max}\sim5\varepsilon_0.
+\]
+Mostra come una EOS adeguatamente rigida possa sostenere masse elevate.
+\end{column}
+\begin{column}{0.33\textwidth}
+\textbf{III: raggi maggiori}
+\medskip
+Sequenza piu' a destra nel diagramma.
+\[
+\varepsilon_{c,\max}\sim5\varepsilon_0.
+\]
+Raggi piu' ampi alle masse considerate.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 38
+\begin{frame}{Densita' centrali: cosa sondano le osservazioni?}
+\small
+Per la famiglia di EOS del testo:
+\[
+\begin{array}{c|c|c}
+M & R & \varepsilon_c/\varepsilon_0\\ \hline
+1.4M_\odot & 11\text{--}14.5\,\mathrm{km} & 1.6\text{--}4\\[1mm]
+2.0M_\odot & 10\text{--}15\,\mathrm{km} & 2\text{--}8
+\end{array}
+\]
+Confronto fra scale:
+\[
+\varepsilon_c\sim\text{pochi }\varepsilon_0,
+\qquad \varepsilon_{\rm pQCD}\gtrsim70\,\varepsilon_0.
+\]
+Le osservazioni delle stelle compatte mettono alla prova la regione intermedia dell'EOS, non direttamente il regime di pQCD asintotica.
+\medskip
+{\scriptsize Intervalli del lavoro citato nel libro; non sono vincoli osservativi aggiornati.}
+\end{frame}
+
+% 39
+\begin{frame}{Compattezza, causalita' e massa osservata}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Compattezza}
+\[
+\mathcal C=\frac{GM}{Rc^2}.
+\]
+Rette di riferimento nel grafico:
+\[
+\mathcal C=0.1,\ 0.2,\ 0.3.
+\]
+Limiti esaminati nel capitolo 8:
+\[
+\mathcal C_{\rm BH}=\tfrac12,\quad
+\mathcal C_{\rm Buchdahl}=\tfrac49.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Vincoli sull'EOS}
+\[
+c_s^2\leq1,\qquad M_{\max}\geq2M_\odot.
+\]
+La causalita' impedisce una EOS arbitrariamente rigida.
+\medskip
+La massa massima osservata impedisce una EOS arbitrariamente soffice.
+\medskip
+La loro combinazione restringe la banda ammissibile nel diagramma $M$--$R$.
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Riepilogo}
+
+% 40
+\begin{frame}{Risultato del \S9.1: interpolare senza inventare la microfisica}
+\small
+\begin{enumerate}
+\item EOS nucleonica vincolata vicino a $\varepsilon_0$.
+\item EOS pQCD controllata solo intorno a $\varepsilon\gtrsim70\text{--}100\varepsilon_0$.
+\item Politropiche a tratti raccordate con continuita' di $P$, $\mu$ e $n$.
+\item Verifica di causalita', stabilita' e massa massima.
+\item Integrazione delle TOV per ottenere una banda di curve $M(R)$.
+\end{enumerate}
+\medskip
+Il raccordo liscio e' una \emph{parametrizzazione} dell'EOS intermedia, non una dimostrazione che la transizione adroni--quark sia un crossover.
+\end{frame}
+
+% 41
+\begin{frame}{Formule da ricordare: politropiche termodinamiche}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\[
+P(n)=Kn^\Gamma,
+\]
+\[
+\varepsilon(n)=\frac{Kn^\Gamma}{\Gamma-1}+cn,
+\]
+\[
+\mu(n)=\frac{K\Gamma}{\Gamma-1}n^{\Gamma-1}+c,
+\]
+\[
+c=\mu_0-\frac{\Gamma P_0}{(\Gamma-1)n_0}.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+\[
+n=\frac{dP}{d\mu},
+\]
+\[
+\varepsilon(P)=\frac{P}{\Gamma-1}
++\left(\mu_0n_0-\frac{\Gamma P_0}{\Gamma-1}\right)
+\left(\frac{P}{P_0}\right)^{1/\Gamma},
+\]
+\[
+c_s^2=\frac{\Gamma P}{\varepsilon+P}\leq1.
+\]
+\end{column}
+\end{columns}
+\medskip
+\textbf{Energia di simmetria:} $e_{\rm PNM}(n_{\rm sat})\simeq m_N-16+32=m_N+16\simeq955$ MeV.
+\end{frame}
+
+\section{Transizioni di fase nella materia densa}
+
+% 01
+\begin{frame}{Dal raccordo liscio alle transizioni di fase}
+\small
+Nel \S 9.1 l'EOS intermedia era ottenuta interpolando fra
+materia nucleonica e materia di quark con raccordi lisci.
+\medskip
+Nel \S 9.2 ammettiamo una transizione di fase del primo ordine:
+\[
+\text{fase adronica I}\quad\longleftrightarrow\quad
+\text{fase di quark II}.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Domande termodinamiche}
+\begin{itemize}
+\item Quando coesistono le due fasi?
+\item Quali grandezze sono continue?
+\item E' consentito un salto di densita'?
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Conseguenze stellari}
+\begin{itemize}
+\item Interfaccia netta oppure fase mista estesa.
+\item Possibili domini caricati (``pasta'').
+\item Modifiche all'EOS e alle soluzioni TOV.
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Diagramma di fase della QCD}
+
+% 02
+\begin{frame}{Diagramma di fase della QCD: figura 9.3}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.64\textwidth}
+    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/QCD_phasediagram_T_mu}\label{fig:Schaffner_QCD_phasediagram_T_mu}\end{figure}
+\end{column}
+\begin{column}{0.34\textwidth}
+Assi: temperatura $T$ e potenziale chimico di quark $\mu_q$.
+\medskip
+\begin{itemize}
+\item Adroni: bassi $T$ e $\mu_q$.
+\item Plasma di quark e gluoni: $T$ elevata.
+\item Possibile pairing di quark: bassa $T$, elevata $\mu_q$.
+\end{itemize}
+\end{column}
+\end{columns}
+\medskip
+La topologia delle linee di transizione ad alto $\mu_q$ e' \emph{congetturale}.
+\end{frame}
+
+% 03
+\begin{frame}{Fase adronica, fase deconfinata e pairing}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Regime adronico}
+\begin{itemize}
+\item Quark confinati negli adroni.
+\item A basse densita' e basse $T$, simmetria chirale spontaneamente rotta.
+\end{itemize}
+\[
+\langle\bar q q\rangle\ne0.
+\]
+\textbf{Regime caldo}
+\begin{itemize}
+\item Quark e gluoni sono i gradi di liberta' rilevanti.
+\item Il condensato chirale si riduce.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Regime freddo e denso}
+\begin{itemize}
+\item Superfici di Fermi dei quark.
+\item Possibile condensazione di coppie $qq$.
+\end{itemize}
+\[
+\langle qq\rangle\ne0
+\quad\text{(simbolicamente)}.
+\]
+Il pairing di colore e' analogo al meccanismo BCS; esempi di fasi: 2SC e CFL.
+\medskip
+Un condensato $qq$ va definito con gli opportuni indici di colore, sapore e spin.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 04
+\begin{frame}{Rottura chirale e confinamento: concetti distinti}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Simmetria chirale}
+\[
+SU(N_f)_L\times SU(N_f)_R.
+\]
+Un indicatore della rottura spontanea e'
+\[
+\langle\bar q q\rangle\ne0.
+\]
+Riguarda il comportamento dei campi sinistri e destri rispetto a rotazioni indipendenti in sapore.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Confinamento}
+\medskip
+Riguarda l'assenza di particelle isolate con carica di colore tra gli stati asintotici.
+\medskip
+Il loop di Polyakov e' un parametro d'ordine rigoroso per la teoria di gauge pura, non per QCD con quark dinamici fisici.
+\end{column}
+\end{columns}
+\medskip
+Il ripristino chirale e il deconfinamento possono essere correlati,
+ma non sono necessariamente un'unica transizione.
+\end{frame}
+
+% 05
+\begin{frame}{Crossover, transizione del primo ordine, punto critico}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Crossover}
+\begin{itemize}
+\item Cambiamento rapido, ma continuo, delle osservabili termodinamiche.
+\item A $\mu_B\simeq0$ e masse fisiche dei quark, il passaggio termico della QCD e' un crossover.
+\end{itemize}
+\[
+T_c\sim150\,\mathrm{MeV}.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Primo ordine}
+\begin{itemize}
+\item Coesistenza di due fasi.
+\item Discontinuita' di densita' o di una derivata prima del potenziale termodinamico.
+\item Una possibile linea puo' terminare in un punto critico.
+\end{itemize}
+\end{column}
+\end{columns}
+\medskip
+La presenza del punto critico QCD e di un punto triplo nel disegno
+non e' una previsione sperimentalmente stabilita.
+\end{frame}
+
+% 06
+\begin{frame}{Quali regioni del diagramma si possono esplorare?}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Sistemi fisici}
+\begin{itemize}
+\item Universo primordiale: $T$ alta, $\mu_B$ modesto.
+\item Collisioni di ioni pesanti: $T$ alta e $\mu_B$ variabile.
+\item Supernove e merger: condizioni calde e dense.
+\item Stelle di neutroni mature: $T$ bassa e $\mu_B$ elevato.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Distinguere due transizioni}
+\medskip
+La transizione liquido--gas \emph{nucleare} ha un punto critico stimato intorno a
+\[
+T_c^{\rm LG}\simeq17.9\,\mathrm{MeV},
+\quad n_c\simeq0.06\,\mathrm{fm}^{-3}.
+\]
+Non coincide con l'eventuale transizione adroni--quark ad alta densita'.
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Costruzione di Maxwell}
+
+% 07
+\begin{frame}{Costruzione di Maxwell: ipotesi}
+\small
+Consideriamo due fasi omogenee a temperatura zero:
+\[
+\underbrace{\mathrm{I}}_{\text{adronica}}
+\quad\text{e}\quad
+\underbrace{\mathrm{II}}_{\text{di quark}}.
+\]
+Nel limite Maxwell si impone la \emph{neutralita' elettrica locale}
+di ciascuna fase, riducendo il problema bulk a un potenziale
+chimico indipendente, $\mu_B$.
+\medskip
+Cerchiamo le condizioni che rendono possibile la coesistenza
+fra i due mezzi ai lati dell'interfaccia.
+\begin{itemize}
+\item Equilibrio meccanico: nessuna forza netta sull'interfaccia.
+\item Equilibrio chimico: nessun trasferimento netto di numero barionico.
+\end{itemize}
+\end{frame}
+
+% 08
+\begin{frame}{Equilibrio meccanico e chimico}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Equilibrio meccanico}
+\[
+P_{\mathrm I}=P_{\mathrm{II}}.
+\]
+Se $P_{\mathrm I}>P_{\mathrm{II}}$, la prima fase tende a espandersi a danno della seconda.
+\medskip
+L'uguaglianza e' esatta per un'interfaccia bulk piana trascurandone la curvatura.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Equilibrio chimico}
+\[
+\mu_B^{\mathrm I}=\mu_B^{\mathrm{II}}.
+\]
+Se un barione passa da I a II, a $T,V$ fissati la variazione del potenziale e'
+\[
+\delta\Omega
+=(\mu_B^{\mathrm{II}}-\mu_B^{\mathrm I})\,\delta N_B.
+\]
+All'equilibrio il trasferimento non favorisce alcuna direzione.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 09
+\begin{frame}{Condizione di coesistenza: equazione (9.10)}
+\small
+Introduciamo il potenziale chimico della transizione $\mu_t$.
+Le pressioni delle due fasi, calcolate allo stesso $\mu_t$, sono uguali:
+\[
+P_{\mathrm I}(\mu_t)=P_{\mathrm{II}}(\mu_t),
+\]
+\[
+\mu_B^{\mathrm I}=\mu_B^{\mathrm{II}}=\mu_t.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Il punto di coesistenza si trova \emph{intersecando} le due curve $P_{\mathrm I}(\mu_B)$ e $P_{\mathrm{II}}(\mu_B)$.
+\end{column}
+\begin{column}{0.49\textwidth}
+La costruzione non richiede
+\[
+n_B^{\mathrm I}=n_B^{\mathrm{II}},
+\]
+quindi puo' esserci un salto di densita'.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 10
+\begin{frame}{Figura 9.4: due rappresentazioni della stessa transizione}
+\begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/firsttransition_P_epsilon-mu}\label{fig:Schaffner_firsttransition_P_epsilon-mu}\end{figure}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+(a) $P(\varepsilon)$: la linea orizzontale A--D sostituisce la regione instabile/metastabile.
+\end{column}
+\begin{column}{0.49\textwidth}
+(b) $P(\mu_B)$: al punto di incrocio le pressioni coincidono, ma non necessariamente le pendenze.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 11
+\begin{frame}{Quale fase e' termodinamicamente favorita?}
+\small
+Il potenziale gran-canonico a $T=0$ e'
+\[
+\Omega=E-\mu_B N_B,
+\qquad \Omega=-PV
+\quad\text{(bulk omogeneo)}.
+\]
+A $T,\mu_B,V$ fissati, l'equilibrio minimizza $\Omega$:
+\[
+\Omega_{\mathrm I}<\Omega_{\mathrm{II}}
+\quad\Longleftrightarrow\quad
+P_{\mathrm I}>P_{\mathrm{II}}.
+\]
+Quindi, alla stessa $\mu_B$, \emph{la fase a pressione maggiore e' favorita}.
+\medskip
+\begin{itemize}
+\item Prima dell'intersezione: prevale il ramo stabile della fase I.
+\item Dopo l'intersezione: prevale il ramo stabile della fase II.
+\item All'intersezione: le due fasi coesistono.
+\end{itemize}
+\end{frame}
+
+% 12
+\begin{frame}{Stabilita' meccanica e ramo a pendenza negativa}
+\small
+Per un sistema a un numero conservato indipendente:
+\[
+d\varepsilon=\mu_B\,dn_B,
+\qquad dP=n_B\,d\mu_B.
+\]
+Quindi
+\[
+\frac{dP}{d\varepsilon}
+=\frac{n_B}{\mu_B}\frac{d\mu_B}{dn_B}
+\equiv c_s^2
+\quad(c=1).
+\]
+Nel ramo B--C della figura 9.4(a):
+\[
+\frac{dP}{d\varepsilon}<0
+\quad\Longrightarrow\quad
+\frac{d\mu_B}{dn_B}<0.
+\]
+La compressibilita' del ramo omogeneo e' negativa: instabilita' meccanica.
+\medskip
+La costruzione elimina anche tratti \emph{metastabili}, non solo il segmento B--C.
+\end{frame}
+
+% 13
+\begin{frame}{Salto di densita' al potenziale di coesistenza}
+\small
+Per una sola carica conservata:
+\[
+n_B=\frac{dP}{d\mu_B}.
+\]
+Al punto di coesistenza, le due pressioni coincidono:
+\[
+P_{\mathrm I}(\mu_t)=P_{\mathrm{II}}(\mu_t)=P_t,
+\]
+ma le pendenze possono essere differenti:
+\[
+\left.\frac{dP_{\mathrm I}}{d\mu_B}\right|_{\mu_t}
+=n_{\mathrm I}\ne n_{\mathrm{II}}
+=\left.\frac{dP_{\mathrm{II}}}{d\mu_B}\right|_{\mu_t}.
+\]
+Il salto $\Delta n_B=n_{\mathrm{II}}-n_{\mathrm I}$ distingue
+la transizione di primo ordine.
+\end{frame}
+
+% 14
+\begin{frame}{Derivazione del salto di energia}
+\small
+A $T=0$, l'identita' di Gibbs--Duhem porta a
+\[
+\varepsilon+P=\mu_B n_B.
+\]
+Alle due estremita' del plateau:
+\[
+\varepsilon_{\mathrm I}=\mu_t n_{\mathrm I}-P_t,
+\qquad
+\varepsilon_{\mathrm{II}}=\mu_t n_{\mathrm{II}}-P_t.
+\]
+Sottraendo membro a membro:
+\[
+\begin{aligned}
+\Delta\varepsilon
+&=\varepsilon_{\mathrm{II}}-\varepsilon_{\mathrm I}\\
+&=(\mu_t n_{\mathrm{II}}-P_t)
+ -(\mu_t n_{\mathrm I}-P_t)\\
+&=\mu_t\,(n_{\mathrm{II}}-n_{\mathrm I}).
+\end{aligned}
+\]
+\[
+\Delta\varepsilon=\mu_t\Delta n_B.
+\]
+\end{frame}
+
+% 15
+\begin{frame}{Il plateau di Maxwell nel piano $P$--$\varepsilon$}
+\small
+Sia $\chi$ la frazione volumetrica della fase II.
+Trascurando le energie finite di superficie e Coulomb:
+\[
+\varepsilon_{\rm mix}=(1-\chi)\varepsilon_{\mathrm I}
++\chi\varepsilon_{\mathrm{II}},\qquad 0\le\chi\le1.
+\]
+Durante la coesistenza, nel limite bulk Maxwell,
+\[
+P_{\rm mix}=P_t,\qquad \mu_B=\mu_t.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Variando $\chi$ fra $0$ e $1$, la densita' di energia media passa da $\varepsilon_{\mathrm I}$ a $\varepsilon_{\mathrm{II}}$.
+\end{column}
+\begin{column}{0.49\textwidth}
+La pressione rimane costante: il ramo termodinamico e' orizzontale in $P(\varepsilon)$.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 16
+\begin{frame}{Perche' Maxwell produce un'interfaccia stellare netta?}
+\small
+Per una configurazione TOV statica, $P(r)$ diminuisce verso l'esterno:
+\[
+\frac{dP}{dr}
+=-\frac{G(\varepsilon+P)
+(m+4\pi r^3P/c^2)}
+{c^2r^2[1-2Gm/(rc^2)]}<0.
+\]
+Uno strato macroscopico sul plateau Maxwell avrebbe invece
+\[
+P(r)=P_t\quad\Longrightarrow\quad \frac{dP}{dr}=0.
+\]
+La soluzione ideale passa quindi, a un raggio $r_t$, fra
+\[
+P(r_t^-)=P(r_t^+)=P_t,
+\quad\varepsilon(r_t^-)\ne\varepsilon(r_t^+).
+\]
+Pressione continua, densita' di energia discontinua;
+lo spessore microscopico dell'interfaccia e' qui trascurato.
+\end{frame}
+
+\subsection{Costruzione di Gibbs}
+
+% 17
+\begin{frame}{Due cariche conservate nella materia stellare}
+\small
+La materia fredda in equilibrio debole conserva almeno:
+\[
+N_B\quad\text{(numero barionico)},
+\qquad N_Q\quad\text{(carica elettrica)}.
+\]
+Introduciamo i potenziali chimici coniugati
+\[
+\mu_B,\qquad\mu_Q.
+\]
+Per ogni specie $i$ in equilibrio:
+\[
+\mu_i=B_i\mu_B+Q_i\mu_Q.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+$B_i$: numero barionico della specie.
+\end{column}
+\begin{column}{0.49\textwidth}
+$Q_i$: carica elettrica in unita' di $e$.
+\end{column}
+\end{columns}
+\medskip
+Ora la pressione di ciascuna fase e', in generale,
+$P(\mu_B,\mu_Q)$.
+\end{frame}
+
+% 18
+\begin{frame}{Esempio: neutroni, protoni ed elettroni}
+\small
+Per $B_n=B_p=1$, $B_e=0$ e $Q_n=0$, $Q_p=+1$, $Q_e=-1$:
+\[
+\begin{aligned}
+\mu_n&=\mu_B,\\
+\mu_p&=\mu_B+\mu_Q,\\
+\mu_e&=-\mu_Q.
+\end{aligned}
+\]
+L'equilibrio beta per $n\leftrightarrow p+e^-+\bar\nu_e$
+(con neutrini liberi, $\mu_{\nu_e}=0$) segue automaticamente:
+\[
+\begin{aligned}
+\mu_p+\mu_e
+&=(\mu_B+\mu_Q)-\mu_Q\\
+&=\mu_B=\mu_n.
+\end{aligned}
+\]
+Le cariche conservate determinano quindi le relazioni fra i potenziali chimici.
+\end{frame}
+
+% 19
+\begin{frame}{Differenziale della pressione con due cariche}
+\small
+Per la densita' di energia $\varepsilon(n_B,n_Q)$, a $T=0$:
+\[
+d\varepsilon=\mu_B\,dn_B+\mu_Q\,dn_Q.
+\]
+La trasformata di Legendre fornisce
+\[
+P=-\varepsilon+\mu_Bn_B+\mu_Qn_Q.
+\]
+Differenziando:
+\[
+\begin{aligned}
+dP&=-d\varepsilon+n_Bd\mu_B+\mu_Bdn_B\\
+  &\quad+n_Qd\mu_Q+\mu_Qdn_Q\\
+&=n_Bd\mu_B+n_Qd\mu_Q.
+\end{aligned}
+\]
+Quindi
+\[
+n_B=\frac{\partial P}{\partial\mu_B},
+\qquad n_Q=\frac{\partial P}{\partial\mu_Q}.
+\]
+\end{frame}
+
+% 20
+\begin{frame}{Condizioni di Gibbs: equazione (9.11)}
+\small
+Per fasi I e II in equilibrio bulk a temperatura nulla:
+\[
+\begin{gathered}
+P_{\mathrm I}(\mu_B,\mu_Q)
+=P_{\mathrm{II}}(\mu_B,\mu_Q),\\[5pt]
+\mu_B^{\mathrm I}=\mu_B^{\mathrm{II}},
+\qquad
+\mu_Q^{\mathrm I}=\mu_Q^{\mathrm{II}}.
+\end{gathered}
+\]
+\begin{itemize}
+\item Un solo valore di $\mu_B$ e $\mu_Q$ determina entrambe le composizioni.
+\item Le due fasi possono avere cariche elettriche \emph{non nulle e opposte}.
+\item La neutralita' e' imposta sulla miscela complessiva.
+\end{itemize}
+\medskip
+\footnotesize
+Per domini caricati, l'equilibrio elettrico va formulato rigorosamente
+con i potenziali \emph{elettrochimici}; qui usiamo il limite bulk del testo.
+\end{frame}
+
+% 21
+\begin{frame}{Figura 9.5: due superfici di pressione}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.60\textwidth}
+    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/Gibbs_nuclear_quark}\label{fig:Schaffner_Gibbs_nuclear_quark}\end{figure}
+\end{column}
+\begin{column}{0.38\textwidth}
+\begin{itemize}
+\item HP: fase adronica.
+\item QP: fase di quark.
+\item MP: \emph{linea} di coesistenza delle pressioni.
+\end{itemize}
+\medskip
+Le curve HP e QP individuano la neutralita' della singola fase.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 22
+\begin{frame}{Perche' la coesistenza di Gibbs e' una linea?}
+\small
+\textbf{Maxwell:} dopo la neutralita' locale resta una variabile,
+$\mu_B$:
+\[
+P_{\mathrm I}(\mu_B)=P_{\mathrm{II}}(\mu_B).
+\]
+L'equazione individua, normalmente, un punto $\mu_t$.
+\medskip
+\textbf{Gibbs:} le pressioni dipendono da due variabili:
+\[
+P_{\mathrm I}(\mu_B,\mu_Q)
+=P_{\mathrm{II}}(\mu_B,\mu_Q).
+\]
+Una condizione per due potenziali chimici identifica in generale
+una curva nel piano $(\mu_B,\mu_Q)$.
+\medskip
+In un grafico tridimensionale $(\mu_B,\mu_Q,P)$, la curva
+corrisponde all'intersezione di due superfici.
+\end{frame}
+
+% 23
+\begin{frame}{Neutralita' globale: equazione (9.12)}
+\small
+Sia $\chi$ la frazione di volume della fase II:
+\[
+\chi=\frac{V_{\mathrm{II}}}{V_{\mathrm I}+V_{\mathrm{II}}},
+\qquad 0\le\chi\le1.
+\]
+La densita' di carica totale e' la media volumetrica:
+\[
+n_Q^{\rm tot}=(1-\chi)n_Q^{\mathrm I}
++\chi n_Q^{\mathrm{II}}.
+\]
+La neutralita' globale richiede
+\[
+(1-\chi)n_Q^{\mathrm I}+\chi n_Q^{\mathrm{II}}=0.
+\]
+I valori $n_Q^{\mathrm I}$ e $n_Q^{\mathrm{II}}$ vanno calcolati
+allo \emph{stesso} $\mu_B,\mu_Q$ lungo la linea di coesistenza.
+\medskip
+\footnotesize
+Se non sono inclusi nelle singole densita' di fase, i leptoni
+contribuiscono con un termine separato $n_Q^{\ell}$.
+\end{frame}
+
+% 24
+\begin{frame}{Derivazione della frazione volumetrica}
+\small
+Partiamo dalla neutralita' globale:
+\[
+(1-\chi)n_Q^{\mathrm I}+\chi n_Q^{\mathrm{II}}=0.
+\]
+Sviluppiamo e raccogliamo $\chi$:
+\[
+\begin{aligned}
+n_Q^{\mathrm I}-\chi n_Q^{\mathrm I}
++\chi n_Q^{\mathrm{II}}&=0,\\
+\chi(n_Q^{\mathrm{II}}-n_Q^{\mathrm I})&=-n_Q^{\mathrm I}.
+\end{aligned}
+\]
+Quindi
+\[
+\chi=\frac{n_Q^{\mathrm I}}
+{n_Q^{\mathrm I}-n_Q^{\mathrm{II}}}.
+\]
+Per avere $0\le\chi\le1$, le due cariche devono potersi compensare.
+\end{frame}
+
+% 25
+\begin{frame}{Esempio numerico di neutralita' globale}
+\small
+Supponiamo, alla stessa coppia $(\mu_B,\mu_Q)$:
+\[
+n_Q^{\mathrm I}=+0.02\,\mathrm{fm}^{-3},
+\qquad n_Q^{\mathrm{II}}=-0.03\,\mathrm{fm}^{-3}.
+\]
+La frazione della fase di quark necessaria alla neutralita' e'
+\[
+\begin{aligned}
+\chi&=\frac{n_Q^{\mathrm I}}{n_Q^{\mathrm I}-n_Q^{\mathrm{II}}}\\
+&=\frac{0.02}{0.02+0.03}=0.4.
+\end{aligned}
+\]
+Pertanto
+\[
+V_{\mathrm{II}}=0.4V_{\rm tot},
+\qquad V_{\mathrm I}=0.6V_{\rm tot}.
+\]
+Le due regioni possono essere cariche, pur essendo
+neutro il campione complessivo.
+\end{frame}
+
+% 26
+\begin{frame}{Energia e numero barionico: equazione (9.13)}
+\small
+Nel limite bulk, prima di introdurre tensione superficiale
+e costo elettrostatico, le densita' medie sono
+\[
+\varepsilon_{\rm tot}=(1-\chi)\varepsilon_{\mathrm I}
++\chi\varepsilon_{\mathrm{II}},
+\]
+\[
+n_B^{\rm tot}=(1-\chi)n_B^{\mathrm I}
++\chi n_B^{\mathrm{II}}.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Al punto $1$ della figura 9.5:
+\[
+\chi\simeq0
+\]
+prevale la fase adronica.
+\end{column}
+\begin{column}{0.49\textwidth}
+Al punto $2$ della figura 9.5:
+\[
+\chi\simeq1
+\]
+prevale la fase di quark.
+\end{column}
+\end{columns}
+\medskip
+Nella fase mista $\chi$ varia continuamente lungo la coesistenza.
+\end{frame}
+
+% 27
+\begin{frame}{La pressione nella fase mista di Gibbs: primo passo}
+\small
+In ogni fase, a $T=0$:
+\[
+dP_i=n_B^{(i)}d\mu_B+n_Q^{(i)}d\mu_Q.
+\]
+Lungo la linea di coesistenza:
+\[
+P_{\mathrm I}=P_{\mathrm{II}}=P,
+\]
+quindi le due espressioni del differenziale sono uguali:
+\[
+\begin{aligned}
+dP&=n_B^{\mathrm I}d\mu_B+n_Q^{\mathrm I}d\mu_Q,\\
+dP&=n_B^{\mathrm{II}}d\mu_B+n_Q^{\mathrm{II}}d\mu_Q.
+\end{aligned}
+\]
+Moltiplichiamo la prima equazione per $(1-\chi)$,
+la seconda per $\chi$, poi sommiamo.
+\end{frame}
+
+% 28
+\begin{frame}{La pressione nella fase mista di Gibbs: cancellazione}
+\footnotesize
+Sommando i differenziali con pesi $(1-\chi)$ e $\chi$:
+\[
+\begin{aligned}
+dP={}&[(1-\chi)n_B^{\mathrm I}+\chi n_B^{\mathrm{II}}]d\mu_B\\
+&+[(1-\chi)n_Q^{\mathrm I}+\chi n_Q^{\mathrm{II}}]d\mu_Q.
+\end{aligned}
+\]
+Il secondo coefficiente e' nullo per neutralita' globale, mentre
+il primo e' $n_B^{\rm tot}$. Dunque
+\[
+dP=n_B^{\rm tot}\,d\mu_B,
+\qquad
+\frac{dP}{d\mu_B}=n_B^{\rm tot}>0.
+\]
+\medskip
+Il risultato vale \emph{lungo il percorso di coesistenza neutro}.
+A differenza del plateau Maxwell, la pressione puo' crescere
+al variare della composizione e della densita'.
+\end{frame}
+
+% 29
+\begin{frame}{Perche' Gibbs permette una fase mista estesa?}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Maxwell}
+\[
+P=P_t\quad\text{nel tratto di coesistenza}.
+\]
+Nella soluzione TOV il passaggio avviene a un raggio $r_t$,
+con salto di $\varepsilon$ e $P$ continuo.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Gibbs}
+\[
+\frac{dP}{d\mu_B}=n_B^{\rm tot}>0.
+\]
+Un gradiente di pressione e' possibile
+nella regione mista; $\chi(r)$ puo' variare
+attraverso uno strato del core.
+\end{column}
+\end{columns}
+\medskip
+La realizzazione effettiva dipende anche dalle energie di superficie,
+Coulomb e screening, non incluse nella costruzione bulk.
+\end{frame}
+
+% 30
+\begin{frame}{Maxwell e Gibbs: il ruolo della neutralita'}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Maxwell}
+\begin{itemize}
+\item Neutralita' \emph{locale} di entrambe le fasi.
+\item Un potenziale indipendente dopo i vincoli.
+\item Plateau a pressione $P_t$.
+\item Salto di densita' a un'interfaccia idealmente netta.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Gibbs bulk}
+\begin{itemize}
+\item Neutralita' \emph{globale}; le singole fasi possono essere cariche.
+\item Due potenziali: $\mu_B,\mu_Q$.
+\item Pressione in generale crescente lungo la coesistenza.
+\item Possibile strato misto con $\chi(r)$ variabile.
+\end{itemize}
+\end{column}
+\end{columns}
+\medskip
+Non sono necessariamente due microfisiche diverse: cambiano
+le ipotesi sulla distribuzione della carica e sul costo delle interfacce.
+\end{frame}
+
+% 31
+\begin{frame}{Fase mista e geometrie ``pasta''}
+\small
+Se le due fasi sono localmente cariche ma globalmente neutre,
+possono formare domini di una fase immersi nell'altra.
+\medskip
+Possibili geometrie:
+\begin{itemize}
+\item gocce quasi sferiche;
+\item cilindri (``spaghetti'');
+\item strati (``lasagne'');
+\item strutture inverse, con ruoli delle fasi scambiati.
+\end{itemize}
+\medskip
+La geometria e la scala dei domini dipendono dalla competizione fra
+\[
+E_S\quad\text{(superficie)},
+\qquad E_C\quad\text{(Coulomb)}.
+\]
+Studiamo l'esempio del testo: gocce sferiche di raggio $R$.
+\end{frame}
+
+% 32
+\begin{frame}{Energia superficiale: equazione (9.14)}
+\small
+Sia $\sigma$ la tensione superficiale fra le fasi
+(energia per unita' di superficie).
+\medskip
+Per una goccia sferica di raggio $R$:
+\[
+S=4\pi R^2.
+\]
+L'energia associata all'interfaccia e'
+\[
+E_S=\sigma S=4\pi\sigma R^2.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+$\sigma$ misura il costo energetico della superficie di separazione.
+\end{column}
+\begin{column}{0.49\textwidth}
+A parita' di $\sigma$:
+\[
+E_S\propto R^2.
+\]
+\end{column}
+\end{columns}
+\end{frame}
+
+% 33
+\begin{frame}{Contrasto di carica della goccia: equazione (9.15)}
+\small
+Indichiamo con
+\[
+\Delta n_Q=n_Q^{\mathrm I}-n_Q^{\mathrm{II}}
+\]
+la differenza delle densita' di carica (in unita' di $e$ per volume).
+\medskip
+Il volume della goccia e'
+\[
+V_d=\frac{4\pi}{3}R^3.
+\]
+Il contrasto di carica, in unita' della carica elementare, e'
+\[
+\Delta Z=V_d\Delta n_Q
+=\frac{4\pi}{3}R^3\Delta n_Q.
+\]
+La carica elettrica associata al contrasto e' $e\Delta Z$;
+la carica viene compensata dal mezzo circostante.
+\end{frame}
+
+% 34
+\begin{frame}{Energia coulombiana: equazione (9.16)}
+\small
+Per una distribuzione sferica uniformemente carica,
+nell'approssimazione elettrostatica del libro:
+\[
+E_C=\frac35\frac{(e\Delta Z)^2}{4\pi R}
+=\frac{3\alpha_{\rm EM}}{5R}(\Delta Z)^2,
+\]
+con $\alpha_{\rm EM}=e^2/(4\pi)$ in unita' naturali.
+\medskip
+Usando $\Delta Z=(4\pi/3)R^3\Delta n_Q$:
+\[
+\begin{aligned}
+E_C&=\frac{3\alpha_{\rm EM}}{5R}
+\left(\frac{4\pi}{3}R^3\Delta n_Q\right)^2\\
+&=\frac{16\pi^2\alpha_{\rm EM}}{15}
+(\Delta n_Q)^2R^5.
+\end{aligned}
+\]
+\end{frame}
+
+% 35
+\begin{frame}{Due energie e due diverse dipendenze da $R$}
+\small
+\[
+E_S=4\pi\sigma R^2,
+\qquad
+E_C=\frac{16\pi^2\alpha_{\rm EM}}{15}
+(\Delta n_Q)^2R^5.
+\]
+La prima cresce come $R^2$, la seconda come $R^5$.
+\medskip
+\textbf{Attenzione:} minimizzare $E_S+E_C$ per \emph{una sola goccia}
+non determina il raggio ottimale: entrambi i termini crescono con $R$.
+\medskip
+Occorre invece fissare la frazione volumetrica della fase dispersa
+e minimizzare l'energia \emph{per unita' di volume totale}.
+\end{frame}
+
+% 36
+\begin{frame}{Quante gocce servono a frazione volumetrica fissata?}
+\small
+Sia $\chi$ la frazione di volume occupata dalle gocce.
+\medskip
+Ogni goccia ha volume
+\[
+V_d=\frac{4\pi}{3}R^3.
+\]
+Il numero di gocce per unita' di volume totale e'
+\[
+\mathcal N=\frac{\chi}{V_d}
+=\frac{3\chi}{4\pi R^3}.
+\]
+Se $R$ aumenta mantenendo $\chi$ costante, diminuisce il numero di gocce:
+\[
+\mathcal N\propto R^{-3}.
+\]
+Questo fattore ribalta la dipendenza dell'energia superficiale
+\emph{per unita' di volume}.
+\end{frame}
+
+% 37
+\begin{frame}{Energia superficiale per unita' di volume}
+\small
+Moltiplichiamo l'energia di una goccia per la loro densita' numerica:
+\[
+\mathcal E_S=\mathcal N E_S.
+\]
+Sostituendo:
+\[
+\begin{aligned}
+\mathcal E_S
+&=\frac{3\chi}{4\pi R^3}\,(4\pi\sigma R^2)\\
+&=\frac{3\chi\sigma}{R}.
+\end{aligned}
+\]
+Quindi
+\[
+\mathcal E_S\propto R^{-1}.
+\]
+A volume totale fissato, poche gocce grandi
+possiedono meno superficie complessiva di molte gocce piccole.
+\end{frame}
+
+% 38
+\begin{frame}{Energia coulombiana per unita' di volume}
+\small
+Analogamente,
+\[
+\mathcal E_C=\mathcal N E_C.
+\]
+Sostituiamo le espressioni precedenti:
+\[
+\begin{aligned}
+\mathcal E_C
+&=\frac{3\chi}{4\pi R^3}
+\frac{16\pi^2\alpha_{\rm EM}}{15}
+(\Delta n_Q)^2R^5\\
+&=\frac{4\pi}{5}\chi\alpha_{\rm EM}
+(\Delta n_Q)^2R^2.
+\end{aligned}
+\]
+Quindi
+\[
+\mathcal E_C\propto R^2.
+\]
+L'energia superficiale favorisce gocce grandi,
+quella coulombiana gocce piccole.
+\end{frame}
+
+% 39
+\begin{frame}{Raggio ottimale delle gocce: derivazione}
+\footnotesize
+L'energia addizionale \emph{per volume totale} e'
+\[
+\mathcal E(R)=\frac{3\chi\sigma}{R}
++\frac{4\pi}{5}\chi\alpha_{\rm EM}(\Delta n_Q)^2R^2.
+\]
+La condizione di minimo e'
+\[
+\begin{aligned}
+0=\frac{d\mathcal E}{dR}
+&=-\frac{3\chi\sigma}{R^2}
++\frac{8\pi}{5}\chi\alpha_{\rm EM}(\Delta n_Q)^2R.
+\end{aligned}
+\]
+Riordinando e cancellando $\chi$:
+\[
+R^3=\frac{15\sigma}
+{8\pi\alpha_{\rm EM}(\Delta n_Q)^2}.
+\]
+Da cui l'equazione (9.17):
+\[
+R=\left[\frac{15\sigma}
+{8\pi\alpha_{\rm EM}(\Delta n_Q)^2}\right]^{1/3}.
+\]
+\end{frame}
+
+% 40
+\begin{frame}{Verifica del minimo: $E_S=2E_C$}
+\small
+Dalla condizione di stazionarieta'
+\[
+\frac{3\chi\sigma}{R^2}
+=\frac{8\pi}{5}\chi\alpha_{\rm EM}(\Delta n_Q)^2R,
+\]
+moltiplichiamo entrambi i membri per $R$:
+\[
+\frac{3\chi\sigma}{R}
+=2\left[\frac{4\pi}{5}\chi\alpha_{\rm EM}
+(\Delta n_Q)^2R^2\right].
+\]
+Riconosciamo quindi
+\[
+\mathcal E_S=2\mathcal E_C,
+\qquad E_S=2E_C.
+\]
+Questa relazione dipende dalle specifiche leggi di scala
+adottate per gocce sferiche nel modello.
+\end{frame}
+
+% 41
+\begin{frame}{Stima del raggio: equazione (9.17)}
+\small
+Ripristinando le unita' MeV e fm, il libro riporta
+\[
+\begin{aligned}
+R\simeq{}&5.7\,\mathrm{fm}
+\left(\frac{\sigma}{10\,\mathrm{MeV\,fm^{-2}}}\right)^{1/3}\\
+&\times\left(\frac{|\Delta n_Q|}{0.15\,\mathrm{fm^{-3}}}\right)^{-2/3}.
+\end{aligned}
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\[
+R\propto\sigma^{1/3}.
+\]
+Una superficie piu' costosa favorisce gocce piu' grandi.
+\end{column}
+\begin{column}{0.49\textwidth}
+\[
+R\propto|\Delta n_Q|^{-2/3}.
+\]
+Un contrasto di carica maggiore favorisce gocce piu' piccole.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 42
+\begin{frame}{Quando la fase mista e' energeticamente favorita?}
+\small
+La costruzione di Gibbs bulk trascura il costo dei domini.
+Con superficie e Coulomb occorre confrontare
+\[
+\varepsilon_{\rm mix}
+=\varepsilon_{\rm bulk}+\mathcal E_S+\mathcal E_C+\cdots
+\]
+con l'energia della separazione macroscopica in fasi quasi neutre.
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{$\sigma$ piccola}
+\medskip
+La separazione in domini caricati puo' essere favorevole:
+fase mista e ``pasta'' nel core.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{$\sigma$ grande}
+\medskip
+Molte interfacce costano troppo:
+configurazioni vicine al limite di Maxwell.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 43
+\begin{frame}{Limiti del modello di goccia uniforme}
+\small
+\begin{itemize}
+\item La tensione superficiale adroni--quark $\sigma$ non e' nota con precisione.
+\item Le cariche si possono redistribuire per schermatura elettrica.
+\item Forme cilindriche, planari o inverse possono sostituire le gocce.
+\item Le lunghezze di screening vanno confrontate con la scala $R$.
+\end{itemize}
+\medskip
+Il libro cita stime indicative:
+\[
+\sigma\sim10\,\mathrm{MeV\,fm^{-2}},
+\qquad
+\sigma_{\rm crit}\sim70\,\mathrm{MeV\,fm^{-2}}.
+\]
+\footnotesize
+Sono valori dipendenti dal modello, non costanti universali della QCD.
+Per grandi tensioni il guadagno bulk da neutralita' globale
+puo' non compensare il costo di superficie e Coulomb.
+\end{frame}
+
+% 44
+\begin{frame}{Come cambia la struttura del core stellare?}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Maxwell: interfaccia netta}
+\[
+P(r_t^-)=P(r_t^+)=P_t,
+\]
+\[
+\varepsilon(r_t^-)\ne\varepsilon(r_t^+).
+\]
+Un core di fase II puo' essere separato
+bruscamente dall'involucro adronico.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Gibbs: fase mista estesa}
+\[
+0<\chi(r)<1.
+\]
+Le due fasi possono coesistere
+in una regione radiale, con pressione
+variabile e possibili strutture pasta.
+\end{column}
+\end{columns}
+\medskip
+Una transizione sufficientemente intensa puo' ammorbidire l'EOS,
+modificare $M(R)$ e, in certi modelli, produrre rami di stabilita' distinti.
+\end{frame}
+
+% 45
+\begin{frame}{Riepilogo: equilibrio e geometria della transizione}
+\footnotesize
+\textbf{Maxwell (una variabile chimica indipendente):}
+\[
+P_{\mathrm I}(\mu_t)=P_{\mathrm{II}}(\mu_t),
+\qquad \Delta\varepsilon=\mu_t\Delta n_B.
+\]
+\textbf{Gibbs (due cariche conservate):}
+\[
+P_{\mathrm I}(\mu_B,\mu_Q)
+=P_{\mathrm{II}}(\mu_B,\mu_Q).
+\]
+\textbf{Neutralita' della miscela:}
+\[
+(1-\chi)n_Q^{\mathrm I}+\chi n_Q^{\mathrm{II}}=0.
+\]
+\textbf{Scala delle gocce sferiche:}
+\[
+R=\left[\frac{15\sigma}
+{8\pi\alpha_{\rm EM}(\Delta n_Q)^2}\right]^{1/3}.
+\]
+La topologia del core dipende dall'EOS, dai vincoli di carica
+e dal costo delle interfacce.
+\end{frame}
+
+\section{Terza famiglia di stelle compatte}
+
+\subsection{9.3.1 Twin Stars}
+
+\begin{frame}{Terza famiglia: problema fisico}
+\small
+Una transizione del primo ordine puo' modificare la topologia
+ delle soluzioni stabili delle equazioni TOV.
+\[
+\text{stabile}\;\longrightarrow\;\text{instabile}
+\;\longrightarrow\;\text{nuovamente stabile}.
+\]
+\begin{itemize}
+\item Prima famiglia: nane bianche.
+\item Seconda famiglia: stelle di neutroni.
+\item Terza famiglia: eventuale nuovo ramo stabile ad alta densita'.
+\end{itemize}
+Una terza famiglia non richiede necessariamente quark liberi:
+richiede una EOS che consenta una nuova sequenza stabile.
+\end{frame}
+
+\begin{frame}{Sequenze di equilibrio e modi radiali}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Le configurazioni TOV formano una sequenza al variare
+ della pressione centrale $P_c$:
+\[
+M=M(P_c),\qquad R=R(P_c).
+\]
+La stabilita' radiale si analizza mediante i modi normali:
+\[
+\omega_0^2,\omega_1^2,\omega_2^2,\ldots
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+\begin{itemize}
+\item $\omega_n^2>0$: oscillazione stabile del modo $n$.
+\item $\omega_n^2<0$: modo instabile.
+\item $\omega_n^2=0$: soglia di stabilita'.
+\end{itemize}
+Infatti, se $\omega_n^2=-\gamma_n^2$,
+\[
+\xi_n(t)\propto e^{\gamma_nt}.
+\]
+Per stabilita' radiale occorre che \emph{tutti} i modi siano stabili.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Figura 9.6: stabilita' e terza famiglia}
+\small
+\begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/stabilityregions_thirdfamily}\label{fig:Schaffner_stabilityregions_thirdfamily}\end{figure}
+\footnotesize Le caselle chiare rappresentano modi stabili; quelle scure modi instabili.
+\end{frame}
+
+\begin{frame}{Come leggere le sequenze della Figura 9.6}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\begin{itemize}
+\item Nane bianche $\to A$: stabili.
+\item $A\to B$: instabili dopo il limite di Chandrasekhar.
+\item $B\to C$: ramo stabile delle stelle di neutroni.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\begin{itemize}
+\item $C\to D$: intervallo instabile.
+\item $D\to E$: nuova regione stabile: terza famiglia.
+\item Oltre $E$: nuova perdita di stabilita'.
+\end{itemize}
+\medskip
+Gli altri estremi possono modificare il numero di modi instabili
+senza necessariamente ristabilire il modo fondamentale.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Estremi della curva e cambiamenti di stabilita'}
+\small
+Per una sequenza TOV a un parametro, gli estremi della massa
+possono segnalare l'attraversamento di un modo a frequenza nulla.
+\[
+\frac{dM}{dP_c}=0.
+\]
+\begin{itemize}
+\item Bisogna seguire il verso di percorrenza al crescere di $P_c$.
+\item Un massimo o un minimo di $M(R)$ non identifica \emph{da solo}
+quale modo cambia stabilita'.
+\item Un modo superiore che si ristabilizza non compensa
+un modo fondamentale ancora instabile.
+\end{itemize}
+I salti di densita' del primo ordine richiedono anche di controllare
+la stabilita' alla comparsa della nuova fase.
+\end{frame}
+
+\begin{frame}{Twin stars: stessa massa, raggi differenti}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Due configurazioni \emph{stabili} appartenenti a rami differenti
+possono soddisfare
+\[
+M_1\simeq M_2,\qquad R_1
+eq R_2.
+\]
+Esempio puramente illustrativo:
+\[
+M_1=M_2=1.9M_\odot,
+\]
+\[
+R_1=13\,\mathrm{km},\quad R_2=10\,\mathrm{km}.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+\begin{itemize}
+\item Stella meno compatta: materia prevalentemente adronica
+ o piccolo core della nuova fase.
+\item Stella piu' compatta: core denso piu' esteso.
+\end{itemize}
+\medskip
+Una misura di raggi diversi a masse simili sarebbe interessante,
+ma non dimostrerebbe, da sola, il deconfinamento.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Terza famiglia, stabilita' e contenuto microscopico}
+\small
+Le TOV dipendono dall'equazione di stato
+\[
+P=P(\varepsilon),
+\]
+non dalla particolare interpretazione microscopica adottata.
+\medskip
+Una nuova fase puo' essere materia di quark o un'altra
+fase capace di produrre un forte cambiamento della EOS.
+\medskip
+\textbf{Due questioni distinte:}
+\begin{itemize}
+\item esiste un \emph{secondo ramo stabile} della sequenza $M(R)$?
+\item a pari massa gravitazionale, le due configurazioni
+hanno lo stesso numero barionico? Non necessariamente.
+\end{itemize}
+\end{frame}
+
+\subsection{9.3.2 The Seidov Criterion}
+
+\begin{frame}{Il problema di Seidov}
+\small
+Transizione di Maxwell alla pressione $P_0$:
+\[
+\varepsilon_1\longrightarrow\varepsilon_2,
+\qquad \varepsilon_2>\varepsilon_1,
+\qquad \Delta\varepsilon=\varepsilon_2-\varepsilon_1.
+\]
+Appena $P_c$ supera $P_0$ appare un core della fase II di raggio $r_n$.
+\medskip
+\textbf{Domanda:} quando la comparsa di un core infinitesimo
+rende instabile una sequenza precedentemente stabile?
+\medskip
+Il criterio cercato e' locale alla \emph{soglia di formazione}
+del core, non alla successiva evoluzione del ramo ibrido.
+\end{frame}
+
+\begin{frame}{TOV con $G$ esplicita e $c=1$}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Equilibrio idrostatico:
+\[
+\frac{dP}{dr}=-G\frac{(P+\varepsilon)
+[m(r)+4\pi r^3P]}{r[r-2Gm(r)]}.
+\]
+Massa interna:
+\[
+\frac{dm}{dr}=4\pi r^2\varepsilon.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+\begin{itemize}
+\item $r$: coordinata radiale areale.
+\item $m(r)$: massa gravitazionale interna.
+\item $P(r)$, $\varepsilon(r)$: pressione e densita' di energia.
+\item $P_0$: pressione della transizione.
+\item $\varepsilon_1,\varepsilon_2$: densita' ai due lati della transizione.
+\end{itemize}
+\medskip
+Studiamo il limite $r\to0$.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Configurazione di riferimento: massa centrale}
+\small
+Prima della transizione:
+\[
+P_c=P_0,\qquad\varepsilon_c=\varepsilon_1.
+\]
+Per $r$ piccolo prendiamo $\varepsilon(r)\simeq\varepsilon_1$.
+\[
+\frac{dm_-}{dr}\simeq4\pi r^2\varepsilon_1.
+\]
+Integrando con $m_-(0)=0$:
+\[
+\begin{aligned}
+m_-(r)&=4\pi\varepsilon_1\int_0^r r'^2\,dr'\\
+&=\frac{4\pi}{3}\varepsilon_1r^3.
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Ordine del fattore di Schwarzschild}
+\small
+Dallo sviluppo della massa:
+\[
+\frac{2Gm_-(r)}r\simeq
+\frac{8\pi G}{3}\varepsilon_1r^2=O(r^2).
+\]
+Quindi
+\[
+\frac{1}{r[r-2Gm_-(r)]}
+=\frac{1}{r^2}\left[1+O(r^2)\right].
+\]
+Al primo ordine non nullo nel gradiente $dP/dr$ possiamo
+sostituire il denominatore con $r^2$.
+\medskip
+\textbf{Attenzione:} i termini relativistici che coinvolgono $P$
+nel numeratore delle TOV non vengono eliminati.
+\end{frame}
+
+\begin{frame}{Gradiente di pressione prima della transizione}
+\small
+Sostituiamo $m_-(r)\simeq(4\pi/3)\varepsilon_1r^3$:
+\[
+\begin{aligned}
+\frac{dP_-}{dr}&\simeq-G\frac{P_0+\varepsilon_1}{r^2}
+\left(4\pi r^3P_0+\frac{4\pi}{3}r^3\varepsilon_1\right)\\
+&=-\frac{4\pi G}{3}(P_0+\varepsilon_1)
+(3P_0+\varepsilon_1)r.
+\end{aligned}
+\]
+Il gradiente si annulla linearmente per $r\to0$, come richiesto
+dalla regolarita' al centro.
+\end{frame}
+
+\begin{frame}{Profilo di pressione della soluzione $-$}
+\small
+Integrando lo sviluppo del gradiente:
+\[
+\begin{aligned}
+P_-(r)-P_0
+&=-\frac{4\pi G}{3}(P_0+\varepsilon_1)
+(3P_0+\varepsilon_1)\int_0^r r'\,dr'\\
+&=-\frac{2\pi G}{3}(P_0+\varepsilon_1)
+(3P_0+\varepsilon_1)r^2.
+\end{aligned}
+\]
+Dunque
+\[
+P_-(r)\simeq P_0-\frac{2\pi G}{3}
+(P_0+\varepsilon_1)(3P_0+\varepsilon_1)r^2.
+\]
+\end{frame}
+
+\begin{frame}{Precisazione sulle formule del testo}
+\small
+La sostituzione diretta nelle TOV fornisce
+\[
+(P_0+\varepsilon_1)(3P_0+\varepsilon_1),
+\]
+non il fattore
+\[
+(P_0+\varepsilon_1)(P_0+3\varepsilon_1)
+\]
+che compare in alcuni passaggi intermedi del testo allegato.
+\medskip
+Useremo gli sviluppi \emph{algebricamente coerenti} delle TOV:
+essi riproducono il coefficiente finale di Seidov.
+\medskip
+Le equazioni originali sono riportate nella fonte come
+(9.18)--(9.35); i numeri non sono riprodotti sulle slide.
+\end{frame}
+
+\begin{frame}{Configurazione $+$: nasce un piccolo core}
+\small
+Superiamo appena la pressione di transizione:
+\[
+P_c=P_0+\delta,\qquad\delta>0.
+\]
+Compare un core della fase ad alta densita' con raggio $r_n\ll R$:
+\[
+\varepsilon(r<r_n)\simeq\varepsilon_2.
+\]
+La pressione al bordo del core e' continua:
+\[
+P_+(r_n)=P_0.
+\]
+All'esterno del core si trova ancora la fase di bassa densita'
+$\varepsilon_1$.
+\end{frame}
+
+\begin{frame}{Massa del piccolo core}
+\small
+Nel core $\varepsilon\simeq\varepsilon_2$:
+\[
+\begin{aligned}
+m_+(r_n)
+&=4\pi\int_0^{r_n}\varepsilon_2r^2\,dr\\
+&=\frac{4\pi}{3}\varepsilon_2r_n^3.
+\end{aligned}
+\]
+Quindi
+\[
+{m_+(r_n)\propto r_n^3.}
+\]
+La massa aggiuntiva rispetto alla fase I nello stesso volume e'
+\[
+\Delta m\simeq\frac{4\pi}{3}
+(\varepsilon_2-\varepsilon_1)r_n^3.
+\]
+\end{frame}
+
+\begin{frame}{Pressione all'interno del nuovo core}
+\small
+Sostituendo $P\simeq P_0$ e $\varepsilon\simeq\varepsilon_2$
+nello sviluppo centrale delle TOV:
+\[
+\frac{dP_+}{dr}\simeq-\frac{4\pi G}{3}
+(P_0+\varepsilon_2)(3P_0+\varepsilon_2)r.
+\]
+Integrando con $P_+(0)=P_0+\delta$:
+\[
+{
+P_+(r)\simeq P_0+\delta-
+\frac{2\pi G}{3}(P_0+\varepsilon_2)
+(3P_0+\varepsilon_2)r^2.}
+\]
+\end{frame}
+
+\begin{frame}{Raggio del core e incremento $\delta$}
+\small
+Al bordo $P_+(r_n)=P_0$, quindi:
+\[
+\begin{aligned}
+P_0&=P_0+\delta-
+\frac{2\pi G}{3}(P_0+\varepsilon_2)
+(3P_0+\varepsilon_2)r_n^2,\\
+\delta&=\frac{2\pi G}{3}(P_0+\varepsilon_2)
+(3P_0+\varepsilon_2)r_n^2.
+\end{aligned}
+\]
+Ne consegue
+\[
+{r_n\propto\sqrt{\delta}.}
+\]
+Il core nasce con raggio nullo e cresce quando $P_c$ supera $P_0$.
+\end{frame}
+
+\begin{frame}{Gradiente appena all'esterno del core}
+\small
+Al bordo esterno $r_n^+$ il fluido e' nella fase I:
+\[
+\varepsilon_{\rm locale}=\varepsilon_1.
+\]
+La massa interna e' pero' quella del core denso:
+\[
+m(r_n)=\frac{4\pi}{3}\varepsilon_2r_n^3.
+\]
+Percio' le TOV danno
+\[
+{
+\left.\frac{dP_+}{dr}\right|_{r_n^+}
+\simeq-\frac{4\pi G}{3}(P_0+\varepsilon_1)
+(3P_0+\varepsilon_2)r_n.}
+\]
+La distinzione fra densita' locale e massa interna e' essenziale.
+\end{frame}
+
+\begin{frame}{Confronto dei due profili di pressione}
+\small
+Definiamo la perturbazione nel mantello di bassa densita':
+\[
+\Pi(r)=P_+(r)-P_-(r).
+\]
+Per il riferimento:
+\[
+\left.\frac{dP_-}{dr}\right|_{r_n}
+=-\frac{4\pi G}{3}(P_0+\varepsilon_1)
+(3P_0+\varepsilon_1)r_n.
+\]
+Per il nuovo core:
+\[
+\left.\frac{dP_+}{dr}\right|_{r_n^+}
+=-\frac{4\pi G}{3}(P_0+\varepsilon_1)
+(3P_0+\varepsilon_2)r_n.
+\]
+\end{frame}
+
+\begin{frame}{Linearizzazione: $\Pi(r)=A+B/r$}
+\small
+La soluzione perturbativa asintotica nel mantello esterno assume la forma
+\[
+{\Pi(r)=A+\frac{B}{r}.}
+\]
+\begin{itemize}
+\item $A$: spostamento del profilo esterno regolare al limite $r_n\to0$.
+\item $B/r$: effetto della massa in eccesso del core.
+\item $A$ e $B$ si determinano dalla pressione e dal gradiente a $r_n$.
+\end{itemize}
+La forma e' valida all'ordine dominante nello sviluppo per un core
+infinitesimo: non rappresenta una soluzione TOV globale esatta.
+\end{frame}
+
+\begin{frame}{Prima condizione al bordo: la pressione}
+\small
+Dal profilo della stella di riferimento:
+\[
+P_-(r_n)=P_0-
+\frac{2\pi G}{3}(P_0+\varepsilon_1)
+(3P_0+\varepsilon_1)r_n^2.
+\]
+Poiche' $P_+(r_n)=P_0$:
+\[
+\Pi(r_n)=\frac{2\pi G}{3}(P_0+\varepsilon_1)
+(3P_0+\varepsilon_1)r_n^2.
+\]
+Dalla forma asintotica:
+\[
+{A+\frac{B}{r_n}=
+\frac{2\pi G}{3}(P_0+\varepsilon_1)
+(3P_0+\varepsilon_1)r_n^2.}
+\]
+\end{frame}
+
+\begin{frame}{Seconda condizione: il gradiente}
+\small
+Sottraiamo i due gradienti al bordo:
+\[
+\begin{aligned}
+\left.\frac{d\Pi}{dr}\right|_{r_n^+}
+&=\left.\frac{dP_+}{dr}\right|_{r_n^+}
+-\left.\frac{dP_-}{dr}\right|_{r_n}\\
+&=-\frac{4\pi G}{3}(P_0+\varepsilon_1)
+(\varepsilon_2-\varepsilon_1)r_n.
+\end{aligned}
+\]
+Dalla soluzione $\Pi(r)=A+B/r$:
+\[
+{-\frac{B}{r_n^2}=
+-\frac{4\pi G}{3}(P_0+\varepsilon_1)
+(\varepsilon_2-\varepsilon_1)r_n.}
+\]
+\end{frame}
+
+\begin{frame}{Determinazione del coefficiente $B$}
+\small
+Partiamo dalla seconda condizione al bordo:
+\[
+-\frac{B}{r_n^2}=-\frac{4\pi G}{3}
+(P_0+\varepsilon_1)(\varepsilon_2-\varepsilon_1)r_n.
+\]
+Moltiplichiamo per $-r_n^2$:
+\[
+{B=\frac{4\pi G}{3}
+(P_0+\varepsilon_1)(\varepsilon_2-\varepsilon_1)r_n^3.}
+\]
+Pertanto il termine singolare $B/r$ e' di ordine $r_n^3/r$,
+come ci si aspetta per l'effetto della piccola massa aggiuntiva.
+\end{frame}
+
+\begin{frame}{Determinazione di $A$: sostituzione}
+\small
+Dalla prima condizione:
+\[
+A=\frac{2\pi G}{3}(P_0+\varepsilon_1)
+(3P_0+\varepsilon_1)r_n^2-\frac{B}{r_n}.
+\]
+Sostituiamo $B$:
+\[
+\begin{aligned}
+A={}&\frac{2\pi G}{3}(P_0+\varepsilon_1)r_n^2
+\big[(3P_0+\varepsilon_1)\\
+&\hspace{31mm}-2(\varepsilon_2-\varepsilon_1)\big].
+\end{aligned}
+\]
+\end{frame}
+
+\begin{frame}{Determinazione di $A$: semplificazione}
+\small
+Semplifichiamo la parentesi:
+\[
+\begin{aligned}
+3P_0+\varepsilon_1-2(\varepsilon_2-\varepsilon_1)
+&=3P_0+\varepsilon_1-2\varepsilon_2+2\varepsilon_1\\
+&=3P_0+3\varepsilon_1-2\varepsilon_2.
+\end{aligned}
+\]
+Quindi
+\[
+{
+A=\frac{2\pi G}{3}(P_0+\varepsilon_1)
+(3P_0+3\varepsilon_1-2\varepsilon_2)r_n^2.}
+\]
+Questa e' l'espressione del testo associata all'equazione (9.31).
+\end{frame}
+
+\begin{frame}{Eliminiamo $r_n$ mediante $\delta$}
+\small
+Ricordiamo
+\[
+\delta=\frac{2\pi G}{3}
+(P_0+\varepsilon_2)(3P_0+\varepsilon_2)r_n^2.
+\]
+Da cui
+\[
+r_n^2=\frac{3\delta}{2\pi G
+(P_0+\varepsilon_2)(3P_0+\varepsilon_2)}.
+\]
+Sostituendo in $A$:
+\[
+{\frac{A}{\delta}=
+\frac{(P_0+\varepsilon_1)
+(3P_0+3\varepsilon_1-2\varepsilon_2)}
+{(P_0+\varepsilon_2)(3P_0+\varepsilon_2)}.}
+\]
+\end{frame}
+
+\begin{frame}{Derivata della massa e cambio di segno}
+\small
+Nel limite di comparsa del core, il testo collega
+la risposta del ramo con e senza core mediante
+\[
+{
+\frac{dM_+}{dP_c}=\frac{A}{\delta}
+\frac{dM_-}{dP_c}.}
+\]
+Se il ramo iniziale e' stabile e $dM_-/dP_c>0$,
+il segno della nuova derivata dipende da $A/\delta$.
+\medskip
+Per $P_0>0$, $\varepsilon_{1,2}>0$, il denominatore
+ di $A/\delta$ e' positivo: resta da studiare
+\[
+3P_0+3\varepsilon_1-2\varepsilon_2.
+\]
+\end{frame}
+
+\begin{frame}{Criterio di Seidov: forma fondamentale}
+\small
+L'instabilita' immediata richiede
+\[
+3P_0+3\varepsilon_1-2\varepsilon_2<0.
+\]
+Quindi
+\[
+2\varepsilon_2>3(P_0+\varepsilon_1).
+\]
+Dividendo per $2\varepsilon_1$:
+\[
+{
+\frac{\varepsilon_2}{\varepsilon_1}>
+\frac32\left(1+\frac{P_0}{\varepsilon_1}\right).}
+\]
+\textbf{Interpretazione:} un salto energetico sufficientemente grande
+destabilizza la stella quando compare un core infinitesimo.
+\end{frame}
+
+\begin{frame}{Criterio di Seidov: salto relativo}
+\small
+Definiamo
+\[
+\Delta\varepsilon=\varepsilon_2-\varepsilon_1.
+\]
+Poiche' $\varepsilon_2=\varepsilon_1+\Delta\varepsilon$,
+\[
+1+\frac{\Delta\varepsilon}{\varepsilon_1}>
+\frac32\left(1+\frac{P_0}{\varepsilon_1}\right).
+\]
+Sottraendo 1:
+\[
+{
+\frac{\Delta\varepsilon}{\varepsilon_1}>
+\frac12+\frac32\frac{P_0}{\varepsilon_1}.}
+\]
+Questa e' la forma impiegata nella classificazione delle stelle ibride.
+\end{frame}
+
+\begin{frame}{Limite newtoniano del criterio}
+\small
+Se la pressione alla transizione e' piccola
+rispetto alla densita' di energia,
+\[
+\frac{P_0}{\varepsilon_1}\ll1,
+\]
+allora
+\[
+{\frac{\varepsilon_2}{\varepsilon_1}>\frac32.}
+\]
+Oppure
+\[
+{\frac{\Delta\varepsilon}{\varepsilon_1}>\frac12.}
+\]
+Un salto superiore al $50\%$ e' quindi la soglia
+nell'approssimazione newtoniana.
+\end{frame}
+
+\begin{frame}{Esempio numerico per il salto critico}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Prendiamo
+\[
+\varepsilon_1=500\,\mathrm{MeV\,fm^{-3}},
+\]
+\[
+P_0=100\,\mathrm{MeV\,fm^{-3}}.
+\]
+Allora
+\[
+\frac{P_0}{\varepsilon_1}=0.2.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+Il criterio richiede
+\[
+\frac{\varepsilon_2}{\varepsilon_1}>
+\frac32(1+0.2)=1.8.
+\]
+Quindi
+\[
+\varepsilon_2>900\,\mathrm{MeV\,fm^{-3}},
+\]
+\[
+\Delta\varepsilon>400\,\mathrm{MeV\,fm^{-3}}.
+\]
+Non dice se apparira' poi un nuovo ramo stabile.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Che cosa stabilisce il criterio e che cosa no}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Stabilisce}
+\begin{itemize}
+\item La stabilita' \emph{immediata} alla nascita della nuova fase.
+\item Una soglia per il salto di energia a pressione fissata.
+\item Il comportamento locale al limite $r_n\to0$.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Non stabilisce}
+\begin{itemize}
+\item La presenza di un secondo ramo stabile a pressioni elevate.
+\item La rigidita' della fase densa.
+\item L'esistenza osservabile di stelle gemelle.
+\end{itemize}
+\medskip
+Per questi aspetti occorre studiare \emph{tutta} la sequenza TOV.
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{9.3.3 Classification of Hybrid Stars}
+
+\begin{frame}{Due parametri adimensionali della transizione}
+\small
+Alla pressione $P_{\rm trans}$ la densita' passa da
+$\varepsilon_{\rm trans}$ a
+$\varepsilon_{\rm trans}+\Delta\varepsilon$.
+\[
+x=\frac{P_{\rm trans}}{\varepsilon_{\rm trans}},
+\qquad
+y=\frac{\Delta\varepsilon}{\varepsilon_{\rm trans}}.
+\]
+Il criterio di Seidov diventa
+\[
+{y>\frac12+\frac32 x.}
+\]
+Nel piano $(x,y)$ la soglia di instabilita' immediata
+ e' quindi una \emph{retta}.
+\end{frame}
+
+\begin{frame}{La parametrizzazione CSS della fase densa}
+\small
+Descriviamo la fase ad alta densita' tramite
+\[
+{P=s(\varepsilon-\varepsilon_*).}
+\]
+\begin{itemize}
+\item $s=dP/d\varepsilon=c_s^2$ in unita' $c=1$.
+\item $\varepsilon_*$: costante che fissa il punto a pressione nulla
+  dell'estrapolazione lineare.
+\item Causalita': $0<s\leq1$.
+\end{itemize}
+Il valore $s=1$ e' il limite di massima rigidita' causale
+considerato nel testo.
+\end{frame}
+
+\begin{frame}{Determinazione della costante $\varepsilon_*$}
+\small
+All'inizio della fase ad alta densita':
+\[
+P_{\rm trans}=s(\varepsilon_{\rm trans}
++\Delta\varepsilon-\varepsilon_*).
+\]
+Risolvendo:
+\[
+{
+\varepsilon_*=
+\varepsilon_{\rm trans}+\Delta\varepsilon-
+\frac{P_{\rm trans}}s.}
+\]
+Quindi
+\[
+P=P_{\rm trans}+s\big[\varepsilon-
+(\varepsilon_{\rm trans}+\Delta\varepsilon)\big].
+\]
+La pressione e' continua, la densita' di energia salta.
+\end{frame}
+
+\begin{frame}{EOS completa per le equazioni TOV}
+\footnotesize
+\[
+P(\varepsilon)=
+\begin{cases}
+P_{\rm low}(\varepsilon),
+& \varepsilon<\varepsilon_{\rm trans},\\[1mm]
+P_{\rm trans}
++s\,[\varepsilon-(\varepsilon_{\rm trans}+\Delta\varepsilon)],
+& \varepsilon>\varepsilon_{\rm trans}+\Delta\varepsilon.
+\end{cases}
+\]
+Nel tratto intermedio $\varepsilon_{\rm trans}<\varepsilon<
+\varepsilon_{\rm trans}+\Delta\varepsilon$ la Maxwell
+construction ha pressione costante $P_{\rm trans}$,
+ma non genera uno strato stellare radiale esteso.
+\medskip
+Forma inversa per il core:
+\[
+{\varepsilon_Q(P)=\varepsilon_{\rm trans}
++\Delta\varepsilon+\frac{P-P_{\rm trans}}s.}
+\]
+\end{frame}
+
+\begin{frame}{I due meccanismi antagonisti}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Salto energetico}
+\[
+\Delta\varepsilon\;\text{grande}.
+\]
+\begin{itemize}
+\item Favorisce l'instabilita' iniziale.
+\item Puo' interrompere la sequenza ordinaria.
+\item La soglia locale e' data da Seidov.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Rigidita' della fase densa}
+\[
+s=\frac{dP}{d\varepsilon}\;\text{grande}.
+\]
+\begin{itemize}
+\item Aumenta il sostegno pressorio.
+\item Puo' favorire una nuova regione stabile.
+\item Non garantisce da sola una terza famiglia.
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Figura 9.7: classificazione A--D}
+\small
+\begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/hybridclassification}\label{fig:Schaffner_hybridclassification}\end{figure}
+\centering
+\includegraphics[width=0.96\linewidth,height=0.75\textheight,keepaspectratio]{qcd93_fig97.png}
+
+\footnotesize Asse verticale: salto relativo $\Delta\varepsilon/\varepsilon_{\rm trans}$;
+orizzontale: $P_{\rm trans}/\varepsilon_{\rm trans}$.
+\end{frame}
+
+\begin{frame}{Regioni A e D: sopra la retta di Seidov}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Classe A}
+\begin{itemize}
+\item La transizione destabilizza immediatamente.
+\item La pressione di transizione e' relativamente elevata.
+\item Non emerge un ramo ibrido stabile.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Classe D}
+\begin{itemize}
+\item La transizione destabilizza immediatamente.
+\item La pressione di transizione e' piu' bassa.
+\item A pressioni centrali maggiori appare un
+nuovo ramo stabile \emph{disconnesso}.
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Regioni C e B: sotto la retta di Seidov}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Classe C}
+\begin{itemize}
+\item La comparsa del core non destabilizza subito.
+\item Il ramo ibrido resta connesso a quello ordinario.
+\item Non e' presente un secondo ramo stabile separato.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Classe B}
+\begin{itemize}
+\item Il core nasce senza instabilita' immediata.
+\item La sequenza diventa instabile piu' avanti.
+\item Riappare poi un ramo ibrido disconnesso.
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Perche' la classe B e' importante?}
+\small
+La classe B si trova \emph{sotto} la retta di Seidov:
+\[
+\frac{\Delta\varepsilon}{\varepsilon_{\rm trans}}
+<\frac12+\frac32\frac{P_{\rm trans}}{\varepsilon_{\rm trans}}.
+\]
+Il ramo e' inizialmente stabile dopo la transizione,
+ma puo' perdere e poi recuperare la stabilita'.
+\medskip
+Per questo la violazione del criterio di Seidov \emph{non e'}
+necessaria perche' esistano stelle gemelle;
+e' necessaria solo per l'instabilita' \emph{immediata}.
+\end{frame}
+
+\begin{frame}{Perche' conta la pressione di transizione?}
+\small
+\begin{itemize}
+\item Se $P_{\rm trans}$ e' molto alta, la nuova fase appare
+vicino al limite massimo del ramo adronico.
+\item Potrebbe non esserci spazio sufficiente per una successiva
+stabilizzazione della nuova fase.
+\item Se la transizione avviene a pressioni minori, il core denso
+puo' crescere maggiormente prima della massa massima.
+\end{itemize}
+\medskip
+La retta di Seidov e' locale; gli altri confini della
+Figura 9.7 dipendono dalla EOS adronica e dal parametro $s$.
+\end{frame}
+
+\begin{frame}{Twin stars e conservazione dei barioni}
+\small
+Due stelle gemelle possono avere
+\[
+M_{G,1}\simeq M_{G,2},\qquad R_1
+eq R_2.
+\]
+Ma la massa barionica e'
+\[
+M_B=m_bN_B,
+\]
+e in generale
+\[
+N_{B,1}
+eq N_{B,2}.
+\]
+Per una \emph{trasformazione} fisica a barioni conservati occorre
+confrontare configurazioni con lo stesso $N_B$, non semplicemente
+con la stessa massa gravitazionale.
+\end{frame}
+
+\begin{frame}{Riepilogo: dal salto di fase alle stelle gemelle}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Instabilita' iniziale}
+\[
+\frac{\Delta\varepsilon}{\varepsilon_{\rm trans}}>
+\frac12+\frac32\frac{P_{\rm trans}}
+{\varepsilon_{\rm trans}}.
+\]
+\textbf{Fase ad alta densita'}
+\[
+P=s(\varepsilon-\varepsilon_*).
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+\begin{itemize}
+\item $\Delta\varepsilon$: salto energetico.
+\item $P_{\rm trans}$: posizione della transizione.
+\item $s$: rigidita' della nuova fase.
+\item A: nessun ramo ibrido.
+\item B: connesso + disconnesso.
+\item C: solo connesso.
+\item D: solo disconnesso.
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{9.4 Mass--Radius Relation with a Phase Transition}
+
+% 01
+\begin{frame}{Domanda del paragrafo 9.4}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Paragrafo 9.1}
+\medskip
+EOS nucleonica a basse densita' e pQCD ad alte densita', collegate attraverso interpolazioni lisce.
+\[
+P=P(\varepsilon).
+\]
+Vincoli: causalita' e possibilita' di sostenere stelle con $M\gtrsim2M_\odot$.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Paragrafi 9.3--9.4}
+\medskip
+Ammettiamo una transizione del primo ordine con salto in densita' di energia.
+\[
+\varepsilon_H\longrightarrow\varepsilon_Q
+\quad\text{a}\quad P=P_{\rm trans}.
+\]
+Quanto si amplia la regione ammissibile del diagramma massa--raggio?
+\end{column}
+\end{columns}
+\medskip
+Il risultato e' l'inviluppo delle curve $M(R)$ ottenute variando l'EOS, non una singola relazione massa--raggio.
+\end{frame}
+
+% 02
+\begin{frame}{Collegamento con il criterio di Seidov}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Transizione di Maxwell}
+\[
+\begin{gathered}
+P(\varepsilon_1)=P(\varepsilon_2)=P_{\rm trans},\\
+\varepsilon_1=\varepsilon_{\rm trans},\\
+\varepsilon_2=\varepsilon_{\rm trans}+\Delta\varepsilon.
+\end{gathered}
+\]
+Il salto della densita' di energia puo' destabilizzare la configurazione quando nasce un core infinitesimo.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Instabilita' immediata}
+\[
+\frac{\Delta\varepsilon}{\varepsilon_{\rm trans}}>
+\frac12+\frac32\frac{P_{\rm trans}}{\varepsilon_{\rm trans}}.
+\]
+E' il criterio di Seidov.
+\medskip
+\textit{Non garantisce} un nuovo ramo stabile a pressioni centrali maggiori: serve anche una nuova fase sufficientemente rigida.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 03
+\begin{frame}{Sofficita' e rigidita' dell'equazione di stato}
+\small
+La risposta locale della pressione a un incremento di energia e' misurata dalla velocita' del suono:
+\[
+c_s^2=\frac{dP}{d\varepsilon}\qquad(c=1).
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Forte ammorbidimento}
+\[
+c_s^2\simeq0.
+\]
+Un incremento di $\varepsilon$ produce una variazione molto piccola della pressione.
+\medskip
+Nel plateau ideale di Maxwell: $\Delta P=0$ per il salto $\Delta\varepsilon$.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Forte irrigidimento}
+\[
+c_s^2\longrightarrow1.
+\]
+La pressione cresce con la massima pendenza consentita dalla condizione causale usata nel testo.
+\medskip
+Una fase rigida puo' sostenere nuovamente configurazioni compatte.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 04
+\begin{frame}{Un salto netto non e' l'unico meccanismo}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Maxwell}
+\[
+P=P_{\rm trans},\qquad
+\Delta\varepsilon>0.
+\]
+La discontinuita' si realizza idealmente in un'interfaccia radiale netta nella stella.
+\medskip
+Non esiste uno strato TOV macroscopico a pressione costante.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Gibbs e altre EOS}
+\medskip
+Una fase mista puo' produrre un ammorbidimento continuo, seguito da un rapido irrigidimento.
+\medskip
+Anche in questo caso possono comparire rami stabili disconnessi.
+\end{column}
+\end{columns}
+\medskip
+Per la terza famiglia conta la struttura globale di $P(\varepsilon)$: un ammorbidimento marcato seguito da un irrigidimento sufficientemente forte.
+\end{frame}
+
+\subsection{Vincoli ed EOS estremali}
+% 05
+\begin{frame}{Vincoli adottati nella costruzione}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Materia a basse densita'}
+\medskip
+Si usa un'EOS nucleonica $P_{\rm low}(\varepsilon)$ vincolata nell'intervallo affidabile.
+\medskip
+\textbf{Massa massima}
+\[
+M_{\max}\geq2M_\odot.
+\]
+La EOS deve sostenere almeno le stelle massicce del riferimento osservativo considerato nel libro.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Causalita' e stabilita'}
+\[
+0\leq\frac{dP}{d\varepsilon}\leq1.
+\]
+La risposta della pressione e' limitata superiormente.
+\medskip
+\textbf{Liberta' aggiuntiva}
+\medskip
+Oltre il tratto nucleonico noto si ammettono cambiamenti improvvisi di rigidita' e salti di $\varepsilon$.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 06
+\begin{frame}{Due problemi estremali distinti}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Massimizzare la massa}
+\medskip
+Quale prosecuzione ad alta densita' consente il piu' grande valore di $M_{\max}$?
+\[
+\frac{dP}{d\varepsilon}=1.
+\]
+Serve la prosecuzione piu' rigida consentita.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Minimizzare il raggio}
+\medskip
+Quale EOS produce il raggio piu' piccolo a massa fissata, mantenendo $M_{\max}\geq2M_\odot$?
+\[
+\underbrace{c_s^2=0}_{\text{salto}}
+\ \longrightarrow\
+\underbrace{c_s^2=1}_{\text{fase rigida}}.
+\]
+\end{column}
+\end{columns}
+\medskip
+Le due costruzioni delimitano regioni diverse della Figura 9.8.
+\end{frame}
+
+% 07
+\begin{frame}{EOS causalmente piu' rigida: integrazione}
+\small
+Per densita' superiori a una soglia fiduciale $\varepsilon_f$, imponiamo
+\[
+\frac{dP}{d\varepsilon}=1.
+\]
+Integrando rispetto a $\varepsilon$:
+\[
+P(\varepsilon)=\varepsilon+C.
+\]
+L'EOS deve raccordarsi al valore noto $P_f=P_{\rm low}(\varepsilon_f)$:
+\[
+P_f=\varepsilon_f+C
+\quad\Longrightarrow\quad C=P_f-\varepsilon_f.
+\]
+Quindi
+\[
+P(\varepsilon)=P_f+(\varepsilon-\varepsilon_f),
+\qquad\varepsilon\geq\varepsilon_f.
+\]
+\end{frame}
+
+% 08
+\begin{frame}{Raccordo alla materia nucleonica}
+\small
+La EOS completa della costruzione massimamente rigida e'
+\[
+P(\varepsilon)=
+\begin{cases}
+P_{\rm low}(\varepsilon),&\varepsilon\leq\varepsilon_f,\\[1mm]
+P_f+\varepsilon-\varepsilon_f,&\varepsilon>\varepsilon_f.
+\end{cases}
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+La pressione e' continua al raccordo:
+\[
+P(\varepsilon_f^-)=P(\varepsilon_f^+)=P_f.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+La derivata puo' cambiare bruscamente:
+\[
+\left.\frac{dP}{d\varepsilon}\right|_+=1.
+\]
+Un salto di pendenza non implica necessariamente un salto di energia.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 09
+\begin{frame}{Limite di Rhoades--Ruffini: interpretazione}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Le TOV sono integrate usando
+\[
+\frac{dm}{dr}=4\pi r^2\varepsilon,
+\]
+\[
+\frac{dP}{dr}
+=-\frac{(\varepsilon+P)(m+4\pi r^3P)}{r(r-2m)}
+\]
+(in unita' $G=c=1$).
+\end{column}
+\begin{column}{0.49\textwidth}
+L'estremo $dP/d\varepsilon=1$ massimizza la risposta pressoria consentita dalla causalita'.
+\medskip
+Si ottiene un limite superiore alla massa massima \textit{all'interno delle ipotesi adottate sull'EOS nota e sulla prosecuzione}.
+\medskip
+Non equivale a una previsione che la materia reale abbia $c_s=c$.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 10
+\begin{frame}{Risultato della prosecuzione piu' rigida}
+\small
+Nel modello e con l'EOS nucleonica esterna scelti nel testo:
+\[
+M_{\max}\simeq3.9M_\odot,\qquad
+R(M_{\max})\simeq16.7\,\mathrm{km}.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Confronto}
+\[
+M_{\max}^{\rm RR}\sim4.2M_\odot
+\]
+per la scelta idealizzata richiamata dal libro, con pressione fiduciale nulla.
+\end{column}
+\begin{column}{0.49\textwidth}
+La differenza e' legata al trattamento dello strato esterno di materia neutronica e al punto fiduciale.
+\medskip
+Il limite dipende da tali ipotesi: non e' una massa massima universale della QCD.
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Limite inferiore ai raggi}
+% 11
+\begin{frame}{Perche' un salto energetico puo' ridurre il raggio}
+\small
+Per una stella di massa gravitazionale $M$ e raggio $R$, la densita' media di massa e'
+\[
+\bar\rho=\frac{3M}{4\pi R^3}.
+\]
+A massa fissata,
+\[
+R\downarrow\quad\Longrightarrow\quad\bar\rho\uparrow.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Un salto di $\varepsilon$ a pressione costante consente un aumento di energia per unita' di volume senza aumento di $P$.
+\end{column}
+\begin{column}{0.49\textwidth}
+Ma un salto troppo grande puo' destabilizzare la stella: occorre un'alta rigidita' nella fase successiva.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 12
+\begin{frame}{Primo tratto: EOS nucleonica affidabile}
+\small
+Fino alla densita' di transizione manteniamo la descrizione nucleonica:
+\[
+P=P_{\rm low}(\varepsilon),
+\qquad\varepsilon<\varepsilon_{\rm trans}.
+\]
+Definiamo
+\[
+P_{\rm trans}=P_{\rm low}(\varepsilon_{\rm trans}).
+\]
+\medskip
+Il testo sceglie la transizione alla pressione piu' bassa consentita dal raccordo con l'EOS della materia neutronica utilizzata per costruire il limite estremo.
+\medskip
+$P_{\rm trans}$ e $\varepsilon_{\rm trans}$ sono i valori \textit{appena prima} dell'apparizione della nuova fase.
+\end{frame}
+
+% 13
+\begin{frame}{Secondo tratto: transizione di Maxwell}
+\small
+Alla pressione $P_{\rm trans}$ la densita' passa da
+\[
+\varepsilon_1=\varepsilon_{\rm trans}
+\]
+a
+\[
+\varepsilon_2=\varepsilon_{\rm trans}+\Delta\varepsilon.
+\]
+La pressione rimane invariata durante la coesistenza ideale:
+\[
+P(\varepsilon_1)=P(\varepsilon_2)=P_{\rm trans}.
+\]
+Il plateau nel diagramma $P(\varepsilon)$ codifica il salto:
+\[
+\Delta P=0,\qquad\Delta\varepsilon>0.
+\]
+Nelle TOV la densita' cambia a un raggio critico, senza uno strato di pressione perfettamente costante.
+\end{frame}
+
+% 14
+\begin{frame}{Terzo tratto: massima rigidita' causale}
+\small
+Dopo la transizione assumiamo
+\[
+\frac{dP}{d\varepsilon}=1,
+\qquad \varepsilon>\varepsilon_2.
+\]
+Integrare fornisce $P=\varepsilon+C$. Il raccordo al punto $(\varepsilon_2,P_{\rm trans})$ implica
+\[
+C=P_{\rm trans}-\varepsilon_2.
+\]
+Quindi
+\[
+\begin{aligned}
+P(\varepsilon)
+&=P_{\rm trans}+(\varepsilon-\varepsilon_2)\\
+&=P_{\rm trans}+\varepsilon
+  -(\varepsilon_{\rm trans}+\Delta\varepsilon).
+\end{aligned}
+\]
+Questa nuova fase puo' ristabilizzare configurazioni prima instabili.
+\end{frame}
+
+% 15
+\begin{frame}{EOS estrema completa per raggi piccoli}
+\footnotesize
+\[
+P(\varepsilon)=
+\begin{cases}
+P_{\rm low}(\varepsilon),
+  &\varepsilon<\varepsilon_{\rm trans},\\[1.5mm]
+P_{\rm trans},
+  &\varepsilon_{\rm trans}\leq\varepsilon\leq
+  \varepsilon_{\rm trans}+\Delta\varepsilon,\\[1.5mm]
+P_{\rm trans}+\varepsilon-
+  (\varepsilon_{\rm trans}+\Delta\varepsilon),
+  &\varepsilon>\varepsilon_{\rm trans}+\Delta\varepsilon.
+\end{cases}
+\]
+\medskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Tratto iniziale}\par\smallskip
+EOS di materia neutronica nota.
+\medskip
+\textbf{Tratto intermedio}\par\smallskip
+Salto di Maxwell, $\Delta\varepsilon>0$ a $P_{\rm trans}$.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Tratto finale}\par\smallskip
+EOS causalmente piu' rigida, $c_s^2=1$.
+\medskip
+E' una costruzione estremale, non una descrizione microscopica univoca.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 16
+\begin{frame}{Forma inversa dell'EOS per le TOV}
+\small
+Nell'integrazione numerica e' spesso piu' comodo usare $\varepsilon=\varepsilon(P)$.
+\medskip
+Per la fase ad alta densita':
+\[
+\begin{aligned}
+P-P_{\rm trans}
+&=\varepsilon-(\varepsilon_{\rm trans}+\Delta\varepsilon),\\
+\varepsilon_Q(P)
+&=\varepsilon_{\rm trans}+\Delta\varepsilon
+  +(P-P_{\rm trans}).
+\end{aligned}
+\]
+Per la fase a bassa densita':
+\[
+\varepsilon_H(P)=\varepsilon_{\rm low}(P).
+\]
+Al passaggio per $P=P_{\rm trans}$, la densita' cambia da $\varepsilon_Q$ a $\varepsilon_H$; $m(r)$ e $P(r)$ rimangono continui.
+\end{frame}
+
+% 17
+\begin{frame}{Schema dell'EOS estrema nel piano $P$--$\varepsilon$}
+\centering
+\begin{tikzpicture}[x=0.96cm,y=0.87cm]
+\draw[->,thick] (0,0)--(10.9,0) node[below] {$\varepsilon$};
+\draw[->,thick] (0,0)--(0,6.0) node[left] {$P$};
+\draw[thick] (0.3,0.45) .. controls (1.8,0.55) and (2.8,1.2) .. (4.1,2.65);
+\draw[thick] (4.1,2.65)--(6.55,2.65);
+\draw[thick] (6.55,2.65)--(8.85,5.55);
+\draw[densely dashed,thin] (4.1,0)--(4.1,2.65);
+\draw[densely dashed,thin] (6.55,0)--(6.55,2.65);
+\node[below] at (4.1,0) {$\varepsilon_1$};
+\node[below] at (6.55,0) {$\varepsilon_2$};
+\node[left] at (0,2.65) {$P_{\rm trans}$};
+\draw[dotted] (0,2.65)--(4.1,2.65);
+\node[align=center,font=\scriptsize] at (2.25,2.85) {EOS nucleonica};
+\node[font=\scriptsize,above] at (5.4,2.65) {$\Delta\varepsilon$};
+\node[align=center,font=\scriptsize] at (8.75,4.95) {$c_s^2=1$};
+\node[font=\scriptsize] at (5.2,-0.85) {Schema qualitativo, non in scala};
+\end{tikzpicture}
+\end{frame}
+
+% 18
+\begin{frame}{Due effetti opposti nella stessa EOS}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Salto $\Delta\varepsilon$}
+\[
+P=\text{costante},\quad\Delta\varepsilon>0.
+\]
+Aumenta la densita' di energia senza un aumento della pressione.
+\medskip
+Favorisce strutture molto compatte, ma puo' innescare instabilita' (Seidov).
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Fase rigida dopo il salto}
+\[
+\frac{dP}{d\varepsilon}=1.
+\]
+Fornisce il massimo incremento pressorio consentito dalla causalita'.
+\medskip
+Puo' sostenere un nuovo ramo stabile e aumentare la massa massima.
+\end{column}
+\end{columns}
+\medskip
+Il raggio piu' piccolo ammissibile deriva dall'\emph{ottimizzazione congiunta} dei due effetti, non da un salto arbitrariamente grande.
+\end{frame}
+
+% 19
+\begin{frame}{Come si sceglie il salto energetico}
+\small
+Il testo impone una configurazione di massa massima non inferiore al riferimento osservativo:
+\[
+M_{\max}\geq2M_\odot.
+\]
+Per costruire il bordo di raggi minimi si regola $\Delta\varepsilon$ fino al caso estremo
+\[
+M_{\max}=2M_\odot.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Se il salto e' troppo debole, si ottengono in generale raggi maggiori del minimo cercato.
+\end{column}
+\begin{column}{0.49\textwidth}
+Se e' troppo forte, la sequenza rischia di non sostenere piu' $2M_\odot$.
+\end{column}
+\end{columns}
+\medskip
+Scelta addizionale: la transizione avviene al punto piu' basso ammesso dalla EOS nucleonica di riferimento.
+\end{frame}
+
+\subsection{Figura 9.8 e limiti massa--raggio}
+% 20
+\begin{frame}{Figura 9.8: massa--raggio con transizione}
+    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/MR-hybrid-phasetransition}\label{fig:Schaffner_MR-hybrid-phasetransition}\end{figure}
+\end{frame}
+
+% 21
+\begin{frame}{Come leggere le due regioni della Figura 9.8}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Regione chiara}
+\medskip
+Famiglia di EOS interpolate in modo liscio fra il vincolo nucleonico e la pQCD, come nella Figura 9.2.
+\medskip
+Corrisponde alla classe di parametrizzazioni senza salti netti considerata nel \S9.1.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Regione scura}
+\medskip
+Insieme piu' ampio ottenuto ammettendo forti variazioni della rigidita' e transizioni con salto energetico.
+\medskip
+Include raggi notevolmente inferiori a quelli della regione chiara.
+\end{column}
+\end{columns}
+\medskip
+Le aree non sono singole sequenze TOV: ogni EOS genera una propria curva $M(R)$; l'unione di molte curve determina una regione.
+\end{frame}
+
+% 22
+\begin{frame}{Una differenza di ipotesi, non un singolo modello}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Figura 9.2}
+\[
+P(\varepsilon)\ \text{raccordata senza salti}.
+\]
+Sono utilizzate politropiche a tratti e condizioni di matching con una regione di pQCD.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Figura 9.8}
+\[
+\Delta\varepsilon>0
+\quad\text{a}\quad P_{\rm trans}.
+\]
+Vengono ammesse anche prosecuzioni causali estreme dopo la transizione.
+\end{column}
+\end{columns}
+\medskip
+Le due fasce non differiscono \emph{solo} per la possibilita' di un salto: cambiano anche le famiglie di parametrizzazioni utilizzate. La regione scura e' l'insieme piu' ampio nelle ipotesi degli autori.
+\end{frame}
+
+% 23
+\begin{frame}{Rette di compattezza nel diagramma $M$--$R$}
+\small
+Definiamo
+\[
+\mathcal C=\frac{GM}{Rc^2}.
+\]
+A compattezza fissata:
+\[
+M=\mathcal C\frac{c^2}{G}R.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Sono rette passanti per l'origine nel piano $M$--$R$.
+\medskip
+La Figura 9.8 mostra anche $\mathcal C=0.1$, $0.2$ e $0.3$.
+\end{column}
+\begin{column}{0.49\textwidth}
+Raggio piu' piccolo a massa fissata significa compattezza maggiore:
+\[
+R\downarrow\quad\Longrightarrow\quad\mathcal C\uparrow.
+\]
+\end{column}
+\end{columns}
+\end{frame}
+
+% 24
+\begin{frame}{Tre limiti relativistici riportati nella figura}
+\small
+\begin{align*}
+\text{Schwarzschild:}&\qquad
+R>\frac{2GM}{c^2},&\mathcal C&<\frac12,\\[1mm]
+\text{Buchdahl:}&\qquad
+R\geq\frac94\frac{GM}{c^2},&\mathcal C&\leq\frac49,\\[1mm]
+\text{Causalita':}&\qquad
+R\gtrsim\frac{GM}{0.354\,c^2},&\mathcal C&\lesssim0.354.
+\end{align*}
+\medskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Il limite di Buchdahl richiede ipotesi specifiche su simmetria, isotropia e profilo di densita'.
+\end{column}
+\begin{column}{0.49\textwidth}
+Il valore $0.354$ e' un limite globale di compattezza per la classe di EOS causali e stelle stabili considerata: non deriva soltanto dalla disuguaglianza locale $c_s\leq c$.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 25
+\begin{frame}{Limite causale al raggio per $M=2M_\odot$}
+\small
+Dalla compattezza massima del libro:
+\[
+\mathcal C\leq0.354
+\quad\Longrightarrow\quad
+R\geq\frac{GM}{0.354\,c^2}.
+\]
+Usiamo la scala gravitazionale solare:
+\[
+\frac{GM_\odot}{c^2}=1.4766\,\mathrm{km}.
+\]
+Per $M=2M_\odot$:
+\[
+\begin{aligned}
+R_{\rm caus}
+&=\frac{2\times1.4766\,\mathrm{km}}{0.354}\\
+&\simeq8.34\,\mathrm{km}.
+\end{aligned}
+\]
+\end{frame}
+
+% 26
+\begin{frame}{Raggio minimo con transizione: confronto}
+\small
+Il bordo sinistro calcolato nella Figura 9.8 raggiunge, per la configurazione limite,
+\[
+M_{\max}=2M_\odot,\qquad
+R_{\min}^{\rm hybrid}\simeq8.6\,\mathrm{km}.
+\]
+\medskip
+Confrontiamo con il limite causale:
+\[
+R_{\rm caus}\simeq8.3\,\mathrm{km}.
+\]
+La differenza e'
+\[
+\Delta R\simeq8.6-8.3\simeq0.3\,\mathrm{km}.
+\]
+La costruzione estrema con transizione e successiva fase rigida si avvicina molto al limite di compattezza della classe considerata.
+\end{frame}
+
+% 27
+\begin{frame}{Perche' le curve limite si avvicinano alle alte masse}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Nelle stelle molto massicce il core ad alta densita' ha un peso maggiore nella struttura globale.
+\medskip
+La parte esterna di materia neutronica influisce relativamente meno sulla configurazione.
+\end{column}
+\begin{column}{0.49\textwidth}
+La curva del raggio minimo puo' quindi avvicinarsi a quella dell'EOS causale ideale.
+\medskip
+Il testo confronta questo comportamento con stelle strange con e senza crosta (Figura 8.4).
+\end{column}
+\end{columns}
+\medskip
+Le proprieta' degli strati esterni rimangono importanti soprattutto per la geometria della superficie e le configurazioni meno massicce.
+\end{frame}
+
+% 28
+\begin{frame}{L'altro estremo della regione: masse molto grandi}
+\small
+La prosecuzione massimamente rigida senza il forte plateau utilizzato per minimizzare $R$ da' il bordo di grande massa della regione.
+\[
+M_{\max}\simeq3.9M_\odot,
+\qquad R\simeq16.7\,\mathrm{km}.
+\]
+Confronto con il limite idealizzato citato:
+\[
+M_{\max}^{\rm RR}\simeq4.2M_\odot.
+\]
+Il risultato dipende dall'EOS nota a basse densita' e dalla scelta fiduciale.
+\medskip
+Non e' una previsione della massa massima realmente raggiunta dalla materia stellare: e' un vincolo estremale sotto ipotesi specifiche.
+\end{frame}
+
+\subsection{Interpretazione fisica dei vincoli}
+% 29
+\begin{frame}{Quale conclusione osservativa permette la Figura 9.8?}
+\small
+Supponiamo che una misura futura fornisca
+\[
+(M_{\rm obs},R_{\rm obs})
+\]
+al di fuori della banda chiara ma dentro la regione scura.
+\medskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Conclusione diretta}
+\medskip
+La classe di EOS lisce utilizzata per la banda chiara non descrive quella configurazione, nei limiti delle incertezze.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Interpretazione possibile}
+\medskip
+La vera EOS potrebbe presentare un forte cambiamento di rigidita' oppure una transizione del primo ordine.
+\end{column}
+\end{columns}
+\medskip
+Questo non identifica automaticamente la nuova fase con materia di quark: la struttura gravitazionale dipende da $P(\varepsilon)$.
+\end{frame}
+
+% 30
+\begin{frame}{Terza famiglia e regione ammissibile: due domande diverse}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Paragrafo 9.3}
+\medskip
+Per una EOS fissata, quanti rami stabili delle TOV esistono?
+\[
+\text{stabile}\to\text{instabile}
+\to\text{stabile}.
+\]
+Possibili twin stars con masse simili e raggi differenti.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Paragrafo 9.4}
+\medskip
+Variando le EOS ammissibili, quali sono gli estremi raggiungibili nel diagramma $M$--$R$?
+\[
+R_{\min}(M),\qquad M_{\max}^{\rm upper}.
+\]
+L'inviluppo non dimostra da solo l'esistenza di rami disconnessi.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 31
+\begin{frame}{Riepilogo: equazioni e numeri del paragrafo}
+\footnotesize
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Causalita'}
+\[
+0\leq\frac{dP}{d\varepsilon}\leq1.
+\]
+\textbf{Transizione di Maxwell}
+\[
+P=P_{\rm trans},\quad\Delta\varepsilon>0.
+\]
+\textbf{Fase estremamente rigida}
+\[
+P=P_{\rm trans}+\varepsilon-
+(\varepsilon_{\rm trans}+\Delta\varepsilon).
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Vincolo osservativo adottato}
+\[
+M_{\max}\geq2M_\odot.
+\]
+\textbf{Bordo di raggio minimo}
+\[
+R(2M_\odot)\simeq8.6\,\mathrm{km}.
+\]
+\textbf{Bordo di massa elevata}
+\[
+M_{\max}\simeq3.9M_\odot,
+\quad R\simeq16.7\,\mathrm{km}.
+\]
+\end{column}
+\end{columns}
+\end{frame}
+
+% 32
+\begin{frame}{Conclusione del paragrafo 9.4}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Una EOS con forte ammorbidimento e successivo irrigidimento puo' produrre stelle piu' compatte di quanto prevedano le interpolazioni lisce considerate.
+\medskip
+L'ammissione di transizioni di fase amplia la regione ammissibile del piano $M$--$R$.
+\end{column}
+\begin{column}{0.49\textwidth}
+Osservazioni precise di masse e raggi possono vincolare forti cambiamenti nell'EOS.
+\medskip
+La composizione microscopica non e' determinata univocamente: EOS diverse possono produrre curve $M(R)$ simili.
+\end{column}
+\end{columns}
+\medskip
+Il confronto con le osservazioni deve distinguere il vincolo sull'andamento di $P(\varepsilon)$ dall'interpretazione della possibile transizione adroni--quark.
+\end{frame}
+

@@ -230,3 +230,149 @@ Poich\'e $\frac{E_b}{A}=\frac{T}{A}+\frac{V}{A}\simeq -16~\mathrm{MeV}$, schemat
         \item Frazione elettroni - $\frac{n_e}{n_B}=(\frac{k_{F,e}}{k_{F,n}})^3$, al punto precedente abbiamo trovato $k_{F,e}=E_{F,n}^{(nr)}=\frac{k_{F,n}^2}{2m_n}$: $\frac{k_{F,e}}{k_{F,n}}=\frac{k_{F,n}}{2m_n}$ da cui $\frac{n_e}{n_B}=(\frac{k_{F,n}}{2m_n})^3\approx\num{5.1e-3}\frac{n_B}{n_0}$ (piccola densit\'a elettronica non implica piccolo potenziale chimico).
     \end{itemize}
 \end{frame}
+
+\section{Perturbative vs non-perturbative}
+
+\begin{frame}{Esempio perturbativo: oscillatore anarmonico}
+\small
+Con \(q=\sqrt{m\omega/\hbar}\,x\) e accoppiamento
+adimensionale \(\lambda>0\):
+\[
+H=\hbar\omega\left[
+-\frac12\frac{d^2}{dq^2}+\frac12q^2+\lambda q^4
+\right].
+\]
+Per \(\lambda=0\), lo stato fondamentale è noto:
+\[
+\psi_0(q)=\pi^{-1/4}e^{-q^2/2},
+\qquad E_0^{(0)}=\frac12\hbar\omega.
+\]
+La prima correzione usa lo stato non perturbato:
+\[
+\delta E_0^{(1)}
+=\frac{\lambda\hbar\omega}{\sqrt{\pi}}
+\int_{-\infty}^{+\infty}q^4e^{-q^2}\,dq
+=\frac34\lambda\hbar\omega.
+\]
+Al secondo ordine:
+\[
+\boxed{\frac{E_0}{\hbar\omega}
+=\frac12+\frac34\lambda-\frac{21}{8}\lambda^2+\cdots}
+\]
+Per \(\lambda=0.01\): \(E_0/(\hbar\omega)\simeq
+0.5+0.0075-0.0002625=0.5072375\).
+
+\medskip
+\textbf{Validità:} pochi termini devono dare correzioni controllate.
+La serie è asintotica e non converge a infiniti ordini.
+\end{frame}
+
+
+\begin{frame}{Esempio non perturbativo: il gap BCS}
+\small
+Modello a \(T=0\) con attrazione \(G>0\), densità degli stati
+al livello di Fermi \(\nu_F\) costante e cutoff energetico \(\Omega\).
+Poniamo \(\gamma=G\nu_F\) e \(\xi=\varepsilon-\mu\).
+
+\medskip
+Per una soluzione con \(\Delta>0\), l'equazione autoconsistente è
+\[
+1=\gamma\int_0^\Omega
+\frac{d\xi}{\sqrt{\xi^2+\Delta^2}}
+=\gamma\,\operatorname{arsinh}\!
+\left(\frac{\Omega}{\Delta}\right).
+\]
+Risolvendo:
+\[
+\boxed{
+\Delta=\frac{\Omega}{\sinh(1/\gamma)}
+\simeq2\Omega e^{-1/\gamma}
+\qquad(\gamma\ll1)
+}
+\]
+Il gap esiste anche per un'attrazione arbitrariamente debole:
+\[
+\lim_{\gamma\to0^+}\frac{\Delta(\gamma)}{\gamma^n}=0
+\qquad\text{per ogni }n\geq0.
+\]
+\textbf{Conseguenza:} prolungando \(\Delta(0)=0\), tutti i
+coefficienti di Taylor in \(\gamma\) sono nulli, ma
+\(\Delta(\gamma)>0\) per \(\gamma>0\).
+
+\medskip
+Un'approssimazione di \textbf{campo medio autoconsistente} può
+quindi dare un risultato
+\textbf{non perturbativo nell'accoppiamento}.
+\end{frame}
+
+
+\begin{frame}{QCD perturbativa: pressione della materia di quark}
+\small
+Consideriamo \(u,d,s\) privi di massa, con lo stesso potenziale
+chimico \(\mu_q\), a \(T=0\).
+Usiamo \(\hbar=c=1\), \(N_c=N_f=3\).
+
+\medskip
+La pressione del gas libero è
+\[
+P_0=\frac{N_cN_f}{12\pi^2}\mu_q^4
+=\frac{3\mu_q^4}{4\pi^2}.
+\]
+Le interazioni introducono correzioni in
+\(\alpha_s=g_s^2/(4\pi)\):
+\[
+\boxed{
+P_{\mathrm{pert}}
+=P_0\left[1-\frac{2\alpha_s}{\pi}+\cdots\right]
+}
+\]
+Per esempio, se \(\alpha_s=0.1\):
+\[
+\frac{\delta P^{(1)}}{P_0}
+=-\frac{2(0.1)}{\pi}\simeq-0.064.
+\]
+La prima correzione riduce la pressione del \(6.4\%\)
+a \(\mu_q\) fissato.
+
+\medskip
+\textbf{Affidabilità:} controllare gli ordini successivi e la
+dipendenza dalla scala di rinormalizzazione, dell'ordine di \(\mu_q\).
+
+\textbf{Deconfinamento e perturbatività sono questioni distinte:}
+la materia di quark può essere ancora fortemente interagente.
+\end{frame}
+
+
+\begin{frame}{QCD non perturbativa: il peso degli istantoni}
+\small
+Nella formulazione euclidea, gli \textbf{istantoni} sono
+configurazioni non banali dei campi gluonici con azione finita.
+
+Per un istantone di carica topologica unitaria,
+in unità \(\hbar=1\):
+\[
+S_E=\frac{8\pi^2}{g_s^2}.
+\]
+Il peso semiclassico contiene il fattore
+\[
+\boxed{
+e^{-S_E}
+=\exp\!\left(-\frac{8\pi^2}{g_s^2}\right)
+=\exp\!\left(-\frac{2\pi}{\alpha_s}\right)
+}
+\]
+Questo fattore è invisibile allo sviluppo ordinario attorno a \(g_s=0\):
+\[
+\lim_{g_s\to0^+}
+\frac{\exp(-8\pi^2/g_s^2)}{g_s^n}=0
+\qquad\text{per ogni }n\geq0.
+\]
+\begin{itemize}
+\item I termini perturbativi hanno potenze dell'accoppiamento.
+\item Il peso dell'istantone dipende esponenzialmente da \(1/g_s^2\).
+\end{itemize}
+
+\textbf{Un effetto non perturbativo può esistere anche
+ad accoppiamento debole}, dove il suo contributo è
+esponenzialmente piccolo.
+\end{frame}

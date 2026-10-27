@@ -80,7 +80,7 @@
 \end{frame}
 
 \begin{frame}{Nuclear shell model}
-    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},rotate=90,clip,keepaspectratio,width=0.95\textwidth]{Schaffner/magic-numbers-shell}\label{fig:Schaffner-magic-numbers-shell}\end{figure}
+    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},angle=90,clip,keepaspectratio,width=0.95\textwidth]{Schaffner/magic-numbers-shell}\label{fig:Schaffner-magic-numbers-shell}\end{figure}
     Il pattern che emerge dal modello per composizione di Oter Crust of NS \'e analogo a quello dei numeri magici per chiusura shell protoni/neutroni del modello nucleare a shell.
     \begin{columns}[T]
         \begin{column}{0.5\textwidth}
@@ -1152,7 +1152,7 @@ Nessun'altra specie compare fino a \(20n_0\).}
         \begin{column}{0.5\textwidth}
             \begin{itemize}
                 \item Crosta Esterna(\SIrange{13.1}{12.9}{\kilo\meter},$\num{e-3}\epsilon_0$): lattice of nuclei in electron gas.
-                \item Inner Crust (\SI{12.5}{\kilo\metere}, $0.5\epsilon_0$): lattice of nuclei in liquid of neutrons and electrons.
+                \item Inner Crust (\SI{12.5}{\kilo\meter}, $0.5\epsilon_0$): lattice of nuclei in liquid of neutrons and electrons.
                 \item Outer Core (\SI{9.8}{\kilo\meter}, $2\epsilon_0$): neutron matter with admixture of protons and electrons. $\epsilon_0$ at \SI{12}{\kilo\meter}.
                 \item Inner Core ($3.6\epsilon_0$): hyperon may be present at $(2-3)\epsilon_0$, quark at $3\epsilon_0$ at \SI{5.9}{\kilo\meter}.
                 \item GW from NS merger implies max radius \SI{13}{\kilo\meter}
@@ -1168,3 +1168,520 @@ Nessun'altra specie compare fino a \(20n_0\).}
     \end{columns}
     
 \end{frame}
+
+\section{Tre definizioni di massa nelle stelle di neutroni}
+\subsection{Geometria e definizioni}
+
+% 01
+\begin{frame}{Tre nozioni di massa: il problema fisico}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Massa gravitazionale $M_G$}
+\[
+M_G=m(R).
+\]
+Determina il campo gravitazionale esterno;
+e' quella misurata tramite le orbite.
+\medskip
+\textbf{Massa barionica $M_B$}
+\[
+M_B=m_bN_B.
+\]
+Misura il numero di barioni, moltiplicato
+per una massa di riferimento $m_b$.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Massa propria $M_P$}
+\[
+M_P=\frac{1}{c^2}\int\varepsilon\,dV_{\rm prop}.
+\]
+Somma delle energie locali della materia,
+integrate sul volume proprio.
+\medskip
+\textbf{Domanda centrale}
+\par\medskip
+Perche' $M_G$, $M_B$ e $M_P$ non coincidono
+per una stella relativistica?
+\end{column}
+\end{columns}
+\end{frame}
+
+% 02
+\begin{frame}{Geometria della stella: metrica TOV}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Per una stella statica e sfericamente simmetrica:
+\[
+\begin{aligned}
+ds^2={}&-e^{2\Phi(r)}c^2dt^2\\
+&+\frac{dr^2}{1-2Gm(r)/(rc^2)}\\
+&+r^2d\Omega^2.
+\end{aligned}
+\]
+\[
+d\Omega^2=d\theta^2+\sin^2\theta\,d\phi^2.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Variabili locali}
+\begin{itemize}
+\item $\varepsilon(r)$: densita' di energia
+nel riferimento comovente.
+\item $n_B(r)$: densita' numerica barionica locale.
+\item $m(r)$: funzione di massa gravitazionale.
+\item $P(r)$: pressione isotropa.
+\end{itemize}
+\medskip
+La superficie $R$ e' definita, nel modello ideale,
+da $P(R)=0$.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 03
+\begin{frame}{Elemento di volume proprio: derivazione}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Sulla superficie $t=\mathrm{cost.}$,
+la distanza radiale propria e'
+\[
+dl_r=\frac{dr}{\sqrt{1-2Gm(r)/(rc^2)}}.
+\]
+L'area della sfera a raggio areale $r$ e'
+\[
+A(r)=4\pi r^2.
+\]
+Un guscio infinitesimo ha quindi volume
+\[
+dV_{\rm prop}=A(r)\,dl_r.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+Sostituendo:
+\[
+\begin{aligned}
+dV_{\rm prop}
+&=4\pi r^2
+\frac{dr}{\sqrt{1-2Gm(r)/(rc^2)}}.
+\end{aligned}
+\]
+Per confronto, il volume coordinato e'
+\[
+dV_{\rm coord}=4\pi r^2dr.
+\]
+In generale:
+\[
+dV_{\rm prop}\geq dV_{\rm coord}.
+\]
+\end{column}
+\end{columns}
+\end{frame}
+
+% 04
+\begin{frame}{Massa gravitazionale: equazione TOV}
+\small
+Nel formalismo TOV, l'equazione per la funzione di massa e'
+\[
+\frac{dm}{dr}=\frac{4\pi r^2}{c^2}\,\varepsilon(r),
+\qquad m(0)=0.
+\]
+Integrando dal centro alla superficie:
+\[
+\begin{aligned}
+M_G\equiv m(R)
+&=\int_0^R\frac{dm}{dr}\,dr\\
+&=\frac{4\pi}{c^2}\int_0^R\varepsilon(r)r^2\,dr.
+\end{aligned}
+\]
+\medskip
+Qui compare $4\pi r^2dr$, \emph{non} l'elemento di volume proprio.
+L'energia gravitazionale non e' descritta da una densita' locale
+univoca da aggiungere a $\varepsilon$.
+\end{frame}
+
+% 05
+\begin{frame}{Il significato osservativo di $M_G$}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+All'esterno della stella, $r\geq R$,
+la soluzione e' Schwarzschild:
+\[
+\begin{aligned}
+ds^2={}&-\left(1-\frac{2GM_G}{rc^2}\right)c^2dt^2\\
+&+\frac{dr^2}{1-2GM_G/(rc^2)}\\
+&+r^2d\Omega^2.
+\end{aligned}
+\]
+L'unico parametro di massa esterno
+per questo sistema non rotante e' $M_G$.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Interpretazione}
+\begin{itemize}
+\item Determina la geometria esterna.
+\item In un sistema binario, controlla la dinamica orbitale.
+\item Per una stella isolata statica asintoticamente piatta,
+coincide con la massa ADM.
+\end{itemize}
+\medskip
+Una stella indicata come $1.4M_\odot$
+ha normalmente $M_G=1.4M_\odot$.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 06
+\begin{frame}{Numero barionico: la quantita' conservata}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+La corrente barionica e'
+\[
+J_B^\mu=n_Bu^\mu,
+\]
+dove $u^\mu$ e' la quadrivelocita'
+del fluido.
+\medskip
+Se il numero barionico e' conservato:
+\[
+\nabla_\mu J_B^\mu=0.
+\]
+La carica corrispondente e' il numero totale
+$N_B$ di barioni.
+\end{column}
+\begin{column}{0.49\textwidth}
+Per la configurazione statica, su una
+sezione spaziale ortogonale a $u^\mu$:
+\[
+N_B=\int n_B\,dV_{\rm prop}.
+\]
+Sostituendo il volume proprio:
+\[
+N_B=4\pi\int_0^R
+\frac{n_B(r)r^2\,dr}
+{\sqrt{1-2Gm(r)/(rc^2)}}.
+\]
+\medskip
+$N_B$ non dipende dalla convenzione scelta
+per esprimere una ``massa barionica''.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 07
+\begin{frame}{Massa barionica $M_B$: definizione}
+\small
+\[
+M_B=m_bN_B
+=4\pi m_b\int_0^R
+\frac{n_B(r)r^2\,dr}
+{\sqrt{1-2Gm(r)/(rc^2)}}.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Che cosa misura?}
+\begin{itemize}
+\item La quantita' di materia barionica,
+nel senso del numero barionico totale.
+\item La massa che si attribuirebbe a $N_B$
+barioni liberi secondo la convenzione $m_b$.
+\end{itemize}
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Che cosa non misura?}
+\begin{itemize}
+\item Non e' l'integrale dell'energia totale locale.
+\item Non comprende esplicitamente
+l'energia cinetica, le interazioni e i leptoni.
+\end{itemize}
+\medskip
+$m_b$ puo' essere la massa di un nucleone
+o l'unita' di massa atomica.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 08
+\begin{frame}{Massa propria $M_P$: definizione}
+\small
+La massa propria integra tutta la densita' di energia
+\emph{locale} della materia sul volume spaziale proprio:
+\[
+M_P=\frac{1}{c^2}\int_0^R\varepsilon(r)\,dV_{\rm prop}.
+\]
+Quindi
+\[
+M_P=\frac{4\pi}{c^2}\int_0^R
+\frac{\varepsilon(r)r^2\,dr}
+{\sqrt{1-2Gm(r)/(rc^2)}}.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+$\varepsilon$ include le masse a riposo,
+l'energia cinetica e le interazioni
+presenti nell'EOS.
+\end{column}
+\begin{column}{0.49\textwidth}
+A differenza di $M_B$, $M_P$ non e'
+semplicemente proporzionale al numero
+di barioni.
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Confronto ed energie di legame}
+
+% 09
+\begin{frame}{Perche' $M_P\geq M_G$?}
+\small
+Mettiamo a confronto le definizioni:
+\[
+\begin{aligned}
+M_G&=\frac{4\pi}{c^2}\int_0^R\varepsilon(r)r^2\,dr,\\[3pt]
+M_P&=\frac{4\pi}{c^2}\int_0^R
+\frac{\varepsilon(r)r^2\,dr}
+{\sqrt{1-2Gm(r)/(rc^2)}}.
+\end{aligned}
+\]
+Per una stella regolare, con $\varepsilon\geq0$ e senza orizzonte:
+\[
+0\leq\frac{2Gm(r)}{rc^2}<1
+\quad\Longrightarrow\quad
+\frac1{\sqrt{1-2Gm(r)/(rc^2)}}\geq1.
+\]
+Quindi
+\[
+M_P\geq M_G.
+\]
+\end{frame}
+
+% 10
+\begin{frame}{Limite di campo debole: energia gravitazionale}
+\footnotesize
+Quando $2Gm/(rc^2)\ll1$:
+\[
+\frac1{\sqrt{1-2Gm/(rc^2)}}
+\simeq1+\frac{Gm}{rc^2}+\cdots.
+\]
+La differenza fra massa propria e gravitazionale diventa
+\[
+\begin{aligned}
+M_P-M_G
+&\simeq\frac{4\pi}{c^2}\int_0^R
+\varepsilon(r)r^2\frac{Gm(r)}{rc^2}\,dr\\
+&=\frac1{c^2}\int_0^R\frac{Gm(r)}{r}\,dm(r).
+\end{aligned}
+\]
+In teoria newtoniana, l'energia potenziale di legame e'
+\[
+W=-\int_0^R\frac{Gm(r)}{r}\,dm(r).
+\]
+Pertanto $M_P-M_G\simeq |W|/c^2$ nel limite debole.
+\end{frame}
+
+% 11
+\begin{frame}{Non esiste un ordinamento universale fra $M_B$ e $M_P$}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Dalle definizioni:
+\[
+M_B-M_P=
+\int_0^R\left[m_bn_B(r)-\frac{\varepsilon(r)}{c^2}\right]
+dV_{\rm prop}.
+\]
+La differenza dipende dalla relazione
+fra energia per barione e massa di riferimento:
+\[
+\frac{\varepsilon}{n_B}
+\quad\hbox{contro}\quad m_bc^2.
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+L'energia locale contiene:
+\begin{itemize}
+\item energia di massa a riposo;
+\item energia cinetica/degenerazione;
+\item interazioni nucleari;
+\item contributi dei leptoni.
+\end{itemize}
+\medskip
+Non si deve assumere $M_B>M_P$
+o $M_P>M_B$ senza conoscere l'EOS
+e la scelta di $m_b$.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 12
+\begin{frame}{Energia di legame gravitazionale e totale}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Contributo gravitazionale}
+\[
+E_{\rm bind}^{\rm grav}
+=(M_P-M_G)c^2.
+\]
+\medskip
+Con questa definizione e' non negativo
+per una stella regolare.
+\medskip
+E' associato alla differenza fra energia
+locale integrata e massa gravitazionale
+vista dall'esterno.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Energia di legame totale}
+\[
+E_{\rm bind}^{\rm tot}
+=(M_B-M_G)c^2.
+\]
+\medskip
+E' definita rispetto a $N_B$ barioni
+isolati, ciascuno di massa $m_b$.
+\medskip
+Per le tipiche stelle di neutroni fredde
+stabili, $M_B>M_G$.
+\end{column}
+\end{columns}
+\end{frame}
+
+% 13
+\begin{frame}{Decomposizione dell'energia di legame}
+\small
+Aggiungiamo e sottraiamo $M_P$:
+\[
+\begin{aligned}
+E_{\rm bind}^{\rm tot}
+&=(M_B-M_G)c^2\\
+&=(M_P-M_G)c^2+(M_B-M_P)c^2.
+\end{aligned}
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\[
+(M_P-M_G)c^2
+\]
+Contributo attribuito al legame
+gravitazionale nella configurazione
+statica considerata.
+\end{column}
+\begin{column}{0.49\textwidth}
+\[
+(M_B-M_P)c^2
+\]
+Differenza fra masse barioniche
+di riferimento ed energia locale:
+interazioni ed energia interna.
+\end{column}
+\end{columns}
+\medskip
+In relativita' generale la separazione dell'energia gravitazionale
+in un contributo locale non e' univoca.
+\end{frame}
+
+\subsection{Applicazioni e riepilogo}
+
+% 14
+\begin{frame}{Due configurazioni con lo stesso numero di barioni}
+\small
+Confrontiamo due configurazioni stellari fredde, isolate e non rotanti:
+\[
+N_B^{(1)}=N_B^{(2)}
+\quad\Longrightarrow\quad M_B^{(1)}=M_B^{(2)}.
+\]
+Le masse gravitazionali possono invece essere differenti:
+\[
+M_G^{(1)}\ne M_G^{(2)}.
+\]
+Per una trasformazione $1\to2$ con $M_G^{(1)}>M_G^{(2)}$,
+la differenza disponibile come energia e'
+\[
+\Delta E=\bigl(M_G^{(1)}-M_G^{(2)}\bigr)c^2.
+\]
+\medskip
+In un processo reale bisogna tenere conto dell'energia emessa,
+delle eventuali perdite di barioni e delle altre quantita' conservate
+(ad esempio il momento angolare).
+\end{frame}
+
+% 15
+\begin{frame}{Calcolo di $M_G$, $M_B$, $M_P$: procedura TOV}
+\small
+Scelta una EOS $\varepsilon(P)$, si risolvono le equazioni TOV:
+\[
+\frac{dm}{dr}=\frac{4\pi r^2\varepsilon}{c^2},
+\]
+\[
+\frac{dP}{dr}=
+-\frac{G(\varepsilon+P)
+\bigl[m+4\pi r^3P/c^2\bigr]}
+{c^2r^2[1-2Gm/(rc^2)]}.
+\]
+Condizioni iniziali $m(0)=0$, $P(0)=P_c$;
+la superficie e' definita da $P(R)=0$.
+\medskip
+Da $m(r)$, $\varepsilon(r)$ e $R$ otteniamo $M_G$ e $M_P$.
+\medskip
+Per calcolare $M_B$ serve anche la densita' barionica locale $n_B(P)$,
+che non e' specificata direttamente dalla sola forma $P(\varepsilon)$.
+\end{frame}
+
+% 16
+\begin{frame}{Ricostruire $n_B$ da un'EOS termodinamica}
+\small
+Per materia fredda, neutra e in equilibrio beta,
+quando il numero barionico e' la sola carica conservata indipendente:
+\[
+d\varepsilon=\mu_B\,dn_B,
+\qquad
+\varepsilon+P=\mu_Bn_B.
+\]
+Sostituendo $\mu_B=(\varepsilon+P)/n_B$ nella prima:
+\[
+\begin{aligned}
+d\varepsilon&=\frac{\varepsilon+P}{n_B}\,dn_B,\\
+\frac{dn_B}{n_B}&=\frac{d\varepsilon}{\varepsilon+P(\varepsilon)}.
+\end{aligned}
+\]
+Integrando:
+\[
+\ln\frac{n_B(\varepsilon)}{n_{B,*}}
+=\int_{\varepsilon_*}^{\varepsilon}
+\frac{d\varepsilon'}{\varepsilon'+P(\varepsilon')}.
+\]
+La costante $n_{B,*}$ si fissa tramite la normalizzazione
+microfisica della EOS.
+\end{frame}
+
+% 17
+\begin{frame}{Riepilogo: definizioni e limite newtoniano}
+\footnotesize
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}p{0.17\textwidth}p{0.49\textwidth}p{0.25\textwidth}@{}}
+\hline
+\textbf{Massa} & \textbf{Definizione} & \textbf{Interpretazione}\\
+\hline
+$M_G$ & $\displaystyle\frac{1}{c^2}\int_0^R4\pi r^2\varepsilon\,dr$
+& Campo esterno; massa osservata.\\
+$M_B$ & $\displaystyle m_b\int_0^R n_B\,dV_{\rm prop}$
+& Numero di barioni $\times m_b$.\\
+$M_P$ & $\displaystyle\frac{1}{c^2}\int_0^R\varepsilon\,dV_{\rm prop}$
+& Energia locale sul volume proprio.\\
+\hline
+\end{tabular}
+\medskip
+Per campo gravitazionale debole, se l'energia interna e le interazioni
+sono piccole rispetto alla massa a riposo:
+\[
+M_G\simeq M_P\simeq M_B.
+\]
+Nelle stelle di neutroni relativistiche le differenze
+sono fisicamente significative.
+\end{frame}
+

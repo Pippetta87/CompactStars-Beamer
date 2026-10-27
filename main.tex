@@ -31,9 +31,57 @@
 % redefine frame
 \addtobeamertemplate{headline}{\vskip-3pt}{}
 %define \mycontentsline
+%\makeatletter
+%\protected\def\Hy@toclinkstart{\hyper@linkstart{link}{\Hy@tocdestname}}
+%\protected\def\Hy@toclinkend{\hyper@linkend}
+%\def\mycontentsline#1#2#3#4{%
+%  \begingroup
+%    \Hy@safe@activestrue
+%  \edef\x{\endgroup
+%    \def\noexpand\Hy@tocdestname{#4}%
+%  }\x
+%  \ifx\Hy@tocdestname\ltx@empty
+%    \csname l@#1\endcsname{#2}{#3}%
+%  \else
+%    \ifcase\Hy@linktoc % none
+%      \csname l@#1\endcsname{#2}{#3}%
+%    \or % section
+%      \csname l@#1\endcsname{%
+%        \Hy@toclinkstart{#2}\Hy@toclinkend
+%      }{#3}%
+%    \or % page
+%      \def\Hy@temp{#3}%
+%      \ifx\Hy@temp\ltx@empty
+%        \csname l@#1\endcsname{#2}{#3}%
+%      \else
+%        \csname l@#1\endcsname{{#2}}{%
+%          \Hy@toclinkstart{#3}\Hy@toclinkend
+%        }%
+%      \fi
+%    \else % all
+%      \def\Hy@temp{#3}%
+%      \ifx\Hy@temp\ltx@empty
+%        \csname l@#1\endcsname{%
+%          \Hy@toclinkstart{#2}\Hy@toclinkend
+%        }{}%
+%      \else
+%        \csname l@#1\endcsname{%
+%          \Hy@toclinkstart{#2}\Hy@toclinkend
+%        }{%
+%          \Hy@toclinkstart{#3}\Hy@toclinkend
+%        }%
+%      \fi
+%    \fi
+%  \fi
+%}
+%\makeatother
+%%aggiornato per beamer da deepseek
 \makeatletter
 \protected\def\Hy@toclinkstart{\hyper@linkstart{link}{\Hy@tocdestname}}
 \protected\def\Hy@toclinkend{\hyper@linkend}
+\makeatother
+
+\makeatletter
 \def\mycontentsline#1#2#3#4{%
   \begingroup
     \Hy@safe@activestrue
@@ -41,42 +89,20 @@
     \def\noexpand\Hy@tocdestname{#4}%
   }\x
   \ifx\Hy@tocdestname\ltx@empty
-    \csname l@#1\endcsname{#2}{#3}%
+    #2\par
   \else
     \ifcase\Hy@linktoc % none
-      \csname l@#1\endcsname{#2}{#3}%
-    \or % section
-      \csname l@#1\endcsname{%
-        \Hy@toclinkstart{#2}\Hy@toclinkend
-      }{#3}%
-    \or % page
-      \def\Hy@temp{#3}%
-      \ifx\Hy@temp\ltx@empty
-        \csname l@#1\endcsname{#2}{#3}%
-      \else
-        \csname l@#1\endcsname{{#2}}{%
-          \Hy@toclinkstart{#3}\Hy@toclinkend
-        }%
-      \fi
-    \else % all
-      \def\Hy@temp{#3}%
-      \ifx\Hy@temp\ltx@empty
-        \csname l@#1\endcsname{%
-          \Hy@toclinkstart{#2}\Hy@toclinkend
-        }{}%
-      \else
-        \csname l@#1\endcsname{%
-          \Hy@toclinkstart{#2}\Hy@toclinkend
-        }{%
-          \Hy@toclinkstart{#3}\Hy@toclinkend
-        }%
-      \fi
+      #2\par
+    \or               % section
+      \hyperlink{#4}{#2}\par
+    \or               % page
+      #2\par
+    \else             % all
+      \hyperlink{#4}{#2}\par
     \fi
   \fi
 }
 \makeatother
-%%
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% importa pacchetti
 \usepackage{usepkg}
 \usepackage{morewrites}
@@ -94,22 +120,27 @@
 %%\newcounter{sectionkey}% conta le section prima della attuale: basta \thesection?
 %
 \makeatletter
-\newcommand{\listofsecframes}{%listofsecframes
-  \@starttocorig{secfr-\thesection}
-}
+%\newcommand{\listofsecframes}{%listofsecframes
+%  \@starttocorig{secfr-\thesection}
+%}
+%\newcommand{\linkdest}[2][\@empty]{%
+%    \hypertarget{\@empty}{#1}
+%\Hy@raisedlink{%1
+%\hypertarget{#2}{}
+%}%1
+%%%\phantomsection\label{#2}
+%}
+%%rimpiazzo linkdest senza warnind (deepseek)
 \newcommand{\linkdest}[2][\@empty]{%
-    \hypertarget{\@empty}{#1}
-\Hy@raisedlink{%1
-\hypertarget{#2}{}
-}%1
-%%\phantomsection\label{#2}
+  \ifx\@empty#1\else\hypertarget{#1}{}\fi
+  \Hy@raisedlink{\hypertarget{#2}{}}%
 }
 %%\newcommand{\linkdest}[1]{\Hy@raisedlink{\hypertarget{#1}{}}}
 \newcommand\listofcherryframesbasic{\@starttocorig{cherryframes}}
+\makeatother
 \newcommand\listofcherryframesname{Important frames}
 \newcommand\listofcherryframes{%
 \listofcherryframesname\phantomsection: \listofcherryframesbasic}
-\makeatother
 \usepackage{LocalF}
 %%The \newif macro creates three new macros from the argument \if<name>:
 %%    \if<name>, a switch to be used in tests;
@@ -165,6 +196,10 @@
 %   % \end{columns}
 %\end{frame}
 
+\begin{frame}
+  \maketitle
+\end{frame}
+
 \begin{frame}[fragile]{Stelle Compatte: argomenti del corso}%label={}
     %\framesubtitle{Main onlyparts TOC}
    %\begin{columns}[T]%list of frame a inizio sezione
@@ -219,12 +254,16 @@ Update to last reglez
 \part{Microphysics}\linkdest{microphysics}
 \input{microphysics}
 
+\part{Pulsar: modelli e osservazioni.}
+\input{pulsar}
+
 \part{Neutron stars}\linkdest{densestars}
 %\input{WD}
-\input{pulsar}
 \input{NS}
 
-\part{Quark stars, hybrid stars}\linkdest{quarkhybridstars}
+\part{Quark stars}\linkdest{quarkstars}
 \input{quarkstar}
+\part{Hybrid stars}\linkdest{hybridstars}
+\input{hybridstar}
 
 \end{document}
