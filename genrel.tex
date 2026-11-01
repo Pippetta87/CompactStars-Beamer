@@ -1,131 +1,1367 @@
-\section{Geodesiche in spaziotempo curvo}
+\section{Relativita generale: principi e convenzioni}
+\subsection{Principi di equivalenza}
+\begin{frame}[t]{Scopo e convenzioni degli appunti}\small\raggedright
 
-\begin{frame}{Equazione delle Geodesiche}
-    \begin{itemize}
-        \item $\tensor{g}{_{\mu\nu}}\,d\tensor{x}{^\mu}\,d\tensor{x}{^\nu}$ e metrica locale $(+---)$: $ds^2=c^2\,d\tau^2>0$
-        \item Equazione Geodetica \lbt{\TtwoDy{\tau}{\tensor{x}{^\mu}}+\tensor{\Gamma}{^\mu_{\alpha\beta}}\TDy{\tau}{\tensor{x}{^\alpha}}\TDy{\tau}{\tensor{x}{^\beta}}}{\tensor{u}{^\nu}\tensor{\nabla}{_\nu}\tensor{u}{^\mu}=0}
-            \item A straight line in Minkowski space maximizes proper time; in general a geodesic that in not null is an extremal path of $d\tau=\int_A^B\,d\tau$: to prove this let's consider geodesic path $\tensor{x}{^\mu}(\tau)$ and $\tensor{x}{^\mu}(\tau)+\delta\tensor{x}{^\mu}(\tau)$ a neighboring path with same end points A,B:
-            \begin{align*}
-                &d\tau^2=\tensor{g}{_{\mu\nu}}\,d\tensor{x}{^\mu}\,d\tensor{x}{^\nu}\Rightarrow 2\,d\tau\delta(d\tau)=\delta\tensor{g}{_{\mu\nu}}\,d\tensor{x}{^\mu}\,d\tensor{x}{^\nu}+2\tensor{g}{_{\mu\nu}}\,d\tensor{x}{^\mu}\delta(d\tensor{x}{^\nu})\\
-                &=d\tensor{x}{^\mu}\,d\tensor{x}{^\nu}\tensor{g}{_{\mu\nu,\lambda}}\delta(\tensor{x}{^\lambda})+2\tensor{g}{_{\mu\nu}}\,d\tensor{x}{^\mu}\,d\delta(\tensor{x}{^\nu})\ \Rightarrow\ \delta(d\tau)=(\frac{1}{2}\tensor{u}{^\mu}\tensor{u}{^\nu}\tensor{g}{_{\mu\nu,\lambda}}\delta\tensor{x}{^\lambda}+\tensor{g}{_{\mu\lambda}}\tensor{u}{^\mu}\TDof{\tau}\delta\tensor{x}{^\lambda})\,d\tau\\
-                &\delta\int_A^Bd\tau=\int_A^B[\frac{1}{2}\tensor{u}{^\mu}\tensor{u}{^\nu}\tensor{g}{_{\mu\nu,\lambda}}-\TDof{\tau}(\tensor{g}{_{\mu\lambda}}\tensor{u}{^\mu})]\delta\tensor{x}{^\lambda}\,d\tau\\
-                &\TDof{\tau}(\tensor{g}{_{\mu\lambda}}\tensor{u}{^\mu})-\frac{1}{2}\tensor{u}{^\mu}\tensor{u}{^\nu}\tensor{g}{_{\mu\nu,\lambda}}=0\\
-                &\TDof{\tau}(\tensor{g}{_{\mu\lambda}}\tensor{u}{^\mu})=\tensor{g}{_{\mu\lambda}}\TDy{\tau}{\tensor{u}{^\mu}}+\tensor{g}{_{\mu\lambda,\nu}}\tensor{u}{^{\mu\nu}},\ \tensor{g}{_{\mu\lambda,\mu}}\tensor{u}{^\mu}\tensor{u}{^\mu}=\frac{1}{2}(\tensor{g}{_{\mu\lambda,\nu}}+\tensor{g}{_{\lambda\nu,\mu}})\tensor{u}{^\mu}\tensor{u}{^\nu}\\
-                &\Rightarrow\tensor{g}{_{\mu\lambda}}\TDy{\tau}{\tensor{u}{^\mu}}+\tensor{\Gamma}{_{\lambda\mu\nu}}\tensor{u}{^\mu}\tensor{u}{^\nu}=0
-            \end{align*}
-            Multiplying by $\tensor{g}{^{\sigma\lambda}}$ and summing over $\lambda$ we obtain geodesic eq: $\TDy{\tau}{\tensor{u}{^\sigma}}+\tensor{\Gamma}{^\sigma_{\mu\nu}}\tensor{u}{^\mu}\tensor{u}{^\nu}=0$.
-    \end{itemize}
+\begin{itemize}
+\item Obiettivo: collegare geometria dello spaziotempo, tensore energia--impulso e struttura idrostatica delle stelle compatte.
+\item Coordinate $x^\mu=(t,x,y,z)$; indici greci $0,1,2,3$, latini spaziali $1,2,3$; somma su indici ripetuti.
+\item \textbf{Convenzione di questi appunti:} segnatura $+---$; $c=1$ e, dalla sezione sulle TOV, spesso $G=1$; metriche e formule del libro vanno tradotte dalla segnatura $-+++$. 
+\item Tempo proprio di una traiettoria materiale: $d\tau^2=g_{\mu\nu}dx^\mu dx^\nu>0$, $u^\mu=dx^\mu/d\tau$, $u^\mu u_\mu=1$.
+\item Si indicano con $\varepsilon$ la densita' di energia \emph{locale} e con $P$ la pressione isotropa \emph{locale}; entrambe sono scalari nel sistema comovente.
+\end{itemize}
+\medskip
+\textit{Nota metodologica:} sono appunti di studio, percio' le derivazioni sono distribuite in piu' frame, con ipotesi e controlli dimensionali.
+
 \end{frame}
 
-\begin{frame}{Covariant Derivative and Christoffel symbols}
-    \begin{itemize}
-        \item \keyword{Time-like geodesic} $\TtwoDy{\tau}{\tensor{x}{^\mu}}+\tensor{\Gamma}{^\mu_{\nu\lambda}}\TDy{\tau}{\tensor{x}{^\nu}}\TDy{\tau}{\tensor{x}{^\lambda}}=0$.
-        \item Tensore di Ricci e simboli di Christoffel:
-            \begin{align*}
-                &\tensor{R}{_{\mu\nu}}=\tensor{\Gamma}{^\alpha_{\mu\alpha,\nu}}-\tensor{\Gamma}{^\alpha_{\mu\nu,\alpha}}-\tensor{\Gamma}{^\alpha_{\mu\nu}}\tensor{\Gamma}{^\beta_{\alpha\beta}}+\tensor{\Gamma}{^\alpha_{\mu\beta}}\tensor{\Gamma}{^\beta_{\nu\alpha}}\tag{attenzione al segno del tensore di Riemann}\\
-                &\tensor{\Gamma}{^\rho_{\mu\nu}}=\frac{1}{2}\tensor{g}{^{\rho\sigma}}(\tensor{\partial}{_\mu}\tensor{g}{_{\sigma\nu}}+\tensor{\partial}{_\nu}\tensor{g}{_{\sigma\mu}}-\tensor{\partial}{_\sigma}\tensor{g}{_{\mu\nu}}),\ \tensor{\Gamma}{^\rho_{\mu\nu}}=\tensor{\Gamma}{^\rho_{\nu\mu}},\ \tensor{\Gamma}{^\alpha_{\mu\alpha,\nu}}=\tensor{\partial}{_\nu}\tensor{\Gamma}{^\alpha_{\mu\alpha}}
-            \end{align*}
-            \item Geodesic deviation. $\gamma_s(t)$ famiglia di geodetiche parametrizzate da parametro affine t: supponiamo che definiscano una superficie $\tensor{x}{^\mu}(s,t)$, quindi abbiamo due campi vettoriali naturali, il vettore tangente $\tensor{T}{^\mu}=\TDy{t}{\tensor{x}{^\mu}}$ e i vettori deviazione $\tensor{S}{^\mu}=\TDy{s}{\tensor{x}{^\mu}}$
-                \begin{align*}
-                    &\tensor{V}{^\mu}=\tensor{(\nabla_TS)}{^\mu}=\tensor{T}{^\rho}\tensor{\nabla}{_\rho}\tensor{S}{^\mu}\tag{Relative Velocity of Geodesic}\\
-                    &\tensor{A}{^\mu}=\tensor{(\nabla_TV)}{^\mu}=\tensor{T}{^\rho}\tensor{\nabla}{_\rho}\tensor{V}{^\mu}\tag{Relative Accel. of Geodesic}\\
-                    &\tensor{a}{^\mu}=\tensor{T}{^\sigma}\tensor{\nabla}{_\sigma}\tensor{T}{^\mu}\tag{Accel of path away from geodesic}
-                \end{align*}
-                Vedi Ch3.2. Commutatore $[S,T]=0$, quindi $\tensor{S}{^\rho}\tensor{\nabla}{_\rho}\tensor{T}{^\mu}=\tensor{T}{^\rho}\tensor{\nabla}{_\rho}\tensor{S}{^\mu}$
-                \begin{align*}
-                    &\tensor{A}{^\mu}=\tensor{T}{^\rho}\tensor{\nabla}{_\rho}(\tensor{T}{^\sigma}\tensor{\nabla}{_\sigma}\tensor{S}{^\mu})\\
-                    &=\tensor{T}{^\rho}\tensor{\nabla}{_\rho}(\tensor{S}{^\sigma}\tensor{\nabla}{_\sigma}\tensor{T}{^\mu})\\
-                    &=(\tensor{T}{^\rho}\tensor{\nabla}{_\rho}\tensor{S}{^\sigma})(\tensor{\nabla}{_\sigma}\tensor{T}{^\mu})+\tensor{T}{^\rho}\tensor{S}{^\sigma}\tensor{\nabla}{_\rho}\tensor{\nabla}{_\sigma}\tensor{T}{^\mu}
-                \end{align*}
-                \todo{Covariant derivatives: carroll 3.2 pg 107}
-                \todo{Geodesic Deviation Carroll ch3.10 pg157}
-    \end{itemize}
+\begin{frame}[t]{Principio di equivalenza debole (WEP)}\small\raggedright
+
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Dinamica newtoniana:
+\[
+\mathbf F=m_{\rm i}\mathbf a,\qquad
+\mathbf F_g=-m_{\rm g}\boldsymbol\nabla\Phi.
+\]
+Quindi
+\[
+\mathbf a=-\frac{m_{\rm g}}{m_{\rm i}}\boldsymbol\nabla\Phi.
+\]
+Se la caduta libera e' universale, il rapporto $m_g/m_i$ e' lo stesso per tutti i corpi; scegliendo unita' coerenti, $m_g=m_i$.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{WEP:} corpi di prova con condizioni iniziali uguali seguono la stessa traiettoria in caduta libera, indipendentemente dalla composizione.
+\medskip
+La traiettoria e' caratterizzata dalla geometria, non dalla massa del corpo di prova.
+\medskip
+\textit{Ipotesi:} corpo di prova, effetti mareali e di spin trascurabili.
+\end{column}
+\end{columns}
+
 \end{frame}
 
-\begin{frame}{Teorema di Stokes}
-    \begin{columns}[T]
-        \begin{column}{0.5\textwidth}
-            \begin{align*}
-                &\int_{\Omega}\,d\omega=\int_{\partial\Omega}\omega\tag{Stokes su variet\'a}\\
-                &\int_{\Omega}\tensor{\nabla}{_\mu}\tensor{J}{^\mu}\sqrt{|g|}\,d^nx=\int_{\partial\Omega}\tensor{J}{^\mu}\tensor{n}{_\mu}\,d\Sigma\tag{T. divergenza}
-            \end{align*}
-            \begin{itemize}
-                \item Conservazione carica: $\Sigma_1,\Sigma_2$ superficie spaziale iniziale e finale, $B$ superficie timelike
-                    \begin{align*}
-                        &\tensor{\nabla}{_\mu}\tensor{J}{^\mu}=\int_{\Omega}\tensor{\nabla}{_\mu}\tensor{J}{^\mu}\,dV
-                    \end{align*}
-                    se $\tensor{J}{^\mu}\tensor{n}{_\mu}=0$ allora $Q[\Sigma_1]=Q[\Sigma_2]$
-                \item Energia conservata in spaziotempo stazionario:
-            \end{itemize}<++>
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            <++>
-        \end{column}
-    \end{columns}
-    <++>
+\begin{frame}[t]{EEP, SEP e limiti dell'esperimento locale}\small\raggedright
+
+\begin{itemize}
+\item \textbf{EEP (Einstein):} in un laboratorio sufficientemente piccolo in caduta libera, le leggi \emph{non gravitazionali} coincidono localmente con quelle della relativita' speciale.
+\item In coordinate localmente inerziali in un evento $p$:
+\[
+ g_{\mu\nu}(p)=\eta_{\mu\nu},\qquad \partial_\alpha g_{\mu\nu}(p)=0,
+\]
+ma in generale $\partial_\alpha\partial_\beta g_{\mu\nu}(p)\ne0$: la curvatura e gli effetti mareali restano osservabili in regioni finite.
+\item \textbf{SEP (forte):} estensione degli esperimenti locali anche a sistemi autogravitanti e a esperimenti gravitazionali; richiesta piu' forte dell'EEP.
+\item Per le stelle compatte l'energia di legame gravitazionale puo' essere importante: distinguere WEP, EEP e SEP evita identificazioni improprie.
+\end{itemize}
+
 \end{frame}
 
-\begin{frame}{Caso Newtoniano: 2.4.3}
-    
+\begin{frame}[t]{Redshift gravitazionale: esperimento dell'ascensore}\small\raggedright
+
+Luce emessa dal basso e ricevuta piu' in alto in un campo debole, con $\Delta\Phi=\Phi_d-\Phi_e>0$.
+\[
+\Delta t\simeq\frac{h}{c},\quad \Delta v\simeq g\Delta t,\quad
+\frac{\Delta\lambda}{\lambda}\simeq\frac{\Delta v}{c}
+=\frac{gh}{c^2}=\frac{\Delta\Phi}{c^2}.
+\]
+Poiche' $\nu=c/\lambda$:
+\[
+\frac{\nu_d}{\nu_e}\simeq 1-\frac{\Delta\Phi}{c^2},
+\qquad z\equiv\frac{\lambda_d-\lambda_e}{\lambda_e}
+\simeq\frac{\Delta\Phi}{c^2}.
+\]
+Per luce emessa dalla superficie $R$ e ricevuta all'infinito, $\Phi(R)=-GM/R$ e $\Phi(\infty)=0$:
+\[
+ z\simeq\frac{GM}{Rc^2}\qquad\text{(solo campo debole).}
+\]
+
 \end{frame}
 
-\section{Covarianza}
+\begin{frame}[t]{Redshift esatto in una metrica statica}\small\raggedright
 
-\section{Riemann Curvature tensor}
+Una metrica statica con $g_{tt}>0$ ammette una simmetria temporale (vettore di Killing $\xi^\mu=\delta^\mu_t$).
+Per un fotone geodetico $E_\infty=p_\mu\xi^\mu$ e' conservata; un osservatore statico ha $u^\mu=\xi^\mu/\sqrt{g_{tt}}$ e misura
+\[
+E_{\rm loc}=p_\mu u^\mu=\frac{E_\infty}{\sqrt{g_{tt}}},\qquad
+\frac{\nu_d}{\nu_e}=\sqrt{\frac{g_{tt}(e)}{g_{tt}(d)}}.
+\]
+Per Schwarzschild all'esterno, $g_{tt}(r)=1-2GM/(rc^2)$; all'infinito $g_{tt}\to1$:
+\[
+1+z=\frac{1}{\sqrt{1-2GM/(Rc^2)}}.
+\]
+Sviluppo per $GM/(Rc^2)\ll1$: $z\simeq GM/(Rc^2)$. Questa e' la versione non approssimata per un emettitore statico sulla superficie di una stella non rotante.
 
-\section{Einstein's field Equation}
-
-
-\begin{frame}{Einstein Eqs}
-    \begin{itemize}
-         \item Il tensore di Riemann \'e definito dalla non commutazione delle derivate covarianti: $(\nabla_{\mu}\nabla_{\nu}-\nabla_{\nu})\tensor{V}{^\rho}=\tensor{R}{^\rho_{\sigma\mu\nu}}$. Variazione vettore trasportato lungo percorso chiuso:
-            \item Tensore Ricci $\tensor{R}{_{\mu\nu}}=\tensor{R}{^\alpha_\mu_\alpha_\nu}$: 
-            \item Tensore di Einstein: $\tensor{G}{_{\mu\nu}}=\tensor{R}{_{\mu\nu}}-\frac{1}{2}\tensor{g}{_{\mu\nu}}R$
-             \item Tensore energia-impulso/stress-energy: $\tensor{T}{_{00}}$ densit\'a di energia, $\tensor{T}{_{0i}}$ flusso di energia nella direzione i, $\tensor{T}{_{i0}}$ densit\'a di quantit\'a di moto nella direzione i, $\tensor{T}{_{ij}}$ flusso della quantit\'a di moto i attraverso una superficie normale a j.
-            \item Einstein Field Eqs.: $\tensor{G}{_{\mu\nu}}=\frac{8\pi G}{c^4}\tensor{T}{_{\mu\nu}}$ 
-    \end{itemize}
 \end{frame}
 
-\section{Schwarzschild's solution}\linkdest{schsol}
+\begin{frame}[t]{Deflessione della luce e natura locale dell'EEP}\small\raggedright
 
-\begin{frame}{Metric in static isotropic spacetime}
-    \begin{itemize}
-        \item $\tensor{g}{_{\mu\nu}}$ indep of time. $\tensor{g}{_{0m}}=0$ as $ds^2=\tensor{g}{_{00}}\,dt^2+2\tensor{g}{_{0m}}\,dtdx^m+\tensor{g}{_{mn}}\,dx^mdx^n$ has to be invariant under time inversion in static regions. (Inoltre $\tensor{g}{_{0m}}$ si comporta come vettore spaziale sotto rotazione e non fosse nullo violerebbe isotropia).
-        \item Sfera ha raggio fisico $R=\sqrt{W(r)}r$. Raggio Areale - We choose $x^1=r$, $x^2=\theta$, $x^3=\phi$: $d\tau^2=U(r)\,dt^2-V(r)dr^2-W(r)r^2(d\theta^2+\sin^2{\theta}d\phi^2)$; $dt=dr=0$ si trova $R=\sqrt{W(r)}r$ (Area intrinseca di sfera in spaziotempo: $A=4\pi R^2=A(r)=4\pi w(r)r^2$)
-            \item Distanza radiale propria: $dt=d\theta=d\phi=0$ si ha $dl^2=V(r)\,dr^2$ quindi $l(r_1,r_2)=\int_{r_1}^{r_2}\sqrt{V(r)}\,dr$
-                \item Cambio variabile r tale che $W(r)=1$ con $d\tau^2=\exp{2\nu(r)}\,dt^2-\exp{2\lambda(r)}\,dr^2-r^2\,d\theta^2-r^2\sin^2{\theta}\,d\phi^2$.
-        \item Componenti tensore metrico:
-            \begin{align*}
-                &\tensor{g}{_{00}}=\exp{2\nu(r)},\ \tensor{g}{_{11}}=-\exp{2\lambda(r)},\ \tensor{g}{_{22}}=-r^2,\ \tensor{g}{_{33}}=-r^2\sin^2{\theta},\ \tensor{g}{_{\mu\nu}}=0\ \mu\neq\nu\\
-             \end{align*}
-         \item Tensore di Ricci $\tensor{R}{_{\mu\nu}}=\tensor{R}{^\alpha_{\mu\alpha\nu}}$
-            \begin{align*}
-            &\tensor{R}{_{00}}=(-\nu''+\lambda'\nu'-(\nu')^2-\frac{2\nu'}{r})\exp{2(\nu-\lambda)},\ \tensor{R}{_{11}}=\nu''-\lambda'\nu'+(\nu')^2-\frac{2\lambda'}{r},\ \tensor{R}{_{22}}=(1+r\nu'-r\lambda')\exp{-2\lambda}-1,\\
-                &\tensor{R}{_{33}}=\tensor{R}{_{22}}\sin^2{\theta}
-             \end{align*}
-        \item Simboli Christoffel
-            \begin{align*}
-                &\tensor{\Gamma}{^\rho_{\mu\nu}}=\frac{1}{2}\tensor{g}{^{\rho\sigma}}(\tensor{\partial}{_\mu}\tensor{g}{_{\sigma\nu}}+\tensor{\partial}{_\nu}\tensor{g}{_{\sigma\mu}}-\tensor{\partial}{_\sigma}\tensor{g}{_{\mu\nu}})\\
-                &\tensor{\partial}{_r}\tensor{g}{_{00}}=2\nu'\exp{2\nu},\ \tensor{\partial}{_r}\tensor{g}{_{11}}=-2\lambda'\exp{2\lambda},\ \tensor{\partial}{_r}\tensor{g}{_{22}}=-2r,\ \tensor{\partial}{_r}\tensor{g}{_{33}}=-2r\sin^2{\theta},\ \tensor{\partial}{_\theta}\tensor{g}{_{33}}=-2r^2\sin{\theta}\cos{\theta}\\
-                &\tensor{\Gamma}{^1_{00}}=\nu'\exp{2(\nu-\lambda)},\ \tensor{\Gamma}{^1_{10}}=\nu',\ \tensor{\Gamma}{^1_{11}}=\lambda',\ \tensor{\Gamma}{^2_{12}}=\tensor{\Gamma}{^3_{13}}=\frac{1}{r}\\
-                &\tensor{\Gamma}{^1_{22}}=-r\exp{-2\lambda},\ \tensor{\Gamma}{^3_{23}}=\cot{\theta},\ \tensor{\Gamma}{^1_{33}}=-r\sin^2{\theta}\exp{-2\lambda},\ \tensor{\Gamma}{^2_{33}}=-\sin{\theta}\cos{\theta}\\
-             \end{align*}
-    \end{itemize}
+\begin{itemize}
+\item In una cabina accelerata, un raggio luminoso che attraversa lateralmente la cabina appare curvo rispetto alle pareti; l'EEP suggerisce la deflessione gravitazionale.
+\item In campo debole e per una massa isolata, la relativita' generale predice all'ordine dominante
+\[
+\widehat\alpha\simeq\frac{4GM}{bc^2},
+\]
+dove $b$ e' il parametro d'impatto.
+\item \textbf{Attenzione:} il solo principio di equivalenza e un argomento elementare di traiettoria newtoniana non determinano in generale il fattore 4; contribuisce anche la curvatura spaziale della soluzione delle equazioni di Einstein.
+\item Le forze mareali dipendono dalla curvatura e non possono essere annullate su una regione spaziale estesa scegliendo coordinate localmente inerziali.
+\end{itemize}
+
 \end{frame}
 
-\begin{frame}{Sch: metric outside static static spherical star}
-    \begin{itemize}
-        \item In empty space outside static star: Einstein eq. $\tensor{G}{_{\mu\nu}}=0$, quindi $\tensor{R}{_{\mu\nu}}=\frac{1}{2}\tensor{g}{_{\mu\nu}}R$.
-        \item $R=\tensor{R}{^\alpha_\alpha}=\frac{1}{2}R$ quindi $R=0$
-        \item Tensore di Ricci $\tensor{R}{_{\mu\nu}}$
-            \begin{align*}
-                &\tensor{R}{_{00}}=\tensor{R}{_{11}}=0,\ \Rightarrow \lambda'+\nu'=0,\ \tensor{R}{_{22}}=0\ \Rightarrow (1+2r\nu')\exp{2\nu}=1\\
-                &\lambda+\nu=0 \tensor{g}{_{11}}=-\exp{2\lambda}=-\exp{-2\nu}=-\invers{(1-\frac{2GM}{r})}\tag{$(r>R)$; large r space unaffected by star: $\lambda\to\nu\to0$}\\
-                &\tensor{g}{_{00}}=\exp{2\nu}=1-\frac{2GM}{r}\tag{Integrating primes, $r>R$}\\
-                &\Rightarrow d\tau^2=(1-\frac{2GM}{r})\,dt^2-\invers{(1-\frac{"GM}{r})}\,dr^2-r^2\,d\theta^2-r^2\sin^2{\theta}\,d\phi^2\tag{$r>R$}
-            \end{align*}
-            R raggio stellare, M costante di integrazione: in Apprx Newtoniana M coincide con massa stellare.
-    \end{itemize}
+\subsection{Metrica, tempo proprio e indici}
+
+\begin{frame}[t]{Minkowski e classificazione degli intervalli}\small\raggedright
+
+In coordinate cartesiane inerziali e in unita' $c=1$:
+\[
+\eta_{\mu\nu}=\operatorname{diag}(1,-1,-1,-1),\qquad
+ds^2=dt^2-dx^2-dy^2-dz^2.
+\]
+\begin{itemize}
+\item $ds^2>0$: intervallo timelike; una particella massiva puo' percorrerlo e $ds=d\tau$.
+\item $ds^2=0$: intervallo null, come una traiettoria luminosa.
+\item $ds^2<0$: intervallo spacelike; non corrisponde allo spostamento di una singola particella causale.
+\end{itemize}
+In coordinate sferiche, \emph{senza curvatura}:
+\[
+ds^2=dt^2-dr^2-r^2(d\theta^2+\sin^2\theta\,d\phi^2).
+\]
+Una metrica non costante nelle coordinate non implica necessariamente curvatura dello spaziotempo.
+
 \end{frame}
 
-\section{Oppenheimer-Volkoff equation}\linkdest{OVeq}
+\begin{frame}[t]{Tensore metrico: indici alti e bassi}\small\raggedright
+
+\[
+ds^2=g_{\mu\nu}(x)\,dx^\mu dx^\nu,\qquad
+g_{\mu\rho}g^{\rho\nu}=\delta_\mu{}^\nu.
+\]
+Alzare e abbassare indici:
+\[
+A_\mu=g_{\mu\nu}A^\nu,\qquad A^\mu=g^{\mu\nu}A_\nu,\qquad A_\mu B^\mu\ \text{scalare}.
+\]
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+In Minkowski, se $A^\mu=(A^0,A^x,A^y,A^z)$,
+\[
+A_\mu=(A^0,-A^x,-A^y,-A^z).
+\]
+\end{column}
+\begin{column}{0.49\textwidth}
+$g_{\mu\nu}$ e' simmetrico: 10 componenti indipendenti in quattro dimensioni; il suo determinante deve essere non nullo.
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[t]{Tempo proprio e quadrivelocita'}\small\raggedright
+
+Per una traiettoria materiale:
+\[
+d\tau=\sqrt{g_{\mu\nu}dx^\mu dx^\nu},\qquad
+u^\mu\equiv\frac{dx^\mu}{d\tau},\qquad g_{\mu\nu}u^\mu u^\nu=1.
+\]
+In relativita' speciale, $d\tau=dt\sqrt{1-v^2}$ e
+\[
+u^\mu=\gamma(1,\mathbf v),\quad
+u_\mu=\gamma(1,-\mathbf v),\quad
+\gamma=(1-v^2)^{-1/2}.
+\]
+Il quadrimpulso di una particella libera e' $p^\mu=mu^\mu=(E,\mathbf p)$:
+\[
+p^\mu p_\mu=m^2\quad\Longrightarrow\quad E^2=\mathbf p^2+m^2.
+\]
+\textit{Le formule con $c\ne1$ hanno} $x^0=ct$, $u^\mu=dx^\mu/d\tau$ e $u^\mu u_\mu=c^2$.
+
+\end{frame}
+
+\begin{frame}[t]{Dal potenziale newtoniano a $g_{tt}$}\small\raggedright
+
+Nel limite debole, stazionario, velocita' piccole:
+\[
+g_{tt}\simeq1+\frac{2\Phi}{c^2},\qquad |\Phi|\ll c^2.
+\]
+Per una particella lenta, l'equazione geodetica dara'
+\[
+\frac{d^2x^i}{dt^2}\simeq-\Gamma^i{}_{tt}c^2
+\simeq-\partial_i\Phi.
+\]
+Per la metrica con segnatura $+---$, $g_{ij}\simeq-\delta_{ij}$, dunque
+\[
+\Gamma^i{}_{tt}\simeq\frac12 g^{ij}(-\partial_jg_{tt})
+\simeq\frac{1}{c^2}\partial_i\Phi.
+\]
+Questo determina la corretta normalizzazione del coefficiente $2$ nel termine temporale della metrica.
+
+\end{frame}
+
+\section{Geodesiche, connessione e curvatura}\subsection{Equazione geodetica}
+
+\begin{frame}[t]{Derivate covarianti e simboli di Christoffel}\small\raggedright
+
+Una derivata ordinaria di un vettore non e', in generale, un tensore sotto cambi di coordinate:
+\[
+\nabla_\mu V^\nu=\partial_\mu V^\nu+\Gamma^\nu{}_{\mu\lambda}V^\lambda,
+\qquad
+\nabla_\mu A_\nu=\partial_\mu A_\nu-\Gamma^\lambda{}_{\mu\nu}A_\lambda.
+\]
+Per la connessione di Levi-Civita: assenza di torsione e compatibilita' metrica,
+\[
+\Gamma^\rho{}_{\mu\nu}=\Gamma^\rho{}_{\nu\mu},\qquad
+\nabla_\lambda g_{\mu\nu}=0.
+\]
+Segue
+\[
+\Gamma^\rho{}_{\mu\nu}=
+\frac12 g^{\rho\sigma}
+(\partial_\mu g_{\sigma\nu}+\partial_\nu g_{\sigma\mu}-\partial_\sigma g_{\mu\nu}).
+\]
+I simboli $\Gamma$ \emph{non} sono le componenti di un tensore; in coordinate localmente inerziali si annullano in un punto.
+
+\end{frame}
+
+\begin{frame}[t]{Geodesiche: principio variazionale (I)}\small\raggedright
+
+Consideriamo una curva timelike $x^\mu(\lambda)$ fra due eventi fissati. Il tempo proprio e'
+\[
+\mathcal S[x]=\int_{\lambda_A}^{\lambda_B}
+\sqrt{g_{\mu\nu}(x)\dot x^\mu\dot x^\nu}\,d\lambda,\qquad\dot x^\mu=\frac{dx^\mu}{d\lambda}.
+\]
+Una geodesica rende stazionario $\mathcal S$ per variazioni che si annullano agli estremi. \textbf{Non} ogni geodesica massimizza globalmente il tempo proprio: puo' essere un massimo locale.
+\medskip
+Per una parametrizzazione affine possiamo usare la lagrangiana equivalente
+\[
+L=\frac12 g_{\mu\nu}(x)\dot x^\mu\dot x^\nu.
+\]
+L'equazione di Eulero--Lagrange e'
+\[
+\frac{d}{d\lambda}\frac{\partial L}{\partial\dot x^\rho}
+-\frac{\partial L}{\partial x^\rho}=0.
+\]
+
+\end{frame}
+
+\begin{frame}[t]{Geodesiche: principio variazionale (II)}\small\raggedright
+
+Per $L=\tfrac12g_{\mu\nu}\dot x^\mu\dot x^\nu$,
+\[
+\frac{\partial L}{\partial\dot x^\rho}=g_{\rho\nu}\dot x^\nu,
+\qquad
+\frac{\partial L}{\partial x^\rho}
+=\frac12\partial_\rho g_{\mu\nu}\dot x^\mu\dot x^\nu.
+\]
+Sviluppando la derivata totale:
+\[
+g_{\rho\nu}\ddot x^\nu+
+\partial_\sigma g_{\rho\nu}\dot x^\sigma\dot x^\nu
+-\frac12\partial_\rho g_{\mu\nu}\dot x^\mu\dot x^\nu=0.
+\]
+Simmetrizzando il secondo termine in $\mu,\nu$:
+\[
+g_{\rho\nu}\ddot x^\nu+
+\frac12(\partial_\mu g_{\rho\nu}+\partial_\nu g_{\rho\mu}-\partial_\rho g_{\mu\nu})\dot x^\mu\dot x^\nu=0.
+\]
+Moltiplicando per $g^{\alpha\rho}$:
+\[
+\ddot x^\alpha+\Gamma^\alpha{}_{\mu\nu}\dot x^\mu\dot x^\nu=0.
+\]
+
+\end{frame}
+
+\begin{frame}[t]{Equazione geodetica e accelerazione quadrivettoriale}\small\raggedright
+
+Con il tempo proprio come parametro affine:
+\[
+\frac{d^2x^\mu}{d\tau^2}
++\Gamma^\mu{}_{\alpha\beta}
+\frac{dx^\alpha}{d\tau}\frac{dx^\beta}{d\tau}=0.
+\]
+In termini del campo tangente $u^\mu$:
+\[
+u^\nu\nabla_\nu u^\mu
+=\frac{du^\mu}{d\tau}+\Gamma^\mu{}_{\alpha\beta}u^\alpha u^\beta=0.
+\]
+\begin{itemize}
+\item Per un corpo libero (pressioni/forze non gravitazionali nulle) l'accelerazione propria e' zero.
+\item In coordinate arbitrarie $d^2x^\mu/d\tau^2$ puo' essere non nullo anche in caduta libera: non e' un quadrivettore isolatamente.
+\item Per un parametro non affine $\lambda$, l'equazione contiene un termine $f(\lambda)\dot x^\mu$.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[t]{Esempio: simboli di Christoffel anche nello spazio piatto}\small\raggedright
+
+Sul piano euclideo in coordinate polari, $dl^2=dr^2+r^2d\phi^2$:
+\[
+\Gamma^r{}_{\phi\phi}=-r,\qquad
+\Gamma^\phi{}_{r\phi}=\Gamma^\phi{}_{\phi r}=\frac1r.
+\]
+Equazioni geodetiche:
+\[
+\ddot r-r\dot\phi^2=0,\qquad
+\ddot\phi+\frac2r\dot r\dot\phi=0.
+\]
+Sono le equazioni di una retta in coordinate polari: connessione non nulla non implica necessariamente curvatura.
+\medskip
+In uno spaziotempo curvo, invece, non si possono annullare tutti i simboli di Christoffel in un'intera regione se $R^\rho{}_{\sigma\mu\nu}\ne0$.
+
+\end{frame}
+
+\subsection{Trasporto parallelo, Riemann e deviazione geodetica}
+
+\begin{frame}[t]{Commutatore covariante: definizione di Riemann}\small\raggedright
+
+\textbf{Convenzione scelta:}
+\[
+[\nabla_\mu,\nabla_\nu]V^\rho
+=R^\rho{}_{\sigma\mu\nu}V^\sigma.
+\]
+Calcolando le derivate covarianti:
+\[
+\begin{aligned}
+R^\rho{}_{\sigma\mu\nu}={}&
+\partial_\mu\Gamma^\rho{}_{\nu\sigma}
+-\partial_\nu\Gamma^\rho{}_{\mu\sigma}\\
+&+\Gamma^\rho{}_{\mu\lambda}\Gamma^\lambda{}_{\nu\sigma}
+-\Gamma^\rho{}_{\nu\lambda}\Gamma^\lambda{}_{\mu\sigma}.
+\end{aligned}
+\]
+Il tensore di Ricci e lo scalare di curvatura sono
+\[
+R_{\sigma\nu}=R^\rho{}_{\sigma\rho\nu},\qquad
+\mathcal R=g^{\sigma\nu}R_{\sigma\nu}.
+\]
+\textit{Avvertenza:} testi diversi definiscono il Riemann con segno opposto. Non e' lecito copiare componenti $R_{\mu\nu}$ da convenzioni diverse senza verificarle.
+
+\end{frame}
+
+\begin{frame}[t]{Simmetrie della curvatura}\small\raggedright
+
+Abbassando il primo indice, $R_{\rho\sigma\mu\nu}=g_{\rho\alpha}R^\alpha{}_{\sigma\mu\nu}$:
+\[
+R_{\rho\sigma\mu\nu}=-R_{\sigma\rho\mu\nu},\quad
+R_{\rho\sigma\mu\nu}=-R_{\rho\sigma\nu\mu},\quad
+R_{\rho\sigma\mu\nu}=R_{\mu\nu\rho\sigma}.
+\]
+Identita' algebrica di Bianchi:
+\[
+R_{\rho[\sigma\mu\nu]}=0.
+\]
+In 4 dimensioni il tensore di Riemann possiede $20$ componenti indipendenti, non $4^4=256$.
+\medskip
+La contrazione $R_{\mu\nu}$ e' simmetrica per una connessione Levi-Civita. Il tensore di Einstein
+\[
+G_{\mu\nu}=R_{\mu\nu}-\frac12g_{\mu\nu}\mathcal R
+\]
+ha divergenza covariante nulla, $\nabla_\mu G^{\mu\nu}=0$ (Bianchi contratta).
+
+\end{frame}
+
+\begin{frame}[t]{Deviazione geodetica: costruzione geometrica}\small\raggedright
+
+Sia $x^\mu(\tau,s)$ una famiglia di geodesiche timelike vicine. Definiamo:
+\[
+u^\mu=\frac{\partial x^\mu}{\partial\tau},\qquad
+\xi^\mu=\frac{\partial x^\mu}{\partial s}.
+\]
+Se le coordinate $(\tau,s)$ sono regolari, $[u,\xi]=0$, e con torsione nulla:
+\[
+\nabla_u\xi=\nabla_\xi u.
+\]
+La geodeticita' fornisce $\nabla_u u=0$. Allora
+\[
+\nabla_u\nabla_u\xi
+=\nabla_u\nabla_\xi u
+=\nabla_\xi\underbrace{\nabla_u u}_{0}
++R(u,\xi)u.
+\]
+Con la convenzione di Riemann dichiarata:
+\[
+\frac{D^2\xi^\mu}{d\tau^2}
+=R^\mu{}_{\nu\alpha\beta}u^\nu u^\alpha\xi^\beta.
+\]
+Il segno cambia in autori che definiscono $R$ tramite il commutatore opposto.
+
+\end{frame}
+
+\begin{frame}[t]{Deviazione geodetica: limite newtoniano}\small\raggedright
+
+Per due particelle in caduta libera con separazione spaziale $\boldsymbol\xi$, le rispettive accelerazioni differiscono:
+\[
+\begin{aligned}
+\delta\mathbf a
+&=-\boldsymbol\nabla\Phi(\mathbf x+\boldsymbol\xi)
++\boldsymbol\nabla\Phi(\mathbf x)\\
+&\simeq-\bigl(\partial_i\partial_j\Phi\bigr)\xi^j\,\mathbf e_i.
+\end{aligned}
+\]
+Pertanto
+\[
+\frac{d^2\xi^i}{dt^2}
+=-\partial_i\partial_j\Phi\,\xi^j.
+\]
+Il tensore mareale e' l'Hessiano del potenziale; per una massa puntiforme $\Phi=-GM/r$ produce stiramento radiale e compressione trasversa.
+\medskip
+\textbf{Interpretazione:} in caduta libera il campo gravitazionale uniforme e' eliminabile localmente, ma il gradiente del campo (curvatura) no.
+
+\end{frame}
+
+\subsection{Stokes, corrente conservata e Killing}
+
+\begin{frame}[t]{Teorema di Stokes e divergenza covariante}\small\raggedright
+
+Su una regione $\mathcal V$ orientata di una varieta' pseudo-riemanniana:
+\[
+\int_{\mathcal V}d\omega=\int_{\partial\mathcal V}\omega.
+\]
+Per una corrente vettoriale $J^\mu$ e un volume quadridimensionale:
+\[
+\nabla_\mu J^\mu=\frac{1}{\sqrt{|g|}}\partial_\mu(\sqrt{|g|}J^\mu).
+\]
+Quindi, con orientazioni appropriate delle normali,
+\[
+\int_{\mathcal V}\nabla_\mu J^\mu\sqrt{|g|}\,d^4x
+=\int_{\partial\mathcal V}J^\mu\,d\Sigma_\mu.
+\]
+Qui $d\Sigma_\mu=n_\mu\,d\Sigma$ e' l'elemento orientato della superficie tridimensionale.
+
+\end{frame}
+
+\begin{frame}[t]{Numero barionico conservato: esempio di Stokes}\small\raggedright
+
+Per un fluido senza creazione o perdita netta di barioni:
+\[
+J_B^\mu=n_Bu^\mu,\qquad\nabla_\mu J_B^\mu=0.
+\]
+Consideriamo una regione delimitata da due ipersuperfici spaziali $\Sigma_1,\Sigma_2$ e una superficie laterale $\mathcal B$:
+\[
+0=\int_{\partial\mathcal V}J_B^\mu\,d\Sigma_\mu
+=N_B[\Sigma_2]-N_B[\Sigma_1]+\Phi_{\mathcal B}.
+\]
+Se il flusso laterale e' nullo ($\Phi_{\mathcal B}=0$), allora
+\[
+N_B[\Sigma_2]=N_B[\Sigma_1],\qquad
+N_B[\Sigma]=\int_\Sigma J_B^\mu n_\mu\,d\Sigma.
+\]
+Questa e' la forma covariante del principio utilizzato per definire la \emph{massa barionica} delle stelle.
+
+\end{frame}
+
+\begin{frame}[t]{Vettori di Killing ed energia conservata}\small\raggedright
+
+Un vettore $\xi^\mu$ e' di Killing se
+\[
+\nabla_\mu\xi_\nu+\nabla_\nu\xi_\mu=0.
+\]
+Per una geodesica $p^\mu=mu^\mu$ (o fotone $p^\mu$), vale
+\[
+\frac d{d\lambda}(p_\mu\xi^\mu)
+=p^\nu p^\mu\nabla_\nu\xi_\mu=0,
+\]
+perche' $p^\mu p^\nu$ e' simmetrico, $\nabla_{(\nu}\xi_{\mu)}=0$.
+\medskip
+Per un fluido con $\nabla_\mu T^{\mu\nu}=0$:
+\[
+\nabla_\mu(T^{\mu\nu}\xi_\nu)
+=(\nabla_\mu T^{\mu\nu})\xi_\nu
++T^{\mu\nu}\nabla_\mu\xi_\nu=0.
+\]
+\textit{Attenzione:} in uno spaziotempo generico senza Killing temporale non esiste necessariamente una conservazione globale dell'energia definita in questo modo.
+
+\end{frame}
+
+\section{Equazioni di Einstein e metrica di Schwarzschild}\subsection{Equazioni del campo}
+
+\begin{frame}[t]{Da Poisson a Einstein}\small\raggedright
+
+L'equazione newtoniana e'
+\[
+\nabla^2\Phi=4\pi G\rho.
+\]
+Nella RG la geometria e' descritta da $g_{\mu\nu}$, e la materia da $T_{\mu\nu}$. Il tensore di Einstein e'
+\[
+G_{\mu\nu}=R_{\mu\nu}-\frac12g_{\mu\nu}\mathcal R,
+\qquad\nabla_\mu G^{\mu\nu}=0.
+\]
+L'equazione di campo (senza costante cosmologica) e'
+\[
+G_{\mu\nu}=\frac{8\pi G}{c^4}T_{\mu\nu}.
+\]
+Con $G=c=1$, $G_{\mu\nu}=8\pi T_{\mu\nu}$.
+\medskip
+Il coefficiente $8\pi$ si ottiene imponendo il limite newtoniano, con $T_{00}\simeq\rho c^2$ e $g_{00}\simeq1+2\Phi/c^2$.
+
+\end{frame}
+
+\begin{frame}[t]{Il vuoto: contrazione delle equazioni di Einstein}\small\raggedright
+
+In assenza di materia e con $\Lambda_{\rm cosm}=0$:
+\[
+G_{\mu\nu}=R_{\mu\nu}-\frac12g_{\mu\nu}\mathcal R=0.
+\]
+Contraiamo con $g^{\mu\nu}$ in quattro dimensioni:
+\[
+0=g^{\mu\nu}G_{\mu\nu}
+=\mathcal R-\frac12(g^{\mu\nu}g_{\mu\nu})\mathcal R
+=\mathcal R-2\mathcal R=-\mathcal R.
+\]
+Segue
+\[
+\mathcal R=0,\qquad R_{\mu\nu}=0.
+\]
+\textbf{Correzione al sorgente iniziale:} la contrazione corretta coinvolge $g^{\mu\nu}g_{\mu\nu}=4$, non $1$; e' sbagliato dedurre $\mathcal R=0$ usando $\mathcal R=\mathcal R/2$ senza tracciare i quattro indici.
+
+\end{frame}
+
+\subsection{Schwarzschild, coordinate areali e connessione}
+
+\begin{frame}[t]{Metrica statica sferica e raggio areale}\small\raggedright
+
+Una metrica statica sfericamente simmetrica, in opportune coordinate, si scrive
+\[
+ds^2=U(\rho)dt^2-V(\rho)d\rho^2-W(\rho)\rho^2d\Omega^2,
+\quad d\Omega^2=d\theta^2+\sin^2\theta\,d\phi^2.
+\]
+La superficie $t,\rho={\rm cost}$ ha area
+\[
+A(\rho)=4\pi W(\rho)\rho^2.
+\]
+Definiamo il raggio \emph{areale}
+\[
+r=\rho\sqrt{W(\rho)},\qquad A=4\pi r^2.
+\]
+In un intervallo in cui $r(\rho)$ e' una coordinata valida, la metrica diventa
+\[
+\boxed{ds^2=e^{2\nu(r)}dt^2-e^{2\lambda(r)}dr^2-r^2d\Omega^2.}
+\]
+La distanza radiale propria su un'ipersuperficie $t={\rm cost}$ e' $dl=e^{\lambda(r)}dr$.
+
+\end{frame}
+
+\begin{frame}[t]{Metriche: componenti e inversa}\small\raggedright
+
+Per $ds^2=e^{2\nu}dt^2-e^{2\lambda}dr^2-r^2d\Omega^2$:
+\[
+(g_{\mu\nu})=\operatorname{diag}
+(e^{2\nu},-e^{2\lambda},-r^2,-r^2\sin^2\theta).
+\]
+\[
+(g^{\mu\nu})=\operatorname{diag}
+(e^{-2\nu},-e^{-2\lambda},-r^{-2},-[r^2\sin^2\theta]^{-1}).
+\]
+Derivate utili:
+\[
+\begin{gathered}
+\partial_rg_{tt}=2\nu'e^{2\nu},\quad
+\partial_rg_{rr}=-2\lambda'e^{2\lambda},\\
+\partial_rg_{\theta\theta}=-2r,\quad
+\partial_rg_{\phi\phi}=-2r\sin^2\theta,\\
+\partial_\theta g_{\phi\phi}=-2r^2\sin\theta\cos\theta.
+\end{gathered}
+\]
+L'apice denota $d/dr$.
+
+\end{frame}
+
+\begin{frame}[t]{Christoffel statici: componenti non nulle}\small\raggedright
+
+Applicando $\Gamma^\rho{}_{\mu\nu}=\tfrac12g^{\rho\sigma}(\partial_\mu g_{\sigma\nu}+\partial_\nu g_{\sigma\mu}-\partial_\sigma g_{\mu\nu})$:
+\[
+\begin{aligned}
+&\Gamma^t{}_{tr}=\nu',\quad
+\Gamma^r{}_{tt}=e^{2(\nu-\lambda)}\nu',\quad
+\Gamma^r{}_{rr}=\lambda',\\
+&\Gamma^r{}_{\theta\theta}=-re^{-2\lambda},\quad
+\Gamma^r{}_{\phi\phi}=-re^{-2\lambda}\sin^2\theta,\\
+&\Gamma^\theta{}_{r\theta}=\Gamma^\phi{}_{r\phi}=\frac1r,\quad
+\Gamma^\theta{}_{\phi\phi}=-\sin\theta\cos\theta,\\
+&\Gamma^\phi{}_{\theta\phi}=\cot\theta.
+\end{aligned}
+\]
+Valgono inoltre i corrispondenti scambi dei due indici inferiori.
+\medskip
+\textbf{Correzione:} nel sorgente originale compare $\Gamma^1{}_{10}=\nu'$; il componente giusto e' $\Gamma^0{}_{01}=\nu'$.
+
+\end{frame}
+
+\begin{frame}[t]{Ricci per la metrica statica: convenzione dichiarata}\small\raggedright
+
+Con $[\nabla_\mu,\nabla_\nu]V^\rho=R^\rho{}_{\sigma\mu\nu}V^\sigma$:
+\[
+\begin{aligned}
+R_{tt}&=e^{2(\nu-\lambda)}
+\left(\nu''+\nu'^2-\nu'\lambda'+\frac{2\nu'}r\right),\\
+R_{rr}&=-\nu''-\nu'^2+\nu'\lambda'+\frac{2\lambda'}r,\\
+R_{\theta\theta}&=1-e^{-2\lambda}(1+r\nu'-r\lambda'),\\
+R_{\phi\phi}&=\sin^2\theta\,R_{\theta\theta}.
+\end{aligned}
+\]
+Con la \emph{definizione opposta} di Riemann, tutti i $R_{\mu\nu}$ cambiano segno.
+\medskip
+In particolare e' scorretto mescolare il Ricci copiato da una segnatura/convenzione differente con il tensore di Einstein del presente sorgente.
+
+\end{frame}
+
+\begin{frame}[t]{Equazioni esterne: prima integrazione}\small\raggedright
+
+In vuoto $R_{tt}=R_{rr}=0$. Dalle formule precedenti:
+\[
+0=e^{-2(\nu-\lambda)}R_{tt}+R_{rr}
+=\frac{2}{r}(\nu'+\lambda').
+\]
+Quindi
+\[
+\nu'+\lambda'=0
+\quad\Longrightarrow\quad
+\nu+\lambda={\rm cost}.
+\]
+Normalizzando il tempo con l'asintotica piattezza $\nu,\lambda\to0$ per $r\to\infty$:
+\[
+\lambda(r)=-\nu(r).
+\]
+Questo passaggio richiede il vuoto e la normalizzazione asintotica: dentro la stella, con $\varepsilon,P\ne0$, in generale $\nu+\lambda\ne0$.
+
+\end{frame}
+
+\begin{frame}[t]{Equazioni esterne: integrazione Schwarzschild}\small\raggedright
+
+L'equazione $R_{\theta\theta}=0$ e $\lambda=-\nu$ danno
+\[
+0=1-e^{2\nu}(1+2r\nu')
+=1-\frac{d}{dr}\left(re^{2\nu}\right).
+\]
+Dunque
+\[
+\frac{d}{dr}\left(re^{2\nu}\right)=1,
+\quad re^{2\nu}=r-C,
+\quad e^{2\nu}=1-\frac Cr.
+\]
+Dal limite newtoniano $g_{tt}\simeq1+2\Phi/c^2=1-2GM/(rc^2)$:
+\[
+C=\frac{2GM}{c^2}\equiv r_S.
+\]
+All'esterno:
+\[
+\boxed{ds^2=\left(1-\frac{r_S}{r}\right)c^2dt^2-
+\left(1-\frac{r_S}{r}\right)^{-1}dr^2-r^2d\Omega^2.}
+\]
+\textbf{Correzione:} entrambi i fattori contengono $2GM/(rc^2)$; il file iniziale ha un errore tipografico nel denominatore di $g_{rr}$.
+
+\end{frame}
+
+\begin{frame}[t]{Orizzonte, singolarita' e teorema di Birkhoff}\small\raggedright
+
+\begin{itemize}
+\item $r=r_S$ e' una singolarita' \emph{di coordinate} della carta di Schwarzschild. Per il buco nero, l'orizzonte e' una superficie null; per una stella ordinaria $R_*>r_S$.
+\item $r=0$ e' una singolarita' fisica della soluzione Schwarzschild estesa al buco nero ($R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}\propto M^2/r^6$).
+\item \textbf{Birkhoff:} in RG con $\Lambda=0$ ogni regione sfericamente simmetrica \emph{di vuoto} e' localmente Schwarzschild; non e' necessario imporre la staticita' della sorgente per concludere che il vuoto esterno e' statico.
+\item Il teorema da solo non impone l'asintotica piattezza per qualunque soluzione globale: la scelta delle condizioni al contorno e' distinta.
+\end{itemize}
+
+\end{frame}
+
+\section{Tensore energia--impulso: dalla RS alla RG}\subsection{Significato fisico del tensore energia--impulso}
+
+\begin{frame}[t]{Perche' un tensore energia--impulso?}\small\raggedright
+
+In RS l'energia e la quantita' di moto sono le quattro componenti del quadrimpulso $p^\mu=(E,\mathbf p)$. Un fluido trasporta questi quantitativi attraverso superfici spaziali e temporali.
+\medskip
+\textbf{Interpretazione locale in un sistema inerziale:}
+\[
+T^{00}=\text{densita' di energia},\qquad
+T^{0i}=\text{flusso di energia lungo }i,
+\]
+\[
+T^{i0}=\text{densita' del momento }i,\qquad
+T^{ij}=\text{flusso del momento }i\text{ attraverso una superficie normale a }j.
+\]
+Con $c=1$, $T^{0i}=T^{i0}$ per il tensore simmetrico, ma descrivono aspetti fisici distinti della stessa grandezza.
+\medskip
+Le quantita' $T^{00},T^{0i}$ ecc. sono componenti in un riferimento: \emph{non} hanno tutte una interpretazione universale indipendente dal sistema di osservazione.
+
+\end{frame}
+
+\begin{frame}[t]{La materia nel riferimento comovente}\small\raggedright
+
+Un \emph{fluido perfetto} e' isotropo nel proprio riferimento locale e non presenta viscosita' di taglio, flussi di calore o tensioni anisotrope.
+\[
+T^{\hat\mu\hat\nu}_{\rm rest}
+=\begin{pmatrix}
+\varepsilon&0&0&0\\
+0&P&0&0\\
+0&0&P&0\\
+0&0&0&P
+\end{pmatrix}.
+\]
+Gli indici con cappello indicano componenti in una base ortonormale comovente: $g_{\hat\mu\hat\nu}=\eta_{\hat\mu\hat\nu}$.
+\begin{itemize}
+\item $\varepsilon$ comprende massa a riposo e energia interna delle particelle e interazioni.
+\item $P$ misura il trasporto isotropo di quantita' di moto per area e tempo.
+\item I termini $T^{\hat i\hat j}$ per $i\ne j$ sono nulli; un fluido viscoso/an-isotropo non sarebbe perfetto.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[t]{Dalla distribuzione cinetica al tensore}\small\raggedright
+
+Nel riferimento inerziale locale, per particelle on shell di massa $m$, distribuzione scalare $f(\mathbf p)$ e degenerazione $g$:
+\[
+T^{\mu\nu}=g\int\frac{d^3p}{(2\pi)^3}\frac{p^\mu p^\nu}{E(\mathbf p)}f(\mathbf p),
+\quad E(\mathbf p)=\sqrt{m^2+\mathbf p^2}.
+\]
+Questa forma discende dalla misura invariante $d^3p/E$ sulla shell positiva $p^\mu p_\mu=m^2$.
+\[
+T^{00}=g\int\frac{d^3p}{(2\pi)^3}E(\mathbf p)f(\mathbf p).
+\]
+Per $f$ isotropa, $\langle p_ip_j\rangle=\delta_{ij}\,\langle\mathbf p^2\rangle/3$:
+\[
+T^{ij}=P\delta^{ij},\qquad
+P=\frac g3\int\frac{d^3p}{(2\pi)^3}\frac{\mathbf p^2}{E(\mathbf p)}f(\mathbf p).
+\]
+
+\end{frame}
+
+\begin{frame}[t]{Pressione cinetica: significato del fattore $p^2/E$}\small\raggedright
+
+Per una particella relativistica la velocita' e' $\mathbf v=\mathbf p/E$ ($c=1$). Il flusso di quantita' di moto in direzione $i$ attraverso un piano normale a $i$ e' proporzionale a
+\[
+p^iv^i=\frac{(p^i)^2}{E}.
+\]
+In un mezzo isotropo,
+\[
+\langle(p^x)^2\rangle=\langle(p^y)^2\rangle
+=\langle(p^z)^2\rangle=\frac13\langle\mathbf p^2\rangle.
+\]
+Quindi
+\[
+P=\frac g3\int\frac{d^3p}{(2\pi)^3}\,\mathbf p\cdot\mathbf v\,f(\mathbf p).
+\]
+Questo recupera il significato newtoniano di pressione come flusso di impulso e fornisce un'espressione valida anche per particelle ultrarelativistiche.
+
+\end{frame}
+
+\subsection{Fluido perfetto in relativita\' speciale}
+
+\begin{frame}[t]{Forma covariante del fluido perfetto in RS}\small\raggedright
+
+In uno spaziotempo piatto, con segnatura $+---$, il tensore e'
+\[
+\boxed{T^{\mu\nu}=(\varepsilon+P)u^\mu u^\nu-P\eta^{\mu\nu}.}
+\]
+Dimostrazione nel sistema comovente $u^\mu=(1,0,0,0)$:
+\[
+\begin{aligned}
+T^{00}&=(\varepsilon+P)-P\eta^{00}=\varepsilon,\\
+T^{ii}&=0-P\eta^{ii}=P,\\
+T^{0i}&=0,\quad T^{ij}=0\ (i\ne j).
+\end{aligned}
+\]
+\textbf{Confronto di convenzioni:} il libro usa $-+++$ e scrive
+$T^{\mu\nu}=(\varepsilon+P)u^\mu u^\nu+Pg^{\mu\nu}$.
+Con la segnatura $+---$ il termine metrico e' $-Pg^{\mu\nu}$.
+
+\end{frame}
+
+\begin{frame}[t]{RS: fluido in moto lungo $x$}\small\raggedright
+
+Sia $\mathbf v=(v,0,0)$ e $u^\mu=\gamma(1,v,0,0)$, con $\gamma=(1-v^2)^{-1/2}$. Allora
+\[
+T^{\mu\nu}=(\varepsilon+P)
+\begin{pmatrix}
+\gamma^2&\gamma^2v&0&0\\
+\gamma^2v&\gamma^2v^2&0&0\\
+0&0&0&0\\
+0&0&0&0
+\end{pmatrix}
+-P\operatorname{diag}(1,-1,-1,-1).
+\]
+Quindi
+\[
+\begin{aligned}
+&T^{00}=(\varepsilon+P)\gamma^2-P,\\
+&T^{0x}=T^{x0}=(\varepsilon+P)\gamma^2v,\\
+&T^{xx}=(\varepsilon+P)\gamma^2v^2+P,\\
+&T^{yy}=T^{zz}=P.
+\end{aligned}
+\]
+La pressione contribuisce anche all'energia e al momento osservati in un sistema non comovente.
+
+\end{frame}
+
+\begin{frame}[t]{RS: esempio numerico di fluido in moto}\small\raggedright
+
+Prendiamo $\varepsilon=3$ e $P=1$ (stesse unita' di densita' di energia), con $v=0.6c$.
+In unita' $c=1$:
+\[
+\gamma=\frac1{\sqrt{1-0.6^2}}=1.25,\qquad \gamma^2=1.5625.
+\]
+\[
+\begin{aligned}
+T^{00}&=(3+1)\cdot1.5625-1=5.25,\\
+T^{0x}&=(3+1)\cdot1.5625\cdot0.6=3.75,\\
+T^{xx}&=(3+1)\cdot1.5625\cdot0.6^2+1=3.25,\\
+T^{yy}&=T^{zz}=1.
+\end{aligned}
+\]
+Dunque
+\[
+T^{\mu\nu}=
+\begin{pmatrix}5.25&3.75&0&0\\3.75&3.25&0&0\\0&0&1&0\\0&0&0&1\end{pmatrix}.
+\]
+La densita' di energia $\varepsilon=3$ e' quella \emph{comovente}: nel sistema esterno si osserva $T^{00}=5.25$.
+
+\end{frame}
+
+\begin{frame}[t]{RS: esempi limite (dust e radiazione)}\small\raggedright
+
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+\textbf{Polvere fredda (dust)}: $P=0$.
+\[
+T^{\mu\nu}=\varepsilon u^\mu u^\nu.
+\]
+In quiete:
+\[
+T^{\mu\nu}=\mathrm{diag}(\varepsilon,0,0,0).
+\]
+Polvere in caduta libera: in assenza di altri contributi $u^\mu\nabla_\mu u^\nu=0$.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{Radiazione isotropa}: $\varepsilon=3P$.
+\[
+T^{\mu\nu}=(\varepsilon+P)u^\mu u^\nu-P\eta^{\mu\nu}.
+\]
+Traccia in RS:
+\[
+T^\mu{}_{\mu}=\varepsilon-3P=0.
+\]
+Esempi: fotoni o particelle massless in equilibrio e approssimazione ideale.
+\end{column}
+\end{columns}
+\medskip
+\textbf{Diverso dal vuoto:} per $P=-\varepsilon$ costante,
+$T^{\mu\nu}=\varepsilon\eta^{\mu\nu}$ nella segnatura $+---$ (termine di tipo costante cosmologica).
+
+\end{frame}
+
+\begin{frame}[t]{RS: come si ricava la conservazione relativistica}\small\raggedright
+
+Per un fluido perfetto senza sorgenti esterne:
+\[
+\partial_\mu T^{\mu\nu}=0.
+\]
+Separiamo la parte parallela e ortogonale alla quadrivelocita'. Definiamo
+\[
+D=u^\mu\partial_\mu,\qquad \theta=\partial_\mu u^\mu,\qquad
+\Delta^{\mu\nu}=\eta^{\mu\nu}-u^\mu u^\nu.
+\]
+Proiezione energetica ($u_\nu\partial_\mu T^{\mu\nu}=0$):
+\[
+D\varepsilon+(\varepsilon+P)\theta=0.
+\]
+Proiezione ortogonale ($\Delta^\alpha{}_{\nu}\partial_\mu T^{\mu\nu}=0$):
+\[
+(\varepsilon+P)D u^\alpha=\Delta^{\alpha\nu}\partial_\nu P.
+\]
+Il primo membro dell'ultima equazione contiene l'entalpia per volume $\varepsilon+P$, non soltanto $\varepsilon$.
+
+\end{frame}
+
+\begin{frame}[t]{RS: il limite non relativistico della legge di Eulero}\small\raggedright
+
+Nel limite $v\ll1$, $P\ll\varepsilon\simeq\rho c^2$, ripristinando $c$:
+\[
+D\simeq\partial_t+\mathbf v\cdot\boldsymbol\nabla,\qquad
+\frac{\varepsilon+P}{c^2}\simeq\rho.
+\]
+La proiezione spaziale della conservazione fornisce
+\[
+\rho\left[\partial_t\mathbf v+(\mathbf v\cdot\boldsymbol\nabla)\mathbf v\right]
+=-\boldsymbol\nabla P.
+\]
+L'equazione di continuita' per la massa (o i barioni) e' indipendentemente
+\[
+\partial_t\rho+\boldsymbol\nabla\cdot(\rho\mathbf v)=0.
+\]
+\textbf{Nota critica sul libro:} le formule (2.108)--(2.109) scritte come $\partial_t\varepsilon+\nabla\cdot(\varepsilon\mathbf v)=0$ e $\varepsilon D\mathbf v=-\nabla P$ non sono la forma \emph{esatta} dell'idrodinamica relativistica; richiedono ulteriori approssimazioni.
+
+\end{frame}
+
+\subsection{Fluido perfetto in relativita\' generale}
+
+\begin{frame}[t]{RG: generalizzazione covariante}\small\raggedright
+
+In uno spaziotempo curvo, con la \emph{stessa} convenzione $+---$:
+\[
+\boxed{T^{\mu\nu}=(\varepsilon+P)u^\mu u^\nu-Pg^{\mu\nu}.}
+\]
+Le equazioni di bilancio sono
+\[
+\nabla_\mu T^{\mu\nu}=0,\qquad
+\nabla_\mu(n_Bu^\mu)=0.
+\]
+Nel riferimento localmente ortonormale comovente, la metrica e' minkowskiana e
+\[
+T^{\hat\mu\hat\nu}=\operatorname{diag}(\varepsilon,P,P,P).
+\]
+I \emph{componenti coordinati} $T^{\mu\nu}$, invece, dipendono dalla metrica e non coincidono in generale con questi quattro numeri.
+
+\end{frame}
+
+\begin{frame}[t]{RG: fluido statico in metrica sferica}\small\raggedright
+
+Con
+\[
+ds^2=e^{2\nu}dt^2-e^{2\lambda}dr^2-r^2d\Omega^2,
+\]
+il fluido e' fermo nelle coordinate statiche: $u^\mu=e^{-\nu}(1,0,0,0)$.
+Pertanto
+\[
+\begin{aligned}
+T^{tt}&=(\varepsilon+P)e^{-2\nu}-Pe^{-2\nu}=\varepsilon e^{-2\nu},\\
+T^{rr}&=-Pg^{rr}=Pe^{-2\lambda},\\
+T^{\theta\theta}&=\frac P{r^2},\qquad
+T^{\phi\phi}=\frac P{r^2\sin^2\theta}.
+\end{aligned}
+\]
+La forma \emph{mista} e' particolarmente semplice:
+\[
+\boxed{T^\mu{}_{\nu}=\operatorname{diag}(\varepsilon,-P,-P,-P).}
+\]
+Questo chiarisce perche' non si deve scrivere $T^{rr}=P$ in coordinate Schwarzschild: e' vero solo in una base ortonormale.
+
+\end{frame}
+
+\begin{frame}[t]{RG: osservatore generico e energia misurata}\small\raggedright
+
+Sia $w^\mu$ la quadrivelocita' di un osservatore ($w^\mu w_\mu=1$). La densita' di energia che misura e'
+\[
+\varepsilon_{(w)}=T_{\mu\nu}w^\mu w^\nu.
+\]
+Per il fluido perfetto:
+\[
+\varepsilon_{(w)}=(\varepsilon+P)(u\cdot w)^2-P.
+\]
+Se $w^\mu=u^\mu$ (comovente), $u\cdot w=1$ e $\varepsilon_{(u)}=\varepsilon$.
+\medskip
+La densita' di energia e la pressione termodinamiche sono scalari \emph{propri} del fluido; in un altro riferimento la combinazione degli elementi del tensore rappresenta energia, impulsi e flussi misurati.
+
+\end{frame}
+
+\begin{frame}[t]{RG: proiezioni della legge di conservazione}\small\raggedright
+
+Definiamo $D=u^\mu\nabla_\mu$, $\theta=\nabla_\mu u^\mu$ e il proiettore ortogonale $h^{\mu\nu}=g^{\mu\nu}-u^\mu u^\nu$.
+\[
+0=\nabla_\mu\big[(\varepsilon+P)u^\mu u^\nu-Pg^{\mu\nu}\big].
+\]
+Contrazione con $u_\nu$, usando $u_\nu D u^\nu=0$:
+\[
+\boxed{D\varepsilon+(\varepsilon+P)\theta=0.}
+\]
+Proiezione ortogonale:
+\[
+\boxed{(\varepsilon+P)a^\alpha=h^{\alpha\nu}\nabla_\nu P,\quad
+a^\alpha\equiv u^\mu\nabla_\mu u^\alpha.}
+\]
+Questa e' l'equazione di Eulero relativistica in RG. Per $P=0$ e $\varepsilon>0$ implica $a^\alpha=0$: le linee di flusso della polvere sono geodetiche.
+
+\end{frame}
+
+\begin{frame}[t]{RG: pressione come forza di sostegno della stella}\small\raggedright
+
+Per il fluido statico sferico, $u^\mu=e^{-\nu}\delta^\mu_t$:
+\[
+a^r=u^\nu\nabla_\nu u^r=\Gamma^r{}_{tt}(u^t)^2
+=e^{-2\lambda}\nu'.
+\]
+Il proiettore ha $h^{rr}=g^{rr}=-e^{-2\lambda}$. Dalla proiezione di Eulero:
+\[
+(\varepsilon+P)e^{-2\lambda}\nu'
+=-e^{-2\lambda}\frac{dP}{dr}.
+\]
+Cancellando il fattore geometrico:
+\[
+\boxed{\frac{dP}{dr}=-(\varepsilon+P)\nu'(r).}
+\]
+Questa e' la forma locale dell'equilibrio idrostatico relativistico; combinandola con le equazioni di Einstein si ottiene la TOV.
+
+\end{frame}
+
+\begin{frame}[t]{Fluido anisotropo: esempio di modello non perfetto}\small\raggedright
+
+In presenza di campi intensi o stress anisotropi, la pressione radiale $P_r$ puo' differire da quella tangenziale $P_t$. In una base ortonormale comovente:
+\[
+T^{\hat\mu\hat\nu}=\operatorname{diag}(\varepsilon,P_r,P_t,P_t),
+\qquad P_r\ne P_t.
+\]
+Nelle coordinate statiche, la forma mista e'
+\[
+T^\mu{}_{\nu}=\operatorname{diag}(\varepsilon,-P_r,-P_t,-P_t).
+\]
+L'equilibrio diviene
+\[
+\frac{dP_r}{dr}=-(\varepsilon+P_r)\nu'
++\frac{2(P_t-P_r)}{r}.
+\]
+\textbf{Conclusione:} la TOV usuale presuppone $P_r=P_t$ (isotropia), quindi il tensore di un fluido perfetto. Campi magnetici macroscopici o sforzi elastici possono richiedere una generalizzazione.
+
+\end{frame}
+
+\begin{frame}[t]{Esempi confrontati: RS e RG}\small\raggedright
+
+\begin{tabular}{@{}p{0.22\linewidth}p{0.35\linewidth}p{0.35\linewidth}@{}}
+\toprule
+Caso & $T^{\mu\nu}$ / misura locale & Osservazione \\
+\midrule
+RS: dust fermo & $\operatorname{diag}(\varepsilon,0,0,0)$ & $P=0$ \\
+RS: radiazione ferma & $\operatorname{diag}(\varepsilon,\varepsilon/3,\varepsilon/3,\varepsilon/3)$ & $T^\mu{}_{\mu}=0$ \\
+RS: fluido in moto & $T^{0x}=(\varepsilon+P)\gamma^2v$ & Trasporta energia e momento \\
+RG: fluido statico & $T^t{}_t=\varepsilon$, $T^r{}_r=-P$ & Le componenti miste sono semplici \\
+RG: anisotropo & $T^r{}_r=-P_r$, $T^\theta{}_\theta=-P_t$ & La TOV cambia se $P_r\ne P_t$ \\
+\bottomrule
+\end{tabular}
+\medskip
+Il principio di equivalenza assicura la forma \emph{localmente} relativistica del fluido, non l'uguaglianza numerica delle componenti coordinate in qualunque carta.
+
+\end{frame}
+
+\section{Equazioni TOV, massa stellare e limiti}\subsection{Derivazione delle TOV}
+
+\begin{frame}[t]{Metrica interna di una stella non rotante}\small\raggedright
+
+Assumiamo una configurazione statica, sferica e un fluido perfetto:
+\[
+ds^2=e^{2\nu(r)}dt^2-e^{2\lambda(r)}dr^2-r^2d\Omega^2.
+\]
+Definiamo la funzione di massa gravitazionale $m(r)$ mediante
+\[
+\boxed{e^{-2\lambda(r)}=1-\frac{2Gm(r)}{r}}
+\quad(c=1).
+\]
+La condizione di regolarita' al centro e' $m(0)=0$; all'esterno, $m(r)=M$.
+\medskip
+Il limite $r=R_*$ della materia e' definito da $P(R_*)=0$ (trascurando atmosfera). Il raggio $R_*$ e' areale: la superficie ha area $4\pi R_*^2$.
+
+\end{frame}
+
+\begin{frame}[t]{TOV (I): equazione per la massa}\small\raggedright
+
+La componente temporale delle equazioni di Einstein, per metrica sferica e fluido perfetto, conduce a
+\[
+\frac{d}{dr}\big[r(1-e^{-2\lambda})\big]=8\pi G r^2\varepsilon.
+\]
+Poiche'
+\[
+r(1-e^{-2\lambda})=2Gm(r),
+\]
+si ottiene
+\[
+\boxed{\frac{dm}{dr}=4\pi r^2\varepsilon(r)}\qquad(G=c=1).
+\]
+Integrando:
+\[
+m(r)=4\pi\int_0^r\varepsilon(r')r'^2dr',\qquad
+M=m(R_*).
+\]
+\textit{Nota:} non e' l'integrale dell'energia sul volume \emph{proprio}, ma la massa gravitazionale definita dalla geometria sferica.
+
+\end{frame}
+
+\begin{frame}[t]{TOV (II): relazione per la funzione temporale}\small\raggedright
+
+La componente radiale delle equazioni di Einstein puo' essere scritta come
+\[
+8\pi G P=-\frac{1-e^{-2\lambda}}{r^2}
++\frac{2e^{-2\lambda}}{r}\nu'.
+\]
+Sostituendo $e^{-2\lambda}=1-2Gm/r$:
+\[
+8\pi GP=-\frac{2Gm}{r^3}
++\frac2r\left(1-\frac{2Gm}{r}\right)\nu'.
+\]
+Risolviamo per $\nu'$:
+\[
+\boxed{\nu'(r)=\frac{G\,[m(r)+4\pi r^3P(r)]}
+{r\,[r-2Gm(r)]}.}
+\]
+Il termine $4\pi r^3P$ e' una correzione gravitazionale relativistica; non compare nella forza newtoniana.
+
+\end{frame}
+
+\begin{frame}[t]{TOV (III): conservazione e pressione}\small\raggedright
+
+La conservazione covariante del fluido perfetto fornisce
+\[
+\frac{dP}{dr}=-(\varepsilon+P)\nu'.
+\]
+Sostituendo l'espressione ottenuta dalle equazioni di Einstein:
+\[
+\boxed{
+\frac{dP}{dr}=-\frac{G(\varepsilon+P)
+[m(r)+4\pi r^3P]}{r[r-2Gm(r)]}.}
+\]
+Questa e' l'equazione \emph{Tolman--Oppenheimer--Volkoff} in unita' $c=1$.
+\[
+\frac{dm}{dr}=4\pi r^2\varepsilon,\qquad
+P=P(\varepsilon)
+\]
+completano il sistema per $P(r)$, $\varepsilon(r)$ e $m(r)$.
+
+\end{frame}
+
+\begin{frame}[t]{TOV: separazione delle correzioni relativistiche}\small\raggedright
+
+In unita' $G=c=1$ la TOV si puo' fattorizzare:
+\[
+\frac{dP}{dr}=-\frac{Gm\varepsilon}{r^2}
+\left(1+\frac{P}{\varepsilon}\right)
+\left(1+\frac{4\pi r^3P}{m}\right)
+\left(1-\frac{2Gm}{r}\right)^{-1}.
+\]
+\begin{enumerate}
+\item $1+P/\varepsilon$: inerzia relativistica e contributo della pressione all'entalpia.
+\item $1+4\pi r^3P/m$: la pressione contribuisce come sorgente gravitazionale.
+\item $(1-2Gm/r)^{-1}$: correzione della geometria spaziale.
+\end{enumerate}
+Nel limite $P\ll\varepsilon$ e $2Gm/r\ll1$:
+\[
+\frac{dP}{dr}\simeq-\frac{Gm\varepsilon}{r^2},
+\]
+che, con $\varepsilon\simeq\rho c^2$ e $c$ ripristinato, diventa $dP/dr=-Gm\rho/r^2$.
+
+\end{frame}
+
+\begin{frame}[t]{TOV in unita' SI: fattori di $c$}\small\raggedright
+
+Se $\varepsilon$ e' una densita' di \emph{energia} (J/m$^3$), $P$ in Pa e $m$ in kg:
+\[
+\boxed{\frac{dm}{dr}=\frac{4\pi r^2}{c^2}\varepsilon(r).}
+\]
+\[
+\boxed{
+\frac{dP}{dr}=-\frac{G}{c^2}
+\frac{[\varepsilon+P]
+\left[m+4\pi r^3P/c^2\right]}{r^2[1-2Gm/(rc^2)]}.}
+\]
+Controllo: $\varepsilon+P$ ha unita' J/m$^3$, il fattore fra parentesi contiene kg, il tutto restituisce Pa/m.
+\medskip
+Non si devono mescolare queste convenzioni con la forma in cui $\rho=\varepsilon/c^2$ e' invece la densita' di \emph{massa}.
+
+\end{frame}
+
+\begin{frame}[t]{Condizioni al centro, al bordo e integrazione numerica}\small\raggedright
+
+Scelto un valore di pressione centrale $P_c$ e una EOS $\varepsilon(P)$:
+\[
+P(0)=P_c,\qquad m(0)=0.
+\]
+Espansione regolare al centro (con $G=c=1$):
+\[
+\begin{aligned}
+m(r)&=\frac{4\pi}{3}\varepsilon_c r^3+O(r^5),\\
+P(r)&=P_c-\frac{2\pi G}{3}(\varepsilon_c+P_c)
+(\varepsilon_c+3P_c)r^2+O(r^4).
+\end{aligned}
+\]
+Si integra verso l'esterno fino al primo $R_*$ con $P(R_*)=0$; la massa e' $M=m(R_*)$.
+\medskip
+Il raccordo esterno fornisce
+$e^{2\nu(R_*)}=1-2GM/(R_*c^2)$ se $t$ e' normalizzato all'infinito.
+
+\end{frame}
+
+\subsection{Baryon number, massa propria e massa gravitazionale}
+
+\begin{frame}[t]{Volume proprio dentro una stella TOV}\small\raggedright
+
+Su una ipersuperficie $t=\mathrm{cost}$:
+\[
+dl^2=e^{2\lambda}dr^2+r^2d\Omega^2.
+\]
+La metrica spaziale ha elemento di volume
+\[
+dV_{\rm prop}=e^\lambda r^2\sin\theta\,dr\,d\theta\,d\phi
+=\frac{4\pi r^2dr}{\sqrt{1-2Gm(r)/(rc^2)}}.
+\]
+Il volume proprio \emph{non} coincide con il volume euclideo coordinato $4\pi r^2dr$.
+\medskip
+Questa differenza e' centrale per distinguere massa gravitazionale, propria e barionica.
+
+\end{frame}
+
+\begin{frame}[t]{Tre masse per una stella statica}\small\raggedright
+
+\[
+\begin{aligned}
+M_G&=\frac{4\pi}{c^2}\int_0^{R_*}\varepsilon(r)r^2dr,\\
+M_P&=\frac{4\pi}{c^2}\int_0^{R_*}
+\frac{\varepsilon(r)r^2}{\sqrt{1-2Gm(r)/(rc^2)}}\,dr,\\
+M_B&=4\pi m_b\int_0^{R_*}
+\frac{n_B(r)r^2}{\sqrt{1-2Gm(r)/(rc^2)}}\,dr.
+\end{aligned}
+\]
+\begin{itemize}
+\item $M_G$: massa che determina la geometria Schwarzschild esterna.
+\item $M_P$: integrale dell'energia \emph{locale} sul volume proprio.
+\item $M_B=m_bN_B$: numero totale di barioni per massa di riferimento.
+\end{itemize}
+Per energia positiva, $M_P\geq M_G$; $M_B$ e' convenzione-dipendente attraverso $m_b$.
+
+\end{frame}
+
+\begin{frame}[t]{Perche' l'EOS chiude le TOV?}\small\raggedright
+
+Il sistema
+\[
+\frac{dm}{dr}=4\pi r^2\varepsilon,\qquad
+\frac{dP}{dr}=-\frac{G(\varepsilon+P)(m+4\pi r^3P)}{r(r-2Gm)}
+\]
+(dove $c=1$) e' chiuso da $P=P(\varepsilon)$.
+\medskip
+La struttura $M(R)$ non richiede esplicitamente la composizione microscopica, ma composizioni diverse possono determinare EOS differenti.
+\medskip
+Se vogliamo calcolare \emph{anche} la massa barionica, serve $n_B(P)$ oppure la termodinamica coerente:
+\[
+d\varepsilon=\mu_Bdn_B,\qquad \varepsilon+P=\mu_Bn_B
+\ \Longrightarrow\ \frac{dn_B}{n_B}=\frac{d\varepsilon}{\varepsilon+P}.
+\]
+Serve inoltre una condizione di normalizzazione per $n_B$.
+
+\end{frame}
+
+\subsection{Soluzione incomprimibile e limite di Buchdahl}
+
+\begin{frame}[t]{Stella a densita' di energia costante}\small\raggedright
+
+Come esercizio analitico, scegliamo $\varepsilon(r)=\varepsilon_*$ per $0\leq r\leq R_*$ (con $G=c=1$).
+\[
+m(r)=\frac{4\pi}{3}\varepsilon_*r^3,
+\qquad
+M=\frac{4\pi}{3}\varepsilon_*R_*^3.
+\]
+Definiamo
+\[
+A(r)=\sqrt{1-\frac{2GM r^2}{R_*^3}},\qquad
+A_*=\sqrt{1-\frac{2GM}{R_*}}.
+\]
+La soluzione interna di Schwarzschild per la pressione e'
+\[
+\boxed{P(r)=\varepsilon_*\,
+\frac{A(r)-A_*}{3A_*-A(r)}.}
+\]
+E' un modello matematico utile per derivare un limite di compattezza; una EOS rigorosamente incomprimibile ha velocita' del suono formalmente infinita e non e' fisicamente causale.
+
+\end{frame}
+
+\begin{frame}[t]{Pressione centrale e limite di Buchdahl}\small\raggedright
+
+Ponendo $r=0$, $A(0)=1$:
+\[
+P_c=\varepsilon_*\frac{1-A_*}{3A_*-1},
+\qquad A_*=\sqrt{1-\frac{2GM}{R_*c^2}}.
+\]
+La pressione centrale diverge quando il denominatore si annulla:
+\[
+3A_*-1=0\quad\Longrightarrow\quad
+1-\frac{2GM}{R_*c^2}=\frac19.
+\]
+Quindi
+\[
+\frac{2GM}{R_*c^2}=\frac89,
+\qquad \boxed{\frac{GM}{R_*c^2}<\frac49.}
+\]
+Sotto le ipotesi di Buchdahl (stella sferica statica, pressione isotropa, densita' non crescente verso l'esterno, e altre regolarita'), questo limite non dipende dall'EOS incomprimibile specifica.
+
+\end{frame}
+
+\begin{frame}[t]{Pressione, causalita' e cautele sul modello incomprimibile}\small\raggedright
+
+\begin{itemize}
+\item \emph{Dominant energy condition} per il fluido isotropo: tipicamente $|P|\leq\varepsilon$; e' diversa dal requisito di causalita' idrodinamica.
+\item Velocita' del suono: $c_s^2=dP/d\varepsilon$. Per una densita' uniforme indipendente dalla pressione, $d\varepsilon/dP=0$ e formalmente $c_s\to\infty$.
+\item Imporre $P_c\leq\varepsilon_*$ nella soluzione incomprimibile fornisce un \emph{vincolo addizionale}, ma non rende il materiale causalmente propagante.
+\item Il limite di Buchdahl $GM/(Rc^2)<4/9$ e' distinto dal limite di compattezza $\sim0.354$ ottenuto in altre classi di EOS causalmente ammissibili.
+\end{itemize}
+\medskip
+\textbf{Correzione concettuale al testo:} $P\leq\varepsilon$ non e' equivalente a $c_s\leq c$.
+
+\end{frame}
+
+\section{Controlli, errori corretti e collegamenti}\subsection{Verifiche analitiche}
+
+\begin{frame}[t]{Buchdahl e condizione addizionale sulla pressione}\small\raggedright
+
+La pressione centrale della soluzione incomprimibile e'
+\[
+\frac{P_c}{\varepsilon_*}=\frac{1-s}{3s-1},
+\qquad s=\sqrt{1-2\mathcal C},\quad \mathcal C=\frac{GM}{Rc^2}.
+\]
+Se aggiungiamo la condizione $P_c\leq\varepsilon_*$:
+\[
+\frac{1-s}{3s-1}\leq1
+\quad\Longrightarrow\quad
+1-s\leq3s-1
+\quad\Longrightarrow\quad s\geq\frac12.
+\]
+Pertanto
+\[
+1-2\mathcal C\geq\frac14
+\quad\Longrightarrow\quad \mathcal C\leq\frac38.
+\]
+Questo e' un limite addizionale nell'esempio incomprimibile; $P\leq\varepsilon$ e' una condizione energetica, non prova la causalita' $dP/d\varepsilon\leq1$.
+
+\end{frame}
+
+\begin{frame}[t]{Controlli di coerenza da ripetere nei calcoli}\small\raggedright
+
+\begin{enumerate}
+\item \textbf{Segnatura:} con $+---$, $u^\mu u_\mu=+1$, $T^{\mu\nu}=(\varepsilon+P)uu-Pg^{\mu\nu}$.
+\item \textbf{Ricci:} dichiarare il segno di $[\nabla_\mu,\nabla_\nu]$ prima di confrontare componenti fra libri.
+\item \textbf{Dimensioni:} ripristinare $c^2$ nell'equazione $m'=4\pi r^2\varepsilon/c^2$.
+\item \textbf{Vuoto:} verificare $\mathcal R=0$ prendendo la traccia in quattro dimensioni.
+\item \textbf{Schwarzschild:} $g_{tt}=1-2GM/(rc^2)$, $g_{rr}=-[1-2GM/(rc^2)]^{-1}$.
+\item \textbf{TOV:} $P'<0$ per $\varepsilon,P>0$ e $r>2Gm$.
+\item \textbf{Termodinamica:} $\varepsilon, P$ sono misure comoventi; non confondere $T^{tt}$ con $\varepsilon$.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}[t]{Correzioni al file iniziale: errori formali}\small\raggedright
+
+\begin{itemize}
+\item Eliminati marcatori Vim \texttt{<++>} e frame incompleti; ogni frame e' compilabile autonomamente in un documento Beamer.
+\item Corretto il calcolo variazionale delle geodesiche: indici liberi/ripetuti, simmetrizzazione e differenziale $\delta x^\mu$.
+\item Completato il commutatore $[\nabla_\mu,\nabla_\nu]V^\rho=R^\rho{}_{\sigma\mu\nu}V^\sigma$ (mancava l'azione della seconda derivata).
+\item Completate le formule di Stokes: da $\nabla_\mu J^\mu=0$ segue l'uguaglianza delle cariche fra due ipersuperfici in assenza di flusso laterale.
+\item Corretti $\Gamma^t{}_{tr}$ e la traccia delle equazioni nel vuoto, oltre al fattore $2GM/r$ nella metrica esterna.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[t]{Correzioni concettuali e ambito di validita'}\small\raggedright
+
+\begin{itemize}
+\item Geodesiche timelike: \emph{estremizzano} il tempo proprio; massimo locale sotto condizioni, non sempre massimo globale.
+\item Connessione non nulla non implica curvatura non nulla; le coordinate sferiche di Minkowski forniscono un controesempio.
+\item EEP fornisce inerzialita' \emph{locale}; le maree e la deviazione geodetica restano misurabili.
+\item In un fluido perfetto la formula covariante del tensore energia--impulso dipende dalla segnatura; le componenti comoventi non vanno confuse con quelle coordinate.
+\item Le equazioni di continuita' ed Eulero non relativistiche sono \emph{limiti}, non l'esatta equazione relativistica $\nabla_\mu T^{\mu\nu}=0$.
+\item Una stella incomprimibile non soddisfa causalita' acustica, pur essendo un ottimo esempio matematico per il limite di Buchdahl.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[t]{Mappa dei risultati del capitolo 2}\small\raggedright
+
+\begin{enumerate}
+\item Principio di equivalenza $\Rightarrow$ metriche locali, tempo proprio e caduta libera.
+\item Geodesiche, Christoffel e Riemann $\Rightarrow$ moto e maree in spaziotempo curvo.
+\item Tensore di Einstein e $T^{\mu\nu}$ $\Rightarrow$ equazioni del campo, $G_{\mu\nu}=8\pi T_{\mu\nu}$.
+\item Soluzione statica di vuoto $\Rightarrow$ Schwarzschild e misura gravitazionale di $M$.
+\item Fluido perfetto + conservazione + Einstein $\Rightarrow$ equazioni TOV e relazione $M(R)$ per una EOS scelta.
+\item Esempio a densita' costante $\Rightarrow$ limite di Buchdahl e differenza fra incomprimibilita' e causalita'.
+\end{enumerate}
+\medskip
+Il legame con i capitoli sulle stelle compatte e' la EOS: tutta la microfisica entra nella struttura stellare tramite $P(\varepsilon)$, sotto le ipotesi di fluido perfetto statico e sferico.
+
+\end{frame}
+

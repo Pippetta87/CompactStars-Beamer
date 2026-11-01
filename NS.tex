@@ -32,6 +32,178 @@
     \end{itemize}
 \end{frame}
 
+% ===== INIZIO INTEGRAZIONE HAENSEL CAP. 2 =====
+% Integrazione Haensel, Potekhin, Yakovlev (2006), cap. 2
+% Inserire in NS.tex subito dopo \end{frame} del frame {Atmosphere},
+% prima di \begin{frame}{BPS model}. Non contiene \section o preambolo.
+
+\begin{frame}[t]{Dall'atmosfera alla crosta: quali gradi di libertà?}
+\small
+\begin{itemize}
+\item Atmosfera e oceano: composizione e ionizzazione possono dipendere da $T$; nell'oceano gli ioni sono in fase liquida.
+\item Crosta esterna: nuclei ionizzati in un reticolo coulombiano e gas di elettroni degeneri; nessun neutrone libero.
+\item Crosta interna: oltre al \emph{neutron drip} compaiono neutroni non legati ai nuclei; l'interazione forte diventa essenziale.
+\item Il capitolo 2 descrive anzitutto la termodinamica del plasma elettrone--ione, mentre il capitolo 3 determina composizione ed EOS della crosta.
+\end{itemize}
+\medskip
+\textbf{Approssimazione:} plasma non magnetizzato o campo non quantizzante; per campi quantizzanti occorre il capitolo 4.
+\par\scriptsize\emph{Rif.: Haensel et al. (2006), introduzione al cap. 2, fig. 2.1.}
+\end{frame}
+
+\begin{frame}[t]{Plasma elettrone--ione: neutralità e scale geometriche}
+\small
+Per una sola specie nucleare $(A,Z)$, con densità numerica $n_i$:
+\[
+ n_e=Zn_i,\qquad n_b\simeq An_i,\qquad
+ a_i=\left(\frac{3}{4\pi n_i}\right)^{1/3},\quad
+ a_e=\left(\frac{3}{4\pi n_e}\right)^{1/3}.
+\]
+Ne segue $a_i=Z^{1/3}a_e$: la sfera ionica contiene esattamente la carica elettronica $-Ze$ che neutralizza il nucleo.
+\medskip
+\begin{itemize}
+\item Gli elettroni costituiscono un fondo quasi uniforme se la polarizzazione è piccola.
+\item Il modello a un componente (OCP) tratta gli ioni su un fondo elettronico neutralizzante rigido.
+\item In una miscela: $n_e=\sum_j Z_jn_j$ e $n_b\simeq\sum_j A_jn_j$ (crosta esterna).
+\end{itemize}
+\par\scriptsize\emph{Rif.: §§2.1.1, 2.1.3; eq. (2.23).}
+\end{frame}
+
+\begin{frame}[t]{Elettroni: degenerazione e relatività sono criteri diversi}
+\small
+\[
+ p_{F,e}=\hbar(3\pi^2 n_e)^{1/3},\qquad
+ x_r=\frac{p_{F,e}}{m_ec},\qquad
+ \mu_e(T=0)=\sqrt{m_e^2c^4+p_{F,e}^2c^2}.
+\]
+La temperatura di Fermi, definita sottraendo l'energia di riposo, è
+\[
+ k_BT_F=\sqrt{m_e^2c^4+p_{F,e}^2c^2}-m_ec^2.
+\]
+\begin{itemize}
+\item $T\ll T_F$: elettroni degeneri (distribuzione quasi a gradino).
+\item $x_r\ll1$: elettroni non relativistici; $x_r\gg1$: ultrarelativistici.
+\item Un gas può essere \emph{degenere e non relativistico} oppure \emph{degenere e relativistico}: le due classificazioni non coincidono.
+\end{itemize}
+\par\scriptsize\emph{Rif.: §2.1.2, eq. (2.2)--(2.5).}
+\end{frame}
+
+\begin{frame}[t]{Accoppiamento coulombiano: gas, liquido e cristallo}
+\small
+L'energia coulombiana caratteristica di due ioni è $Z^2e^2/a_i$ (unità gaussiane). Il rapporto con l'energia termica definisce
+\[
+ \boxed{\Gamma=\frac{Z^2e^2}{a_i k_BT}}.
+\]
+\begin{itemize}
+\item $\Gamma\ll1$: gas ionico debolmente accoppiato.
+\item $\Gamma\gtrsim1$: liquido coulombiano fortemente correlato.
+\item $\Gamma\gtrsim\Gamma_m\simeq175$: cristallizzazione nell'OCP \emph{classico}, con fondo rigido.
+\end{itemize}
+\[
+ T_m=\frac{Z^2e^2}{a_i k_B\Gamma_m}\propto Z^2\left(\frac{\rho}{A}\right)^{1/3}.
+\]
+A differenza degli elettroni, gli ioni a bassa temperatura diventano \emph{fortemente correlati} anziché formare normalmente un gas di Fermi.
+\par\scriptsize\emph{Rif.: §2.1.3, eq. (2.22), (2.28).}
+\end{frame}
+
+\begin{frame}[t]{Quando conta il moto quantistico degli ioni?}
+\small
+Le oscillazioni collettive del reticolo hanno scala di frequenza plasmonica
+\[
+ \omega_{pi}=\left(\frac{4\pi Z^2e^2 n_i}{m_i}\right)^{1/2},\qquad
+ T_{pi}=\frac{\hbar\omega_{pi}}{k_B}.
+\]
+\begin{itemize}
+\item Per $T\gg T_{pi}$ le vibrazioni ioniche sono approssimativamente classiche.
+\item Per $T\ll T_{pi}$ dominano gli effetti quantistici e l'energia di punto zero.
+\item Il criterio $\Gamma_m\simeq175$ non è universale: vale per il cristallo OCP classico; a densità elevate le fluttuazioni quantistiche modificano la fusione.
+\end{itemize}
+\medskip
+\textbf{Conseguenza:} un reticolo può essere coulombianamente solido ma avere fononi quantistici, importanti per calore specifico e trasporto.
+\par\scriptsize\emph{Rif.: §2.1.3, eq. (2.29)--(2.32); §2.3.3.}
+\end{frame}
+
+\begin{frame}[t]{Energia libera: costruire una EOS coerente}
+\small
+Per $T,V,\{N_j\}$ assegnati si usa il potenziale di Helmholtz
+\[
+ F=-k_BT\ln\mathcal Z,\qquad
+ P=-\left(\frac{\partial F}{\partial V}\right)_{T,N_j},\quad
+ S=-\left(\frac{\partial F}{\partial T}\right)_{V,N_j}.
+\]
+Nel plasma completamente ionizzato una decomposizione utile è
+\[
+ F=F_e^{\rm id}+F_i^{\rm id}+F_{ii}+F_{ee}^{\rm xc}+F_{ie}^{\rm pol}.
+\]
+\begin{itemize}
+\item $F_{ii}$: correlazioni coulombiane degli ioni con fondo neutralizzante.
+\item $F_{ee}^{\rm xc}$: scambio e correlazione elettronica.
+\item $F_{ie}^{\rm pol}$: risposta/polarizzazione del fondo elettronico.
+\end{itemize}
+Le derivate delle \emph{stesse} funzioni termodinamiche assicurano coerenza tra pressione, energia ed entropia.
+\par\scriptsize\emph{Rif.: §§2.2--2.2.1, eq. (2.33)--(2.45).}
+\end{frame}
+
+\begin{frame}[t]{Dall'energia coulombiana alla pressione del reticolo}
+\small
+Per un reticolo bcc con elettroni uniformi, l'energia elettrostatica per ione ha la forma
+\[
+ W_L=-\alpha_M\frac{Z^2e^2}{a_i},\qquad \alpha_M\simeq0.896\quad
+ (\text{bcc, fondo rigido}).
+\]
+Poiché $a_i\propto n_i^{-1/3}$, a composizione fissata
+\[
+ \varepsilon_L=n_iW_L=-C n_i^{4/3},\qquad
+ P_L=n_i^2\frac{dW_L}{dn_i}=\frac13\varepsilon_L<0.
+\]
+\begin{itemize}
+\item La pressione dominante è generalmente quella degli elettroni degeneri.
+\item Il termine reticolare è relativamente piccolo per $P(\varepsilon)$, ma può cambiare quale nuclide minimizza il potenziale di Gibbs.
+\item Il valore $0.9$ del modello di sfera ionica è un'approssimazione di $\alpha_M$.
+\end{itemize}
+\par\scriptsize\emph{Rif.: §§2.3.2--2.3.3, in particolare discussione di eq. (2.88).}
+\end{frame}
+
+\begin{frame}[t]{Polarizzazione elettronica: oltre il fondo rigido}
+\small
+Un potenziale elettrostatico debole perturba la densità elettronica. Nella risposta lineare statica,
+\[
+ \delta n_e\simeq\frac{\partial n_e}{\partial\mu_e}\,e\phi,\qquad
+ k_{\rm TF}^2=4\pi e^2\frac{\partial n_e}{\partial\mu_e}.
+\]
+La soluzione schermata di una carica puntiforme assume, al limite di grandi lunghezze d'onda, la forma
+\[
+ \phi(r)\simeq\frac{q}{r}e^{-k_{\rm TF}r}.
+\]
+\begin{itemize}
+\item Il fondo elettronico non è perfettamente rigido: la risposta modifica energia e pressione.
+\item La correzione può essere piccola per l'EOS globale ma rilevante per composizione, trasporto e scattering.
+\item La semplice forma di Thomas--Fermi è un limite di risposta lineare, non una descrizione esatta a ogni $k$.
+\end{itemize}
+\par\scriptsize\emph{Rif.: §§2.1.2, 2.4; eq. (2.13), (2.20).}
+\end{frame}
+
+\begin{frame}[t]{Raccordo con BPS: quale potenziale minimizzare?}
+\small
+Il modello BPS considera $T\simeq0$, una specie $(A,Z)$ per strato, $n_e=Zn_i$, e
+\[
+ \varepsilon=n_iW_N(A,Z)+\varepsilon_e(n_e)+n_iW_L(n_i,Z),
+ \quad P=P_e+P_L.
+\]
+A pressione assegnata il potenziale rilevante è l'energia libera di Gibbs per barione:
+\[
+ \boxed{g(A,Z;P)=\frac{\varepsilon+P}{n_b}
+ =\frac{W_N+Z\mu_e+\tfrac43 W_L}{A}},\quad n_b=An_i.
+\]
+\begin{itemize}
+\item Per ogni $(A,Z)$ si risolve $P=P(n_i;A,Z)$.
+\item Si confrontano i valori di $g$ alla \emph{stessa pressione}.
+\item Il nucleo che minimizza $g$ è quello termodinamicamente favorito.
+\end{itemize}
+\par\scriptsize\emph{Raccordo didattico al frame ``BPS model'' già presente in NS.tex; per la composizione d'equilibrio vedere cap. 3.}
+\end{frame}
+
+% ===== FINE INTEGRAZIONE HAENSEL CAP. 2 =====
+
 \begin{frame}{BPS model} 
     \begin{itemize}
         \item Modello di Baym, Pethick, Sutherland (1971): reticolo di nuclei neutron-rich e gas di elettroni degeneri, assenza di neutroni liberi; $T=0$ equilibrio termodinamico/$\beta$-equilibrio; unica specie nucleare $(A,Z)$ per ogni strato; nuclei in reticolo coulombiano bcc; elettroni degeneri trattati come gas relativistico ideale; neutralit\'a elettrica $n_e=Zn_N$ dove $n_N$ \'e densit\'a dei nuclei; densit\'a barionica $n_b=An_N$; assenza neutroni liberi $n_n^{free}=0$.
@@ -80,7 +252,7 @@
 \end{frame}
 
 \begin{frame}{Nuclear shell model}
-    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},angle=90,clip,keepaspectratio,width=0.95\textwidth]{Schaffner/magic-numbers-shell}\label{fig:Schaffner-magic-numbers-shell}\end{figure}
+    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},angle=0,clip,keepaspectratio,width=0.95\textwidth]{Schaffner/magic-numbers-shell}\label{fig:Schaffner-magic-numbers-shell}\end{figure}
     Il pattern che emerge dal modello per composizione di Oter Crust of NS \'e analogo a quello dei numeri magici per chiusura shell protoni/neutroni del modello nucleare a shell.
     \begin{columns}[T]
         \begin{column}{0.5\textwidth}
@@ -204,6 +376,32 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}[t]{Crosta catalizzata: ipotesi di equilibrio}
+\small
+\begin{itemize}
+\item Haensel et al., cap.~3, \S3.1: distinguiamo la crosta in equilibrio nucleare (\emph{catalyzed matter}) da quella formata per accrescimento.
+\item Per materia fredda e trasparente ai neutrini, le reazioni deboli possono cambiare la composizione finché il potenziale appropriato è minimo.
+\item A temperatura nulla: \(G=E+PV\), \(g=G/N_B=(\varepsilon+P)/n_B\).
+\item A pressione imposta, due composizioni \(i,j\) competono confrontando \(g_i(P)\) e \(g_j(P)\); una transizione si ha quando \(g_i(P_t)=g_j(P_t)\).
+\item Questo criterio collega il modello BPS della crosta esterna alla minimizzazione dell'energia delle celle nella crosta interna.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Neutron drip: dalla separazione nucleare alla soglia termodinamica}
+\small
+\begin{itemize}
+\item In vuoto la separazione di un neutrone è
+\[
+S_n(A,Z)=[M(A-1,Z)+m_n-M(A,Z)]c^2.
+\]
+\(S_n<0\) segnala instabilità rispetto all'emissione di un neutrone libero.
+\item Nella crosta la soglia va invece formulata per l'intero sistema a pressione fissata: il costo di introdurre neutroni nel gas esterno deve essere confrontato con quello di mantenerli nel cluster.
+\item Al primo drip, con gas neutronico infinitesimo, \(\mu_n^{\rm gas}\to m_nc^2\) (trascurando correzioni d'interazione a densità nulla).
+\item In equilibrio per lo scambio di neutroni: \(\mu_n^{\rm cluster}=\mu_n^{\rm gas}\).
+\item Il valore della densità di drip dipende dalle masse nucleari e dalla EOS elettronica/reticolare; non basta una sola drip line nel vuoto.
+\end{itemize}
+\end{frame}
+
 \subsection{Inner Crust}
 
 \begin{frame}{Inner Crust Phenomenology}
@@ -305,6 +503,82 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}[t]{Cella di Wigner--Seitz: bilanci e variabili}
+\small
+\begin{itemize}
+\item Haensel et al., \S3.3: una cella contiene \(Z\) protoni, neutroni legati e un gas di neutroni esterni, con elettroni quasi uniformi.
+\item Neutralità: \(n_e=Z/V_{\rm cell}\); densità barionica media:
+\[
+n_B=\frac{N+Z}{V_{\rm cell}},\qquad V_{\rm cell}=\frac{4\pi}{3}R_{\rm WS}^3
+\]
+per la cella sferica.
+\item La struttura non è determinata dalla sola massa nucleare: occorre variare \(Z,N,R_{\rm WS}\) e i profili \(n_n(r),n_p(r)\).
+\item La minimizzazione a \(n_B\) fissata determina la composizione; per una EOS coerente si ricavano poi \(\varepsilon(n_B)\), \(\mu_B=d\varepsilon/dn_B\), \(P=n_B\mu_B-\varepsilon\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Hartree--Fock, ETF e CLDM: cosa si approssima?}
+\small
+\begin{itemize}
+\item \textbf{Hartree--Fock} (\S3.3.1): orbitali nucleonici autoconsistenti in un campo medio; include effetti di shell, ma dipende dalle condizioni al bordo della cella.
+\item \textbf{Extended Thomas--Fermi} (\S3.3.2): funzionale di densità con termini di gradiente; descrive profili lisci e contributi di superficie, senza shell esplicite al livello semiclassico.
+\item \textbf{CLDM} (\S3.3.3): parametrizza il cluster con densità interne, volume, superficie e forma; separa i contributi fisici e facilita il confronto fra geometrie.
+\item Non sono tre EOS indipendenti per definizione: per confronti coerenti occorre usare la stessa interazione nucleonica nei termini di volume e superficie.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{CLDM: decomposizione dell'energia della cella}
+\small
+\begin{align*}
+E_{\rm cell}&=E_{\rm bulk}^{\rm cluster}+E_{\rm bulk}^{n,\rm ext}
++E_{\rm surf}+E_{\rm Coul}+E_e+\cdots,\\
+\varepsilon&=\frac{E_{\rm cell}}{V_{\rm cell}}.
+\end{align*}
+\begin{itemize}
+\item Il termine \emph{bulk} deriva dalla EOS della materia nucleare a densità e asimmetria locali.
+\item La superficie penalizza l'interfaccia cluster--gas neutronico; la sua tensione dipende dall'asimmetria e dal gas circostante.
+\item Il termine coulombiano penalizza la separazione spaziale delle cariche, ma è ridotto dal fondo elettronico.
+\item Il gas esterno esercita pressione sul cluster: nel CLDM il nucleo è \emph{compressibile}, non una goccia a densità interna fissata.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Equilibrio meccanico: perché il cluster si comprime?}
+\small
+\begin{itemize}
+\item Per un'interfaccia sferica, una variazione del raggio \(R\) a numero di particelle appropriato fissato cambia energia di volume e superficie.
+\item Nel limite elementare con tensione costante \(\sigma\):
+\[
+E_{\rm surf}=4\pi R^2\sigma,\quad
+\frac{dE_{\rm surf}}{dV}=\frac{2\sigma}{R}.
+\]
+\item Ne segue il contributo di Laplace alla differenza di pressione:
+\[
+P_{\rm in}-P_{\rm out}=\frac{2\sigma}{R}
+\quad\text{(senza Coulomb e dipendenza di \(\sigma\)).}
+\]
+\item Nel CLDM realistico la condizione di equilibrio comprende anche la forza coulombiana e la variazione della tensione superficiale.
+\item Questo mostra perché la pressione del gas di neutroni modifica la densità nucleare interna.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Superficie contro Coulomb: scala dei cluster}
+\small
+\begin{itemize}
+\item Per una geometria fissata e una frazione volumica \(u\), l'energia di superficie per volume scala come
+\(\varepsilon_{\rm surf}\propto \sigma u/R\).
+\item L'energia coulombiana scala schematicamente come
+\(\varepsilon_{\rm Coul}\propto e^2(\Delta n_p)^2 R^2\,u\,f(u)\).
+\item Minimizzando \(a/R+bR^2\) rispetto a \(R\):
+\[
+-\frac{a}{R^2}+2bR=0
+\quad\Longrightarrow\quad
+\varepsilon_{\rm surf}=2\varepsilon_{\rm Coul}.
+\]
+\item La relazione vale nel modello semplice, a geometria e densità fissate, trascurando curvature e altri contributi.
+\item La competizione seleziona una dimensione finita dei cluster: senza Coulomb la separazione di fase macroscopica sarebbe favorita.
+\end{itemize}
+\end{frame}
+
 \begin{frame}{Hartree--Fock autoconsistente nella cella di Wigner--Seitz}
 
 \small
@@ -399,9 +673,780 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}[t]{Pasta nucleare: la geometria è una variabile}
+\small
+\begin{itemize}
+\item Haensel et al., \S3.4.2: vicino al fondo della crosta la forma dei cluster può cambiare.
+\item Geometrie idealizzate: gocce sferiche (\(d=3\)), cilindri (\(d=2\)), lastre (\(d=1\)); alle frazioni volumiche elevate compaiono strutture inverse (tubi e bolle).
+\item Per ogni geometria si minimizzano dimensione, frazione volumica e composizione:
+\[
+\varepsilon_{\rm eq}(n_B)=\min_{\text{forma, profili, composizione}}
+\varepsilon(n_B).
+\]
+\item La sequenza di forme e perfino la presenza della pasta dipendono dal funzionale nucleare e dai termini di superficie/curvatura.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Transizione crosta--core: due problemi distinti}
+\small
+\begin{itemize}
+\item Dal lato della crosta (\S3.4): si confronta l'energia delle configurazioni non uniformi con quella della materia uniforme.
+\item Dal lato del core (\S3.5): si verifica se la materia uniforme è stabile rispetto a piccole fluttuazioni di densità e composizione.
+\item Una condizione locale di stabilità richiede che la seconda variazione dell'energia rispetto alle perturbazioni ammesse sia positiva:
+\[
+\delta^2 E>0.
+\]
+\item Il punto in cui scompare la stabilità locale (\emph{spinodale}) non coincide necessariamente con il punto di uguaglianza delle energie di due fasi (\emph{binodale}).
+\item La densità della transizione è quindi dipendente dal modello e dal trattamento di Coulomb e gradienti.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{EOS della crosta: dalla minimizzazione alla pressione}
+\small
+\begin{itemize}
+\item Haensel et al., \S3.6: il risultato microscopico utile alla struttura stellare è una relazione termodinamicamente coerente \(\varepsilon(n_B)\).
+\item A \(T=0\), per un solo numero barionico conservato lungo la sequenza di equilibrio:
+\[
+d\varepsilon=\mu_B\,dn_B,\qquad
+P=n_B\mu_B-\varepsilon
+=n_B^2\frac{d}{dn_B}\left(\frac{\varepsilon}{n_B}\right).
+\]
+\item Le transizioni di composizione possono produrre discontinuità di densità a pressione comune: non vanno interpolate come se fossero un'unica fase omogenea.
+\item Nella crosta esterna domina spesso la pressione elettronica; in quella interna diventano importanti i neutroni esterni e le interazioni nucleari.
+\end{itemize}
+\end{frame}
+
+
+% --- Haensel §§3.4.3, 3.7: correzioni quantistiche ed elasticità ---
+\begin{frame}[t]{Oltre il CLDM: quali effetti quantistici mancano?}
+\small
+\begin{itemize}
+\item Nel CLDM l'energia della cella è descritta da termini volumetrici, superficiali e coulombiani: la struttura discreta dello spettro nucleonico è mediata.
+\item La quantizzazione dei livelli genera correzioni di \emph{shell} per protoni legati e neutroni, che possono modificare la preferenza fra configurazioni vicine in energia.
+\item I neutroni del gas sono soggetti al potenziale periodico dei cluster: la discretizzazione artificiale degli stati in una cella Wigner--Seitz finita va distinta dagli effetti fisici di banda.
+\item La correzione quantistica può essere piccola rispetto all'energia totale ma decisiva per la composizione di equilibrio.
+\end{itemize}
+{\footnotesize Haensel, Potekhin e Yakovlev, §3.4.3; collegamento con §§3.3--3.4.}
+\end{frame}
+
+\begin{frame}[t]{Correzione di shell: separare energia liscia e oscillazioni}
+\small
+\[
+E_{\rm quant}=\widetilde E+\delta E_{\rm shell},\qquad
+\delta E_{\rm shell}=\sum_{\alpha\in\mathrm{occ}}\epsilon_\alpha
+-\widetilde{\sum_{\alpha\in\mathrm{occ}}\epsilon_\alpha}.
+\]
+\begin{itemize}
+\item La tilde indica una media liscia dello spettro, nello spirito della procedura di Strutinsky; l'espressione è schematica e richiede attenzione ai termini di doppio conteggio.
+\item In una trattazione \emph{ETF + shell} si usa la parte semiclassica per l'energia media e si aggiungono le oscillazioni quantistiche pertinenti.
+\item La minimizzazione deve confrontare energie totali a composizione e pressione compatibili, non soltanto i singoli livelli.
+\end{itemize}
+{\footnotesize Approfondimento metodologico collegato a Haensel §3.4.3.}
+\end{frame}
+
+\begin{frame}[t]{Neutroni del gas: celle Wigner--Seitz e bande}
+\small
+\begin{itemize}
+\item La cella sferica Wigner--Seitz semplifica il problema quantistico, ma le condizioni al bordo impongono uno spettro discretizzato anche a neutroni che fisicamente possono propagarsi nel reticolo.
+\item Un reticolo periodico richiede invece stati di Bloch: $\psi_{n\mathbf k}(\mathbf r)=e^{i\mathbf k\cdot\mathbf r}u_{n\mathbf k}(\mathbf r)$, con $u_{n\mathbf k}$ periodica.
+\item Le bande neutroniche modificano la mobilità dei neutroni non legati; questa informazione è importante anche per l'\emph{entrainment} del superfluido.
+\item Per la sola EOS media, errori di quantizzazione possono essere meno evidenti che nelle differenze energetiche fra configurazioni concorrenti.
+\end{itemize}
+{\footnotesize §3.4.3; raccordo fisico con la microfisica del trasporto neutronico.}
+\end{frame}
+
+\begin{frame}[t]{Reticolo coulombiano: energia di deformazione e modulo di taglio}
+\small
+Per una piccola deformazione di taglio $\gamma$ di un mezzo isotropizzato:
+\[
+\frac{\Delta E}{V}=\frac12\mu_{\rm shear}\gamma^2+O(\gamma^3),
+\qquad \sigma_{xy}=\mu_{\rm shear}\gamma.
+\]
+\begin{itemize}
+\item $\mu_{\rm shear}$ è una proprietà meccanica distinta dal modulo di compressibilità $K$ e dal potenziale chimico $\mu_B$.
+\item Per un reticolo coulombiano bcc ideale con ioni puntiformi, la media policristallina dà approssimativamente
+\[
+\mu_{\rm shear}\simeq0.1194\,n_i\frac{(Ze)^2}{a_i},\quad
+ a_i=\left(\frac{3}{4\pi n_i}\right)^{1/3}
+\]
+(in unità gaussiane; il coefficiente dipende dalle ipotesi sul reticolo).
+\item Screening elettronico, temperatura, impurità e geometrie pasta possono modificare la risposta elastica.
+\end{itemize}
+{\footnotesize Haensel et al., §3.7; coefficiente per reticolo coulombiano ideale.}
+\end{frame}
+
+\begin{frame}[t]{Elasticità e oscillazioni torsionali della crosta}
+\small
+\begin{itemize}
+\item Un fluido ideale non sostiene onde di taglio; la crosta solida può sostenere perturbazioni trasversali.
+\item Nel limite locale newtoniano e isotropo:
+\[
+v_t=\sqrt{\frac{\mu_{\rm shear}}{\rho_{\rm dyn}}},
+\]
+con $\rho_{\rm dyn}$ densità inerziale che partecipa al moto, non necessariamente uguale alla densità totale quando intervengono componenti superfluide.
+\item Una stima dimensionale delle frequenze torsionali dipende da $v_t$, raggio, spessore e condizioni al contorno; la previsione realistica richiede relatività generale e accoppiamento crosta--core.
+\item Il legame con glitch e oscillazioni dipende anche dall'entrainment e dall'eventuale campo magnetico.
+\end{itemize}
+{\footnotesize Haensel et al., §3.7; raccordi fenomenologici oltre la sola EOS.}
+\end{frame}
+% --- fine integrazione NS ---
+
+\begin{frame}[t]{Elasticità della crosta: perché conta il reticolo}
+\small
+\begin{itemize}
+\item Haensel et al., \S3.7: il reticolo coulombiano resiste alle deformazioni di taglio, a differenza di un fluido.
+\item Per piccole deformazioni isotropizzate, l'energia elastica contiene un termine proporzionale al modulo di taglio \(\mu_{\rm shear}\).
+\item In un reticolo coulombiano il valore caratteristico scala come
+\[
+\mu_{\rm shear}\sim n_i\frac{(Ze)^2}{a_i},
+\]
+con coefficiente numerico dipendente da reticolo e media delle orientazioni.
+\item Il modulo di taglio è rilevante per oscillazioni torsionali, deformazioni sostenibili e fenomenologia dei glitches; non coincide con il potenziale chimico \(\mu_B\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Crosta catalizzata e crosta accresciuta}
+\small
+\begin{itemize}
+\item Il modello di equilibrio assoluto minimizza l'energia a ogni pressione, ma una crosta reale può conservarne la memoria evolutiva.
+\item Haensel et al., \S3.8: nella crosta accresciuta la composizione segue una successione di catture elettroniche, emissioni neutroniche e reazioni picnonucleari, anziché la sequenza BPS di equilibrio globale.
+\item A parità di pressione possono differire \(Z\), impurità, rilascio di calore e proprietà di trasporto.
+\item \textbf{Raccordo osservativo:} l'EOS e l'elasticità della crosta entrano nei modelli di raffreddamento, oscillazioni e glitches.
+\end{itemize}
+\end{frame}
+
 \section{Neutron Star Core}
 
 \subsection{Outer core}
+
+\begin{frame}[t]{Core nucleonico: problema microscopico (Haensel, §5.1)}
+\small
+\begin{itemize}
+\item Al dissolvimento dei cluster, la materia diventa un fluido di neutroni, protoni ed elettroni; compaiono muoni quando $\mu_e\ge m_\mu c^2$.
+\item A $T\simeq0$ la composizione si trova minimizzando $\varepsilon(n_n,n_p,n_e,n_\mu,\ldots)$ a densità barionica fissata e carica netta nulla.
+\item Conservazione: $n_B=n_n+n_p$; neutralità: $n_p=n_e+n_\mu$.
+\item L'EOS $P(\varepsilon)$ richiede due ingredienti distinti: Hamiltoniana delle interazioni e soluzione del problema quantistico a molti corpi.
+\item A densità crescenti, le estrapolazioni delle interazioni e la comparsa di nuove specie introducono incertezza (Haensel, cap.~5).
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Saturazione e incomprimibilità: significato delle derivate (§5.4)}
+\small
+Per materia nucleare simmetrica uniforme, $e(n)=\varepsilon(n)/n-m_Nc^2$:
+\[
+P=n^2\frac{de}{dn},\qquad e'(n_0)=0,\qquad
+K_0=9n_0^2e''(n_0).
+\]
+\begin{itemize}
+\item Il minimo di $e(n)$ determina la saturazione $n_0$ e implica $P(n_0)=0$.
+\item Espansione locale, con $x=(n-n_0)/(3n_0)$:
+\[
+e(n)=e(n_0)+\tfrac12K_0x^2+\mathcal O(x^3).
+\]
+\item $K_0$ misura la curvatura locale: non determina da solo la rigidità dell'EOS a parecchie volte $n_0$.
+\item Il termine di massa a riposo va mantenuto in $\varepsilon$, ma non altera $P=n^2 de/dn$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Dal potenziale nucleone--nucleone alla materia densa (§§5.5--5.6)}
+\small
+\begin{itemize}
+\item Un'Hamiltoniana non relativistica schematica è
+\[
+H=\sum_i\frac{\mathbf p_i^2}{2m_i}+\sum_{i<j}V_{ij}
++\sum_{i<j<k}V_{ijk}+\cdots.
+\]
+\item $V_{ij}$ contiene contributi centrali, spin, isospin, tensore e spin--orbita; i dati di scattering e del deuterone vincolano l'interazione a due corpi.
+\item Le forze a tre corpi $V_{ijk}$ sono necessarie nei modelli microscopici per riprodurre proprietà di saturazione e sistemi nucleari: non equivalgono a una semplice riscalatura del potenziale a due corpi.
+\item Nello scambio mesonico il termine a lungo raggio è associato ai pioni; a distanze brevi intervengono ulteriori contributi efficaci.
+\item Un fit dei dati a due nucleoni non determina univocamente l'EOS del sistema infinito.
+\end{itemize}
+\end{frame}
+
+
+% === Approfondimento Haensel §§5.5--5.6: interazioni NN e NNN ===
+\begin{frame}[t]{Hamiltoniana efficace: dal problema QCD al problema nucleare}
+\small
+\begin{itemize}
+\item La descrizione fondamentale delle interazioni forti è la QCD; nei modelli nucleari di Haensel (§5.5) si usano invece nucleoni e mesoni come gradi di libertà efficaci.
+\item Per materia nucleonica non relativistica:
+\[
+H=\sum_i\frac{\mathbf p_i^2}{2m_N}
++\sum_{i<j}V_{ij}+\sum_{i<j<k}V_{ijk}+\cdots.
+\]
+\item Il termine $V_{ij}$ viene vincolato principalmente da scattering $NN$ e deuterone; $V_{ijk}$ da nuclei leggeri e proprietà della materia nucleare.
+\item La forza debole determina le condizioni di equilibrio beta, non il contributo dominante all'energia di interazione del core.
+\end{itemize}
+{\footnotesize Haensel et al., §5.5, pp.~221--222.}
+\end{frame}
+
+\begin{frame}[t]{Potenziale NN: struttura operatoriale}
+\small
+Una parametrizzazione schematica è
+\[
+V_{ij}=\sum_p v_p(r_{ij})\,O_{ij}^{(p)},\qquad
+O_{ij}^{(p)}\in
+\left\{1,\boldsymbol\sigma_i\!\cdot\!\boldsymbol\sigma_j,
+S_{ij},\mathbf L\!\cdot\!\mathbf S,\ldots\right\}
+\otimes\left\{1,\boldsymbol\tau_i\!\cdot\!\boldsymbol\tau_j\right\}.
+\]
+\[
+S_{ij}=3(\boldsymbol\sigma_i\!\cdot\!\hat{\mathbf r})
+(\boldsymbol\sigma_j\!\cdot\!\hat{\mathbf r})
+-\boldsymbol\sigma_i\!\cdot\!\boldsymbol\sigma_j.
+\]
+\begin{itemize}
+\item La dipendenza da spin, isospin e direzione relativa rende insufficiente un semplice potenziale centrale $V(r)$.
+\item Il termine tensoriale accoppia onde parziali con diverso momento orbitale; è essenziale nel deuterone.
+\item Potenziali fenomenologici differenti possono descrivere bene lo scattering $NN$ ma produrre diverse estrapolazioni nella materia densa.
+\end{itemize}
+{\footnotesize Haensel et al., §5.5.1; notazione operatoriale esplicitata per uso didattico.}
+\end{frame}
+
+\begin{frame}[t]{Scambio di un mesone: origine del potenziale di Yukawa}
+\small
+Nel limite statico, un propagatore massivo produce in spazio degli impulsi
+\[
+\widetilde V(\mathbf q)\propto-\frac{g^2}{\mathbf q^2+m_\phi^2}
+\]
+(in unità naturali, per accoppiamento scalare e con fattori di normalizzazione omessi).
+La trasformata di Fourier dà
+\[
+V(r)\propto-\frac{g^2}{4\pi}\frac{e^{-m_\phi r}}{r},
+\qquad \ell_\phi\sim\frac{\hbar}{m_\phi c}.
+\]
+\begin{itemize}
+\item La massa del mesone fissa la scala spaziale dell'interazione.
+\item Il pione leggero governa la parte a lungo raggio; mesoni più pesanti descrivono contributi a raggio minore.
+\item Il segno e la struttura operatoriale dipendono dal tipo di campo e dal vertice di accoppiamento: la formula scalare non è il potenziale completo del pione.
+\end{itemize}
+{\footnotesize Haensel et al., §5.6, pp.~226--227; derivazione elementare della forma di Yukawa.}
+\end{frame}
+
+\begin{frame}[t]{Accoppiamenti mesone--nucleone: scalare, pseudoscalare, vettoriale}
+\small
+Schematizzando la lagrangiana efficace (strutture di isospin omesse):
+\[
+\mathcal L_s=g_s\bar\psi\psi\,\phi_s,\qquad
+\mathcal L_{ps}\propto\bar\psi\gamma_5\psi\,\phi_{ps},
+\]
+\[
+\mathcal L_v=g_v\bar\psi\gamma^\mu\psi\,V_\mu
++\text{eventuale accoppiamento tensoriale}.
+\]
+\begin{itemize}
+\item Campi scalari: canale di attrazione efficace; campi vettoriali: contributi repulsivi nei modelli di materia uniforme.
+\item Il pione è pseudoscalare: la riduzione non relativistica genera una struttura dipendente da spin e momento, inclusa la componente tensoriale.
+\item I mesoni scambiati nei potenziali $NN$ e i campi medi della RMF sono costruzioni collegate, ma non identiche.
+\end{itemize}
+{\footnotesize Haensel et al., §5.6, eq.~(5.11)--(5.13); forme schematiche.}
+\end{frame}
+
+\begin{frame}[t]{Perché servono forze a tre nucleoni?}
+\small
+\begin{itemize}
+\item Potenziali a due corpi capaci di descrivere scattering $NN$ e deuterone non riproducono da soli, in molti calcoli, i legami di $^3$H e $^4$He.
+\item Nella materia nucleare, le sole forze $NN$ possono prevedere un minimo di energia per nucleone a densità troppo elevata rispetto alla saturazione empirica.
+\item Si introduce un termine irriducibile
+\[
+V_{3N}=\sum_{i<j<k}V_{ijk},
+\]
+che non può essere ricostruito come semplice somma di potenziali a coppie.
+\item Una componente repulsiva crescente con la densità può spostare la saturazione e modificare la pressione alle alte densità.
+\end{itemize}
+{\footnotesize Haensel et al., §5.5.2, pp.~223--224.}
+\end{frame}
+
+\begin{frame}[t]{Scambio di due pioni e stati intermedi $\Delta$}
+\small
+\begin{itemize}
+\item Nei modelli di scambio mesonico, una forza a tre nucleoni nasce da processi con almeno due mesoni scambiati e un'interazione irriducibile fra tre linee nucleoniche.
+\item Esempio concettuale: un nucleone viene eccitato virtualmente in una risonanza $\Delta$ mediante scambio di un pione e torna nucleone attraverso un secondo scambio con un terzo nucleone.
+\item La scala spaziale del contributo a due pioni è legata a $\hbar/(m_\pi c)$.
+\item Nei modelli fenomenologici tipo Urbana si separano contributi a due pioni e contributi a corto raggio, calibrati su nuclei leggeri.
+\item \textbf{Attenzione}: una forza $NNN$ è un termine dell'Hamiltoniana; un diagramma BBG a tre \emph{hole lines} è invece un ordine dell'espansione a molti corpi.
+\end{itemize}
+{\footnotesize Haensel et al., §§5.5.2 e 5.6.1; cfr. figura 5.2.}
+\end{frame}
+
+\begin{frame}[t]{Interazioni relativistiche e dipendenza dal sistema di riferimento}
+\small
+\begin{itemize}
+\item L'Hamiltoniana non relativistica è un'approssimazione: a densità elevate contano anche correzioni relativistiche.
+\item In §5.5.3 Haensel distingue correzioni cinematiche e correzioni dinamiche legate al moto delle coppie nucleoniche rispetto al mezzo.
+\item Gli effetti di \emph{boost} modificano l'energia delle interazioni di coppia quando il loro centro di massa è in movimento.
+\item Tali contributi possono cambiare la parte di repulsione attribuita alle forze a molti corpi in una parametrizzazione efficace.
+\item Non bisogna sommare indiscriminatamente correzioni relativistiche e forze $NNN$ tarate su un modello differente: si rischia un doppio conteggio.
+\end{itemize}
+{\footnotesize Haensel et al., §5.5.3, pp.~225--226.}
+\end{frame}
+
+\begin{frame}[t]{Saturazione nucleare: legame fra Hamiltoniana ed EOS}
+\small
+Per materia nucleare simmetrica uniforme a $T=0$:
+\[
+e(n)=\frac{\varepsilon(n)}{n}-m_Nc^2,\qquad
+P(n)=n^2\frac{de}{dn}.
+\]
+Al punto di saturazione $n_0$:
+\[
+\left.\frac{de}{dn}\right|_{n_0}=0,\quad P(n_0)=0,\quad
+K_0=9n_0^2\left.\frac{d^2e}{dn^2}\right|_{n_0}.
+\]
+\begin{itemize}
+\item Le forze $NN$ e $NNN$ modificano $e(n)$ e quindi la posizione e la curvatura del minimo.
+\item La pressione a densità maggiori di $n_0$ dipende dall'intera derivata di $e(n)$, non dal solo valore di $K_0$.
+\item Una buona descrizione della saturazione non garantisce da sola una EOS affidabile nel core interno.
+\end{itemize}
+{\footnotesize Collegamento fra §§5.4--5.6 e le relazioni termodinamiche già presenti in NS.tex.}
+\end{frame}
+
+\begin{frame}[t]{Dalle forze microscopiche alla stella di neutroni}
+\small
+\[
+\underbrace{V_{NN}+V_{NNN}}_{\text{Hamiltoniana}}
+\quad\xrightarrow{\text{BBG, Green, variazionale}}\quad
+\underbrace{\varepsilon(n_n,n_p)}_{\text{energia del sistema}}
+\]
+\[
+\xrightarrow[\text{neutralità}]{\text{equilibrio }\beta}
+\underbrace{P(\varepsilon)}_{\text{EOS}}
+\quad\xrightarrow{\text{TOV}}\quad
+\underbrace{M(R)}_{\text{struttura stellare}}.
+\]
+\begin{itemize}
+\item Il potenziale da solo non determina l'EOS: è necessario risolvere il problema quantistico a molti corpi.
+\item La composizione in equilibrio beta è determinata dalle derivate chimiche dell'energia.
+\item Le osservabili stellari vincolano il risultato combinato di interazioni, approssimazioni microscopiche e composizione.
+\end{itemize}
+{\footnotesize Sintesi didattica dei §§5.5--5.6 e 5.8--5.13 di Haensel.}
+\end{frame}
+% === Fine approfondimento §§5.5--5.6 ===
+
+\begin{frame}[t]{Correlazioni: perché Hartree--Fock non basta (§§5.5, 5.9)}
+\small
+\begin{itemize}
+\item La forte repulsione a corto raggio e il tensore inducono correlazioni oltre lo stato di Slater di particelle indipendenti.
+\item Nella teoria di Brueckner si sostituisce l'interazione nuda con una matrice di reazione $G$ che risomma scattering ripetuti nel mezzo:
+\[
+G(\omega)=V+V\frac{Q}{\omega-H_0}G(\omega).
+\]
+\item $Q$ è l'operatore di Pauli che esclude stati intermedi occupati; $\omega$ è l'energia iniziale della coppia.
+\item La dipendenza da spettro ausiliario, ordine del cluster e forze a tre corpi deve essere controllata.
+\item L'EOS non si ottiene inserendo direttamente un potenziale di scattering in una formula di gas ideale.
+\end{itemize}
+\end{frame}
+
+
+% ===== Approfondimento Haensel 5.9.1: Brueckner--Bethe--Goldstone =====
+\begin{frame}[t]{BBG: perché riorganizzare la perturbazione? (Haensel \S5.9.1)}
+\small
+\begin{itemize}
+\item Per materia nucleare uniforme, partiamo da $H=T+V$, con $T=\sum_i p_i^2/(2m)$ e $V=\frac12\sum_{i\ne j}v_{ij}$.
+\item Il potenziale nucleare presenta un nucleo repulsivo e una componente tensoriale: l'espansione diretta in potenze di $V$ intorno al gas di Fermi non è generalmente ben controllata.
+\item Introduciamo un campo ausiliario $U$ e riscriviamo esattamente
+\[
+H=H_0+H_1,\qquad H_0=T+U,\qquad H_1=V-U.
+\]
+\item Il campo $U$ verrà determinato autoconsistentemente; il suo ruolo è incorporare parte degli effetti del mezzo già nello spettro di riferimento.
+\item La risommazione degli urti ripetuti di due nucleoni conduce alla matrice di reazione $G$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Dallo scattering nel vuoto alla matrice $G$ nel mezzo}
+\small
+\begin{itemize}
+\item Nel vuoto la matrice di scattering soddisfa schematicamente $T=V+V(E-H_{\rm free})^{-1}T$.
+\item Nel mezzo, gli stati intermedi sono limitati dal principio di Pauli e hanno energie modificate dall'interazione:
+\[
+G(\omega)=V+V\frac{Q}{\omega-H_0}G(\omega).
+\]
+\item Per una coppia $NN'$ con impulsi $\mathbf k_1,\mathbf k_2$:
+\[
+Q_{NN'}=\Theta(k_1-k_{F,N})\Theta(k_2-k_{F,N'}),\quad
+\epsilon_N(k)=\frac{\hbar^2 k^2}{2m_N}+U_N(k).
+\]
+\item L'energia iniziale della coppia è $\omega=\epsilon_N(k_a)+\epsilon_{N'}(k_b)$; il denominatore è valutato sugli stati intermedi.
+\item Per densità tendente a zero, $Q\to1$ e $U\to0$: si recupera il problema di scattering a due corpi nel vuoto.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Perché $G$ somma infinite collisioni?}
+\small
+\begin{itemize}
+\item Iterando formalmente l'equazione con $R=Q/(\omega-H_0)$:
+\[
+G=V+VRV+VRVRV+\cdots.
+\]
+\item Ogni termine aggiunge una nuova propagazione intermedia della coppia e una nuova interazione $V$; la somma corrisponde ai diagrammi \emph{ladder}.
+\item Non è un'approssimazione di primo ordine in $V$: la correlazione a due corpi è trattata a tutti gli ordini nella risommazione.
+\item Rimangono però correlazioni simultanee di tre o più nucleoni, che richiedono termini ulteriori dell'espansione BBG.
+\item Attenzione: una forza nucleare a tre corpi nell'Hamiltoniana e un diagramma a tre \emph{hole lines} non sono lo stesso oggetto.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Autoconsistenza Brueckner--Hartree--Fock}
+\small
+\begin{itemize}
+\item Il potenziale a particella singola è costruito dalla matrice $G$ antisimmmetrizzata, sommando sugli stati occupati:
+\[
+U_N(k)=\sum_{N'=n,p}\int_{|\mathbf q|<k_{F,N'}}\!\frac{d^3q}{(2\pi)^3}
+\langle \mathbf k\mathbf q|G_{NN'}(\epsilon_N(k)+\epsilon_{N'}(q))|\mathbf k\mathbf q\rangle_A,
+\]
+con somma implicita sugli spin negli elementi di matrice.
+\item Ma $G$ dipende da $H_0$, dunque da $U$: bisogna iterare $U\to G\to U$ fino alla convergenza.
+\item La \emph{continuous choice} estende $U(k)$ anche agli stati sopra $k_F$, senza discontinuità artificiale nello spettro.
+\item Il risultato dipende dall'interazione nucleare, dalle forze a tre corpi e dall'ordine di troncamento.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Energia BHF e ricostruzione della EOS}
+\small
+\begin{itemize}
+\item Una volta convergente $U$, l'energia per unità di volume al livello a due \emph{hole lines} è, schematicamente,
+\[
+\mathcal E_{\rm BHF}=\sum_{N=n,p}\int_{k<k_{F,N}}\!\frac{d^3k}{(2\pi)^3}
+\left[\frac{\hbar^2k^2}{2m_N}+\frac12 U_N(k)\right],
+\]
+con degenerazione di spin sottintesa; aggiungere $\sum_N m_Nc^2 n_N$ per l'energia totale.
+\item Il fattore $1/2$ evita il doppio conteggio dell'interazione fra coppie.
+\item Dopo la minimizzazione della composizione in equilibrio beta:
+\[
+\mu_B=\frac{d\varepsilon}{dn_B},\qquad
+P=n_B\mu_B-\varepsilon
+=n_B^2\frac{d}{dn_B}\left(\frac{\varepsilon}{n_B}\right).
+\]
+\item Derivare la EOS termodinamicamente è distinto dall'identificare semplicemente $\mu_N$ con una singola energia di quasiparticella in una approssimazione troncata.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Espansione in hole lines e limiti di BHF}
+\small
+\begin{itemize}
+\item La teoria BBG organizza l'energia in contributi correlati con due, tre, ... linee di lacuna (\emph{hole lines}).
+\item L'approssimazione BHF trattiene il contributo a due \emph{hole lines}; i diagrammi a tre \emph{hole lines} servono a verificarne la convergenza.
+\item La dipendenza dalla scelta del campo ausiliario $U$ si riduce includendo ordini successivi, se l'espansione converge.
+\item Le forze a tre nucleoni possono essere introdotte nell'Hamiltoniana, spesso tramite un'interazione efficace dipendente dalla densità; vanno trattate con coerenza energetica.
+\item Confronto concettuale: HF usa $V$ al primo ordine; BHF usa $G$ al livello medio di campo; RMF introduce campi mesonici medi relativistici.
+\end{itemize}
+\end{frame}
+% ===== Fine approfondimento =====
+
+
+% ===== Haensel, Potekhin, Yakovlev (2006), §§5.9.2--5.9.3 =====
+\begin{frame}[t]{Dalla BBG alle funzioni di Green: quale informazione cerchiamo?}
+\small
+\begin{itemize}
+\item Nella BBG la matrice $G$ risomma gli urti ripetuti di due nucleoni nel mezzo; ora vogliamo descrivere anche la \emph{propagazione} di una particella e le sue eccitazioni.
+\item Per un sistema uniforme, il propagatore a una particella $g_1$ contiene l'informazione sullo spettro e sull'occupazione degli stati.
+\item Il problema a molti corpi non si chiude sul solo $g_1$: l'equazione per $g_1$ dipende da $g_2$, quella per $g_2$ da $g_3$, ecc. (\emph{gerarchia di Martin--Schwinger}).
+\item Occorre quindi un'approssimazione controllata sulle correlazioni, non soltanto scegliere un potenziale $V_{NN}$.
+\end{itemize}
+\medskip
+{\footnotesize Riferimento: Haensel et al., §5.9.2, eq.~(5.42).}
+\end{frame}
+
+\begin{frame}[t]{Propagatore a una particella e ordinamento temporale}
+\small
+In una convenzione standard non relativistica, per uno stato fondamentale $|\Psi_0\rangle$:
+\[
+G_{\alpha\beta}(1,1')=-i
+\langle\Psi_0|T\{\hat\psi_\alpha(1)\hat\psi_\beta^\dagger(1')\}|\Psi_0\rangle.
+\]
+\begin{itemize}
+\item $1=(\mathbf r,t)$; gli indici $\alpha,\beta$ comprendono spin e isospin.
+\item L'ordinamento temporale $T$ distingue la propagazione di una particella aggiunta e quella di una lacuna (\emph{hole}).
+\item Nel sistema omogeneo si usa la trasformata $G_N(\mathbf k,\omega)$, diversa per neutroni e protoni in materia asimmetrica.
+\item La convenzione per il fattore $i$ varia fra formulazioni relativistiche e non relativistiche: conta mantenere coerenti definizioni e segni.
+\end{itemize}
+{\footnotesize Riferimento: §5.9.2; confrontare la definizione relativistica $g_1$ in (5.42a).}
+\end{frame}
+
+\begin{frame}[t]{Perché compare la gerarchia di Martin--Schwinger?}
+\small
+\begin{itemize}
+\item Per un'Hamiltoniana con interazioni a due corpi, l'equazione del moto di $\hat\psi(1)$ contiene un termine $\hat\psi^\dagger\hat\psi\hat\psi$.
+\item Derivando temporalmente $G_1$, l'aspettazione di quattro operatori genera dunque il propagatore a due particelle $G_2$.
+\item Analogamente, l'equazione per $G_2$ coinvolge $G_3$: il sistema esatto è una gerarchia infinita.
+\item \textbf{Chiusura HF}: si fattorizzano le correlazioni superiori in propagatori a una particella, mantenendo gli scambi fermionici.
+\item \textbf{Chiusura ladder}: si mantengono le correlazioni di coppia, risommando ripetuti scattering nel mezzo.
+\end{itemize}
+{\footnotesize Riferimento: §5.9.2, discussione successiva alle eq.~(5.42).}
+\end{frame}
+
+\begin{frame}[t]{Dyson e self-energy: dallo scattering allo spettro}
+\small
+Il propagatore esatto si esprime tramite quello libero e la \emph{self-energy}:
+\[
+G_N^{-1}(k,\omega)=G_{0,N}^{-1}(k,\omega)-\Sigma_N(k,\omega).
+\]
+Per una quasiparticella ben definita, la sua energia soddisfa schematicamente
+\[
+e_N(k)=\frac{\hbar^2k^2}{2m_N}
++\operatorname{Re}\Sigma_N(k,e_N(k)).
+\]
+\begin{itemize}
+\item $\operatorname{Re}\Sigma$ sposta l'energia rispetto alla particella libera.
+\item $\operatorname{Im}\Sigma$ descrive lo smorzamento degli stati eccitati; sulla superficie di Fermi a $T=0$ una quasiparticella stabile ha larghezza che tende a zero.
+\item In materia ricca di neutroni, $\Sigma_n\neq\Sigma_p$ in generale.
+\end{itemize}
+{\footnotesize Riferimento: §5.9.2, eq.~(5.43) e discussione della self-energy.}
+\end{frame}
+
+\begin{frame}[t]{Massa efficace e residuo della quasiparticella}
+\small
+La dispersione $e(k)$ non è in generale parabolica. Alla superficie di Fermi:
+\[
+v_F=\frac{1}{\hbar}\left.\frac{de}{dk}\right|_{k_F},
+\qquad
+m_{\rm eff}=\frac{\hbar k_F}{v_F}.
+\]
+\begin{itemize}
+\item La dipendenza di $\Sigma(k,\omega)$ dal momento modifica la velocità di gruppo.
+\item La dipendenza dall'energia modifica il peso della quasiparticella:
+\[
+Z_k=\left[1-\left.
+\frac{\partial\,\operatorname{Re}\Sigma(k,\omega)}{\partial\omega}
+\right|_{\omega=e(k)}\right]^{-1}
+\]
+se $\omega$ è espressa in unità di energia.
+\item $m_{\rm eff}$ (massa di dispersione) non coincide necessariamente con la massa di Dirac $m^*$ usata nella RMF.
+\end{itemize}
+{\footnotesize Approfondimento esplicativo a partire dal formalismo di §5.9.2.}
+\end{frame}
+
+\begin{frame}[t]{Metodo variazionale: il principio fondamentale}
+\small
+Per un'Hamiltoniana hermitiana limitata inferiormente, lo stato fondamentale obbedisce a
+\[
+E_0\leq E_{\rm var}[\Psi_T]
+=\frac{\langle\Psi_T|\hat H|\Psi_T\rangle}
+{\langle\Psi_T|\Psi_T\rangle}.
+\]
+\begin{itemize}
+\item L'ineguaglianza segue espandendo $\Psi_T=\sum_n c_n|n\rangle$ sugli autostati: $E_{\rm var}=\sum_n |c_n|^2E_n/\sum_n|c_n|^2\ge E_0$.
+\item La minimizzazione fornisce il migliore limite superiore \emph{entro la famiglia di funzioni di prova scelta}.
+\item Una famiglia troppo rigida può produrre un'energia alta anche se il potenziale nucleare è corretto.
+\item In materia infinita si lavora con l'energia per barione nel limite termodinamico.
+\end{itemize}
+{\footnotesize Riferimento: §5.9.3, eq.~(5.53) e richiamo al principio variazionale in §5.8.}
+\end{frame}
+
+\begin{frame}[t]{Ansatz correlato: determinante di Slater e operatore $F$}
+\small
+Haensel et al. introducono lo stato di prova
+\[
+|\Psi_{\rm var}\rangle=\hat F|\Phi\rangle,\qquad
+\hat F=\mathcal S\prod_{i<j}\hat f_{ij}.
+\]
+\begin{itemize}
+\item $|\Phi\rangle$ è un determinante di Slater di onde piane: garantisce l'antisimmetria fermionica, ma da solo non descrive le correlazioni dinamiche.
+\item $\hat f_{ij}$ modifica la probabilità relativa di trovare due nucleoni a distanza $r_{ij}$.
+\item Per interazioni realistiche, $\hat f_{ij}=\sum_p f_p(r_{ij})\,\hat O_{ij}^{(p)}$: servono canali di spin, isospin e tensore.
+\item L'operatore $\mathcal S$ simmetrizza il prodotto perché operatori di coppia che condividono un nucleone possono non commutare.
+\end{itemize}
+{\footnotesize Riferimento: §5.9.3, eq.~(5.53)--(5.56).}
+\end{frame}
+
+\begin{frame}[t]{Dal principio variazionale alle equazioni per $f_p(r)$}
+\small
+Inserendo $\Psi_{\rm var}=\hat F\Phi$:
+\[
+E_{\rm var}[\{f_p\}]
+=\frac{\langle\Phi|\hat F^\dagger\hat H\hat F|\Phi\rangle}
+{\langle\Phi|\hat F^\dagger\hat F|\Phi\rangle}.
+\]
+\begin{itemize}
+\item La condizione stazionaria è $\delta E_{\rm var}/\delta f_p(r)=0$, con condizioni al bordo che ripristinano il comportamento non correlato a grandi distanze.
+\item Nel trattamento pratico l'energia si sviluppa in contributi di cluster: coppie, triplette, ecc.
+\item Una troncatura ai soli cluster a due corpi non è automaticamente accurata a densità nucleari.
+\item Le forze a tre nucleoni $V_{ijk}$ devono essere incluse coerentemente nel funzionale energetico, anche se $\hat F$ è costruito con correlazioni di coppia.
+\end{itemize}
+{\footnotesize Riferimento: §5.9.3, eq.~(5.57) e discussione della minimizzazione.}
+\end{frame}
+
+\begin{frame}[t]{Confronto fra BBG, funzioni di Green e variazionale}
+\small
+\begin{itemize}
+\item \textbf{BBG/BHF}: risomma ladder di due nucleoni nel mezzo tramite $G$ e organizza le correzioni per numero di \emph{hole lines}.
+\item \textbf{Funzioni di Green}: organizza la propagazione tramite $G_1$, self-energy e correlazioni; una chiusura ladder conserva scattering ripetuti di coppia.
+\item \textbf{Variazionale}: sceglie uno stato molti-corpi correlato e ne minimizza l'energia; le correzioni sono organizzate in cluster.
+\item Metodi diversi possono usare lo \emph{stesso} Hamiltoniano nucleare e produrre EOS diverse per effetto delle approssimazioni.
+\item Per confrontare le EOS è essenziale specificare sia l'interazione $NN/NNN$ sia il metodo di soluzione.
+\end{itemize}
+{\footnotesize Riferimenti: §§5.8--5.9.3.}
+\end{frame}
+% ===== Fine integrazione §§5.9.2--5.9.3 =====
+
+\begin{frame}[t]{Tre approcci al problema a molti corpi (§5.9)}
+\small
+\begin{itemize}
+\item \textbf{BBG / Brueckner}: espansione in cluster di hole lines; risomma la correlazione di due particelle nel mezzo tramite $G$.
+\item \textbf{Funzioni di Green}: propagatori e autoenergie descrivono eccitazioni e correlazioni; l'energia va ricavata con approssimazioni coerenti.
+\item \textbf{Variazionale}: per uno stato di prova correlato $\Psi_T$, 
+\[
+E_0\le \frac{\langle\Psi_T|H|\Psi_T\rangle}{\langle\Psi_T|\Psi_T\rangle}.
+\]
+\item \textbf{RMF}: campi medi scalari/vettoriali relativistici; struttura dell'approssimazione diversa dalle risommatorie microscopiche.
+\item Le differenze fra risultati misurano anche l'incertezza metodologica, oltre a quella nell'interazione.
+\end{itemize}
+\end{frame}
+
+
+% === Haensel §§5.9.4--5.9.5: RMF ed energy-density functionals ===
+\begin{frame}[t]{Due famiglie di campi medi: RMF e funzionali di densità}
+\small
+\begin{itemize}
+\item \textbf{RMF}: si parte da una lagrangiana relativistica efficace con nucleoni e campi mesonici; gli operatori mesonici sono sostituiti da valori medi.
+\item \textbf{EDF}: si parametrizza l'energia in funzione di densità e correnti locali, eventualmente ricavandola da un'interazione efficace di tipo Skyrme.
+\item In entrambi i casi il problema a molti corpi è sostituito da equazioni autoconsistenti a una particella.
+\item La differenza rispetto a BBG è concettuale: le correlazioni non sono risommate esplicitamente tramite la matrice $G$, ma incorporate nei parametri efficaci.
+\end{itemize}
+{\footnotesize Haensel et al., §§5.8, 5.9.4--5.9.5.}
+\end{frame}
+
+\begin{frame}[t]{RMF: lagrangiana minima $\sigma$--$\omega$--$\rho$}
+\footnotesize
+In unità naturali, una forma rappresentativa è
+\[
+\begin{aligned}
+\mathcal L={}&\bar\psi\bigl[i\gamma^\mu\partial_\mu-m_N
++g_\sigma\sigma-g_\omega\gamma^\mu\omega_\mu
+-\tfrac{g_\rho}{2}\gamma^\mu\boldsymbol\tau\!\cdot\!\boldsymbol\rho_\mu\bigr]\psi\\
+&+\tfrac12\partial_\mu\sigma\partial^\mu\sigma-\tfrac12m_\sigma^2\sigma^2
+-\tfrac14\omega_{\mu\nu}\omega^{\mu\nu}
++\tfrac12m_\omega^2\omega_\mu\omega^\mu+\mathcal L_\rho .
+\end{aligned}
+\]
+\begin{itemize}
+\item $\sigma$: attrazione scalare e massa di Dirac efficace; $\omega$: repulsione vettoriale isoscalare.
+\item $\rho$: contributo vettoriale isovettoriale, importante per materia neutron-rich.
+\item Il modello può includere auto-interazioni mesoniche e accoppiamenti dipendenti dalla densità: non esiste una singola parametrizzazione RMF.
+\end{itemize}
+{\footnotesize Schema didattico del modello discusso in §5.9.4; convenzioni sui fattori di isospin dipendono dalla lagrangiana scelta.}
+\end{frame}
+
+\begin{frame}[t]{RMF uniforme: equazione di Dirac nel mezzo}
+\small
+Nel campo medio statico uniforme restano $\bar\sigma,\bar\omega_0,\bar\rho_0^{\,3}$:
+\[
+\left[\gamma_\mu(i\partial^\mu-\Sigma^\mu)-m_N^*\right]\psi=0,
+\quad m_N^*=m_N-g_\sigma\bar\sigma .
+\]
+\[
+E_i(k)=\sqrt{k^2+m_N^{*2}}+\Sigma_i^0,\quad
+\Sigma_i^0=g_\omega\bar\omega_0+
+g_\rho t_{3i}\bar\rho_0^{\,3}.
+\]
+\begin{itemize}
+\item Il campo scalare agisce sulla massa di Dirac; il campo vettoriale trasla l'energia.
+\item $m_N^*$ non coincide in generale con la massa efficace definita dalla pendenza della dispersione di una teoria di Green.
+\item I potenziali scalare e vettoriale dipendono dalle densità: la soluzione è autoconsistente.
+\end{itemize}
+{\footnotesize Haensel et al., §5.9.4.}
+\end{frame}
+
+\begin{frame}[t]{RMF: equazioni dei campi e densità scalare}
+\small
+Per il modello lineare $\sigma$--$\omega$:
+\[
+m_\sigma^2\bar\sigma=g_\sigma n_s,\qquad
+m_\omega^2\bar\omega_0=g_\omega n_B ,
+\]
+\[
+n_s=\sum_{i=n,p}\frac{2}{(2\pi)^3}
+\int_{|\mathbf k|<k_{Fi}}\!d^3k\,
+\frac{m_N^*}{\sqrt{k^2+m_N^{*2}}},
+\quad n_B=n_n+n_p.
+\]
+\begin{itemize}
+\item La densità scalare $n_s=\langle\bar\psi\psi\rangle$ è diversa dalla densità barionica $n_B=\langle\psi^\dagger\psi\rangle$.
+\item Procedura: fissare $n_n,n_p$, risolvere i campi, ricavare le energie e iterare fino all'autoconsistenza.
+\item Auto-interazioni e dipendenza dalla densità modificano i membri sinistri e/o destri delle equazioni.
+\end{itemize}
+{\footnotesize Haensel et al., §5.9.4; modello lineare illustrativo.}
+\end{frame}
+
+\begin{frame}[t]{Dall'energia RMF a pressione e potenziali chimici}
+\small
+A $T=0$, dopo la soluzione dei campi:
+\[
+\mu_i=\frac{\partial\varepsilon}{\partial n_i},\qquad
+P=\sum_i\mu_i n_i-\varepsilon.
+\]
+\begin{itemize}
+\item Per accoppiamenti costanti, i contributi dei campi soddisfano le equazioni stazionarie e le derivate dell'energia restituiscono i potenziali chimici coerenti.
+\item Con accoppiamenti $g_a(n_B)$ occorre il termine di \emph{riarrangiamento} nella self-energy vettoriale: trascurarlo viola l'identità termodinamica.
+\item In materia stellare si aggiungono i leptoni e si impongono neutralità ed equilibrio beta.
+\item La rigidità dell'EOS deriva dalla risposta complessiva di campi scalari, vettoriali e composizione.
+\end{itemize}
+{\footnotesize Haensel et al., §5.9.4 e §§5.11--5.13.}
+\end{frame}
+
+\begin{frame}[t]{Funzionali di densità: dalla variazione al campo medio}
+\small
+Per neutroni e protoni:
+\[
+E[\rho_q,\tau_q,\nabla\rho_q,\ldots]
+=\int d^3r\,\mathcal H(\rho_n,\rho_p,\tau_n,\tau_p,\nabla\rho_q,\ldots).
+\]
+\begin{itemize}
+\item $\rho_q$ è la densità locale; $\tau_q$ la densità cinetica; i gradienti descrivono la non uniformità.
+\item La minimizzazione con vincoli sui numeri di particelle produce equazioni a una particella del tipo
+\[
+h_q\varphi_{q\alpha}=\epsilon_{q\alpha}\varphi_{q\alpha},
+\quad h_q=\frac{\delta E}{\delta \rho_q}\ \text{(schematicamente)}.
+\]
+\item Più precisamente, $h_q$ è ottenuto variando rispetto alla matrice densità a una particella; $\rho_q$ e $\tau_q$ non sono variabili indipendenti arbitrarie.
+\item Le condizioni di stazionarietà sono risolte autoconsistentemente.
+\end{itemize}
+{\footnotesize Haensel et al., §5.9.5; collegamento con ETF e Hartree--Fock della crosta (§3.3).}
+\end{frame}
+
+\begin{frame}[t]{Skyrme: perché compaiono densità e gradienti?}
+\small
+Un'interazione efficace a corto raggio con termini di contatto, dipendenza dagli impulsi e densità conduce a contributi come
+\[
+\mathcal H=\frac{\hbar^2}{2m}\tau
++C_0^\rho(\rho)\rho^2+C_1^\rho(\rho)(\rho_n-\rho_p)^2
++C_0^\tau\rho\tau+C_0^{\Delta\rho}\rho\Delta\rho+\cdots .
+\]
+\begin{itemize}
+\item In materia uniforme $\nabla\rho=0$: i termini di gradiente non contribuiscono al bulk.
+\item Nella crosta e nei nuclei finiti i gradienti controllano superfici e interfacce.
+\item La dipendenza dall'isospin determina l'energia di simmetria e contribuisce alla frazione protonica.
+\item Le costanti del funzionale sono calibrate su dati nucleari; l'estrapolazione a densità elevate resta dipendente dal modello.
+\end{itemize}
+{\footnotesize Haensel et al., §5.9.5; espressione schematica in notazione isoscalare/isovettoriale.}
+\end{frame}
+
+\begin{frame}[t]{RMF, Skyrme e metodi microscopici: cosa confrontare?}
+\small
+\begin{itemize}
+\item \textbf{Input}: potenziali $NN/NNN$ e loro incertezze (BBG, Green, variazionale) oppure parametri efficaci tarati su osservabili (RMF, EDF).
+\item \textbf{Gradi di libertà}: nucleoni non relativistici correlati, spinori di Dirac in campi mesonici, oppure densità locali.
+\item \textbf{Output comuni}: $e(n,x_p)$, energia di simmetria $S(n)$, $\mu_i$, $P(\varepsilon)$.
+\item \textbf{Controlli}: saturazione, stabilità, causalità, coerenza termodinamica e vincoli osservativi.
+\item Un buon accordo vicino a $n_0$ non implica accordo nel core interno; è utile confrontare famiglie di EOS e non una sola curva.
+\end{itemize}
+{\footnotesize Sintesi dei §§5.8--5.13; raccordo con la trattazione preesistente in NS.tex.}
+\end{frame}
+% === Fine approfondimento §§5.9.4--5.9.5 ===
+
+\begin{frame}[t]{RMF: massa efficace e repulsione vettoriale (§5.9.4)}
+\small
+In materia uniforme e statica, il campo scalare modifica la massa di Dirac e quello vettoriale l'energia:
+\[
+m^*=m-g_\sigma\bar\sigma,\qquad
+E_{F,i}=\sqrt{k_{F,i}^2c^2+m_i^{*2}c^4}+g_\omega\bar\omega_0+\cdots.
+\]
+\begin{itemize}
+\item Il campo scalare genera attrazione; il campo vettoriale fornisce repulsione crescente con la densità.
+\item Le equazioni dei campi si risolvono \emph{autoconsistentemente} con le densità dei fermioni.
+\item $\mu_i$ si ricava dalla derivata dell'energia rispetto a $n_i$; in modelli con accoppiamenti dipendenti dalla densità occorrono termini di riarrangiamento per coerenza termodinamica.
+\item Questo frame è un raccordo con la trattazione RMF già presente negli appunti.
+\end{itemize}
+\end{frame}
 
 \begin{frame}{Nuclear Matter}
     \begin{itemize}
@@ -417,11 +1462,11 @@
 \begin{frame}{Dirac phenomenology: effective mass to include interactions}
     \begin{columns}[T]
         \begin{column}{0.4\textwidth}
-            \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{/Schaffner/EOS_kinf_mstar}\label{fig:/Schaffner/EOS_kinf_mstar}\end{figure}
+            \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/EOS_kinf_mstar}\label{fig:Schaffner_EOS_kinf_mstar}\end{figure}
         \end{column}
         \begin{column}{0.6\textwidth}
     \begin{itemize}
-        \item Dirac phenomenology - $E_F=\sqrt{k_F^2+m^2}$, which will be modified when including interactions: shift in the mass of particle by some scalar potential $m^*=m-S(n)$ and 4-moment shifted by vectorial potential $\tensor{k^*}{^\mu}=\tensor{k}{^\mu}-\tensor{V}{^\mu}(n)$.
+        \item Dirac phenomenology - $E_F=\sqrt{k_F^2+m^2}$, which will be modified when including interactions: shift in the mass of particle by some scalar potential $m^*=m-S(n)$ and 4-moment shifted by vectorial potential $\tensor{k}{^{*\mu}}=\tensor{k}{^\mu}-\tensor{V}{^\mu}(n)$.
         \item Consideriamo shift di energia con materia nucleare isotropa (spatial components of V null): $E_F=\sqrt{k_F^2+(m+S(n))^2}+\tensor{V}{^0}(n)=\sqrt{k_F^2+m^{*2}}+\tensor{V}{^0}(n)$ - at low density scalar potential dominate so nuclear matter is bound, at high density the repulsive vector potential becomes larger than scalar so nuclear matter get unbound, ie pressione positiva alla compressione: at saturation density $n_0$ $E_{F,0}=\SI{923}{\mega\ev}$ so if we fix $m^*$ we fix $\tensor{V}{^0}$.
     \end{itemize}
             
@@ -607,7 +1652,7 @@ Chiral EFT
     \begin{columns}[T]
         \begin{column}{0.6\textwidth}
             \begin{itemize}
-                \item Una transizione di fase di primo ordine \'e caratterizzata dalla discontinuità di una derivata prima del potenziale termodinamico. A \(T=0\), per due fasi in equilibrio vale $P_1=P_2$, $\mu_1=\mu_2$, mentre la densit\'a barionica pu\'o presentare un salto, $n_1\neq n_2$, e analogamente pu\'o essere discontinua la densit\'a di energia. Nella regione di coesistenza idealizzata la pressione resta costante mentre cambia la densit\'a, per cui $\Gamma=\frac{n_B}{P}\frac{dP}{dn_B}\simeq 0$.
+                \item Una transizione di fase di primo ordine \'e caratterizzata dalla discontinuità di una derivata prima del potenziale termodinamico. A $T=0$, per due fasi in equilibrio vale $P_1=P_2$, $\mu_1=\mu_2$, mentre la densit\'a barionica pu\'o presentare un salto, $n_1\neq n_2$, e analogamente pu\'o essere discontinua la densit\'a di energia. Nella regione di coesistenza idealizzata la pressione resta costante mentre cambia la densit\'a, per cui $\Gamma=\frac{n_B}{P}\frac{dP}{dn_B}\simeq 0$.
             \item Polytropic power $\Gamma=\TDly{n_B}{P}$: transizione del prim'ordine, cambia densit\'a a pressione costante, quindi $\Gamma\approx0$.
             \item From the left: dip for transition $^{56}Fe\to^{62}Ni\to^{64}Ni$ in outer crust; after A we have transition to heavier and more neutron rich nuclei with deeper dip.
             \end{itemize}
@@ -618,7 +1663,7 @@ Chiral EFT
         \end{column}
     \end{columns}
     \begin{itemize}
-        \item Even if there is no dip $\Gamma\approx \frac{4}{3}$, lower limit for stability of polytropes, at beginnin of inner crust $\Gamma\approx0.5$ due to onset of neutron liquid: when neutron level starts to be populated occupy lowest levels in  momentum first, giving no pressure contrib. but n_B keeps increasing so that $\Gamma$ drops.
+        \item Even if there is no dip $\Gamma\approx \frac{4}{3}$, lower limit for stability of polytropes, at beginnin of inner crust $\Gamma\approx0.5$ due to onset of neutron liquid: when neutron level starts to be populated occupy lowest levels in  momentum first, giving no pressure contrib. but $n_B$ keeps increasing so that $\Gamma$ drops.
         \item The wiggle before the core is due to transition from lattice structure of the crust to uniform liquid in the core; max of $\Gamma\approx3.5$ is reached for density of core of NS; then drops to two showing EOS dominated by interactions.
         \item The correct EOS for high density is not the one based on nucleons but rather the EOS taking into account of quarks and gluons: the correct high density limit $\Gamma=\frac{4}{3}$ is the value of UR free particles.
     \end{itemize}
@@ -658,6 +1703,59 @@ Chiral EFT
             \end{itemize}
                 \end{column}
             \end{columns}
+\end{frame}
+
+\begin{frame}[t]{Energia di simmetria e composizione in equilibrio $\eta$ (§§5.11--5.12)}
+\small
+Posto $n=n_n+n_p$, $x=n_p/n$ e $\delta=1-2x$:
+\[
+e(n,x)\simeq e_0(n)+S(n)(1-2x)^2.
+\]
+A $n$ fissato, la variazione che converte un neutrone in protone dà
+\[
+\mu_n-\mu_p=-\left.\frac{\partial e}{\partial x}\right|_n
+\simeq4S(n)(1-2x).
+\]
+\begin{itemize}
+\item Equilibrio debole senza neutrini intrappolati: $\mu_n=\mu_p+\mu_e$, e se presenti muoni $\mu_e=\mu_\mu$.
+\item Neutralità: $nx=n_e+n_\mu$.
+\item Il risultato $\mu_n-\mu_p\simeq4S\delta$ usa l'approssimazione parabolica; termini $\delta^4$ possono modificarlo.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Frazione protonica: equazione da risolvere (§5.11.2)}
+\small
+Nel limite illustrativo $n_\mu=0$, elettroni ultrarelativistici ideali:
+\[
+\mu_e\simeq\hbar c(3\pi^2nx)^{1/3}.
+\]
+Equilibrio $\beta$ e neutralità danno l'equazione implicita
+\[
+4S(n)(1-2x)=\hbar c(3\pi^2nx)^{1/3}.
+\]
+\begin{itemize}
+\item Non è possibile scegliere indipendentemente $x(n)$ e $S(n)$: la composizione è una conseguenza dell'EOS nucleare e dei leptoni.
+\item Se $\mu_e\ge m_\mu c^2$, occorre includere $n_\mu$ e risolvere simultaneamente $\mu_e=\mu_\mu$.
+\item La dipendenza di $S(n)$ dalla densità influenza la frazione protonica e l'accessibilità dei processi di raffreddamento.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Direct Urca: soglia cinematica, non soglia dei muoni (§5.13.2)}
+\small
+Per il processo $n\to p+e^-+\bar\nu_e$, in materia degenere il neutrino porta quantità di moto trascurabile vicino alle superfici di Fermi:
+\[
+k_{Fn}\le k_{Fp}+k_{Fe}.
+\]
+Senza muoni e con neutralità $n_e=n_p$:
+\[
+(1-x)^{1/3}\le2x^{1/3}
+\quad\Longrightarrow\quad x\ge\frac19.
+\]
+\begin{itemize}
+\item La soglia $x\ge1/9$ vale per il modello ideale $npe$; con muoni la soglia della frazione protonica cambia.
+\item La comparsa dei muoni richiede invece $\mu_e\ge m_\mu c^2$: è una condizione distinta.
+\item Le interazioni determinano se e dove $x(n)$ supera la soglia cinematica.
+\end{itemize}
 \end{frame}
 
 \subsection{Recap particelle}
@@ -1057,6 +2155,73 @@ La tabella riporta il calcolo del gas libero
 senza le approssimazioni analitiche sopra utilizzate.
 }
 Il potenziale chimico degli elettroni pu\'o essere alto con densit\'a elettronica bassa. I muoni compaiono attorno a $n_B=3n_0$.
+\end{frame}
+
+\begin{frame}[t]{Iperoni: potenziali chimici e cariche conservate (§§5.7, 5.14)}
+\small
+Con numero barionico $B_i$ e carica elettrica $q_i$ (in unità di $e$), in equilibrio debole e senza neutrini intrappolati:
+\[
+\mu_i=B_i\mu_n-q_i\mu_e.
+\]
+\begin{itemize}
+\item $\Lambda$ ($B=1,q=0$): $\mu_\Lambda=\mu_n$.
+\item $\Sigma^-$ ($B=1,q=-1$): $\mu_{\Sigma^-}=\mu_n+\mu_e$.
+\item $\Xi^-$ ($B=1,q=-1$): $\mu_{\Xi^-}=\mu_n+\mu_e$.
+\item La soglia di comparsa continua di una specie è l'uguaglianza con l'energia di aggiunta di una particella a $k_F=0$, \emph{comprensiva delle interazioni nel mezzo}.
+\item Le masse a riposo da sole non determinano l'ordine delle soglie.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Soglia di $\Lambda$: energia di inserimento (§§5.10, 5.14)}
+\small
+Nel limite di popolazione infinitesima $n_\Lambda\to0^+$, la condizione di soglia continua è
+\[
+\mu_n=\left.\frac{\partial\varepsilon}{\partial n_\Lambda}\right|_{n_\Lambda\to0^+}
+\equiv E_\Lambda(k=0;n_B).
+\]
+\begin{itemize}
+\item In RMF, schematicamente, $E_\Lambda(0)=m_\Lambda^*c^2+V_\Lambda^0$; i campi dipendono dalla composizione del mezzo.
+\item Se una fase iperonica compare con salto finito di densità, la semplice condizione a popolazione infinitesima non basta: occorre confrontare i potenziali termodinamici delle fasi.
+\item A $T=0$, con cariche globalmente conservate, l'equilibrio di fase richiede uguaglianza dei potenziali chimici indipendenti e della pressione, con vincoli di neutralità appropriati.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Perché gli iperoni possono ammorbidire l'EOS (§5.14.2)}
+\small
+\begin{itemize}
+\item A densità fissata, l'apertura di nuovi gradi di libertà permette di ridistribuire il numero barionico e ridurre parte dell'energia di Fermi dei nucleoni.
+\item L'effetto sulla pressione non si legge da una sola massa efficace: occorre derivare l'energia \emph{dopo} la minimizzazione sulla composizione:
+\[
+P(n_B)=n_B^2\frac{d}{dn_B}\left(\frac{\varepsilon_{\rm eq}(n_B)}{n_B}\right).
+\]
+\item Un ammorbidimento ($P$ minore a $\varepsilon$ confrontabile) tende a ridurre la massa massima TOV; la sua entità dipende dalle interazioni iperone--nucleone e iperone--iperone.
+\item Il cosiddetto \emph{hyperon puzzle} è il problema di conciliare comparsa degli iperoni e stelle di neutroni molto massive; non è una dimostrazione dell'assenza di iperoni.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{EOS causale: controllo sulle estrapolazioni (§5.15)}
+\small
+\begin{itemize}
+\item A composizione rilassata e $T=0$, la velocità del suono adiabatica soddisfa
+\[
+\frac{c_s^2}{c^2}=\frac{dP}{d\varepsilon}.
+\]
+\item Stabilità meccanica locale richiede $dP/d\varepsilon\ge0$; causalità richiede $dP/d\varepsilon\le1$ per il ramo fisico considerato.
+\item Una EOS parametrizzata può riprodurre la saturazione ma diventare acausale se estrapolata troppo lontano: controllare l'intera curva.
+\item Una transizione di primo ordine può introdurre un salto di $\varepsilon$ a pressione costante; la derivata va trattata separatamente nei rami omogenei.
+\item Il vincolo causale non determina univocamente la composizione microscopica del core.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Superfluidità e campo magnetico: impatto sulla EOS (§§5.16--5.17)}
+\small
+\begin{itemize}
+\item Il pairing cambia le energie degli stati vicini alla superficie di Fermi e modifica termodinamica e trasporto.
+\item Per un gap $\Delta$ piccolo rispetto alle scale energetiche nucleari, la correzione all'energia totale può essere modesta anche quando gli effetti su calore specifico e neutrini sono grandi.
+\item Campi magnetici intensi quantizzano il moto trasverso delle particelle cariche in livelli di Landau; a campi sufficientemente elevati la pressione può essere anisotropa.
+\item La rilevanza quantitativa dipende da densità, intensità del campo e specie: non va assunta uniforme in tutto il core.
+\item Raccordo: la teoria BCS è già sviluppata in \texttt{microphysics(2).tex}; qui interessa soprattutto l'impatto sull'EOS.
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Hyperon \PLambda, \PSigmaminus threshold}

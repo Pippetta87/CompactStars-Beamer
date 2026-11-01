@@ -1,507 +1,1121 @@
-\section{Potenziali termodinamici - ensemble}
+\section{3.1 Potenziali termodinamici}
 
-\subsection{Equazione di Eulero}
+\begin{frame}[t]{Ambito e convenzioni}
+\small
 
-\begin{frame}{Equazione di Eulero $U=-PV+TS+\sum_i\mu_iN_i$}
-    Internal energy $U(V,S,N_i)$ is extensive, volume, entropy and $N_i$ are also extensive, $P, T, \mu_i$ are intensive:
-\begin{align*}
-    &-P=\PDy{V}{U}|_{S,N_i},\ T=\PDy{S}{U}|_{V,N_i},\ \mu_i=\PDy{N_i}{U}|_{S,V}\tag{U homogeneous function}\\
-            &\rightarrow U=-PV+TS+\sum_i\mu_iN_i\\
-\end{align*}
+Il capitolo 3 descrive materia densa in equilibrio: potenziali, composizione in $\beta$-equilibrio, gas fermionici e politropiche. L'estensione finale tratta la \emph{superfluidit\`a neutronica}, non presente nel capitolo allegato.
+\begin{itemize}
+\item Unita naturali $\hbar=c=k_B=1$ salvo indicazione contraria; $\varepsilon=U/V$.
+\item $N_i$ numero di particelle della specie $i$; $n_i=N_i/V$, $s=S/V$.
+\item $\mu_i$ include l'energia a riposo e si riferisce al numero conservato appropriato.
+\item Gli integrali dei gas liberi presuppongono particelle omogenee a $T=0$.
+\end{itemize}
+Distinguere sistematicamente: $P(n)$, $P(\varepsilon)$ e $P(\mu)$ non contengono la stessa informazione termodinamica.
 \end{frame}
 
-\subsection{Ensemble: $\mu$C $U(V,S,N_i)$, C $F(V,T,N_i)$, GC $\Omega(T,V,\mu_i)$.}
+\begin{frame}[t]{Primo principio e variabili naturali}
+\small
 
-\begin{frame}{Potenziali termodinamici}
-    Un potenziale termodinamico \'e una funzione di stato ottenuta, eventualmente tramite trasformazioni di Legendre, scegliendo come variabili naturali quelle controllate dall'ensemble; all'equilibrio, sotto i corrispondenti vincoli, il potenziale appropriato \'e stazionario/minimo.
-    \begin{columns}[T]
-        \begin{column}{0.5\textwidth}
-    Ensemble microcanonico: sistema isolato per cui sono fissate le quantit\'a estensive conservate, tipicamente $(N,V,E)$: thermodynamics potential is U
-        \begin{align*}
-            &dU=-P\,dV+TdS+\sum_i\mu_i\,dN_i\tag{internal energy: $U(V,S,N_i)$}\\
-            &-P=\PDy{V}{U}|_{S,N_i}\tag{fissa P}\\
-            &T=\PDy{S}{U}|_{V,N_i}\\
-            &\mu_i=\PDy{N_i}{U}|_{S,V}
-        \end{align*}
-    Ensemble Canonico: variabili fissate $V, T, N_i$ il potenziale termodinamico \'e F
-        \begin{align*}
-            &F(V,T,N_i)=U-TS:\\
-            &dF=-P\,dV-S\,dT+\sum_i\mu_i\,dN_i\\
-            &-P=\PDy{V}{F}|_{T,N_i}\tag{fissa P}\\
-            &-S=\PDy{T}{F}|_{V,N_i}\tag{fissa S}\\
-            &\mu_i=\TDy{N_i}{F}|_{V,T,N_j}\tag{fissa $\mu_i$}
-        \end{align*}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-    Ensemble Gran-Canonico: variabili fissate $T,V,\mu_i$
-        \begin{align*}
-            &\Omega(T,V,\mu_i)=F-\sum_i\mu_iN_i=U-TS-\sum_i\mu_iN_i\\
-            &\Omega=-PV\tag{by Euler eq}\\
-            &d\Omega=-P\,dV-S\,dT-\sum_iN_i\,d\mu_i\\
-            &-P=\PDy{V}{\Omega}|_{T,\mu_i}\tag{fissa P}\\
-            &-S=\PDy{T}{\Omega}|_{T,\mu_i}\tag{fissa S}\\
-            &-N_i=\TDy{\mu_i}{\Omega}|_{V,T,N_j}\tag{fissa $\mu_i$}
-        \end{align*}
-
-        \end{column}
-    \end{columns}
-    
+\[
+dU=T\,dS-P\,dV+\sum_i\mu_i\,dN_i,
+\qquad U=U(S,V,\{N_i\}).
+\]
+\[
+T=\left.\frac{\partial U}{\partial S}\right|_{V,N_i},\quad
+P=-\left.\frac{\partial U}{\partial V}\right|_{S,N_i},\quad
+\mu_i=\left.\frac{\partial U}{\partial N_i}\right|_{S,V,N_{j\ne i}}.
+\]
+\begin{itemize}
+\item Microcanonico: dati $U,V,N_i$; il principio di equilibrio \`e il massimo dell'entropia $S$ a vincoli fissati.
+\item Canonico: dati $T,V,N_i$; si usa l'energia libera di Helmholtz $F$.
+\item Gran canonico: dati $T,V,\mu_i$; si usa il grande potenziale $\Omega$.
+\end{itemize}
+La scelta di un potenziale \`e una trasformazione di Legendre, non un cambio di leggi fisiche.
 \end{frame}
 
-\subsection{Limite termodinamico: $V\to\infty$}
+\begin{frame}[t]{Derivazione dell'equazione di Eulero}
+\small
 
-\begin{frame}{Bulk matter: $\mu C$}    
-Nel $\lim_{V\to\infty}$ le grandezze termodinamiche non dipendono da V: bulk matter.
-\begin{align*}
-    &\epsilon=\frac{U}{V},\ s=\frac{S}{V},\ n_i=\frac{N_i}{V}\\
-    &\epsilon(s,n_i)=-P+Ts+\sum_i\mu_in_i\tag{Euler eq}\\
-    &T=\PDy{s}{\epsilon}|_{n_i}\\
-    &\mu_i=\PDy{\epsilon}{n_i}|_{s,n_j}\\
-    &P=-\epsilon+Ts+\sum_i\mu_in_i\tag{Inversione Eulero}\\
-    &nn_i\PDof{n_i}(\frac{\epsilon}{n})=n_i\PDy{n_i}{\epsilon}-\epsilon \frac{n_i}{n}=n_i\mu_i-\epsilon \frac{n_i}{n}\tag{trick}\\
-    &\Rightarrow \sum_i\mu_in_i=\sum_inn_i\PDof{n_i}(\frac{\epsilon}{n})+\epsilon\\
-    &\Rightarrow P=Ts+\sum_inn_i\PDof{n_i}(\frac{\epsilon}{n})\tag{N averall conserved such baryon}
-\end{align*}
+L'estensivit\`a impone, per un sistema omogeneo bulk,
+\[
+U(\lambda S,\lambda V,\{\lambda N_i\})=\lambda U(S,V,\{N_i\}).
+\]
+Deriviamo rispetto a $\lambda$ e poniamo $\lambda=1$:
+\[
+U=S\frac{\partial U}{\partial S}+V\frac{\partial U}{\partial V}
+ +\sum_iN_i\frac{\partial U}{\partial N_i}.
+\]
+Usando il primo principio,
+\[
+\boxed{U=TS-PV+\sum_i\mu_iN_i.}
+\]
+Validita: equilibrio estensivo; superfici, gravitazione auto-consistente e campi a lungo raggio possono richiedere cautela.
 \end{frame}
 
-\begin{frame}{Bulk matter: $C$}
-    \begin{align*}
-        &F(T,V,N_i)=U-TS=-PV+\sum_i\mu_iN_i\\
-        &\Rightarrow f(T,n_i)=\lim_{V\to\infty}\frac{F}{V}=-P+\sum_i\mu_in_i\\
-        &s=-\PDof{T}{f}|_{n_i},\ \mu_i=\PDy{n_i}{f}|_{T,n_j}\\
-        &\Rightarrow P=-f+\sum_in_i\PDy{n_i}{f}
-    \end{align*}
-\end{frame}
+\begin{frame}[t]{Ensemble canonico: trasformazione di Legendre}
+\small
 
-\begin{frame}{Bulk matter: $GC$ - Important for hot dense mater}
-    \begin{align*}
-        &P(T,\mu_i)=-\frac{\Omega}{V}:\ s=\PDy{T}{P}|_{\mu_i},\ n_i=\PDy{\mu_i}{P}|_{T,\mu_j}\\
-        &\epsilon(T,\mu_i)=-P+Ts+\sum_i\mu_in_i=-P+T\PDy{T}{P}+\sum_i\mu_i\PDy{\mu_i}{P}
-    \end{align*}
-\end{frame}
-
-\section{Equilibrio chimico - $\beta$-equilibrio}
-
-\subsection{Conserved quantities}
-
-\begin{frame}{Chemical equilibrium}
-    \begin{align*}
-        &dU=-P\,dV+TdS+\sum_i\mu_i\,dN_i\\
-        &\Rightarrow dU=\sum_i\mu_i\,dN_i\tag{Any work $PdV=0$, any heat exchange $\delta Q=TdS=0$}\\
-        &dU=0\Rightarrow\sum_i\mu_i\,dN_i=0\tag{equilibrium}\\
-        &\Pproton+\Pelectron\to\Pneutron+\APnue\tag{neutronization}\\
-        &\Rightarrow \mu_{\Pnue}+\mu_{\Pneutron}-\mu_{\Pelectron}+\mu_{\Pproton}=0\\
-        &\Pneutron\to\Pproton+\Pelectron+\APnue\tag{nucleons+electrons}\\
-        &\Rightarrow\mu_{\Pneutron}=\mu_{\Pproton}+\mu_{\Pelectron}+\mu_{\APnue}\\
-        &\Rightarrow\mu_{\APnue}=-\mu_{\Pnue},\ \mu_{\APelectron}=-\mu_{\Pelectron}, \mu_{\Pphoton}=0
-    \end{align*}
-    Chemical potential of anti-particle is negative of that of particle. As P/AP annihilate in pure energy in form of photons $\mu_{Pphoton}=0$.
-\end{frame}
-
-\begin{frame}{Number of indep quantities required to describe mixture of baryons and leptons?}
-    \begin{columns}[T]
-        \begin{column}{0.5\textwidth}
-            \begin{block}{Conserved Quantum Numbers}
-                \begin{itemize}
-                \item Electrodynamics conserve charges
-                \item Weak interactions conserve barion B, and lepton L number (Flavor mixing between 3 different neutrino flavors break individual lepton flavor but not total lepton number)
-                \item Strong interactions conserve baryon number B and flavor number of Quarks (Up,Down, Strange, Charm, Bottom, Top - Quark number)
-            \end{itemize}
-            Tutte le reazioni tra barioni e leptoni conservano il numero barionico B, il numero leptonico L e la carica Q: scegliendo i numeri corrispondenti $N_B$, $N_L$, $N_Q$ il sistema quantistico \'e completamente specificato - one can decompose chemical potential of particle $i$ in terms of the quantum numbers of the particle $\mu_i=B_i\mu_B+L_i\mu_L+Q_i\mu_Q$: all we need are the quantum number $N_B, N_L, N_Q$ to define chemical composition or chemical potential (in ensemble gran canonico $\Omega(T,V,\mu_i)$).
-            \end{block}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{block}{Connection between chemical potential and composition}
-                We are in gran-canonical ens.: $\Omega(T,V,\mu_i)$ and $P(T,\mu_B,\mu_L,\mu_Q)=-\frac{\Omega}{V}$; there are additional astrophysical constraints: charge density $n_Q=\frac{N_Q}{V}=0$ - questo fissa il potenziale chimico di carica
-                \begin{align*}
-                    &n_Q=\PDy{\mu_Q}{P}=\sum_i\PDy{\mu_i}{P}\PDy{\mu_Q}{\mu_i}=\sum_in_iQ_i=0\\
-                    &\Rightarrow\PDy{\mu_Q}{P(T,\mu_B,\mu_L,\mu_Q)}=0
-                \end{align*}
-                Connection between chemical potential and averall charge density is not trivial and depends also on interactions between particles, as all terms in thermodynamic potential that depends on $\mu_Q$ have to be considered.
-                For ''cold'' matter neutrinos escape: $\mu_{\Pnue}=\mu_{\Pnum}=\mu_{\Pnut}$, lepton number is not conserved and $\mu_L=0$ \keyword{$\beta$-equilibrio}. For cold degenerate matter $K_BT\ll E_F$: one can set $T=0$ and system can be described in terms of chemical potential $\mu_B$ or baryon density $n_B$ alone, ie $P(T,\mu_B)\to P(\mu_B)$.
-                \keyword{$\mu_L=0$ non implica $\mu_e=0$}: $\mu_e=0*\mu_B+1*\mu_L+(-1)*\mu_Q=-\mu_Q$.
-            \end{block}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}{connection between the chemical potential and the overall charge density is a nontrivial}
-    \begin{itemize}
-        \item Gas non interagente a $T=0$. $n_i=\frac{k_{F,i}^3}{3\pi^2}$, $\mu_i=\sqrt{k_{F,i}^2+m_i^2}$ quindi $n_i(\mu_i)$ e poich\'e $\mu_i=B_i\mu_B+L_i\mu_L+Q_i\mu_Q$ da cui ho $n_Q(\mu_Q)=\sum_iQ_i\mu_i(B_i\mu_B+L_i\mu_L+Q_i\mu_Q)$ e risolvere $n_Q(\mu_Q)=0$
-        \item Relativistic Mean Field theory - Si parte da lagrangiana in cui protoni e neutroni interagiscono tramite campi mesonici, $\sigma$ attrattivo, $\omega_{\mu}$ repulsivo, $\rho_{\mu}$ isovettoriale. In approssimazione di campo medio:
-            \begin{align*}
-                &\Omega=\Omega_{Fermions}(T,\mu_i^*,m_i^*)+\Omega_{fields}(\sigma,\omega_0,\rho_0)\\
-                &\PDy{\sigma}{\Omega}=0,\ \PDy{\omega_0}{\Omega}=0,\ \PDy{\rho_0}{\Omega}=0\tag{stazionariet\'a potenziale determina campi}
-            \end{align*}
-    \end{itemize}
-\end{frame}
-
-\subsection{$\beta$-equilibrium}
-
-\begin{frame}{Gas \Pproton/\Pelectron: sotto $n_c$ domina $m_p+m_e<m_n$. }
-    \begin{itemize}
-        \item Neutronization - The weak reaction $\Pelectron+\Pproton\to\Pneutron+\Pnue$ proceed only if $\Delta m=m_n-m_p=(393.57-928.28)\si{\mega\ev}=\SI{1.29}{\mega\ev}$ is compensated by kinetic energy.
-        \item $\beta$ decay - $\Pneutron\to\Pproton+\Pelectron+\APnue$ is blocked if density is high enough such energy level are occupied.
-    If we assume chemical equilibrium, with $T=0$, $\mu_{\nu}=0$: $\mu_e+\mu_p=\mu_n$. A $T=0$ tutti i livelli sono occupati fino all'energia di Fermi: $k_{F,i}$ impulso di Fermi, $g_i=2s_i+1$
-    \begin{align*}
-        &\mu_i=E_{F,i}=\sqrt{k_{F,i}^2+m_i^2}\tag{$T=0$: energy needed to take fermion}\\
-        &\sqrt{k_{F,e}^2+m_e^2}+\sqrt{k_{F,p}^2+m_p^2}=\sqrt{k_{F,n}^2+m_n^2}\tag{equilibrium}\\
-        &n_i=g_i\int_0^{k_{F,i}}\frac{d^3k}{(2\pi)^3}=\frac{g_i}{6\pi^2}k_{F,i}^3\tag{number density}\\
-        &n_e=n_p\Rightarrow g_ek_{F,e}^3=g_pk_{F,p}^3\tag{charge neutrality}\\
-        &g_e=g_p=2\Rightarrow k_{F,e}=k_{F,p}\tag{thermod. quant. as f. of $\mu_B$/$n_B$}\\
-        &P=P_e+P_p+P_n\\
-        &\epsilon=\epsilon_e+\epsilon_p+\epsilon_n\\
-        &n_B=n_p+n_n\\
-        &n_Q=n_p-n_e=0
-    \end{align*}
-                \item A gas of \Pproton-\Pelectron is energ-favor. at low density. $m_p+m_e=\SI{938.79}{\mega\ev}<m_n=\SI{939.57}{\mega\ev}$.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Gas neutroni/protoni/elettroni: neutronization. Formazione nuclei}
-            \begin{itemize}
-                \item At some critical $n_e=n_p$ ($n_Q=n_p-n_e=0$) Fermi energy of electrons and protons sum up to \Pneutron rest mass ($k_{F,n}=0$):
-                    \begin{align*}
-                        &\sqrt{k_{F,e}^2+m_e^2}+\sqrt{k_{F,p}^2+m_p^2}=m_n\tag{\Pneutron at rest}\\
-                        &K_{F,p}\ll m_p\Rightarrow\sqrt{k_{F,p}^2+m_p^2}\approx m_p\tag{\Pproton NR}\\
-                        &\Rightarrow\sqrt{k_{F,e}^2+m_e^2}\approx m_n-m_p\tag{$n_e$ neutronization}\\
-                        &\Rightarrow n_c=\frac{1}{3\pi^2}((m_n-m_p)^2+m_e^2)\expy{\frac{3}{2}}\approx\SI{7.4e30}{\per\cubic\cm}
-                    \end{align*}
-    Con aumentare della densit\'a si ha $n_n\gg n_p$ e si forma la materia neutronica.
-        \item Condizione asintotica equilibrio $K_F\gg m_N$ (limite UR). La condizione $\sqrt{k_{F,e}^2+m_e^2}+\sqrt{k_{F,p}^2+m_p^2}=m_n$ si riduce a $k_{F,n}\approx k_{F,e}+k_{F,p}=2k_{F,p}$: essendo $n\propto gk_F^3$ con $g_n=g_p=2$ e quindi nel limite di alte densit\'a $n_n=8n_p$ o $\frac{n_n}{n_B}=\frac{8}{9}$.
-    \end{itemize}
-    La materia densa, oltre $\rho_c=m_pn_c\approx\SI{1.2e7}{\gram\per\cubic\cm}$, in $\beta$-equilibrio \'e composta principalmente da neutroni in quanto la neutralit\'a imporrebbe di aggiungere coppia \Pproton/\Pelectron, sopra la densit\'a critica non \'e energeticamente conveniente.
-\end{frame}
-
-\begin{frame}{Realistic neutron matter: formazione nuclei}
-    \begin{itemize}
-        \item In realt\'a lo stato di minimo dei nucleoni \'e sono i nuclei: materia in $\beta$-equilibrio consiste di nuclei in gas di elettroni che garantisce neutralit\'a, ma i nuclei presenti non sono quelli con minor massa per barione. We need to find nucleus (A,Z) scanning through nuclear chart which minimizes total energy of the system for given baryon number density. Vedi termine $\frac{Z}{A}\mu_e$ dovuto agli elettroni per neutralit\'a di carica.
-    \item In addition nuclei will form regular lattice to minimize coulomb energy, ie lattice energy has to be included; lattice energy is important for composition of nuclei not for EOS.
-    \item At low density $^{56}Fe$, the one with lowest mass per baryon, is present in $\beta$-equilibrated matter; with increasing baryon density nuclei become more neutron rich (\xaumenta{n_B}, \xaumenta{n_e}, aumenta probabilit\'a di convertire protone in neutrone) until highest possible \Pneutron/\Pproton ration is achieved: there the baryon density is called neutron-drip density $\rho\approx\SI{4e11}{\gram\per\cubic\cm}$.
-    \item Neutron drip density depends upon nuclear model used to determine binding energy of unknown neutron rich nucleus (in particular the ones close to neutron dripline)
-    \item Nuclei con B streaordinariamente alta saranno favoriti in materia in $\beta$-equilibrio: closed shell of neutrons to a magic number $N=2,8,20,50,82,126$; modelli indicano come pi\'u favoriti $N=50,82$.
-    \end{itemize}
+\[
+F(T,V,N_i)=U-TS.
+\]
+Differenziale esplicito:
+\[
+\begin{aligned}
+dF&=dU-T\,dS-S\,dT\\
+&=-P\,dV-S\,dT+\sum_i\mu_i\,dN_i.
+\end{aligned}
+\]
+\[
+P=-\left.\frac{\partial F}{\partial V}\right|_{T,N_i},\quad
+S=-\left.\frac{\partial F}{\partial T}\right|_{V,N_i},\quad
+\mu_i=\left.\frac{\partial F}{\partial N_i}\right|_{T,V,N_{j\ne i}}.
+\]
+Per uno stato uniforme $F/V=f(T,n_i)$ e $P=-f+\sum_i\mu_i n_i$.
 
 \end{frame}
 
-\begin{frame}{Composizione materia in $\beta$-equilibrio}\frameinlbftrue
-    \begin{itemize}
-        \item $\rho<\SI{e4}{\gram\per\cubic\cm}$: gas of atoms - Atmospheres of compact stars.
-        \item $\rho=\SI{e4}{\gram\per\cubic\cm}$: si forma gas di elettroni liberi e reticolo di nuclei di $^{56}Fe$.
-        \item $\rho=\SI{2e6}{\gram\per\cubic\cm}$: elettroni diventano relativistici.
-        \item $\rho<\SI{8e6}{\gram\per\cubic\cm}$: si forma un reticolo di nuclei oltre $^{56}Fe$ con attorno gas di elettroni; i nuclei diventano sempre pi\'u neutron rich all'aumentare della densit\'a.
-        \item $\rho<\SI{4e11}{\gram\per\cubic\cm}$: neutron drip density - densit\'a limite per emissione di neutroni da èparte di neutron rich nuclei.
-    \end{itemize}
+\begin{frame}[t]{Ensemble gran canonico: pressione come potenziale}
+\small
+
+\[
+\Omega(T,V,\mu_i)=F-\sum_i\mu_iN_i=U-TS-\sum_i\mu_iN_i.
+\]
+\[
+\begin{aligned}
+d\Omega&=-P\,dV-S\,dT-\sum_iN_i\,d\mu_i,\\
+\Omega&=-PV\qquad\text{(bulk, via Eulero).}
+\end{aligned}
+\]
+Dunque
+\[
+P(T,\mu_i)=-\frac{\Omega}{V},\qquad
+s=\left.\frac{\partial P}{\partial T}\right|_{\mu_i},\qquad
+n_i=\left.\frac{\partial P}{\partial\mu_i}\right|_{T,\mu_{j\ne i}}.
+\]
+In particolare $P(\mu,T)$, se termodinamicamente consistente, permette di ricostruire anche densita ed energia.
 \end{frame}
 
-\section{EOS fermionic matter at $T=0$}
+\begin{frame}[t]{Limite termodinamico: identita fondamentali}
+\small
 
-\begin{frame}{}
-    \begin{columns}[T]
-        \begin{column}{0.5\textwidth}
-            \begin{itemize}
-                \item EOS for degenerate matter in compact star: $P(\epsilon)$ or $P(n)$
-                \item EOS to describe nuclear matter: binding energy per baryon as a function of baryon number density $\frac{E_b}{A}(n_B)=\frac{\epsilon}{n_B}-m_N$
-                \item Energy per particle $\frac{E}{A}$ is a thermodynamic potential in T.L. function of number density and entropy per particle: possiamo usare formula di Eulero $\epsilon=Ts-P+\mu_Bn_B\xrightarrow{T=0}-P+\mu_Bn_B$ e $\mu_B=\frac{\epsilon}{n_B}$ o direttamente $P=Ts+\sum_inn_i\PDof{n_i}(\frac{\epsilon}{n})$.
-            \end{itemize}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{align*}
-                &\PDof{n_B}(\frac{E}{A})=\PDof{n_B}(\frac{\epsilon}{n_B})=\frac{1}{n_B}\frac{\epsilon}{n_B}-\frac{\epsilon}{n_B^2}\\
-                &\Rightarrow\PDof{n_B}(\frac{\epsilon}{A})=\frac{\mu_B}{n_N}-\frac{\epsilon}{n_B^2}=\frac{P}{n_B^2}\\
-                &\Rightarrow P=n_B^2\PDof{n_B}(\frac{E}{A})
-            \end{align*}
-            Energy per particle as function of number density is proportional to pressure: a minimum in energy per particle corresponds to vanishing pressure, ie stable equilibrated matter.
-        \end{column}
-    \end{columns}
-    \begin{itemize}
-        \item Le espressioni $P(\epsilon)$ o $P(n)$ non sono potenziali termodinamici e non contengono tutte le informazioni termodinamiche al contrario dell'espressione $\frac{E_B}{A}$: infatti calcolando la densit\'a di energia usando EOS nella forma $P(n)$ tramite la precedente equazione per P la costante di integrazione resta indeterminata; questo non \'e il caso per $P(\mu,T)$:
-            \begin{align*}
-                &\epsilon(\mu,T)=-P(\mu,T)+\mu n+Ts\\
-                &n=(\PDy{\mu}{P(\mu,T)}),\ s=(\PDy{T}{P(\mu,T)})
-            \end{align*}
-            Infatti nell'ensemble grancanonico $P=-\frac{\Omega}{V}$ direttamente legata a potenziale termodinamico (funzione di stato dalle cui derivate ottengo tutte le grandezze termodinamiche).
-    \end{itemize}
+Per materia bulk omogenea:
+\[
+\varepsilon=\frac UV,\qquad s=\frac SV,\qquad n_i=\frac{N_i}{V}.
+\]
+Il primo principio diventa
+\[
+d\varepsilon=T\,ds+\sum_i\mu_i\,dn_i,
+\]
+mentre l'equazione di Eulero diventa
+\[
+\boxed{\varepsilon+P=Ts+\sum_i\mu_i n_i.}
+\]
+Con $T=0$ e un solo numero conservato indipendente:
+\[
+d\varepsilon=\mu\,dn,\qquad
+\varepsilon+P=\mu n,\qquad dP=n\,d\mu.
+\]
+Quest'ultima deriva differenziando l'identita di Eulero e confrontando con il primo principio.
 \end{frame}
 
-\section{Dense Matter - Fermi gas - Polytropes}
+\begin{frame}[t]{Energia per particella e pressione}
+\small
 
-\begin{frame}{Fermi Gas of electrons and nucleons: NR limit}
-    \begin{columns}[T]
-        \begin{column}{0.45\textwidth}
-            \begin{align*}
-                &P_e=\frac{g_e}{3(2\pi)^3}\int\,d^3k\scap{k}{v}_e\tag{electrons P}\\
-                &v_e=\frac{k}{E_e(k)},\ E_e(k)=\sqrt{k^2+m_e^2}\\
-                &\Rightarrow P_E=\frac{g_e}{6\pi^2}\int_0^{k_{F,e}}dk \frac{k^4}{E_e(k)}\\
-                &\epsilon=\frac{g}{(2\pi)^3}\int d^3kE(k)
-            \end{align*}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{align*}
-                &T^{ij}=g_e\int\frac{d^3k}{(2\pi)^3}k^iv^j f(\vec{k})\\
-                &T^{xx}=T^{yy}=T^{zz}=P\\
-                &T^{xx}+T^{yy}+T^{zz}=\frac{g_e}{(2\pi)^3}\int\,d^3k\scap{k}{v}_e\\
-                &\dot{x}=\PDy{\vec{p}}{H} (E=\hbar\omega, \vec{p}=\hbar\vec{k},\vec{v}_g=\PDy{\vec{k}}{\omega})\Rightarrow v_e=\nabla_{\vec{v}}E_e
-            \end{align*}
-        \end{column}
-    \end{columns}
-    \begin{itemize}
-        \item Limite NR $k_{F,e}\ll m_e$, $v_e\approx \frac{k}{m_e}$, $E_e\approx m_e$: $P_e^{NR}=\frac{g_e}{6\pi^2}\int_0^{k_{F,e}}dk \frac{k^4}{m_e}=\frac{g_e}{30\pi^2}\frac{k_{F,e}^5}{m_e}$
-        \item Number density $n_e=\frac{g_e}{(2\pi)^3}\int d^3k=\frac{g_e}{2\pi^2}\int_0^{k_{F,e}}k^2\,dk=\frac{g_e}{6\pi^2}k_{F,e}^3$
-        \item $P_e^{NR}=\frac{1}{5}(\frac{6\pi^2}{g_e})\expy{\frac{2}{3}}\frac{n_e\expy{\frac{5}{3}}}{m_e}$: pressure inversely proportional to fermion mass, the contribution from nucleons is suppressed by a factor $\frac{m_e}{m_N}$ (from nucleons is suppressed by a factor $\frac{m_e}{Am_N}$) and can be ignored.
-        \item Charge neutrality: $n_e=n_p=Zn_A=\frac{Z}{A}n_N$.
-        \item Energy in NR limit $E(k)\approx m$: $\epsilon^{NR}\approx m \frac{g}{(2\pi)^3}\int d^3k=mn=\rho$, quindi la densit\'a di energia \'e dominata dai nucleoni $\epsilon^{NR}=\rho_A=m_A\rho_A\approx\rho_N=m_Nn_N$ and ignoring binding energy we have $m_A\approx Am_N$.
-        \item Total pressure in terms of mass density: $P^{NR}=\frac{1}{5}(\frac{6\pi^2}{g_e})\expy{\frac{2}{3}}\frac{1}{m_e}(\frac{Z\rho_N}{Am_N})\expy{\frac{5}{3}}\propto(\frac{Z}{A})\expy{\frac{5}{3}}\rho_N\expy{\frac{5}{3}}$ - EOS in NR limit is a power law with exponent $\frac{5}{3}$.
-    \end{itemize}
+Con $T=0$, un numero conservato $N$ e $e(n)=\varepsilon(n)/n$:
+\[
+\frac{de}{dn}=
+\frac{n\,d\varepsilon/dn-\varepsilon}{n^2}.
+\]
+Poiche $d\varepsilon/dn=\mu$ e $P=\mu n-\varepsilon$,
+\[
+\boxed{P=n^2\frac{d}{dn}\!\left(\frac{\varepsilon}{n}\right).}
+\]
+Ne segue
+\[
+\mu=e+\frac{P}{n},\qquad
+P=0\ \Longleftrightarrow\ \frac{de}{dn}=0\quad(n>0).
+\]
+Un minimo di $e(n)$ a densita finita e a pressione nulla individua materia autolegata; la stabilita richiede inoltre opportuna curvatura positiva.
 \end{frame}
 
-\begin{frame}{Fermi Gas of electrons and nucleons: R limit}
-    \begin{columns}[T]
-        \begin{column}{0.45\textwidth}
-            \begin{align*}
-                &P_e=\frac{g_e}{3(2\pi)^3}\int\,d^3k\scap{k}{v}_e\tag{electrons P}\\
-                &v_e=\frac{k}{E_e(k)},\ E_e(k)=\sqrt{k^2+m_e^2}\\
-                &\Rightarrow P_E=\frac{g_e}{6\pi^2}\int_0^{k_{F,e}}dk \frac{k^4}{E_e(k)}\\
-                &\epsilon=\frac{g}{(2\pi)^3}\int d^3kE(k)
-            \end{align*}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{align*}
-                &T^{ij}=g_e\int\frac{d^3k}{(2\pi)^3}k^iv^j f(\vec{k})\\
-                &T^{xx}=T^{yy}=T^{zz}=P\\
-                &T^{xx}+T^{yy}+T^{zz}=\frac{g_e}{(2\pi)^3}\int\,d^3k\scap{k}{v}_e\\
-                &\dot{x}=\PDy{\vec{p}}{H} (E=\hbar\omega, \vec{p}=\hbar\vec{k},\vec{v}_g=\PDy{\vec{k}}{\omega})\Rightarrow v_e=\nabla_{\vec{v}}E_e\\
-                &n_e=n_p=Zn_A=\frac{Z}{A}n_N\tag{charge netrality}
-            \end{align*}
-        \end{column}
-    \end{columns}
-    \begin{itemize}
-        \item Limite R $k_{F,e}\gg m_e$, $k_{F,e}\ll m_N$: relativistic \Pelectron, non-relativistic nucleon. $v_e\approx c=1$, $E^{R}_e\approx k$:             
-            \begin{align*}
-                &P_e^R=\frac{g_e}{6\pi^2}\int_0^{k_{F,e}}dk k^3=\frac{g_e}{24\pi^2}k_{F,e}^4=\frac{1}{4}(\frac{6\pi^2}{g_e})\expy{\frac{1}{3}}n_e\expy{\frac{4}{3}}\\
-                &P_e^R=\frac{g_e}{24\pi^2}k_{F,e}^4=\frac{1}{4}n_ek_{F,e},\ P_N^{NR}=\frac{g_N}{30\pi^2}\frac{k_{F,N}^5}{m_N}=\frac{1}{5}n_N \frac{k_{F,N}^2}{m_N}\Rightarrow \frac{P_p^{NR}}{P_e^R}=\frac{4}{5}\frac{k_{F,e}}{m_N}\ll1\\
-                &(n_e=\frac{g_e}{(2\pi)^3}\int d^3k=\frac{g_e}{2\pi^2}\int_0^{k_{F,e}}k^2\,dk=\frac{g_e}{6\pi^2}k_{F,e}^3,\ n_e=n_p,\ g_p=g_e=2)
-            \end{align*}
-        \item Energy in R limit $E(k)\approx k$: $\epsilon^R=\rho_A=m_A\rho_A\approx\rho_N=m_Nn_N$ and ignoring binding energy we have $m_A\approx Am_N$.
-        \item EOS: $P^R_e=\frac{1}{4}(\frac{6\pi^2}{g_e})\expy{\frac{1}{3}}(\frac{Z\rho_N}{Am_N})\expy{\frac{4}{3}}\propto(\frac{Z}{A})\expy{\frac{4}{3}}\rho_N\expy{\frac{4}{3}}$.
-    \end{itemize}
+\begin{frame}[t]{Ricostruire l'EOS da P(n)}
+\small
+
+Da $P=n^2d(\varepsilon/n)/dn$:
+\[
+\frac{d}{dn}\left(\frac{\varepsilon}{n}\right)=\frac{P(n)}{n^2}.
+\]
+Integrando fra due densita:
+\[
+\boxed{\varepsilon(n)=n\left[\frac{\varepsilon(n_*)}{n_*}
++\int_{n_*}^{n}\frac{P(n')}{n'^2}\,dn'\right].}
+\]
+Per $P(n)$ serve quindi una condizione energetica al punto di riferimento $n_*$.
+Una sola relazione $P(\varepsilon)$, sufficiente a integrare le TOV, non determina automaticamente $n(\varepsilon)$ senza un'ulteriore normalizzazione termodinamica.
 \end{frame}
 
-\begin{frame}{EOS pure neutron gas}
-    \begin{columns}[T]
-        \begin{column}{0.53\textwidth}
-            \begin{align*}
-                &P_n^{NR}=\frac{g_n}{6\pi^2}\int_0^{k_{F,n}}dk \frac{k^4}{m_n}=\frac{g_n}{30\pi^2}\frac{k_{F,n}^5}{m_n}\tag{NR: $k_F\ll m_n$}\\
-                &\epsilon^{NR}_n=\rho_n=m_nn_n\ (n_n=\frac{g_n}{(2\pi)^3}\int d^3k=\frac{g_n}{6\pi^2}k_{F,n}^3)\\
-                &P^{NR}_n=\frac{1}{5}(\frac{6\pi^2}{g_n})\expy{\frac{2}{3}}\frac{1}{m_n}(\frac{\rho_n}{m_n})\expy{\frac{5}{3}}\propto\rho_n\expy{\frac{5}{3}}\tag{EOS}
-            \end{align*}
-        \end{column}
-        \begin{column}{0.47\textwidth}
-            \begin{align*}
-                &P_e^R=\frac{g_n}{6\pi^2}\int_0^{k_{F,n}}dk k^3\tag{UR: $k_{F,n}\gg m_n$}\\
-                &=\frac{g_n}{24\pi^2}k_{F,n}^4=\frac{1}{4}(\frac{6\pi^2}{g_n})\expy{\frac{1}{3}}n_n\expy{\frac{4}{3}}\ (n_n=\frac{g_n}{6\pi^2}k_{F,n}^3)\\
-                &\epsilon=\frac{g}{(2\pi)^3}\int d^3kE\xrightarrow{E_n^R\approx k}\frac{g_n}{(2\pi)^3}\int kd^3k\tag{$\epsilon^R_n$}\\
-                &\Rightarrow\epsilon^R_n=\frac{g_n}{2\pi^2}\int_0^{k_{F,n}}dkk^3=\frac{g_n}{8\pi^2}k_{F,n}^4
-            \end{align*}
-            EOS approaches in UR limit the EOS of free gas of massless particles $P^R=\frac{1}{3}\epsilon^R$
-        \end{column}
-    \end{columns}
+\begin{frame}[t]{Caso canonico nel bulk: verifica}
+\small
+
+\[
+f(T,n_i)=\frac FV=\varepsilon-Ts.
+\]
+\[
+df=-s\,dT+\sum_i\mu_i\,dn_i,
+\]
+\[
+s=-\frac{\partial f}{\partial T},\qquad
+\mu_i=\frac{\partial f}{\partial n_i},\qquad
+P=-f+\sum_i\mu_i n_i.
+\]
+Per una sola specie a $T=0$, $f=\varepsilon$ e
+\[
+P=n\frac{d\varepsilon}{dn}-\varepsilon.
+\]
+La seconda derivata di $\varepsilon(n)$ controlla la comprimibilita: $dP/dn=n\,d\mu/dn$.
 \end{frame}
 
-\begin{frame}{Parametrization EOS of free fermion gas - Politrope}
-    \begin{itemize}
-        \item Parametrization of free fermion gas EOS: $P\propto n^{\Gamma}=(\frac{\rho}{m})^{\Gamma}$.
-        \item For the TOV we need relation between pressure-energy density: ansaz $P\propto\epsilon^{\gamma}$.
-        \item Non Relativistic limit: $P\propto n\expy{\frac{5}{3}}\propto\epsilon\expy{\frac{5}{3}}$ quindi $\Gamma=\gamma=\frac{5}{3}$.
-        \item Relativistic limit: $P\propto n\expy{\frac{4}{3}}\propto\epsilon\expy{\frac{4}{3}}$ quindi $\Gamma=\gamma=\frac{4}{3}$.
-        \item Ultra-relativistic limit for single fermion gas: $P\propto n\expy{\frac{4}{3}}$, $P=\frac{1}{3}\epsilon$ quindi $\Gamma=\frac{4}{3}$, $\gamma=1$.
-    \end{itemize}
-    $\rho$ stands for density of non-relativistic species, $\epsilon$ denotes the more general energy density.
+\section{3.2 Equilibrio chimico}
+
+\begin{frame}[t]{Reazione chimica: condizione generale}
+\small
+
+Scriviamo una reazione con coefficienti stechiometrici $\nu_i$ (positivi per i prodotti):
+\[
+\sum_i\nu_i A_i=0,\qquad dN_i=\nu_i\,d\xi,
+\]
+dove $\xi$ e l'avanzamento della reazione.
+A $T,V$ fissati,
+\[
+dF=\sum_i\mu_i dN_i=\left(\sum_i\nu_i\mu_i\right)d\xi.
+\]
+All'equilibrio chimico, consentendo variazioni $d\xi$ di entrambi i segni,
+\[
+\boxed{\sum_i\nu_i\mu_i=0.}
+\]
+Questa derivazione evita l'uso ambiguo di $dU=0$ senza esplicitare i vincoli termodinamici.
 \end{frame}
 
-\begin{frame}{EOS of free Fermi gas in analitic parametric form}
-    \begin{align*}
-        &P=\frac{g}{3(2\pi)^3}\int d^3k \frac{k^2}{E(k)}=\frac{g}{2\pi^2}\int_0^{k_F}dk \frac{k^4}{\sqrt{k^2+m^2}}=\frac{g}{24\pi^2}\left\{k_FE_F(k_F^2-\frac{3}{2}m^2)+\frac{3}{2}m^4\ln{\frac{k_F+E_F}{m}}\right\}\\
-        &\epsilon=\frac{g}{(2\pi)^3}\int d^3kE(k)=\frac{g}{2\pi^2}\int_0^{k_F}dkk^2\sqrt{k^2+m^2}=\frac{g}{8\pi^2}\left\{k_FE_F(k_F^2+\frac{1}{2}m^2+\frac{1}{2}m^4\ln{\frac{k_F+E_F}{m}})\right\}
-    \end{align*}
-    For given Fermi moment $k_F$ or number density n, using $n=\frac{g}{2\pi^2}k_F^3$, pressure and energy density can be computed parametrically.
+\begin{frame}[t]{Equilibrio beta: segni corretti}
+\small
+
+Per la cattura elettronica
+\[
+p+e^-\ \rightleftharpoons\ n+\nu_e,
+\]
+la condizione e
+\[
+\mu_p+\mu_e=\mu_n+\mu_{\nu_e}.
+\]
+Per il decadimento $n\rightleftharpoons p+e^-+\bar\nu_e$:
+\[
+\mu_n=\mu_p+\mu_e+\mu_{\bar\nu_e},
+\qquad\mu_{\bar\nu_e}=-\mu_{\nu_e}.
+\]
+Per neutrini liberi che sfuggono da una stella fredda,
+\[
+\boxed{\mu_{\nu_e}=0\quad\Longrightarrow\quad\mu_n=\mu_p+\mu_e.}
+\]
+Per particella/antiparticella $\mu_{\bar i}=-\mu_i$ quando il potenziale e associato alle corrispondenti cariche; fotoni in equilibrio chimico ordinario: $\mu_\gamma=0$.
 \end{frame}
 
-\begin{frame}{Politrope}
-    \begin{itemize}
-        \item $P=Kn^{\Gamma}$, dimension of K depends on $\Gamma$. Extension to density dependent $\Gamma=\PDly{n}{P}$, usefull in transition from NR to R regimes.
-        \item We can't derive $\epsilon$ and $\mu$ from polytrope: i potenziali termodinamici sono della forma $\epsilon(n)$ o $P(\mu)$.
-        \item Invertendo $P=n^2\TDy{n}{\frac{\epsilon}{n}}$ la densit\'a di energia pu\'o essere riscritta in funzione della pressione $\TDy{n}{\frac{\epsilon}{n}}=\frac{P}{n^2}=Kn^{\Gamma-2}$ e integrando $\frac{\epsilon}{n}=\frac{K}{\Gamma-1}n^{\Gamma-1}+\const{}$, compare una costante da determinare, per limite bassa densit\'a l'energia per particella $\frac{E}{N}$ \'e la massa della particella $\frac{E}{N}=\frac{\epsilon}{n}\to m$ for $n\to0$, quindi la costante di integrazione pu\'o essere associata alla massa della particella per $\Gamma>1$, quindi la densit\'a di energia $\epsilon=mn+\frac{K}{\Gamma-1}n^{\Gamma}$; adesso possiamo calcolare $\mu=\TDy{n}{\epsilon}=m+\frac{K\Gamma}{\Gamma-1}n^{\Gamma-1}$
-        \item Acausal behaviour at high density: at high density speed of sound in the medium, for polytropic EOS, can exceed speed of light.
-            \begin{align*}
-                &c_s^2=\PDy{\epsilon}{P}|_s=\PDy{n}{P}\TDy{\epsilon}{n}\to\Gamma-1\tag{$n\to\infty$}
-            \end{align*}
-            For $\Gamma=2$, the stiffest EOS compatible with causality, $c_s=1$ and $P=\epsilon$; note that for a fermi gas in UR limit, ie for high density, $c_s=\frac{1}{\sqrt{3}}$
-    \end{itemize}
+\begin{frame}[t]{Potenziali chimici delle cariche conservate}
+\small
+
+Quando le reazioni rapide conservano $B,Q,L$:
+\[
+\boxed{\mu_i=B_i\mu_B+Q_i\mu_Q+L_i\mu_L.}
+\]
+Esempi:
+\[
+\begin{array}{c|ccc|c}
+ i&B_i&Q_i&L_i&\mu_i\\\hline
+ n&1&0&0&\mu_B\\
+ p&1&1&0&\mu_B+\mu_Q\\
+ e^-&0&-1&1&-\mu_Q+\mu_L\\
+ \nu_e&0&0&1&\mu_L
+\end{array}
+\]
+In stella fredda trasparente ai neutrini: $\mu_L=0$ (in questo modello); ne segue $\mu_e=-\mu_Q$, \emph{non} $\mu_e=0$.
+In proto-stelle con neutrini intrappolati si deve invece tenere conto delle frazioni leptoniche conservate sui tempi dinamici.
 \end{frame}
 
-\section{Superfluidit\'a}
+\begin{frame}[t]{Neutralita elettrica e composizione}
+\small
 
-\begin{frame}{Biblio}
-    \begin{itemize}
-        \item An introduction to Ginzburg-Landau theory of phase-transitions and non-equilibrium patterns - Hohenberg 2015: Review
-        \item Introduction to Superconductivity - Tinkham: Ch 1 Historical Overview, Ch 2 Introduction to electrodynamics of superconductors, Ch 3 The BCS theory, Ch 4 Ginzburg-Landau Theory
-    \end{itemize}
+Per $P=P(T,\mu_B,\mu_Q,\mu_L)$:
+\[
+n_Q=\left.\frac{\partial P}{\partial\mu_Q}\right|_{T,\mu_B,\mu_L}
+=\sum_iQ_i n_i.
+\]
+Neutralita bulk:
+\[
+\boxed{n_Q=0.}
+\]
+Nella miscela $n,p,e^-$:
+\[
+n_Q=n_p-n_e=0.
+\]
+La soluzione per $\mu_Q$ dipende dall'EOS: in presenza di interazioni, $n_i$ e campi medi sono interdipendenti. Si impongono simultaneamente neutralita, equilibri chimici ed equazioni del modello microscopico.
 \end{frame}
 
-\begin{frame}{Relazione tra Landau-Ginzburg e BCS}
-    \begin{itemize}
-        \item BCS (1957) \'e una teoria microscopica del pairing, Ginzburg-Landau (1950) \'e sua descrizione efficace macroscopica vicino a $T_c$; Gor'kov mostr\'o che le LG possono essere ricavate da BCS.
-        \item In BCS l'oggetto microscopico centrale \'e il parametro di pairing $\Delta(\vec[\mathbf] r) \propto \pairfield$
-        \item In GL si introduce fenomenologicamente un parametro d'ordine complesso $\psi_{GL}(\vec[\mathbf]{r})=|\psi_{GL}|\exp{i\theta}$: vicino alla temperatura di transizione $\psi_{GL}(\vec[\mathbf] r)\propto\Delta(\vec[\mathbf] r)$
-    \end{itemize}
+\begin{frame}[t]{Esempio di vincoli: npe in equilibrio}
+\small
+
+Assumiamo $T=0$, neutrini liberi e gas ideale per ciascuna specie:
+\[
+\mu_n=\mu_p+\mu_e,\qquad n_p=n_e,\qquad n_B=n_n+n_p.
+\]
+Per fermioni di spin $1/2$:
+\[
+n_i=\frac{k_{F,i}^3}{3\pi^2},\qquad
+\mu_i=\sqrt{k_{F,i}^2+m_i^2}.
+\]
+La neutralita implica $k_{F,p}=k_{F,e}$, ma i potenziali chimici restano diversi perche $m_p\ne m_e$.
+\[
+\sqrt{k_{F,n}^2+m_n^2}=\sqrt{k_{F,p}^2+m_p^2}
+ +\sqrt{k_{F,e}^2+m_e^2}.
+\]
+Il modello e didattico: non incorpora il legame nucleare ne le interazioni in materia densa.
 \end{frame}
 
-\subsection{Superconductivity/Superfluidity: Fenomenologia}
+\section{3.3 Materia in beta-equilibrio}
 
-\begin{frame}{Fenomenologia superconduttori}
-    \begin{itemize}
-        \item La resistenza di vari materiali si annulla per $T<T_c$ dipendente dal materiale.
-        \item Meissner Effect: campo magnetico \'e espulso da campione per $T<T_c$: questo non \'e spiegato da resistenza nulla che tenderebbe a ''congelare'' il campo magnetico. Superconductivity will be destroied by critical magnetic field $H_c$: $H_c$ is determined equating magnetic energy density to $\frac{H^2}{8\pi}$ to Helmoholtz free-ergy difference between normal/condensed state $\frac{H^2}{8\pi}=f_n(T)-f_s(T)$ where $f$ is Helmholtz free-energy per unit volume in the respective phase with zero-field. Approximated by parabolic law $H_c(T)\approx H_c(0)[1-(\frac{T}{T_c})^2]$.
-        \item The transition a zero field at $T_c$ is of second order, the transition in the presence of field is of first order since there is a discontinuos change in thermodynamics state of system and associated latent heat.
-        \item London eqs: $n_s$ numeric density of superconducting electrons, $\vec{h},\vec{e}$ microscopic fields
-            \begin{columns}[T]
-                \begin{column}{0.5\textwidth}
-                    \begin{align*}
-                        &\vec{E}=\PDy{t}{\Lambda\vec{J}_s},\ \vec{h}=-c\nabla\wedge(\Lambda\vec{J}_s),\ \Lambda=\frac{4\pi^2\lambda^2}{c^2}=\frac{m}{n_se^2}\\
-                        &\vec{p}\to m\vec{v}+\frac{e\vec{A}}{c}\Rightarrow\exv{\vec{v}_s}=-\frac{a\vec{A}}{mc},\ \vec{E}=\nabla\phi-\frac{1}{c}\PDy{t}{\vec{A}}\\
-                        &\vec{J}_s=n_se\exv{\vec{v}_s}=-\frac{n_se^2\vec{A}}{mc}=-\frac{\vec{A}}{\Lambda c}
-                    \end{align*}
-                \end{column}
-                \begin{column}{0.5\textwidth}
-                    $\vec{e}$: Any electric field accelerates superconducting electrons. $\vec{h}$: since $\nabla\wedge\vec{h}=\frac{4\pi\vec{J}}{c}$ we have exponentilly screened interior, $\nabla^2\vec{h}=\frac{\vec{h}}{\lambda^2}$, with penetration depth $\lambda$. In absence of field we have zero net momentum of GS. Time derivative of eq for $\vec{J}_s$ give $\vec{e}$, curl gives $\vec{h}$. $\lambda_L(0)=\sqrt{\frac{mc^2}{4\pi ne^2}}$.
-                \end{column}
-            \end{columns}
-        \item Pippard: coherence length $\xi_0$ of s. wf - $\vec{J}(\vec{r})=\frac{3\sigma}{4\pi l}\int \frac{\vec{R}[\vec{R}\cdot\vec{R}(\vec{r'})]\exp{-\frac{R}{l}}}{R^4}\,d\vec{r'}$, $\vec{R}=\vec{r}-\vec{r'}$ (Chamber's Ohm law gen.)
-            \begin{columns}[T]
-                \begin{column}{0.5\textwidth}
-                    \begin{align*}
-                        &\Delta p\approx \frac{kT_c}{v_f}\Rightarrow\Delta x\geq \frac{\hbar}{\Delta p}\approx \frac{\hbar v_F}{kT_c}\Rightarrow \xi_0=a\frac{\hbar v_F}{kT_c}\\
-                        &\vec{J}_s(\vec{r})=\frac{3}{4\pi\xi_0\Lambda c}\int \frac{\vec{R}[\vec{R}\cdot\vec{A}(\vec{r'})]\exp{-\frac{R}{\xi}}\,d\vec{r'}}{R^4},\ \frac{1}{\xi}=\frac{1}{\xi_0}+\frac{1}{l}
-                    \end{align*}
-                \end{column}
-                \begin{column}{0.5\textwidth}
-                    Current at $\vec{r}$ deps on $\vec{E}(\vec{r'})$ throughout volume radius $\approx l$ about $\vec{r}$ - typic. $\xi_0\gg\lambda_L(0)$ - $\xi_0$ smallest size wave packet that superconductin charge carriers can form; BCS: $a\approx0.18$.
-                \end{column}
-            \end{columns}
-    \end{itemize}
+\begin{frame}[t]{Soglia di neutronizzazione nel gas libero}
+\small
+
+Prima della comparsa dei neutroni, $k_{F,n}=0$ e $k_{F,e}=k_{F,p}\equiv k_F$:
+\[
+\sqrt{k_F^2+m_e^2}+\sqrt{k_F^2+m_p^2}=m_n.
+\]
+Dato che $k_F\ll m_p$ alla soglia,
+\[
+\sqrt{k_F^2+m_p^2}\simeq m_p,
+\qquad
+k_{F,c}\simeq\sqrt{(m_n-m_p)^2-m_e^2}.
+\]
+La densita critica (per elettroni o protoni) e
+\[
+\boxed{n_c\simeq\frac{[(m_n-m_p)^2-m_e^2]^{3/2}}{3\pi^2(\hbar c)^3}.}
+\]
+\emph{Correzione al sorgente:} sotto radice compare un segno meno, non piu. $m_n-m_p\simeq1.293\,\mathrm{MeV}$; $m_p\simeq938.272\,\mathrm{MeV}$.
 \end{frame}
 
-\begin{frame}{Fenomenologia Superfluidi/superconduttori}
-    \begin{block}{Specific Heat}
-        Superconductors: energy gap $\Delta\approx kT_c$ between GS and quasi-particle excitations - Specific heat of electrons for $T\ll T_c$ dominated by exponential $C_{es}\approx \gamma T_ca\exp{-b \frac{T_c}{T}}$ where normal state elettronic specific heat is $C_{en}=\gamma T$: exponential deps. ($b\approx1.5$) implies min. excitation energy per particle of $\approx1.5kT_C$ - popolazione eccitazione soppressa di fattore di Boltzman $\exp{-\frac{\Delta}{kT}}$. Il calore specifico misura la dipendenza dell'energia immagazzinata nelle eccitazioni da T
-    \end{block}
-    \begin{block}{EM absorption in region $\hbar\omega\approx kT_c$}
-        Far-IR and microwave measurements shows energy gap $\approx3-4kT_c$: questo risultato \'e consistente con quello calorimetrico solo se le eccitazioni sono prodotte in coppia come atteso se obbescono alla statistica di Fermi.
-    \end{block}
-    \begin{block}{BCS Theory - Cooper pair with spatial extension $\xi_0$ are superconducting charge carriers}
-        Weak attractive interaction between electrons, such second order phonon-electron int., causes instability in Fermi's sea GS to formation of electron bound pairs occuping states with opposite momentum and spin.
-        La teoria prevede energia minima $E_g=2\Delta(T)$ per rompere la coppia creando due eccitazioni di quasi-particella; $\Delta(T_c)=0$ e aumenta per $T\ll T_c$ con $E_g(0)=2\Delta(0)=3.528kT_c$
-    \end{block}
-    \begin{block}{GL Theory - $\psi$ parametro d'ordine}
-        \begin{columns}[T]
-            \begin{column}{0.5\textwidth}
-                \begin{align*}
-                    &f_s-f_n=a(T)|\psi|^2+\frac{b}{2}|\psi|^4(+c|\psi|^6+\ldots)\\
-                    &
-                \end{align*}
-            \end{column}
-            \begin{column}{0.5\textwidth}
-                Local density of superconducting electrons $n_s=|\psi|^2$ - Transizione continua: $\alpha(T-T_c)$; minimo a $|\psi|^2=-\frac{\alpha}{\beta}$
-            \end{column}
-        \end{columns}
-        
-    \end{block}
+\begin{frame}[t]{Limite ad alta densita del gas libero npe}
+\small
+
+Nel limite formale $k_{F,i}\gg m_i$ per tutte le specie, non alla soglia,
+\[
+\mu_n=\mu_p+\mu_e\quad\Longrightarrow\quad
+k_{F,n}\simeq k_{F,p}+k_{F,e}.
+\]
+Neutralita $k_{F,e}=k_{F,p}$:
+\[
+k_{F,n}\simeq2k_{F,p},\qquad
+\frac{n_n}{n_p}\simeq\left(\frac{k_{F,n}}{k_{F,p}}\right)^3=8.
+\]
+\[
+\boxed{\frac{n_n}{n_B}\simeq\frac89,\qquad\frac{n_p}{n_B}\simeq\frac19.}
+\]
+Questo \`e un limite matematico del gas libero, non una previsione affidabile della frazione protonica nel core reale: le interazioni nucleari e i muoni modificano la composizione.
 \end{frame}
 
-\begin{frame}{MQ Wizard}
-    \begin{block}{Spazio di Hilbert per stato a due particelle a partire da stati a particella singola}
-    Per un sistema costituito da due particelle, lo spazio di Hilbert totale e il prodotto tensoriale degli spazi a singola particella $\mathcal{H}=\mathcal{H}_1\otimes\mathcal{H}_2$.
+\begin{frame}[t]{Perche la materia reale forma nuclei?}
+\small
 
-    Se la prima particella si trova nello stato $\ket{\vb{k}_1}\in\mathcal{H}_1$ e la seconda nello stato $\ket{\vb{k}_2}\in\mathcal{H}_2$, il corrispondente stato prodotto a due particelle \'e $\ket{\vb{k}_1,\vb{k}_2}=\ket{\vb{k}_1}\otimes\ket{\vb{k}_2}$. Nella rappresentazione delle coordinate si ha $\Psi(\vb{r}_1,\vb{r}_2)=\braket{\vb{r}_1,\vb{r}_2|\vb{k}_1,\vb{k}_2}$, con $\ket{\vb{r}_1,\vb{r}_2}=\ket{\vb{r}_1}\otimes\ket{\vb{r}_2}$. Poich\'e il prodotto scalare sullo spazio prodotto fattorizza $\braket{\vb{r}_1,\vb{r}_2|\vb{k}_1,\vb{k}_2}=\braket{\vb{r}_1|\vb{k}_1}\braket{\vb{r}_2|\vb{k}_2}$, la funzione d'onda a due particelle \'e quindi il prodotto delle funzioni
-d'onda a singola particella $\Psi(\vb{r}_1,\vb{r}_2)=\phi_{\vb{k}_1}(\vb{r}_1)\phi_{\vb{k}_2}(\vb{r}_2)$. Nel caso di stati a onda piana $\phi_{\vb{k}}(\vb{r})=\frac{1}{\sqrt{\Omega}}e^{i\vb{k}\cdot\vb{r}}$, segue $\Psi(\vb{r}_1,\vb{r}_2)=\frac{1}{\Omega}e^{i\vb{k}_1\cdot\vb{r}_1}e^{i\vb{k}_2\cdot\vb{r}_2}$. L'utilizzo di stati prodotto non implica che l'interazione tra le particelle sia nulla: per $V\neq0$ essi possono essere usati come base di espansione, mentre gli autostati dell'Hamiltoniana completa sono in generale sovrapposizioni di pi\'u stati prodotto.
-    \end{block}
+Nel gas libero si trascura il guadagno di energia dovuto al legame nucleare.
+\begin{itemize}
+\item In crosta esterna: nuclei ricchi di neutroni in reticolo coulombiano + elettroni degeneri.
+\item La composizione dipende dall'energia di massa nucleare, dall'energia elettronica e dall'energia del reticolo.
+\item Aumentando la densita, il costo energetico del gas di elettroni favorisce catture elettroniche.
+\item Al \emph{neutron drip} iniziano a comparire neutroni non legati nei nuclei.
+\end{itemize}
+La minimizzazione al numero barionico e alla neutralita fissati richiede confrontare varie specie $(A,Z)$, non solo scegliere il nucleo con massimo $E_b/A$.
 \end{frame}
 
-\begin{frame}{Cooper pairs}
-    \begin{itemize}
-        \item Model of pair of electrons added to Fermi sea at $T=0$, and they interact with each other but not with sea.
-        \item Weak attraction can bind pairs of Fermions into bound state: Because of the Fermi sea, even an arbitrarily weak attraction can lower the energy of two fermions below $2E_F$, producing a bound Cooper pair.
-        \item Two fermions must have equal and opposite momenta:
-            \begin{columns}[T]
-                \begin{column}{0.5\textwidth}
-                    $\vec{k}$ momento relativo dei due fermioni, $\vec{K}$ momento totale della coppia
-                    \begin{align*}
-                        &\vec{k}_1=\vec{k}+\frac{\vec{K}}{1},\ \vec{k}_2=-\vec{k}+\frac{K}{2}
-                    \end{align*}
-                \end{column}
-                \begin{column}{0.5\textwidth}
-                    In BCS standard questo passaggio \'e giustificato da energetica e simmetria: si accoppiano stati time-reversed $(\vec{k},\shortuparrow)$, $(-\vec{k},\shortdownarrow)$.
-                \end{column}
-            \end{columns}
-                    \begin{align*}
-                        &E_{kin}=\frac{\hbar^2}{2m}[(\vec{k}+\frac{\vec{K}}{2})^2+(-\vec{k}+\frac{\vec{K}}{2})^2]=\frac{\hbar^2k^2}{m}+\frac{\vec{K}^2}{4m}\tag{Energia minima per $K=0$}
-                    \end{align*}
-                \item Funzione d'onda orbitale della forma $\psi_0(\vec{r}_1,\vec{r}_2)=\sum_{\vec{k}}\exp{i\scap{k}{r}_1}\exp{-i\scap{k}{r}_2}$
-                \item Antisymmetry of total wavefunction to exchange of pair of fermions: searching for bound state we use $\cos{\vec{k}(\vec{r}_2-\vec{r}_2)}$ hence we have to use the antisimmetric singlet of spin as it gives higher probability to found the two particles near each other: $\psi_0(\vec{r}_1-\vec{r}_2)=[\sum_{k>k_F}g_{\vec{k}}\cos{\vec{k}(\vec{r}_1-\vec{r}_2)}](\alpha_1\beta_2-\beta_1\alpha_2)$
-                \item Inserting into \schr{} eq: $V_{kk'}=\invers{\Omega}\int V(r)\exp{i(\vec{k'}-\vec{k})\cdot\vec{r}}$
-                    \begin{columns}[T]
-                        \begin{column}{0.5\textwidth}
-                    \begin{equation*}
-                        (E-2\epsilon_k)g_k=\sum_{k'>k_F}V_{kk'}g_{k'}
-                    \end{equation*}
-                        \end{column}
-                        \begin{column}{0.5\textwidth}
-                            \begin{align*}
-                                &(H_0+V)\psi=E\psi,\ H_0=-\frac{\hbar^2}{2m}(\nabla_1^2+\nabla_2^2)\\
-                                &H_0\phi_k=2\epsilon_k\phi_k
-                            \end{align*}
-                        \end{column}
-                    \end{columns}
-                    
-                    con $\epsilon_{k}=\frac{\hbar^2k^2}{2m}$ energia onda piana imperturbata. Per $V=0$ autostato \'e coppia con $\vec{k}$ ed $E=2\epsilon_{k}$. Quando $V\neq0$ l'interazione collega $(\vec{k},-\vec{k})\leftrightarrow(\vec{k'},-\vec{k'})$
-    \end{itemize}
+\begin{frame}[t]{Strati della crosta: scale orientative}
+\small
+
+\begin{itemize}
+\item $\rho\lesssim10^4\,\mathrm{g\,cm^{-3}}$: atmosfere / materia atomica.
+\item $\rho\sim10^4\,\mathrm{g\,cm^{-3}}$: nuclei e elettroni; la cristallizzazione dipende anche dalla temperatura.
+\item $\rho\sim10^6\!-\!10^7\,\mathrm{g\,cm^{-3}}$: elettroni sempre piu relativistici; composizione nucleare cambia.
+\item $\rho_{\rm drip}\sim4\times10^{11}\,\mathrm{g\,cm^{-3}}$: neutroni liberi e crosta interna.
+\end{itemize}
+Nel testo il ruolo delle chiusure di shell ($N=50,82$) e rilevante; le soglie numeriche dipendono dai modelli nucleari e dalle condizioni termiche.
 \end{frame}
 
-\begin{frame}{Bound pair state - Cooper Approx}
-    \begin{itemize}
-        \item If a set of $g_k$ exists satisfying $(E-2\epsilon_k)g_k=\sum_{k'>k_F}V_{kk'}g_{k'}$: a bound-state exists.
-        \item Cooper Approx: $V_{kk'}=$\lbt{-V\quad E_F<E<E_F+\hbar\omega_c}{0}: due elettroni indipendenti posti appena sopra il mare di Fermi hanno energia $2E_F$ quindi binding energy $E_B=2E_F-E>0$.
-        \item Summing both side of bound-state energy equation and using Copper Approx: $\frac{1}{V}=\sum_{k>k_F}\invers{[2\epsilon_k-E]}$.
-        \item Passiamo al continuo di livelli energetici: $\sum\to\int N(\epsilon)\,d\epsilon$ con $N(0)$ densit\'a di stati attorno all'energia di Fermi per elettroni con 1 orientazione di spin: $\hbar\omega_c$ piccolo considero $N(\epsilon)\approx N(E_F)\approx N(0)$, quindi
-            \begin{align*}
-                &\frac{1}{V}=N(0)\int_{E_F}^{E_F+\hbar\omega_c}\frac{d\epsilon}{2\epsilon-E}=\frac{1}{2}N(0)\ln{\frac{2E_F-E+2\hbar\omega_c}{2E_F-E}}
-            \end{align*}
-        \item Weak coupling approx $VN(0)\ll1$ (in most classic superconductors it's found that $N(0)V<0.3$)
-            \begin{align*}
-                &E\approx 2E_F-2\hbar\omega_c\exp{-\frac{2}{N(0)V}}
-            \end{align*}
-            cio\'e esiste stato legato con energia negativa risp. superficie di Fermi costituito da elettroni con $k>k_F$.
-        \item Electron states within range $\approx E'$ above $E_F$ are those most involved in bound states formation:
-            \begin{columns}[T]
-                \begin{column}{0.5\textwidth}
-                    \begin{align*}
-                        &\psi(r)\propto\sum_{k\geq k_F}\frac{\cos{\scap{k}{r}}}{2\xi_{\vec{k}}+E'},\ \xi_{\vec{k}}=\epsilon_{\vec{k}}-E_F,\ E'=2E_F-E>0\\
-                        &E'\approx2\hbar\omega_c\exp{-\frac{2}{N(0)V}}\ll\hbar\omega_c
-                    \end{align*}
-                \end{column}
-                \begin{column}{0.5\textwidth}
-                    Spherical symmetry: S-state as well singlet spin state - Weight factor $\invers{2\xi_{k}+E'}$ has maximum at $\frac{1}{E'}$ where $\xi_k=0$. La regione vicina al cutoff $E_F+\hbar\omega_c$ \'e molto lontana dagli stati che dominano la coppia; superfluido neutronico non ha cutoff fononico dei superconduttori.
-                \end{column}
-            \end{columns}
-        \item Size of bound pairs (Pippard): Coppia molto selettiva in $k$ \'e distante in $r$ - $\Delta r\geq \frac{1}{\Delta k}\approx\frac{\hbar \nu_F}{E'}$.
-                    \begin{align*}
-                        &\epsilon_k-E_F\approx\TDy{k}{\epsilon}|_{k_F}(k-k_F),\ \frac{1}{\hbar}\TDy{k}{\epsilon}=v_F:\ \Rightarrow \xi_k=\epsilon_k-E_F=\hbar v_F(k-k_F)\Rightarrow \Delta\xi\approx E'\Rightarrow \Delta k\approx \frac{E'}{\hbar v_f}
-                    \end{align*}
-    \end{itemize}
+\section{3.4 Equazione di stato}
+
+\begin{frame}[t]{Tre forme dell'equazione di stato}
+\small
+
+\[
+P=P(\varepsilon),\qquad P=P(n_B),\qquad
+\frac EA(n_B)=\frac{\varepsilon(n_B)}{n_B}.
+\]
+L'energia di legame per barione e
+\[
+\frac{E_b}{A}=\frac{\varepsilon}{n_B}-m_N
+\]
+(con la convenzione di riferimento per $m_N$ specificata).
+\begin{itemize}
+\item TOV richiede $\varepsilon(P)$; $P(\varepsilon)$ e sufficiente per la massa e il raggio.
+\item Le grandezze barioniche e l'energia di legame richiedono anche $n_B$ e una normalizzazione dell'energia.
+\item Per materia fredda in equilibrio: $P=n_B\mu_B-\varepsilon$, $\mu_B=d\varepsilon/dn_B$.
+\end{itemize}
 \end{frame}
 
-\subsection{Superfluidity: BCS}
+\begin{frame}[t]{Derivazione: P dalla energia per barione}
+\small
 
-\subsection{Superfluidity: Landau-Ginzburg}
+Poniamo $e(n_B)=\varepsilon(n_B)/n_B$; allora
+\[
+\frac{de}{dn_B}
+=\frac1{n_B}\frac{d\varepsilon}{dn_B}-\frac{\varepsilon}{n_B^2}
+=\frac{\mu_B n_B-\varepsilon}{n_B^2}.
+\]
+Da $P=\mu_B n_B-\varepsilon$:
+\[
+\boxed{P(n_B)=n_B^2\frac{de}{dn_B}.}
+\]
+Se $e=m_N+E_b/A$, la derivata di $m_N$ e nulla:
+\[
+P=n_B^2\frac{d}{dn_B}\left(\frac{E_b}{A}\right).
+\]
+A saturazione della materia nucleare simmetrica $de/dn_B=0\Rightarrow P=0$; non e una proprieta generica della materia neutronica in equilibrio beta.
+\end{frame}
+
+\section{3.5 Gas di Fermi liberi}
+
+\begin{frame}[t]{Densita, energia e pressione dal gas degenere}
+\small
+
+Fermioni liberi isotropi, degenerazione $g$ e $T=0$:
+\[
+n=\frac{g}{(2\pi)^3}\int_{|\mathbf k|<k_F}d^3k=\frac{gk_F^3}{6\pi^2}.
+\]
+Con $E(k)=\sqrt{k^2+m^2}$,
+\[
+\varepsilon=\frac{g}{2\pi^2}\int_0^{k_F}k^2 E(k)\,dk,
+\]
+\[
+\boxed{P=\frac{g}{6\pi^2}\int_0^{k_F}\frac{k^4}{E(k)}\,dk.}
+\]
+Interpretazione microscopica: $P=\frac13\langle\mathbf p\cdot\mathbf v\rangle$ per distribuzione isotropa, con $\mathbf v=\partial E/\partial\mathbf p=\mathbf p/E$.
+\end{frame}
+
+\begin{frame}[t]{Gas non relativistico: esponente 5/3}
+\small
+
+Per $k_F\ll m$: $E\simeq m$, $v\simeq k/m$. Quindi
+\[
+P_{\rm NR}=\frac{g}{6\pi^2m}\int_0^{k_F}k^4\,dk
+=\frac{gk_F^5}{30\pi^2m}.
+\]
+Eliminando $k_F$ tramite $n=gk_F^3/(6\pi^2)$:
+\[
+\boxed{P_{\rm NR}=\frac1{5m}\left(\frac{6\pi^2}{g}\right)^{2/3}n^{5/3}.}
+\]
+L'energia di massa domina $\varepsilon\simeq mn$ (piu una correzione cinetica $\sim n^{5/3}$). La formula vale per elettroni, neutroni o protoni liberi nel rispettivo regime NR.
+\end{frame}
+
+\begin{frame}[t]{Nana bianca: elettroni NR e pressione}
+\small
+
+Neutralita per nuclei $(A,Z)$:
+\[
+n_e=Zn_A=\frac ZA n_B,\qquad \rho\simeq m_Nn_B.
+\]
+\[
+P_e\simeq\frac1{5m_e}(3\pi^2)^{2/3}n_e^{5/3}
+=\frac{(3\pi^2)^{2/3}}{5m_e}
+\left(\frac{Z\rho}{Am_N}\right)^{5/3}.
+\]
+\[
+\boxed{P\propto\rho^{5/3}.}
+\]
+La pressione e prevalentemente elettronica, mentre la massa/energia e prevalentemente nucleonica. Corretta la distinzione $\varepsilon\simeq m_A n_A\simeq m_N n_B$, non $m_A\rho_A$.
+\end{frame}
+
+\begin{frame}[t]{Elettroni ultrarelativistici: esponente 4/3}
+\small
+
+Se $k_{F,e}\gg m_e$ ma i nuclei rimangono NR,
+\[
+P_e\simeq\frac{g_e}{6\pi^2}\int_0^{k_F}k^3\,dk
+=\frac{g_e k_F^4}{24\pi^2}.
+\]
+\[
+\boxed{P_e=\frac14\left(\frac{6\pi^2}{g_e}\right)^{1/3}n_e^{4/3};\quad g_e=2.}
+\]
+Sostituendo $n_e=(Z/A)\rho/m_N$:
+\[
+P\propto\rho^{4/3}.
+\]
+Qui $\varepsilon$ totale della materia e ancora dominata dalla massa a riposo dei nuclei, se le approssimazioni di composizione e regime restano applicabili.
+\end{frame}
+
+\begin{frame}[t]{Gas di neutroni liberi: limite NR}
+\small
+
+Con $g_n=2$:
+\[
+n_n=\frac{k_{F,n}^3}{3\pi^2},\qquad
+P_n^{\rm NR}=\frac{k_{F,n}^5}{15\pi^2m_n}.
+\]
+Quindi
+\[
+\boxed{P_n^{\rm NR}=\frac{(3\pi^2)^{2/3}}{5m_n}n_n^{5/3},\quad
+\varepsilon\simeq m_n n_n.}
+\]
+L'esponente $5/3$ si applica a una singola specie fermionica non relativistica.
+Per una stella di neutroni reale il potenziale nucleone--nucleone non e trascurabile e l'EOS puo essere molto diversa.
+\end{frame}
+
+\begin{frame}[t]{Gas di neutroni liberi: limite UR}
+\small
+
+Nel limite \emph{formale} $k_{F,n}\gg m_n$:
+\[
+P_n^{\rm UR}=\frac{g_n}{6\pi^2}\int_0^{k_F}k^3\,dk
+=\frac{g_n k_F^4}{24\pi^2},
+\]
+\[
+\varepsilon_n^{\rm UR}=\frac{g_n}{2\pi^2}\int_0^{k_F}k^3\,dk
+=\frac{g_n k_F^4}{8\pi^2}.
+\]
+\[
+\boxed{P_n^{\rm UR}=\frac13\varepsilon_n^{\rm UR}.}
+\]
+Dunque $P\propto n^{4/3}$ ma $P\propto\varepsilon^1$, perche $\varepsilon$ non e piu proporzionale a $m_n n$.
+\end{frame}
+
+\begin{frame}[t]{Gas relativistico completo: $P(k_F)$}
+\small
+
+Scriviamo $E_F=\sqrt{k_F^2+m^2}$ e $L=\ln[(k_F+E_F)/m]$.
+\[
+P=\frac{g}{6\pi^2}\int_0^{k_F}\frac{k^4}{\sqrt{k^2+m^2}}\,dk.
+\]
+L'integrale fornisce
+\[
+\boxed{P=\frac{g}{48\pi^2}\left[k_FE_F(2k_F^2-3m^2)+3m^4L\right].}
+\]
+Verifiche:
+\[
+P\xrightarrow{k_F\ll m}\frac{gk_F^5}{30\pi^2m},\qquad
+P\xrightarrow{k_F\gg m}\frac{gk_F^4}{24\pi^2}.
+\]
+Nel sorgente originale era errato il coefficiente della forma integrale per $P$, non l'idea dell'integrazione.
+\end{frame}
+
+\begin{frame}[t]{Gas relativistico completo: energia e $n(k_F)$}
+\small
+
+\[
+\varepsilon=\frac{g}{2\pi^2}\int_0^{k_F}k^2\sqrt{k^2+m^2}\,dk.
+\]
+Calcolando la primitiva:
+\[
+\boxed{\varepsilon=\frac{g}{16\pi^2}\left[k_FE_F(2k_F^2+m^2)-m^4L\right],}
+\]
+con $L=\ln[(k_F+E_F)/m]$.
+La densita numerica rimane
+\[
+\boxed{n=\frac{gk_F^3}{6\pi^2}.}
+\]
+Per un gas ideale a $T=0$ si puo controllare
+\[
+\mu=E_F,\qquad \varepsilon+P=\mu n.
+\]
+L'EOS parametrica e la coppia $(\varepsilon(k_F),P(k_F))$.
+\end{frame}
+
+\begin{frame}[t]{Indici politropici: due definizioni da distinguere}
+\small
+
+\[
+P\propto n^\Gamma,\qquad P\propto\varepsilon^\gamma.
+\]
+\[
+\begin{array}{l|c|c}
+\text{regime}&\Gamma&\gamma\\\hline
+\text{gas fermionico NR}&5/3&5/3\ (\varepsilon\simeq mn)\\
+\text{elettroni UR, nuclei NR}&4/3&4/3\ (\varepsilon\simeq m_N n_B)\\
+\text{gas di una specie UR}&4/3&1\ (\varepsilon=3P)
+\end{array}
+\]
+Il rapporto $P/\varepsilon$ e l'indice $d\ln P/d\ln n$ sono concetti distinti. Il secondo puo variare con la densita e con la composizione.
+\end{frame}
+
+\section{3.6 Politropiche}
+
+\begin{frame}[t]{Politropica: costruzione termodinamica}
+\small
+
+Partiamo da $P=Kn^\Gamma$ e dall'identita
+\[
+P=n^2\frac{d}{dn}\left(\frac\varepsilon n\right).
+\]
+Se $\Gamma\ne1$:
+\[
+\frac{d}{dn}\left(\frac\varepsilon n\right)=Kn^{\Gamma-2}
+\ \Longrightarrow\ \frac\varepsilon n=c+\frac{K}{\Gamma-1}n^{\Gamma-1}.
+\]
+\[
+\boxed{\varepsilon(n)=cn+\frac{K}{\Gamma-1}n^\Gamma.}
+\]
+Per una politropica valida fino a $n\to0$ e $\Gamma>1$ si puo porre $c=m$; per segmenti raccordati a densita finita $c$ e fissata dal punto di raccordo, non automaticamente da $m$.
+\end{frame}
+
+\begin{frame}[t]{Potenziale chimico e velocita del suono}
+\small
+
+\[
+\mu=\frac{d\varepsilon}{dn}=c+\frac{\Gamma K}{\Gamma-1}n^{\Gamma-1},
+\qquad P=Kn^\Gamma.
+\]
+\[
+\frac{dP}{dn}=\Gamma K n^{\Gamma-1}=\frac{\Gamma P}{n},
+\qquad\frac{d\varepsilon}{dn}=\frac{\varepsilon+P}{n}.
+\]
+Percio
+\[
+\boxed{c_s^2=\frac{dP}{d\varepsilon}
+=\frac{dP/dn}{d\varepsilon/dn}
+=\frac{\Gamma P}{\varepsilon+P}.}
+\]
+Nelle unita $c=1$, la condizione locale di causalita e $0\le c_s^2\le1$. Nel sorgente originale era scritto il prodotto delle derivate anziche il loro rapporto.
+\end{frame}
+
+\begin{frame}[t]{Limite ad alta densita e cautela su Gamma=2}
+\small
+
+Per $P=Kn^\Gamma$, $\varepsilon=cn+P/(\Gamma-1)$:
+\[
+c_s^2=\frac{\Gamma P}{cn+\Gamma P/(\Gamma-1)}.
+\]
+Se $\Gamma>1$ e il termine $P$ domina su $cn$:
+\[
+\boxed{c_s^2\longrightarrow\Gamma-1.}
+\]
+Per $\Gamma>2$ la prosecuzione asintotica e acausale.
+Per $\Gamma=2$ si ha $c_s^2\to1$ \emph{nel limite} di alta densita; non $P=\varepsilon$ esattamente a densita finita, perche $\varepsilon=cn+P$.
+L'EOS di un gas di Fermi UR da invece $c_s^2=1/3$.
+\end{frame}
+
+\begin{frame}[t]{Raccordo di politropiche e transizioni}
+\small
+
+Per un raccordo liscio alla densita $n_*$ fra segmenti con diverso $\Gamma$:
+\[
+P_1(n_*)=P_2(n_*),\qquad
+\mu_1(n_*)=\mu_2(n_*).
+\]
+Poiche $\varepsilon+P=n\mu$, segue la continuita di $\varepsilon$ nel raccordo a $n_*$.
+\begin{itemize}
+\item I parametri $K$ e le costanti $c$ sono determinati dal raccordo.
+\item Un salto di densita a $P$ e $\mu$ fissi (transizione del primo ordine) va trattato separatamente; non deriva da un raccordo liscio.
+\item Una curva $P(n)$ costruita a tratti richiede controlli di stabilita e causalita in ogni segmento.
+\end{itemize}
+\end{frame}
+
+\section{Superfluidita neutronica: estensione oltre il capitolo 3}
+
+\subsection{Fenomenologia e canali di pairing}
+
+\begin{frame}[t]{Perche i neutroni possono essere superfluidi?}
+\small
+
+Neutroni: fermioni neutri di spin $1/2$. Un canale attrattivo efficace vicino alla superficie di Fermi puo generare \emph{pairing} tra stati correlati nel tempo inverso.
+\[
+\langle n_{-\mathbf k\downarrow}n_{\mathbf k\uparrow}\rangle\ne0
+\quad\Longrightarrow\quad
+\text{rottura spontanea di }U(1)_B\text{ (approssimata).}
+\]
+\begin{itemize}
+\item Superfluidita: trasporto coerente del numero barionico e vortici quantizzati.
+\item Non equivale a superconduttivita elettromagnetica: la coppia $nn$ e elettricamente neutra, quindi niente espulsione Meissner per il condensato neutronico.
+\item Nelle stelle di neutroni si distinguono pairing neutronico e pairing protonico; il secondo e carico ed e un problema distinto.
+\end{itemize}
+Lo stato BCS descrive il condensato fermionico, non un gas diluito di molecole $nn$ reali.
+\end{frame}
+
+\begin{frame}[t]{Canali di pairing nel sistema nn}
+\small
+
+Per due neutroni identici, la funzione d'onda totale deve essere antisimmetrica allo scambio. Con isospin $T=1$ simmetrico, vale $(-1)^{L+S}=-1$.
+\[
+{}^{2S+1}L_J:
+\quad {}^1S_0\ (L=0,S=0,J=0),\qquad {}^3P_2\ (L=1,S=1,J=2).
+\]
+\begin{itemize}
+\item Crosta interna e zona di bassa densita: neutroni soprattutto nel canale isotropo ${}^1S_0$.
+\item A densita maggiori nel core: canale tripletto ${}^3P_2$, spesso accoppiato a ${}^3F_2$; gap angolarmente anisotropo.
+\item La localizzazione dei canali e le dimensioni dei gap dipendono da interazione, massa efficace, polarizzazione del mezzo e composizione.
+\end{itemize}
+Da qui in poi deriviamo l'equazione BCS prima per il canale singoletto isotropo.
+\end{frame}
+
+\begin{frame}[t]{Stato a due neutroni: simmetria spaziale e spin}
+\small
+
+Centro di massa $\mathbf K=\mathbf k_1+\mathbf k_2$, momento relativo $\mathbf k=(\mathbf k_1-\mathbf k_2)/2$:
+\[
+\mathbf k_1=\mathbf K/2+\mathbf k,\quad
+\mathbf k_2=\mathbf K/2-\mathbf k.
+\]
+Per dispersione libera $\epsilon_k=\hbar^2k^2/(2m_n)$:
+\[
+\epsilon_{k_1}+\epsilon_{k_2}
+=\frac{\hbar^2K^2}{4m_n}+\frac{\hbar^2k^2}{m_n}.
+\]
+Il pairing ordinario omogeneo favorisce $\mathbf K=0$.
+Nel canale ${}^1S_0$ la parte spaziale e simmetrica e lo spin e singoletto:
+\[
+|S=0,M_S=0\rangle=
+\frac{|\uparrow\downarrow\rangle-|\downarrow\uparrow\rangle}{\sqrt2}.
+\]
+L'antisimmetria riguarda la funzione d'onda \emph{totale}.
+\end{frame}
+
+\subsection{Dal problema di Cooper alla teoria BCS}
+
+\begin{frame}[t]{Problema di Cooper: Hamiltoniana proiettata}
+\small
+
+Due neutroni sopra un mare di Fermi ideale, con $|\mathbf k|>k_F$:
+\[
+|\Psi\rangle=\sum_{\mathbf k>k_F}g_{\mathbf k}
+|\mathbf k,-\mathbf k;{}^1S_0\rangle.
+\]
+Proiettando $(H_0+V_{nn})|\Psi\rangle=E|\Psi\rangle$:
+\[
+\boxed{(E-2\epsilon_k)g_{\mathbf k}=
+\sum_{\mathbf k'>k_F}V_{\mathbf k\mathbf k'}g_{\mathbf k'},}
+\]
+\[
+V_{\mathbf k\mathbf k'}=
+\langle\mathbf k;{}^1S_0|V_{nn}|\mathbf k';{}^1S_0\rangle.
+\]
+$V_{\mathbf k\mathbf k'}$ e un elemento di matrice di scattering di coppie nel canale considerato, non un'interazione tra singoli neutroni indipendenti.
+\end{frame}
+
+\begin{frame}[t]{Modello didattico: attrazione costante in una shell}
+\small
+
+Solo per illustrare l'instabilita di Cooper scegliamo
+\[
+V_{\mathbf k\mathbf k'}=-V_0\quad(V_0>0)
+\quad\text{entro }0<\xi_k,\xi_{k'}<\omega_c,
+\]
+con $\xi_k=\epsilon_k-E_F$.
+La soluzione $g_k\propto(2\epsilon_k-E)^{-1}$ conduce a
+\[
+1=V_0\sum_{\mathbf k>k_F}\frac1{2\epsilon_k-E}.
+\]
+Ponendo $E=2E_F-E_b$ e densita di stati per spin $N(0)$ costante,
+\[
+\frac1{V_0N(0)}
+\simeq\int_0^{\omega_c}\frac{d\xi}{2\xi+E_b}
+=\frac12\ln\frac{2\omega_c+E_b}{E_b}.
+\]
+Per $E_b\ll\omega_c$: $E_b\simeq2\omega_c e^{-2/[V_0N(0)]}$.
+\end{frame}
+
+\begin{frame}[t]{Limiti dell'analogia con i superconduttori}
+\small
+
+Nel modello elettronico elementare l'interazione attrattiva puo essere attiva in una finestra di energie associata ai fononi del reticolo.
+\begin{itemize}
+\item Il \emph{problema di Cooper} dimostra che il mare di Fermi rende instabile lo stato normale rispetto al pairing per attrazione debole in una shell.
+\item In materia neutronica l'interazione e $V_{nn}$, proiettata nel canale ${}^1S_0$ o ${}^3P_2$; non si introduce \emph{fisicamente} un cutoff Debye.
+\item Per una EOS e gap realistici occorrono dispersione e interazione nel mezzo, possibilmente non locali e dipendenti da densita.
+\end{itemize}
+Il problema di una coppia aggiunta al mare di Fermi non e ancora la teoria BCS auto-consistente di molte coppie sovrapposte.
+\end{frame}
+
+\begin{frame}[t]{Seconda quantizzazione: operatori di coppia}
+\small
+
+Siano $a_{\mathbf k\sigma}^{\dagger}$ gli operatori che creano neutroni con impulso $\mathbf k$ e spin $\sigma$.
+Una coppia in singoletto:
+\[
+b_{\mathbf k}^{\dagger}=
+\frac{a_{\mathbf k\uparrow}^{\dagger}a_{-\mathbf k\downarrow}^{\dagger}
+-a_{\mathbf k\downarrow}^{\dagger}a_{-\mathbf k\uparrow}^{\dagger}}{\sqrt2}.
+\]
+Hamiltoniana ridotta nel canale ${}^1S_0$:
+\[
+H_{\rm int}^{{}^1S_0}
+=\sum_{\mathbf k\mathbf k'}
+\langle\mathbf k;{}^1S_0|V_{nn}|\mathbf k';{}^1S_0\rangle
+ b_{\mathbf k}^{\dagger}b_{\mathbf k'}.
+\]
+Con una convenzione che evita il doppio conteggio dei momenti $\pm\mathbf k$; fattori di normalizzazione possono essere assorbiti negli elementi di matrice.
+\end{frame}
+
+\begin{frame}[t]{Stato variazionale BCS}
+\small
+
+Su un insieme non duplicato di coppie di stati time-reversed:
+\[
+\boxed{|\mathrm{BCS}\rangle=
+\prod_{\mathbf k}\left(u_k+v_k
+ a_{\mathbf k\uparrow}^{\dagger}a_{-\mathbf k\downarrow}^{\dagger}\right)|0\rangle,}
+\]
+\[
+|u_k|^2+|v_k|^2=1.
+\]
+Ogni coppia di stati contiene una sovrapposizione coerente tra occupazione vuota e doppia:
+\[
+\langle a_{\mathbf k\uparrow}^{\dagger}a_{\mathbf k\uparrow}\rangle=v_k^2,
+\quad\langle a_{-\mathbf k\downarrow}a_{\mathbf k\uparrow}\rangle=u_kv_k
+\]
+(con fasi scelte reali).
+Lo stato BCS non ha $N$ fissato esattamente: descrive l'equilibrio gran canonico; lo stato a $N$ fissato si puo ottenere proiettando il numero.
+\end{frame}
+
+\begin{frame}[t]{Decoupling di campo medio e definizione del gap}
+\small
+
+Scriviamo $\xi_k=\epsilon_k-\mu_n$, includendo nella $\epsilon_k$ un eventuale spettro di particella singola efficace.
+Per il pairing omogeneo singoletto:
+\[
+\boxed{\Delta_{\mathbf k}=-\sum_{\mathbf k'}V_{\mathbf k\mathbf k'}
+\langle a_{-\mathbf k'\downarrow}a_{\mathbf k'\uparrow}\rangle.}
+\]
+Il termine quartico di interazione viene linearizzato rispetto alla media anomala:
+\[
+H_{\rm MF}-\mu N=\sum_{\mathbf k}\xi_k
+(a_{\mathbf k\uparrow}^{\dagger}a_{\mathbf k\uparrow}
++a_{-\mathbf k\downarrow}^{\dagger}a_{-\mathbf k\downarrow})
+-\sum_{\mathbf k}(\Delta_k a_{\mathbf k\uparrow}^{\dagger}
+ a_{-\mathbf k\downarrow}^{\dagger}+\mathrm{h.c.})+C.
+\]
+$C$ rende coerente l'energia di campo medio; la convenzione di segno di $\Delta$ e arbitraria globalmente.
+\end{frame}
+
+\begin{frame}[t]{Diagonalizzazione Bogoliubov: matrice 2x2}
+\small
+
+Nella base di Nambu $\Psi_k=(a_{\mathbf k\uparrow},a_{-\mathbf k\downarrow}^{\dagger})^T$ compare
+\[
+\mathcal H_k=\begin{pmatrix}\xi_k&-\Delta_k\\
+-\Delta_k^*&-\xi_k\end{pmatrix}.
+\]
+Dall'equazione agli autovalori:
+\[
+\det(\mathcal H_k-EI)=
+(\xi_k-E)(-\xi_k-E)-|\Delta_k|^2=0.
+\]
+\[
+\boxed{E_k=\sqrt{\xi_k^2+|\Delta_k|^2},\qquad\lambda_\pm=\pm E_k.}
+\]
+Le eccitazioni elementari sono quasiparticelle di Bogoliubov, miscele coerenti di neutroni e lacune; $E_k$ ha minimo circa $|\Delta(k_F)|$ per un gap isotropo non nullo.
+\end{frame}
+
+\begin{frame}[t]{Coefficienti di coerenza u e v}
+\small
+
+Dagli autovettori di $\mathcal H_k$ e dalla normalizzazione $|u_k|^2+|v_k|^2=1$ si trova
+\[
+\boxed{u_k^2=\frac12\left(1+\frac{\xi_k}{E_k}\right),\quad
+v_k^2=\frac12\left(1-\frac{\xi_k}{E_k}\right).}
+\]
+Per $\Delta_k$ reale positivo:
+\[
+u_kv_k=\frac{\Delta_k}{2E_k}.
+\]
+Lontano dalla superficie di Fermi $v_k^2$ tende alla funzione gradino normale; in prossimita di $k_F$ l'occupazione viene smussata su una scala energetica controllata da $\Delta$.
+A $T>0$ compare $1-2f(E_k)=\tanh(E_k/(2T))$.
+\end{frame}
+
+\begin{frame}[t]{Equazione di gap BCS: materia neutronica}
+\small
+
+Usando la media anomala a temperatura $T$:
+\[
+\langle a_{-\mathbf k\downarrow}a_{\mathbf k\uparrow}\rangle
+=\frac{\Delta_k}{2E_k}\tanh\left(\frac{E_k}{2T}\right).
+\]
+In limite termodinamico:
+\[
+\boxed{\Delta(\mathbf k)=-\int\frac{d^3k'}{(2\pi)^3}
+V_{{}^1S_0}(\mathbf k,\mathbf k')
+\frac{\Delta(\mathbf k')}{2E(\mathbf k')}
+\tanh\frac{E(\mathbf k')}{2T}.}
+\]
+\[
+E(k)=\sqrt{[\epsilon(k)-\mu_n]^2+|\Delta(k)|^2}.
+\]
+A $T=0$, $\tanh(E/2T)\to1$. La legge dipende dall'interazione di coppia neutronica e non contiene un cutoff fononico postulato.
+\end{frame}
+
+\begin{frame}[t]{Proiezione sferica del canale 1S0}
+\small
+
+Se il sistema e isotropo e $\Delta(\mathbf k)=\Delta(k)$, si puo proiettare l'interazione su onde parziali:
+\[
+V_0(k,k')=\frac12\int_{-1}^{1}d\cos\theta\,
+V(\mathbf k,\mathbf k')
+\]
+(per una convenzione di normalizzazione dell'elemento di matrice).
+Poiche $d^3k'=4\pi k'^2dk'$ dopo media angolare,
+\[
+\boxed{\Delta(k)=-\frac1{2\pi^2}\int_0^\infty
+k'^2dk'\,V_0(k,k')\frac{\Delta(k')}{2E(k')}
+\tanh\frac{E(k')}{2T}.}
+\]
+Il prefattore dipende dalla convenzione con cui si definisce $V_0$; l'equazione integrale tridimensionale precedente ne fissa il significato fisico.
+\end{frame}
+
+\begin{frame}[t]{Equazione del numero e autoconsistenza}
+\small
+
+La densita dei neutroni va calcolata con la distribuzione BCS, non identificando $\mu_n$ a priori con $E_F$ di gas libero:
+\[
+\boxed{n_n=\int\frac{d^3k}{(2\pi)^3}
+\left[1-\frac{\xi_k}{E_k}\tanh\left(\frac{E_k}{2T}\right)\right].}
+\]
+A $T=0$ questa formula coincide con $n_n=2\int d^3k\,v_k^2/(2\pi)^3$.
+Il problema fisico si risolve imponendo simultaneamente:
+\begin{itemize}
+\item equazione di gap per $\Delta(k)$;
+\item equazione del numero per $\mu_n$;
+\item se necessario, spettro $\epsilon(k)$ e massa efficace calcolati autoconsistentemente.
+\end{itemize}
+La EOS della materia stellare deve inoltre rispettare neutralita e $\beta$-equilibrio.
+\end{frame}
+
+\begin{frame}[t]{Temperatura critica: modello debole isotropo}
+\small
+
+Nel modello BCS con attrazione costante e densita di stati per spin $N(0)$:
+\[
+\Delta(0)\simeq2\omega_c e^{-1/[N(0)V_0]},\quad
+T_c\simeq\frac{e^{\gamma_E}}\pi\Delta(0).
+\]
+Quindi
+\[
+\boxed{\frac{2\Delta(0)}{T_c}\simeq3.53\quad
+(\text{BCS isotropo, debole accoppiamento}).}
+\]
+Qui $\gamma_E\simeq0.577$ e la costante di Eulero--Mascheroni.
+La relazione non e universale nei canali anisotropi ${}^3P_2$ e puo cambiare per forti correlazioni del mezzo; $\omega_c$ e solo un parametro del \emph{modello}, non una frequenza Debye della materia neutronica.
+\end{frame}
+
+\begin{frame}[t]{Energia di condensazione e scala spaziale}
+\small
+
+Per accoppiamento debole, gas uniforme, $T=0$, gap isotropo:
+\[
+\frac{E_{\rm SF}-E_{\rm normal}}{V}
+\simeq-\frac12 N(0)\Delta(0)^2
+\]
+con $N(0)$ densita di stati \emph{per spin} alla superficie di Fermi.
+La scala di coerenza della coppia e
+\[
+\boxed{\xi_0\sim\frac{\hbar v_F}{\pi\Delta(k_F)}.}
+\]
+\begin{itemize}
+\item Gap piccolo rispetto a $E_F$: coppie estese e sovrapposte, non molecole puntiformi.
+\item $\Delta$ e il gap \emph{di una quasiparticella}; creare due quasiparticelle costa almeno circa $2\Delta$ nel modello isotropo ideale.
+\item Nella crosta il reticolo nucleare puo modificare mobilita e densita superfluida (entrainment).
+\end{itemize}
+\end{frame}
+
+
+% --- Microfisica della crosta: collegamenti complementari ---
+\begin{frame}[t]{Livelli nucleonici, shell e correzioni alla descrizione semiclassica}
+\small
+\begin{itemize}
+\item La descrizione semiclassica sostituisce la somma su livelli discreti con un integrale sulla densità degli stati; la differenza oscillante è la correzione di shell.
+\item In un campo medio $h\varphi_\alpha=\epsilon_\alpha\varphi_\alpha$, la posizione dei livelli dipende da potenziale, spin--orbita e geometria del cluster.
+\item I minimi energetici presso chiusure di shell possono cambiare il numero protonico preferito nelle celle della crosta interna.
+\item La microfisica fornisce quindi un contributo alle differenze di energia fra configurazioni che un modello a goccia liquida liscio non risolve.
+\end{itemize}
+{\footnotesize Collegamento a Haensel et al., §3.4.3; la trattazione della EOS resta in NS.tex.}
+\end{frame}
+
+\begin{frame}[t]{Fononi del reticolo nucleare: modi collettivi}
+\small
+Per piccoli spostamenti $\mathbf u_i$ dei nuclei dalle posizioni di equilibrio, l'energia armonica è
+\[
+U=U_0+\frac12\sum_{ij,ab}u_i^a D_{ij}^{ab}u_j^b.
+\]
+\begin{itemize}
+\item La diagonalizzazione della matrice dinamica fornisce le frequenze dei fononi $\omega_s(\mathbf q)$.
+\item I modi trasversali, nel limite a lunga lunghezza d'onda, sono controllati dal modulo di taglio; il settore longitudinale risente anche di compressibilità e screening.
+\item I fononi contribuiscono a calore specifico e processi di scattering, ma nella crosta neutronica possono accoppiarsi ai modi del superfluido.
+\end{itemize}
+{\footnotesize Raccordo microscopico con Haensel et al., §3.7.}
+\end{frame}
+
+\begin{frame}[t]{Reticolo, neutroni superfluidi ed entrainment}
+\small
+\begin{itemize}
+\item I neutroni non legati della crosta interna si muovono in un potenziale periodico generato dai cluster; la loro mobilità dipende dalla struttura a bande.
+\item L'\emph{entrainment} indica che corrente di particelle e velocità delle diverse componenti non sono in generale proporzionali in modo indipendente.
+\item In una formulazione lineare a due componenti si può scrivere schematicamente
+\[
+\mathbf j_n=\rho_{nn}\mathbf v_n+\rho_{np}\mathbf v_p,
+\qquad
+\mathbf j_p=\rho_{pn}\mathbf v_n+\rho_{pp}\mathbf v_p.
+\]
+\item Le matrici di risposta devono rispettare simmetrie e vincoli di conservazione; i coefficienti dipendono da densità, pairing e reticolo.
+\item Conseguenze: inerzia dinamica della crosta, modi collettivi e bilancio di momento angolare nei glitch.
+\end{itemize}
+{\footnotesize Approfondimento di raccordo: struttura quantistica della crosta e superfluidità.}
+\end{frame}
+% --- fine integrazione microphysics ---
+
+\begin{frame}[t]{Neutroni 3P2 e complessita del core}
+\small
+
+Per accoppiamento tripletto in ${}^3P_2$ (con miscela ${}^3F_2$), il gap dipende in generale anche dalla direzione $\hat{\mathbf k}$:
+\[
+\Delta\to\Delta_{ab}(\mathbf k),\qquad
+E(\mathbf k)=\sqrt{\xi_k^2+\text{autovalori della matrice di gap}}.
+\]
+\begin{itemize}
+\item Lo stato d'ordine non e riducibile in generale a un singolo scalare $\Delta(k)$.
+\item Alcune fasi possono avere minima angolari molto diverse o nodi; le leggi di soppressione termica non sono sempre esponenziali.
+\item Le previsioni dipendono da interazione tensoriale, polarizzazione del mezzo, forze a tre corpi e composizione.
+\end{itemize}
+Pertanto i frame ${}^1S_0$ precedenti costituiscono la derivazione BCS di riferimento, non una soluzione completa del core profondo.
+\end{frame}
+
+\subsection{Fase, vortici e osservabili}
+
+\begin{frame}[t]{Fase del condensato e velocita superfluida}
+\small
+
+L'ordine di coppia e complesso:
+\[
+\Delta(\mathbf r)=|\Delta(\mathbf r)|e^{i\theta(\mathbf r)}.
+\]
+Per un condensato neutro di coppie con massa $m_{\rm pair}\simeq2m_n$, il flusso superfluido nel limite non relativistico e
+\[
+\boxed{\mathbf v_s=\frac{\hbar}{2m_n}\nabla\theta.}
+\]
+Poiche $e^{i\theta}$ deve essere monodromo lungo una curva chiusa:
+\[
+\oint\nabla\theta\cdot d\boldsymbol\ell=2\pi\ell,
+\qquad\ell\in\mathbb Z.
+\]
+La circolazione e quantizzata:
+\[
+\boxed{\oint\mathbf v_s\cdot d\boldsymbol\ell=
+\ell\frac h{2m_n}.}
+\]
+Questa e la firma idrodinamica di superfluidita neutronica; non coinvolge un campo gauge elettromagnetico.
+\end{frame}
+
+\begin{frame}[t]{Vortici e rotazione delle stelle di neutroni}
+\small
+
+Una superfluidita irrotazionale in regioni prive di vortici:
+\[
+\nabla\times\mathbf v_s=0\quad
+(\text{dove la fase }\theta\text{ e regolare}).
+\]
+La rotazione macroscopica si realizza con una distribuzione di vortici quantizzati. Per vortici rettilinei e rotazione quasi uniforme:
+\[
+\boxed{n_v\simeq\frac{2\Omega}{\kappa},\qquad
+\kappa=\frac{h}{2m_n},}
+\]
+con $n_v$ densita areale e $\Omega$ velocita angolare del superfluido.
+\begin{itemize}
+\item Pinning dei vortici al reticolo della crosta e loro dinamica possono contribuire ai glitch.
+\item La mobilita effettiva e l'entrainment dipendono dalla struttura nucleare della crosta.
+\item In RS/RG completa bisogna generalizzare la descrizione idrodinamica e distinguere quadrivelocita del normale e corrente superfluida.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Calore specifico, raffreddamento e pair breaking}
+\small
+
+Uno spettro isotropo con gap $\Delta>0$ riduce le eccitazioni termiche a $T\ll T_c$:
+\[
+n_{\rm qp}(T)\propto e^{-\Delta/T}\times
+\text{fattore di potenza in }T.
+\]
+\begin{itemize}
+\item Capacita termica dei quasineutroni: ridotta sotto $T_c$.
+\item Processi neutrino che richiedono quasiparticelle nucleoniche: spesso soppressi dal pairing a bassa $T$.
+\item Vicino all'inizio del pairing, \emph{pair breaking and formation} (PBF) puo invece contribuire all'emissione di neutrini.
+\item Nel caso anisotropo con nodi il comportamento puo diventare una legge di potenza, non puramente esponenziale.
+\end{itemize}
+Per un confronto osservativo serve il profilo $\Delta(n,T)$ e un modello termico stellare; non basta il solo BCS omogeneo.
+\end{frame}
+
+\subsection{Landau--Ginzburg neutra: utilita e limiti}
+
+\begin{frame}[t]{Perche una breve Landau--Ginzburg per neutroni?}
+\small
+
+La teoria microscopica BCS calcola pairing e quasiparticelle. Vicino a $T_c$ e su scale spaziali lunghe si puo invece usare un campo efficace complesso $\Psi(\mathbf r)$ associato all'ordine di coppia.
+\[
+\boxed{F[\Psi]-F_N=\int d^3r\left[
+ a(T)|\Psi|^2+\frac b2|\Psi|^4+K|\nabla\Psi|^2\right].}
+\]
+\begin{itemize}
+\item $b>0$, $K>0$, $a(T)=a_0(T-T_c)$ per una transizione continua.
+\item In un superfluido \emph{neutro} compare $\nabla$, non il derivato elettromagnetico $\nabla-iq\mathbf A$ della superconduttivita.
+\item La normalizzazione di $\Psi$ e convenzionale: $|\Psi|^2$ non va identificato automaticamente con la densita di neutroni superfluidi.
+\end{itemize}
+Applicazione: profili dell'ordine e struttura dei vortici vicino a $T_c$, non EOS neutronica del core freddo.
+\end{frame}
+
+\begin{frame}[t]{Minimizzazione GL omogenea e lunghezza di coerenza}
+\small
+
+Per campo uniforme $\nabla\Psi=0$:
+\[
+f-f_N=a|\Psi|^2+\frac b2|\Psi|^4.
+\]
+Ponendo $x=|\Psi|^2$ e derivando,
+\[
+\frac{df}{dx}=a+bx=0
+\ \Longrightarrow\ x=-\frac ab\quad(a<0).
+\]
+\[
+\boxed{|\Psi_0|^2=-\frac{a(T)}b\propto(T_c-T),\quad T<T_c.}
+\]
+La minimizzazione funzionale fornisce
+\[
+\boxed{-K\nabla^2\Psi+a\Psi+b|\Psi|^2\Psi=0.}
+\]
+Una scala caratteristica del recupero spaziale e $\xi_{\rm GL}\sim\sqrt{K/|a(T)|}$, che diverge quando $T\to T_c^-$.
+\end{frame}
+
+\begin{frame}[t]{Validita relativa di BCS e GL per stelle di neutroni}
+\small
+
+\begin{itemize}
+\item BCS/HFB: necessario per stimare gap $\Delta(k,n)$, $T_c(n)$ e quasiparticelle a partire da $V_{nn}$; utile per crosta e core neutronici.
+\item GL neutra: espansione \emph{vicino a una transizione continua} e su lunghezze $\gg$ quelle microscopiche; puo chiarire profili e difetti topologici.
+\item Il core freddo di una stella matura puo essere lontano da $T_c$; GL scalare non sostituisce BCS ne descrive in generale il canale anisotropo ${}^3P_2$.
+\item Per fenomenologia quantitativa di glitch/raffreddamento servono EoS, entrainment, struttura dei vortici e trasporto oltre il funzionale minimo.
+\end{itemize}
+Per questi motivi l'approfondimento GL e intenzionalmente breve e interamente formulato per \emph{superfluidita neutra}.
+\end{frame}
+
+\begin{frame}[t]{Ricapitolazione: dal capitolo 3 al pairing neutronico}
+\small
+
+\[
+\begin{array}{lll}
+\text{Termodinamica}&\varepsilon+P=Ts+\sum_i\mu_in_i&\text{(cap. 3)}\\[3pt]
+\text{Equilibrio beta}&\mu_n=\mu_p+\mu_e& (\mu_\nu=0)\\[3pt]
+\text{Gas degenere}&n=gk_F^3/(6\pi^2)&\text{gas libero}\\[3pt]
+\text{Politropica}&P=Kn^\Gamma&c_s^2=\Gamma P/(\varepsilon+P)\\[3pt]
+\text{BCS neutronica}&E_k=\sqrt{\xi_k^2+|\Delta_k|^2}&V_{{}^1S_0}(k,k')\\[3pt]
+\text{Superfluidita}&\mathbf v_s=\hbar\nabla\theta/(2m_n)&\kappa=h/(2m_n)
+\end{array}
+\]
+La materia di neutroni e un fermigas \emph{interagente}: il modello libero del cap. 3 fornisce un riferimento, mentre il pairing BCS riguarda lo stato fondamentale corretto dalle interazioni attrattive nel canale appropriato.
+\end{frame}
 

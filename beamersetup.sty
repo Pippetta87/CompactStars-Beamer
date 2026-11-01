@@ -340,31 +340,169 @@
 %}
 %
 %
-\AtBeginPart{%
-    \linkdest{linkpart-\thepart}%
-    \addtocontents{toc}{\protect\mycontentsline{section}{\parbox{0.48\textwidth}{\protect\beamer@partintoc{\the\c@part}{\beamer@partnameshort}{\the\c@page}}}{}{linkpart-\thepart}}%
-    \frameinlbffalse
-    \frame{\partpage}%
-    \frameinlbffalse
-    % 1. Rimuovi [shrink] e usa [t] per allineare in alto
-    % 2. Rimuovi le columns e usa multicols
-    % 1. Elimina lo spazio automatico sopra le colonne di multicol
-        \setlength{\multicolsep}{0pt} 
-        
-        % 2. (Opzionale) Se hai ancora i vspace di compensazione della volta scorsa, 
-        % riducili o commentali. Se il titolo si sovrappone, usa un valore piccolo come -1mm.
-        % \vspace*{-1mm} 
-    \begin{frame}[t]{Outline: \insertpart}
-        \vspace*{0.2cm}
-        \footnotesize % O \small, per sicurezza
-        \begin{multicols}{2}
-                       % 3. "Mangia" lo spazio iniziale del primo elemento del TOC
-            \vspace*{-1.5cm} 
-           % 3. Aggiungi part=\thepart per limitare alla parte corrente
-            \tableofcontents[part=\thepart]
-        \end{multicols}
-    \end{frame}%
+%\AtBeginPart{%hack2
+%    \linkdest{linkpart-\thepart}%
+%    \addtocontents{toc}{\protect\mycontentsline{section}{\parbox{0.48\textwidth}{\protect\beamer@partintoc{\the\c@part}{\beamer@partnameshort}{\the\c@page}}}{}{linkpart-\thepart}}%
+%    \frameinlbffalse
+%    \frame{\partpage}%
+%    \frameinlbffalse
+%    % 1. Rimuovi [shrink] e usa [t] per allineare in alto
+%    % 2. Rimuovi le columns e usa multicols
+%    % 1. Elimina lo spazio automatico sopra le colonne di multicol
+%        \setlength{\multicolsep}{0pt} 
+%        
+%        % 2. (Opzionale) Se hai ancora i vspace di compensazione della volta scorsa, 
+%        % riducili o commentali. Se il titolo si sovrappone, usa un valore piccolo come -1mm.
+%        % \vspace*{-1mm} 
+%    \begin{frame}[t]{Outline: \insertpart}
+%        \vspace*{0.2cm}
+%        \footnotesize % O \small, per sicurezza
+%        \begin{multicols}{2}
+%                       % 3. "Mangia" lo spazio iniziale del primo elemento del TOC
+%            \vspace*{-1.5cm} 
+%           % 3. Aggiungi part=\thepart per limitare alla parte corrente
+%            \tableofcontents[part=\thepart]
+%        \end{multicols}
+%    \end{frame}%
+%}
+%\AtBeginPart{%HACK3
+%    \linkdest{linkpart-\thepart}%
+%    \addtocontents{toc}{\protect\mycontentsline{section}%
+%        {\parbox{0.48\textwidth}{\protect\beamer@partintoc{\the\c@part}%
+%        {\beamer@partnameshort}{\the\c@page}}}{}{linkpart-\thepart}}%
+%    \frameinlbffalse
+%    \frame{\partpage}%
+%    \frameinlbffalse
+%    \begin{frame}{Outline: \insertpart}
+%        \vspace*{\fill}
+%        \footnotesize
+%        \setlength{\multicolsep}{0pt}%
+%        \begin{multicols}{2}
+%                    \raggedcolumns%
+%            \tableofcontents[part=\thepart]
+%        \end{multicols}
+%        \vspace*{\fill}
+%    \end{frame}%
+%}
+%%%%%%
+%%%%%%
+\makeatletter
+% --- contatori cumulativi che NON vengono resettati da \part ---
+\newcounter{my@secnum}
+\newcounter{my@subnum}
+\AddToHook{cmd/section/before}{\stepcounter{my@secnum}}
+\AddToHook{cmd/subsection/before}{\stepcounter{my@subnum}}
+
+% --- storage aux: valori cumulativi ai confini di parte ---
+\def\my@setsecstart#1#2{\expandafter\gdef\csname my@secstart@#1\endcsname{#2}}
+\def\my@setsecend#1#2{\expandafter\gdef\csname my@secend@#1\endcsname{#2}}
+\def\my@setsubstart#1#2{\expandafter\gdef\csname my@substart@#1\endcsname{#2}}
+\def\my@setsubend#1#2{\expandafter\gdef\csname my@subend@#1\endcsname{#2}}
+
+\def\my@getsecstart#1{\ifcsname my@secstart@#1\endcsname\csname my@secstart@#1\endcsname\else-1\fi}
+\def\my@getsecend#1{\ifcsname my@secend@#1\endcsname\csname my@secend@#1\endcsname\else-1\fi}
+\def\my@getsubstart#1{\ifcsname my@substart@#1\endcsname\csname my@substart@#1\endcsname\else-1\fi}
+\def\my@getsubend#1{\ifcsname my@subend@#1\endcsname\csname my@subend@#1\endcsname\else-1\fi}
+
+\newcommand*\my@writesecstart[1]{\immediate\write\@auxout{\string\my@setsecstart{#1}{\number\value{my@secnum}}}}
+\newcommand*\my@writesecend[1]{\immediate\write\@auxout{\string\my@setsecend{#1}{\number\value{my@secnum}}}}
+\newcommand*\my@writesubstart[1]{\immediate\write\@auxout{\string\my@setsubstart{#1}{\number\value{my@subnum}}}}
+\newcommand*\my@writesubend[1]{\immediate\write\@auxout{\string\my@setsubend{#1}{\number\value{my@subnum}}}}
+
+% --- soglia: oltre nsecs+nsubs si prova a dividere in due colonne ---
+\def\my@splitthreshold{15}
+
+% Spazio sopra l'indice: va impostato come opzione del frame,
+% prima che Beamer raccolga il contenuto nella propria vbox.
+\define@key{beamerframe}{mytoctop}[true]{%
+  \beamer@frametopskip=0.15cm\relax
+  \beamer@framebottomskip=0pt plus 1fill\relax
+  \beamer@frametopskipautobreak=\beamer@frametopskip
+  \beamer@framebottomskipautobreak=\beamer@framebottomskip
 }
+
+\AtBeginPart{%
+  % 1) chiudi la parte precedente PRIMA di iniziare la corrente
+  \ifnum\value{part}>1\relax
+    \my@writesecend{\number\numexpr\value{part}-1\relax}%
+    \my@writesubend{\number\numexpr\value{part}-1\relax}%
+  \fi
+  % 2) apri la parte corrente
+  \my@writesecstart{\number\value{part}}%
+  \my@writesubstart{\number\value{part}}%
+  \linkdest{linkpart-\thepart}%
+  \addtocontents{toc}{\protect\mycontentsline{section}%
+    {\parbox{0.48\textwidth}{\protect\beamer@partintoc{\the\c@part}%
+    {\beamer@partnameshort}{\the\c@page}}}{}{linkpart-\thepart}}%
+  \frameinlbffalse
+  \frame{\partpage}%
+  \frameinlbffalse
+  % 3) leggi i conteggi scritti al run precedente
+  \edef\my@ss{\my@getsecstart{\number\value{part}}}%
+  \edef\my@se{\my@getsecend{\number\value{part}}}%
+  \edef\my@us{\my@getsubstart{\number\value{part}}}%
+  \edef\my@ue{\my@getsubend{\number\value{part}}}%
+  \typeout{DEBUG part=\number\value{part} secs=\my@ss--\my@se subs=\my@us--\my@ue}%
+  \ifnum\my@ss<0\relax
+    % primo run: aux non ancora popolato -> fallback prudente
+    \begin{frame}[t]{Outline: \insertpart}
+      \vspace*{-1.5\baselineskip}%  ~ -0.6cm, ancora lontano dal -2cm che sfondava
+      \footnotesize
+      \tableofcontents[part=\thepart, hideothersubsections]
+    \end{frame}%
+  \else
+    \edef\my@nsecs{\number\numexpr\my@se-\my@ss\relax}%
+    \edef\my@nsubs{\number\numexpr\my@ue-\my@us\relax}%
+    \edef\my@nitems{\number\numexpr\my@nsecs+\my@nsubs\relax}%
+    \typeout{DEBUG part=\number\value{part} nsecs=\my@nsecs nsubs=\my@nsubs nitems=\my@nitems}%
+    \ifnum\my@nitems>\my@splitthreshold\relax
+      \ifnum\my@nsecs>1\relax
+        % split per numero di sezione (meta' "ceil")
+        \edef\my@b{\number\numexpr\my@nsecs/2\relax}%
+        \edef\my@c{\number\numexpr\my@b+1\relax}%
+        \begingroup
+        % Solo per questo indice: titolo standard centrato, senza i vspace
+        % del template globale. Gli altri frame mantengono il proprio titolo.
+        \setbeamertemplate{frametitle}[default][center]
+        \begin{frame}[t,mytoctop]{Outline: \insertpart}
+          \footnotesize
+  \setlength{\parskip}{0pt}%
+  \renewcommand{\mycontentsline}[4]{}%
+          \setlength{\parskip}{0pt}%
+          \begin{columns}[T,onlytextwidth]
+            \begin{column}{0.48\textwidth}
+              \vspace{0pt}% riferimento superiore comune alle due colonne
+              \let\vfill\relax % indice compatto, senza spazi elastici
+              \tableofcontents[part=\thepart, sections={1-\my@b}]
+            \end{column}
+            \begin{column}{0.48\textwidth}
+              \vspace{0pt}%
+              \let\vfill\relax
+              \tableofcontents[part=\thepart, sections={\my@c-\my@nsecs}]
+            \end{column}
+          \end{columns}
+        \end{frame}%
+        \endgroup
+      \else
+        % una sola sezione ma molte sottosezioni: niente split per sezione
+        \begin{frame}[t, shrink]{Outline: \insertpart}
+          \vspace*{0.2cm}\footnotesize
+          \tableofcontents[part=\thepart]
+        \end{frame}%
+      \fi
+    \else
+      \begin{frame}[t]{Outline: \insertpart}
+        \vspace*{0.2cm}\footnotesize
+        \tableofcontents[part=\thepart]
+      \end{frame}%
+    \fi
+  \fi
+}
+\AtEndDocument{%
+  \my@writesecend{\number\value{part}}%
+  \my@writesubend{\number\value{part}}%
+}
+\makeatother
 %%%Display section subsection (title page) at beginning section subsection
 \AtBeginSection{
 \addtocounter{sectionkey}{1}%using \thesection

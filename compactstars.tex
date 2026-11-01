@@ -1,0 +1,1206 @@
+\section{Equilibrio idrostatico}
+
+\subsection{Equilibrio newtoniano}
+
+% Frame 1
+\begin{frame}[t]{Capitolo 4: mappa degli argomenti}
+\small
+Il capitolo collega la microfisica di materia densa alle configurazioni di equilibrio gravitazionale.
+\begin{enumerate}
+\item Dall'equilibrio idrostatico newtoniano alle TOV.
+\item Argomento dimensionale di Landau: masse massime e nane bianche.
+\item Invarianza di scala delle TOV e limiti causali.
+\item Fermioni interagenti e stelle bosoniche.
+\end{enumerate}
+\medskip
+\textit{Collegamenti con gli appunti precedenti}: capitoli 2 (RG e TOV), 3 (EOS di Fermi), 8 (materia strange e bag), 9 (stelle ibride e terza famiglia).
+\medskip
+Convenzioni: $c=\hbar=1$ salvo indicazione; $G=m_{\rm Pl}^{-2}$ con massa di Planck \emph{non ridotta}.
+\end{frame}
+
+% Frame 2
+\begin{frame}[t]{Massa racchiusa in una sfera: equazioni (4.1)--(4.2)}
+\small
+Per una distribuzione sferica $\rho(r)$, la massa racchiusa nella sfera di raggio $r$ è
+\[
+m(r)=\int_{|\mathbf x|<r}\rho(\mathbf x)\,d^3x
+=4\pi\int_0^r\rho(r')\,r'^2\,dr'.
+\]
+Il teorema fondamentale del calcolo fornisce
+\[
+\frac{dm}{dr}=4\pi r^2\rho(r),\qquad m(0)=0,\quad m(R)=M.
+\]
+$\rho$ è densità di massa in unità newtoniane; $m(r)$ è massa \emph{integrata}, non densità locale. La derivazione vale anche per $\rho$ non uniforme.
+\end{frame}
+
+% Frame 3
+\begin{frame}[t]{Equilibrio idrostatico: da forze a equazioni (4.3)--(4.7)}
+\small
+Consideriamo un elemento di fluido di area $A$ e spessore $dr$:
+\[
+dm=A\rho(r)\,dr,\quad dF_G=-\frac{Gm(r)}{r^2}\,A\rho(r)\,dr.
+\]
+La differenza fra le forze di pressione sulle facce opposte è
+\[
+dF_P=A\bigl[P(r)-P(r+dr)\bigr]=-A\,dP.
+\]
+Ponendo $dF_P+dF_G=0$ (con versi opportuni):
+\[
+\frac{dP}{dr}=-\frac{Gm(r)\rho(r)}{r^2}.
+\]
+Condizioni tipiche: $P(0)=P_c$, $P(R)=0$ in un modello con superficie nel vuoto.
+\end{frame}
+
+% Frame 4
+\begin{frame}[t]{Che cosa chiude il sistema di equilibrio?}
+\small
+Le due equazioni
+\[
+\frac{dP}{dr}=-\frac{Gm\rho}{r^2},\qquad
+\frac{dm}{dr}=4\pi r^2\rho
+\]
+contengono le tre incognite $P(r)$, $m(r)$ e $\rho(r)$.
+\medskip
+Serve l'equazione di stato (EOS), ad esempio $P=P(\rho)$; fissando $P_c$ otteniamo una soluzione.
+\medskip
+La scelta dell'EOS è il punto in cui entrano i gradi di libertà microscopici (elettroni degeneri, neutroni, interazioni forti, quark, ecc.).
+\end{frame}
+
+\subsection{Equilibrio relativistico}
+
+% Frame 5
+\begin{frame}[t]{Fluido perfetto e conservazione in relatività generale}
+\small
+Adottiamo qui la metrica $(-,+,+,+)$ come nel libro e normalizzazione $u_\mu u^\mu=-1$.
+\[
+T^{\mu\nu}=(\varepsilon+P)u^\mu u^\nu+Pg^{\mu\nu},
+\qquad \nabla_\mu T^{\mu\nu}=0.
+\]
+Nel sistema localmente comovente:
+\[
+T^{\hat\mu\hat\nu}=\operatorname{diag}(\varepsilon,P,P,P).
+\]
+$\varepsilon$ include energia a riposo, cinetica e di interazione: è la densità di energia misurata localmente. Se negli appunti del capitolo 2 si usa la segnatura $(+,-,-,-)$, l'espressione covariante diventa $(\varepsilon+P)u^\mu u^\nu-Pg^{\mu\nu}$.
+\end{frame}
+
+% Frame 6
+\begin{frame}[t]{Metrica sferica statica e massa gravitazionale}
+\small
+In coordinate areali, con $c=1$, scriviamo
+\[
+ds^2=-e^{2\Phi(r)}dt^2+
+\left(1-\frac{2Gm(r)}r\right)^{-1}dr^2+r^2d\Omega^2.
+\]
+La funzione $m(r)$ è definita dalla componente radiale della metrica; le equazioni di Einstein danno
+\[
+\frac{dm}{dr}=4\pi r^2\varepsilon(r).
+\]
+Per una superficie a $r=R$, $M=m(R)$ è la massa gravitazionale misurata dall'esterno. Il volume proprio di un guscio è
+\[
+dV_{\rm prop}=4\pi r^2\frac{dr}{\sqrt{1-2Gm(r)/r}},
+\]
+che \emph{non} è la misura impiegata nell'integrale di $M$.
+\end{frame}
+
+% Frame 7
+\begin{frame}[t]{Dalla conservazione di $T^{\mu\nu}$ all'equilibrio radiale}
+\small
+La componente $\nu=r$ dell'equazione $\nabla_\mu T^{\mu\nu}=0$ per un fluido statico è
+\[
+\frac{dP}{dr}=-(\varepsilon+P)\,\frac{d\Phi}{dr}.
+\]
+Le equazioni di Einstein per la metrica precedente forniscono
+\[
+\Phi'(r)=\frac{G[m(r)+4\pi r^3P(r)]}{r[r-2Gm(r)]}.
+\]
+Combinando:
+\[
+\frac{dP}{dr}=-\frac{G(\varepsilon+P)[m+4\pi r^3P]}{r(r-2Gm)}.
+\]
+Questa è l'equazione TOV (Tolman--Oppenheimer--Volkoff).
+\end{frame}
+
+% Frame 8
+\begin{frame}[t]{Le tre correzioni relativistiche nella TOV}
+\small
+Riorganizzando la TOV in modo da confrontarla con Newton:
+\[
+\frac{dP}{dr}=-\frac{Gm\varepsilon}{r^2}
+\underbrace{\left(1+\frac{P}{\varepsilon}\right)}_{\text{inerzia entalpica}}
+\underbrace{\left(1+\frac{4\pi r^3P}{m}\right)}_{\text{pressione gravita}}
+\underbrace{\left(1-\frac{2Gm}{r}\right)^{-1}}_{\text{curvatura}}.
+\]
+Qui $\varepsilon\simeq\rho$ in unità $c=1$ nel limite newtoniano.
+\medskip
+Per $P\ll\varepsilon$, $2Gm/r\ll1$ e $4\pi r^3P\ll m$, recuperiamo
+$P'\simeq-Gm\rho/r^2$.
+\end{frame}
+
+% Frame 9
+\begin{frame}[t]{Impostare e integrare una sequenza TOV}
+\small
+Data una EOS barotropica $\varepsilon=\varepsilon(P)$, fissiamo una pressione centrale $P_c$ e integriamo
+\[
+\begin{cases}
+P'(r)=-G(\varepsilon+P)(m+4\pi r^3P)/[r(r-2Gm)],\\[2pt]
+m'(r)=4\pi r^2\varepsilon(P(r)).
+\end{cases}
+\]
+Le condizioni iniziali regolari sono $P(0)=P_c$, $m(0)=0$. Si termina al primo $R$ con $P(R)=0$, ottenendo $M=m(R)$.
+\medskip
+Ripetendo per diversi $P_c$ si costruiscono $M(P_c)$, $R(P_c)$ e quindi $M(R)$. Un'equazione del primo ordine per il numero barionico serve se si vuole anche $M_B$.
+\end{frame}
+
+% Frame 10
+\begin{frame}[t]{Sviluppo regolare al centro per iniziare il calcolo numerico}
+\small
+La TOV non va valutata direttamente con $r=0$ nella forma con denominatore $r(r-2Gm)$. Vicino al centro:
+\[
+m(r)=\frac{4\pi}{3}\varepsilon_c r^3+O(r^5).
+\]
+Sostituendo nella TOV con $P(r)=P_c+O(r^2)$:
+\[
+P'(r)=-\frac{4\pi G}{3}(\varepsilon_c+P_c)(\varepsilon_c+3P_c)r+O(r^3).
+\]
+Integrando:
+\[
+P(r)=P_c-\frac{2\pi G}{3}(\varepsilon_c+P_c)(\varepsilon_c+3P_c)r^2+O(r^4).
+\]
+Si inizializza dunque a $r=r_{\rm start}>0$ con queste espressioni.
+\end{frame}
+
+% Frame 11
+\begin{frame}[t]{Il salto di energia in una transizione di Maxwell}
+\small
+Nelle TOV di una stella regolare con $P,\varepsilon>0$, $P'(r)<0$ per $r>0$.
+\medskip
+Se l'EOS presenta una transizione del primo ordine alla pressione $P_t$, le due densità
+\[
+\varepsilon_-(P_t)\neq\varepsilon_+(P_t)
+\]
+sono ammesse, ma la pressione resta continua. Una regione radiale di spessore finito con $P$ perfettamente costante non può sostenere $P'<0$.
+\medskip
+La costruzione di Maxwell produce così idealmente un'interfaccia a $r=r_t$, non uno strato esteso. È il collegamento con il §9.2.
+\end{frame}
+
+\subsection{Neutroni non interagenti}
+
+% Frame 12
+\begin{frame}[t]{TOV per neutroni liberi: modello storico}
+\small
+Il modello di Oppenheimer--Volkoff usa un gas di neutroni non interagenti a $T=0$, la cui EOS è ricavata da
+\[
+n=\frac{k_F^3}{3\pi^2},\qquad
+\varepsilon=\frac{1}{\pi^2}\int_0^{k_F}k^2\sqrt{k^2+m_n^2}\,dk,
+\]
+\[
+P=\frac{1}{3\pi^2}\int_0^{k_F}\frac{k^4}{\sqrt{k^2+m_n^2}}\,dk.
+\]
+Il massimo riportato dal libro per questo modello è
+\[
+M_{\max}\simeq0.71M_\odot,\qquad R_{\max}\simeq9.1\ \mathrm{km}.
+\]
+È una EOS volutamente \emph{irrealistica}: trascura soprattutto le interazioni nucleari che modificano la pressione.
+\end{frame}
+
+% Frame 13
+\begin{frame}[t]{Figura 4.1: massa e raggio contro densità centrale}
+\small
+\begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/M-R_Pc}\label{fig:Schaffner_M-R_Pc}\end{figure}
+La curva della massa raggiunge il primo massimo prima del primo minimo del raggio. La didascalia del libro parla di pressione centrale, ma l'ascissa tracciata è $\varepsilon_c/\varepsilon_0$.
+\end{frame}
+
+% Frame 14
+\begin{frame}[t]{Figura 4.2: sequenza massa--raggio del gas di neutroni}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.62\textwidth}
+    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/MR-freeneutrons}\label{fig:Schaffner_MR-freeneutrons}\end{figure}
+\end{column}
+\begin{column}{.36\textwidth}
+\small
+La sequenza parte da masse piccole e raggi grandi; la curva continua è stabile fino al primo massimo di $M$.
+\medskip
+Il ramo tratteggiato è instabile nel modello del gas libero e tende a una spirale per densità centrali molto alte.
+\medskip
+La linea inclinata delimita $R=2GM$.
+\end{column}
+\end{columns}
+\end{frame}
+
+% Frame 15
+\begin{frame}[t]{Stabilità: che cosa dice il massimo di massa?}
+\small
+Per una sequenza regolare con EOS fissata, il primo massimo della massa, al crescere di $P_c$, spesso segna la perdita della stabilità del modo radiale fondamentale:
+\[
+\left.\frac{dM}{dP_c}\right|_{\rm massimo}=0.
+\]
+Il criterio dei punti di inversione richiede ipotesi su famiglia di equilibri e modi radiali: \emph{un massimo isolato nel diagramma $M(R)$ non basta}. I modelli con transizioni di fase possono mostrare una stabilizzazione successiva (terza famiglia, §9.3).
+\medskip
+Il gas libero esibisce il comportamento più semplice: ramo stabile prima del massimo e instabile dopo di esso.
+\end{frame}
+
+\section{Masse massime}
+
+\subsection{Argomento di Landau}
+
+% Frame 16
+\begin{frame}[t]{Argomento di Landau: impostazione e approssimazioni}
+\small
+Consideriamo $N$ fermioni di massa $m_f$ in una sfera di raggio $R$ e massa totale $M\simeq Nm_f$.
+\[
+\bar n=\frac{N}{(4\pi/3)R^3},\qquad
+k_F=\left(\frac{6\pi^2\bar n}{g}\right)^{1/3}
+=\left(\frac{9\pi}{2g}\right)^{1/3}\frac{N^{1/3}}R.
+\]
+Per neutroni, $g=2$; $k_F$ è il momento caratteristico determinato dal principio di Pauli.
+\medskip
+Si approssima l'energia gravitazionale per particella come $E_G\sim-GMm_f/R$ e quella cinetica mediante il momento di Fermi. I coefficienti di ordine uno dipendono dal profilo di densità e dalla media sul mare di Fermi.
+\end{frame}
+
+% Frame 17
+\begin{frame}[t]{Landau: confronto fra degenerazione e gravità}
+\small
+Nel regime ultrarelativistico del fermione, $E_{\rm kin}\sim k_F$; dunque
+\[
+E(R)\sim\frac1R\left[
+\left(\frac{9\pi}{2g}\right)^{1/3}N^{1/3}
+-Gm_f^2N\right].
+\]
+Entrambi i termini scalano come $R^{-1}$. La possibilità di stabilizzare la sfera cambia al variare di $N$:
+\[
+Gm_f^2N\sim\left(\frac{9\pi}{2g}\right)^{1/3}N^{1/3}.
+\]
+La soglia è una stima dimensionale: il coefficiente numerico preciso richiede di risolvere un problema di equilibrio (Newton o TOV) con l'EOS completa.
+\end{frame}
+
+% Frame 18
+\begin{frame}[t]{Landau: numero critico di fermioni}
+\small
+Poniamo $a_g=(9\pi/2g)^{1/3}$. Dalla condizione marginale:
+\[
+Gm_f^2N_{\max}=a_gN_{\max}^{1/3},
+\quad N_{\max}^{2/3}=\frac{a_g}{Gm_f^2}.
+\]
+Elevando alla potenza $3/2$ e usando $G=m_{\rm Pl}^{-2}$:
+\[
+N_{\max}\sim a_g^{3/2}
+\left(\frac{m_{\rm Pl}}{m_f}\right)^3
+=\left(\frac{9\pi}{2g}\right)^{1/2}
+\left(\frac{m_{\rm Pl}}{m_f}\right)^3.
+\]
+Questo è l'andamento delle eq. (4.24)--(4.25); la dipendenza $m_f^{-3}$ è più robusta del prefattore.
+\end{frame}
+
+% Frame 19
+\begin{frame}[t]{Landau: massa e raggio caratteristici}
+\small
+La massa massima stimata si ottiene moltiplicando per $m_f$:
+\[
+M_{\max}\sim a_g^{3/2}\frac{m_{\rm Pl}^3}{m_f^2}.
+\]
+Per il raggio, stimiamo la soglia $k_F\sim m_f$:
+\[
+R_{\rm crit}\sim a_g\frac{N_{\max}^{1/3}}{m_f}
+\sim a_g^{3/2}\frac{m_{\rm Pl}}{m_f^2}.
+\]
+Definiamo le scale di Landau \emph{senza} prefattori:
+\[
+M_L\equiv\frac{m_{\rm Pl}^3}{m_f^2},\qquad
+R_L\equiv\frac{m_{\rm Pl}}{m_f^2}.
+\]
+\end{frame}
+
+% Frame 20
+\begin{frame}[t]{Stima di Landau vs risultato delle TOV}
+\small
+Ponendo $m_f=m_n$, il libro riporta
+\[
+M_L\simeq1.848M_\odot,\qquad R_L\simeq2.729\ \mathrm{km}.
+\]
+La soluzione numerica per neutroni liberi è invece
+\[
+M_{\max}=0.71M_\odot,\quad R_{\rm crit}=9.1\ \mathrm{km}.
+\]
+Nelle soluzioni dimensionless complete (si vedrà nel §4.3) compaiono i coefficienti
+\[
+M_{\max}\simeq0.384M_L,\qquad R_{\rm crit}\simeq3.367R_L.
+\]
+La stima $\sim$ di Landau fornisce la \emph{scala}, non il valore numerico esatto.
+\end{frame}
+
+\subsection{Limite delle nane bianche}
+
+% Frame 21
+\begin{frame}[t]{Nane bianche: chi porta massa e chi porta pressione?}
+\small
+Per nuclei $(A,Z)$ ed elettroni degeneri, la neutralità elettrica impone
+\[
+n_e=Zn_A,\qquad N_e=ZN_A=\frac ZA N_B.
+\]
+La massa totale è dominata dai nuclei:
+\[
+M\simeq A m_N N_A\simeq m_NN_B,
+\]
+mentre il sostegno contro gravità proviene principalmente dalla pressione degli elettroni.
+\medskip
+Quando gli elettroni diventano ultrarelativistici, la loro energia cinetica cresce come $N_e^{4/3}/R$ e può bilanciare la gravità solo fino a un numero barionico critico.
+\end{frame}
+
+% Frame 22
+\begin{frame}[t]{Limite di Chandrasekhar: dipendenza da $Z/A$}
+\small
+L'energia cinetica totale degli elettroni è stimata come
+\[
+U_e\sim N_e k_{F,e}\sim\frac{N_e^{4/3}}R
+=\frac{(Z/A)^{4/3}N_B^{4/3}}R.
+\]
+L'energia gravitazionale totale scala come
+\[
+U_G\sim-\frac{GM^2}R\sim-\frac{Gm_N^2N_B^2}R.
+\]
+Alla soglia $|U_G|\sim U_e$:
+\[
+N_{B,\max}\propto\left(\frac ZA\right)^2
+\left(\frac{m_{\rm Pl}}{m_N}\right)^3,
+\quad M_{\max}\propto\left(\frac ZA\right)^2\frac{m_{\rm Pl}^3}{m_N^2}.
+\]
+L'assenza di $m_e$ dalla massa massima è una conseguenza del limite ultrarelativistico degli elettroni.
+\end{frame}
+
+% Frame 23
+\begin{frame}[t]{Chandrasekhar: risultato numerico e scala del raggio}
+\small
+Il libro confronta la stima di Landau con il risultato di Chandrasekhar
+\[
+M_{\rm Ch}\simeq1.44M_\odot\left(\frac{2Z}{A}\right)^2.
+\]
+Il raggio caratteristico si ricava alla soglia $k_{F,e}\sim m_e$:
+\[
+R_{\rm WD}\sim\frac{m_{\rm Pl}}{m_Nm_e}
+\times\left(\frac ZA\right)
+\sim10^3\text{--}10^4\ \mathrm{km}.
+\]
+In particolare, confrontando le scale di raggio
+\[
+\frac{R_{\rm WD}}{R_{\rm NS}}\sim\frac{m_N}{m_e}\sim2000
+\]
+(a fattori composizionali e numerici vicino all'unità).
+\end{frame}
+
+% Frame 24
+\begin{frame}[t]{Limiti di Landau: quanto sono generali?}
+\small
+L'argomento dipende dalla competizione fra $U_G\propto-R^{-1}$ e $U_{\rm deg}\propto R^{-1}$ nel regime ultrarelativistico.
+\medskip
+La stima non determina l'EOS reale: interazioni, composizione, temperatura, relatività generale, neutronizzazione e correzioni Coulomb cambiano i valori critici.
+\medskip
+Per le nane bianche il caso limite di elettroni ultrarelativistici è ben motivato; per le stelle di neutroni il gas libero è troppo semplice. L'argomento prepara piuttosto la legge di scala comune $m_{\rm Pl}^3/m_f^2$.
+\end{frame}
+
+\section{Leggi di scala}
+
+\subsection{Adimensionalizzazione delle TOV}
+
+% Frame 25
+\begin{frame}[t]{Scala dimensionale delle equazioni TOV}
+\small
+Sia $\varepsilon_0$ una scala di densità di energia che compare nell'EOS. Introduciamo
+\[
+\varepsilon=\varepsilon_0\bar\varepsilon,\quad P=\varepsilon_0\bar P,
+\quad r=a\bar r,\quad m=b\bar m.
+\]
+Cerchiamo $a,b$ tali che le TOV non contengano più coefficienti dimensionali:
+\[
+\frac{dm}{dr}=4\pi r^2\varepsilon,
+\qquad
+\frac{dP}{dr}=-\frac{G(\varepsilon+P)(m+4\pi r^3P)}{r(r-2Gm)}.
+\]
+L'esistenza di una scala unica $\varepsilon_0$ è essenziale: parametri dimensionali aggiuntivi ne alterano la semplice invarianza.
+\end{frame}
+
+% Frame 26
+\begin{frame}[t]{Equazione della massa: prima condizione sulla scala}
+\small
+Sostituiamo $r=a\bar r$, $m=b\bar m$, $\varepsilon=\varepsilon_0\bar\varepsilon$:
+\[
+\frac{b}{a}\frac{d\bar m}{d\bar r}
+=4\pi a^2\bar r^2\varepsilon_0\bar\varepsilon.
+\]
+Vogliamo ottenere la forma adimensionale
+\[
+\frac{d\bar m}{d\bar r}=4\pi\bar r^2\bar\varepsilon.
+\]
+Segue la condizione
+\[
+\frac ba=a^2\varepsilon_0
+\quad\Longrightarrow\quad b=a^3\varepsilon_0.
+\]
+Questa relazione codifica dimensionalmente $m\sim\varepsilon_0r^3$.
+\end{frame}
+
+% Frame 27
+\begin{frame}[t]{TOV: seconda condizione sulla scala}
+\small
+Nel fattore di Schwarzschild compare
+\[
+\frac{2Gm(r)}r=\frac{2Gb}a\frac{\bar m}{\bar r}.
+\]
+Per recuperare la forma senza costanti scegliamo
+\[
+\frac{Gb}{a}=1\quad\Longrightarrow\quad b=\frac aG.
+\]
+Combiniamo con $b=a^3\varepsilon_0$:
+\[
+\frac aG=a^3\varepsilon_0
+\quad\Longrightarrow\quad a^2=\frac1{G\varepsilon_0}.
+\]
+Dunque
+\[
+a=(G\varepsilon_0)^{-1/2},\qquad
+b=\frac{a}{G}=(G^3\varepsilon_0)^{-1/2}.
+\]
+\end{frame}
+
+% Frame 28
+\begin{frame}[t]{Le TOV adimensionali (4.51)--(4.52)}
+\small
+Con le scelte precedenti si ottiene
+\[
+\frac{d\bar m}{d\bar r}=4\pi\bar r^2\bar\varepsilon,
+\]
+\[
+\frac{d\bar P}{d\bar r}=
+-\frac{(\bar\varepsilon+\bar P)
+(\bar m+4\pi\bar r^3\bar P)}
+{\bar r(\bar r-2\bar m)}.
+\]
+Una EOS della forma $\bar P=f(\bar\varepsilon)$ genera una famiglia di soluzioni adimensionali indipendente dal valore numerico di $\varepsilon_0$.
+\medskip
+Dopo aver integrato, si recuperano $r=a\bar r$, $m=b\bar m$.
+\end{frame}
+
+% Frame 29
+\begin{frame}[t]{Leggi di scala per massa, raggio e compattezza}
+\small
+Dalle scale $a,b$ ricaviamo
+\[
+R=(G\varepsilon_0)^{-1/2}\bar R,
+\qquad M=(G^3\varepsilon_0)^{-1/2}\bar M.
+\]
+Quindi, mantenendo fissa la \emph{forma} dell'EOS adimensionale,
+\[
+M_{\max}\propto\varepsilon_0^{-1/2},
+\qquad R_{\rm crit}\propto\varepsilon_0^{-1/2}.
+\]
+La compattezza invece è invariante:
+\[
+\mathcal C\equiv\frac{GM}{R}=\frac{Gb}{a}\frac{\bar M}{\bar R}
+=\frac{\bar M}{\bar R}.
+\]
+Non tutte le EOS con la stessa $\varepsilon_0$ hanno uguale compattezza: dipende anche dalla \emph{forma} $f$.
+\end{frame}
+
+\subsection{Gas libero e EOS del vuoto}
+
+% Frame 30
+\begin{frame}[t]{Esempio: il gas libero massivo ha scala $m_f^4$}
+\small
+Per un fermione libero a $T=0$ ($g=2$) poniamo $x=k_F/m_f$. Dopo il cambio $k=m_ft$, gli integrali hanno la forma
+\[
+\varepsilon(x)=m_f^4\,\bar\varepsilon(x),\qquad
+P(x)=m_f^4\,\bar P(x).
+\]
+L'unica scala è dunque
+\[
+\varepsilon_0=m_f^4.
+\]
+Inserendo nella legge generale:
+\[
+M_{\max}=\bar M_{\max}\frac{m_{\rm Pl}^3}{m_f^2},
+\quad R_{\rm crit}=\bar R_{\rm crit}\frac{m_{\rm Pl}}{m_f^2}.
+\]
+Si ritrovano esattamente le scale di Landau, questa volta dalle TOV e non dall'argomento energetico semplificato.
+\end{frame}
+
+% Frame 31
+\begin{frame}[t]{Gas libero: coefficienti e compattezza}
+\small
+Dall'integrazione delle TOV per il gas libero con $g=2$, i coefficienti riportati nel libro sono
+\[
+\bar M_{\max}=0.384,\qquad
+\bar R_{\rm crit}=3.367.
+\]
+Pertanto
+\[
+M_{\max}=0.384\frac{m_{\rm Pl}^3}{m_f^2},
+\quad R_{\rm crit}=3.367\frac{m_{\rm Pl}}{m_f^2}.
+\]
+La compattezza alla massa massima è
+\[
+\mathcal C_{\max}=\frac{\bar M_{\max}}{\bar R_{\rm crit}}
+=\frac{0.384}{3.367}\simeq0.114.
+\]
+Il valore è indipendente dalla massa del fermione, purché l'EOS sia sempre quella dello stesso gas libero.
+\end{frame}
+
+% Frame 32
+\begin{frame}[t]{Perché $P=\varepsilon/3$ da sola non fissa una massa massima?}
+\small
+Per un gas \emph{esattamente} massless e non interagente,
+\[
+P=\frac13\varepsilon
+\]
+non compare alcuna scala di energia intrinseca $\varepsilon_0$.
+\medskip
+Non possiamo ottenere una massa o un raggio caratteristici mediante il solo argomento dimensionale. In più, l'EOS lineare priva di una densità di superficie finita non fornisce la stessa famiglia isolata di stelle autolegate del bag model.
+\medskip
+Per costruire configurazioni di stelle strange autolegate il libro aggiunge una densità di energia del vuoto.
+\end{frame}
+
+% Frame 33
+\begin{frame}[t]{Contributo di vuoto: pressione negativa}
+\small
+Separiamo la parte di gas ultrarelativistico da una costante $B$:
+\[
+P=P_{\rm free}-B,\qquad
+\varepsilon=\varepsilon_{\rm free}+B.
+\]
+Usando $\varepsilon_{\rm free}=3P_{\rm free}$,
+\[
+P=\frac{\varepsilon-B}{3}-B
+=\frac13(\varepsilon-4B).
+\]
+Scrivendo $\varepsilon_0=4B$:
+\[
+P=\frac13(\varepsilon-\varepsilon_0).
+\]
+La superficie a $P=0$ ha $\varepsilon(R)=\varepsilon_0\neq0$: il sistema è \emph{autolegato}, se la fase considerata è davvero stabile rispetto agli stati alternativi.
+\end{frame}
+
+% Frame 34
+\begin{frame}[t]{MIT bag: come scala la sequenza massa--raggio}
+\small
+Per $P=(\varepsilon-4B)/3$ mantenendo il parametro adimensionale $s=1/3$ fissato:
+\[
+M,R\propto (4B)^{-1/2}\propto B^{-1/2}.
+\]
+Il libro riporta, con $B^{1/4}=145\ \mathrm{MeV}$ come riferimento,
+\[
+M_{\max}\simeq2.01M_\odot
+\left(\frac{145\,\mathrm{MeV}}{B^{1/4}}\right)^2,
+\]
+\[
+R_{\rm crit}\simeq10.9\,\mathrm{km}
+\left(\frac{145\,\mathrm{MeV}}{B^{1/4}}\right)^2.
+\]
+Sono risultati del modello ideale massless del libro; non garantiscono da soli la stabilità assoluta della strange matter.
+\end{frame}
+
+\subsection{Limiti di causalità}
+
+% Frame 35
+\begin{frame}[t]{Velocità del suono e rigidità di un\,EOS}
+\small
+A temperatura zero e composizione in equilibrio, la velocità del suono adiabatico si esprime (in unità $c=1$) come
+\[
+c_s^2=\frac{dP}{d\varepsilon}.
+\]
+La causalità impone $0\leq c_s^2\leq1$. Una scelta \emph{massimamente rigida} in questo senso è
+\[
+\frac{dP}{d\varepsilon}=1,
+\]
+che, integrata senza costante, dà $P=\varepsilon$ (EOS di Zel'dovich).
+\medskip
+Questa costruzione è un'estremizzazione, non la previsione che la materia reale raggiunga sempre $c_s=c$.
+\end{frame}
+
+% Frame 36
+\begin{frame}[t]{EOS di Zel'dovich e derivazione termodinamica}
+\small
+Consideriamo un contributo energetico dominante quadratico nella densità numerica:
+\[
+\varepsilon(n)=\kappa n^2.
+\]
+Al freddo, $P=n^2d(\varepsilon/n)/dn$ e pertanto
+\[
+P=n^2\frac d{dn}(\kappa n)=\kappa n^2=\varepsilon.
+\]
+Segue
+\[
+c_s^2=\frac{dP/dn}{d\varepsilon/dn}=1.
+\]
+Il risultato vale se il termine $\kappa n^2$ \emph{domina} l'energia; aggiungendo il termine $mn$ la velocità del suono è inferiore a uno a densità finite.
+\end{frame}
+
+% Frame 37
+\begin{frame}[t]{Proseguire una EOS nota con rigidità causale massima}
+\small
+Supponiamo di conoscere la EOS fino a $(\varepsilon_f,P_f)$.
+Imponiamo, per $\varepsilon>\varepsilon_f$,
+\[
+\frac{dP}{d\varepsilon}=1.
+\]
+L'integrazione con $P(\varepsilon_f)=P_f$ dà
+\[
+P(\varepsilon)=P_f+(\varepsilon-\varepsilon_f),
+\qquad\varepsilon\geq\varepsilon_f.
+\]
+Questa è la prosecuzione più rigida secondo la condizione $c_s^2\leq1$.
+\medskip
+La parte nucleonica inferiore rimane fissata: il risultato è un \emph{limite superiore} alla massa massima all'interno delle ipotesi sulla regione nota e sulla classe di EOS.
+\end{frame}
+
+% Frame 38
+\begin{frame}[t]{Rhoades--Ruffini: dipendenza dalla densità fiduciale}
+\small
+Se $P_f\ll\varepsilon_f$, la scala dominante della prosecuzione causale è $\varepsilon_f$. Allora
+\[
+M_{\max}\propto\varepsilon_f^{-1/2}.
+\]
+Il libro cita la stima
+\[
+M_{\max}\simeq4.2M_\odot
+\left(\frac{\varepsilon_{\rm nm}}{\varepsilon_f}\right)^{1/2},
+\qquad\varepsilon_{\rm nm}\simeq140\,\mathrm{MeV\,fm^{-3}}.
+\]
+Per $\varepsilon_f=2\varepsilon_{\rm nm}$ si ottiene $4.2/\sqrt 2\simeq3.0M_\odot$.
+\medskip
+\emph{Non è un limite causale completamente indipendente dal contesto}: dipende da fino a quale densità l'EOS è considerata nota e da come è raccordata.
+\end{frame}
+
+\subsection{EOS autolegate lineari}
+
+% Frame 39
+\begin{frame}[t]{EOS lineare autolegata: famiglia a velocità costante}
+\small
+Una generalizzazione utile del bag model e dell'EOS causale è
+\[
+P=s\,(\varepsilon-\varepsilon_0),\qquad 0<s\leq1.
+\]
+La pendenza è costante:
+\[
+c_s^2=\frac{dP}{d\varepsilon}=s.
+\]
+$\varepsilon_0$ è la densità di energia alla superficie, dove $P=0$.
+\medskip
+Per $s=1/3$ e $\varepsilon_0=4B$ si ottiene la EOS del bag ideale; per $s=1$ si ha la massima rigidità causale sopra una densità di superficie finita.
+\end{frame}
+
+% Frame 40
+\begin{frame}[t]{Scalare $\varepsilon_0$ non equivale a cambiare $s$}
+\small
+Per una EOS lineare autolegata,
+\[
+M_{\max}=\mathcal M(s)(G^3\varepsilon_0)^{-1/2},
+\qquad R_{\rm crit}=\mathcal R(s)(G\varepsilon_0)^{-1/2}.
+\]
+I coefficienti adimensionali $\mathcal M(s),\mathcal R(s)$ devono essere ottenuti integrando le TOV e \emph{dipendono da $s$}.
+\[
+\frac{GM_{\max}}{R_{\rm crit}}
+=\frac{\mathcal M(s)}{\mathcal R(s)}.
+\]
+Variare $\varepsilon_0$ riscalando massa e raggio non modifica la forma adimensionale della curva; variare $s$ sì.
+\end{frame}
+
+% Frame 41
+\begin{frame}[t]{Esempi quantitativi: $s=1/3,\,2/3,\,1$}
+\small
+Il libro (§4.3.5) usa $\varepsilon_{\rm nm}=140\,\mathrm{MeV\,fm^{-3}}$ come densità di riferimento:
+\[
+\begin{array}{c|ccc}
+s &1/3&2/3&1\\\hline
+M_{\max}/(M_\odot\sqrt{\varepsilon_{\rm nm}/\varepsilon_0})
+&2.57&3.64&4.23\\
+R_{\rm crit}/(\mathrm{km}\sqrt{\varepsilon_{\rm nm}/\varepsilon_0})
+&14.0&16.4&17.6
+\end{array}
+\]
+All'aumentare di $s$, la massa massima cresce; i raggi non seguono però la stessa legge in funzione di $s$.
+\end{frame}
+
+% Frame 42
+\begin{frame}[t]{Compattezza: i valori della eq. (4.80)}
+\small
+La compattezza $\mathcal C=GM/R$ non dipende dalla scala $\varepsilon_0$ per una forma fissata di EOS.
+\[
+\begin{array}{c|ccc}
+s&1/3&2/3&1\\\hline
+\mathcal C_{\max}&0.271&0.328&0.354
+\end{array}
+\]
+Per confronto, nel modello a neutroni liberi si ha $\mathcal C_{\max}\simeq0.11$.
+\medskip
+Questi valori sono quelli della famiglia autolegata lineare. Il valore $0.354$ viene anche utilizzato dal libro come riferimento per limiti causali più generali, sotto ipotesi aggiuntive.
+\end{frame}
+
+% Frame 43
+\begin{frame}[t]{Redshift gravitazionale dalla superficie}
+\small
+All'esterno della stella vale la metrica di Schwarzschild. Per un fotone emesso dalla superficie e misurato all'infinito,
+\[
+1+z=\frac{1}{\sqrt{1-2GM/R}}=\frac{1}{\sqrt{1-2\mathcal C}}.
+\]
+Ai tre valori di compattezza massima della famiglia lineare il libro associa
+\[
+\begin{array}{c|ccc}
+s&1/3&2/3&1\\\hline
+z_{\max}&0.478&0.705&0.851
+\end{array}
+\]
+Per $\mathcal C\ll1$, espandendo la radice si recupera $z\simeq\mathcal C=GM/R$, il limite debole discusso nel capitolo 2.
+\end{frame}
+
+% Frame 44
+\begin{frame}[t]{Densità centrale massima della famiglia autolegata}
+\small
+La densità centrale alla configurazione di massa massima, divisa per la densità di superficie $\varepsilon_0$, è adimensionale:
+\[
+\begin{array}{c|ccc}
+s&1/3&2/3&1\\\hline
+\varepsilon_{c,\max}/\varepsilon_0&4.81&3.54&3.03
+\end{array}
+\]
+Per valori diversi di $\varepsilon_0$, le densità si riscalano linearmente, mentre masse e raggi scalano come $\varepsilon_0^{-1/2}$.
+\medskip
+Non si deve confondere la densità \emph{centrale} con la densità alla \emph{superficie} $\varepsilon_0$.
+\end{frame}
+
+% Frame 45
+\begin{frame}[t]{Relazione di Lattimer--Prakash: derivazione della scala}
+\small
+Per una famiglia a forma dimensionless fissata:
+\[
+M_{\max}=A\varepsilon_0^{-1/2},
+\qquad\varepsilon_{c,\max}=B\varepsilon_0.
+\]
+Eliminando $\varepsilon_0$, si ottiene
+\[
+\varepsilon_{c,\max}M_{\max}^2=BA^2=\text{costante}.
+\]
+Quindi
+\[
+\varepsilon_{c,\max}\propto M_{\max}^{-2}.
+\]
+Il libro cita, per la costruzione causale limite:
+\[
+\varepsilon_{\rm ultimate}\simeq13.5\varepsilon_{\rm nm}
+\left(\frac{2M_\odot}{M_{\max}}\right)^2.
+\]
+La relazione esprime il massimo caratteristico all'interno delle ipotesi della famiglia, non una densità universale di qualunque materia.
+\end{frame}
+
+% Frame 46
+\begin{frame}[t]{Esempio numerico della relazione massa--densità}
+\small
+Con $\varepsilon_{\rm nm}\simeq140\,\mathrm{MeV\,fm^{-3}}$,
+\[
+M_{\max}=2M_\odot\quad\Longrightarrow\quad
+\varepsilon_{\rm ultimate}\simeq13.5\varepsilon_{\rm nm}.
+\]
+Per una massa massima ipotetica di $3M_\odot$:
+\[
+\varepsilon_{\rm ultimate}
+\simeq13.5\left(\frac23\right)^2\varepsilon_{\rm nm}
+=6\varepsilon_{\rm nm}.
+\]
+Una massa massima maggiore richiede, in questa costruzione, una scala energetica/densità minore.
+\medskip
+Riferimento concettuale: la massa stellare osservata vincola indirettamente la regione ad alte densità dell'EOS.
+\end{frame}
+
+% Frame 47
+\begin{frame}[t]{Riepilogo delle quattro EOS del §4.3}
+\small
+\begin{tabular}{@{}lll@{}}
+\textbf{EOS} & \textbf{Scala} & \textbf{Interpretazione}\\\hline
+$P=P_{\rm free}(m_f)$ & $m_f^4$ & Fermi gas massivo\\
+$P=(\varepsilon-4B)/3$ & $B$ & Bag, autolegata\\
+$P=P_f+\varepsilon-\varepsilon_f$ & $\varepsilon_f$ & Prosecuzione causale\\
+$P=s(\varepsilon-\varepsilon_0)$ & $\varepsilon_0,s$ & Autolegata generica
+\end{tabular}
+\bigskip
+La legge $M,R\propto\varepsilon_0^{-1/2}$ è valida quando tutte le caratteristiche dimensionali della EOS scalano coerentemente con l'unica densità $\varepsilon_0$.
+\medskip
+In una EOS composta di crosta, core, transizioni e soglie di particelle, la riscalatura può non essere esatta.
+\end{frame}
+
+\section{Fermioni interagenti}
+
+\subsection{Interazione quadratica}
+
+% Frame 48
+\begin{frame}[t]{Interazioni fra fermioni: ansatz del libro}
+\small
+Aggiungiamo all'energia di un gas di fermioni un termine efficace
+\[
+\varepsilon_{\rm int}(n)=c\,n^\gamma.
+\]
+Per la termodinamica a $T=0$,
+\[
+P=n^2\frac{d}{dn}\left(\frac\varepsilon n\right).
+\]
+Il contributo di interazione alla pressione è
+\[
+P_{\rm int}=n^2\frac{d}{dn}(c n^{\gamma-1})
+=(\gamma-1)c n^\gamma=(\gamma-1)\varepsilon_{\rm int}.
+\]
+Quando \emph{domina} tale contributo, $c_s^2\to\gamma-1$; l'ansatz sarebbe acausale a densità elevate per $\gamma>2$.
+\end{frame}
+
+% Frame 49
+\begin{frame}[t]{Caso $\gamma=2$: energia e pressione}
+\small
+Per un termine repulsivo quadratico prendiamo $c=1/m_I^2>0$:
+\[
+\varepsilon_{\rm int}=\frac{n^2}{m_I^2},\qquad
+P_{\rm int}=\frac{n^2}{m_I^2}.
+\]
+Nella regione non relativistica per i fermioni,
+\[
+\varepsilon(n)\simeq m_fn+\varepsilon_{\rm kin}^{\rm NR}(n)+\frac{n^2}{m_I^2},
+\]
+\[
+P(n)\simeq P_{\rm kin}^{\rm NR}(n)+\frac{n^2}{m_I^2},
+\qquad P_{\rm kin}^{\rm NR}\propto\frac{n^{5/3}}{m_f}.
+\]
+La costante $m_I$ parametrizza una scala di interazione \emph{effettiva}, non necessariamente la massa di una particella reale.
+\end{frame}
+
+% Frame 50
+\begin{frame}[t]{Tre regimi della EOS con interazione repulsiva}
+\small
+Per $n$ crescente, l'ansatz può attraversare tre comportamenti:
+\begin{enumerate}
+\item Bassa densità: $\varepsilon\simeq m_fn$ e $P\propto n^{5/3}$, dunque $P\propto\varepsilon^{5/3}$.
+\item Regime intermedio: $\varepsilon\simeq m_fn$, ma $P\simeq n^2/m_I^2$, dunque $P\propto\varepsilon^2$.
+\item Interazione dominante anche in $\varepsilon$: $P\simeq\varepsilon\simeq n^2/m_I^2$, con $c_s^2\to1$.
+\end{enumerate}
+La rigidezza massima a densità molto grandi emerge come limite dell'ansatz quadratico, non è garantita per la QCD reale.
+\end{frame}
+
+% Frame 51
+\begin{frame}[t]{Interpretazione RMF del termine quadratico}
+\small
+Nella teoria relativistica di campo medio (RMF) con campo vettoriale $\omega_\mu$, l'equazione del campo statico è
+\[
+m_\omega^2\omega_0=g_\omega n_B.
+\]
+L'energia vettoriale repulsiva vale schematicamente
+\[
+\varepsilon_\omega=\frac12m_\omega^2\omega_0^2
+=\frac{g_\omega^2}{2m_\omega^2}n_B^2,
+\]
+e produce un contributo alla pressione $P_\omega=\varepsilon_\omega$ nel modello lineare.
+\medskip
+È il collegamento con i nostri appunti RMF/Walecka, ma non riproduce da solo la EOS nucleonica completa (campi scalari, simmetria, composizione, ecc.).
+\end{frame}
+
+% Frame 52
+\begin{frame}[t]{Parametro adimensionale di interazione $y$}
+\small
+Il libro introduce
+\[
+y\equiv\frac{m_f}{m_I},\qquad c=\frac1{m_I^2}.
+\]
+In unità del fermione ($n=m_f^3\bar n$), l'interazione contribuisce
+\[
+\frac{\varepsilon_{\rm int}}{m_f^4}=
+\frac{n^2}{m_I^2m_f^4}=y^2\bar n^2.
+\]
+Quindi
+\[
+y\ll1:\ \text{interazione debole},\qquad
+y\gg1:\ \text{interazione forte}
+\]
+\emph{nel senso specifico di questo modello}. Non si può identificare direttamente $y$ con $\alpha_s$ della QCD.
+\end{frame}
+
+% Frame 53
+\begin{frame}[t]{Densità di crossover e scala di massa interagente}
+\small
+Per $y\gg1$, la transizione fra energia di riposo e interazione si stima imponendo
+\[
+m_fn_c\sim\frac{n_c^2}{m_I^2}
+\quad\Longrightarrow\quad n_c\sim m_fm_I^2
+=\frac{m_f^3}{y^2}.
+\]
+Allora la scala energetica della EOS è
+\[
+\varepsilon_c\sim m_fn_c\sim\frac{m_f^4}{y^2}.
+\]
+Dalla riscalatura delle TOV:
+\[
+M_{\max}\sim\frac{m_{\rm Pl}^3}{\sqrt{\varepsilon_c}}
+\sim y\frac{m_{\rm Pl}^3}{m_f^2}=yM_L,
+\]
+\[
+R_{\rm crit}\sim yR_L.
+\]
+Le dipendenze lineari richiedono il regime di interazioni sufficientemente forti.
+\end{frame}
+
+% Frame 54
+\begin{frame}[t]{Fit numerici del libro per i fermioni interagenti}
+\small
+Per la particolare famiglia di EOS del §4.4 il testo riporta i fit
+\[
+M_{\max}(y)\simeq(0.384+0.165y)M_L,
+\]
+\[
+R_{\rm crit}(y)\simeq(3.367+0.797y)R_L.
+\]
+A $y=0$ recuperiamo i coefficienti TOV del gas libero.
+\medskip
+Per $m_f=m_n$ e $y\sim10$ la stima dà una massa massima dell'ordine di $3.8M_\odot$, ma \emph{è un'illustrazione del modello parametrico}, non una previsione quantitativa affidabile per stelle di neutroni reali.
+\end{frame}
+
+% Frame 55
+\begin{frame}[t]{Figura 4.3: curve massa--raggio con interazioni}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.62\textwidth}
+    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/MR-interactingfermions_y}\label{fig:Schaffner_MR-interactingfermions_y}\end{figure}
+\end{column}
+\begin{column}{.36\textwidth}
+\small
+Con $y\ll1$ le curve si avvicinano al comportamento del gas libero.
+\medskip
+Con $y\gg1$ crescono massa massima e raggio caratteristico; compare un tratto quasi a raggio costante.
+\medskip
+Gli assi rappresentano grandezze adimensionali $M'=M/M_L$ e $R'=R/R_L$ in scala logaritmica.
+\end{column}
+\end{columns}
+\end{frame}
+
+% Frame 56
+\begin{frame}[t]{Compattezza del modello interagente e limiti}
+\small
+Dal rapporto dei fit numerici,
+\[
+\mathcal C_{\max}(y)
+=\frac{0.384+0.165y}{3.367+0.797y}.
+\]
+Per $y\to0$:
+\[
+\mathcal C_{\max}\to0.384/3.367\simeq0.114.
+\]
+Per $y\to\infty$:
+\[
+\mathcal C_{\max}\to0.165/0.797\simeq0.207.
+\]
+Il modello illustra come la repulsione possa aumentare la compattezza massima rispetto al caso libero. Non è un limite causale universale: dipende dalla forma scelta per l'interazione.
+\end{frame}
+
+% Frame 57
+\begin{frame}[t]{Interazioni e fisica nucleare reale}
+\small
+Il libro confronta scale efficaci: $m_I\sim f_\pi\simeq92\,\mathrm{MeV}$ porta formalmente a $y\sim m_n/f_\pi\sim10$.
+\medskip
+Tuttavia gli accoppiamenti, i canali attrattivi e repulsivi, la densità di simmetria, le correzioni a molti corpi e le nuove specie rendono la EOS reale più articolata.
+\medskip
+L'ansatz $+cn^2$ e il legame con $\omega_0$ hanno soprattutto valore \emph{esplicativo}. Le EOS di stelle di neutroni vanno ottenute da modelli microscopici verificati e confrontate con $M_{\max}\gtrsim2M_\odot$ e altri vincoli.
+\end{frame}
+
+\section{Stelle bosoniche}
+
+\subsection{Bosoni liberi}
+
+% Frame 58
+\begin{frame}[t]{Stelle bosoniche: perché non sono gas di neutroni}
+\small
+Nel §4.5 il libro considera \emph{stelle composte da particelle bosoniche ipoteticamente stabili}, non la superfluidità neutronica BCS studiata negli appunti del capitolo 3.
+\medskip
+La superfluidità dei neutroni modifica eccitazioni e dinamica del fluido, ma non trasforma automaticamente una stella di neutroni in una ``boson star'' fondamentale.
+\medskip
+Una boson star realistica è descritta da un campo scalare autogravitante e dalle equazioni di Einstein--Klein--Gordon; un modello di fluido barotropico può approssimarne alcuni regimi, soprattutto con autointerazioni repulsive dominanti.
+\end{frame}
+
+% Frame 59
+\begin{frame}[t]{Bosoni liberi: principio di indeterminazione}
+\small
+A $T=0$ bosoni non interagenti possono occupare lo stato a momento minimo; la pressione di degenerazione di Pauli non esiste.
+\medskip
+Per un oggetto quantistico confinato entro un raggio $R$, però, il gradiente spaziale del campo implica un momento caratteristico
+\[
+\Delta p\sim\frac1R.
+\]
+Stimiamo l'energia cinetica per particella nei due limiti:
+\[
+E_{\rm kin}^{\rm UR}\sim\frac1R,
+\qquad E_{\rm kin}^{\rm NR}\sim\frac1{m_bR^2}.
+\]
+Sono argomenti di scala legati alla dimensione del sistema, non una pressione termica classica.
+\end{frame}
+
+% Frame 60
+\begin{frame}[t]{Bosoni liberi: bilancio energetico di Landau}
+\small
+Per $N$ bosoni di massa $m_b$ e $M\simeq Nm_b$,
+\[
+E(R)\sim-\frac{GMm_b}R+\frac1R
+=\frac{1-GNm_b^2}{R}
+\]
+nel limite UR. Alla soglia marginale
+\[
+GN_{\max}m_b^2\sim1,
+\quad N_{\max}\sim\frac{m_{\rm Pl}^2}{m_b^2}.
+\]
+Quindi
+\[
+M_{\max}^{\rm free}\sim\frac{m_{\rm Pl}^2}{m_b},
+\qquad R_{\rm crit}^{\rm free}\sim\frac1{m_b}.
+\]
+La soluzione di campo completa fornisce coefficienti numerici e profili dipendenti dall'ansatz del campo.
+\end{frame}
+
+% Frame 61
+\begin{frame}[t]{Perché il limite dei bosoni liberi differisce da Landau?}
+\small
+Confrontiamo le dipendenze alla stessa massa microscopica $m$:
+\[
+M_{\max}^{\rm fermioni}\sim\frac{m_{\rm Pl}^3}{m^2},
+\qquad M_{\max}^{\rm bosoni\ liberi}\sim\frac{m_{\rm Pl}^2}{m}.
+\]
+Il rapporto è
+\[
+\frac{M_{\max}^{\rm fermioni}}{M_{\max}^{\rm bosoni\ liberi}}
+\sim\frac{m_{\rm Pl}}m\gg1
+\]
+per particelle con $m\ll m_{\rm Pl}$. I fermioni possiedono un enorme sostegno dalla degenerazione; i bosoni liberi dipendono dalla struttura spaziale del campo e dal principio d'indeterminazione.
+\end{frame}
+
+\subsection{Autointerazioni e stelle bosoniche}
+
+% Frame 62
+\begin{frame}[t]{Bosoni con interazione repulsiva: EOS del libro}
+\small
+Consideriamo ora il modello
+\[
+\varepsilon(n)=m_bn+cn^2,\qquad c>0.
+\]
+Per consistenza termodinamica
+\[
+P=n^2\frac{d}{dn}\left(m_b+cn\right)=cn^2.
+\]
+A basse densità $\varepsilon\simeq m_bn$ e quindi
+\[
+P\simeq\frac c{m_b^2}\varepsilon^2
+\]
+(approssimazione politropica con indice $2$).
+\medskip
+Ad alte densità $\varepsilon\simeq cn^2$ e quindi $P\simeq\varepsilon$: comportamento causalmente rigido nell'ansatz.
+\end{frame}
+
+% Frame 63
+\begin{frame}[t]{Bosoni interagenti: scala critica e massa massima}
+\small
+Scriviamo $c=1/m_I^2$ e $y=m_b/m_I$. Il punto in cui massa a riposo e interazioni sono comparabili soddisfa
+\[
+m_bn_c\sim\frac{n_c^2}{m_I^2}
+\ \Longrightarrow\ n_c\sim m_bm_I^2
+=\frac{m_b^3}{y^2}.
+\]
+La densità di energia caratteristica è
+\[
+\varepsilon_c\sim m_bn_c\sim\frac{m_b^4}{y^2}.
+\]
+Dalla legge di scala TOV:
+\[
+M_{\max}\sim y\frac{m_{\rm Pl}^3}{m_b^2},
+\qquad R_{\rm crit}\sim y\frac{m_{\rm Pl}}{m_b^2}.
+\]
+Questo regime è differente dal caso libero e richiede interazioni sufficientemente importanti.
+\end{frame}
+
+% Frame 64
+\begin{frame}[t]{Bosoni interagenti: prefattori riportati dal libro}
+\small
+Nel modello efficace del §4.5, il testo dà
+\[
+M_{\max}\simeq0.164\,y\,M_L,
+\qquad R_{\rm crit}\simeq0.763\,y\,R_L,
+\]
+con le scale $M_L=m_{\rm Pl}^3/m_b^2$ e $R_L=m_{\rm Pl}/m_b^2$.
+\medskip
+La compattezza al massimo vale
+\[
+\mathcal C_{\max}\simeq\frac{0.164}{0.763}\simeq0.215.
+\]
+I coefficienti dipendono dal modello di materia bosonica adottato; la soluzione completa richiede di precisare campo, potenziale e assunzioni di isotropia.
+\end{frame}
+
+% Frame 65
+\begin{frame}[t]{Figura 4.4: massa--raggio per bosoni con autointerazione}
+\small
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.62\textwidth}
+    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/MR-interactingboson_y}\label{fig:Schaffner_MR-interactingboson_y}\end{figure}
+\end{column}
+\begin{column}{.36\textwidth}
+\small
+Le curve sono rappresentate in scala logaritmica per vari $y$.
+\medskip
+In un ampio intervallo di masse il raggio resta quasi costante, come atteso dalla politropica $P\propto\varepsilon^2$.
+\medskip
+La crescita di $y$ amplifica le scale di massa e raggio.
+\end{column}
+\end{columns}
+\end{frame}
+
+% Frame 66
+\begin{frame}[t]{Quando servono le equazioni di Einstein--Klein--Gordon?}
+\small
+Una boson star di campo scalare complesso $\phi$ è tipicamente descritta mediante l'azione
+\[
+S=\int d^4x\,\sqrt{-g}\left[
+\frac{R}{16\pi G}-g^{\mu\nu}\partial_\mu\phi^*\partial_\nu\phi
+-V(|\phi|^2)\right].
+\]
+Lo stress--energia contiene anche i \emph{gradienti} del campo. Il modello perfetto-fluido $P=P(\varepsilon)$ non li contiene e non è esatto per un condensato bosonico autogravitante in generale.
+\medskip
+La rappresentazione EOS del libro è soprattutto uno strumento utile per stimare le scale. Le configurazioni di Kaup e i modelli con autointerazioni sono soluzioni di campo più fondamentali.
+\end{frame}
+
+% Frame 67
+\begin{frame}[t]{Confronto e limiti di applicabilità dei modelli}
+\small
+\begin{tabular}{@{}lll@{}}
+\textbf{Sistema} & \textbf{Sostegno principale} & \textbf{Scala $M_{\max}$}\\\hline
+Fermioni liberi & Degenerazione & $m_{\rm Pl}^3/m_f^2$\\
+Fermioni interagenti & Degenerazione + repulsione & $\sim yM_L$\\
+Bosoni liberi & Gradiente quantistico & $m_{\rm Pl}^2/m_b$\\
+Bosoni interagenti & Autointerazione & $\sim y m_{\rm Pl}^3/m_b^2$
+\end{tabular}
+\bigskip
+Tutte sono \emph{stime di scala o modelli idealizzati}, non classificazioni esaustive delle possibili stelle compatte.
+\end{frame}
+
+\section{Sintesi e collegamenti}
+
+% Frame 68
+\begin{frame}[t]{Riepilogo delle derivazioni fondamentali del capitolo 4}
+\small
+\begin{enumerate}
+\item Equilibrio: $P'=-G(\varepsilon+P)(m+4\pi r^3P)/[r(r-2Gm)]$ e $m'=4\pi r^2\varepsilon$.
+\item Landau: $M_L\sim m_{\rm Pl}^3/m_f^2$, $R_L\sim m_{\rm Pl}/m_f^2$.
+\item Scala TOV: $M\propto\varepsilon_0^{-1/2}$, $R\propto\varepsilon_0^{-1/2}$ per EOS a scala unica.
+\item Causalità: $dP/d\varepsilon\leq1$ e prosecuzione estrema $P=P_f+\varepsilon-\varepsilon_f$.
+\item Interazioni: $\varepsilon_{\rm int}=cn^\gamma$, $P_{\rm int}=(\gamma-1)cn^\gamma$.
+\item Stelle bosoniche: differenza fra scala libera $m_{\rm Pl}^2/m_b$ e scala con autointerazione.
+\end{enumerate}
+\end{frame}
+
+% Frame 69
+\begin{frame}[t]{Che cosa riprendere dai capitoli successivi?}
+\small
+Il capitolo 4 fornisce le basi comuni per:
+\begin{itemize}
+\item §5: Lane--Emden e nane bianche, limite di Chandrasekhar.
+\item §7: stelle di neutroni con EOS nucleoniche realistiche, repulsione, simmetria e nuove specie.
+\item §8: stelle autolegate di strange matter e MIT bag.
+\item §9: transizioni del primo ordine, criterio di Seidov, terza famiglia e bande massa--raggio.
+\end{itemize}
+Il risultato più generale è che la gravità determina l'equilibrio una volta data $P(\varepsilon)$, ma l'identità microscopica della materia non può essere letta direttamente da una singola misura di $M$ e $R$.
+\end{frame}
+
