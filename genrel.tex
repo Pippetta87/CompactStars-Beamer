@@ -58,6 +58,8 @@ ma in generale $\partial_\alpha\partial_\beta g_{\mu\nu}(p)\ne0$: la curvatura e
 \begin{frame}[t]{Redshift gravitazionale: razzo con $g>0$}\small\raggedright
 
 Luce emessa dal fondo del razzo fermo e ricevuta all'altra estremit\'a in alto in un campo debole, con $\Delta\Phi=\Phi_d-\Phi_e>0$.
+\begin{columns}[T]
+    \begin{column}{0.5\textwidth}
 \[
 \Delta t\simeq\frac{h}{c},\quad \Delta v\simeq g\Delta t,\quad
 \frac{\Delta\lambda}{\lambda}\simeq\frac{\Delta v}{c}
@@ -69,10 +71,19 @@ Poiche' $\nu=c/\lambda$:
 \qquad z\equiv\frac{\lambda_d-\lambda_e}{\lambda_e}
 \simeq\frac{\Delta\Phi}{c^2}.
 \]
-Per luce emessa dalla superficie $R$ e ricevuta all'infinito, $\Phi(R)=-GM/R$ e $\Phi(\infty)=0$:
-\[
- z\simeq\frac{GM}{Rc^2}\qquad\text{(solo campo debole).}
-\]
+Per luce emessa dalla superficie $R$ e ricevuta all'infinito, $\Phi(R)=-GM/R$ e $\Phi(\infty)=0$: $z\simeq\frac{GM}{Rc^2}$ (solo campo debole).
+        
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item $\frac{\Delta \lambda}{\lambda}\approx \frac{\Delta v}{c}$ approx prim'ordine, $\Delta v>0$ quando si allontana.
+            \item Un fotone ha quadrimpulso $\tensor{p}{^{\mu}}=\hbar\tensor{k}{^{\mu}}$, $\tensor{p}{^{\mu}}\tensor{p}{_{\mu}}=0$. Un osservatore con quadrivelocit\'a $\tensor{u}{^{\mu}}$ misura energia $E_{obs}=-\tensor{p}{_{\mu}}\tensor{u}{^{\mu}}$, quindi $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{u}{^{\mu}}$.
+            \item Per fotone emesso in e e rilevato in d: $\frac{\nu_d}{\nu_e}=\frac{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_d}{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_e}$.
+            \item Fotone lungo $+x$: nel SI in cui $(e)$ \'e fermo $\tensor{p}{^{\mu}}=(\frac{E_e}{c},\frac{E_e}{c},0,0)$
+            \item Rivelatore si allontana con $v>0$: $\tensor{u}{_d^{\mu}}=\gamma(c,v,0,0)$, $\gamma=\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}$.
+        \end{itemize}<++>
+    \end{column}
+\end{columns}
 \begin{columns}[T]
     \begin{column}{0.5\textwidth}
 \begin{itemize}
@@ -87,6 +98,7 @@ Per luce emessa dalla superficie $R$ e ricevuta all'infinito, $\Phi(R)=-GM/R$ e 
             \item Onda EM piana: in RS la fase $\phi(\vec{x},t)=\scap{k}{x}-\omega t$ e definiamo $\tensor{k}{_{\mu}}=\tensor{\pertial}{_{\mu}}\phi=(-\frac{\omega}{c}+\vec{k})$ con $\tensor{x}{^{\mu}}=(ct,\vec{x})$. Per onda EM nel vuoto $\tensor{k}{^{\mu}}\tensor{k}{_{\mu}}=0$.
             \item L'osservatore segue linea di universo $\tensor{x}{^{\mu}}(\tau)$ e incontra la fase dell'onda $\phi_{obs}(\tau)=\phi(\tensor{x}{^{\mu}}(\tau))$ quindi $\omega_{obs}=-\TDy{\tau}{\phi_{obs}}$.
             \item $\TDy{\tau}{\phi_{obs}}=\PDy{\phi}{\tensor{x}{^{\mu}}}\TDy{\tau}{\tensor{x}{^{\mu}}}$: $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{x}{^{\mu}}$.
+            \item Verifica esplicita: $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{u}{^{\mu}}=-\gamma(-\omega+\scap{k}{v})=\gamma(\omega-\scap{k}{v})$. Per onda EM nel vuoto $\vec{k}=\frac{\omega}{c}\hat{n}$ da cui $\omega_{obs}=\gamma\omega(1-\frac{\hat{n}\cdot\vec{v}}{c})$, effetto Doppler relativistico.
         \end{itemize}
     \end{column}
 \end{columns}
