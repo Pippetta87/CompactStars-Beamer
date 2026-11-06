@@ -111,21 +111,49 @@
 	}%
     \addtocontents{keylist-\thesectionkey}{\protect\mycontentsline{subsubsection}{\parbox{0.48\textwidth}{\protect$\bullet$ #2}}{}{#1}}
 }
-\newcommand\todo[2][todo-\thetodokey]{%todo
-	\addtocounter{todokey}{1}
-	\noindent{%
-	\phantomsection% comment out if hyperref is not used
-	\linkdest[\protect\color{todo}{#2}]{#1}%
-	}%
-    \addtocontents{todo-\thetodosectionlist}{\protect\mycontentsline{subsubsection}{\parbox{0.48\textwidth}{\protect$\bullet$ #2}}{}{#1}}
-%\addcontentsline{todo-\protect\thetodosectionlist}{subsubsection}{\textbullet\protect\hyperlink{#1}{#2}\protect\hspace{1mm}}%
+\newcommand\todo[2][todo-\thetodokey]{%
+    \stepcounter{todokey}%
+    \leavevmode
+    \hypertarget{#1}{\textcolor{todo}{#2}}%
+    \addtocontents{todo-\thetodosectionlist}{%
+        \protect\mycontentsline{subsubsection}%
+        {\protect\textbullet\space #2}{}{#1}%
+    }%
 }
-\newcommand\must[2][must-\themustkey]{%must
-	\addtocounter{mustkey}{1}
-	\noindent{%
-	\phantomsection% comment out if hyperref is not used
-	\linkdest[\protect\color{must}{#2}]{#1}%
-	}%
+%\newcommand\todo[2][todo-\thetodokey]{%todo
+%	\addtocounter{todokey}{1}
+%	\noindent{%
+%	\phantomsection% comment out if hyperref is not used
+%	\linkdest[\protect\color{todo}{#2}]{#1}%
+%	}%
+%    \addtocontents{todo-\thetodosectionlist}{\protect\mycontentsline{subsubsection}{\parbox{0.48\textwidth}{\protect$\bullet$ #2}}{}{#1}}
+%%\addcontentsline{todo-\protect\thetodosectionlist}{subsubsection}{\textbullet\protect\hyperlink{#1}{#2}\protect\hspace{1mm}}%
+%}
+\newcommand\todo[2][todo-\thetodokey]{%
+    \stepcounter{todokey}%
+    \leavevmode
+    \hypertarget{#1}{\textcolor{todo}{#2}}%
+    \addtocontents{todo-\thetodosectionlist}{%
+        \protect\mycontentsline{subsubsection}%
+        {\protect\textbullet\space #2}{}{#1}%
+    }%
+}
+
+\newcommand\must[2][must-\themustkey]{%
+    \stepcounter{mustkey}%
+    \leavevmode
+    \hypertarget{#1}{\textcolor{must}{#2}}%
+    \addtocontents{must-\themustsectionlist}{%
+        \protect\mycontentsline{subsubsection}%
+        {\protect\textbullet\space #2}{}{#1}%
+    }%
+}
+%\newcommand\must[2][must-\themustkey]{%must
+%	\addtocounter{mustkey}{1}
+%	\noindent{%
+%	\phantomsection% comment out if hyperref is not used
+%	\linkdest[\protect\color{must}{#2}]{#1}%
+%	}%
 \addtocontents{must-\themustsectionlist}{\protect\mycontentsline{subsubsection}{\parbox{0.48\textwidth}{\protect$\bullet$ #2}}{}{#1}}
 %\addcontentsline{todo-\protect\thetodosectionlist}{subsubsection}{\textbullet\protect\hyperlink{#1}{#2}\protect\hspace{1mm}}%
 }
