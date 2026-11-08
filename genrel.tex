@@ -1,5 +1,7 @@
 \section{Relativita generale: principi e convenzioni}
+
 \subsection{Principi di equivalenza}
+
 \begin{frame}[t]{Scopo e convenzioni degli appunti}\small\raggedright
 
 \begin{itemize}
@@ -9,9 +11,77 @@
 \item Tempo proprio di una traiettoria materiale: $d\tau^2=g_{\mu\nu}dx^\mu dx^\nu>0$, $u^\mu=dx^\mu/d\tau$, $u^\mu u_\mu=1$.
 \item Si indicano con $\varepsilon$ la densita' di energia \emph{locale} e con $P$ la pressione isotropa \emph{locale}; entrambe sono scalari nel sistema comovente.
 \end{itemize}
-\medskip
-\textit{Nota metodologica:} sono appunti di studio, percio' le derivazioni sono distribuite in piu' frame, con ipotesi e controlli dimensionali.
+ \end{frame}
 
+\begin{frame}[t]{Cambio di segnatura e fase dell'onda piana}
+\scriptsize\raggedright
+
+\begin{itemize}
+    \item \textbf{Cambio di metrica:}
+    \[
+    \eta_{\mu\nu}^{(-)}=-\eta_{\mu\nu}^{(+)},
+    \qquad
+    \eta^{\mu\nu}_{(-)}=-\eta^{\mu\nu}_{(+)}.
+    \]
+
+    \item \textbf{Componenti tensoriali:}
+    $x^\mu,p^\mu,\partial_\mu$ invariati;
+    $x_\mu,p_\mu,\partial^\mu$ cambiano segno.
+    Di conseguenza:
+    \[
+    (p_\mu p^\mu)_{(-)}
+    =-(p_\mu p^\mu)_{(+)},
+    \qquad
+    (x^\mu\partial_\mu)_{(-)}
+    =(x^\mu\partial_\mu)_{(+)}.
+    \]
+
+    \item \textbf{Onda piana a frequenza positiva:}
+    con $x^\mu=(ct,\mathbf{x})$,
+    $p^\mu=(E/c,\mathbf{p})$,
+    \[
+    \psi(x)=A e^{-iEt/\hbar+i\mathbf{p}\cdot\mathbf{x}/\hbar}
+           =A e^{i\varphi(x)}.
+    \]
+    Nelle due convenzioni:
+    \[
+    \begin{array}{c|c|c}
+      & (+---) & (-+++)\\ \hline
+      p_\mu x^\mu
+      & Et-\mathbf p\cdot\mathbf x
+      & -Et+\mathbf p\cdot\mathbf x\\[2pt]
+      \psi(x)
+      & A e^{-ip_\mu x^\mu/\hbar}
+      & A e^{+ip_\mu x^\mu/\hbar}\\[2pt]
+      \varphi(x)
+      & -p_\mu x^\mu/\hbar
+      & +p_\mu x^\mu/\hbar
+    \end{array}
+    \]
+
+    \item \textbf{Gradiente della fase e frequenza osservata:}
+    ponendo $k^\mu=p^\mu/\hbar$,
+    \[
+    \nabla_\mu\varphi=
+    \begin{cases}
+      -k_\mu &(+---),\\
+      +k_\mu &(-+++),
+    \end{cases}
+    \qquad
+    \omega_{\rm obs}
+    =-\dfrac{d\varphi}{d\tau}
+    =
+    \begin{cases}
+      +k_\mu u^\mu &(+---),\\
+      -k_\mu u^\mu &(-+++).
+    \end{cases}
+    \]
+\end{itemize}
+
+\medskip
+\textbf{Conclusione:} il prodotto $p_\mu x^\mu$ cambia
+segno, ma la funzione d'onda e la frequenza fisica
+rimangono invariate.
 \end{frame}
 
 \begin{frame}[t]{Principio di equivalenza debole (WEP)}\small\raggedright
@@ -55,16 +125,30 @@ ma in generale $\partial_\alpha\partial_\beta g_{\mu\nu}(p)\ne0$: la curvatura e
 
 \end{frame}
 
+\begin{frame}{Effetto Doppler}
+        \begin{itemize}
+            \item Onda EM piana: in RS la fase $\phi(\vec{x},t)=\scap{k}{x}-\omega t$ e definiamo $\tensor{k}{_{\mu}}=\tensor{\partial}{_{\mu}}\phi=(-\frac{\omega}{c}+\vec{k})$ con $\tensor{x}{^{\mu}}=(ct,\vec{x})$. Per onda EM nel vuoto $\tensor{k}{^{\mu}}\tensor{k}{_{\mu}}=0$.
+            \item L'osservatore segue linea di universo $\tensor{x}{^{\mu}}(\tau)$ e incontra la fase dell'onda $\phi_{obs}(\tau)=\phi(\tensor{x}{^{\mu}}(\tau))$ quindi $\omega_{obs}=-\TDy{\tau}{\phi_{obs}}$.
+            \item $\TDy{\tau}{\phi_{obs}}=\PDy{\phi}{\tensor{x}{^{\mu}}}\TDy{\tau}{\tensor{x}{^{\mu}}}$: $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{x}{^{\mu}}$.
+            \item Verifica esplicita: $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{u}{^{\mu}}=-\gamma(-\omega+\scap{k}{v})=\gamma(\omega-\scap{k}{v})$. Per onda EM nel vuoto $\vec{k}=\frac{\omega}{c}\hat{n}$ da cui $\omega_{obs}=\gamma\omega(1-\frac{\hat{n}\cdot\vec{v}}{c})$, effetto Doppler relativistico.
+            \item $\frac{\Delta \lambda}{\lambda}\approx \frac{\Delta v}{c}$ approx prim'ordine, $\Delta v>0$ quando si allontana.
+            \item Un fotone ha quadrimpulso $\tensor{p}{^{\mu}}=\hbar\tensor{k}{^{\mu}}$, $\tensor{p}{^{\mu}}\tensor{p}{_{\mu}}=0$. Un osservatore con quadrivelocit\'a $\tensor{u}{^{\mu}}$ misura energia $E_{obs}=-\tensor{p}{_{\mu}}\tensor{u}{^{\mu}}$, quindi $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{u}{^{\mu}}$.
+            \item Per fotone emesso in e e rilevato in d: $\frac{\nu_d}{\nu_e}=\frac{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_d}{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_e}$.
+            \item Fotone lungo $+x$: nel SI in cui $(e)$ \'e fermo $\tensor{p}{^{\mu}}=(\frac{E_e}{c},\frac{E_e}{c},0,0)$
+            \item Rivelatore si allontana con $v>0$: $\tensor{u}{_d^{\mu}}=\gamma(c,v,0,0)$, $\gamma=\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}$. La frequenza misurata dal rivelatore si ottiene da $E_d=-\tensor{p}{_{\mu}}\tensor{u}{^{\mu}}=\gamma E_e(1-\frac{v}{c})$: $\frac{\nu_d}{\nu_e}=\gamma(1-\frac{v}{c})=\sqrt{\frac{1-\frac{v}{c}}{1+\frac{v}{c}}}$ - formula esatta Doppler longitudinale.
+            \item $\lambda=\frac{\nu}{c}$: per le lunghezze d'onda misurate misurate nei riferimenti locali $\frac{\lambda_d}{\lambda_e}=\sqrt{\frac{1+\frac{v}{c}}{1-\frac{v}{c}}}$, per $\frac{v}{c}\ll1$ $\frac{\lambda_d}{\lambda_e}\approx1+\frac{v}{c}+O(\frac{v^2}{c^2})$ quindi $\frac{\Delta \lambda}{\lambda_e}\approx \frac{v}{c}$. 
+        \end{itemize}
+\end{frame}
+
 \begin{frame}[t]{Redshift gravitazionale: razzo con $g>0$}\small\raggedright
 
 Luce emessa dal fondo del razzo fermo e ricevuta all'altra estremit\'a in alto in un campo debole, con $\Delta\Phi=\Phi_d-\Phi_e>0$.
-\begin{columns}[T]
-    \begin{column}{0.5\textwidth}
-\[
-\Delta t\simeq\frac{h}{c},\quad \Delta v\simeq g\Delta t,\quad
-\frac{\Delta\lambda}{\lambda}\simeq\frac{\Delta v}{c}
-=\frac{gh}{c^2}=\frac{\Delta\Phi}{c^2}.
-\]
+\begin{itemize}
+    \item $\Delta t\simeq\frac{h}{c}$ tempo impiegato dalla luce a raggiungere altra estremit\'a razzo con $\Delta v\simeq g\Delta t$ velocit\'a acquisita dal razzo.
+    \item Effetto Doppler: $\frac{\Delta\lambda}{\lambda}\simeq\frac{\Delta v}{c}=\frac{gh}{c^2}$
+    \item Per principio equivalenza il razzo accelerato \'e localmente equivalente a a un laboratorio fermo in campo gravitazionale uniforme nel quale $\Delta\Phi=gh$ 
+\end{itemize}
+
 Poiche' $\nu=c/\lambda$:
 \[
 \frac{\nu_d}{\nu_e}\simeq 1-\frac{\Delta\Phi}{c^2},
@@ -72,53 +156,30 @@ Poiche' $\nu=c/\lambda$:
 \simeq\frac{\Delta\Phi}{c^2}.
 \]
 Per luce emessa dalla superficie $R$ e ricevuta all'infinito, $\Phi(R)=-GM/R$ e $\Phi(\infty)=0$: $z\simeq\frac{GM}{Rc^2}$ (solo campo debole).
-        
-    \end{column}
-    \begin{column}{0.5\textwidth}
-        \begin{itemize}
-            \item $\frac{\Delta \lambda}{\lambda}\approx \frac{\Delta v}{c}$ approx prim'ordine, $\Delta v>0$ quando si allontana.
-            \item Un fotone ha quadrimpulso $\tensor{p}{^{\mu}}=\hbar\tensor{k}{^{\mu}}$, $\tensor{p}{^{\mu}}\tensor{p}{_{\mu}}=0$. Un osservatore con quadrivelocit\'a $\tensor{u}{^{\mu}}$ misura energia $E_{obs}=-\tensor{p}{_{\mu}}\tensor{u}{^{\mu}}$, quindi $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{u}{^{\mu}}$.
-            \item Per fotone emesso in e e rilevato in d: $\frac{\nu_d}{\nu_e}=\frac{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_d}{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_e}$.
-            \item Fotone lungo $+x$: nel SI in cui $(e)$ \'e fermo $\tensor{p}{^{\mu}}=(\frac{E_e}{c},\frac{E_e}{c},0,0)$
-            \item Rivelatore si allontana con $v>0$: $\tensor{u}{_d^{\mu}}=\gamma(c,v,0,0)$, $\gamma=\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}$.
-        \end{itemize}<++>
-    \end{column}
-\end{columns}
-\begin{columns}[T]
-    \begin{column}{0.5\textwidth}
 \begin{itemize}
     \item Nel SR istantaneamente solidale con obs $\tensor{u'}{^{\mu}}=(c,0,0,0)$ e quadrimpulso particella $\tensor{p'}{^{\mu}}=(\frac{E'}{c},\vec{p'})$: $E'=c\tensor{p'}{^0}$.
     \item $E_{obs}=E'=c\tensor{p'}{^0}$.
     \item $\tensor{p'}{_{\mu}}\tensor{u'}{^{\mu}}=(-\frac{E'}{c})c+0=-E'$, $\tensor{p'}{_{\mu}}=\tensor{\eta}{_{\mu\nu}}\tensor{p'}{^{\nu}}$.
     \item Infatti ritroviamo la formula di trasformazione $E_{obs}=-\tensor{p}{_{_\mu}}\tensor{u}{^{\mu}}=-[-\frac{E}{c}\gamma c+\gamma\scap{p}{v}]=\gamma(E-\scap{p}{v})$. 
 \end{itemize}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-        \begin{itemize}
-            \item Onda EM piana: in RS la fase $\phi(\vec{x},t)=\scap{k}{x}-\omega t$ e definiamo $\tensor{k}{_{\mu}}=\tensor{\pertial}{_{\mu}}\phi=(-\frac{\omega}{c}+\vec{k})$ con $\tensor{x}{^{\mu}}=(ct,\vec{x})$. Per onda EM nel vuoto $\tensor{k}{^{\mu}}\tensor{k}{_{\mu}}=0$.
-            \item L'osservatore segue linea di universo $\tensor{x}{^{\mu}}(\tau)$ e incontra la fase dell'onda $\phi_{obs}(\tau)=\phi(\tensor{x}{^{\mu}}(\tau))$ quindi $\omega_{obs}=-\TDy{\tau}{\phi_{obs}}$.
-            \item $\TDy{\tau}{\phi_{obs}}=\PDy{\phi}{\tensor{x}{^{\mu}}}\TDy{\tau}{\tensor{x}{^{\mu}}}$: $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{x}{^{\mu}}$.
-            \item Verifica esplicita: $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{u}{^{\mu}}=-\gamma(-\omega+\scap{k}{v})=\gamma(\omega-\scap{k}{v})$. Per onda EM nel vuoto $\vec{k}=\frac{\omega}{c}\hat{n}$ da cui $\omega_{obs}=\gamma\omega(1-\frac{\hat{n}\cdot\vec{v}}{c})$, effetto Doppler relativistico.
-        \end{itemize}
-    \end{column}
-\end{columns}
+Effetto Doppler in RG:
 
 \end{frame}
 
-\begin{frame}[t]{Redshift esatto in una metrica statica}\small\raggedright
+\begin{frame}[t]{Redshift esatto in una metrica statica}
+\small\raggedright
+\begin{itemize}
+    \item In una metrica statica $ds^2=\tensor{g}{_{00}}(\vec{x})c^2dt^2+\tensor{g}{_{ij}}(\vec{x})\tensor{dx}{^i}\tensor{dx}{^j}$. Segnatura $(+---)$: $\tensor{g}{_{tt}}>0$. Segnatura $(-+++)$: $\tensor{g}{_{tt}}<0$.
+    \item Traiettoria temporale $ds^2=c^2d\tau^2=\tensor{g}{_{tt}}(r)c^2dt^2$: per osservatore futuro-diretto $d\tau=\sqrt{\tensor{g}{_{tt}}(r)}dt$, il tempo proprio dell'osservatore statico non coincide generalmente con tempo coordinato $t$.
+    \item Le componenti della quadrivelocit\'a sono $\tensor{u}{^{\mu}}=(\TDy{\tau}{(ct)},\TDy{\tau}{r},\TDy{\tau}{\theta},\TDy{\tau}{\phi})$, e per osservatore statico e simmetria sferica $\tensor{u}{^{\mu}}=(\frac{c}{\sqrt{\tensor{g}{_{tt}}(r)}})$ (normalizzazione: $\tensor{u}{^{\mu}}\tensor{u}{_{\mu}}=\tensor{g}{_{\mu\nu}}\tensor{u}{^{\mu}}\tensor{u}{^{\nu}}=\tensor{g}{_{tt}}\frac{c^2}{\tensor{g}{_{tt}}}=c^2$).
+    \item La simmetria temporale della metrica \'e descritta dal vettore di Killing $\xi^\mu=\delta^{\mu}_t=(1,0,0,0)$, la cui norma $\tensor{\xi}{_{\mu}}\tensor{\xi}{^{\mu}}=\tensor{g}{_{tt}}$. L'osservatore statico segue le linee della simmetria temporale $\tensor{u}{^{\mu}}\propto \tensor{\xi}{^{\mu}}$: imponendo normalizzazione $\tensor{u}{_{\mu}}\tensor{u}{^{\mu}}=c^2$ si ha $A^2 \tensor{g}{_{tt}}=c^2$ quindi $\tensor{u}{^{\mu}}=\frac{c \tensor{\xi}{^{\mu}}}{\sqrt{\tensor{g}{_{tt}}}}$.
+    \item Per un fotone, $p^\mu=\hbar k^\mu$ e $p^\mu p_\mu=0$. Lungo la geodetica nulla si conserva $E_\infty=-cp_\mu\xi^\mu=-cp_t=\hbar k_t$ poiche' $\xi^\mu$ \'e un vettore di Killing, ie lungo la geodetica del fotone $\tensor{p}{^{\nu}}\tensor{\nabla}{_{\nu}}(\tensor{p}{_{\mu}}\tensor{\xi}{^{\mu}})=0$; $E_{\infty}$ \'e energia del fotone misurata da osservatore statico a infinito in spazio-tempo statico e asintoticamente piatto. Consideriamo un'onda elettromagnetica descritta localmente dalla fase $\varphi(x)$: $A(x)=A_0(x)\cos\varphi(x)$. $\exp{+i \tensor{k}{_{\mu}}\tensor{x}{^{\mu}}}|_{(-+++)}=\exp{-i \tensor{k}{_{\mu}}\tensor{x}{^{\mu}}}|_{(+---)}=\exp{-i\omega t+i\scap{k}{x}}$. Con segnatura $(-+++)$: $\varphi=\vec{k}\cdot\vec{x}-\omega t$, $\tensor{k}{_\mu}=\partial_\mu\varphi$, localmente, in coordinate inerziali: $\tensor{k}{_{\mu}}=\left(-\frac{\omega}{c},\vec{k}\right).$.
+    \item Per un osservatore statico $u^i=0$ e $u^t=c/\sqrt{-g_{tt}}$: $\omega_{\rm loc} =-k_tu^t=\frac{-c\,k_t}{\sqrt{-g_{tt}}}$. Con $p^\mu=\hbar k^\mu$ $E_{\rm loc}=\hbar\omega_{\rm loc}=-\tensor{p}{_\mu}\tensor{u}{^\mu}$.
+    \item Metrica statica: $k_t$ conservato tra emissione e rivelazione, $k_t(e)=k_t(d)$. $\frac{\nu_d}{\nu_e}=\sqrt{\frac{g_{tt}(e)}{g_{tt}(d)}}$, $1+z=\frac{\nu_e}{\nu_d}$.
+        \item Per una stella sferica non rotante, all'esterno: $ds^2=-\left(1-\frac{2GM}{rc^2}\right)c^2dt^2+\left(1-\frac{2GM}{rc^2}\right)^{-1}dr^2+r^2d\Omega^2$. La componente temporale della metrica \'e $g_{tt}(r)=-\left(1-\frac{2GM}{rc^2}\right).$. Per un fotone emesso dalla superficie $R$
+            e ricevuto all'infinito $\frac{\nu_\infty}{\nu_R}=\sqrt{\frac{-g_{tt}(R)}{-g_{tt}(\infty)}}=\sqrt{1-\frac{2GM}{Rc^2}}$. Definendo il redshift $1+z=\nu_R/\nu_\infty$: $1+z=\left(1-\frac{2GM}{Rc^2}\right)^{-1/2}$. Nel limite di campo debole, $GM/(Rc^2)\ll1$: $z\simeq\frac{GM}{Rc^2}$.
 
-Una metrica statica con $g_{tt}>0$ ammette una simmetria temporale (vettore di Killing $\xi^\mu=\delta^\mu_t$).
-Per un fotone geodetico $E_\infty=p_\mu\xi^\mu$ e' conservata; un osservatore statico ha $u^\mu=\xi^\mu/\sqrt{g_{tt}}$ e misura
-\[
-E_{\rm loc}=p_\mu u^\mu=\frac{E_\infty}{\sqrt{g_{tt}}},\qquad
-\frac{\nu_d}{\nu_e}=\sqrt{\frac{g_{tt}(e)}{g_{tt}(d)}}.
-\]
-Per Schwarzschild all'esterno, $g_{tt}(r)=1-2GM/(rc^2)$; all'infinito $g_{tt}\to1$:
-\[
-1+z=\frac{1}{\sqrt{1-2GM/(Rc^2)}}.
-\]
-Sviluppo per $GM/(Rc^2)\ll1$: $z\simeq GM/(Rc^2)$. Questa e' la versione non approssimata per un emettitore statico sulla superficie di una stella non rotante.
-
+\end{itemize}
 \end{frame}
 
 \begin{frame}[t]{Deflessione della luce e natura locale dell'EEP}\small\raggedright
