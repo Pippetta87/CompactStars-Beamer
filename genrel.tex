@@ -773,13 +773,13 @@ Per un fluido con $\nabla_\mu T^{\mu\nu}=0$:
 
 \section{Equazioni di Einstein e metrica di Schwarzschild}\subsection{Equazioni del campo}
 
-\begin{frame}[t]{Da Poisson a Einstein $(+---)$}\small\raggedright
+\begin{frame}[t]{Da Poisson a Einstein}\small\raggedright
 
 L'equazione newtoniana e'
 \[
 \nabla^2\Phi=4\pi G\rho.
 \]
-Nella RG la geometria e' descritta da $g_{\mu\nu}$, e la materia da $T_{\mu\nu}$. Il tensore di Einstein e'
+Nella RG la geometria e' descritta da $g_{\mu\nu}$, e la materia da $T_{\mu\nu}$. Il tensore di Einstein \'e
 \[
 G_{\mu\nu}=R_{\mu\nu}-\frac12g_{\mu\nu}\mathcal R,
 \qquad\nabla_\mu G^{\mu\nu}=0.
@@ -789,9 +789,15 @@ L'equazione di campo (senza costante cosmologica) e'
 G_{\mu\nu}=\frac{8\pi G}{c^4}T_{\mu\nu}.
 \]
 Con $G=c=1$, $G_{\mu\nu}=8\pi T_{\mu\nu}$.
-\medskip
-Il coefficiente $8\pi$ si ottiene imponendo il limite newtoniano, con $T_{00}\simeq\rho c^2$ e $g_{00}\simeq1+2\Phi/c^2$.
-
+Il coefficiente \(8\pi\) si fissa imponendo il limite newtoniano. Con \(x^0=ct\), \(T_{00}\simeq\rho c^2\) e coordinate spaziali cartesiane di fondo, i termini che dipendono dalla segnatura sono
+\[
+\begin{array}{c|ccc}
+\text{Segnatura} & g_{00} & g^{ij} & T=g^{\mu\nu}T_{\mu\nu} \\ \hline
+(+---) & 1+\dfrac{2\Phi}{c^2} & -\delta^{ij} & +\rho c^2 \\[4pt]
+(-+++) & -\left(1+\dfrac{2\Phi}{c^2}\right) & +\delta^{ij} & -\rho c^2
+\end{array}
+\]
+al primo ordine rilevante nel limite newtoniano.
 \end{frame}
 
 \begin{frame}[t]{Il vuoto: contrazione delle equazioni di Einstein}\small\raggedright
@@ -886,7 +892,18 @@ Valgono inoltre i corrispondenti scambi dei due indici inferiori.
 \end{frame}
 
 \begin{frame}[t]{Ricci per la metrica statica: convenzione dichiarata $(+---)$}\small\raggedright
-
+In unità \(c=1\), la metrica con segnatura \((-+++)\) si scrive
+\[
+ds^2_{(-+++)}=-ds^2_{(+---)}
+=-e^{2\nu}dt^2+e^{2\lambda}dr^2+r^2d\Omega^2.
+\]
+Nel passaggio \(g\mapsto-g\), i segni di \(g^{\mu\nu}\) e delle
+derivate di \(g_{\mu\nu}\) si compensano nei Christoffel.
+Con la convenzione di Riemann fissata sopra, le componenti
+covarianti di Ricci valgono quindi per entrambe le segnature,
+\[
+R_{\mu\nu}^{(-+++)}=R_{\mu\nu}^{(+---)}.
+\]
 Con $[\nabla_\mu,\nabla_\nu]V^\rho=R^\rho{}_{\sigma\mu\nu}V^\sigma$:
 \[
 \begin{aligned}
@@ -897,6 +914,22 @@ R_{\theta\theta}&=1-e^{-2\lambda}(1+r\nu'-r\lambda'),\\
 R_{\phi\phi}&=\sin^2\theta\,R_{\theta\theta}.
 \end{aligned}
 \]
+Nella convenzione opposta, agli stessi indici \(\mu,\nu\)
+si associa il commutatore nell'ordine inverso.
+\[
+[\nabla_\nu,\nabla_\mu]V^\rho
+=\widetilde R^\rho{}_{\sigma\mu\nu}V^\sigma
+=-R^\rho{}_{\sigma\mu\nu}V^\sigma.
+\]
+Usando la stessa contrazione, anche Ricci cambia segno.
+\[
+\widetilde R_{\sigma\nu}
+=\widetilde R^\rho{}_{\sigma\rho\nu}
+=-R_{\sigma\nu}.
+\]
+La scelta dell'ordine del commutatore è indipendente
+dalla segnatura della metrica.
+
 Con la \emph{definizione opposta} di Riemann, tutti i $R_{\mu\nu}$ cambiano segno.
 \medskip
 In particolare e' scorretto mescolare il Ricci copiato da una segnatura/convenzione differente con il tensore di Einstein del presente sorgente.
@@ -951,7 +984,7 @@ All'esterno:
 \end{frame}
 
 \begin{frame}[t]{Orizzonte, singolarita' e teorema di Birkhoff}\small\raggedright
-
+La soluzione di Schwarzschild \'e stata ricavata assumendo staticit\'a e simmetria sferica in una regione di vuoto. Per applicarla a stelle e buchi neri occorre interpretare geometricamente i valori \(r=r_S\) e \(r=0\), precisare il ruolo dell'ipotesi di staticit\'a e distinguere le proprietà locali della soluzione dalle condizioni globali dello spaziotempo.
 \begin{itemize}
 \item $r=r_S$ e' una singolarita' \emph{di coordinate} della carta di Schwarzschild. Per il buco nero, l'orizzonte e' una superficie null; per una stella ordinaria $R_*>r_S$.
 \item $r=0$ e' una singolarita' fisica della soluzione Schwarzschild estesa al buco nero ($R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}\propto M^2/r^6$).
@@ -1010,7 +1043,7 @@ Nel riferimento inerziale locale, per particelle on shell di massa $m$, distribu
 T^{\mu\nu}=g\int\frac{d^3p}{(2\pi)^3}\frac{p^\mu p^\nu}{E(\mathbf p)}f(\mathbf p),
 \quad E(\mathbf p)=\sqrt{m^2+\mathbf p^2}.
 \]
-Questa forma discende dalla misura invariante $d^3p/E$ sulla shell positiva $p^\mu p_\mu=m^2$.
+La distribuzione \(f(\mathbf p)\) descrive particelle fisiche trattate \emph{on shell}, cio\'e con \(E^2=m^2+\mathbf p^2\), in unit\'a \(c=\hbar=1\). Questa condizione equivale a \(p^\mu p_\mu=m^2\) per la segnatura \((+---)\) e a \(p^\mu p_\mu=-m^2\) per \((-+++)\). La \emph{shell positiva} seleziona il ramo \(p^0=E>0\), con la misura invariante \(d^3p/E\). I contributi virtuali dei diagrammi di Feynman sono rappresentati dalle linee interne, il cui quadrimpulso \'e generalmente off shell.
 \[
 T^{00}=g\int\frac{d^3p}{(2\pi)^3}E(\mathbf p)f(\mathbf p).
 \]
