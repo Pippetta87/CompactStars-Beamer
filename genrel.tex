@@ -1,5 +1,17 @@
 \section{Relativita generale: principi e convenzioni}
 
+\subsection{Ref e promemoria}
+
+\begin{frame}{Variet\'a, forme differenziali, connessioni, tetradi. Formalismo di Cartan.}
+    Il calcolo esterno delle forme differenziali usa forme, prodotto esterno \(\wedge\) e derivata esterna \(d\) per descrivere campi e integrazioni su curve, superfici e variet\'a. Nel formalismo di Cartan, connessione, torsione e curvatura si esprimono tramite forme differenziali. Serve a formulare le leggi geometriche indipendentemente dalle coordinate e a collegare relativit\'a generale, elettromagnetismo e teorie di gauge.
+
+Per uno studio futuro seguirei questi riferimenti.
+\begin{itemize}
+    \item B. F. Schutz, Geometrical Methods of Mathematical Physics. Introduzione orientata ai fisici. Parti dal capitolo 2 su variet\'a e tensori, poi passa al 4 sulle forme differenziali e al 6 sulle connessioni. Indice Cambridge.
+    \item  S. Carroll, Lecture Notes on General Relativity. Appunti gratuiti, direttamente collegati alle tue slide. I capitoli 1-3 trattano forme, varietà, connessioni, geodetiche e curvatura. Il capitolo 3 introduce anche tetradi, connessione di spin ed equazioni di Cartan.
+\end{itemize}
+\end{frame}
+
 \subsection{Principi di equivalenza}
 
 \begin{frame}[t]{Scopo e convenzioni degli appunti}\small\raggedright
@@ -7,7 +19,7 @@
 \begin{itemize}
 \item Obiettivo: collegare geometria dello spaziotempo, tensore energia--impulso e struttura idrostatica delle stelle compatte.
 \item Coordinate $x^\mu=(t,x,y,z)$; indici greci $0,1,2,3$, latini spaziali $1,2,3$; somma su indici ripetuti.
-\item \textbf{Convenzione di questi appunti:} segnatura $+---$; $c=1$ e, dalla sezione sulle TOV, spesso $G=1$; metriche e formule del libro vanno tradotte dalla segnatura $-+++$. 
+\item \textbf{Convenzione di questi appunti:} segnatura $+---$ (why??); $c=1$ e, dalla sezione sulle TOV, spesso $G=1$; metriche e formule del libro vanno tradotte dalla segnatura $-+++$. 
 \item Tempo proprio di una traiettoria materiale: $d\tau^2=g_{\mu\nu}dx^\mu dx^\nu>0$, $u^\mu=dx^\mu/d\tau$, $u^\mu u_\mu=1$.
 \item Si indicano con $\varepsilon$ la densita' di energia \emph{locale} e con $P$ la pressione isotropa \emph{locale}; entrambe sono scalari nel sistema comovente.
 \end{itemize}
@@ -119,17 +131,19 @@ La traiettoria e' caratterizzata dalla geometria, non dalla massa del corpo di p
  g_{\mu\nu}(p)=\eta_{\mu\nu},\qquad \partial_\alpha g_{\mu\nu}(p)=0,
 \]
 ma in generale $\partial_\alpha\partial_\beta g_{\mu\nu}(p)\ne0$: la curvatura e gli effetti mareali restano osservabili in regioni finite.
-\item \textbf{SEP (forte):} estensione degli esperimenti locali anche a sistemi autogravitanti e a esperimenti gravitazionali; richiesta piu' forte dell'EEP.
-\item Per le stelle compatte l'energia di legame gravitazionale puo' essere importante: distinguere WEP, EEP e SEP evita identificazioni improprie.
+\item \textbf{SEP (forte):} estensione degli esperimenti locali anche a sistemi autogravitanti e a esperimenti gravitazionali; richiesta piu' forte dell'EEP. Per le stelle compatte l'energia di legame gravitazionale puo' essere importante: distinguere WEP, EEP e SEP evita identificazioni improprie. Formulazione utilizzata da Clifford Will:
+    \begin{itemize}
+        \item Il WEP vale anche per corpi dotati di energia gravitazionale propria significativa.
+        \item L'esito di un esperimento locale, gravitazionale o non gravitazionale, non dipende dalla velocit\'a del laboratorio in caduta libera.
+        \item L'esito di un esperimento locale, gravitazionale o non gravitazionale, non dipende dalla sua posizione nello spazio-tempo.
+    \end{itemize}
 \end{itemize}
-
 \end{frame}
 
-\begin{frame}{Effetto Doppler}
+\begin{frame}{Effetto Doppler $(-+++)$}
         \begin{itemize}
-            \item Onda EM piana: in RS la fase $\phi(\vec{x},t)=\scap{k}{x}-\omega t$ e definiamo $\tensor{k}{_{\mu}}=\tensor{\partial}{_{\mu}}\phi=(-\frac{\omega}{c}+\vec{k})$ con $\tensor{x}{^{\mu}}=(ct,\vec{x})$. Per onda EM nel vuoto $\tensor{k}{^{\mu}}\tensor{k}{_{\mu}}=0$.
-            \item L'osservatore segue linea di universo $\tensor{x}{^{\mu}}(\tau)$ e incontra la fase dell'onda $\phi_{obs}(\tau)=\phi(\tensor{x}{^{\mu}}(\tau))$ quindi $\omega_{obs}=-\TDy{\tau}{\phi_{obs}}$.
-            \item $\TDy{\tau}{\phi_{obs}}=\PDy{\phi}{\tensor{x}{^{\mu}}}\TDy{\tau}{\tensor{x}{^{\mu}}}$: $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{x}{^{\mu}}$.
+            \item Onda EM piana: in RS la fase $\phi(\vec{x},t)=\scap{k}{x}-\omega t$ e definiamo $\tensor{k}{_{\mu}}=\tensor{\partial}{_{\mu}}\phi=(-\frac{\omega}{c},+\vec{k})$ con $\tensor{x}{^{\mu}}=(ct,\vec{x})$. Per onda EM nel vuoto $\tensor{k}{^{\mu}}\tensor{k}{_{\mu}}=0$.
+            \item L'osservatore segue linea di universo $\tensor{x}{^{\mu}}(\tau)$ e incontra la fase dell'onda $\phi_{obs}(\tau)=\phi(\tensor{x}{^{\mu}}(\tau))$ quindi $\omega_{obs}=-\TDy{\tau}{\phi_{obs}}=-\PDy{\phi}{\tensor{x}{^{\mu}}}\TDy{\tau}{\tensor{x}{^{\mu}}}=-\tensor{k}{_{\mu}}\tensor{x}{^{\mu}}$.
             \item Verifica esplicita: $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{u}{^{\mu}}=-\gamma(-\omega+\scap{k}{v})=\gamma(\omega-\scap{k}{v})$. Per onda EM nel vuoto $\vec{k}=\frac{\omega}{c}\hat{n}$ da cui $\omega_{obs}=\gamma\omega(1-\frac{\hat{n}\cdot\vec{v}}{c})$, effetto Doppler relativistico.
             \item $\frac{\Delta \lambda}{\lambda}\approx \frac{\Delta v}{c}$ approx prim'ordine, $\Delta v>0$ quando si allontana.
             \item Un fotone ha quadrimpulso $\tensor{p}{^{\mu}}=\hbar\tensor{k}{^{\mu}}$, $\tensor{p}{^{\mu}}\tensor{p}{_{\mu}}=0$. Un osservatore con quadrivelocit\'a $\tensor{u}{^{\mu}}$ misura energia $E_{obs}=-\tensor{p}{_{\mu}}\tensor{u}{^{\mu}}$, quindi $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{u}{^{\mu}}$.
@@ -140,7 +154,7 @@ ma in generale $\partial_\alpha\partial_\beta g_{\mu\nu}(p)\ne0$: la curvatura e
         \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Redshift gravitazionale: razzo con $g>0$}\small\raggedright
+\begin{frame}[t]{Redshift gravitazionale: razzo con $g>0$ $(-+++)$}\small\raggedright
 
 Luce emessa dal fondo del razzo fermo e ricevuta all'altra estremit\'a in alto in un campo debole, con $\Delta\Phi=\Phi_d-\Phi_e>0$.
 \begin{itemize}
@@ -162,8 +176,14 @@ Per luce emessa dalla superficie $R$ e ricevuta all'infinito, $\Phi(R)=-GM/R$ e 
     \item $\tensor{p'}{_{\mu}}\tensor{u'}{^{\mu}}=(-\frac{E'}{c})c+0=-E'$, $\tensor{p'}{_{\mu}}=\tensor{\eta}{_{\mu\nu}}\tensor{p'}{^{\nu}}$.
     \item Infatti ritroviamo la formula di trasformazione $E_{obs}=-\tensor{p}{_{_\mu}}\tensor{u}{^{\mu}}=-[-\frac{E}{c}\gamma c+\gamma\scap{p}{v}]=\gamma(E-\scap{p}{v})$. 
 \end{itemize}
-Effetto Doppler in RG:
-
+RedShift gravitazionale:
+\begin{itemize}
+    \item Metrica statica, segnatura $(-+++)$. Osservatore statico $\tensor{u}{^{\mu}}=(\frac{c}{\sqrt{-g_{00}}},0,0,0)$.
+    \item Fotone si propaga lungo geodetica nulla in spazio-tempo statico: ha energia misurata da osservatore $E_{loc}=-\tensor{p}{_{\mu}}\tensor{u}{^{\mu}}=-\frac{c \tensor{p}{_0}}{\sqrt{-\tensor{g}{_{00}}}}$. $\tensor{p}{_0}$ \'e conservato quindi $E_{loc}\sqrt{-\tensor{g}{_{00}}}=\const{}$.
+    \item Fotone emesso da stella a raggio $R$ e ricevuto a $\infty$: $\tensor{g}{_{00}}(\infty)=-1$, quindi $\frac{E_{\infty}}{E_R}=\sqrt{-\tensor{g}{_{00}}}(R)$
+    \item Con metrica di \sch: $\tensor{g}{_{00}}(R)=-(1-\frac{2GM}{Rc^2})$, quindi $1+z=\frac{E_R}{E_{\infty}}=(1-\frac{2GM}{Rc^2})\expy{-\frac{1}{2}}$.
+    \item Campo debole $\frac{GM}{Rc^2}/ll1$: $z\approx \frac{GM}{Rc^2}$
+\end{itemize}
 \end{frame}
 
 \begin{frame}[t]{Redshift esatto in una metrica statica}
@@ -182,24 +202,30 @@ Effetto Doppler in RG:
 \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Deflessione della luce e natura locale dell'EEP}\small\raggedright
+\begin{frame}[t]{Deflessione della luce e natura locale dell'EEP: \small in small enough region laws have same form in RS and RG}\small\raggedright
 
 \begin{itemize}
+\item Perch\'e l'EEP \'e locale? In un riferimento localmente inerziale: $g_{\mu\nu}(P)=\eta_{\mu\nu}$, $\Gamma^\rho_{\mu\nu}(P)=0$. La luce segue localmente una traiettoria rettilinea, ma la curvatura $R^\rho{}_{\sigma\mu\nu}$ non \'e in generale nulla.
+\item L'EEP spiega qualitativamente la deflessione osservata in un laboratorio accelerato; la deflessione gravitazionale complessiva richiede la metrica e l'integrazione delle geodetiche nulle.
 \item In una cabina accelerata, un raggio luminoso che attraversa lateralmente la cabina appare curvo rispetto alle pareti; l'EEP suggerisce la deflessione gravitazionale.
-\item In campo debole e per una massa isolata, la relativita' generale predice all'ordine dominante
-\[
-\widehat\alpha\simeq\frac{4GM}{bc^2},
-\]
-dove $b$ e' il parametro d'impatto.
-\item \textbf{Attenzione:} il solo principio di equivalenza e un argomento elementare di traiettoria newtoniana non determinano in generale il fattore 4; contribuisce anche la curvatura spaziale della soluzione delle equazioni di Einstein.
+\item In campo debole e per una  massa isolata, la relativit\'a generale predice all'ordine dominante $\widehat\alpha\simeq\frac{4GM}{bc^2}$, dove $b$ \'e il parametro d'impatto tra raggio di luce e massa M. (il solo principio di equivalenza e un argomento elementare di traiettoria newtoniana non determinano in generale il fattore 4; contribuisce anche la curvatura spaziale della soluzione delle equazioni di Einstein).
 \item Le forze mareali dipendono dalla curvatura e non possono essere annullate su una regione spaziale estesa scegliendo coordinate localmente inerziali.
 \end{itemize}
+\small\raggedright
 
+\textbf{Razzo nello spazio piatto.} Il razzo ha accelerazione propria costante \(a\) verso l'alto. Laser e rivelatore sono alla stessa quota su pareti distanti \(L\).
+\begin{enumerate}
+    \item Nel riferimento inerziale comovente all'emissione (\(T=0\)), il raggio orizzontale segue \(X_\gamma=cT\) e \(Y_\gamma=0\), con \(Y\) verso l'alto.
+    \item Il rivelatore \'e a \(X=L\) e parte da fermo a quota \(Y=0\). Per \(aT\ll c\), da \(\ddot Y_{\mathrm{riv}}\simeq a\) seguono \(\dot Y_{\mathrm{riv}}\simeq aT\) e \(Y_{\mathrm{riv}}\simeq \tfrac{1}{2}aT^2\).
+    \item Da \(cT_*=L\) segue \(T_*=L/c\). La quota rispetto al rivelatore \'e $\Delta y\simeq Y_\gamma(T_*)-Y_{\mathrm{riv}}(T_*)\simeq -\frac{aL^2}{2c^2}<0$.
+\end{enumerate}
+\textbf{Ruolo dell'EEP.} Il riferimento in caduta libera \'e localmente inerziale. Il laboratorio sostenuto dal suolo accelera rispetto a esso verso l'alto con \(g\). Con maree trascurabili, \(a=g\) da \(\Delta y_\oplus\simeq-gL^2/(2c^2)\).
+\textbf{Angolo totale.} La geodetica di Schwarzschild da \(\widehat{\alpha}\simeq 4GM/(bc^2)\) in campo debole. \(b\) \'e la distanza del centro della stella dall'asintoto in ingresso.
 \end{frame}
 
 \subsection{Metrica, tempo proprio e indici}
 
-\begin{frame}[t]{Minkowski e classificazione degli intervalli}\small\raggedright
+\begin{frame}[t]{Minkowski e classificazione degli intervalli $(+---)$}\small\raggedright
 
 In coordinate cartesiane inerziali e in unita' $c=1$:
 \[
@@ -219,31 +245,16 @@ Una metrica non costante nelle coordinate non implica necessariamente curvatura 
 
 \end{frame}
 
-\begin{frame}[t]{Tensore metrico: indici alti e bassi}\small\raggedright
-
-\[
-ds^2=g_{\mu\nu}(x)\,dx^\mu dx^\nu,\qquad
-g_{\mu\rho}g^{\rho\nu}=\delta_\mu{}^\nu.
-\]
-Alzare e abbassare indici:
-\[
-A_\mu=g_{\mu\nu}A^\nu,\qquad A^\mu=g^{\mu\nu}A_\nu,\qquad A_\mu B^\mu\ \text{scalare}.
-\]
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.49\textwidth}
-In Minkowski, se $A^\mu=(A^0,A^x,A^y,A^z)$,
-\[
-A_\mu=(A^0,-A^x,-A^y,-A^z).
-\]
-\end{column}
-\begin{column}{0.49\textwidth}
-$g_{\mu\nu}$ e' simmetrico: 10 componenti indipendenti in quattro dimensioni; il suo determinante deve essere non nullo.
-\end{column}
-\end{columns}
-
+\begin{frame}[t]{Tensore metrico: indici alti e bassi $(+---)$. Geodetiche.}\small\raggedright
+    \begin{itemize}
+        \item $ds^2=g_{\mu\nu}(x)\,dx^\mu dx^\nu$, $g_{\mu\rho}g^{\rho\nu}=\delta_\mu{}^\nu$. Alzare e abbassare indici: $A_\mu=g_{\mu\nu}A^\nu$, $A^\mu=g^{\mu\nu}A_\nu$, $A_\mu B^\mu$ scalare. In Minkowski, se $A^\mu=(A^0,A^x,A^y,A^z)$, $A_\mu=(A^0,-A^x,-A^y,-A^z)$.
+    \item $g_{\mu\nu}$ e' simmetrico: 10 componenti indipendenti in quattro dimensioni; il suo determinante deve essere non nullo.
+    \item \textbf{Geodetica e parametro affine.} Una curva \'e una geodetica se ammette un parametro \(\lambda\) per cui il vettore tangente \(v^\mu=dx^\mu/d\lambda\) \'e trasportato parallelamente lungo la curva. Un tale parametro \(\lambda\) si dice \emph{affine}. Abbassando l'indice della tangente, la condizione si scrive $v_\mu=g_{\mu\nu}v^\nu$, $\frac{dv_\mu}{d\lambda}=\frac12\,\partial_\mu g_{\alpha\beta}\,v^\alpha v^\beta$. Due parametri affini della stessa geodetica sono legati da \(\tilde\lambda=A\lambda+B\), con \(A\ne0\). Per una geodetica temporale si pu\'o scegliere \(\lambda=\tau\).
+    \item \textbf{Applicazione alle geodetiche.} Per una curva \(x^\mu(\lambda)\), il vettore tangente ha componenti \(v^\mu=dx^\mu/d\lambda\) e \(v_\mu=g_{\mu\nu}v^\nu\). La curva \'e una geodetica con parametro affine \(\lambda\) se $\frac{dv_\mu}{d\lambda}=\frac12\,\partial_\mu g_{\alpha\beta}\,v^\alpha v^\beta$.
+\end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Tempo proprio e quadrivelocita'}\small\raggedright
+\begin{frame}[t]{Tempo proprio e quadrivelocita' $(+---)$}\small\raggedright
 
 Per una traiettoria materiale:
 \[
@@ -264,7 +275,7 @@ p^\mu p_\mu=m^2\quad\Longrightarrow\quad E^2=\mathbf p^2+m^2.
 
 \end{frame}
 
-\begin{frame}[t]{Dal potenziale newtoniano a $g_{tt}$}\small\raggedright
+\begin{frame}[t]{Dal potenziale newtoniano a $g_{tt}$ $(+---)$}\small\raggedright
 
 Nel limite debole, stazionario, velocit\'a piccole:
 \[
@@ -284,17 +295,28 @@ Questo determina la corretta normalizzazione del coefficiente $2$ nel termine te
 
 \end{frame}
 
-\section{Geodesiche, connessione e curvatura}\subsection{Equazione geodetica}
+\section{Geodesiche, connessione e curvatura}
+
+\subsection{Equazione geodetica}
 
 \begin{frame}[t]{Derivate covarianti e simboli di Christoffel}\small\raggedright
 
-Una derivata ordinaria di un vettore non e', in generale, un tensore sotto cambi di coordinate:
+    \textbf{Simboli di Christoffel.} Sia \(e_\mu=\partial/\partial x^\mu\) la base coordinata. I simboli di Christoffel sono i coefficienti della derivata covariante dei vettori di base, $\nabla_{e_\mu}e_\nu=\Gamma^\rho{}_{\mu\nu}\,e_\rho$.
+
+L'indice \(\mu\) indica la direzione in cui derivi, \(\nu\) il vettore di base che derivi e \(\rho\) la componente del risultato.
+
+Una derivata ordinaria di un vettore non \'e, in generale, un tensore sotto cambi di coordinate:
 \[
 \nabla_\mu V^\nu=\partial_\mu V^\nu+\Gamma^\nu{}_{\mu\lambda}V^\lambda,
 \qquad
 \nabla_\mu A_\nu=\partial_\mu A_\nu-\Gamma^\lambda{}_{\mu\nu}A_\lambda.
 \]
-Per la connessione di Levi-Civita: assenza di torsione e compatibilita' metrica,
+\textbf{Connessione di Levi-Civita.} \'E l'unica connessione compatibile con la metrica \(g\) e priva di torsione. In una base coordinata, le due condizioni si scrivono
+\[
+\nabla_\sigma g_{\mu\nu}=0,\qquad
+\Gamma^\rho{}_{\mu\nu}=\Gamma^\rho{}_{\nu\mu}.
+\]
+Per la connessione di Levi-Civita: assenza di torsione e compatibilit\'a metrica,
 \[
 \Gamma^\rho{}_{\mu\nu}=\Gamma^\rho{}_{\nu\mu},\qquad
 \nabla_\lambda g_{\mu\nu}=0.
@@ -309,29 +331,88 @@ I simboli $\Gamma$ \emph{non} sono le componenti di un tensore; in coordinate lo
 
 \end{frame}
 
-\begin{frame}[t]{Geodesiche: principio variazionale (I)}\small\raggedright
+\begin{frame}[t]{Geodesiche: principio variazionale (I)}
+\small\raggedright
 
-Consideriamo una curva timelike $x^\mu(\lambda)$ fra due eventi fissati. Il tempo proprio e'
-\[
-\mathcal S[x]=\int_{\lambda_A}^{\lambda_B}
-\sqrt{g_{\mu\nu}(x)\dot x^\mu\dot x^\nu}\,d\lambda,\qquad\dot x^\mu=\frac{dx^\mu}{d\lambda}.
-\]
-Una geodesica rende stazionario $\mathcal S$ per variazioni che si annullano agli estremi. \textbf{Non} ogni geodesica massimizza globalmente il tempo proprio: puo' essere un massimo locale.
+Per una curva temporale \(x^\mu(\lambda)\) con \(\dot x^\mu=dx^\mu/d\lambda\),
+il tempo proprio totale in unità \(c=1\) è
+\(\mathcal S[x]=\int_{\lambda_A}^{\lambda_B}d\tau\).
+
 \medskip
-Per una parametrizzazione affine possiamo usare la lagrangiana equivalente
-\[
-L=\frac12 g_{\mu\nu}(x)\dot x^\mu\dot x^\nu.
-\]
-L'equazione di Eulero--Lagrange e'
-\[
-\frac{d}{d\lambda}\frac{\partial L}{\partial\dot x^\rho}
--\frac{\partial L}{\partial x^\rho}=0.
-\]
+\begin{columns}[T,onlytextwidth]
+  \begin{column}{0.48\textwidth}
+    \centering
+    \textbf{Segnatura \((+---)\)}
+    \[
+    \begin{gathered}
+    ds^2>0,\qquad (d\tau)^2=ds^2,\\[4pt]
+    \mathcal S[x]=\int_{\lambda_A}^{\lambda_B}
+      \sqrt{g_{\mu\nu}(x)\dot x^\mu\dot x^\nu}\,d\lambda.
+    \end{gathered}
+    \]
+  \end{column}
+  \begin{column}{0.48\textwidth}
+    \centering
+    \textbf{Segnatura \((-+++)\)}
+    \[
+    \begin{gathered}
+    ds^2<0,\qquad (d\tau)^2=-ds^2,\\[4pt]
+    \mathcal S[x]=\int_{\lambda_A}^{\lambda_B}
+      \sqrt{-g_{\mu\nu}(x)\dot x^\mu\dot x^\nu}\,d\lambda.
+    \end{gathered}
+    \]
+  \end{column}
+\end{columns}
+\begin{itemize}
+    \item Consideriamo una curva timelike $x^\mu(\lambda)$ fra due eventi fissati. Il tempo proprio e' $\mathcal S[x]=\int_{\lambda_A}^{\lambda_B}\sqrt{g_{\mu\nu}(x)\dot x^\mu\dot x^\nu}\,d\lambda,\qquad\dot x^\mu=\frac{dx^\mu}{d\lambda}$. Una geodesica rende stazionario $\mathcal S$ per variazioni che si annullano agli estremi. \textbf{Non} ogni geodesica massimizza globalmente il tempo proprio: puo' essere un massimo locale.
+    \item Per una particella massiva $S=-mc\int_{\lambda_A}^{\lambda_B}\sqrt{g_{\mu\nu}\dot x^\mu\dot x^\nu}\,d\lambda=-mc^2\Delta\tau$. La condizione $\delta S=0$, con estremi fissati, determina la geodetica.
+    \item $\dot x^\mu=dx^\mu/d\lambda$ \'e il vettore tangente alla curva. L'integrale in $d\lambda$ somma gli elementi infinitesimi di lunghezza temporale lungo la traiettoria: $ds=\sqrt{g_{\mu\nu}\dot x^\mu\dot x^\nu}\,d\lambda=c\,d\tau$
+    \item Fra due eventi fissati, la geodetica soddisfa \(\delta\mathcal S[x]=0\). Su tratti sufficientemente brevi massimizza localmente il tempo proprio.
+    \item Con parametro affine \(\lambda\), si pu\'o usare la lagrangiana quadratica $L=\tfrac{1}{2}g_{\mu\nu}(x)\dot x^\mu\dot x^\nu$, $\frac{d}{d\lambda}\frac{\partial L}{\partial\dot x^\rho}
+-\frac{\partial L}{\partial x^\rho}=0$. Il cambio di segnatura \(g\mapsto-g\) dà \(L\mapsto-L\). I due termini di Eulero--Lagrange acquistano lo stesso fattore \(-1\), che si semplifica.
+\end{itemize}
+\end{frame}
 
+\begin{frame}[t]{Geodesiche: regole di calcolo}
+\small\raggedright
+\textbf{Derivate parziali.} In \(L=\tfrac12 g_{\mu\nu}(x)\dot x^\mu\dot x^\nu\),
+\(x\) e \(\dot x\) sono argomenti indipendenti. Poniamo
+\(\partial_\rho=\partial/\partial x^\rho\).
+\[
+\begin{gathered}
+  \partial_\rho x^\mu=\delta^\mu{}_{\rho},\qquad
+  \partial_\rho\dot x^\mu=0,\qquad
+  \frac{\partial\dot x^\mu}{\partial\dot x^\rho}=\delta^\mu{}_{\rho},\\[3pt]
+  \frac{\partial L}{\partial x^\rho}
+    =\tfrac12(\partial_\rho g_{\mu\nu})\dot x^\mu\dot x^\nu,\qquad
+  \frac{\partial L}{\partial\dot x^\rho}=g_{\rho\nu}\dot x^\nu
+  \quad (g_{\mu\nu}=g_{\nu\mu}).
+\end{gathered}
+\]
+\textbf{Derivata totale.} Lungo \(x(\lambda)\) si usano catena e prodotto.
+\[
+\frac{d}{d\lambda}(g_{\rho\nu}\dot x^\nu)
+=g_{\rho\nu}\ddot x^\nu
+ +(\partial_\sigma g_{\rho\nu})\dot x^\sigma\dot x^\nu.
+\]
+\textbf{Simmetrizzazione.} Si fa la media sui due ordini degli indici sommati,
+poiché \(\dot x^\mu\dot x^\nu=\dot x^\nu\dot x^\mu\).
+\[
+(\partial_\sigma g_{\rho\nu})\dot x^\sigma\dot x^\nu
+=\tfrac12(\partial_\mu g_{\rho\nu}+\partial_\nu g_{\rho\mu})
+  \dot x^\mu\dot x^\nu.
+\]
+\textbf{Metrica inversa.} Si somma l'indice ripetuto una volta in alto e una in basso.
+\[
+g_{\mu\alpha}g^{\alpha\nu}=\delta_\mu{}^\nu,\qquad
+g^{\alpha\rho}g_{\rho\nu}\ddot x^\nu
+  =\delta^\alpha{}_{\nu}\ddot x^\nu=\ddot x^\alpha.
+\]
 \end{frame}
 
 \begin{frame}[t]{Geodesiche: principio variazionale (II)}\small\raggedright
-
+\begin{columns}[T]
+    \begin{column}{0.39\textwidth}
 Per $L=\tfrac12g_{\mu\nu}\dot x^\mu\dot x^\nu$,
 \[
 \frac{\partial L}{\partial\dot x^\rho}=g_{\rho\nu}\dot x^\nu,
@@ -354,7 +435,56 @@ Moltiplicando per $g^{\alpha\rho}$:
 \[
 \ddot x^\alpha+\Gamma^\alpha{}_{\mu\nu}\dot x^\mu\dot x^\nu=0.
 \]
+    \end{column}
+    \begin{column}{0.59\textwidth}
+\textbf{Derivate parziali.} In \(L=\tfrac12 g_{\mu\nu}(x)\dot x^\mu\dot x^\nu\),
+\(x\) e \(\dot x\) sono argomenti indipendenti. Poniamo \(\partial_\rho=\partial/\partial x^\rho\).
+\[
+\begin{gathered}
+  \partial_\rho x^\mu=\delta^\mu{}_{\rho},\qquad
+  \partial_\rho\dot x^\mu=0,\qquad
+  \frac{\partial\dot x^\mu}{\partial\dot x^\rho}=\delta^\mu{}_{\rho},\\[3pt]
+  \frac{\partial L}{\partial x^\rho}
+    =\tfrac12(\partial_\rho g_{\mu\nu})\dot x^\mu\dot x^\nu,\qquad
+  \frac{\partial L}{\partial\dot x^\rho}=g_{\rho\nu}\dot x^\nu
+  \quad (g_{\mu\nu}=g_{\nu\mu}).
+\end{gathered}
+\]
+\textbf{Derivata totale.} Lungo \(x(\lambda)\) si usano catena e prodotto. $\frac{d}{d\lambda}(g_{\rho\nu}\dot x^\nu)=g_{\rho\nu}\ddot x^\nu+(\partial_\sigma g_{\rho\nu})\dot x^\sigma\dot x^\nu$.
 
+\textbf{Simmetrizzazione.} Si fa la media sui due ordini degli indici sommati, poich\'e \(\dot x^\mu\dot x^\nu=\dot x^\nu\dot x^\mu\).
+\[
+(\partial_\sigma g_{\rho\nu})\dot x^\sigma\dot x^\nu
+=\tfrac12(\partial_\mu g_{\rho\nu}+\partial_\nu g_{\rho\mu})
+  \dot x^\mu\dot x^\nu.
+\]
+\textbf{Metrica inversa.} Si somma l'indice ripetuto una volta in alto e una in basso.
+\[
+g_{\mu\alpha}g^{\alpha\nu}=\delta_\mu{}^\nu,\qquad
+g^{\alpha\rho}g_{\rho\nu}\ddot x^\nu
+  =\delta^\alpha{}_{\nu}\ddot x^\nu=\ddot x^\alpha.
+\]
+    \end{column}
+\end{columns}
+\medskip
+\begin{columns}[T,onlytextwidth]
+  \begin{column}{0.47\textwidth}
+    \textbf{Equazione geodetica} \(\bigl(\times g^{\alpha\rho}\bigr)\)
+    \[
+    \ddot x^\alpha+\Gamma^\alpha{}_{\mu\nu}
+      \dot x^\mu\dot x^\nu=0.
+    \]
+  \end{column}
+  \begin{column}{0.50\textwidth}
+    \textbf{Minkowski in cartesiane inerziali}
+    \[
+    \begin{gathered}
+      \Gamma^\alpha{}_{\mu\nu}=0 \ \Longrightarrow\ \ddot x^\alpha=0,\\
+      x^\alpha(\lambda)=x^\alpha_0+v^\alpha_0(\lambda-\lambda_0).
+    \end{gathered}
+    \]
+  \end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}[t]{Equazione geodetica e accelerazione quadrivettoriale}\small\raggedright
@@ -397,31 +527,113 @@ In uno spaziotempo curvo, invece, non si possono annullare tutti i simboli di Ch
 \end{frame}
 
 \subsection{Trasporto parallelo, Riemann e deviazione geodetica}
+\begin{frame}[t]{Campi vettoriali e commutatore di Lie}
+\small\raggedright
 
-\begin{frame}[t]{Commutatore covariante: definizione di Riemann}\small\raggedright
+Un \textbf{campo scalare} \(f\) assegna un numero a ogni evento,
+come la pressione nella stella. Un \textbf{campo vettoriale} \(X\)
+assegna a ogni evento \(p\) un vettore tangente \(X_p\).
+Su \(f\) agisce come derivata direzionale \(X(f)=X^\mu\partial_\mu f\).
 
-\textbf{Convenzione scelta:}
+\medskip
+Il commutatore di operatori è \([A,B]=AB-BA\).
+Il \textbf{commutatore di Lie} di due campi \(X,Y\) agisce su \(f\) come
 \[
-[\nabla_\mu,\nabla_\nu]V^\rho
-=R^\rho{}_{\sigma\mu\nu}V^\sigma.
+[X,Y](f)=X(Y(f))-Y(X(f)).
 \]
-Calcolando le derivate covarianti:
+
+\textbf{Osservatori statici in Schwarzschild.}
+Per \(G=c=1\) e \(r>2M\), poniamo \(F(r)=1-2M/r\).
+A \(r,\theta,\phi\) fissi, \(ds^2=g_{tt}\,dt^2\) e \(\lvert g_{tt}\rvert=F\).
+\[
+(d\tau)^2=F\,dt^2,\qquad
+u=\frac{dt}{d\tau}\,\partial_t=F^{-1/2}\partial_t.
+\]
+Con \(F'=2M/r^2\) e \(\partial_r\partial_t=\partial_t\partial_r\),
 \[
 \begin{aligned}
-R^\rho{}_{\sigma\mu\nu}={}&
-\partial_\mu\Gamma^\rho{}_{\nu\sigma}
--\partial_\nu\Gamma^\rho{}_{\mu\sigma}\\
-&+\Gamma^\rho{}_{\mu\lambda}\Gamma^\lambda{}_{\nu\sigma}
--\Gamma^\rho{}_{\nu\lambda}\Gamma^\lambda{}_{\mu\sigma}.
+[\partial_r,u](f)
+&=\partial_r(F^{-1/2}\partial_t f)
+  -F^{-1/2}\partial_t\partial_r f\\
+&=-\tfrac12 F^{-3/2}F'\,\partial_t f
+  +F^{-1/2}(\partial_r\partial_t-\partial_t\partial_r)f\\
+&=-\tfrac{M}{r^2F^{3/2}}\,\partial_t f
+  =-\tfrac{M}{r^2F}\,u(f).
 \end{aligned}
 \]
-Il tensore di Ricci e lo scalare di curvatura sono
-\[
-R_{\sigma\nu}=R^\rho{}_{\sigma\rho\nu},\qquad
-\mathcal R=g^{\sigma\nu}R_{\sigma\nu}.
-\]
-\textit{Avvertenza:} testi diversi definiscono il Riemann con segno opposto. Non e' lecito copiare componenti $R_{\mu\nu}$ da convenzioni diverse senza verificarle.
+Il passo radiale cambia \(dt/d\tau\), da cui
+\([\partial_r,u]=-M u/(r^2F)\).
+\end{frame}
 
+\begin{frame}[t]{Commutatore covariante: definizione di Riemann}
+\small\raggedright
+
+La \textbf{curvatura della connessione} \(\nabla\) determina quanto
+cambia \(V\) dopo il trasporto parallelo attorno a un piccolo circuito
+nelle direzioni \(X,Y\), al primo ordine nell'area. Per Levi-Civita,
+la connessione è fissata dalla metrica.
+\[
+R(X,Y)V=\nabla_X(\nabla_Y V)-\nabla_Y(\nabla_X V)-\nabla_{[X,Y]}V.
+\]
+
+La regola del prodotto applicata a \(fV\) dà
+\[
+[\nabla_X,\nabla_Y](fV)
+=f[\nabla_X,\nabla_Y]V+[X,Y](f)V.
+\]
+Sottraendo \(\nabla_{[X,Y]}(fV)\) si ottiene \(R(X,Y)(fV)=fR(X,Y)V\).
+In coordinate, \(R(e_\mu,e_\nu)e_\sigma=R^\rho{}_{\sigma\mu\nu}e_\rho\).
+
+\medskip
+\textbf{Marea radiale in Schwarzschild.}
+Con \(e_{\hat r}=\sqrt F\,\partial_r\) si ha
+\[
+R^r{}_{ttr}=-\tfrac12 F F''=\frac{2MF}{r^3},
+\qquad R(u,e_{\hat r})u=\frac{2M}{r^3}\,e_{\hat r}.
+\]
+Al rilascio da fermi rispetto agli osservatori statici, una separazione
+radiale \(\xi^{\hat r}\) ha accelerazione relativa \(2M\xi^{\hat r}/r^3\).
+\end{frame}
+
+\begin{frame}[t]{Commutatore covariante: calcolo in componenti}
+\small\raggedright
+
+Nella \textbf{base coordinata}, \(e_\mu=\partial/\partial x^\mu\) è tangente
+alla linea in cui varia solo \(x^\mu\). Vale \([e_\mu,e_\nu]=0\) perché
+le derivate parziali commutano.
+
+Con \(D_\mu=\nabla_{e_\mu}\) confrontiamo i due ordini di derivazione.
+Dai Christoffel vogliamo ricavare il coefficiente di \(V^\sigma\) in
+\(\bigl([D_\mu,D_\nu]V\bigr)^\rho=R^\rho{}_{\sigma\mu\nu}V^\sigma\).
+
+Si parte da \((D_\nu V)^\rho=\partial_\nu V^\rho+\Gamma^\rho{}_{\nu\sigma}V^\sigma\).
+\[
+\begin{aligned}
+(D_\mu D_\nu V)^\rho
+&=\partial_\mu(D_\nu V)^\rho+\Gamma^\rho{}_{\mu\sigma}(D_\nu V)^\sigma\\
+&=\partial_\mu\partial_\nu V^\rho
+  +(\partial_\mu\Gamma^\rho{}_{\nu\sigma})V^\sigma\\
+&\quad+\Gamma^\rho{}_{\nu\sigma}\partial_\mu V^\sigma
+  +\Gamma^\rho{}_{\mu\sigma}\partial_\nu V^\sigma
+  +\Gamma^\rho{}_{\mu\lambda}\Gamma^\lambda{}_{\nu\sigma}V^\sigma.
+\end{aligned}
+\]
+Nella sottrazione le derivate parziali seconde di \(V\) si elidono
+per commutatività e i termini con \(\partial V\) si cancellano a coppie.
+Resta il coefficiente
+\[
+\begin{aligned}
+R^\rho{}_{\sigma\mu\nu}
+&=\partial_\mu\Gamma^\rho{}_{\nu\sigma}
+  -\partial_\nu\Gamma^\rho{}_{\mu\sigma}\\
+&\quad+\Gamma^\rho{}_{\mu\lambda}\Gamma^\lambda{}_{\nu\sigma}
+  -\Gamma^\rho{}_{\nu\lambda}\Gamma^\lambda{}_{\mu\sigma}.
+\end{aligned}
+\]
+Per contrazione si ottengono
+\(R_{\sigma\nu}=R^\rho{}_{\sigma\rho\nu}\) e
+\(\mathcal R=g^{\sigma\nu}R_{\sigma\nu}\).
+Alcuni testi adottano la convenzione di segno opposta per Riemann.
 \end{frame}
 
 \begin{frame}[t]{Simmetrie della curvatura}\small\raggedright
@@ -561,7 +773,7 @@ Per un fluido con $\nabla_\mu T^{\mu\nu}=0$:
 
 \section{Equazioni di Einstein e metrica di Schwarzschild}\subsection{Equazioni del campo}
 
-\begin{frame}[t]{Da Poisson a Einstein}\small\raggedright
+\begin{frame}[t]{Da Poisson a Einstein $(+---)$}\small\raggedright
 
 L'equazione newtoniana e'
 \[
@@ -604,7 +816,7 @@ Segue
 
 \subsection{Schwarzschild, coordinate areali e connessione}
 
-\begin{frame}[t]{Metrica statica sferica e raggio areale}\small\raggedright
+\begin{frame}[t]{Metrica statica sferica e raggio areale $(+---)$}\small\raggedright
 
 Una metrica statica sfericamente simmetrica, in opportune coordinate, si scrive
 \[
@@ -627,7 +839,7 @@ La distanza radiale propria su un'ipersuperficie $t={\rm cost}$ e' $dl=e^{\lambd
 
 \end{frame}
 
-\begin{frame}[t]{Metriche: componenti e inversa}\small\raggedright
+\begin{frame}[t]{Metriche: componenti e inversa $(+---)$}\small\raggedright
 
 Per $ds^2=e^{2\nu}dt^2-e^{2\lambda}dr^2-r^2d\Omega^2$:
 \[
@@ -652,7 +864,7 @@ L'apice denota $d/dr$.
 
 \end{frame}
 
-\begin{frame}[t]{Christoffel statici: componenti non nulle}\small\raggedright
+\begin{frame}[t]{Christoffel statici: componenti non nulle $(+---)$}\small\raggedright
 
 Applicando $\Gamma^\rho{}_{\mu\nu}=\tfrac12g^{\rho\sigma}(\partial_\mu g_{\sigma\nu}+\partial_\nu g_{\sigma\mu}-\partial_\sigma g_{\mu\nu})$:
 \[
@@ -673,7 +885,7 @@ Valgono inoltre i corrispondenti scambi dei due indici inferiori.
 
 \end{frame}
 
-\begin{frame}[t]{Ricci per la metrica statica: convenzione dichiarata}\small\raggedright
+\begin{frame}[t]{Ricci per la metrica statica: convenzione dichiarata $(+---)$}\small\raggedright
 
 Con $[\nabla_\mu,\nabla_\nu]V^\rho=R^\rho{}_{\sigma\mu\nu}V^\sigma$:
 \[
@@ -691,7 +903,7 @@ In particolare e' scorretto mescolare il Ricci copiato da una segnatura/convenzi
 
 \end{frame}
 
-\begin{frame}[t]{Equazioni esterne: prima integrazione}\small\raggedright
+\begin{frame}[t]{Equazioni esterne: prima integrazione $(+---)$}\small\raggedright
 
 In vuoto $R_{tt}=R_{rr}=0$. Dalle formule precedenti:
 \[
@@ -712,7 +924,7 @@ Questo passaggio richiede il vuoto e la normalizzazione asintotica: dentro la st
 
 \end{frame}
 
-\begin{frame}[t]{Equazioni esterne: integrazione Schwarzschild}\small\raggedright
+\begin{frame}[t]{Equazioni esterne: integrazione Schwarzschild $(+---)$}\small\raggedright
 
 L'equazione $R_{\theta\theta}=0$ e $\lambda=-\nu$ danno
 \[
@@ -791,7 +1003,7 @@ Gli indici con cappello indicano componenti in una base ortonormale comovente: $
 
 \end{frame}
 
-\begin{frame}[t]{Dalla distribuzione cinetica al tensore}\small\raggedright
+\begin{frame}[t]{Dalla distribuzione cinetica al tensore $(+---)$}\small\raggedright
 
 Nel riferimento inerziale locale, per particelle on shell di massa $m$, distribuzione scalare $f(\mathbf p)$ e degenerazione $g$:
 \[
@@ -831,7 +1043,7 @@ Questo recupera il significato newtoniano di pressione come flusso di impulso e 
 
 \subsection{Fluido perfetto in relativit\'a speciale}
 
-\begin{frame}[t]{Forma covariante del fluido perfetto in RS}\small\raggedright
+\begin{frame}[t]{Forma covariante del fluido perfetto in RS $(+---)$}\small\raggedright
 
 In uno spaziotempo piatto, con segnatura $+---$, il tensore e'
 \[
@@ -851,7 +1063,7 @@ Con la segnatura $+---$ il termine metrico e' $-Pg^{\mu\nu}$.
 
 \end{frame}
 
-\begin{frame}[t]{RS: fluido in moto lungo $x$}\small\raggedright
+\begin{frame}[t]{RS: fluido in moto lungo $x$ $(+---)$}\small\raggedright
 
 Sia $\mathbf v=(v,0,0)$ e $u^\mu=\gamma(1,v,0,0)$, con $\gamma=(1-v^2)^{-1/2}$. Allora
 \[
@@ -877,7 +1089,7 @@ La pressione contribuisce anche all'energia e al momento osservati in un sistema
 
 \end{frame}
 
-\begin{frame}[t]{RS: esempio numerico di fluido in moto}\small\raggedright
+\begin{frame}[t]{RS: esempio numerico di fluido in moto $(+---)$}\small\raggedright
 
 Prendiamo $\varepsilon=3$ e $P=1$ (stesse unita' di densita' di energia), con $v=0.6c$.
 In unita' $c=1$:
@@ -901,7 +1113,7 @@ La densita' di energia $\varepsilon=3$ e' quella \emph{comovente}: nel sistema e
 
 \end{frame}
 
-\begin{frame}[t]{RS: esempi limite (dust e radiazione)}\small\raggedright
+\begin{frame}[t]{RS: esempi limite (dust e radiazione) $(+---)$}\small\raggedright
 
 \begin{columns}[T,onlytextwidth]
 \begin{column}{0.49\textwidth}
@@ -933,7 +1145,7 @@ $T^{\mu\nu}=\varepsilon\eta^{\mu\nu}$ nella segnatura $+---$ (termine di tipo co
 
 \end{frame}
 
-\begin{frame}[t]{RS: come si ricava la conservazione relativistica}\small\raggedright
+\begin{frame}[t]{RS: come si ricava la conservazione relativistica $(+---)$}\small\raggedright
 
 Per un fluido perfetto senza sorgenti esterne:
 \[
@@ -956,7 +1168,7 @@ Il primo membro dell'ultima equazione contiene l'entalpia per volume $\varepsilo
 
 \end{frame}
 
-\begin{frame}[t]{RS: il limite non relativistico della legge di Eulero}\small\raggedright
+\begin{frame}[t]{RS: il limite non relativistico della legge di Eulero $(+---)$}\small\raggedright
 
 Nel limite $v\ll1$, $P\ll\varepsilon\simeq\rho c^2$, ripristinando $c$:
 \[
@@ -978,7 +1190,7 @@ L'equazione di continuita' per la massa (o i barioni) e' indipendentemente
 
 \subsection{Fluido perfetto in relativit\'a generale} 
 
-\begin{frame}[t]{RG: generalizzazione covariante}\small\raggedright
+\begin{frame}[t]{RG: generalizzazione covariante $(+---)$}\small\raggedright
 
 In uno spaziotempo curvo, con la \emph{stessa} convenzione $+---$:
 \[
@@ -997,7 +1209,7 @@ I \emph{componenti coordinati} $T^{\mu\nu}$, invece, dipendono dalla metrica e n
 
 \end{frame}
 
-\begin{frame}[t]{RG: fluido statico in metrica sferica}\small\raggedright
+\begin{frame}[t]{RG: fluido statico in metrica sferica $(+---)$}\small\raggedright
 
 Con
 \[
@@ -1021,7 +1233,7 @@ Questo chiarisce perche' non si deve scrivere $T^{rr}=P$ in coordinate Schwarzsc
 
 \end{frame}
 
-\begin{frame}[t]{RG: osservatore generico e energia misurata}\small\raggedright
+\begin{frame}[t]{RG: osservatore generico e energia misurata $(+---)$}\small\raggedright
 
 Sia $w^\mu$ la quadrivelocita' di un osservatore ($w^\mu w_\mu=1$). La densita' di energia che misura e'
 \[
@@ -1037,7 +1249,7 @@ La densita' di energia e la pressione termodinamiche sono scalari \emph{propri} 
 
 \end{frame}
 
-\begin{frame}[t]{RG: proiezioni della legge di conservazione}\small\raggedright
+\begin{frame}[t]{RG: proiezioni della legge di conservazione $(+---)$}\small\raggedright
 
 Definiamo $D=u^\mu\nabla_\mu$, $\theta=\nabla_\mu u^\mu$ e il proiettore ortogonale $h^{\mu\nu}=g^{\mu\nu}-u^\mu u^\nu$.
 \[
@@ -1056,7 +1268,7 @@ Questa e' l'equazione di Eulero relativistica in RG. Per $P=0$ e $\varepsilon>0$
 
 \end{frame}
 
-\begin{frame}[t]{RG: pressione come forza di sostegno della stella}\small\raggedright
+\begin{frame}[t]{RG: pressione come forza di sostegno della stella $(+---)$}\small\raggedright
 
 Per il fluido statico sferico, $u^\mu=e^{-\nu}\delta^\mu_t$:
 \[
@@ -1076,7 +1288,7 @@ Questa e' la forma locale dell'equilibrio idrostatico relativistico; combinandol
 
 \end{frame}
 
-\begin{frame}[t]{Fluido anisotropo: esempio di modello non perfetto}\small\raggedright
+\begin{frame}[t]{Fluido anisotropo: esempio di modello non perfetto $(+---)$}\small\raggedright
 
 In presenza di campi intensi o stress anisotropi, la pressione radiale $P_r$ puo' differire da quella tangenziale $P_t$. In una base ortonormale comovente:
 \[
@@ -1096,7 +1308,7 @@ L'equilibrio diviene
 
 \end{frame}
 
-\begin{frame}[t]{Esempi confrontati: RS e RG}\small\raggedright
+\begin{frame}[t]{Esempi confrontati: RS e RG $(+---)$}\small\raggedright
 
 \begin{tabular}{@{}p{0.22\linewidth}p{0.35\linewidth}p{0.35\linewidth}@{}}
 \toprule
@@ -1116,7 +1328,7 @@ Il principio di equivalenza assicura la forma \emph{localmente} relativistica de
 
 \section{Equazioni TOV, massa stellare e limiti}\subsection{Derivazione delle TOV}
 
-\begin{frame}[t]{Metrica interna di una stella non rotante}\small\raggedright
+\begin{frame}[t]{Metrica interna di una stella non rotante $(+---)$}\small\raggedright
 
 Assumiamo una configurazione statica, sferica e un fluido perfetto:
 \[
