@@ -108,7 +108,7 @@
 \usepackage{morewrites}
 \usepackage{makerobust}
 \MakeRobust\usebeamertemplate
-\usepackage{beamersetup}
+\usepackage{beamersetup-barre}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Funzioni generali
 \usepackage{functions}
 %http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include
@@ -131,7 +131,12 @@
 %%%\phantomsection\label{#2}
 %}
 %%rimpiazzo linkdest senza warnind (deepseek)
-\newcommand{\linkdest}[2][\@empty]{%
+%\newcommand{\linkdest}[2][\@empty]{%
+%  \ifx\@empty#1\else\hypertarget{#1}{}\fi
+%  \Hy@raisedlink{\hypertarget{#2}{}}%
+%}
+\newcommand{\linkdest}[2][\@empty]{%Aggiornamento per evidenziazione zone
+  \zonadalinkdest{#2}% aggiorna l'evidenziazione
   \ifx\@empty#1\else\hypertarget{#1}{}\fi
   \Hy@raisedlink{\hypertarget{#2}{}}%
 }
@@ -252,18 +257,18 @@ Update to last reglez
 \input{genrel}
 
 \part{Microphysics}\linkdest{microphysics}
-\input{microphysics}
+%\input{microphysics}
 
 \part{Pulsar: modelli e osservazioni.}\linkdest{pulsar}
-\input{pulsar}
+%\input{pulsar}
 
 \part{WhiteDwarf, Neutron stars}\linkdest{densestars}
-\input{compactstars}
-\input{WD}
-\input{NS}
+%\input{compactstars}
+%\input{WD}
+%\input{NS}
 
 \part{Quark stars, Hybrid stars.}\linkdest{quarkhybrid}
-\input{quarkstar}
-\input{hybridstar}
+%\input{quarkstar}
+%\input{hybridstar}
 
 \end{document}

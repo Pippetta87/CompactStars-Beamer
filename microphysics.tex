@@ -1,4 +1,4 @@
-\section{3.1 Potenziali termodinamici}
+\section{Potenziali termodinamici}
 
 \begin{frame}[t]{Ambito e convenzioni}
 \small
@@ -33,6 +33,7 @@ P=-\left.\frac{\partial U}{\partial V}\right|_{S,N_i},\quad
 La scelta di un potenziale \`e una trasformazione di Legendre, non un cambio di leggi fisiche.
 \end{frame}
 
+\zonapdf{microphysics}
 \begin{frame}[t]{Derivazione dell'equazione di Eulero}
 \small
 
@@ -138,25 +139,79 @@ P=0\ \Longleftrightarrow\ \frac{de}{dn}=0\quad(n>0).
 Un minimo di $e(n)$ a densita finita e a pressione nulla individua materia autolegata; la stabilita richiede inoltre opportuna curvatura positiva.
 \end{frame}
 
-\begin{frame}[t]{Ricostruire l'EOS da P(n)}
-\small
+\begin{frame}[t]{Ricostruire l'EOS: da $P(n)$ a $P(\varepsilon)$}
+\small\raggedright
+A $T=0$, con un solo numero conservato, poniamo
+$e(n)=\varepsilon(n)/n$ e consideriamo $n>0$.
 
-Da $P=n^2d(\varepsilon/n)/dn$:
+\smallskip
+\textbf{1. Dalla pressione alla densit\`a di energia.}
 \[
-\frac{d}{dn}\left(\frac{\varepsilon}{n}\right)=\frac{P(n)}{n^2}.
+P(n)=n^2\frac{de}{dn}
+\quad\Longrightarrow\quad
+\frac{de}{dn}=\frac{P(n)}{n^2}.
 \]
-Integrando fra due densita:
+Integrando a partire da una densit\`a di riferimento $n_*>0$:
 \[
-\boxed{\varepsilon(n)=n\left[\frac{\varepsilon(n_*)}{n_*}
-+\int_{n_*}^{n}\frac{P(n')}{n'^2}\,dn'\right].}
+\boxed{\varepsilon(n)=n\left[
+e_*+\int_{n_*}^{n}\frac{P(n')}{n'^2}\,dn'
+\right].}
 \]
-Per $P(n)$ serve quindi una condizione energetica al punto di riferimento $n_*$.
-Una sola relazione $P(\varepsilon)$, sufficiente a integrare le TOV, non determina automaticamente $n(\varepsilon)$ senza un'ulteriore normalizzazione termodinamica.
+Serve il dato $e_*=\varepsilon(n_*)/n_*$:
+$P(n)$ fissa la derivata di $e(n)$, ma non il suo valore a $n_*$.
+
+\medskip
+\textbf{2. La stessa EOS nella forma richiesta dalle TOV.}
+
+Ora ogni $n$ determina \textbf{sia} $\varepsilon(n)$ \textbf{sia} $P(n)$:
+i punti $(\varepsilon(n),P(n))$ tracciano la curva dell'EOS.
+Dove $\varepsilon(n)$ \`e invertibile, eliminiamo $n$:
+\[
+\boxed{P(\varepsilon)
+=\left.P(n)\right|_{n=n(\varepsilon)}.}
+\]
+\end{frame}
+
+\begin{frame}[t]{Problema inverso: da $P(\varepsilon)$ a $n(\varepsilon)$}
+\small\raggedright
+\textbf{Ora conosciamo solo $P(\varepsilon)$}, sufficiente per le TOV,
+ma senza la corrispondenza fra $n$ ed $\varepsilon$.
+Cerchiamo anche la densit\`a di particelle, per esempio barionica.
+
+\medskip
+A $T=0$, con un solo numero conservato:
+\[
+d\varepsilon=\mu\,dn,\qquad
+\varepsilon+P=\mu n
+\quad\Longrightarrow\quad
+\frac{dn}{n}=
+\frac{d\varepsilon}{\varepsilon+P(\varepsilon)}.
+\]
+Integrando fra uno stato di riferimento e quello cercato:
+\[
+\boxed{
+n(\varepsilon)=n_*\,\exp{
+\displaystyle
+\int_{\varepsilon_*}^{\varepsilon}
+\frac{d\tilde\varepsilon}
+{\tilde\varepsilon+P(\tilde\varepsilon)}
+}.
+}
+\]
+Serve il dato $n_*=n(\varepsilon_*)>0$ alla densit\`a di energia
+di riferimento $\varepsilon_*$.
+
+\smallskip
+$P(\varepsilon)$ determina il \textbf{rapporto} $n(\varepsilon)/n_*$,
+ma non la costante moltiplicativa $n_*$.
+
+\smallskip
+Se conosci la tabella $(n,\varepsilon,P)$ del primo frame,
+questo dato \`e gi\`a fissato.
 \end{frame}
 
 \begin{frame}[t]{Caso canonico nel bulk: verifica}
 \small
-
 \[
 f(T,n_i)=\frac FV=\varepsilon-Ts.
 \]
@@ -175,7 +230,7 @@ P=n\frac{d\varepsilon}{dn}-\varepsilon.
 La seconda derivata di $\varepsilon(n)$ controlla la comprimibilita: $dP/dn=n\,d\mu/dn$.
 \end{frame}
 
-\section{3.2 Equilibrio chimico}
+\section{Equilibrio chimico}
 
 \begin{frame}[t]{Reazione chimica: condizione generale}
 \small
@@ -196,7 +251,7 @@ All'equilibrio chimico, consentendo variazioni $d\xi$ di entrambi i segni,
 Questa derivazione evita l'uso ambiguo di $dU=0$ senza esplicitare i vincoli termodinamici.
 \end{frame}
 
-\begin{frame}[t]{Equilibrio beta: segni corretti}
+\begin{frame}[t]{Equilibrio beta.}
 \small
 
 Per la cattura elettronica
@@ -216,7 +271,20 @@ Per neutrini liberi che sfuggono da una stella fredda,
 \[
 \boxed{\mu_{\nu_e}=0\quad\Longrightarrow\quad\mu_n=\mu_p+\mu_e.}
 \]
-Per particella/antiparticella $\mu_{\bar i}=-\mu_i$ quando il potenziale e associato alle corrispondenti cariche; fotoni in equilibrio chimico ordinario: $\mu_\gamma=0$.
+Per particella/antiparticella $\mu_{\bar i}=-\mu_i$ quando il potenziale e associato alle corrispondenti cariche.
+
+\textbf{Perché il potenziale chimico dei fotoni è nullo?}
+Il numero $N_\gamma$ può variare per emissione e assorbimento:
+in equilibrio chimico non costituisce un vincolo indipendente.
+Per esempio, la bremsstrahlung
+$e^-+p\rightleftharpoons e^-+p+\gamma$ impone
+\[
+\mu_e+\mu_p=\mu_e+\mu_p+\mu_\gamma
+\quad\Longrightarrow\quad
+\boxed{\mu_\gamma=0}.
+\]
+La condizione dipende dalle reazioni che cambiano $N_\gamma$,
+non dalla massa nulla del fotone.
 \end{frame}
 
 \begin{frame}[t]{Potenziali chimici delle cariche conservate}
@@ -279,7 +347,7 @@ La neutralita implica $k_{F,p}=k_{F,e}$, ma i potenziali chimici restano diversi
 Il modello e didattico: non incorpora il legame nucleare ne le interazioni in materia densa.
 \end{frame}
 
-\section{3.3 Materia in beta-equilibrio}
+\section{Materia in beta-equilibrio}
 
 \begin{frame}[t]{Soglia di neutronizzazione nel gas libero}
 \small
@@ -345,7 +413,7 @@ La minimizzazione al numero barionico e alla neutralita fissati richiede confron
 Nel testo il ruolo delle chiusure di shell ($N=50,82$) e rilevante; le soglie numeriche dipendono dai modelli nucleari e dalle condizioni termiche.
 \end{frame}
 
-\section{3.4 Equazione di stato}
+\section{Equazione di stato}
 
 \begin{frame}[t]{Tre forme dell'equazione di stato}
 \small
@@ -386,7 +454,7 @@ P=n_B^2\frac{d}{dn_B}\left(\frac{E_b}{A}\right).
 A saturazione della materia nucleare simmetrica $de/dn_B=0\Rightarrow P=0$; non e una proprieta generica della materia neutronica in equilibrio beta.
 \end{frame}
 
-\section{3.5 Gas di Fermi liberi}
+\section{Gas di Fermi liberi}
 
 \begin{frame}[t]{Densita, energia e pressione dal gas degenere}
 \small
@@ -549,7 +617,7 @@ P\propto n^\Gamma,\qquad P\propto\varepsilon^\gamma.
 Il rapporto $P/\varepsilon$ e l'indice $d\ln P/d\ln n$ sono concetti distinti. Il secondo puo variare con la densita e con la composizione.
 \end{frame}
 
-\section{3.6 Politropiche}
+\section{Politropiche}
 
 \begin{frame}[t]{Politropica: costruzione termodinamica}
 \small
@@ -621,19 +689,42 @@ Poiche $\varepsilon+P=n\mu$, segue la continuita di $\varepsilon$ nel raccordo a
 \end{itemize}
 \end{frame}
 
-\section{Superfluidita neutronica: estensione oltre il capitolo 3}
+\section{Superfluidita neutronica}
 
 \subsection{Fenomenologia e canali di pairing}
 
 \begin{frame}[t]{Perche i neutroni possono essere superfluidi?}
-\small
+I neutroni sono fermioni neutri di spin $1/2$.
+Un canale attrattivo dell'interazione neutronica può favorire,
+sotto una temperatura critica $T_c$, la formazione di
+\textbf{coppie di Cooper} fra stati vicini alla superficie di Fermi.
 
-Neutroni: fermioni neutri di spin $1/2$. Un canale attrattivo efficace vicino alla superficie di Fermi puo generare \emph{pairing} tra stati correlati nel tempo inverso.
+\smallskip
+Nel canale ${}^1S_0$, per esempio, si accoppiano gli stati
+$(\mathbf k,\uparrow)$ e $(-\mathbf k,\downarrow)$:
+hanno impulsi e spin opposti e sono collegati
+dall'\textbf{inversione temporale}.
+
+\smallskip
+Indicando con $\hat a_{\mathbf k\sigma}$ l'operatore che
+annichila un neutrone nello stato $(\mathbf k,\sigma)$,
+nella descrizione BCS il condensato ha ampiezza di coppia
 \[
-\langle n_{-\mathbf k\downarrow}n_{\mathbf k\uparrow}\rangle\ne0
-\quad\Longrightarrow\quad
-\text{rottura spontanea di }U(1)_B\text{ (approssimata).}
+\boxed{
+\Phi_{\mathbf k}\equiv
+\left\langle
+\hat a_{-\mathbf k\downarrow}
+\hat a_{\mathbf k\uparrow}
+\right\rangle\ne0.
+}
 \]
+$\Phi_{\mathbf k}$ è un'ampiezza quantistica complessa.
+La coerenza fra le coppie definisce una fase macroscopica
+del condensato.
+
+La scelta spontanea di questa fase rompe la simmetria
+globale di fase $U(1)_B$, associata al numero barionico,
+assunto conservato nel modello.
 \begin{itemize}
 \item Superfluidita: trasporto coerente del numero barionico e vortici quantizzati.
 \item Non equivale a superconduttivita elettromagnetica: la coppia $nn$ e elettricamente neutra, quindi niente espulsione Meissner per il condensato neutronico.

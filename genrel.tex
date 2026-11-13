@@ -2,7 +2,7 @@
 
 \subsection{Ref e promemoria}
 
-\begin{frame}{Variet\'a, forme differenziali, connessioni, tetradi. Formalismo di Cartan.}
+\begin{frame}{\small Variet\'a, forme differenziali, connessioni, tetradi. Formalismo di Cartan.}
     Il calcolo esterno delle forme differenziali usa forme, prodotto esterno \(\wedge\) e derivata esterna \(d\) per descrivere campi e integrazioni su curve, superfici e variet\'a. Nel formalismo di Cartan, connessione, torsione e curvatura si esprimono tramite forme differenziali. Serve a formulare le leggi geometriche indipendentemente dalle coordinate e a collegare relativit\'a generale, elettromagnetismo e teorie di gauge.
 
 Per uno studio futuro seguirei questi riferimenti.
@@ -12,10 +12,7 @@ Per uno studio futuro seguirei questi riferimenti.
 \end{itemize}
 \end{frame}
 
-\subsection{Principi di equivalenza}
-
 \begin{frame}[t]{Scopo e convenzioni degli appunti}\small\raggedright
-
 \begin{itemize}
 \item Obiettivo: collegare geometria dello spaziotempo, tensore energia--impulso e struttura idrostatica delle stelle compatte.
 \item Coordinate $x^\mu=(t,x,y,z)$; indici greci $0,1,2,3$, latini spaziali $1,2,3$; somma su indici ripetuti.
@@ -27,7 +24,6 @@ Per uno studio futuro seguirei questi riferimenti.
 
 \begin{frame}[t]{Cambio di segnatura e fase dell'onda piana}
 \scriptsize\raggedright
-
 \begin{itemize}
     \item \textbf{Cambio di metrica:}
     \[
@@ -35,7 +31,6 @@ Per uno studio futuro seguirei questi riferimenti.
     \qquad
     \eta^{\mu\nu}_{(-)}=-\eta^{\mu\nu}_{(+)}.
     \]
-
     \item \textbf{Componenti tensoriali:}
     $x^\mu,p^\mu,\partial_\mu$ invariati;
     $x_\mu,p_\mu,\partial^\mu$ cambiano segno.
@@ -47,7 +42,6 @@ Per uno studio futuro seguirei questi riferimenti.
     (x^\mu\partial_\mu)_{(-)}
     =(x^\mu\partial_\mu)_{(+)}.
     \]
-
     \item \textbf{Onda piana a frequenza positiva:}
     con $x^\mu=(ct,\mathbf{x})$,
     $p^\mu=(E/c,\mathbf{p})$,
@@ -70,7 +64,6 @@ Per uno studio futuro seguirei questi riferimenti.
       & +p_\mu x^\mu/\hbar
     \end{array}
     \]
-
     \item \textbf{Gradiente della fase e frequenza osservata:}
     ponendo $k^\mu=p^\mu/\hbar$,
     \[
@@ -89,58 +82,12 @@ Per uno studio futuro seguirei questi riferimenti.
     \end{cases}
     \]
 \end{itemize}
-
-\medskip
 \textbf{Conclusione:} il prodotto $p_\mu x^\mu$ cambia
 segno, ma la funzione d'onda e la frequenza fisica
 rimangono invariate.
 \end{frame}
 
-\begin{frame}[t]{Principio di equivalenza debole (WEP)}\small\raggedright
-
-\begin{columns}[T,onlytextwidth]
-\begin{column}{0.49\textwidth}
-Dinamica newtoniana:
-\[
-\mathbf F=m_{\rm i}\mathbf a,\qquad
-\mathbf F_g=-m_{\rm g}\boldsymbol\nabla\Phi.
-\]
-Quindi
-\[
-\mathbf a=-\frac{m_{\rm g}}{m_{\rm i}}\boldsymbol\nabla\Phi.
-\]
-Se la caduta libera e' universale, il rapporto $m_g/m_i$ e' lo stesso per tutti i corpi; scegliendo unita' coerenti, $m_g=m_i$.
-\end{column}
-\begin{column}{0.49\textwidth}
-\textbf{WEP:} corpi di prova con condizioni iniziali uguali seguono la stessa traiettoria in caduta libera, indipendentemente dalla composizione.
-\medskip
-La traiettoria e' caratterizzata dalla geometria, non dalla massa del corpo di prova.
-\medskip
-\textit{Ipotesi:} corpo di prova, effetti mareali e di spin trascurabili.
-\end{column}
-\end{columns}
-
-\end{frame}
-
-\begin{frame}[t]{EEP, SEP e limiti dell'esperimento locale}\small\raggedright
-
-\begin{itemize}
-\item \textbf{EEP (Einstein):} in un laboratorio sufficientemente piccolo in caduta libera, le leggi \emph{non gravitazionali} coincidono localmente con quelle della relativit\'a speciale.
-\item In coordinate localmente inerziali in un evento $p$:
-\[
- g_{\mu\nu}(p)=\eta_{\mu\nu},\qquad \partial_\alpha g_{\mu\nu}(p)=0,
-\]
-ma in generale $\partial_\alpha\partial_\beta g_{\mu\nu}(p)\ne0$: la curvatura e gli effetti mareali restano osservabili in regioni finite.
-\item \textbf{SEP (forte):} estensione degli esperimenti locali anche a sistemi autogravitanti e a esperimenti gravitazionali; richiesta piu' forte dell'EEP. Per le stelle compatte l'energia di legame gravitazionale puo' essere importante: distinguere WEP, EEP e SEP evita identificazioni improprie. Formulazione utilizzata da Clifford Will:
-    \begin{itemize}
-        \item Il WEP vale anche per corpi dotati di energia gravitazionale propria significativa.
-        \item L'esito di un esperimento locale, gravitazionale o non gravitazionale, non dipende dalla velocit\'a del laboratorio in caduta libera.
-        \item L'esito di un esperimento locale, gravitazionale o non gravitazionale, non dipende dalla sua posizione nello spazio-tempo.
-    \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Effetto Doppler $(-+++)$}
+\begin{frame}{Effetto Doppler $(-+++)$}\linkdest{rgD}
         \begin{itemize}
             \item Onda EM piana: in RS la fase $\phi(\vec{x},t)=\scap{k}{x}-\omega t$ e definiamo $\tensor{k}{_{\mu}}=\tensor{\partial}{_{\mu}}\phi=(-\frac{\omega}{c},+\vec{k})$ con $\tensor{x}{^{\mu}}=(ct,\vec{x})$. Per onda EM nel vuoto $\tensor{k}{^{\mu}}\tensor{k}{_{\mu}}=0$.
             \item L'osservatore segue linea di universo $\tensor{x}{^{\mu}}(\tau)$ e incontra la fase dell'onda $\phi_{obs}(\tau)=\phi(\tensor{x}{^{\mu}}(\tau))$ quindi $\omega_{obs}=-\TDy{\tau}{\phi_{obs}}=-\PDy{\phi}{\tensor{x}{^{\mu}}}\TDy{\tau}{\tensor{x}{^{\mu}}}=-\tensor{k}{_{\mu}}\tensor{x}{^{\mu}}$.
@@ -155,14 +102,12 @@ ma in generale $\partial_\alpha\partial_\beta g_{\mu\nu}(p)\ne0$: la curvatura e
 \end{frame}
 
 \begin{frame}[t]{Redshift gravitazionale: razzo con $g>0$ $(-+++)$}\small\raggedright
-
 Luce emessa dal fondo del razzo fermo e ricevuta all'altra estremit\'a in alto in un campo debole, con $\Delta\Phi=\Phi_d-\Phi_e>0$.
 \begin{itemize}
     \item $\Delta t\simeq\frac{h}{c}$ tempo impiegato dalla luce a raggiungere altra estremit\'a razzo con $\Delta v\simeq g\Delta t$ velocit\'a acquisita dal razzo.
     \item Effetto Doppler: $\frac{\Delta\lambda}{\lambda}\simeq\frac{\Delta v}{c}=\frac{gh}{c^2}$
     \item Per principio equivalenza il razzo accelerato \'e localmente equivalente a a un laboratorio fermo in campo gravitazionale uniforme nel quale $\Delta\Phi=gh$ 
 \end{itemize}
-
 Poiche' $\nu=c/\lambda$:
 \[
 \frac{\nu_d}{\nu_e}\simeq 1-\frac{\Delta\Phi}{c^2},
@@ -198,12 +143,55 @@ RedShift gravitazionale:
     \item Metrica statica: $k_t$ conservato tra emissione e rivelazione, $k_t(e)=k_t(d)$. $\frac{\nu_d}{\nu_e}=\sqrt{\frac{g_{tt}(e)}{g_{tt}(d)}}$, $1+z=\frac{\nu_e}{\nu_d}$.
         \item Per una stella sferica non rotante, all'esterno: $ds^2=-\left(1-\frac{2GM}{rc^2}\right)c^2dt^2+\left(1-\frac{2GM}{rc^2}\right)^{-1}dr^2+r^2d\Omega^2$. La componente temporale della metrica \'e $g_{tt}(r)=-\left(1-\frac{2GM}{rc^2}\right).$. Per un fotone emesso dalla superficie $R$
             e ricevuto all'infinito $\frac{\nu_\infty}{\nu_R}=\sqrt{\frac{-g_{tt}(R)}{-g_{tt}(\infty)}}=\sqrt{1-\frac{2GM}{Rc^2}}$. Definendo il redshift $1+z=\nu_R/\nu_\infty$: $1+z=\left(1-\frac{2GM}{Rc^2}\right)^{-1/2}$. Nel limite di campo debole, $GM/(Rc^2)\ll1$: $z\simeq\frac{GM}{Rc^2}$.
+\end{itemize}
+\end{frame}
 
+\subsection{Principi di equivalenza}\linkdest{rgEP}
+
+\begin{frame}[t]{Principio di equivalenza debole (WEP)}\small\raggedright
+
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.49\textwidth}
+Dinamica newtoniana:
+\[
+\mathbf F=m_{\rm i}\mathbf a,\qquad
+\mathbf F_g=-m_{\rm g}\boldsymbol\nabla\Phi.
+\]
+Quindi
+\[
+\mathbf a=-\frac{m_{\rm g}}{m_{\rm i}}\boldsymbol\nabla\Phi.
+\]
+Se la caduta libera e' universale, il rapporto $m_g/m_i$ e' lo stesso per tutti i corpi; scegliendo unita' coerenti, $m_g=m_i$.
+\end{column}
+\begin{column}{0.49\textwidth}
+\textbf{WEP:} corpi di prova con condizioni iniziali uguali seguono la stessa traiettoria in caduta libera, indipendentemente dalla composizione.
+\medskip
+La traiettoria e' caratterizzata dalla geometria, non dalla massa del corpo di prova.
+\medskip
+\textit{Ipotesi:} corpo di prova, effetti mareali e di spin trascurabili.
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[t]{EEP, SEP e limiti dell'esperimento locale}\small\raggedright
+\begin{itemize}
+\item \textbf{EEP (Einstein):} in un laboratorio sufficientemente piccolo in caduta libera, le leggi \emph{non gravitazionali} coincidono localmente con quelle della relativit\'a speciale.
+\item In coordinate localmente inerziali in un evento $p$:
+\[
+ g_{\mu\nu}(p)=\eta_{\mu\nu},\qquad \partial_\alpha g_{\mu\nu}(p)=0,
+\]
+ma in generale $\partial_\alpha\partial_\beta g_{\mu\nu}(p)\ne0$: la curvatura e gli effetti mareali restano osservabili in regioni finite.
+\item \textbf{SEP (forte):} estensione degli esperimenti locali anche a sistemi autogravitanti e a esperimenti gravitazionali; richiesta piu' forte dell'EEP. Per le stelle compatte l'energia di legame gravitazionale puo' essere importante: distinguere WEP, EEP e SEP evita identificazioni improprie. Formulazione utilizzata da Clifford Will:
+    \begin{itemize}
+        \item Il WEP vale anche per corpi dotati di energia gravitazionale propria significativa.
+        \item L'esito di un esperimento locale, gravitazionale o non gravitazionale, non dipende dalla velocit\'a del laboratorio in caduta libera.
+        \item L'esito di un esperimento locale, gravitazionale o non gravitazionale, non dipende dalla sua posizione nello spazio-tempo.
+    \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}[t]{Deflessione della luce e natura locale dell'EEP: \small in small enough region laws have same form in RS and RG}\small\raggedright
-
 \begin{itemize}
 \item Perch\'e l'EEP \'e locale? In un riferimento localmente inerziale: $g_{\mu\nu}(P)=\eta_{\mu\nu}$, $\Gamma^\rho_{\mu\nu}(P)=0$. La luce segue localmente una traiettoria rettilinea, ma la curvatura $R^\rho{}_{\sigma\mu\nu}$ non \'e in generale nulla.
 \item L'EEP spiega qualitativamente la deflessione osservata in un laboratorio accelerato; la deflessione gravitazionale complessiva richiede la metrica e l'integrazione delle geodetiche nulle.
@@ -212,7 +200,6 @@ RedShift gravitazionale:
 \item Le forze mareali dipendono dalla curvatura e non possono essere annullate su una regione spaziale estesa scegliendo coordinate localmente inerziali.
 \end{itemize}
 \small\raggedright
-
 \textbf{Razzo nello spazio piatto.} Il razzo ha accelerazione propria costante \(a\) verso l'alto. Laser e rivelatore sono alla stessa quota su pareti distanti \(L\).
 \begin{enumerate}
     \item Nel riferimento inerziale comovente all'emissione (\(T=0\)), il raggio orizzontale segue \(X_\gamma=cT\) e \(Y_\gamma=0\), con \(Y\) verso l'alto.
@@ -242,10 +229,9 @@ In coordinate sferiche, \emph{senza curvatura}:
 ds^2=dt^2-dr^2-r^2(d\theta^2+\sin^2\theta\,d\phi^2).
 \]
 Una metrica non costante nelle coordinate non implica necessariamente curvatura dello spaziotempo.
-
 \end{frame}
 
-\begin{frame}[t]{Tensore metrico: indici alti e bassi $(+---)$. Geodetiche.}\small\raggedright
+\begin{frame}[t]{Tensore metrico: indici alti e bassi $(+---)$. Geodetiche.}\linkdest{rggeodetiche}\small\raggedright
     \begin{itemize}
         \item $ds^2=g_{\mu\nu}(x)\,dx^\mu dx^\nu$, $g_{\mu\rho}g^{\rho\nu}=\delta_\mu{}^\nu$. Alzare e abbassare indici: $A_\mu=g_{\mu\nu}A^\nu$, $A^\mu=g^{\mu\nu}A_\nu$, $A_\mu B^\mu$ scalare. In Minkowski, se $A^\mu=(A^0,A^x,A^y,A^z)$, $A_\mu=(A^0,-A^x,-A^y,-A^z)$.
     \item $g_{\mu\nu}$ e' simmetrico: 10 componenti indipendenti in quattro dimensioni; il suo determinante deve essere non nullo.
@@ -255,7 +241,6 @@ Una metrica non costante nelle coordinate non implica necessariamente curvatura 
 \end{frame}
 
 \begin{frame}[t]{Tempo proprio e quadrivelocita' $(+---)$}\small\raggedright
-
 Per una traiettoria materiale:
 \[
 d\tau=\sqrt{g_{\mu\nu}dx^\mu dx^\nu},\qquad
@@ -272,11 +257,9 @@ Il quadrimpulso di una particella libera e' $p^\mu=mu^\mu=(E,\mathbf p)$:
 p^\mu p_\mu=m^2\quad\Longrightarrow\quad E^2=\mathbf p^2+m^2.
 \]
 \textit{Le formule con $c\ne1$ hanno} $x^0=ct$, $u^\mu=dx^\mu/d\tau$ e $u^\mu u_\mu=c^2$.
-
 \end{frame}
 
 \begin{frame}[t]{Dal potenziale newtoniano a $g_{tt}$ $(+---)$}\small\raggedright
-
 Nel limite debole, stazionario, velocit\'a piccole:
 \[
 g_{tt}\simeq1+\frac{2\Phi}{c^2},\qquad |\Phi|\ll c^2.
@@ -292,19 +275,15 @@ Per la metrica con segnatura $+---$, $g_{ij}\simeq-\delta_{ij}$, dunque
 \simeq\frac{1}{c^2}\partial_i\Phi.
 \]
 Questo determina la corretta normalizzazione del coefficiente $2$ nel termine temporale della metrica.
-
 \end{frame}
 
 \section{Geodesiche, connessione e curvatura}
 
-\subsection{Equazione geodetica}
+\subsection{Equazione geodetica}\linkdest{rgeqgeo}
 
 \begin{frame}[t]{Derivate covarianti e simboli di Christoffel}\small\raggedright
-
     \textbf{Simboli di Christoffel.} Sia \(e_\mu=\partial/\partial x^\mu\) la base coordinata. I simboli di Christoffel sono i coefficienti della derivata covariante dei vettori di base, $\nabla_{e_\mu}e_\nu=\Gamma^\rho{}_{\mu\nu}\,e_\rho$.
-
 L'indice \(\mu\) indica la direzione in cui derivi, \(\nu\) il vettore di base che derivi e \(\rho\) la componente del risultato.
-
 Una derivata ordinaria di un vettore non \'e, in generale, un tensore sotto cambi di coordinate:
 \[
 \nabla_\mu V^\nu=\partial_\mu V^\nu+\Gamma^\nu{}_{\mu\lambda}V^\lambda,
@@ -328,17 +307,13 @@ Segue
 (\partial_\mu g_{\sigma\nu}+\partial_\nu g_{\sigma\mu}-\partial_\sigma g_{\mu\nu}).
 \]
 I simboli $\Gamma$ \emph{non} sono le componenti di un tensore; in coordinate localmente inerziali si annullano in un punto.
-
 \end{frame}
 
 \begin{frame}[t]{Geodesiche: principio variazionale (I)}
 \small\raggedright
-
 Per una curva temporale \(x^\mu(\lambda)\) con \(\dot x^\mu=dx^\mu/d\lambda\),
 il tempo proprio totale in unità \(c=1\) è
 \(\mathcal S[x]=\int_{\lambda_A}^{\lambda_B}d\tau\).
-
-\medskip
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.48\textwidth}
     \centering
@@ -451,7 +426,6 @@ Moltiplicando per $g^{\alpha\rho}$:
 \end{gathered}
 \]
 \textbf{Derivata totale.} Lungo \(x(\lambda)\) si usano catena e prodotto. $\frac{d}{d\lambda}(g_{\rho\nu}\dot x^\nu)=g_{\rho\nu}\ddot x^\nu+(\partial_\sigma g_{\rho\nu})\dot x^\sigma\dot x^\nu$.
-
 \textbf{Simmetrizzazione.} Si fa la media sui due ordini degli indici sommati, poich\'e \(\dot x^\mu\dot x^\nu=\dot x^\nu\dot x^\mu\).
 \[
 (\partial_\sigma g_{\rho\nu})\dot x^\sigma\dot x^\nu
@@ -488,7 +462,6 @@ g^{\alpha\rho}g_{\rho\nu}\ddot x^\nu
 \end{frame}
 
 \begin{frame}[t]{Equazione geodetica e accelerazione quadrivettoriale}\small\raggedright
-
 Con il tempo proprio come parametro affine:
 \[
 \frac{d^2x^\mu}{d\tau^2}
@@ -526,7 +499,8 @@ In uno spaziotempo curvo, invece, non si possono annullare tutti i simboli di Ch
 
 \end{frame}
 
-\subsection{Trasporto parallelo, Riemann e deviazione geodetica}
+\subsection{Trasporto parallelo, Riemann e deviazione geodetica}\linkdest{rgriemann}
+
 \begin{frame}[t]{Campi vettoriali e commutatore di Lie}
 \small\raggedright
 
@@ -707,7 +681,7 @@ Il tensore mareale e' l'Hessiano del potenziale; per una massa puntiforme $\Phi=
 
 \end{frame}
 
-\subsection{Stokes, corrente conservata e Killing}
+\subsection{Stokes, corrente conservata e Killing}\linkdest{rgstokesconservation}
 
 \begin{frame}[t]{Teorema di Stokes e divergenza covariante}\small\raggedright
 
@@ -1076,24 +1050,66 @@ Questo recupera il significato newtoniano di pressione come flusso di impulso e 
 
 \subsection{Fluido perfetto in relativit\'a speciale}
 
-\begin{frame}[t]{Forma covariante del fluido perfetto in RS $(+---)$}\small\raggedright
+% Sostituisce la slide "Forma covariante del fluido perfetto in RS".
+\begin{frame}[t]{Forma covariante del fluido perfetto in RS}
+\small\raggedright
+Poniamo $c=1$: $\varepsilon$ e $P$ sono, rispettivamente,
+la densit\`a di energia e la pressione nel sistema comovente.
 
-In uno spaziotempo piatto, con segnatura $+---$, il tensore e'
+\medskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\textbf{Segnatura $(+---)$}
 \[
-\boxed{T^{\mu\nu}=(\varepsilon+P)u^\mu u^\nu-P\eta^{\mu\nu}.}
+\begin{gathered}
+\eta_{\mu\nu}=\operatorname{diag}(1,-1,-1,-1),
+\\
+u^\mu u_\mu=+1.
+\end{gathered}
 \]
-Dimostrazione nel sistema comovente $u^\mu=(1,0,0,0)$:
+\[
+\boxed{
+T^{\mu\nu}=(\varepsilon+P)u^\mu u^\nu-P\eta^{\mu\nu}
+}
+\]
+Nel sistema comovente $u^\mu=(1,0,0,0)$:
 \[
 \begin{aligned}
-T^{00}&=(\varepsilon+P)-P\eta^{00}=\varepsilon,\\
-T^{ii}&=0-P\eta^{ii}=P,\\
-T^{0i}&=0,\quad T^{ij}=0\ (i\ne j).
+T^{00}&=(\varepsilon+P)-P(+1)=\varepsilon,\\
+T^{ii}&=-P(-1)=P.
 \end{aligned}
 \]
-\textbf{Confronto di convenzioni:} il libro usa $-+++$ e scrive
-$T^{\mu\nu}=(\varepsilon+P)u^\mu u^\nu+Pg^{\mu\nu}$.
-Con la segnatura $+---$ il termine metrico e' $-Pg^{\mu\nu}$.
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Segnatura $(-+++)$}
+\[
+\begin{gathered}
+\eta_{\mu\nu}=\operatorname{diag}(-1,1,1,1),
+\\
+u^\mu u_\mu=-1.
+\end{gathered}
+\]
+\[
+\boxed{
+T^{\mu\nu}=(\varepsilon+P)u^\mu u^\nu+P\eta^{\mu\nu}
+}
+\]
+Nel sistema comovente $u^\mu=(1,0,0,0)$:
+\[
+\begin{aligned}
+T^{00}&=(\varepsilon+P)+P(-1)=\varepsilon,\\
+T^{ii}&=+P(+1)=P.
+\end{aligned}
+\]
+\end{column}
+\end{columns}
 
+\smallskip
+In entrambe le convenzioni:
+$T^{0i}=T^{i0}=0$ e $T^{ij}=0$ per $i\ne j$.
+
+\smallskip
+Qui $i,j=1,2,3$; in $T^{ii}$ \textbf{non} si somma su $i$.
 \end{frame}
 
 \begin{frame}[t]{RS: fluido in moto lungo $x$ $(+---)$}\small\raggedright
@@ -1178,27 +1194,241 @@ $T^{\mu\nu}=\varepsilon\eta^{\mu\nu}$ nella segnatura $+---$ (termine di tipo co
 
 \end{frame}
 
-\begin{frame}[t]{RS: come si ricava la conservazione relativistica $(+---)$}\small\raggedright
+% Sostituisce il frame "RS: come si ricava la conservazione relativistica".
+% Sei frame Beamer. Richiede soltanto i normali pacchetti matematici di Beamer.
+% Unita' c=1. Coordinate cartesiane inerziali di Minkowski, x^0=t.
+% La segnatura e' (+---) nei primi cinque frame e (-+++) nell'ultimo.
 
-Per un fluido perfetto senza sorgenti esterne:
+\begin{frame}[t]{RS: conservazione locale di energia e impulso}
+\small\raggedright
+\setlength{\abovedisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayshortskip}{0pt plus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+Usiamo $c=1$ e coordinate cartesiane inerziali, con $x^0=t$.
+Per un fluido senza scambi di energia o impulso con sorgenti esterne:
 \[
-\partial_\mu T^{\mu\nu}=0.
+\boxed{\partial_\mu T^{\mu\nu}=0}
+\qquad\Longleftrightarrow\qquad
+\partial_tT^{0\nu}+\partial_iT^{i\nu}=0.
 \]
-Separiamo la parte parallela e ortogonale alla quadrivelocita'. Definiamo
-\[
-D=u^\mu\partial_\mu,\qquad \theta=\partial_\mu u^\mu,\qquad
-\Delta^{\mu\nu}=\eta^{\mu\nu}-u^\mu u^\nu.
-\]
-Proiezione energetica ($u_\nu\partial_\mu T^{\mu\nu}=0$):
-\[
-D\varepsilon+(\varepsilon+P)\theta=0.
-\]
-Proiezione ortogonale ($\Delta^\alpha{}_{\nu}\partial_\mu T^{\mu\nu}=0$):
-\[
-(\varepsilon+P)D u^\alpha=\Delta^{\alpha\nu}\partial_\nu P.
-\]
-Il primo membro dell'ultima equazione contiene l'entalpia per volume $\varepsilon+P$, non soltanto $\varepsilon$.
+La conservazione \`e una \textbf{legge fisica} che imponiamo al tensore
+energia--impulso del sistema.
 
+\medskip
+Integrando su un volume spaziale \textbf{fisso} $V$ e applicando Gauss:
+\[
+\frac{d}{dt}\int_V T^{0\nu}\,d^3x
+=-\oint_{\partial V}T^{i\nu}n_i\,dS.
+\]
+Qui $n_i$ sono le componenti della normale spaziale uscente.
+La variazione del contenuto \`e l'opposto del flusso uscente.
+
+\medskip
+\begin{itemize}
+\item $\nu=0$: $T^{00}$ \`e densit\`a di energia e $T^{i0}$ \`e flusso di energia.
+\item $\nu=j$: $T^{0j}$ \`e densit\`a di impulso lungo $j$ e $T^{ij}$
+\`e il suo flusso nella direzione $i$.
+\end{itemize}
+Se il flusso netto al contorno \`e nullo, l'integrale si conserva.
+Gli indici $i,j$ vanno da $1$ a $3$.
+\end{frame}
+
+\begin{frame}[t]{RS: significato delle proiezioni}
+\small\raggedright
+\setlength{\abovedisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayshortskip}{0pt plus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+Con segnatura $(+---)$, $u^\mu u_\mu=1$.
+La quadrivelocit\`a $u^\mu$ \`e tangente alla traiettoria di un elemento
+di fluido e individua la sua \textbf{direzione temporale}.
+
+\medskip
+Per il vettore $F^\nu\equiv\partial_\mu T^{\mu\nu}$ definiamo
+\[
+\Pi_\parallel^\alpha{}_\nu=u^\alpha u_\nu,\qquad
+\Delta^\alpha{}_\nu=\delta^\alpha{}_\nu-u^\alpha u_\nu.
+\]
+La decomposizione temporale e spaziale \`e
+\[
+F^\alpha
+=\underbrace{u^\alpha(u_\nu F^\nu)}_{\text{parte parallela}}
++\underbrace{\Delta^\alpha{}_\nu F^\nu}_{\text{parte ortogonale}}.
+\]
+Nel riferimento inerziale \textbf{istantaneamente comovente}, nel punto:
+\[
+\begin{gathered}
+u^\mu=(1,0,0,0),\\
+\Pi_\parallel^\alpha{}_\nu=\operatorname{diag}(1,0,0,0),\qquad
+\Delta^\alpha{}_\nu=\operatorname{diag}(0,1,1,1).
+\end{gathered}
+\]
+\begin{itemize}
+\item $u_\nu F^\nu=0$ seleziona il \textbf{bilancio energetico}: una equazione.
+\item $\Delta^\alpha{}_\nu F^\nu=0$ seleziona il \textbf{bilancio dell'impulso}
+nello spazio del fluido: tre equazioni indipendenti.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{RS: espansione della conservazione $(+---)$}
+\small\raggedright
+\setlength{\abovedisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayshortskip}{0pt plus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+Per il fluido perfetto:
+\[
+T^{\mu\nu}=(\varepsilon+P)u^\mu u^\nu-P\eta^{\mu\nu},
+\qquad u^\mu u_\mu=1.
+\]
+Definiamo
+\[
+D\equiv u^\mu\partial_\mu,\qquad
+\theta\equiv\partial_\mu u^\mu,\qquad
+a^\nu\equiv Du^\nu.
+\]
+$D$ deriva seguendo il fluido, $\theta$ misura l'espansione locale
+e $a^\nu$ \`e la quadriaccelerazione.
+La metrica $\eta^{\mu\nu}$ \`e costante nelle coordinate scelte.
+
+\medskip
+Applicando la regola del prodotto:
+\[
+\begin{aligned}
+0=\partial_\mu T^{\mu\nu}
+&=u^\mu u^\nu\partial_\mu(\varepsilon+P)
+ +(\varepsilon+P)(\partial_\mu u^\mu)u^\nu\\
+&\quad+(\varepsilon+P)u^\mu\partial_\mu u^\nu
+ -\partial^\nu P\\
+&=u^\nu\!\left[D(\varepsilon+P)+(\varepsilon+P)\theta\right]\\
+&\quad+(\varepsilon+P)a^\nu-\partial^\nu P.
+\end{aligned}
+\]
+Qui $\partial^\nu P=\eta^{\nu\mu}\partial_\mu P$.
+La normalizzazione implica
+\[
+D(u^\nu u_\nu)=2u_\nu a^\nu=0
+\qquad\Longrightarrow\qquad
+\boxed{u_\nu a^\nu=0}.
+\]
+\end{frame}
+
+\begin{frame}[t]{RS: proiezione parallela e bilancio energetico}
+\small\raggedright
+\setlength{\abovedisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayshortskip}{0pt plus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+Contraiamo con $u_\nu$, usando
+$u_\nu u^\nu=1$, $u_\nu a^\nu=0$ e $u_\nu\partial^\nu P=DP$:
+\[
+\begin{gathered}
+0=u_\nu\partial_\mu T^{\mu\nu}
+=D(\varepsilon+P)+(\varepsilon+P)\theta-DP,\\[2pt]
+\boxed{D\varepsilon+(\varepsilon+P)\theta=0.}
+\end{gathered}
+\]
+\`E il bilancio dell'energia \textbf{nel riferimento del fluido}.
+
+\medskip
+Per un piccolo elemento \textbf{materiale} di volume proprio $V$:
+\[
+D\varepsilon=\frac{d\varepsilon}{d\tau},\qquad
+\theta=\frac1V\frac{dV}{d\tau}.
+\]
+Moltiplicando l'equazione energetica per $V$:
+\[
+V\frac{d\varepsilon}{d\tau}
++(\varepsilon+P)\frac{dV}{d\tau}=0
+\quad\Longrightarrow\quad
+\boxed{\frac{d(\varepsilon V)}{d\tau}
+=-P\frac{dV}{d\tau}}.
+\]
+Il lavoro di pressione $P\,dV$ riduce l'energia propria $\varepsilon V$
+durante l'espansione (per $P>0$). La compressione la aumenta.
+\end{frame}
+
+\begin{frame}[t]{RS: proiezione ortogonale ed equazione del moto}
+\small\raggedright
+\setlength{\abovedisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayshortskip}{0pt plus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+Alziamo l'indice del proiettore:
+\[
+\Delta^{\alpha\nu}
+=\Delta^\alpha{}_\beta\eta^{\beta\nu}
+=\eta^{\alpha\nu}-u^\alpha u^\nu.
+\]
+Poich\'e $u_\nu a^\nu=0$, valgono
+\[
+\Delta^\alpha{}_\nu u^\nu=0,\qquad
+\Delta^\alpha{}_\nu a^\nu=a^\alpha,\qquad
+\Delta^\alpha{}_\nu\partial^\nu P=\Delta^{\alpha\nu}\partial_\nu P.
+\]
+Proiettando l'espansione di $\partial_\mu T^{\mu\nu}$:
+\[
+0=\Delta^\alpha{}_\nu\partial_\mu T^{\mu\nu}
+=(\varepsilon+P)a^\alpha-\Delta^{\alpha\nu}\partial_\nu P.
+\]
+Questa \`e l'\textbf{equazione di Eulero relativistica}:
+\[
+\boxed{(\varepsilon+P)a^\alpha=\Delta^{\alpha\nu}\partial_\nu P.}
+\]
+
+\medskip
+Nel riferimento inerziale istantaneamente comovente, nel punto:
+\[
+a^0=0,\qquad \Delta^{ij}=-\delta^{ij}
+\quad\Longrightarrow\quad
+\boxed{(\varepsilon+P)a^i=-\partial_iP.}
+\]
+Il gradiente di pressione accelera il fluido verso pressioni minori.
+L'entalpia per volume $\varepsilon+P$ determina l'inerzia.
+Ripristinando $c$, la densit\`a inerziale \`e $(\varepsilon+P)/c^2$.
+\end{frame}
+
+\begin{frame}[t]{RS: conservazione con segnatura $(-+++)$}
+\small\raggedright
+\setlength{\abovedisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayshortskip}{0pt plus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+Cambiano insieme la normalizzazione, il termine metrico e il proiettore:
+\[
+u^\mu u_\mu=-1,\qquad
+T^{\mu\nu}=(\varepsilon+P)u^\mu u^\nu+P\eta^{\mu\nu}.
+\]
+\[
+\Delta^\alpha{}_\nu=\delta^\alpha{}_\nu+u^\alpha u_\nu,\qquad
+\Delta^{\alpha\nu}=\eta^{\alpha\nu}+u^\alpha u^\nu.
+\]
+Restano $D=u^\mu\partial_\mu$, $\theta=\partial_\mu u^\mu$,
+$a^\nu=Du^\nu$ e $u_\nu a^\nu=0$.
+
+\medskip
+\textbf{Proiezione energetica:} la contrazione cambia segno complessivo:
+\[
+u_\nu\partial_\mu T^{\mu\nu}
+=-\left[D\varepsilon+(\varepsilon+P)\theta\right]=0.
+\]
+Il bilancio energetico resta $D\varepsilon+(\varepsilon+P)\theta=0$,
+quindi vale ancora $d(\varepsilon V)=-P\,dV$.
+
+\medskip
+\textbf{Proiezione ortogonale:}
+\[
+0=(\varepsilon+P)a^\alpha+\Delta^{\alpha\nu}\partial_\nu P
+\quad\Longrightarrow\quad
+\boxed{(\varepsilon+P)a^\alpha=-\Delta^{\alpha\nu}\partial_\nu P.}
+\]
+Nel punto istantaneamente comovente ora $\Delta^{ij}=+\delta^{ij}$.
+Perci\`o, in entrambe le segnature:
+\[
+\boxed{(\varepsilon+P)a^i=-\partial_iP.}
+\]
+Le proiezioni conservano lo stesso significato fisico.
 \end{frame}
 
 \begin{frame}[t]{RS: il limite non relativistico della legge di Eulero $(+---)$}\small\raggedright
@@ -1298,7 +1528,37 @@ Proiezione ortogonale:
 a^\alpha\equiv u^\mu\nabla_\mu u^\alpha.}
 \]
 Questa e' l'equazione di Eulero relativistica in RG. Per $P=0$ e $\varepsilon>0$ implica $a^\alpha=0$: le linee di flusso della polvere sono geodetiche.
-
+\smallskip
+\textbf{Quadriaccelerazione.}
+Con $u^\mu=dx^\mu/d\tau$, dove $\tau$ è il tempo proprio:
+\[
+a^\alpha\equiv u^\mu\nabla_\mu u^\alpha
+=\frac{d^2x^\alpha}{d\tau^2}
++\Gamma^\alpha{}_{\mu\nu}u^\mu u^\nu.
+\]
+La normalizzazione $u^\mu u_\mu=\pm1$ implica
+$u_\alpha a^\alpha=0$: la quadriaccelerazione è
+ortogonale alla quadrivelocità in entrambe le segnature.
+La condizione $a^\alpha=0$ è l'equazione geodetica
+(caduta libera). Un gradiente spaziale di pressione
+può invece produrre $a^\alpha\ne0$.
+\smallskip
+\textbf{Nota sulla segnatura $(-+++)$} ($c=1$).
+Si ha $u^\mu u_\mu=-1$ e
+$T^{\mu\nu}=(\varepsilon+P)u^\mu u^\nu+Pg^{\mu\nu}$.
+La definizione $a^\alpha=u^\mu\nabla_\mu u^\alpha$
+e l'ortogonalità $u_\alpha a^\alpha=0$ restano invariate.
+Il proiettore e l'equazione del moto diventano
+\[
+h^{\mu\nu}=g^{\mu\nu}+u^\mu u^\nu,
+\qquad
+(\varepsilon+P)a^\alpha=-h^{\alpha\nu}\nabla_\nu P.
+\]
+Il bilancio energetico
+$D\varepsilon+(\varepsilon+P)\theta=0$ resta invariato.
+Nel riferimento ortonormale comovente
+$h^{\hat i\hat j}=+\delta^{ij}$: l'accelerazione è ancora
+diretta verso pressioni minori.
 \end{frame}
 
 \begin{frame}[t]{RG: pressione come forza di sostegno della stella $(+---)$}\small\raggedright
@@ -1424,6 +1684,8 @@ Il termine $4\pi r^3P$ e' una correzione gravitazionale relativistica; non compa
 
 \begin{frame}[t]{TOV (III): conservazione e pressione}\small\raggedright
 
+    \begin{columns}[T]
+        \begin{column}{0.49\textwidth}
 La conservazione covariante del fluido perfetto fornisce
 \[
 \frac{dP}{dr}=-(\varepsilon+P)\nu'.
@@ -1440,6 +1702,27 @@ Questa e' l'equazione \emph{Tolman--Oppenheimer--Volkoff} in unita' $c=1$.
 P=P(\varepsilon)
 \]
 completano il sistema per $P(r)$, $\varepsilon(r)$ e $m(r)$.
+        \end{column}
+        \begin{column}{0.49\textwidth}
+\textbf{Deduzione della prima equazione.}
+Per il fluido statico $u^\mu=e^{-\nu}\delta^\mu_t$,
+la quadriaccelerazione radiale è
+$a^r=\Gamma^r{}_{tt}(u^t)^2=e^{-2\lambda}\nu'$.
+Con segnatura $(+---)$, $h^{rr}=-e^{-2\lambda}$:
+la componente radiale di Eulero dà
+\[
+(\varepsilon+P)a^r=h^{rr}P'
+\quad\Longrightarrow\quad
+(\varepsilon+P)e^{-2\lambda}\nu'
+=-e^{-2\lambda}P'.
+\]
+Cancellando il fattore geometrico si ottiene
+$P'=-(\varepsilon+P)\nu'$.
+Con $(-+++)$, $h^{rr}$ cambia segno e la proiezione
+di Eulero contiene $-h^{rr}P'$, dando lo stesso risultato.    
+        \end{column}
+    \end{columns}
+    
 
 \end{frame}
 

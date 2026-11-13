@@ -159,6 +159,216 @@ Con questa convenzione la massa a riposo \'e inclusa. Per un gas di Fermi libero
     \end{itemize}
 \end{frame}
 
+\begin{frame}[t]{Potenziale chimico ed energia di Fermi: definizioni}
+\small\raggedright
+\setlength{\abovedisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayshortskip}{0pt plus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+Usiamo $\hbar=c=k_B=1$ e consideriamo una sola specie.
+Il potenziale chimico \`e una \textbf{grandezza termodinamica}:
+\[
+\boxed{
+\mu=\left(\frac{\partial F}{\partial N}\right)_{T,V}
+=\left(\frac{\partial U}{\partial N}\right)_{S,V}.
+}
+\]
+Misura il costo di aggiungere particelle con i vincoli indicati
+e comprende gli effetti delle interazioni.
+A $T=0$, per materia uniforme con $\varepsilon=U/V$ e $n=N/V$:
+\[
+\mu=\frac{d\varepsilon}{dn}.
+\]
+
+\medskip
+Per una \textbf{particella libera}, invece, lo spettro relativistico \`e
+\[
+E(k)=\sqrt{k^2+m^2},\qquad E_F^{\rm tot}\equiv E(k_F).
+\]
+La radice \`e l'energia totale libera all'impulso $k_F$.
+Il potenziale chimico e questa energia hanno definizioni diverse.
+
+\medskip
+Nel gas fermionico libero a $T=0$, con lo stesso zero dell'energia,
+si ottiene $\mu=E(k_F)$.
+L'uguaglianza segue dal riempimento degli stati e si dimostra nel seguito.
+\note{Definizione termodinamica e gas di Fermi:
+D. Tong, Statistical Physics, sezioni 1.4 e 3.6.
+\url{https://www.damtp.cam.ac.uk/user/tong/statphys/sp.pdf}}
+\end{frame}
+
+\begin{frame}[t]{Gas libero a $T=0$: derivazione di $\mu=E_F$}
+\small\raggedright
+\setlength{\abovedisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayshortskip}{0pt plus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+Fermioni liberi uniformi, $n>0$, degenerazione interna $g$,
+nel limite termodinamico:
+\[
+n=\frac{gk_F^3}{6\pi^2},\qquad
+\varepsilon=\frac{g}{2\pi^2}
+\int_0^{k_F}k^2E(k)\,dk,
+\qquad E(k)=\sqrt{k^2+m^2}.
+\]
+Derivando rispetto a $k_F$ e usando la regola della catena:
+\[
+\frac{dn}{dk_F}=\frac{gk_F^2}{2\pi^2},\qquad
+\frac{d\varepsilon}{dk_F}
+=\frac{gk_F^2}{2\pi^2}E(k_F).
+\]
+\[
+\begin{aligned}
+\mu=\frac{d\varepsilon}{dn}
+&=\frac{d\varepsilon/dk_F}{dn/dk_F}\\
+&=\frac{\frac{gk_F^2}{2\pi^2}E(k_F)}
+        {\frac{gk_F^2}{2\pi^2}}\\
+&=\boxed{E(k_F)=E_F^{\rm tot}=\sqrt{k_F^2+m^2}.}
+\end{aligned}
+\]
+
+\smallskip
+\textbf{Significato fisico.}
+Il principio di Pauli impone il riempimento degli stati fino a $k_F$.
+Le particelle aggiunte agli stati successivi costano $E(k_F)$ ciascuna.
+\note{La derivazione usa le formule per n ed epsilon del gas libero
+gia' presenti nel capitolo.
+Per l'interpretazione tramite il riempimento degli stati:
+D. Tong, Statistical Physics, sezione 3.6.
+\url{https://www.damtp.cam.ac.uk/user/tong/statphys/sp.pdf}}
+\end{frame}
+
+\begin{frame}[t]{Gas libero a temperatura finita}
+\small\raggedright
+\setlength{\abovedisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayshortskip}{0pt plus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+Per i fermioni liberi, a $T>0$ l'occupazione \`e
+\[
+f(k)=\frac{1}{\exp{[E(k)-\mu]/T}+1},
+\qquad E(k)=\sqrt{k^2+m^2}.
+\]
+La distribuzione non ha pi\`u il bordo netto del caso $T=0$:
+stati sopra il bordo possono essere occupati e stati sotto possono
+rimanere vuoti.
+
+\medskip
+Fissata la densit\`a $n$, il vincolo sul numero determina
+$\mu(T,n)$. L'energia
+\[
+E_F^{\rm tot}(n)=\sqrt{k_F(n)^2+m^2},
+\qquad
+k_F(n)=\left(\frac{6\pi^2n}{g}\right)^{1/3}
+\]
+resta il riferimento costruito a $T=0$ per la stessa densit\`a.
+
+\medskip
+In generale:
+\[
+\boxed{\mu(T,n)\ne E_F^{\rm tot}(n),\qquad
+\lim_{T\to0}\mu(T,n)=E_F^{\rm tot}(n).}
+\]
+Nel limite fortemente degenere si pu\`o usare
+$\mu(T,n)\simeq E_F^{\rm tot}(n)$.
+Nel regime non relativistico la scala termica della degenerazione
+\`e l'energia cinetica di Fermi $E_F^{\rm cin}=E_F^{\rm tot}-m$.
+\note{D. Tong, Statistical Physics, sezione 3.6:
+dipendenza di mu dalla temperatura a numero fissato,
+distribuzione di Fermi--Dirac ed espansione di Sommerfeld.
+\url{https://www.damtp.cam.ac.uk/user/tong/statphys/sp.pdf}}
+\end{frame}
+
+\begin{frame}[t]{Interazioni: quale energia al bordo di Fermi?}
+\small\raggedright
+\setlength{\abovedisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayshortskip}{0pt plus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+Con interazioni, $\mu$ mantiene la sua definizione termodinamica.
+In una descrizione coerente a quasiparticelle in \textbf{fase normale}
+(senza pairing superfluido), a $T=0$:
+\[
+\boxed{\mu=E_{\rm qp}(k_F).}
+\]
+Qui $E_{\rm qp}(k)$ \`e lo spettro a particella singola del mezzo,
+espresso con lo stesso zero energetico di $\mu$.
+L'uguaglianza confronta il costo termodinamico e quello microscopico
+di aggiungere particelle al bordo di Fermi.
+
+\medskip
+\textbf{Esempio: un semplice modello relativistico di campo medio.}
+\[
+E_{\rm qp}(k)=\sqrt{k^2+m_*^2}+V_0
+\quad\Longrightarrow\quad
+\boxed{\mu=\sqrt{k_F^2+m_*^2}+V_0.}
+\]
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\topsep}{2pt}
+\item $m_*$ \`e la massa efficace nel mezzo.
+\item $V_0$ \`e il contributo del campo vettoriale.
+\end{itemize}
+
+\smallskip
+Per $m_*=m$ e $V_0=0$ si recupera la radice libera.
+Negli altri casi $\mu$ contiene i contributi del mezzo.
+\note{Per il modello relativistico di campo medio:
+Y. Yang, M. Hippert, E. Speranza e J. Noronha,
+Far-from-equilibrium bulk-viscous transport coefficients in neutron star mergers,
+Phys. Rev. C 109, 015805 (2024), appendice E.
+\url{https://doi.org/10.1103/PhysRevC.109.015805}
+Per la relazione di Hugenholtz--Van Hove e lo spettro al bordo di Fermi:
+Decomposition of nuclear symmetry energy based on Lorentz-covariant nucleon
+self-energies in relativistic Hartree-Fock approximation.
+\url{https://inspirehep.net/files/e5d5baa29d8c4501eec1d1b198f5cd84}}
+\end{frame}
+
+\begin{frame}[t]{Energia totale, energia cinetica e zero energetico}
+\small\raggedright
+\setlength{\abovedisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayshortskip}{0pt plus 1pt}
+\setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
+Anche nel gas libero occorre specificare che cosa si chiama
+\textbf{energia di Fermi}:
+\[
+E_F^{\rm tot}=\sqrt{k_F^2+m^2},\qquad
+E_F^{\rm cin}=\sqrt{k_F^2+m^2}-m.
+\]
+La prima include l'energia a riposo. La seconda misura l'energia
+rispetto alla soglia $E=m$.
+
+\medskip
+Nel gas libero a $T=0$, se $\mu$ include l'energia a riposo:
+\[
+\boxed{\mu=E_F^{\rm tot},\qquad \mu-m=E_F^{\rm cin}.}
+\]
+Nel limite non relativistico $k_F\ll m$:
+\[
+\mu\simeq m+\frac{k_F^2}{2m},\qquad
+E_F^{\rm cin}\simeq\frac{k_F^2}{2m}.
+\]
+Un testo che sottrae l'energia a riposo usa il potenziale
+$\widetilde\mu=\mu-m$ in modo coerente con $E_F^{\rm cin}$.
+
+\medskip
+Per interpretare una formula scritta come $\mu=E_F$, controllare:
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+\setlength{\topsep}{2pt}
+\item la temperatura, in particolare l'ipotesi $T=0$;
+\item lo spettro adottato, libero oppure modificato dalle interazioni;
+\item lo zero dell'energia, con o senza il contributo a riposo.
+\end{itemize}
+\note{La distinzione totale/cinetica segue dalla scelta dello zero
+dell'energia. Nel capitolo dell'utente epsilon e mu includono l'energia
+a riposo; in molti testi non relativistici E_F indica invece k_F^2/(2m).
+D. Tong, Statistical Physics, sezione 3.6.
+\url{https://www.damtp.cam.ac.uk/user/tong/statphys/sp.pdf}}
+\end{frame}
+
+
 \begin{frame}{Energia di un nucleo legato}
 
 Per un sistema di \(A\) nucleoni, schematicamente: $E_{tot}=A m_N + T + V$ dove $T>0$ \'e l'energia cinetica interna dei nucleoni e \(V\) contiene le interazioni nucleari. Definiamo l'energia di legame rispetto a \(A\) nucleoni liberi a riposo: $E_b\equiv E_{tot}-A m_N=T+V$. Per un sistema legato: $E_b<0$; quindi l'energia cinetica dei nucleoni legati non è trascurata: il legame richiede semplicemente che $T+V<0$ ossia che il contributo attrattivo dell'interazione prevalga sull'energia cinetica. Con la convenzione alternativa \(B>0\) per la binding energy: $B=-E_b$.

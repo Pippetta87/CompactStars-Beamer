@@ -1,0 +1,760 @@
+\ProvidesPackage{beamersetup-barre}
+%
+%%\makeatletter
+%%\newcommand\listframessec{\@starttoc{allframessec}}
+%%\makeatother
+%%\usetheme{default}
+%
+%
+\subtitle{Stelle Compatte: Pulsar, Stelle Neutroni Rotanti, Modello dipolo, TOV, Mean Field Theory.}
+
+\date{2026 21 Ottobre, \today}
+
+\subject{Stelle di Neutroni (e Nane Bianche): Dipolo Magnetico rotante (Pulsar), equilibrio idrostatico in RG e massa limite, nuclear matter, strange stars.}
+
+\makeatletter
+\setbeamertemplate{frametitle}{
+\vspace*{-0.1mm}
+    \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+    \@tempdima=\textwidth%
+    \advance\@tempdima by\beamer@leftmargin%
+    \advance\@tempdima by\beamer@rightmargin%
+    %\hspace*{1cm} %%%%%%%%%%%%% For example insert shift to right
+    \begin{beamercolorbox}[sep=0.3cm,center,wd=\the\@tempdima]{frametitle}
+        \usebeamerfont{frametitle}%
+        \vbox{}\vskip-1ex%
+        \if@tempswa\else\csname beamer@ftecenter\endcsname\fi%
+        \strut\insertframetitle\strut\par%
+        {%
+            \ifx\insertframesubtitle\@empty%
+            \else%
+            {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+            \fi
+        }%
+        \vskip-1ex%
+        \if@tempswa\else\vskip-.0cm\fi% set inside beamercolorbox... evil here...
+\end{beamercolorbox}%
+\vspace*{-3mm}
+}
+
+\makeatother
+\makeatletter
+\addtobeamertemplate{frametitle}{
+    \ifframeinlbf
+\mode<presentation>{%
+        \only<1>{%
+            %\hypertarget{\protect\insertframetitle}{}%
+            %        \addcontentsline{cherryframes}{subsection}{%
+                    %\protect\makebox[1em][l]{\normalsize\insertframenumber\hfill}
+                       % \normalsize
+           %            \protect\insertframetitle%
+                    %\addtocontents{cherryframes}{\protect\mycontentsline{section}{\parbox{0.48\textwidth}{\protect$\bullet$ \insertframetitle}}{}{}}
+\let\aux\insertframetitle
+\let\auxlink\insertframenumber
+    \linkdest{linkframecherry-\auxlink}
+%\addtocontents{toc}{\protect\beamer@partintoc{\the\c@part}{\beamer@partnameshort}{\the\c@page}}%
+    \addtocontents{cherryframes}{\protect\mycontentsline{section}{\parbox{0.48\textwidth}{$\bullet$ \aux}}{}{linkframecherry-\auxlink}}
+        }%
+    }%
+             \else\fi%
+
+    %\ifframeinlbf
+  %\addcontentsline{cherryframes}{section}{\protect\makebox[2em][l]{%
+  %  \protect\usebeamercolor[fg]{structure}\insertframenumber\hfill}%
+  %$\protect\hyperlink{page.\insertframenumber}\insertframetitle\par}%
+  %\else\fi
+%%        \protect\beamer@subsectionintoc{\protect\the\c@section}{0}{%
+%%            \protect\insertframetitle%
+%%        }{\protect\the\c@page}{\protect\the\c@part}{\protect\the\beamer@tocsectionnumber}%
+%    \addtocontents{secfr-\thesection}{\protect\mycontentsline{subsubsection}{\parbox{0.48\textwidth}{\protect$\bullet$ \protect\insertframetitle}}{}{}}%make newcommand as frame in lbf as \insertframetitle is expanded after
+    \vspace*{-1mm}
+}{
+    \frameinlbffalse
+    %\addtocontents{secfr-\thesection}{\protect\mycontentsline{subsection}{\protect\makebox[2em][l]{%
+    %\protect\usebeamercolor[fg]{structure}\insertframenumber}%
+%\insertframetitle\par%
+%}{}{secfr-\thesection}}%%
+  %    \mode<presentation>{%
+  %      \only<1>{%
+ \ifx\beamer@shortframetitle\beamer@frametitle
+                \ifx\insertframesubtitle\@empty%
+                    %\frame{a}
+                \else
+                    %framesubstitle - prioritate 2
+                   % \frame{b}
+                    \let\aux\insertframesubtitle
+                    \let\auxlink\insertframenumber
+    \phantomsection\linkdest{linkframesec-\auxlink}
+%\addtocontents{toc}{\protect\beamer@partintoc{\the\c@part}{\beamer@partnameshort}{\the\c@page}}%
+    \addtocontents{secfr-\thesection}{\protect\mycontentsline{section}{\parbox{0.48\textwidth}{$\bullet$ \aux}}{}{linkframesec-\auxlink}}
+                        %\addtocontents{secfr-\thesection}{\protect\mycontentsline{subsection}{\parbox{0.48\textwidth}{$\bullet$ \aux}}{}{}}
+
+                \fi
+            \else
+                %short title - prioritaet 1
+                \frame{c}
+            \fi
+%        }%
+%    }%
+    \vspace*{-3mm}
+}
+\makeatother
+%% Beamer margin
+\setbeamersize{text margin left=2pt, text margin right=1pt}
+%% In beamer, these changes can be made in the preamble
+\addtolength{\topmargin}{0pt}
+\addtolength{\headsep}{3pt minus 2pt}
+\addtolength{\oddsidemargin}{-1pt}
+\addtolength{\evensidemargin}{-1pt}
+\addtolength{\marginparwidth}{0pt}
+\addtolength{\marginparsep}{-1pt}
+%\addtolength{\textwidth}{24pt}
+%%\geometry{margin=1pt}
+%%\setbeamersize{text margin left = -2cm, text margin right = -2cm}
+\newcommand{\setmuskip}[2]{#1=#2\relax} %%problem usinigmu with calc (req by mathtools) loaded
+%%default with calc? https://tex.stackexchange.com/questions/188215/mathtools-with-mu-illegal-unit
+\setmuskip{\medmuskip}{0mu plus 0mu minus 0mu}
+\makeatletter
+%%\setlength{\parskip}{fixed amount plus amount to stretch minus amount to shrink}GLUE
+%%%\setbeamersize{cosa=size}
+%%\arraycolsep=5pt                  % distance between 2 columns 
+%%\thinmuskip=3mu                   % space between ordinary and operator atoms 
+%%\medmuskip=4mu plus 2mu minus 4mu % space between ordinary and binary atoms 
+%%\thickmuskip=5mu plus 5mu         % space between ordinary and relation atoms 
+%%\setlength\jot{-30pt}
+%%\renewcommand\arraystretch{1}
+%%\def\>{\mskip\medmuskip}
+%%\def\;{\mskip\thickmuskip}
+%%\def\!{\mskip-\thinmuskip
+%%\abovedisplayskip=12pt plus 3pt minus 9pt 
+%%\belowdisplayskip=12pt plus 3pt minus 9pt
+%%\abovedisplayshortskip=0pt plus 3pt 
+%%\belowdisplayshortskip=7pt plus 3pt minus 4pt
+\g@addto@macro\normalsize{%
+%%    \setlength{\tagmarginsep}{0pt}
+    %\everydisplay{\displayindent=\tagmarginsep \displaywidth=\dimexpr\linewidth-2\tagmarginsep}
+%%\renewcommand\normalsize{
+%%\setlength\thinmuskip{0pt}%=
+%%\setlength\medmuskip{0pt plus 0pt minus 0pt}%=
+%%\setlength\thickmuskip{0pt plus 0pt}%=
+\setlength\abovedisplayskip{1pt minus 1pt}
+\setlength\belowdisplayskip{1pt minus 1pt}
+\setlength\abovedisplayshortskip{1pt minus 1pt}
+\setlength\belowdisplayshortskip{1pt minus 1pt}
+\setlength{\parindent}{-1pt}
+\setlength{\parskip}{0pt plus 0pt minus 0pt}
+\setlength{\jot}{-0pt}
+\setlength{\mathindent}{-0pt plus 1pt minus 2pt}
+\setlength{\itemindent}{-0pt}
+\setlength{\leftmargini}{\dimexpr\leftmargini-2pt\relax}
+\setlength\columnsep{1pt}
+%%\setbeamersize{text margin left=-2cm,text margin right=1mm} 
+\setlength{\parskip}{0pt plus 0pt minus 0pt}
+}
+
+%%\addtobeamertemplate{frametitle}{\vspace*{-0.3cm}\relax}{\vspace*{-1.7cm}\relax}
+
+\addtobeamertemplate{frame begin}{
+\vspace*{-6mm}
+}{
+\setlength\columnsep{1pt}
+\setlength\abovedisplayskip{1pt minus 1pt}
+\setlength\belowdisplayskip{1pt minus 1pt}
+\setlength\abovedisplayshortskip{1pt minus 1pt}
+\setlength\belowdisplayshortskip{1pt minus 1pt}
+\setlength{\parindent}{-5pt}
+\setlength{\parskip}{0pt plus 0pt minus 0pt}
+\setlength{\jot}{-0pt}
+\setlength{\mathindent}{-50pt plus 1pt minus 2pt}
+\setlength{\itemindent}{-0pt}
+%%\setlength{\leftmargini}{-1mm}
+%%\setbeamersize{text margin left=-2cm,text margin right=1mm} 
+\setlength{\parindent}{0pt}\@afterindentfalse\@afterheading
+\setlength{\parskip}{0pt plus 0pt minus 0pt}
+\setlength{\jot}{-0pt}
+\setlength{\leftmargini}{0mm}
+\addtolength{\itemsep}{0.5\baselineskip}
+%\frameinlbffalse
+}
+\addtobeamertemplate{block begin}{
+\setlength\abovedisplayskip{1pt}
+\setlength\belowdisplayskip{1pt}
+\setlength\abovedisplayshortskip{1pt}
+\setlength\belowdisplayshortskip{1pt}
+%%\setlength\itemindent{1pt}
+}{}
+\addtobeamertemplate{block begin}{\vspace*{-3pt}}{}
+\addtobeamertemplate{block end}{}{\vspace*{-3pt}}
+%
+\addtobeamertemplate{block begin}{}{\setlength{\parindent}{0pt}\@afterindentfalse\@afterheading}
+%%\setlength\parindent{0pt plus 0pt minus 0pt}
+%
+\addtobeamertemplate{block begin}{}{\setlength{\parskip}{0pt plus 0pt minus 0pt}}
+%%\setlength\parskip{3pt plus 0pt minus 0pt}
+%
+\addtobeamertemplate{block begin}{}{\setlength{\jot}{-0pt}}
+%%\setlength\jot{0pt plus 0pt minus 0pt}
+%
+\addtobeamertemplate{block begin}{}{\setlength{\mathindent}{1pt plus 5pt minus 10pt}}
+%%\setlength\mathindent{0pt plus 0pt minus 0pt}
+%
+%%\addtobeamertemplate{block begin}{}{\setlength{\leftmargini}{0mm}}
+%%\setlength\leftmargini{-2pt}
+%%%}?
+%%https://tex.stackexchange.com/questions/115907/how-do-i-remove-white-space-above-itemize-command-in-beamer-using-enumitem
+%%It's not a good idea to use the enumitem package with beamer since beamer has its own ways of dealing with the standard list-like environments. Just by loading enumitem when using beamer you loose the special beamer formatting and the overlay-awareness of the list-like components.
+
+\renewcommand{\itemize}[1][]{%
+\beamer@ifempty{#1}{}{\def\beamer@defaultospec{#1}}%
+\ifnum \@itemdepth >2\relax\@toodeep\else
+\advance\@itemdepth\@ne
+\beamer@computepref\@itemdepth% sets \beameritemnestingprefix
+\usebeamerfont{itemize/enumerate \beameritemnestingprefix body}%
+\usebeamercolor[fg]{itemize/enumerate \beameritemnestingprefix body}%
+\usebeamertemplate{itemize/enumerate \beameritemnestingprefix body begin}%
+\list{\usebeamertemplate{itemize \beameritemnestingprefix item}}{\def\makelabel##1{%
+        {%
+   \hss\llap{{%
+                    \usebeamerfont*{itemize \beameritemnestingprefix item}%
+                    \usebeamercolor[fg]{itemize \beameritemnestingprefix item}##1}}%
+        }%
+    }%
+}
+\fi%
+\beamer@cramped%
+\raggedright%
+\beamer@firstlineitemizeunskip%
+}
+
+%%\setlist[itemize,0]{%leftmargin=\dimexpr 26pt-.5in
+%%align=left, leftmargin=-5pt,label=*,labelwidth=10pt
+%%}
+\makeatother
+%
+\hypersetup{pdfpagemode=FullScreen}
+%
+\addtobeamertemplate{block begin}{%
+%\setlength{\textwidth}{0.99\textwidth}%
+\setlength\abovedisplayskip{0pt}%
+}{}
+%
+\setbeamertemplate{caption}{\insertcaption}
+\setbeamercolor{author}{fg=blue}
+\setbeamerfont{title}{size=\Large, series=\bfseries}
+\setbeamerfont{subtitle}{size=\Large, series=\bfseries}
+\setbeamerfont{author}{size=\footnotesize}
+\setbeamerfont{date}{size=\small}
+%
+\setbeamertemplate{section page}
+{
+\begin{beamercolorbox}[sep=10pt,center,rounded=true,shadow=true]{part title}
+    \usebeamerfont{section title}\insertpartnumber.\insertsectionnumber-\insertsection\par
+\end{beamercolorbox}
+}
+%
+\setbeamertemplate{subsection page}
+{
+\begingroup
+\begin{beamercolorbox}[sep=2pt,center,rounded=true,shadow=true]{section title}% sep= vertical space around text (between text and box border)
+    \usebeamerfont{section title}\insertpartnumber.\insertsectionnumber-\insertsection\par
+\end{beamercolorbox}
+\vspace*{-1.pt}%    \vspace*{10pt}
+\begin{beamercolorbox}[sep=6pt,center,rounded=true,shadow=true]{subsection title}
+    \usebeamerfont{subsection title}\insertpartnumber.\insertsectionnumber.\insertsubsectionnumber-\insertsubsection\par
+\end{beamercolorbox}
+\endgroup
+}
+\setbeamerfont{section title}{size=\Large,series=\bfseries}
+\setbeamerfont{subsection title}{size=\large,series=\bfseries}
+%
+%%\AtBeginDocument{%
+%%\addtolength\abovedisplayskip{-0.5\baselineskip}%
+%%\addtolength\belowdisplayskip{-1\baselineskip}%
+%%\addtolength\abovedisplayshortskip{-0.5\baselineskip}%
+%%\addtolength\belowdisplayshortskip{-1\baselineskip}%
+%%}
+%%\setlength{\mathindent}{0pt}
+%
+%\setcounter{tocdepth}{-1} 
+%
+\makeatletter
+%%% number, shortname, page.
+\def\beamer@partintoc#1#2#3{%
+\ifnum\c@tocdepth=-1\relax
+% requesting onlyparts.
+    \makebox[0.1\paperwidth]{Part #1:} \parbox{0.45\paperwidth}{#2(#3)}%
+\par
+\fi
+}%
+%\makeatletter
+%%%% number, shortname, page.
+%\providecommand\beamer@partintoc[3]{%
+%\ifnum\c@tocdepth=-1\relax
+%% requesting onlyparts.
+%    \makebox[0.1\paperwidth]{Part #1:} \parbox{0.45\paperwidth}{#2(#3)}
+%\par
+%\fi
+%}%
+%
+\define@key{beamertoc}{onlyparts}[]{%
+\c@tocdepth=-1\relax
+}
+%
+%
+\@addtoreset{section}{part}
+\@addtoreset{subsection}{part}
+\@addtoreset{subsection}{section}
+%
+%\AtBeginPart{%
+%    \linkdest{linkpart-\thepart}
+%%\addtocontents{toc}{\protect\beamer@partintoc{\the\c@part}{\beamer@partnameshort}{\the\c@page}}%
+%    \addtocontents{toc}{\protect\mycontentsline{section}{\parbox{0.48\textwidth}{ \protect\beamer@partintoc{\the\c@part}{\beamer@partnameshort}{\the\c@page}}}{}{linkpart-\thepart}}
+%
+%%%\addtocontents{toc}{\mycontentsline{section}{contenuto}{mannaggia}{sdsd}}%
+%\makeatother%
+%%
+%\frameinlbffalse
+%\frame{\partpage}
+%\frameinlbffalse
+%\begin{frame}[shrink,t]{Outline: \insertpart}%\insertpart
+%    %\tableofcontents%sectionstyle=show/shaded
+%    \vspace*{-1cm}
+%    \begin{columns}[T, onlytextwidth]
+%    \begin{column}{.3\textwidth}
+%      \tableofcontents[sections={1-4}]
+%    \end{column}
+%    \begin{column}{.3\textwidth}
+%      \tableofcontents[sections={5-8}]
+%    \end{column}
+%    \begin{column}{.3\textwidth}
+%      \tableofcontents[sections={9-}]
+%    \end{column}
+%  \end{columns}
+%%Alternativa a allowframebreask
+%%  \frametitle<1>{Indice (1/2)}
+%%  \frametitle<2>{Indice (2/2)}
+%%
+%%  \only<1>{ \tableofcontents[sections={1-4}] }
+%%  \only<2>{ \tableofcontents[sections={5-8}] }
+%\end{frame}
+%}
+%
+%
+%\AtBeginPart{%hack2
+%    \linkdest{linkpart-\thepart}%
+%    \addtocontents{toc}{\protect\mycontentsline{section}{\parbox{0.48\textwidth}{\protect\beamer@partintoc{\the\c@part}{\beamer@partnameshort}{\the\c@page}}}{}{linkpart-\thepart}}%
+%    \frameinlbffalse
+%    \frame{\partpage}%
+%    \frameinlbffalse
+%    % 1. Rimuovi [shrink] e usa [t] per allineare in alto
+%    % 2. Rimuovi le columns e usa multicols
+%    % 1. Elimina lo spazio automatico sopra le colonne di multicol
+%        \setlength{\multicolsep}{0pt} 
+%        
+%        % 2. (Opzionale) Se hai ancora i vspace di compensazione della volta scorsa, 
+%        % riducili o commentali. Se il titolo si sovrappone, usa un valore piccolo come -1mm.
+%        % \vspace*{-1mm} 
+%    \begin{frame}[t]{Outline: \insertpart}
+%        \vspace*{0.2cm}
+%        \footnotesize % O \small, per sicurezza
+%        \begin{multicols}{2}
+%                       % 3. "Mangia" lo spazio iniziale del primo elemento del TOC
+%            \vspace*{-1.5cm} 
+%           % 3. Aggiungi part=\thepart per limitare alla parte corrente
+%            \tableofcontents[part=\thepart]
+%        \end{multicols}
+%    \end{frame}%
+%}
+%\AtBeginPart{%HACK3
+%    \linkdest{linkpart-\thepart}%
+%    \addtocontents{toc}{\protect\mycontentsline{section}%
+%        {\parbox{0.48\textwidth}{\protect\beamer@partintoc{\the\c@part}%
+%        {\beamer@partnameshort}{\the\c@page}}}{}{linkpart-\thepart}}%
+%    \frameinlbffalse
+%    \frame{\partpage}%
+%    \frameinlbffalse
+%    \begin{frame}{Outline: \insertpart}
+%        \vspace*{\fill}
+%        \footnotesize
+%        \setlength{\multicolsep}{0pt}%
+%        \begin{multicols}{2}
+%                    \raggedcolumns%
+%            \tableofcontents[part=\thepart]
+%        \end{multicols}
+%        \vspace*{\fill}
+%    \end{frame}%
+%}
+%%%%%%
+%%%%%%
+\makeatletter
+% --- contatori cumulativi che NON vengono resettati da \part ---
+\newcounter{my@secnum}
+\newcounter{my@subnum}
+\AddToHook{cmd/section/before}{\stepcounter{my@secnum}}
+\AddToHook{cmd/subsection/before}{\stepcounter{my@subnum}}
+
+% --- storage aux: valori cumulativi ai confini di parte ---
+\def\my@setsecstart#1#2{\expandafter\gdef\csname my@secstart@#1\endcsname{#2}}
+\def\my@setsecend#1#2{\expandafter\gdef\csname my@secend@#1\endcsname{#2}}
+\def\my@setsubstart#1#2{\expandafter\gdef\csname my@substart@#1\endcsname{#2}}
+\def\my@setsubend#1#2{\expandafter\gdef\csname my@subend@#1\endcsname{#2}}
+
+\def\my@getsecstart#1{\ifcsname my@secstart@#1\endcsname\csname my@secstart@#1\endcsname\else-1\fi}
+\def\my@getsecend#1{\ifcsname my@secend@#1\endcsname\csname my@secend@#1\endcsname\else-1\fi}
+\def\my@getsubstart#1{\ifcsname my@substart@#1\endcsname\csname my@substart@#1\endcsname\else-1\fi}
+\def\my@getsubend#1{\ifcsname my@subend@#1\endcsname\csname my@subend@#1\endcsname\else-1\fi}
+
+\newcommand*\my@writesecstart[1]{\immediate\write\@auxout{\string\my@setsecstart{#1}{\number\value{my@secnum}}}}
+\newcommand*\my@writesecend[1]{\immediate\write\@auxout{\string\my@setsecend{#1}{\number\value{my@secnum}}}}
+\newcommand*\my@writesubstart[1]{\immediate\write\@auxout{\string\my@setsubstart{#1}{\number\value{my@subnum}}}}
+\newcommand*\my@writesubend[1]{\immediate\write\@auxout{\string\my@setsubend{#1}{\number\value{my@subnum}}}}
+
+% --- soglia: oltre nsecs+nsubs si prova a dividere in due colonne ---
+\def\my@splitthreshold{15}
+
+% Spazio sopra l'indice: va impostato come opzione del frame,
+% prima che Beamer raccolga il contenuto nella propria vbox.
+\define@key{beamerframe}{mytoctop}[true]{%
+  \beamer@frametopskip=0.15cm\relax
+  \beamer@framebottomskip=0pt plus 1fill\relax
+  \beamer@frametopskipautobreak=\beamer@frametopskip
+  \beamer@framebottomskipautobreak=\beamer@framebottomskip
+}
+
+\AtBeginPart{%
+  % 1) chiudi la parte precedente PRIMA di iniziare la corrente
+  \ifnum\value{part}>1\relax
+    \my@writesecend{\number\numexpr\value{part}-1\relax}%
+    \my@writesubend{\number\numexpr\value{part}-1\relax}%
+  \fi
+  % 2) apri la parte corrente
+  \my@writesecstart{\number\value{part}}%
+  \my@writesubstart{\number\value{part}}%
+  \linkdest{linkpart-\thepart}%
+  \addtocontents{toc}{\protect\mycontentsline{section}%
+    {\parbox{0.48\textwidth}{\protect\beamer@partintoc{\the\c@part}%
+    {\beamer@partnameshort}{\the\c@page}}}{}{linkpart-\thepart}}%
+  \frameinlbffalse
+  \frame{\partpage}%
+  \frameinlbffalse
+  % 3) leggi i conteggi scritti al run precedente
+  \edef\my@ss{\my@getsecstart{\number\value{part}}}%
+  \edef\my@se{\my@getsecend{\number\value{part}}}%
+  \edef\my@us{\my@getsubstart{\number\value{part}}}%
+  \edef\my@ue{\my@getsubend{\number\value{part}}}%
+  \typeout{DEBUG part=\number\value{part} secs=\my@ss--\my@se subs=\my@us--\my@ue}%
+  \ifnum\my@ss<0\relax
+    % primo run: aux non ancora popolato -> fallback prudente
+    \begin{frame}[t]{Outline: \insertpart}
+      \vspace*{-1.5\baselineskip}%  ~ -0.6cm, ancora lontano dal -2cm che sfondava
+      \footnotesize
+      \tableofcontents[part=\thepart, hideothersubsections]
+    \end{frame}%
+  \else
+    \edef\my@nsecs{\number\numexpr\my@se-\my@ss\relax}%
+    \edef\my@nsubs{\number\numexpr\my@ue-\my@us\relax}%
+    \edef\my@nitems{\number\numexpr\my@nsecs+\my@nsubs\relax}%
+    \typeout{DEBUG part=\number\value{part} nsecs=\my@nsecs nsubs=\my@nsubs nitems=\my@nitems}%
+    \ifnum\my@nitems>\my@splitthreshold\relax
+      \ifnum\my@nsecs>1\relax
+        % split per numero di sezione (meta' "ceil")
+        \edef\my@b{\number\numexpr\my@nsecs/2\relax}%
+        \edef\my@c{\number\numexpr\my@b+1\relax}%
+        \begingroup
+        % Solo per questo indice: titolo standard centrato, senza i vspace
+        % del template globale. Gli altri frame mantengono il proprio titolo.
+        \setbeamertemplate{frametitle}[default][center]
+        \begin{frame}[t,mytoctop]{Outline: \insertpart}
+          \footnotesize
+  \setlength{\parskip}{0pt}%
+  \renewcommand{\mycontentsline}[4]{}%
+          \setlength{\parskip}{0pt}%
+          \begin{columns}[T,onlytextwidth]
+            \begin{column}{0.48\textwidth}
+              \vspace{0pt}% riferimento superiore comune alle due colonne
+              \let\vfill\relax % indice compatto, senza spazi elastici
+              \tableofcontents[part=\thepart, sections={1-\my@b}]
+            \end{column}
+            \begin{column}{0.48\textwidth}
+              \vspace{0pt}%
+              \let\vfill\relax
+              \tableofcontents[part=\thepart, sections={\my@c-\my@nsecs}]
+            \end{column}
+          \end{columns}
+        \end{frame}%
+        \endgroup
+      \else
+        % una sola sezione ma molte sottosezioni: niente split per sezione
+        \begin{frame}[t, shrink]{Outline: \insertpart}
+          \vspace*{0.2cm}\footnotesize
+          \tableofcontents[part=\thepart]
+        \end{frame}%
+      \fi
+    \else
+      \begin{frame}[t]{Outline: \insertpart}
+        \vspace*{0.2cm}\footnotesize
+        \tableofcontents[part=\thepart]
+      \end{frame}%
+    \fi
+  \fi
+}
+\AtEndDocument{%
+  \my@writesecend{\number\value{part}}%
+  \my@writesubend{\number\value{part}}%
+}
+\makeatother
+%%%Display section subsection (title page) at beginning section subsection
+\AtBeginSection{
+\addtocounter{sectionkey}{1}%using \thesection
+\frameinlbffalse
+\frame{\sectionpage}
+\begin{frame}{Lista frame/keywords importanti di questa sezione}
+   %\listofsecframes
+   
+\begin{columns}[T]
+    \begin{column}{0.4\textwidth}
+        \listofcherryframes
+    \end{column}
+    \begin{column}{0.6\textwidth}
+        \listofkeywords
+    \end{column}
+\end{columns}
+
+\end{frame}
+}
+\AtBeginSubsection{
+\frameinlbffalse
+\frame{\subsectionpage}}
+
+\makeatletter
+% Navigazione personalizzata: nessuna dipendenza da \part, \section
+% o \subsection. Ogni destinazione registrata appartiene a una voce
+% principale o a una sua sottovoce.
+\def\bs@navarea{}
+\def\bs@navsubarea{}
+\def\bs@navitems{}
+
+% Voce principale: [separatore successivo], identificatore, larghezza, testo.
+% La larghezza vale per l'intero gruppo: principale e tutte le sottovoci.
+% Il separatore resta fuori dal link e dall'evidenziazione.
+\newcommand{\barrazona}[4][]{%
+  \ifcsname bs@navparent@#2\endcsname
+    \PackageError{beamersetup}{Destinazione della barra duplicata: #2}%
+      {Usare identificatori diversi per ogni voce della barra.}%
+  \else
+    \expandafter\gdef\csname bs@navparent@#2\endcsname{#2}%
+    \expandafter\gdef\csname bs@navroot@#2\endcsname{}%
+    \expandafter\gdef\csname bs@navchildren@#2\endcsname{}%
+    \g@addto@macro\bs@navitems{\bs@navgroup{#2}{#3}{#4}{#1}}%
+  \fi
+}
+
+% Sottovoce: [separatore successivo], identificatore del padre,
+% identificatore proprio, larghezza, testo. Il padre va dichiarato prima.
+% La larghezza della sottovoce e' accettata per compatibilita', ma non usata:
+% l'etichetta ha larghezza naturale e va a capo nel gruppo del padre.
+\newcommand{\barrazonasub}[5][]{%
+  \ifcsname bs@navroot@#2\endcsname
+    \ifcsname bs@navparent@#3\endcsname
+      \PackageError{beamersetup}{Destinazione della barra duplicata: #3}%
+        {Usare identificatori diversi per ogni voce della barra.}%
+    \else
+      \expandafter\gdef\csname bs@navparent@#3\endcsname{#2}%
+      \expandafter\g@addto@macro\csname bs@navchildren@#2\endcsname{%
+        \bs@navsubitem{#3}{#4}{#5}{#1}}%
+    \fi
+  \else
+    \PackageError{beamersetup}{Voce principale non dichiarata: #2}%
+      {Dichiarare prima il padre con \string\barrazona.}%
+  \fi
+}
+
+% A capo esplicito: inserire tra le dichiarazioni delle sottovoci.
+% In sua assenza il ritorno a capo e' automatico.
+\newcommand{\barranuovariga}[1]{%
+  \ifcsname bs@navroot@#1\endcsname
+    \expandafter\g@addto@macro\csname bs@navchildren@#1\endcsname{%
+      \unskip\par\noindent\strut}%
+  \else
+    \PackageError{beamersetup-barre}{Gruppo sconosciuto: #1}%
+      {Dichiarare prima la voce principale con \string\barrazona.}%
+  \fi
+}
+
+% Override facoltativo nel preambolo, dopo il caricamento di questo .sty:
+% \larghezzagruppobarra{genrel}{.18}
+\newcommand{\larghezzagruppobarra}[2]{%
+  \ifcsname bs@navroot@#1\endcsname
+    \expandafter\gdef\csname bs@navwidth@#1\endcsname{#2}%
+  \else
+    \PackageError{beamersetup-barre}{Gruppo sconosciuto: #1}%
+      {Usare l'identificatore di una voce principale gia' dichiarata.}%
+  \fi
+}
+
+% Chiamata da \linkdest: seleziona solo le destinazioni registrate.
+% Un collegamento a una keyword o a un singolo frame non cambia stato.
+\newcommand{\zonadalinkdest}[1]{%
+  \ifcsname bs@navparent@#1\endcsname
+    \xdef\bs@navarea{\csname bs@navparent@#1\endcsname}%
+    \edef\bs@navtarget{#1}%
+    \ifx\bs@navarea\bs@navtarget
+      \gdef\bs@navsubarea{}%
+    \else
+      \xdef\bs@navsubarea{#1}%
+    \fi
+  \fi
+}
+
+% Selezione esplicita facoltativa; con argomento vuoto azzera entrambe.
+\newcommand{\zonapdf}[1]{%
+  \begingroup
+    \edef\bs@navtarget{#1}%
+    \ifx\bs@navtarget\@empty
+      \gdef\bs@navarea{}%
+      \gdef\bs@navsubarea{}%
+    \else
+      \zonadalinkdest{#1}%
+    \fi
+  \endgroup
+}
+
+% ASPETTO DELLE VOCI SELEZIONATE: modificabile liberamente.
+\setbeamercolor{zona attiva in head/foot}{fg=black,bg=yellow!75!orange}
+\setbeamercolor{sottozona attiva in head/foot}{fg=white,bg=blue!60!black}
+\setbeamerfont{zona attiva in head/foot}{series=\bfseries}
+\setbeamerfont{sottozona attiva in head/foot}{series=\bfseries}
+\newcommand{\stilezonapdf}[1]{#1}
+\newcommand{\stilesottozonapdf}[1]{#1}
+\newcommand{\stileseparatorebarra}[1]{{\color{black!65}#1}}
+% Margine dello sfondo colorato intorno alla sola etichetta selezionata.
+\newlength{\barrafboxsep}
+\setlength{\barrafboxsep}{0.8pt}
+% Esempio di decorazione:
+% \renewcommand{\stilesottozonapdf}[1]{\underline{#1}}
+
+\newcommand{\bs@navhighlight}[1]{%
+  \begingroup
+    \usebeamercolor{\bs@navcolor}%
+    \setlength{\fboxsep}{\barrafboxsep}%
+    \ifbeamercolorempty[bg]{\bs@navcolor}%
+      {{\color{fg}\bs@navformat{#1}}}%
+      {\colorbox{bg}{\color{fg}\bs@navformat{#1}}}%
+  \endgroup
+}
+
+% Spazio normale tra le voci di uno stesso gruppo.
+\newcommand{\spaziovocibarra}{\space}
+\newcommand{\bs@navbox}[4]{%
+  \hbox{%
+    {\bs@navfont%
+      \def\bs@navbasecolor{author in head/foot}%
+      \hyperlink{#1}{%
+        \ifx\bs@navcolor\bs@navbasecolor
+          \bs@navformat{#3}%
+        \else
+          \bs@navhighlight{#3}%
+        \fi
+      }%
+    }%
+    \stileseparatorebarra{#4}%
+  }%
+  \spaziovocibarra%
+}
+\newcommand{\bs@navitem}[4]{%
+  \begingroup
+    \def\bs@navtarget{#1}%
+    \ifx\bs@navarea\bs@navtarget
+      \def\bs@navcolor{zona attiva in head/foot}%
+      \def\bs@navfont{\usebeamerfont{zona attiva in head/foot}}%
+      \let\bs@navformat\stilezonapdf
+    \else
+      \def\bs@navcolor{author in head/foot}%
+      \def\bs@navfont{}%
+      \let\bs@navformat\@firstofone
+    \fi
+    \bs@navbox{#1}{#2}{#3}{#4}%
+  \endgroup
+}
+\newcommand{\bs@navsubitem}[4]{%
+  \begingroup
+    \def\bs@navtarget{#1}%
+    \ifx\bs@navsubarea\bs@navtarget
+      \def\bs@navcolor{sottozona attiva in head/foot}%
+      \def\bs@navfont{\usebeamerfont{sottozona attiva in head/foot}}%
+      \let\bs@navformat\stilesottozonapdf
+    \else
+      \def\bs@navcolor{author in head/foot}%
+      \def\bs@navfont{}%
+      \let\bs@navformat\@firstofone
+    \fi
+    \bs@navbox{#1}{#2}{#3}{#4}%
+  \endgroup
+}
+
+% Gruppi indipendenti, allineati in alto e con altezza naturale.
+\newcommand{\bs@navgroup}[4]{%
+  \vtop{%
+    \ifcsname bs@navwidth@#1\endcsname
+      \edef\bs@navgroupwidth{\csname bs@navwidth@#1\endcsname}%
+    \else
+      \def\bs@navgroupwidth{#2}%
+    \fi
+    \hsize=\bs@navgroupwidth\paperwidth\relax
+    \hrule height0pt%
+    \hbox{%
+      \begin{beamercolorbox}[wd=\bs@navgroupwidth\paperwidth,sep=.6ex]{author in head/foot}%
+        \parindent=0pt\relax
+        \parskip=0pt\relax
+        \noindent\strut%
+        \bs@navitem{#1}{#2}{#3}{#4}%
+        \csname bs@navchildren@#1\endcsname%
+        \unskip\strut\par
+      \end{beamercolorbox}%
+    }%
+  }%
+}
+\newcommand{\bs@navcounter}{%
+  \vtop{%
+    \hrule height0pt%
+    \hbox{%
+      \begin{beamercolorbox}[wd=.1\paperwidth,sep=.6ex,right]{author in head/foot}%
+        \strut\insertframenumber{}(\inserttotalframenumber{})\strut\par
+      \end{beamercolorbox}%
+    }%
+  }%
+}
+
+% VOCI DELLA BARRA. L'ordine delle principali determina quello dei gruppi.
+% Le sottovoci sono raccolte nel proprio gruppo, nell'ordine dichiarato.
+% Le larghezze delle principali sono frazioni di \paperwidth.
+% La somma delle larghezze dei gruppi, piu' .1 per il contatore, deve
+% rimanere entro 1. Le larghezze delle sottovoci non entrano nella somma.
+\barrazona{reglez25}{.07}{RL25}
+\barrazona{succo}{.07}{S}
+\barrazona[:]{genrel}{.22}{RG}
+\barrazonasub[,]{genrel}{rgD}{.05}{D}
+\barrazonasub[,]{genrel}{rgEP}{.05}{EP}
+\barrazonasub[,]{genrel}{rggeodetiche}{.05}{$\tau$}
+\barrazonasub[,]{genrel}{rgeqgeo}{.05}{$\delta S$}
+\barrazonasub[,]{genrel}{rgriemann}{.05}{$R$}
+\barrazonasub[,]{genrel}{rgstokesconservation}{.05}{$\oint$}
+% Esempi futuri: aggiungere le sottovoci qui, dopo il loro padre.
+% \barrazonasub[,]{genrel}{rg-geo}{.05}{Geo}
+% \barrazonasub{genrel}{rg-tov}{.05}{TOV}
+\barrazona{microphysics}{.07}{$\micro$p}
+\barrazona[:]{pulsar}{.1}{pulsar}
+\barrazona[:]{densestars}{.12}{C*}
+\barrazona[:]{quarkhybrid}{.1}{qsb}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{%
+  \leavevmode%
+  \vbox{%
+    \vskip.8ex%
+    \hbox to \paperwidth{\bs@navitems\hfil\bs@navcounter}%
+    \vskip.5ex%
+  }%
+}
+\makeatother
+\beamertemplatenavigationsymbolsempty
