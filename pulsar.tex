@@ -14,13 +14,13 @@
 \textbf{Nota:} i dati di pulsar e le figure originali riprendono la \emph{versione storica} del capitolo 6, non un catalogo aggiornato.
 \end{frame}
 
-\begin{frame}[t]{6.1 -- Dal segnale periodico alla pulsar}
+\begin{frame}[t]{Dal segnale periodico alla pulsar}
 \small
-Nel 1967 Jocelyn Bell Burnell identifico segnali radio di periodicita eccezionale durante studi delle scintillazioni interplanetarie.
+Nel 1967 Jocelyn-Bell-Burnell identific\'o segnali radio di periodicit\'a eccezionale durante studi delle scintillazioni interplanetarie.
 \begin{itemize}
 \item L'individuazione di sorgenti diverse escludeva un'origine terrestre o artificiale unica.
-\item La regolarita rivelo un sistema astronomico con una scala dinamica piccola e un orologio stabile.
-\item La spiegazione successiva e una stella di neutroni magnetizzata, in rapida rotazione: un fascio di emissione attraversa periodicamente la linea di vista.
+\item La regolarit\'a rivel\'o un sistema astronomico con una scala dinamica piccola e un orologio stabile.
+\item La spiegazione: una stella di neutroni magnetizzata, in rapida rotazione: un fascio di emissione attraversa periodicamente la linea di vista.
 \end{itemize}
 \[
 \text{rotazione della stella}\quad\longrightarrow\quad\text{modulazione del fascio radio}.
@@ -28,9 +28,12 @@ Nel 1967 Jocelyn Bell Burnell identifico segnali radio di periodicita eccezional
 Il periodo del segnale coincide normalmente con il periodo di rotazione (a parte geometrie con piu picchi per giro).
 \end{frame}
 
-\subsection{Perch\'e sono stelle di neutroni rotanti}
+\subsection{Oggetti Compatti?}
 
-\begin{frame}[t]{Vincolo di causalita sulla regione emittente}
+% Vincoli osservativi, scala dinamica e interpretazione rotazionale.
+
+\begin{frame}[t]{Vincolo di causalit\'a e tempo dinamico}
+\begin{block}[t]{Vincolo di causalit\'a sulla regione emittente}
 \small
 Se un impulso dura $\Delta t$, una regione che varia in modo causalmente connesso ha dimensione indicativa
 \[
@@ -45,9 +48,8 @@ Per la scala del libro, $\Delta t\simeq0.016\,$s:
 \item Il risultato riguarda la dimensione della \emph{regione variabile}, non necessariamente l'intero corpo celeste.
 \item Le dimensioni di una stella di neutroni ($\sim10$--$15\,$km) sono ampiamente compatibili.
 \end{itemize}
-\end{frame}
-
-\begin{frame}[t]{Tempo dinamico e oscillazioni}
+\end{block}
+\begin{block}[t]{Tempo dinamico e oscillazioni}
 \small
 Per una sfera di massa $M$ e raggio $R$, il bilancio idrostatico d'ordine di grandezza e
 \[
@@ -64,73 +66,7 @@ c_s^2\sim\frac{GM}{R},\qquad
 \item La scala dipende dalla densita media; i modi normali effettivi introducono coefficienti dipendenti dalla struttura.
 \item Una singola frequenza caratteristica di oscillazione non spiega naturalmente la varieta dei periodi delle pulsar.
 \end{itemize}
-\end{frame}
-
-
-\begin{frame}[t]{Equilibrio di una stella rotante}
-\small
-La rotazione rigida stazionaria in relativita' generale richiede una metrica assialsimmetrica, non la soluzione TOV sferica.
-Per un fluido barotropico, la pseudoentalpia
-\[
-H(P)=\int_0^P\frac{dP'}{\varepsilon(P')+P'}
-\]
-permette di scrivere un primo integrale relativistico dell'equilibrio:
-\[
-H+\Phi-\ln\Gamma=\text{costante},
-\qquad\Gamma=(1-U^2/c^2)^{-1/2}.
-\]
-$\Phi$ e $U$ dipendono dalla metrica e dalla posizione nella stella: occorre risolvere un problema bidimensionale.
-\par\medskip
-\footnotesize Haensel et al. (2006), eqs.~(6.95)--(6.102).
-\end{frame}
-
-\begin{frame}[t]{Stabilita' e mass shedding}
-\begin{columns}[T,onlytextwidth]
-\column{0.54\textwidth}
-\begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{haensel07/M_NS-R_eq}\label{fig:haensel07_M_NS-R_eq}\end{figure}
-\column{0.44\textwidth}
-\small
-Le configurazioni stabili sono limitate da due meccanismi diversi:
-\begin{itemize}
-\item instabilita' assialsimmetrica a densita' centrale elevata;
-\item perdita di massa all'equatore al limite di Keplero.
-\end{itemize}
-Le sequenze a momento angolare costante sono essenziali per discutere la stabilita'.
-\end{columns}
-\footnotesize Haensel et al. (2006), Fig.~6.18, \S6.12.2; EOS SLy.
-\end{frame}
-
-\begin{frame}[t]{Rotazione e deformazione centrifuga}
-\begin{columns}[T,onlytextwidth]
-\column{0.53\textwidth}
-\begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{haensel07/NS_DeltaR-oblat_fHz}\label{fig:haensel07/NS_DeltaR-oblat_fHz}\end{figure}
-\column{0.45\textwidth}
-\small
-Al crescere della frequenza:
-\begin{itemize}
-\item il raggio equatoriale aumenta;
-\item il raggio polare diminuisce;
-\item la densita' centrale tende a diminuire a massa barionica fissata.
-\end{itemize}
-La deformazione e' $O(\Omega^2)$ nel limite lento, ma diventa grande vicino a $\Omega_K$.
-\end{columns}
-\footnotesize Haensel et al. (2006), Fig.~6.19, \S6.12.2.
-\end{frame}
-
-\begin{frame}[t]{Massa massima e rotazione differenziale}
-\small
-La stima newtoniana del limite centrifugo e'
-\[
-\Omega_K\sim\sqrt{GM/R^3},\qquad P_K\sim2\pi\sqrt{R^3/(GM)}.
-\]
-Per EOS barioniche realistiche considerate nel testo, una relazione empirica per rotazione rigida e'
-\[
-M_{\max}^{\rm rot}\simeq1.18\,M_{\max}^{\rm stat},
-\]
-che \emph{non} si applica universalmente alle stelle autolegate di materia strana.
-La rotazione differenziale puo' sostenere temporaneamente masse maggiori, ma il trasporto del momento angolare ne modifica la stabilita'.
-\par\medskip
-\footnotesize Haensel et al. (2006), \S6.12.4--6.12.5, eq.~(6.107). Coefficiente riferito ai modelli del 2006.
+\end{block}
 \end{frame}
 
 \begin{frame}[t]{Limite di rotazione (mass shedding)}
@@ -143,9 +79,9 @@ Bilanciando gravitazione e accelerazione centrifuga all'equatore:
 \]
 Segue un periodo minimo stimato
 \[
-P_{\min}\sim2\pi\sqrt{\frac{R^3}{GM}}.
+P_{\min}\sim2\pi\sqrt{\frac{R^3}{GM}}\sim2\pi\tau_{\rm dyn}.
 \]
-Con $M=1.4\,M_\odot$, $R=10\,$km, la stima newtoniana da circa $0.46\,$ms.
+Con $M=1.4\,M_\odot$, $R=10\,$km, la stima newtoniana d\'a circa $0.46\,$ms.
 \begin{itemize}
 \item Un calcolo relativistico di una stella rapidamente rotante modifica il coefficiente (deformazione, \emph{frame dragging}, EOS).
 \item Nane bianche di raggio terrestre non possono raggiungere normalmente periodi di rotazione di pochi millisecondi.
@@ -174,7 +110,703 @@ Con $M=1.4\,M_\odot$, $R=10\,$km, la stima newtoniana da circa $0.46\,$ms.
 \]
 \end{frame}
 
-\subsection{Timing e famiglie osservative}
+% Equilibrio relativistico: una sola derivazione, con entrambe le segnature.
+\begin{frame}[t]{Equilibrio rotante: metrica e convenzioni}\linkdest{rotationalequilibrium}
+\small\raggedright
+Fluido perfetto barotropico, stazionario e assialsimmetrico,
+in rotazione uniforme $\Omega$.
+$P$ \'e la pressione; $\varepsilon$ la densit\'a di energia totale. Definiamo
+\begin{align*}
+&\varpi\equiv Br\sin\theta=\sqrt{|g_{\varphi\varphi}|},\ C_{\rm asse}(r,\theta)=\int_0^{2\pi}Br\sin{\theta}d\phi=2\pi Br\sin{\theta}=2\pi\varpi:\\
+&|\tensor{g}{_{\phi\phi}}|=B^2r^2\sin^2\theta,\ dl=Br\sin{\theta}|d\phi|,\ B=\frac{C_{asse}}{2\pi r \sin{\theta}}
+\end{align*}
+B \'e il fattore di scale nella direzione azimutale, $\varpi$ converte un piccolo angolo azimutale in lunghezza propria dell'arco.
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.49\textwidth}
+\centering\textbf{Segnatura $(+---)$}
+\[
+\begin{aligned}
+ds^2={}&N^2c^2dt^2\\
+&-A^2(dr^2+r^2d\theta^2)\\
+&-\varpi^2(d\varphi-\omega\,dt)^2.
+\end{aligned}
+\]
+\(ds^2=c^2d\tau^2,\quad u_\mu u^\mu=c^2.\)
+\end{column}
+\begin{column}{.49\textwidth}
+\centering\textbf{Segnatura $(-+++)$}
+\[
+\begin{aligned}
+ds^2={}&-N^2c^2dt^2\\
+&+A^2(dr^2+r^2d\theta^2)\\
+&+\varpi^2(d\varphi-\omega\,dt)^2.
+\end{aligned}
+\]
+\(ds^2=-c^2d\tau^2,\quad u_\mu u^\mu=-c^2.\)
+\end{column}
+\end{columns}
+\smallskip
+Le funzioni $N,A,B,\omega$ dipendono da $(r,\theta)$; $N>0$ \'e il lapse
+e $\omega$ descrive il trascinamento dei riferimenti locali.
+Il fluido mantiene $r,\theta$ costanti e ha $d\varphi/dt=\Omega$:
+\[
+u^\mu=u^t(1,0,0,\Omega),\qquad u^t=\frac{dt}{d\tau},
+\qquad t\ \text{in secondi}.
+\]
+\end{frame}
+
+\begin{frame}[t]{ZAMO, lapse e potenziale $\Phi$}
+\small\raggedright
+Gli \textbf{ZAMO} (\emph{Zero Angular Momentum Observers}) mantengono
+$r,\theta$ costanti e hanno momento angolare assiale nullo.
+La loro quadrivelocit\'a $n^\mu$ soddisfa $n_\varphi=0$:
+\begin{columns}[T]
+    \begin{column}{0.45\textwidth}
+\[
+0=g_{t\varphi}n^t+g_{\varphi\varphi}n^\varphi
+\quad\Longrightarrow\quad
+\boxed{\frac{d\varphi}{dt}
+=-\frac{g_{t\varphi}}{g_{\varphi\varphi}}=\omega}.
+\]
+    \end{column}
+    \begin{column}{0.55\textwidth}
+        $n^t=\TDy{\tau}{t}$, $n^{\phi}=\TDy{\tau}{\phi}$: $\frac{n^{\phi}}{n^t}=\frac{d\phi/d\tau}{dt/d\tau}=\TDy{t}{\phi}$. 
+    \end{column}
+\end{columns}
+
+Quindi momento angolare nullo non significa $d\varphi/dt=0$:
+lo spaziotempo trascina anche questi osservatori.
+\smallskip
+
+Il \textbf{lapse} $N$ converte il tempo coordinato nel tempo proprio ZAMO.
+Lungo $d\varphi=\omega\,dt$ i termini spaziali della metrica si annullano:
+\[
+\boxed{d\tau_{\rm Z}=N\,dt},\qquad
+n^\mu=\frac1N(1,0,0,\omega),\qquad
+N=\frac1{c\sqrt{|g^{tt}|}}.
+\]
+Il \textbf{potenziale adimensionale} $\Phi$ \'e definito da
+\[
+\boxed{\Phi\equiv\ln N},\qquad
+\partial_i\Phi=\frac{\partial_iN}{N},\quad i=r,\theta.
+\]
+Il logaritmo permette di integrare $\partial_iN/N$;
+le formule valgono nelle due segnature.
+\end{frame}
+
+% Sostituisce il frame "ZAMO, lapse e potenziale Phi".
+% Coordinate (t,r,theta,varphi), con t in secondi.
+% Le formule valgono per entrambe le segnature metriche.
+
+\begin{frame}[t]{ZAMO (I): significato di $\Omega$ e $\omega$}
+\small\raggedright
+
+Usiamo coordinate non rotanti all'infinito, con tempo normalizzato da
+\[
+N\longrightarrow1,\qquad \omega\longrightarrow0
+\qquad (r\longrightarrow\infty).
+\]
+
+\textbf{$\Omega$: rotazione del fluido.}
+Seguendo un elemento di materia,
+\[
+\boxed{\Omega\equiv
+\left(\frac{d\varphi}{dt}\right)_{\rm fluido}
+=\frac{u^\varphi}{u^t}},
+\qquad
+u^\mu=u^t(1,0,0,\Omega).
+\]
+La rotazione uniforme significa $\Omega=\text{costante}$
+in tutta la stella.
+
+\medskip
+\textbf{$\omega$: funzione della geometria.}
+Nella metrica compare la combinazione $d\varphi-\omega\,dt$, con
+\[
+\boxed{\omega(r,\theta)\equiv
+-\frac{g_{t\varphi}}{g_{\varphi\varphi}}}.
+\]
+Descrive il trascinamento dei riferimenti locali
+nelle coordinate adottate.
+
+\medskip
+Anche quando $\Omega$ \'e uniforme,
+$\omega$ dipende generalmente dalla posizione.
+Cambiando segnatura, entrambi i coefficienti del rapporto
+cambiano segno: $\omega$ rimane invariata.
+
+\end{frame}
+
+
+\begin{frame}[t]{ZAMO (II): momento angolare nullo}
+\small\raggedright
+
+Gli \textbf{ZAMO} mantengono $r,\theta$ costanti
+e hanno momento angolare assiale nullo:
+\[
+\boxed{n_\varphi=0}.
+\]
+La condizione riguarda la componente \emph{covariante}.
+Per le componenti contravarianti,
+\[
+n^t=\frac{dt}{d\tau_{\rm Z}},\qquad
+n^\varphi=\frac{d\varphi}{d\tau_{\rm Z}},
+\qquad
+\frac{n^\varphi}{n^t}
+=\left(\frac{d\varphi}{dt}\right)_{\rm Z}.
+\]
+
+Abbassando l'indice e usando la definizione metrica di $\omega$,
+\[
+\begin{aligned}
+0=n_\varphi
+&=g_{t\varphi}n^t+g_{\varphi\varphi}n^\varphi\\
+&=g_{\varphi\varphi}n^t
+\left(\frac{n^\varphi}{n^t}-\omega\right).
+\end{aligned}
+\]
+Pertanto,
+\[
+\boxed{\left(\frac{d\varphi}{dt}\right)_{\rm Z}=\omega}.
+\]
+
+Questa uguaglianza \'e una \textbf{conseguenza della condizione ZAMO}.
+Momento angolare nullo non impone immobilit\'a nelle coordinate.
+
+\medskip
+Il confronto con il fluido coinvolge quindi
+$\Omega-\omega$: una differenza di velocit\'a angolari
+riferite allo stesso tempo coordinato.
+
+\end{frame}
+
+
+\begin{frame}[t]{ZAMO (III): il lapse $N$}
+\small\raggedright
+
+Il \textbf{lapse} $N$ collega il tempo coordinato $t$
+al tempo proprio dell'orologio ZAMO.
+
+Lungo la traiettoria dello ZAMO,
+\[
+dr=d\theta=0,\qquad d\varphi=\omega\,dt.
+\]
+Si annulla dunque anche il termine
+$\varpi^2(d\varphi-\omega\,dt)^2$.
+La metrica diventa, nelle due segnature,
+\[
+ds^2=\pm N^2c^2dt^2
+=\pm c^2d\tau_{\rm Z}^2.
+\]
+Con $N>0$ e orientazione verso il futuro,
+\[
+\boxed{d\tau_{\rm Z}=N\,dt},
+\qquad
+\boxed{n^\mu=\frac1N(1,0,0,\omega)}.
+\]
+
+Poich\'e la coordinata temporale \'e $t$, misurata in secondi,
+\[
+\boxed{N=\frac1{c\sqrt{|g^{tt}|}}}.
+\]
+
+$N$ \'e adimensionale: per esempio, se $N=0.8$,
+a $dt=1\,\mathrm{s}$ corrisponde
+$d\tau_{\rm Z}=0.8\,\mathrm{s}$.
+
+\medskip
+Per l'orologio del fluido interviene anche la dilatazione
+cinematica dovuta al moto rispetto allo ZAMO.
+
+\end{frame}
+
+
+\begin{frame}[t]{ZAMO (IV): il potenziale $\Phi=\ln N$}
+\small\raggedright
+
+Definiamo il \textbf{potenziale adimensionale}
+\[
+\boxed{\Phi\equiv\ln N},
+\qquad N=e^\Phi.
+\]
+Non aggiungiamo una nuova funzione indipendente:
+riscriviamo il lapse in forma logaritmica.
+In particolare,
+\[
+\boxed{\partial_i\Phi=\frac{\partial_iN}{N}},
+\qquad i=r,\theta.
+\]
+
+\textbf{Legame con il limite newtoniano.}
+Indicando con $\Phi_{\rm N}$ il potenziale gravitazionale
+newtoniano, nel limite di campo debole
+\[
+N\simeq1+\frac{\Phi_{\rm N}}{c^2}
+\quad\Longrightarrow\quad
+\boxed{\Phi=\ln N\simeq\frac{\Phi_{\rm N}}{c^2}}.
+\]
+
+\textbf{Significato del gradiente.}
+L'accelerazione propria necessaria a seguire gli ZAMO
+ha rappresentazione spaziale
+\[
+\boxed{\boldsymbol a_{\rm Z}
+=c^2\boldsymbol\nabla_{(3)}\Phi}.
+\]
+Qui $\boldsymbol\nabla_{(3)}$ usa la metrica spaziale positiva.
+Gli ZAMO sono quindi generalmente accelerati:
+mantenerli a $r,\theta$ costanti richiede un'accelerazione propria.
+
+\end{frame}
+
+\begin{frame}[t]{Velocit\'a locale e tempo proprio}
+\small\raggedright
+Rispetto agli ZAMO, lo spostamento locale azimutale del fluido \'e
+\[
+d\ell=\varpi(d\varphi-\omega\,dt)
+     =\varpi(\Omega-\omega)dt,
+\qquad
+\boxed{U=\frac{d\ell}{d\tau_{\rm Z}}
+       =\frac{\varpi(\Omega-\omega)}{N}}.
+\]
+Per una traiettoria temporale $ds^2=c^2d\tau^2$
+($ds^2=-c^2d\tau^2$ nella segnatura $-+++$).
+Il segno cambia anche nella metrica: valutandola lungo il moto si ottiene, in entrambi i casi,
+\[
+c^2d\tau^2
+=\bigl[N^2c^2-\varpi^2(\Omega-\omega)^2\bigr]dt^2
+=N^2c^2\left(1-\frac{U^2}{c^2}\right)dt^2.
+\]
+Prendendo la radice positiva, per un moto diretto verso il futuro:
+\[
+\frac{d\tau}{dt}=N\sqrt{1-\frac{U^2}{c^2}}
+=\frac{N}{\Gamma},
+\qquad
+\boxed{\Gamma=\frac1{\sqrt{1-U^2/c^2}},\quad u^t=\frac{\Gamma}{N}}.
+\]
+$\Omega$ e' una velocita' angolare \emph{coordinata}; $U$ e' la velocita' fisica locale.
+Le formule per $U,\Gamma,u^t$ sono uguali nelle due segnature.
+\end{frame}
+
+
+\begin{frame}[t]{Conservazione e proiezione di Eulero}
+\small\raggedright
+In entrambe le convenzioni definiamo
+\[
+\nabla_\nu T^{\mu\nu}=0,\qquad
+a_\alpha=u^\nu\nabla_\nu u_\alpha.
+\]
+Il proiettore $\Delta_\alpha{}^\beta$ soddisfa
+$\Delta_\alpha{}^\beta u_\beta=0$; proiettando la conservazione si eliminano
+i termini paralleli a $u_\alpha$ e si ottiene l'ultima riga:
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.49\textwidth}
+\centering\textbf{$(+---)$}
+\[
+\begin{aligned}
+T^{\mu\nu}&=\frac{\varepsilon+P}{c^2}u^\mu u^\nu-Pg^{\mu\nu},\\[.6ex]
+\Delta_\alpha{}^\beta&=\delta_\alpha{}^\beta-\frac{u_\alpha u^\beta}{c^2},\\[.6ex]
+\frac{\varepsilon+P}{c^2}a_\alpha
+&=+\Delta_\alpha{}^\beta\partial_\beta P.
+\end{aligned}
+\]
+\end{column}
+\begin{column}{.49\textwidth}
+\centering\textbf{$(-+++)$}
+\[
+\begin{aligned}
+T^{\mu\nu}&=\frac{\varepsilon+P}{c^2}u^\mu u^\nu+Pg^{\mu\nu},\\[.6ex]
+\Delta_\alpha{}^\beta&=\delta_\alpha{}^\beta+\frac{u_\alpha u^\beta}{c^2},\\[.6ex]
+\frac{\varepsilon+P}{c^2}a_\alpha
+&=-\Delta_\alpha{}^\beta\partial_\beta P.
+\end{aligned}
+\]
+\end{column}
+\end{columns}
+\par\medskip
+\end{frame}
+
+
+\begin{frame}[t]{Eulero nel piano meridionale}
+\small\raggedright
+La pressione dipende solo da $(r,\theta)$. Stazionariet\'a e assialsimmetria danno
+\[
+u^\beta\partial_\beta P=u^t(\partial_t+\Omega\partial_\varphi)P=0.
+\]
+Quindi $\Delta_i{}^\beta\partial_\beta P=\partial_iP$, per $i=r,\theta$:
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.49\textwidth}
+\[
+\boxed{\frac{\partial_iP}{\varepsilon+P}=+\frac{a_i}{c^2}}
+\qquad(+---).
+\]
+\end{column}
+\begin{column}{.49\textwidth}
+\[
+\boxed{\frac{\partial_iP}{\varepsilon+P}=-\frac{a_i}{c^2}}
+\qquad(-+++).
+\]
+\end{column}
+\end{columns}
+\par\smallskip
+La componente \emph{covariante} $a_i$ cambia segno passando da una convenzione all'altra.
+
+
+\medskip
+Il bilancio della pressione riguarda le due direzioni $r,\theta$:
+la struttura rotante richiede un problema bidimensionale.
+La diversa convenzione per $a_i$ lascia invariato il bilancio fisico.
+\end{frame}
+
+
+\begin{frame}[t]{Accelerazione del fluido: derivazione}
+\small\raggedright
+Il moto circolare e la metrica scelta danno $u^r=u^\theta=u_r=u_\theta=0$.
+Per $i=r,\theta$, in entrambe le segnature,
+\[
+a_i=u^\nu\partial_\nu u_i
+-\Gamma^\lambda{}_{\nu i}u_\lambda u^\nu
+=-\frac12u^\alpha u^\beta\partial_i g_{\alpha\beta}.
+\]
+Qui $\alpha,\beta$ possono essere solo $t,\varphi$ e la metrica non dipende da queste coordinate.
+Introduciamo una quantita' \emph{positiva} comune alle due convenzioni:
+\[
+\mathcal Q\equiv N^2c^2-\varpi^2(\Omega-\omega)^2
+=\frac{N^2c^2}{\Gamma^2}>0.
+\]
+\end{frame}
+
+
+\begin{frame}[t]{Accelerazione: confronto fra segnature}
+\small\raggedright
+Per $\partial_i\Omega=0$ e usando $(u^t)^2\mathcal Q=c^2$:
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.49\textwidth}
+\centering\textbf{$(+---)$}
+\[
+g_{tt}+2\Omega g_{t\varphi}+\Omega^2g_{\varphi\varphi}=+\mathcal Q.
+\]
+\[
+\begin{aligned}
+a_i&=-\tfrac12(u^t)^2\partial_i\mathcal Q,\\[.5ex]
+\frac{a_i}{c^2}&=-\frac12\partial_i\ln\left(\frac{\mathcal Q}{c^2}\right)\\
+&=-\partial_i\Phi+\partial_i\ln\Gamma.
+\end{aligned}
+\]
+\end{column}
+\begin{column}{.49\textwidth}
+\centering\textbf{$(-+++)$}
+\[
+g_{tt}+2\Omega g_{t\varphi}+\Omega^2g_{\varphi\varphi}=-\mathcal Q.
+\]
+\[
+\begin{aligned}
+a_i&=+\tfrac12(u^t)^2\partial_i\mathcal Q,\\[.5ex]
+\frac{a_i}{c^2}&=+\frac12\partial_i\ln\left(\frac{\mathcal Q}{c^2}\right)\\
+&=+\partial_i\Phi-\partial_i\ln\Gamma.
+\end{aligned}
+\]
+\end{column}
+\end{columns}
+\par\smallskip
+Sotto $g_{\mu\nu}\mapsto-g_{\mu\nu}$, la connessione e $a^\mu$ restano uguali,
+mentre $a_i$ cambia segno.
+Con $\Omega(r,\theta)$ compaiono anche termini contenenti $\partial_i\Omega$.
+\end{frame}
+
+
+\begin{frame}[t]{Pseudoentalpia e primo integrale}
+\small\raggedright
+La barotropia $\varepsilon=\varepsilon(P)$ consente di definire
+\[
+H(P)\equiv\int_0^P\frac{dP'}{\varepsilon(P')+P'},
+\qquad
+\partial_iH=\frac{\partial_iP}{\varepsilon+P}.
+\]
+I segni dell'equazione di Eulero e di $a_i$ si compensano:
+\[
+\begin{aligned}
+(+---):\qquad\partial_iH&=+\frac{a_i}{c^2}
+=-\partial_i\Phi+\partial_i\ln\Gamma,\\[.5ex]
+(-+++):\qquad\partial_iH&=-\frac{a_i}{c^2}
+=-\partial_i\Phi+\partial_i\ln\Gamma.
+\end{aligned}
+\]
+Quindi, per $i=r,\theta$,
+\[
+\partial_i(H+\Phi-\ln\Gamma)=0
+\quad\Longrightarrow\quad
+\boxed{H+\Phi-\ln\Gamma=C},
+\]
+Il valore e' costante in tutta la regione fluida connessa.
+Alla superficie $P=0$, dunque $H=0$ e $\Phi-\ln\Gamma=C$.
+Le funzioni metriche e $H$ dipendono da $(r,\theta)$: l'integrale va risolto
+insieme alle equazioni di Einstein in due dimensioni.
+\par\smallskip
+\footnotesize Haensel et al., eqs.~(6.95)--(6.102).
+Gourgoulhon, \href{https://arxiv.org/abs/1003.5015}{arXiv:1003.5015}, \S3.4.3,
+eq.~(3.98); entrambe le segnature, con $c$ esplicito.
+\end{frame}
+
+
+\begin{frame}[t]{Limiti newtoniano e non rotante}
+\small\raggedright
+Per campo debole, $U\ll c$, $P\ll\rho c^2$ e $\varepsilon\simeq\rho c^2$
+($\rho$ e' la densita' di massa):
+\[
+\Phi=\ln N\simeq\frac{\phi_{\rm N}}{c^2},\qquad
+\ln\Gamma=-\frac12\ln\left(1-\frac{U^2}{c^2}\right)
+\simeq\frac{U^2}{2c^2},
+\]
+\[
+c^2H\simeq\int_0^P\frac{dP'}{\rho(P')}\equiv h_{\rm N},
+\qquad U\simeq\Omega\varpi.
+\]
+Moltiplicando il primo integrale per $c^2$ si ritrova l'equilibrio classico:
+\[
+\boxed{h_{\rm N}+\phi_{\rm N}-\frac12\Omega^2\varpi^2=C_{\rm N}},
+\qquad
+\frac{\boldsymbol\nabla P}{\rho}
+=-\boldsymbol\nabla\phi_{\rm N}
++\Omega^2\varpi\,\hat{\boldsymbol e}_{\varpi}.
+\]
+Il termine $-\Omega^2\varpi^2/2$ e' il potenziale centrifugo.
+Nel limite \emph{non rotante}, anche in campo forte, $\Omega=\omega=0$ e $\Gamma=1$:
+\[
+H+\Phi=C
+\quad\Longrightarrow\quad
+\frac{dP}{dr}=-(\varepsilon+P)\frac{d\Phi}{dr}.
+\]
+In simmetria sferica, passando al raggio areale e usando le equazioni di Einstein,
+si recupera la TOV.
+Il primo integrale rotante non richiede l'approssimazione di rotazione lenta.
+\end{frame}
+
+
+% Struttura delle configurazioni rotanti e limiti di stabilita.
+
+
+\begin{frame}[t]{Rotazione e deformazione centrifuga}
+\begin{columns}[T,onlytextwidth]
+\column{0.53\textwidth}
+\centering
+\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,
+width=0.98\linewidth,height=0.72\textheight]{haensel07/NS_DeltaR-oblat_fHz}
+\label{fig:haensel07/NS_DeltaR-oblat_fHz}
+\column{0.45\textwidth}
+\small
+Al crescere della frequenza:
+\begin{itemize}
+\item il raggio equatoriale aumenta;
+\item il raggio polare diminuisce;
+\item la densit\'a centrale tende a diminuire a massa barionica fissata.
+\end{itemize}
+La deformazione \'e $O(\Omega^2)$ nel limite lento, ma diventa grande vicino a $\Omega_K$.
+\end{columns}
+\footnotesize Haensel et al. (2006), Fig.~6.19, \S6.12.2.
+\end{frame}
+
+
+\begin{frame}[t]{Stabilit\'a e mass shedding}
+\small\raggedright
+EOS SLy: $M$ \'e la massa gravitazionale e
+$R_{\rm eq}=C_{\rm eq}/(2\pi)$ il raggio circonferenziale equatoriale.
+\begin{columns}[T,onlytextwidth]
+\column{0.52\textwidth}
+\centering
+\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,
+width=0.98\linewidth,height=0.64\textheight]{haensel07/M_NS-R_eq}
+\label{fig:haensel07_M_NS-R_eq}
+\column{0.46\textwidth}
+\footnotesize\raggedright
+\begin{itemize}
+\item $\mathbf S$: stelle statiche ($\Omega=0$);
+$S_2$ \'e il massimo di massa statico.
+\item $\mathbf K$: limite di Keplero ($\Omega=\Omega_K$).
+La materia equatoriale raggiunge la velocit\'a orbitale:
+oltre il limite inizia il \emph{mass shedding}.
+\item $\mathbf{S_2K_3}$: limite assialsimmetrico
+ad alta densit\'a adottato nel diagramma.
+\item $K_3$: massimo di massa rotante del diagramma;
+non va identificato con il massimo di $\Omega$.
+\end{itemize}
+\end{columns}
+\smallskip
+\footnotesize
+Lungo la curva $1.56\,\mathrm{ms}$, a $\Omega$ costante,
+$\rho_c$ cresce verso l'alto.
+\par\smallskip
+Haensel et al. (2006/2007), Fig.~6.18, pp.~336--338.
+\end{frame}
+
+\begin{frame}[t]{Stabilit\'a e mass shedding}
+\vspace*{3mm}
+\small\raggedright
+Fig.~6.18, EOS SLy: $M$ \'e la massa gravitazionale e
+$R_{\rm eq}=C_{\rm eq}/(2\pi)$ il raggio circonferenziale equatoriale.
+\par\smallskip
+\begin{columns}[T,onlytextwidth]
+\column{0.50\textwidth}
+\centering
+\includegraphics[width=0.98\linewidth,height=0.65\textheight,keepaspectratio]{haensel07/M_NS-R_eq}
+\label{fig:haensel07_M_NS-R_eq}
+\column{0.48\textwidth}
+\footnotesize\raggedright
+\begin{itemize}
+\item $\mathbf S$: stelle statiche, $\Omega=0$;
+$S_2$ \'e il massimo di massa statico.
+\item $\mathbf K$: limite di Keplero. La materia equatoriale
+raggiunge la velocit\'a di un'orbita circolare libera:
+\[
+\boxed{\Omega=\Omega_K}\qquad\text{(mass shedding).}
+\]
+\item $\mathbf{S_2K_3}$: limite ad alta densit\'a del diagramma,
+costruito con i massimi di $M$ a $J$ fissato:
+\[
+\boxed{\left(\frac{\partial M}{\partial\rho_c}\right)_J=0}.
+\]
+\item $K_3$: massimo di $M$ tra i modelli ammessi dal diagramma;
+qui si incontrano i due limiti. Non \'e il massimo di $\Omega$.
+\end{itemize}
+\end{columns}
+\par\smallskip
+\footnotesize
+La curva $1.56\,\mathrm{ms}$ \'e a $\Omega$ costante e $\rho_c$ cresce verso l'alto:
+\textbf{non \'e una sequenza a $J$ costante}.
+\par\smallskip
+Haensel, Potekhin e Yakovlev, \emph{Neutron Stars 1}, Fig.~6.18,
+\S6.12.2, pp.~336--338, eq.~(6.103).
+\end{frame}
+
+\begin{frame}[t]{Instabilit\'a assialsimmetrica: criterio a $J$ fissato}
+\vspace*{3mm}
+\small\raggedright
+Confrontiamo stelle fredde, barotropiche, in rotazione uniforme,
+con la stessa EOS. $\rho_c$ \'e la densit\'a centrale e $J$ il momento angolare totale.
+Fra equilibri vicini vale la \textbf{prima legge}
+\[
+\boxed{c^2\,dM=\Omega\,dJ+\mu_\infty\,dN_B},
+\qquad M_b=m_bN_B.
+\]
+$N_B$ \'e il numero barionico, $m_b$ una massa barionica di riferimento
+e $\mu_\infty>0$ il potenziale chimico globale per barione, riferito all'infinito.
+\par\smallskip
+Lungo la sequenza di confronto $M(\rho_c,J)$, con $J$ costante,
+\[
+c^2\left(\frac{\partial M}{\partial\rho_c}\right)_J
+=\mu_\infty\left(\frac{\partial N_B}{\partial\rho_c}\right)_J.
+\]
+Al primo massimo di $M$ (\emph{turning point}) entrambe le derivate si annullano:
+la variazione tangente conserva $J$ e $N_B$ al primo ordine.
+\[
+\boxed{\left(\frac{\partial M}{\partial\rho_c}\right)_J=0}
+\quad\Longrightarrow\quad
+\left(\frac{\partial N_B}{\partial\rho_c}\right)_J=0.
+\]
+Sul ramo ordinario, oltre questo massimo,
+$\left(\partial M/\partial\rho_c\right)_J<0$:
+si ha un criterio sufficiente di \textbf{instabilit\'a secolare}.
+Il luogo dei turning point, al variare di $J$, forma $S_2K_3$ nella figura.
+\par\smallskip
+\footnotesize
+$\Omega$ \'e uniforme \emph{dentro ogni stella}, ma pu\'o variare fra modelli a $J$ fissato.
+Relazioni valide per entrambe le segnature.
+Friedman, Ipser e Sorkin (1988), \emph{ApJ} 325, 722--724, \S2.
+\end{frame}
+
+\begin{frame}[t]{Instabilit\'a: significato del modo quasi radiale}
+\vspace*{3mm}
+\small\raggedright
+\textbf{Assialsimmetrico} significa nessuna dipendenza azimutale ($m=0$).
+Il modo fondamentale quasi radiale comprime ed espande la stella,
+pur mantenendo la simmetria attorno all'asse:
+\[
+\delta\rho(r,\theta,\varphi,t)=\widehat{\delta\rho}(r,\theta)\,q(t),
+\qquad \partial_\varphi\delta\rho=0,
+\qquad \ddot q+\sigma_F^2q=0.
+\]
+Qui $\sigma_F$ \'e la frequenza del modo, distinta da $\Omega$ e dal
+\emph{frame dragging} $\omega$.
+\[
+\begin{aligned}
+\sigma_F^2>0&:\quad q\text{ oscilla; il modo ha una risposta di richiamo},\\
+\sigma_F^2=0&:\quad \text{modo neutro; soglia dell'instabilit\'a dinamica},\\
+\sigma_F^2<0&:\quad q\propto e^{\sqrt{-\sigma_F^2}\,t};\quad
+\text{la perturbazione cresce}.
+\end{aligned}
+\]
+Ad alta compattezza il sostegno pu\'o non ripristinare l'equilibrio dopo
+una compressione: anche energia interna e pressione gravitano.
+La risposta locale $dP/d\varepsilon>0$ non garantisce la stabilit\'a globale.
+\par\smallskip
+\begin{itemize}
+\item Il \textbf{turning point} riguarda la stabilit\'a secolare:
+processi dissipativi possono ridistribuire il momento angolare interno.
+\item La soglia \textbf{dinamica}, $\sigma_F^2=0$, si ottiene dalle perturbazioni
+senza richiedere dissipazione. Per stelle rotanti, in generale non coincide
+con $\left(\partial M/\partial\rho_c\right)_J=0$.
+\end{itemize}
+Perci\'o $\left(\partial M/\partial\rho_c\right)_J>0$ da solo non assicura stabilit\'a dinamica.
+\par\smallskip
+\footnotesize
+$S_2K_3$ \'e il limite adottato nella Fig.~6.18, non una curva dinamica esatta.
+Friedman et al. (1988); Takami, Rezzolla e Yoshida (2011),
+\emph{MNRAS} 416, L1--L5, arXiv:1105.3069.
+\end{frame}
+
+\begin{frame}[t]{Stelle supramassicce: leggere la figura 6.18}
+\vspace*{3mm}
+\small\raggedright
+Senza scambio di materia, l'evoluzione avviene a $M_b=m_bN_B$ quasi costante.
+$M_{b,\max}^{\rm stat}$ \'e la massa \emph{barionica} del modello $S_2$.
+\par\smallskip
+\begin{columns}[T,onlytextwidth]
+\column{0.43\textwidth}
+\centering
+\includegraphics[width=0.99\linewidth,height=0.61\textheight,keepaspectratio]{haensel07/M_NS-R_eq}
+\column{0.55\textwidth}
+\footnotesize\raggedright
+\begin{itemize}
+\item $M_b<M_{b,\max}^{\rm stat}$: sequenza normale, con un estremo statico.
+Il tratteggio $K_{1.4}\to S_{1.4}$ termina a $M=1.4\,M_\odot$, $\Omega=0$.
+\item $M_b=M_{b,\max}^{\rm stat}$: la sequenza limite collega $K_2$ a $S_2$.
+\item $M_b>M_{b,\max}^{\rm stat}$: stelle \textbf{supramassicce},
+regione a tratteggio obliquo $S_2K_2K_3$.
+Non hanno un estremo statico: richiedono sostegno rotazionale.
+\end{itemize}
+Per una supramassiccia, nel criterio del diagramma si raggiunge $S_2K_3$
+a $J=J_{\min}(M_b)>0$. L'equivalente turning point a $M_b$ fissata \'e
+un minimo di $J$:
+\[
+\boxed{\left(\frac{\partial J}{\partial\rho_c}\right)_{M_b}=0}.
+\]
+Senza un altro equilibrio stabile accessibile, segue il collasso.
+\end{columns}
+\par\smallskip
+\small
+La prima legge lungo l'evoluzione d\'a
+\[
+dN_B=0\quad\Longrightarrow\quad c^2\,dM=\Omega\,dJ<0
+\qquad(dJ<0,\ \Omega>0).
+\]
+\footnotesize
+$\rho_c$ pu\'o aumentare mentre $M$ diminuisce: si perde sostegno rotazionale.
+Haensel et al., Fig.~6.18, pp.~337--338. Il $J_{\min}$ indicato usa il limite secolare del diagramma.
+\end{frame}
+
+\begin{frame}[t]{Massa massima e rotazione differenziale}
+\small\raggedright
+Per EOS barioniche realistiche considerate nel testo, una relazione empirica per rotazione rigida \'e
+\[
+M_{\max}^{\rm rot}\simeq1.18\,M_{\max}^{\rm stat},
+\]
+che \emph{non} si applica universalmente alle stelle autolegate di materia strana.
+La rotazione differenziale pu\'o sostenere temporaneamente masse maggiori, ma il trasporto del momento angolare ne modifica la stabilit\'a.
+\par\medskip
+\footnotesize Haensel et al. (2006), \S6.12.4--6.12.5, eq.~(6.107). Coefficiente riferito ai modelli del 2006.
+\end{frame}
+
+\subsection{Timing e famiglie osservative}\linkdest{Pdot}
 
 \begin{frame}[t]{Osservabili fondamentali del timing}
 \small
@@ -190,6 +822,201 @@ Con $M=1.4\,M_\odot$, $R=10\,$km, la stima newtoniana da circa $0.46\,$ms.
 \]
 \end{frame}
 
+\begin{frame}[t]{Timing: dal profilo al tempo di arrivo}
+\vspace*{3mm}
+\small\raggedright
+Il \textbf{TOA} (\emph{Time of Arrival}) associa un istante a una fase
+di riferimento del profilo pulsato. Spesso si ricava da molti impulsi:
+\begin{enumerate}
+\item Un modello preliminare assegna una fase a ogni campione;
+il \emph{folding} sovrappone le rotazioni e costruisce il profilo medio.
+\item Si confronta il profilo osservato con un \emph{template},
+che fissa una fase fiduciale convenzionale.
+\item Si stima lo sfasamento e lo si converte in uno spostamento temporale.
+\end{enumerate}
+Un modello semplice del confronto \'e
+\[
+s(\phi)=a\,s_{\rm ref}(\phi-\delta\phi)+b+\eta(\phi),
+\qquad 0\leq\phi<2\pi.
+\]
+$a$ scala l'ampiezza, $b$ \'e il fondo e $\eta$ il rumore.
+Il fit, o la correlazione con il template, determina $\delta\phi$.
+Per uno scarto piccolo rispetto alla scala di evoluzione del periodo,
+\[
+\boxed{\delta t=\frac{\delta\phi}{\Omega}
+=\frac{P\,\delta\phi}{2\pi}},
+\qquad
+\sigma_{\rm TOA}\simeq\frac{P}{2\pi}\sigma_{\delta\phi}.
+\]
+Il TOA \'e riferito a una fase del profilo, non necessariamente al suo massimo.
+La precisione dipende anche dalla forma e dalla stabilit\'a del profilo;
+un template inadeguato pu\'o introdurre uno scarto sistematico.
+\par\smallskip
+\footnotesize
+Lommen e Demorest (2013), \emph{Class. Quantum Grav.} 30, 224001,
+\S\S2--3, \href{https://arxiv.org/abs/1309.1767}{arXiv:1309.1767}.
+\end{frame}
+
+\begin{frame}[t]{Timing: orologi, baricentro e propagazione}
+\vspace*{3mm}
+\small\raggedright
+$t_{\rm obs}$ \'e il timestamp dell'osservatorio;
+$t_{\rm SSB}$ \'e un tempo coordinato riferito al baricentro del Sistema solare.
+Le scale temporali e i parametri del modello devono essere coerenti.
+Per una pulsar isolata, uno schema delle correzioni \'e
+\[
+\boxed{t_{\rm SSB}=t_{\rm obs}+\Delta_{\rm clock}
++\frac{\boldsymbol r_{\rm obs}\cdot\widehat{\boldsymbol n}}{c}
++\Delta_{\rm rel}-\Delta_{\rm DM}+\cdots}.
+\]
+Qui $\boldsymbol r_{\rm obs}$ va dal baricentro all'osservatorio e
+$\widehat{\boldsymbol n}$ punta verso la pulsar.
+\begin{itemize}
+\item \textbf{Orologi:} $\Delta_{\rm clock}$ corregge gli scarti strumentali
+e collega il timestamp alle scale atomiche di riferimento.
+\item \textbf{Geometria (R\o mer):} il termine
+$\boldsymbol r_{\rm obs}\cdot\widehat{\boldsymbol n}/c$
+riporta l'arrivo al baricentro, eliminando il contributo geometrico
+del moto dell'osservatorio.
+\item \textbf{Relativit\'a:} $\Delta_{\rm rel}$ raccoglie, con i rispettivi segni,
+la conversione relativistica del tempo e gli effetti di propagazione
+nel campo gravitazionale del Sistema solare (Einstein e Shapiro).
+\item \textbf{Plasma:} il ritardo positivo
+$\Delta_{\rm DM}\propto\mathrm{DM}/\nu_{\rm rad}^{2}$ si sottrae
+per riferire il TOA al limite di frequenza radio infinita.
+\end{itemize}
+In una \textbf{binaria} si modellano inoltre geometria orbitale,
+tempi propri e propagazione nel campo della compagna.
+$t_{\rm SSB}$ non \'e direttamente il tempo proprio della pulsar.
+\par\smallskip
+\footnotesize
+$\nu_{\rm rad}$ \'e la frequenza radio, distinta da $\nu=1/P$.
+Edwards, Hobbs e Manchester (2006), \emph{MNRAS} 372, 1549--1574,
+\href{https://arxiv.org/abs/astro-ph/0607664}{arXiv:astro-ph/0607664}.
+\end{frame}
+
+\begin{frame}[t]{Timing: fase e conteggio delle rotazioni}
+\vspace*{3mm}
+\small\raggedright
+Nel tempo $t$ adottato dal modello, dopo le correzioni dei ritardi,
+la fase rotazionale in \textbf{radianti} \'e l'integrale della frequenza angolare.
+Con $\Delta t=t-t_0$,
+\begin{align*}
+\phi(t)&=\phi_0+\int_{t_0}^{t}\Omega(t')\,dt'\\
+&=\phi_0+2\pi\left[
+\nu_0\Delta t+\frac12\dot\nu_0\Delta t^2
++\frac16\ddot\nu_0\Delta t^3+\cdots\right].
+\end{align*}
+I coefficienti sono valutati all'epoca $t_0$; in particolare
+\[
+\nu=\frac1{2\pi}\frac{d\phi}{dt}=\frac1P,
+\qquad \Omega=2\pi\nu,
+\qquad \dot\nu=-\frac{\dot P}{P^2},
+\qquad \dot\Omega=-2\pi\frac{\dot P}{P^2}.
+\]
+Una soluzione \textbf{coerente in fase} assegna ai TOA la stessa fase fiduciale,
+con un conteggio intero delle rotazioni:
+\[
+\boxed{\phi(t_k)\simeq\phi_{\rm fid}+2\pi k},
+\qquad k\in\mathbb Z.
+\]
+Fra due osservazioni si deve mantenere il numero corretto di giri,
+anche quando non si osserva la pulsar.
+Una piccola differenza in $\nu$ accumula uno scarto di fase proporzionale
+a $\Delta t$; una differenza in $\dot\nu$ lo accumula come $\Delta t^2$.
+\par\smallskip
+L'espansione descrive localmente i dati. Per usare $\ddot\nu$ in
+$n_{\rm br}=\nu\ddot\nu/\dot\nu^2$ e interpretare fisicamente l'indice
+di frenamento, occorre separare l'evoluzione regolare dal rumore e dai possibili glitch.
+\par\smallskip
+\footnotesize
+Hobbs, Edwards e Manchester (2006), \emph{MNRAS} 369, 655--672,
+\href{https://arxiv.org/abs/astro-ph/0603381}{arXiv:astro-ph/0603381}.
+\end{frame}
+
+\begin{frame}[t]{Timing: residui e diagnosi del modello}
+\vspace*{3mm}
+\small\raggedright
+Confrontando tempi nella stessa convenzione, definiamo
+\[
+\boxed{r_k=t_k-t_k^{\rm mod}}:
+\qquad r_k>0\ \Longleftrightarrow\ \text{arrivo pi\'u tardi del previsto}.
+\]
+Il modello predice $\phi_{\rm mod}(t_k^{\rm mod})=\phi_{\rm fid}+2\pi k$.
+Espandendo attorno a $t_k^{\rm mod}$,
+\[
+\delta\phi_k\equiv\phi_{\rm mod}(t_k)-(\phi_{\rm fid}+2\pi k)
+\simeq\Omega_k r_k
+\quad\Longrightarrow\quad
+\boxed{r_k\simeq\frac{\delta\phi_k}{\Omega_k}}.
+\]
+Prima di correggere i parametri, alcuni andamenti ideali sono diagnostici:
+\par\smallskip
+{\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{0.36\textwidth}p{0.60\textwidth}@{}}
+\hline
+\textbf{Termine errato o trascurato} & \textbf{Andamento nei residui}\\
+\hline
+Frequenza $\nu$ & Deriva lineare in $\Delta t$\\
+Derivata $\dot\nu$ & Termine parabolico in $\Delta t$\\
+Posizione nel cielo & Sinusoide annuale\\
+Moto proprio & Modulazione annuale con ampiezza crescente\\
+Dispersion measure & Scarto cromatico $\propto\nu_{\rm rad}^{-2}$\\
+\hline
+\end{tabular}}
+\par\smallskip
+Si aggiornano i parametri e si ricalcolano i residui (\emph{pre-fit/post-fit}).
+Una struttura residua pu\'o segnalare un modello incompleto o variabilit\'a reale;
+gli effetti possono sovrapporsi e richiedono un fit congiunto.
+\par\smallskip
+\footnotesize
+Lorimer (2008), \emph{Living Rev. Relativity} 11, 8, \S4.2 e Fig.~22,
+\href{https://doi.org/10.12942/lrr-2008-8}{doi:10.12942/lrr-2008-8}.
+\end{frame}
+
+\begin{frame}[t]{Timing: spin-down osservato e intrinseco}
+\vspace*{3mm}
+\small\raggedright
+Per una pulsar isolata, o dopo aver modellato l'orbita,
+il periodo osservato include il Doppler.
+Con $v_\parallel>0$ in allontanamento e $|v_\parallel|\ll c$,
+\[
+P_{\rm obs}\simeq P_{\rm int}\left(1+\frac{v_\parallel}{c}\right),
+\qquad
+\frac{\dot P_{\rm obs}}{P_{\rm obs}}
+\simeq\frac{\dot P_{\rm int}}{P_{\rm int}}+
+\frac1c\frac{dv_\parallel}{dt}.
+\]
+Anche un moto trasverso rettilineo cambia la direzione della linea di vista:
+\[
+\frac{dv_\parallel}{dt}=a_\parallel+\frac{v_\perp^2}{d},
+\qquad v_\perp=\mu_{\rm pm}d.
+\]
+$a_\parallel$ \'e la proiezione dell'accelerazione fisica relativa pulsar--baricentro
+(p.es. nel potenziale galattico); $d$ \'e la distanza e
+$\mu_{\rm pm}$ il moto proprio angolare in radianti per unit\'a di tempo.
+\[
+\boxed{\frac{\dot P_{\rm obs}}{P_{\rm obs}}\simeq
+\frac{\dot P_{\rm int}}{P_{\rm int}}
++\frac{a_\parallel}{c}+\frac{\mu_{\rm pm}^{\,2}d}{c}},
+\qquad
+\dot P_{\rm Shk}=\frac{P\mu_{\rm pm}^{\,2}d}{c}\geq0.
+\]
+L'ultimo termine \'e l'effetto \textbf{Shklovskii}:
+il periodo pu\'o aumentare apparentemente senza un corrispondente frenamento.
+Per $P=5\,\mathrm{ms}$, $d=1\,\mathrm{kpc}$,
+$\mu_{\rm pm}=10\,\mathrm{mas\,yr^{-1}}$,
+$\dot P_{\rm Shk}\simeq1.2\times10^{-21}\,\mathrm{s/s}$.
+\par\smallskip
+Le stime fisiche di $B_{\rm char}$, $\tau_c$ e della potenza di spin-down
+richiedono il contributo \textbf{intrinseco}, con le ipotesi dei rispettivi modelli.
+\par\smallskip
+\footnotesize
+Formule al primo ordine, trascurando i prodotti delle piccole correzioni.
+Ng et al. (2014), \emph{MNRAS} 439, 1865--1883,
+\href{https://arxiv.org/abs/1401.3003}{arXiv:1401.3003}.
+\end{frame}
+
 \begin{frame}[t]{Nomi e distribuzione delle pulsar}
 \small
 La sigla \texttt{PSR} e seguita dalle coordinate equatoriali della sorgente; le designazioni $B$ e $J$ fanno riferimento a epoche coordinate B1950 e J2000.
@@ -201,36 +1028,348 @@ La sigla \texttt{PSR} e seguita dalle coordinate equatoriali della sorgente; le 
 \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Uno zoo di stelle di neutroni}
-\small
-\begin{columns}[T,onlytextwidth]
-\column{.5\textwidth}
-\begin{itemize}
-\item \textbf{Radio pulsar:} emissione pulsata alimentata prevalentemente dalla rotazione.
-\item \textbf{Magnetar:} emissione X/soft gamma spesso alimentata dall'energia magnetica; $B$ caratteristico molto elevato.
-\item \textbf{CCO:} sorgenti termiche nei resti di supernova.
-\end{itemize}
-\column{.5\textwidth}
-\begin{itemize}
-\item \textbf{RRAT:} impulsi radio sporadici.
-\item \textbf{INS termiche:} neutron stars isolate, tipicamente poco luminose in radio.
-\item \textbf{Binarie X:} accrescimento da una compagna; talvolta pulsazioni e burst.
-\end{itemize}
-\end{columns}
-\medskip
-Le classi sono \emph{osservative}: la stessa stella di neutroni puo mostrare comportamenti differenti a seconda di campo, temperatura, accrescimento e geometria.
+% Integrazione osservativa. Unita' gaussiane nelle formule radiative.
+% gamma_e indica il fattore di Lorentz delle particelle; nu_rad la frequenza
+% dei fotoni, distinta dalla frequenza di rotazione nu_rot=1/P.
+% Le relazioni scalari valgono per entrambe le segnature metriche.
+
+\begin{frame}[t]{Famiglie osservative e sorgenti di energia}
+\small\raggedright
+Per interpretare una sorgente distinguiamo \textbf{serbatoio di energia},
+\textbf{processo radiativo} e \textbf{geometria dell'emissione}.
+\begin{tabular}{|p{.19\textwidth}|p{.35\textwidth}|p{.35\textwidth}|}
+\hline
+\textbf{Energia} & \textbf{Famiglie indicative} & \textbf{Segnale e sede} \\
+\hline
+Rotazionale & Pulsar radio e gamma; RRAT(Rotating Radio Transient) & Plasma magnetosferico e vento; possibile riscaldamento delle calotte \\
+\hline
+Termica interna & INS(Isolated Neutron Star) termiche; CCO(Central Compact Object) nei resti di supernova & Radiazione della superficie e dell'atmosfera \\
+\hline
+Magnetica & Magnetar & Riscaldamento e particelle accelerate da correnti magnetosferiche \\
+\hline
+Gravitazionale & Binarie X in accrescimento & Disco, strato superficiale o colonne sui poli \\
+\hline
+\end{tabular}
+Le categorie possono sovrapporsi: una pulsar alimentata dalla rotazione
+pu\'o mostrare sia fotoni termici sia fotoni non termici.
+RRAT indica impulsi radio sporadici; CCO indica un oggetto compatto centrale
+in un resto di supernova.
+\par\smallskip
+\footnotesize Haensel et al., cap.~1; Philippov e Kramer (2022),
+\href{https://doi.org/10.1146/annurev-astro-052920-112338}{ARA\&A 60, 495}.
 \end{frame}
 
-\section{Rotazione, momento di inerzia ed emissione}
+\subsection{Emissione e diagnostica multibanda}\linkdest{emissionmechanism}
 
-\subsection{Energia di rotazione e momento d'inerzia}
+\begin{frame}[t]{Bande osservative e componenti dello spettro}
+\small\raggedright
+Per una pulsar alimentata dalla rotazione, le associazioni tipiche sono:
+\medskip
+\begingroup\footnotesize\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.22}
+\begin{tabular}{@{}p{.19\textwidth}p{.33\textwidth}p{.42\textwidth}@{}}
+\textbf{Banda} & \textbf{Indizio osservativo} & \textbf{Interpretazione da verificare} \\
+\hline
+Radio pulsata & Alta brillanza, polarizzazione, impulsi brevi & Emissione coerente del plasma \\
+Ottico--UV & Spettro e polarizzazione & Componente magnetosferica; possibile coda termica \\
+X soffici & Componente quasi termica e modulazione & Superficie o calotte calde; possibile contributo magnetosferico \\
+X duri e GeV & Spettro non termico, picchi e cutoff & Particelle accelerate: sincrotrone, curvatura o loro combinazione \\
+Altissime energie & Componente oltre il cutoff GeV & Compton inverso in alcuni modelli \\
+\end{tabular}
+\endgroup
+\medskip
+\textbf{La banda da sola non identifica il processo.}
+Servono spettro, profilo in fase, polarizzazione e separazione delle componenti.
+Una nebulosa associata pu\'o aggiungere emissione estesa non pulsata.
+\par\smallskip
+\footnotesize Philippov e Kramer (2022); Smith et al. (2023),
+\href{https://arxiv.org/abs/2307.11132}{catalogo Fermi LAT 3PC};
+Riley et al. (2019), \href{https://arxiv.org/abs/1912.05702}{NICER}.
+\end{frame}
+
+\begin{frame}[t]{Dal campo alle particelle radianti}
+\small\raggedright
+Campi elettrici non schermati e riconnessione possono trasferire
+energia al plasma. Definiamo
+\[
+\gamma_e=\frac1{\sqrt{1-v_e^2/c^2}},\qquad
+\nu_{\rm rot}=\frac1P,\qquad \nu_{\rm rad}=\text{frequenza dei fotoni}.
+\]
+Per una particella ultrarelativistica accelerata lungo $E_\parallel$,
+con $e>0$ e verso favorevole al moto,
+\[
+m_ec^2\frac{d\gamma_e}{dt}
+\simeq e|E_\parallel|c-\mathcal P_{\rm rad}.
+\]
+\begin{itemize}
+\item Il primo termine accelera la particella; il secondo descrive le perdite.
+\item In un regime limitato dalla radiazione,
+$e|E_\parallel|c\simeq\mathcal P_{\rm rad}$ determina una scala per $\gamma_e$.
+\item Le coppie $e^\pm$ alimentano il plasma e possono schermare $E_\parallel$:
+emissione e dinamica della magnetosfera sono accoppiate.
+\end{itemize}
+\par\smallskip
+\footnotesize Quantit\'a locali, unit\'a gaussiane.
+Philippov e Kramer (2022); Philippov et al. (2020),
+\href{https://arxiv.org/abs/2001.02236}{arXiv:2001.02236}.
+\end{frame}
+
+\begin{frame}[t]{Radio pulsata: perch\'e serve coerenza}
+\small\raggedright
+L'intensit\'a specifica $I_{\nu_{\rm rad}}$ definisce la
+\emph{temperatura di brillanza} tramite la relazione di Rayleigh--Jeans:
+\[
+I_{\nu_{\rm rad}}\equiv\frac{2k_BT_b\nu_{\rm rad}^2}{c^2}.
+\]
+$T_b$ misura la brillanza equivalente, non necessariamente
+la temperatura cinetica del plasma. Impulsi brevi e intensi richiedono
+un meccanismo radio \textbf{coerente}.
+\[
+\begin{array}{ll}
+\text{fasi casuali:} & \mathcal P_{N_e}\sim N_e\mathcal P_1,\\[1mm]
+\text{ampiezze identiche in fase:} & \mathcal P_{N_e}\sim N_e^2\mathcal P_1.
+\end{array}
+\]
+La seconda relazione illustra la somma coerente dei campi in una regione
+compatibile con la lunghezza d'onda.
+\begin{itemize}
+\item Tra i modelli: curvatura coerente, instabilit\'a del plasma e scariche di coppie.
+\item Dimostrare la coerenza non identifica da solo la microfisica che la produce.
+\end{itemize}
+\par\smallskip
+\footnotesize Melrose, Rafat e Mastrano (2021),
+\href{https://arxiv.org/abs/2006.15243}{arXiv:2006.15243};
+Philippov et al. (2020), \href{https://arxiv.org/abs/2001.02236}{arXiv:2001.02236}.
+\end{frame}
+
+\begin{frame}[t]{Radiazione di curvatura}
+\small\raggedright
+Una particella ultrarelativistica che segue una traiettoria curva
+ha accelerazione trasversa $a_\perp\simeq c^2/\mathcal R_{\rm c}$.
+Qui $\mathcal R_{\rm c}$ \'e il \textbf{raggio di curvatura della traiettoria}.
+Nel regime classico, per una singola carica,
+\[
+\boxed{\mathcal P_{\rm curv}=
+\frac{2e^2c}{3\mathcal R_{\rm c}^2}\gamma_e^4},\qquad
+\boxed{\nu_{\rm curv}=\frac{3c}{4\pi\mathcal R_{\rm c}}\gamma_e^3}.
+\]
+La scala dell'energia dei fotoni \'e
+\[
+\epsilon_{\rm curv}=h\nu_{\rm curv}
+=\frac32\frac{\hbar c}{\mathcal R_{\rm c}}\gamma_e^3.
+\]
+Per esempio, $\gamma_e=10^7$ e $\mathcal R_{\rm c}=10^7\,$cm
+danno $\epsilon_{\rm curv}\simeq3\,$GeV: \'e una stima locale illustrativa.
+\begin{itemize}
+\item La direzione della velocit\'a cambia anche se il suo modulo \'e quasi $c$.
+\item Le formule della singola carica non spiegano da sole
+la coerenza dell'emissione radio.
+\end{itemize}
+\par\smallskip
+\footnotesize Formule classiche, unit\'a gaussiane.
+Cerutti et al. (2016),
+\href{https://doi.org/10.1093/mnras/stw124}{MNRAS 457, 2401}.
+\end{frame}
+
+\begin{frame}[t]{Sincrotrone: moto trasverso e spettro non termico}
+\small\raggedright
+Se la velocit\'a forma un angolo di \emph{pitch} $\psi_B$ con $\mathbf B$,
+la girazione produce radiazione di sincrotrone. Per $\gamma_e\gg1$,
+\[
+\nu_{\rm syn}=\frac{3eB}{4\pi m_ec}\gamma_e^2\sin\psi_B,\qquad
+\mathcal P_{\rm syn}\simeq
+\frac{2e^4B^2}{3m_e^2c^3}\gamma_e^2\sin^2\psi_B.
+\]
+\begin{itemize}
+\item Il processo dipende dal moto \emph{trasverso} al campo;
+la curvatura dipende dalla curvatura della traiettoria guida.
+\item Una distribuzione di energie delle particelle produce
+uno spettro esteso, anzich\'e una singola frequenza.
+\end{itemize}
+Per $dN_e/d\gamma_e\propto\gamma_e^{-p}$, in regime otticamente sottile
+senza raffreddamento significativo,
+\[
+F_{\nu_{\rm rad}}\propto\nu_{\rm rad}^{-(p-1)/2}.
+\]
+Nelle nebulose da vento di pulsar il sincrotrone contribuisce dal radio ai raggi X;
+questa componente va separata dagli impulsi della stella.
+\par\smallskip
+\footnotesize Condon e Ransom, \href{https://www.cv.nrao.edu/~sransom/web/Ch5.html}{Essential Radio Astronomy, cap.~5}.
+Formule classiche; a campi ed energie elevati occorrono correzioni quantistiche.
+\end{frame}
+
+\begin{frame}[t]{Compton inverso: fotoni soffici e particelle relativistiche}
+\small\raggedright
+Una particella relativistica pu\'o trasferire parte della propria energia
+a un fotone di energia iniziale $\epsilon_{\rm s}$.
+Per un campo di fotoni approssimativamente isotropo, nel limite di Thomson,
+\[
+\boxed{\langle\epsilon_{\rm IC}\rangle\simeq
+\frac43\gamma_e^2\epsilon_{\rm s}},\qquad
+4\gamma_e\epsilon_{\rm s}\ll m_ec^2.
+\]
+I fotoni iniziali possono provenire dalla superficie, dal sincrotrone
+o da campi di radiazione esterni.
+\begin{itemize}
+\item Quando $4\gamma_e\epsilon_{\rm s}\gtrsim m_ec^2$,
+il regime di Klein--Nishina riduce la sezione d'urto:
+la legge $\gamma_e^2\epsilon_{\rm s}$ non \'e pi\'u utilizzabile.
+\item Per l'urto su un fotone soffice, l'energia finale non supera
+la scala energetica della particella, $\epsilon_{\rm IC}\lesssim\gamma_em_ec^2$.
+\item Il Compton inverso \'e rilevante per componenti gamma di magnetosfere,
+venti e nebulose; campo e geometria ne modificano l'efficienza.
+\end{itemize}
+\par\smallskip
+\footnotesize Condon e Ransom, \href{https://www.cv.nrao.edu/~sransom/web/Ch5.html}{Essential Radio Astronomy, \S5.5}.
+Il caso risonante in campi magnetici intensi richiede un trattamento specifico.
+\end{frame}
+
+\begin{frame}[t]{Raggi gamma: spettro, cutoff e sede di emissione}
+\small\raggedright
+Gli spettri delle pulsar GeV mostrano spesso un cutoff o una curvatura:
+un fit fenomenologico indicativo \'e
+\[
+\frac{dN_\gamma}{dE}\propto E^{-q_\gamma}
+\exp\!\left[-\left(\frac{E}{E_{\rm c}}\right)^b\right],
+\]
+dove $E_{\rm c}$ \'e una scala di cutoff e $b$ ne descrive la forma.
+\begin{itemize}
+\item Forma dello spettro e profili in fase vincolano energia delle particelle
+e geometria, ma non selezionano automaticamente un solo processo.
+\item Modelli di curvatura, sincrotrone e sincro-curvatura considerano
+regioni magnetosferiche esterne e il foglio di corrente vicino o oltre il cilindro di luce.
+\item \textbf{Esempio osservativo:} H.E.S.S. (2023) ha rilevato
+una componente pulsata di Vela fino ad almeno $20\,$TeV.
+Il lavoro propone un'origine da Compton inverso per questa componente distinta.
+\end{itemize}
+La sede e l'accelerazione vanno confrontate con l'intero spettro,
+non soltanto con la presenza di pulsazioni.
+\par\smallskip
+\footnotesize Smith et al. (2023), \href{https://arxiv.org/abs/2307.11132}{Fermi LAT 3PC};
+H.E.S.S. (2023), \href{https://arxiv.org/abs/2310.06181}{arXiv:2310.06181}.
+\end{frame}
+
+\begin{frame}[t]{Raggi X termici: superficie e calotte calde}
+\small\raggedright
+Il raffreddamento interno e il riscaldamento da particelle di ritorno
+possono alimentare emissione termica superficiale.
+Per una regione a temperatura efficace $T_{\rm eff}$,
+\[
+L_{\rm th,loc}\simeq A_{\rm em}\sigma_{\rm SB}T_{\rm eff}^4,
+\qquad
+T_\infty=\frac{T_{\rm eff}}{1+z_s}.
+\]
+$A_{\rm em}$ \'e l'area emittente e $z_s$ il redshift superficiale;
+la seconda relazione assume una superficie statica a redshift uniforme.
+\begin{itemize}
+\item Una superficie quasi uniforme e piccole calotte calde
+possono produrre componenti spettrali differenti.
+\item Le atmosfere modificano spettro e distribuzione angolare:
+un raggio ricavato da un semplice corpo nero non \'e automaticamente il raggio stellare.
+\item Rotazione, visibilit\'a delle regioni calde e deflessione gravitazionale
+determinano il profilo X.
+\end{itemize}
+NICER confronta modelli di emissione e propagazione relativistica con
+spettro e profilo in fase per porre vincoli su $M,R$ e geometria.
+\par\smallskip
+\footnotesize Riley et al. (2019), \href{https://arxiv.org/abs/1912.05702}{arXiv:1912.05702};
+Vinciguerra et al. (2024), \href{https://arxiv.org/abs/2308.09469}{arXiv:2308.09469}.
+\end{frame}
+
+\begin{frame}[t]{Magnetar e accrescimento}
+\small\raggedright
+Serbatoio magnetico e potenza da accrescimento hanno scale indicative
+\[
+E_B\sim\frac{B_{\rm int}^2}{8\pi}V,\qquad
+L_{\rm acc}\sim\frac{GM\dot M}{R}.
+\]
+Qui $V$ \'e il volume magnetizzato e $\dot M$ il tasso di accrescimento;
+la seconda \'e una stima newtoniana dell'energia gravitazionale liberata.
+\begin{itemize}
+\item \textbf{Magnetar:} dissipazione magnetica, riscaldamento e correnti
+alimentano superficie e magnetosfera. Lo scattering Compton risonante
+\'e un modello per la coda X dura.
+\item \textbf{Accrescimento:} disco, zone d'impatto o colonne sui poli
+producono componenti termiche e fotoni Comptonizzati.
+La geometria rotante pu\'o modulare il segnale X.
+\item \textbf{Burst termonucleari:} il combustibile accumulato in superficie
+pu\'o bruciare in modo instabile. Il burst libera energia nucleare;
+la pulsazione da accrescimento segue la geometria rotante.
+\end{itemize}
+Quindi una pulsazione X, da sola, non dimostra un'alimentazione rotazionale.
+\par\smallskip
+\footnotesize Haensel et al., cap.~1;
+Beloborodov (2013), \href{https://arxiv.org/abs/1201.0664}{arXiv:1201.0664}.
+\end{frame}
+
+\begin{frame}[t]{Profili e polarizzazione: geometria del fascio}
+\small\raggedright
+Siano $\alpha$ l'angolo fra asse magnetico e asse di rotazione
+e $\zeta$ l'angolo fra linea di vista e asse di rotazione.
+Nel modello del vettore rotante, l'angolo di posizione $\Psi$ soddisfa
+\[
+\tan(\Psi-\Psi_0)=
+\frac{\sin\alpha\sin(\phi-\phi_0)}
+{\sin\zeta\cos\alpha-\cos\zeta\sin\alpha\cos(\phi-\phi_0)}.
+\]
+Qui $\phi$ \'e la fase rotazionale in radianti;
+$\phi_0,\Psi_0$ fissano gli zeri convenzionali. Al punto di flesso,
+\[
+\left.\frac{d\Psi}{d\phi}\right|_{\phi_0}
+=\frac{\sin\alpha}{\sin(\zeta-\alpha)}.
+\]
+\begin{itemize}
+\item Il modello assume polarizzazione legata alla proiezione
+di una geometria magnetica dipolare; \'e utile soprattutto per profili radio semplici.
+\item Propagazione nel plasma, modi di polarizzazione e altezza di emissione
+possono modificare la curva osservata.
+\item Sfasamenti fra radio, X e gamma aiutano a vincolare la geometria;
+picchi allineati non impongono la stessa sede di emissione.
+\end{itemize}
+\par\smallskip
+\footnotesize Radhakrishnan e Cooke (1969),
+\href{https://articles.adsabs.harvard.edu/pdf/1969ApL.....3..225R}{ApL 3, 225};
+Philippov e Kramer (2022).
+\end{frame}
+
+\begin{frame}[t]{Flusso, luminosit\'a ed efficienza radiativa}
+\small\raggedright
+Per il flusso energetico in una banda, mediato sulla fase rotazionale,
+\[
+F_{\rm band}=\int_{\rm band}F_{\nu_{\rm rad}}\,d\nu_{\rm rad},\qquad
+\boxed{L_{\rm band}=4\pi f_\Omega d^2F_{\rm band}}.
+\]
+$d$ \'e la distanza; $f_\Omega$ corregge l'anisotropia con questa convenzione.
+Ponendo $f_\Omega=1$ si ottiene la luminosit\'a isotropa equivalente.
+\[
+\eta_{\rm band}\equiv\frac{L_{\rm band}}{\dot E_{\rm sd}},\qquad
+\dot E_{\rm sd}=\text{potenza persa in rotazione}.
+\]
+\begin{itemize}
+\item Per un'alimentazione solo rotazionale, quasi stazionaria,
+$L_{\rm band}\lesssim\dot E_{\rm sd}$.
+Se $\eta_{\rm band}>1$ si controllano distanza, $f_\Omega$,
+spin-down intrinseco e altre fonti di energia.
+\item Si separano segnale stellare pulsato, componente non pulsata
+e nebulosa da vento: anche il suo sincrotrone e Compton inverso
+contribuiscono al flusso totale.
+\end{itemize}
+Il \textbf{frenamento di dipolo} descrive il bilancio globale;
+lo spettro dipende dai processi radiativi di plasma e superficie.
+\par\smallskip
+\footnotesize Smith et al. (2023), \href{https://arxiv.org/abs/2307.11132}{Fermi LAT 3PC};
+Condon e Ransom, \href{https://www.cv.nrao.edu/~sransom/web/Ch5.html}{cap.~5}.
+\end{frame}
+
+\section{Rotazione, momento di inerzia ed emissione}\linkdest{RotationInertiaGWemission}
+
+\subsection{Energia di rotazione e momento d'inerzia}\linkdest{MInertia}
 
 \begin{frame}[t]{Energia di rotazione: variabili del modello}
 \small
 Per una stella che ruota lentamente e in modo quasi rigido:
 \[
 E_{\rm rot}=\frac12 I\Omega^2
-=\frac{2\pi^2 I}{P^2},\qquad J=I\Omega.
+=\frac{2\pi^2 I}{P^2},\qquad J=I\Omega\text{: Momento Angolare}
 \]
 \begin{itemize}
 \item $I$ e il momento d'inerzia rispetto all'asse di rotazione.
@@ -353,7 +1492,7 @@ Questo rende esplicito il collegamento fra il capitolo 2 (RG/TOV) e il timing de
 
 \begin{frame}[t]{Rotazione lenta e ordine perturbativo}
 \small
-Il parametro che controlla la deformazione centrifuga e'
+Il parametro che controlla la deformazione centrifuga \'e
 \[
 \epsilon_{\rm rot}=\frac{R^3\Omega^2}{GM}\ll1.
 \]
@@ -369,13 +1508,13 @@ Quindi $I=J/\Omega$ si calcola, all'ordine dominante, sul fondo sferico TOV.
 
 \begin{frame}[t]{Matching del frame dragging}
 \small
-Indichiamo con $\varpi(r)=\Omega-\omega_{\rm FD}(r)$ la velocita' angolare rispetto ai riferimenti inerziali locali.
+Indichiamo con $\varpi(r)=\Omega-\omega_{\rm FD}(r)$ la velocit\'a angolare rispetto ai riferimenti inerziali locali.
 Nel vuoto esterno, all'ordine lineare in $\Omega$,
 \[
 \omega_{\rm FD}(r)=\frac{2GJ}{c^2r^3},\qquad
 \varpi(r)=\Omega-\frac{2GJ}{c^2r^3}.
 \]
-La continuita' alla superficie implica
+La continuit\'a alla superficie implica
 \[
 \Omega=\varpi(R)+\frac{2GJ}{c^2R^3},\qquad I=\frac{J}{\Omega}.
 \]
@@ -392,7 +1531,7 @@ La soluzione interna richiede le equazioni TOV e l'equazione differenziale di Ha
 \small
 La figura confronta il momento d'inerzia di stelle lentamente rotanti per diverse EOS.
 \begin{itemize}
-\item A massa fissata, EOS diverse implicano raggi e profili di densita' diversi.
+\item A massa fissata, EOS diverse implicano raggi e profili di densit\'a diversi.
 \item Il massimo di $I(M)$ non coincide in generale con quello di $M$.
 \item L'osservazione di $I$ restringerebbe i modelli della materia densa.
 \end{itemize}
@@ -410,24 +1549,24 @@ Definiamo $x_{\rm GR}=2GM/(Rc^2)$. La figura mostra una correlazione approssimat
 \[
 \frac{I}{MR^2}\quad\text{e}\quad x_{\rm GR}.
 \]
-La dispersione residua dipende dall'EOS. La relazione e' una calibrazione empirica, non un'identita' esatta della relativita' generale.
+La dispersione residua dipende dall'EOS. La relazione \'e una calibrazione empirica, non un'identit\'a esatta della relativit\'a generale.
 \end{columns}
 \footnotesize Haensel et al. (2006), Fig.~6.17 e \S6.10.4, pp.~326--327.
 \end{frame}
 
 \begin{frame}[t]{Quanto conta la crosta?}
 \small
-Il contributo della crosta e' la porzione dell'integrale relativistico compresa fra $R_{\rm crust}$ e $R$:
+Il contributo della crosta \'e la porzione dell'integrale relativistico compresa fra $R_{\rm crust}$ e $R$:
 \[
 I_{\rm crust}=\frac{8\pi}{3}\int_{R_{\rm crust}}^R
 r^4\left(\rho+\frac{P}{c^2}\right)
 \frac{\varpi(r)}{\Omega}e^{-\Phi-\lambda}\,dr.
 \]
-Per una crosta sottile, $P\ll\rho c^2$, una prima stima e'
+Per una crosta sottile, $P\ll\rho c^2$, una prima stima \'e
 \[
 I_{\rm crust}\simeq\frac23 M_{\rm crust}R^2\frac{\varpi(R)}{\Omega}.
 \]
-L'approssimazione mette in evidenza il fattore $r^2$: una massa crostale piccola puo' contribuire significativamente a $I$.
+L'approssimazione mette in evidenza il fattore $r^2$: una massa crostale piccola pu\'o contribuire significativamente a $I$.
 \par\medskip
 \footnotesize Haensel et al. (2006), eqs.~(6.71)--(6.73); attenzione alle convenzioni metriche.
 \end{frame}
@@ -458,7 +1597,7 @@ L'energia rotazionale persa dalla pulsar alimenta, fra altri canali, la nebulosa
 -\dot E_{\rm rot}=I\Omega|\dot\Omega|
 =\frac{4\pi^2I\dot P}{P^3}.
 \]
-Un bilancio schematico della potenza richiesta e'
+Un bilancio schematico della potenza richiesta \'e
 \[
 I\Omega|\dot\Omega|\ \gtrsim\ L_{\rm rad}+\dot E_{\rm kin}+\dot E_{\rm altre},
 \]
@@ -471,7 +1610,7 @@ con termini di accelerazione dei filamenti, radiazione e altre perdite da modell
 \footnotesize Haensel et al. (2006), \S9.5.1--9.5.3, pp.~501--504; stime storiche.
 \end{frame}
 
-\subsection{Dipolo magne tico e campo caratteristico}
+\subsection{Dipolo magnetico e campo caratteristico}\linkdest{magneticdipole}
 
 \begin{frame}[t]{Campo di un dipolo magnetico}
 \small
@@ -508,6 +1647,9 @@ La formula del dipolo magnetico radiativo in vuoto (Gaussiane) fornisce
 \mathcal P_{\rm dip}=\frac{2\mu^2\Omega^4}{3c^3}\sin^2\alpha.
 \]
 Il fattore $\sin^2\alpha$ deriva dalla sola componente perpendicolare all'asse di rotazione.
+\par\smallskip
+\textbf{Collegamento all'emissione:} questa \'e una potenza globale di frenamento;
+lo spettro radio osservato richiede il meccanismo coerente del plasma.
 \end{frame}
 
 \begin{frame}[t]{Derivazione di $B$ da $P$ e $\dot P$}
@@ -571,7 +1713,7 @@ B_{\rm p}=2B_{\rm eq}\quad\text{per un dipolo ideale}.
 La dipendenza $\propto\Omega^4$ resta caratteristica, ma il coefficiente non e universale.
 \end{frame}
 
-\subsection{Et\'a  e braking index}
+\subsection{Et\'a  e braking index}\linkdest{braking}
 
 \begin{frame}[t]{Legge di frenamento generale}
 \small
@@ -680,7 +1822,7 @@ n_{\rm dip}=3,\qquad n_{\rm GW}=5
 \end{itemize}
 \end{frame}
 
-\subsection{Onde gravitazionali continue}
+\subsection{Onde gravitazionali continue}\linkdest{GWemission}
 
 \begin{frame}[t]{Quadrupolo gravitazionale da una stella non assialsimmetrica}
 \small
@@ -735,13 +1877,13 @@ h_0^{\rm sd}=\frac1d\sqrt{\frac{5GI|\dot\nu|}{2c^3\nu}}.
 \end{itemize}
 \end{frame}
 
-\section{Diagramma P--Pdot, evoluzione e death line}
+\section{Diagramma P--Pdot, evoluzione e death line}\linkdest{PPdotdiagram}
 
 \subsection{Piano periodo--derivata del periodo}
 
 \begin{frame}[t]{Diagramma $P$--$\dot P$}
 \small
-\begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{lorimer08/PPdot}\label{fig:lorimer08_PPdot}\end{figure}
+\begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,height=0.9\textheight]{lorimer08/PPdot}\label{fig:lorimer08_PPdot}\end{figure}
 \vspace{-1mm}\footnotesize Riproduzione ritagliata della Figura 6.1 del capitolo; dati e classificazioni riferiti alla pubblicazione citata nel libro (Lorimer 2011).
 \end{frame}
 
@@ -803,7 +1945,7 @@ La traiettoria segue quindi una linea di \emph{campo caratteristico costante}, d
 \begin{frame}[t]{Esempio di diagramma con linea di morte indicativa}
 \small
 \begin{center}
-    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{astrobites.org/deathline-a_pulsar_alone}\label{fig:astrobites.org_deathline-a_pulsar_alone}\end{figure}
+    \begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,height=0.9\textheight]{astrobites.org/deathline-a_pulsar_alone}\label{fig:astrobites.org_deathline-a_pulsar_alone}\end{figure}
 \end{center}
 \vspace{-2mm}\footnotesize Grafico didattico creato per gli appunti. La \emph{death line} mostrata e solo una soglia di potenziale illustrativa, non un confine empirico universale.
 \end{frame}
@@ -862,6 +2004,7 @@ Pertanto
 \end{frame}
 
 \begin{frame}[t]{Death line vs et\'a e campo: non confonderle}
+\smallskip
 \small
 \begin{tabular}{@{}lll@{}}
 \toprule
@@ -880,7 +2023,7 @@ Potenziale polare di soglia & $\dot P\propto P^{+3}$ & $+3$ \\
 \end{itemize}
 \end{frame}
 
-\section{Pulsar glitches e superfluidita}
+\section{Pulsar glitches e superfluidit\'a}\linkdest{glitches}
 
 \subsection{Salti nel periodo}
 
@@ -924,7 +2067,7 @@ Questa equazione mostra come i glitch possano vincolare la \emph{frazione di mom
 \begin{frame}[t]{Il serbatoio di momento angolare}
 \small
 Il modello distingue una componente accoppiata alla crosta, $I_c$, e un serbatoio superfluido, $I_{\rm res}$.
-La rotazione della crosta rallenta sotto il torque esterno; il superfluido debolmente accoppiato conserva temporaneamente una velocita' maggiore.
+La rotazione della crosta rallenta sotto il torque esterno; il superfluido debolmente accoppiato conserva temporaneamente una velocit\'a maggiore.
 \[
 \delta\Omega=\Omega_{\rm res}-\Omega_c>0.
 \]
@@ -939,16 +2082,16 @@ L'unpinning dei vortici consente di trasferire momento angolare al componente os
 
 \begin{frame}[t]{Derivazione del vincolo dai glitches}
 \small
-Definiamo l'attivita' osservata dei glitches in un intervallo $T$:
+Definiamo l'attivit\'a osservata dei glitches in un intervallo $T$:
 \[
 \mathcal A=\frac1T\sum_i\frac{\Delta\Omega_i}{\Omega}.
 \]
-Il momento angolare cumulativo trasferito e'
+Il momento angolare cumulativo trasferito \'e
 \[
 \Delta J_{\rm obs}=I_c\sum_i\Delta\Omega_i
 =I_c\Omega\mathcal A T.
 \]
-Il serbatoio non puo' accumulare piu' momento angolare di quello generato dal rallentamento differenziale:
+Il serbatoio non pu\'o accumulare pi\'u momento angolare di quello generato dal rallentamento differenziale:
 \[
 \Delta J_{\rm obs}\le I_{\rm res}|\dot\Omega|T
 \quad\Longrightarrow\quad
@@ -965,11 +2108,11 @@ Per Vela il testo riporta, con dati disponibili fino al 2005,
 \]
 Se il serbatoio fosse interamente nella crosta interna, il vincolo diventerebbe una condizione su $I_{\rm crust}/I$.
 \begin{itemize}
-\item Non e' una misura diretta del momento d'inerzia crostale.
+\item Non \'e una misura diretta del momento d'inerzia crostale.
 \item Dipende dall'ipotesi che il serbatoio sia crostale e dalla dinamica di accoppiamento.
 \item L'entrainment dei neutroni e il possibile contributo del core modificano l'interpretazione quantitativa.
 \end{itemize}
-\footnotesize Haensel et al. (2006), \S9.7, pp.~510--511. Il valore e' storico, non una stima aggiornata.
+\footnotesize Haensel et al. (2006), \S9.7, pp.~510--511. Il valore \'e storico, non una stima aggiornata.
 \end{frame}
 
 \begin{frame}[t]{Vortici quantizzati nella materia neutronica}
@@ -1009,6 +2152,51 @@ Non ogni glitch identifica un unico meccanismo microscopico: sono importanti anc
 \end{frame}
 
 \section{Magnetosfera del rotatore allineato}
+
+\begin{frame}[t]{Magnetosfera: dalla rotazione al plasma}
+\vspace*{3mm}
+\small\raggedright
+La \textbf{magnetosfera} \'e la regione esterna alla stella in cui
+il campo magnetico governa la dinamica del plasma.
+La stella di neutroni agisce come un conduttore magnetizzato in rotazione.
+\par\smallskip
+Nel \textbf{rotatore allineato}, il momento magnetico di dipolo
+$\boldsymbol\mu$ \'e parallelo a $\boldsymbol\Omega$:
+l'angolo fra i due assi \'e $\alpha=0$.
+Il campo locale $\mathbf B(\mathbf r)$ dipende dalla posizione.
+Adottiamo un modello medio stazionario e assialsimmetrico.
+\par\smallskip
+Nel modello classico, il campo elettrico richiesto dalla corotazione ideale
+del conduttore e del plasma, misurato nel riferimento inerziale,
+soddisfa (in unit\'a gaussiane)
+\[
+\mathbf v_{\rm cor}=\boldsymbol\Omega\times\mathbf r,
+\qquad
+\boxed{\mathbf E_{\rm cor}=-\frac{\mathbf v_{\rm cor}}c\times\mathbf B}.
+\]
+\begin{itemize}
+\item \textbf{Cariche e correnti.}
+Il campo elettrico pu\'o estrarre cariche dalla superficie;
+il plasma risponde e tende a schermare
+$E_\parallel\equiv\mathbf E\cdot\mathbf B/|\mathbf B|$.
+\item \textbf{Geometria della magnetosfera.}
+La corotazione subluminale richiede $\Omega r_\perp<c$:
+il cilindro di luce ha raggio $R_L=c/\Omega$.
+La struttura comprende linee chiuse e linee aperte collegate al vento.
+\item \textbf{Accelerazione ed energia in uscita.}
+Dove resta $E_\parallel\neq0$, le particelle possono essere accelerate
+e alimentare scariche di coppie. Correnti e campi trasportano
+energia e momento angolare verso l'esterno.
+\end{itemize}
+Un rotatore allineato con plasma pu\'o quindi subire un
+\textbf{torque di frenamento}, anche con $\alpha=0$.
+\par\smallskip
+\footnotesize
+Goldreich e Julian (1969), \emph{ApJ} 157, 869;
+Spitkovsky (2006), \emph{ApJ} 648, L51--L54,
+\href{https://arxiv.org/abs/astro-ph/0603147}{arXiv:astro-ph/0603147}.
+\end{frame}
+
 
 \subsection{Campo elettrico e cilindro di luce}
 
@@ -1135,17 +2323,29 @@ In pratica accelerazione e scariche di coppie limitano i potenziali \emph{non sc
 \end{frame}
 
 \begin{frame}[t]{Generazione di coppie e plasma magnetosferico}
-\small
+\small\raggedright
+I fotoni prodotti dalle particelle accelerate possono alimentare
+nuove popolazioni radianti e modificare il campo elettrico.
 \begin{itemize}
-\item Campi elettrici paralleli alle linee di campo possono accelerare elettroni o positroni relativistici.
-\item La radiazione di curvatura e i processi di Compton inverso producono fotoni energetici.
-\item In campo magnetico forte, fotoni possono creare coppie $e^+e^-$ e avviare una cascata.
-\item La moltiplicazione di cariche tende a schermare $E_\parallel$ e modifica la struttura globale del torque.
+\item Curvatura e Compton inverso possono generare fotoni energetici.
+\item In campo magnetico forte \'e possibile la conversione
+di un fotone in $e^+e^-$, con il campo esterno che assorbe momento.
+\item In altre regioni pu\'o contribuire la collisione fra fotoni,
+$\gamma+\gamma\to e^++e^-$, se energia e angolo d'incontro superano la soglia.
+\item Le coppie possono emettere a loro volta e schermare $E_\parallel$:
+la cascata collega accelerazione, spettro e struttura della corrente.
 \end{itemize}
 \[
-\text{accelerazione}\to\gamma\to e^+e^-\to\text{plasma magnetosferico}.
+\text{accelerazione}\to\text{fotoni energetici}
+\to e^+e^-\to\text{nuova emissione e schermaggio}.
 \]
-Il legame con la \emph{death line} e il venir meno, in alcuni regimi, di una cascata sufficiente.
+Una cascata pu\'o fornire il plasma richiesto da alcuni modelli radio;
+non basta da sola a dimostrare quale processo coerente operi.
+Il suo venir meno interviene in diversi modelli della \emph{death line}.
+\par\smallskip
+\footnotesize Philippov et al. (2020),
+\href{https://arxiv.org/abs/2001.02236}{arXiv:2001.02236};
+Philippov e Kramer (2022).
 \end{frame}
 
 \begin{frame}[t]{Energia elettromagnetica in uscita}
@@ -1167,9 +2367,9 @@ Usando il dipolo $B_L\sim B_0(R/R_L)^3$:
 Si recupera la dipendenza $\Omega^4$, anche senza un modello di emissione dipolare nel vuoto.
 \end{frame}
 
-\section{Propagazione radio e dis persion measure}
+\section{Propagazione radio e dispersion measure}
 
-\subsection{Plasma inter stellare}
+\subsection{Plasma interstellare}
 
 \begin{frame}[t]{Dispersion measure: definizione fisica}
 \small
@@ -1255,7 +2455,7 @@ Per $\mathrm{DM}=100\,\mathrm{pc\,cm^{-3}}$ e osservazioni a $\nu_1=1.0\,$GHz, $
 \end{itemize}
 \end{frame}
 
-\section{Pulsar binarie: masse e  prove di relativita}
+\section{Pulsar binarie: masse e prove di relativit\'a}\linkdest{pulsarbinarie}
 
 % Integrazione didattica da Haensel, Potekhin, Yakovlev (2006), §§9.1--9.2.
 % Le masse riportate come esempi storici si riferiscono al 2005--2006.

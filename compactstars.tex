@@ -1204,3 +1204,719 @@ Il capitolo 4 fornisce le basi comuni per:
 Il risultato più generale è che la gravità determina l'equilibrio una volta data $P(\varepsilon)$, ma l'identità microscopica della materia non può essere letta direttamente da una singola misura di $M$ e $R$.
 \end{frame}
 
+\providecommand{\pnsintegfonte}[1]{\vfill\par{\scriptsize\color{gray}#1\par}}
+\definecolor{PNSIntegCalda}{RGB}{163,65,44}
+\definecolor{PNSIntegFredda}{RGB}{33,87,133}
+\section{Protostelle di neutroni ed evoluzione}
+
+% FRAME 01
+\begin{frame}[t,label=pns-completa-01]{La nascita di una protostella di neutroni}
+\small\raggedright
+Una \textbf{protostella di neutroni} (PNS) \`e il residuo caldo
+e ricco di leptoni prodotto dal collasso del nucleo di una stella
+massiccia.
+\begin{itemize}
+ \item Subito dopo il \emph{bounce}, il nucleo interno ha
+ entropia relativamente bassa e contiene neutrini intrappolati.
+ \item Il mantello, attraversato dall'onda d'urto, ha entropia
+ maggiore e perde rapidamente energia tramite neutrini.
+ \item Nelle prime fasi continua l'accrezione del materiale
+ che attraversa l'urto.
+\end{itemize}
+Le condizioni tipiche considerate nei lavori sono
+\[
+ s\equiv\frac{S}{N_B k_B}\sim1\text{--}2,
+ \qquad Y_{L_e}\sim0.4,
+ \qquad k_B T\sim\text{decine di MeV}.
+\]
+La struttura dipende sia dallo stato termico sia dalla
+\textbf{composizione imposta dal trapping dei neutrini}.
+\pnsintegfonte{Prakash et al. (1997), \S\S 1--2.}
+\end{frame}
+
+% FRAME 02
+\begin{frame}[t,label=pns-completa-02]{Dalla protostella alla stella di neutroni}
+\small\raggedright
+Il tempo \`e misurato dal \emph{bounce}; gli intervalli
+sono indicativi e le fasi possono sovrapporsi.
+\medskip
+{\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|p{0.20\textwidth}|p{0.69\textwidth}|}
+\hline
+\textbf{Tempo} & \textbf{Processo dominante} \\
+\hline
+\raggedright Primo secondo circa & Accrezione e rapida evoluzione del mantello.
+Se l'esplosione riesce, l'accrezione diminuisce. \\
+\hline
+\raggedright Primi $10$--$15$ s circa & Diffusione dei neutrini elettronici:
+deleptonizzazione e possibile riscaldamento del nucleo. \\
+\hline
+\raggedright Decine di secondi & Perdita dell'energia termica mediante neutrini
+e antineutrini di tutti i sapori; progressivo aumento della trasparenza. \\
+\hline
+\raggedright Fasi successive & Raffreddamento della giovane stella di neutroni
+e rilassamento termico fra nucleo e crosta. \\
+\hline
+\end{tabular}}
+\medskip
+Durante le prime fasi pu\`o intervenire il collasso in buco nero,
+se la massa supera il limite sostenibile nello stato raggiunto.
+\pnsintegfonte{Prakash et al. (1997), \S 1.}
+\end{frame}
+
+% FRAME 03
+\begin{frame}[t,label=pns-completa-03]{Perch\'e i neutrini rimangono intrappolati?}
+\small\raggedright
+Nel nucleo denso, assorbimento e scattering rendono il libero
+cammino medio dei neutrini molto minore del raggio stellare:
+\[
+ \lambda_{\nu,\mathrm{tr}}\ll R.
+\]
+Il trasporto avviene per \textbf{diffusione}. Schematicamente,
+\[
+ D_\nu\simeq\frac{c\lambda_{\nu,\mathrm{tr}}}{3},
+ \qquad \tau_{\mathrm{diff}}\sim\frac{R^2}{D_\nu}
+ \propto\frac{R^2}{c\lambda_{\nu,\mathrm{tr}}}.
+\]
+Il confronto decisivo \`e
+\[
+ \boxed{\tau_{\mathrm{diff}}\gg
+ t_{\mathrm{dyn}}\sim\sqrt{\frac{R^3}{GM}}}.
+\]
+La materia pu\`o quindi riassestarsi meccanicamente molto prima
+che i neutrini abbandonino il nucleo.
+Il numero leptonico \`e quasi conservato sulla scala dinamica.
+\pnsintegfonte{Prakash et al. (1997), \S\S 1 e 5.
+La stima diffusiva omette i fattori geometrici.}
+\end{frame}
+
+% FRAME 04
+\begin{frame}[t,label=pns-completa-04]{Numero leptonico ed entropia: due variabili distinte}
+\small\raggedright
+Esplicitiamo il settore elettronico, definendo le
+\textbf{frazioni nette} per barione:
+\[
+ Y_e=\frac{n_{e^-}-n_{e^+}}{n_B},
+ \qquad Y_{\nu_e}=\frac{n_{\nu_e}-n_{\bar\nu_e}}{n_B}.
+\]
+La frazione leptonica elettronica \`e
+\[
+ \boxed{Y_{L_e}=Y_e+Y_{\nu_e}}.
+\]
+\begin{itemize}
+ \item Con neutrini intrappolati si assegna, nei modelli,
+ un valore iniziale $Y_{L_e}\simeq0.4$.
+ \item Durante la \textbf{deleptonizzazione}, il flusso uscente
+ di neutrini riduce $Y_{L_e}$.
+ \item Durante il \textbf{raffreddamento}, diminuisce l'energia
+ termica e, nella fase di raffreddamento del nucleo,
+ l'entropia per barione.
+\end{itemize}
+La diminuzione di $Y_{L_e}$ non impone che anche $s$
+diminuisca nello stesso intervallo temporale.
+\pnsintegfonte{Prakash et al. (1997), \S\S 3 e 5.}
+\end{frame}
+
+% FRAME 05
+\begin{frame}[t,label=pns-completa-05]{Equilibrio beta con neutrini intrappolati}
+\small\raggedright
+Per la reazione
+\[
+ p+e^-\rightleftharpoons n+\nu_e
+\]
+l'equilibrio chimico richiede
+\[
+ \mu_p+\mu_e=\mu_n+\mu_{\nu_e},
+ \qquad\boxed{\mu_n-\mu_p=\mu_e-\mu_{\nu_e}}.
+\]
+\begin{itemize}
+ \item \textbf{Materia opaca:} il vincolo sul numero leptonico
+ comporta generalmente $\mu_{\nu_e}\ne0$.
+ \item \textbf{Materia senza trapping:} nella condizione
+ di equilibrio beta si pone $\mu_{\nu_e}=0$, ottenendo
+ $\mu_n-\mu_p=\mu_e$.
+\end{itemize}
+Per una specie in equilibrio con numero barionico $b_i$
+e carica elettrica $q_i$ in unit\`a di $e$:
+\[
+ \boxed{\mu_i=b_i\mu_n-q_i(\mu_e-\mu_{\nu_e})},
+ \qquad\sum_i q_i n_i=0.
+\]
+Il trapping modifica dunque anche la composizione adronica.
+\pnsintegfonte{Prakash et al. (1997), \S 3.}
+\end{frame}
+
+% FRAME 06
+\begin{frame}[t,label=pns-completa-06]{Una successione di configurazioni quasi statiche}
+\small\raggedright
+Dopo il transitorio dinamico, la separazione delle scale temporali
+permette di descrivere l'evoluzione mediante configurazioni
+approssimativamente in equilibrio idrostatico.
+L'EOS dipende dallo stato termico e leptonico:
+\[
+ P=P(n_B,s,Y_{L_e}),
+ \qquad\varepsilon=\varepsilon(n_B,s,Y_{L_e}),
+\]
+una volta fissati gli altri vincoli e determinata la composizione.
+Per modelli sferici non rotanti:
+\[
+ \frac{dm}{dr}=4\pi r^2\frac{\varepsilon}{c^2},
+\]
+\[
+ \frac{dP}{dr}
+ =-\frac{G}{r^2}\frac{\varepsilon+P}{c^2}
+ \frac{m+4\pi r^3P/c^2}{1-2Gm/(rc^2)}.
+\]
+I profili $s(r,t)$ e $Y_{L_e}(r,t)$ evolvono per trasporto.
+Le sequenze a $s$ e $Y_{L_e}$ uniformi sono
+\textbf{idealizzazioni utili per confrontare gli stadi}.
+\pnsintegfonte{Prakash et al. (1997), \S\S 2 e 5.}
+\end{frame}
+
+% FRAME 07
+\begin{frame}[t,label=pns-completa-07]{Separare temperatura e intrappolamento}
+\small\raggedright
+Bombaci confronta due istantanee idealizzate dell'evoluzione,
+assumendo $M_B\simeq\mathrm{costante}$ fra esse. Introduce anche
+una configurazione di controllo:
+
+\medskip
+{\renewcommand{\arraystretch}{1.28}
+\begin{tabular}{|p{0.23\textwidth}|p{0.25\textwidth}|p{0.39\textwidth}|}
+\hline
+\textbf{Stato} & \textbf{Entropia} & \textbf{Vincolo leptonico} \\
+\hline
+Iniziale $i$, $t\sim3$ s & $s=2$ & $Y_{L_e}=0.4$, neutrini intrappolati \\
+\hline
+Controllo $\mathrm{tr}$ & $s=0$ & $Y_{L_e}=0.4$, neutrini intrappolati \\
+\hline
+Finale $f$, $t\sim30$ s & $s=0$ & Equilibrio beta senza trapping: $\mu_{\nu_e}=0$ \\
+\hline
+\end{tabular}}
+
+\medskip
+Il controllo $\mathrm{tr}$ serve a separare due effetti:
+\[
+ \begin{aligned}
+ i\longrightarrow\mathrm{tr}:&\quad\text{raffreddamento a }Y_{L_e}\text{ fissato},\\
+ \mathrm{tr}\longrightarrow f:&\quad\text{rimozione del trapping a }s=0.
+ \end{aligned}
+\]
+Questa separazione \`e un confronto fra EOS, non una successione
+temporale necessariamente attraversata dalla stella.
+Lo stato $s=0$ approssima l'EOS fredda; a $30$ s la temperatura
+fisica pu\`o essere ancora dell'ordine di $1$ MeV.
+
+\pnsintegfonte{Bombaci (1996), \S\S 2 e 4, pp. 872--873.
+I tempi identificano le istantanee del modello.}
+\end{frame}
+
+% FRAME 08
+\begin{frame}[t,label=pns-completa-08]{Due contributi alla massa barionica massima}
+\small\raggedright
+Definiamo le differenze fra le tre sequenze di equilibrio:
+\begin{align*}
+ \Delta_{\mathrm{cool}}M_{B,\max}
+   &\equiv M_{B,\max}^{\mathrm{tr}}-M_{B,\max}^{i},\\
+ \Delta_{\mathrm{untrap}}M_{B,\max}
+   &\equiv M_{B,\max}^{f}-M_{B,\max}^{\mathrm{tr}}.
+\end{align*}
+La loro somma \`e $M_{B,\max}^{f}-M_{B,\max}^{i}$.
+
+\medskip
+{\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|p{0.36\textwidth}|c|c|c|}
+\hline
+\textbf{Modelli di Bombaci} & $\Delta_{\mathrm{cool}}$ & $\Delta_{\mathrm{untrap}}$ & \textbf{Somma} \\
+\hline
+Nucleonici, BPAL & $<0$ & $>0$ & $>0$ \\
+\hline
+Con iperoni, GM & $>0$ & $<0$ & $<0$ \\
+\hline
+\end{tabular}}
+
+\medskip
+\textbf{Perch\'e il raffreddamento pu\`o aumentare il limite?}
+Nel modello GM, la temperatura favorisce la popolazione di
+componenti che ammorbidiscono l'EOS, anche sotto le soglie
+di comparsa a $T=0$. Raffreddando, questo effetto si riduce.
+
+\medskip
+I segni riguardano i modelli indicati: il contributo termico
+alla pressione, da solo, non determina la variazione del limite
+quando cambia anche la composizione.
+
+\pnsintegfonte{Bombaci (1996), \S 5, p. 876; confronto fra le figure 1, 2 e 4.}
+\end{frame}
+
+% FRAME 09
+\begin{frame}[t,label=pns-completa-09]{Perdere neutrini pu\`o riscaldare il nucleo}
+\small\raggedright
+Per materia $npe\nu_e$ neutra e in equilibrio beta,
+il primo principio per barione pu\`o essere scritto come
+\[
+ de=-P\,d\!\left(\frac{1}{n_B}\right)
+ +k_B T\,ds+\mu_{\nu_e}\,dY_{L_e}.
+\]
+In un bilancio locale schematico, indicando con $\dot q_\nu$
+la perdita netta di energia per barione e per unit\`a di tempo:
+\[
+ \boxed{k_B T\frac{ds}{dt}
+ =-\dot q_\nu-\mu_{\nu_e}\frac{dY_{L_e}}{dt}}.
+\]
+Durante la deleptonizzazione,
+\[
+ \mu_{\nu_e}>0,\quad\frac{dY_{L_e}}{dt}<0
+ \quad\Longrightarrow\quad
+ -\mu_{\nu_e}\frac{dY_{L_e}}{dt}>0.
+\]
+Il bilancio pu\`o quindi produrre \textbf{aumento dell'entropia
+del nucleo}, da $s\sim1$ a $s\sim2$ nei modelli discussi.
+Anche la contrazione contribuisce all'evoluzione della temperatura.
+\pnsintegfonte{Rielaborazione didattica da Prakash et al. (1997),
+\S 5.1. Bilancio locale senza fattori di redshift.}
+\end{frame}
+
+% FRAME 10
+\begin{frame}[t,label=pns-completa-10]{Raffreddamento e trasparenza ai neutrini}
+\small\raggedright
+Quando il contributo della degenerazione dei neutrini elettronici
+si riduce, prevale la perdita dell'energia termica.
+\begin{itemize}
+ \item Neutrini e antineutrini di tutti i sapori trasportano energia.
+ \item Nei modelli di trasporto discussi, i neutrini muonici
+ e tauonici contribuiscono in modo rilevante al raffreddamento.
+ \item Diminuendo l'energia dei neutrini, il libero cammino medio
+ tende ad aumentare.
+\end{itemize}
+Schematicamente, trascurando le correzioni del mezzo:
+\[
+ \sigma_\nu\propto E_\nu^2,
+ \qquad\lambda_\nu\sim\frac{1}{n_B\sigma_\nu}.
+\]
+\[
+ E_\nu\downarrow\quad\Longrightarrow\quad
+ \lambda_\nu\uparrow\quad\Longrightarrow\quad
+ \text{progressiva trasparenza}.
+\]
+$\mu_\nu\simeq0$ non significa assenza di neutrini:
+possono essere presenti coppie termiche $\nu\bar\nu$.
+\pnsintegfonte{Prakash et al. (1997), \S\S 1, 5 e 5.2.}
+\end{frame}
+
+% FRAME 11
+\begin{frame}[t,label=pns-completa-11]{Il tempo di raffreddamento e la capacit\`a termica}
+\small\raggedright
+I neutrini trasportano energia, mentre gran parte dell'energia
+termica \`e immagazzinata nella materia, soprattutto nei barioni.
+
+\medskip
+Una stima locale omogenea, con capacit\`a termiche per unit\`a
+di volume, fornisce
+\[
+ \kappa_\nu\sim\frac{c\lambda_{\nu,E}}{3}\,C_{V,\nu},
+ \qquad
+ \tau_{\mathrm{cool}}\sim\frac{R^2C_{V,\mathrm{tot}}}{\kappa_\nu},
+\]
+e quindi
+\[
+ \boxed{\tau_{\mathrm{cool}}\sim
+ \frac{3R^2}{c\lambda_{\nu,E}}
+ \frac{C_{V,\mathrm{tot}}}{C_{V,\nu}}}.
+\]
+$\lambda_{\nu,E}$ rappresenta il libero cammino medio efficace
+per il trasporto energetico; $C_{V,\mathrm{tot}}$ include la materia.
+
+\medskip
+Anche se i neutrini che raffreddano hanno un libero cammino medio
+maggiore di quelli che controllano la deleptonizzazione, devono
+smaltire l'energia termica della materia.
+Nella stima di Prakash et al.,
+\[
+ \tau_{\mathrm{cool}}/\tau_{\mathrm{delept}}\simeq1.7
+ \quad\text{(valore indicativo del modello).}
+\]
+
+\pnsintegfonte{Prakash et al. (1997), \S 5.2, p. 67, eq. (129).
+La formula con le capacit\`a termiche \`e una rielaborazione didattica.}
+\end{frame}
+
+% FRAME 12
+\begin{frame}[t,label=pns-completa-12]{Trapping ed EOS con soli nucleoni e leptoni}
+\small\raggedright
+Il trapping favorisce una composizione meno ricca di neutroni,
+con maggiore frazione protonica rispetto alla materia
+deleptonizzata.
+Per comprendere il ruolo dell'asimmetria, nel limite freddo:
+\[
+ e_B(n_B,Y_p)\simeq e_B(n_B,1/2)
+ +S(n_B)(1-2Y_p)^2,
+\]
+\[
+ \mu_n-\mu_p\simeq4S(n_B)(1-2Y_p).
+\]
+Se $S(n_B)$ cresce con la densit\`a, il contributo di simmetria
+alla pressione contiene
+\[
+ P_{\mathrm{sym}}\simeq
+ n_B^2\frac{dS}{dn_B}(1-2Y_p)^2.
+\]
+Nei modelli nucleonici esaminati, la riduzione di questo
+contributo pu\`o prevalere sull'aumento della pressione leptonica:
+il trapping pu\`o cos\`i \textbf{ridurre il limite sostenibile}.
+Nel confronto fra gli stadi va specificato il tipo di massa.
+\pnsintegfonte{Prakash et al. (1997), \S\S 4.2--4.3.
+La formula di simmetria illustra il meccanismo.}
+\end{frame}
+
+% FRAME 13
+\begin{frame}[t,label=pns-completa-13]{Iperoni, condensati di kaoni e quark}
+\small\raggedright
+La combinazione chimica rilevante per le cariche negative
+non leptoniche \`e $\mu_e-\mu_{\nu_e}$. Per esempio:
+\[
+ \mu_{\Sigma^-}=\mu_n+\mu_e-\mu_{\nu_e},
+ \qquad\mu_{K^-}=\mu_e-\mu_{\nu_e}.
+\]
+Nei modelli studiati, il trapping tende a
+\textbf{ritardare l'apparizione} di componenti che
+ammorbidiscono l'EOS.
+\begin{itemize}
+ \item Durante la deleptonizzazione cambiano i potenziali
+ chimici e le soglie di comparsa delle nuove specie.
+ \item Iperoni, condensati di kaoni o una fase contenente quark
+ possono diventare pi\`u abbondanti.
+ \item La pressione a parit\`a di densit\`a di energia
+ pu\`o diminuire, riducendo la massa massima sostenibile.
+\end{itemize}
+Il risultato dipende dalle interazioni e dai parametri
+dell'EOS adottata.
+\pnsintegfonte{Prakash et al. (1997), \S\S 4.3--4.5.}
+\end{frame}
+
+% FRAME 14
+\begin{frame}[t,label=pns-completa-14]{Massa barionica e massa gravitazionale}
+\small\raggedright
+La \textbf{massa barionica} conta i barioni mediante una massa
+di riferimento $m_b$:
+\[
+ M_B=m_bN_B
+ =4\pi m_b\int_0^R
+ \frac{n_B(r)\,r^2\,dr}{\sqrt{1-2Gm(r)/(rc^2)}}.
+\]
+La \textbf{massa gravitazionale} comprende il contributo
+dell'energia totale e della gravitazione:
+\[
+ M_G=m(R)=\frac{4\pi}{c^2}
+ \int_0^R\varepsilon(r)\,r^2\,dr.
+\]
+Terminata l'accrezione, trascurando ulteriori scambi di materia:
+\[
+ \boxed{M_B\simeq\mathrm{costante}},
+ \qquad\boxed{\frac{dM_G}{dt}\simeq-\frac{L_\nu^\infty}{c^2}<0}.
+\]
+Per seguire una stessa stella fra configurazioni calde e fredde
+occorre quindi confrontarle a \textbf{uguale $M_B$}.
+\pnsintegfonte{Prakash et al. (1997), \S\S 4.6, 5 e 6.1;
+Bombaci (1996), \S 3.}
+\end{frame}
+
+% FRAME 15
+\begin{frame}[t,label=pns-completa-15]{Energia totale ed energia dopo i primi secondi}
+\small\raggedright
+A massa barionica fissata, definiamo le energie di legame
+delle configurazioni iniziale e finale:
+\[
+ B_i=(M_B-M_G^i)c^2,
+ \qquad
+ B_f=(M_B-M_G^f)c^2.
+\]
+L'energia emessa fra le due istantanee \`e, approssimativamente,
+\[
+ \boxed{E_{\nu,i\to f}^{\infty}
+ \simeq(M_G^i-M_G^f)c^2=B_f-B_i}.
+\]
+La relazione empirica di Prakash et al. riguarda invece
+l'\textbf{energia di legame finale}:
+\[
+ B_f\simeq(0.065\pm0.010)
+ \left(\frac{M_B}{M_\odot}\right)^2M_\odot c^2.
+\]
+Nei modelli discussi, la fase dopo i primi $1$--$3$ s
+emette tipicamente meno di met\`a dell'energia di legame totale;
+una parte importante \`e gi\`a uscita durante collasso e accrezione.
+
+\medskip
+L'esempio $M_B=1.6M_\odot$ d\`a $B_f\sim3\times10^{53}$ erg:
+non attribuisce tutta questa energia alla sola fase $i\to f$.
+
+\pnsintegfonte{Prakash et al. (1997), \S 4.6, eq. (93), pp. 60--61;
+\S 6.1, p. 70.}
+\end{frame}
+
+% FRAME 16
+\begin{frame}[t,label=pns-completa-16]{Confrontare correttamente i massimi}
+\small\raggedright
+Per ciascuna sequenza, il massimo gravitazionale e quello
+barionico identificano la configurazione limite:
+\[
+ M_{G,\max}^{i}=M_G^{i}(M_{B,\max}^{i}),
+ \qquad
+ M_{G,\max}^{f}=M_G^{f}(M_{B,\max}^{f}).
+\]
+Nei modelli nucleonici di Bombaci:
+\[
+ \boxed{M_{B,\max}^{f}>M_{B,\max}^{i}},
+ \qquad
+ M_{G,\max}^{f}-M_{G,\max}^{i}
+ \ \text{ha segno dipendente dall'EOS}.
+\]
+I due massimi gravitazionali confrontano stelle con
+\textbf{masse barioniche diverse}. Seguendo la stessa stella,
+si confrontano invece $M_G^i(M_B)$ e $M_G^f(M_B)$:
+\[
+ M_G^i(M_B)>M_G^f(M_B),
+ \qquad M_B\simeq\mathrm{costante}.
+\]
+Per una traiettoria quasi statica assegnata, la condizione
+di permanenza sul ramo stabile richiede
+\[
+ M_B<M_{B,\max}(t)\quad\text{in ogni stadio}.
+\]
+Il solo confronto fra gli estremi non determina il percorso
+temporale n\'e l'istante di un eventuale collasso.
+
+\pnsintegfonte{Bombaci (1996), \S\S 3--5, in particolare p. 876;
+Prakash et al. (1997), \S 6.1. Criterio temporale: sintesi didattica.}
+\end{frame}
+
+% FRAME 17
+\begin{frame}[t,label=pns-completa-17]{Scenario nucleonico: nascita e accrezione}
+\small\raggedright
+Supponiamo $M_{B,\max}^{i}<M_{B,\max}^{f}$ e conservazione
+di $M_B$ nell'evoluzione della PNS.
+
+\medskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.43\textwidth}
+\centering
+\begin{tikzpicture}[x=0.88cm,y=0.83cm,>=stealth,font=\scriptsize]
+ \draw[->] (0,0)--(4.6,0) node[right] {$M_B$};
+ \draw[->] (0,0)--(0,4.05) node[above] {$M_G$};
+ \draw[PNSIntegCalda,very thick]
+   (0.35,0.6) .. controls (1.05,1.5) and (2.1,2.65) .. (2.6,3.15);
+ \draw[PNSIntegFredda,very thick,dashed]
+   (0.35,0.3) .. controls (1.05,0.9) and (2.1,1.85) .. (2.6,2.3)
+   .. controls (3.0,2.65) and (3.5,3.1) .. (3.95,3.45);
+ \draw[gray,densely dotted] (2.6,0)--(2.6,3.15);
+ \draw[gray,densely dotted] (3.95,0)--(3.95,3.45);
+ \fill[PNSIntegCalda] (2.6,3.15) circle (1.6pt) node[above left] {$a$};
+ \fill[PNSIntegFredda] (2.6,2.3) circle (1.6pt) node[below right] {$c$};
+ \fill[PNSIntegFredda] (3.95,3.45) circle (1.6pt) node[above] {$b$};
+ \draw[->,thick] (2.6,2.99)--(2.6,2.48);
+ \node[below] at (2.6,0) {$M_{B,\max}^{i}$};
+ \node[below] at (3.95,-0.42) {$M_{B,\max}^{f}$};
+ \node[PNSIntegCalda] at (1.0,2.6) {iniziale};
+ \node[PNSIntegFredda] at (1.1,0.48) {finale};
+\end{tikzpicture}
+\par\scriptsize Schema dei rami stabili; quote schematiche.
+L'ordine verticale dei massimi non \`e universale.
+\end{column}
+\begin{column}{0.54\textwidth}
+$a$: massimo iniziale;\quad $b$: massimo finale.
+
+\medskip
+$a\to c$: evoluzione a $M_B$ costante.
+Il massimo finale raggiungibile per questa nascita \`e
+\[
+ M_{G,\mathrm{lim}}^{\mathrm{nascita}}
+ =M_G^f(M_{B,\max}^{i})
+ <M_{\mathrm{OV}},
+\]
+con $M_{\mathrm{OV}}=M_{G,\max}^{f}$.
+
+\medskip
+Il tratto freddo $c\to b$ pu\`o essere popolato
+da \textbf{accrezione tardiva}, che aumenta $M_B$.
+Nell'intervallo superiore possono quindi coesistere masse
+di NS accresciute e BH formati dal collasso iniziale.
+\end{column}
+\end{columns}
+
+\pnsintegfonte{Bombaci (1996), \S 4.1.1, pp. 873--875 e figura 3.
+Diagramma ridisegnato qualitativamente; EOS e modello di nascita fissati.}
+\end{frame}
+
+% FRAME 18
+\begin{frame}[t,label=pns-completa-18]{Metastabilit\`a: tre possibili esiti}
+\small\raggedright
+Nei modelli con $M_{B,\max}^{f}<M_{B,\max}^{i}$,
+il confronto delle sequenze distingue tre intervalli:
+
+\medskip
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.43\textwidth}
+\centering
+\begin{tikzpicture}[x=0.88cm,y=0.83cm,>=stealth,font=\scriptsize]
+ \fill[PNSIntegCalda!9] (2.65,0) rectangle (4.02,3.87);
+ \draw[->] (0,0)--(4.6,0) node[right] {$M_B$};
+ \draw[->] (0,0)--(0,4.05) node[above] {$M_G$};
+ \draw[PNSIntegCalda,very thick]
+  (0.35,0.6) .. controls (1.4,1.6) and (2.6,2.7) .. (3.35,3.15)
+  .. controls (3.6,3.3) and (3.85,3.5) .. (4.02,3.63);
+ \draw[PNSIntegFredda,very thick,dashed]
+  (0.35,0.3) .. controls (1.0,1.0) and (2.1,1.95) .. (2.65,2.45);
+ \draw[gray,densely dotted] (2.65,0)--(2.65,3.87);
+ \draw[gray,densely dotted] (4.02,0)--(4.02,3.87);
+ \draw[->,thick] (1.8,2.12)--(1.8,1.73);
+ \fill[PNSIntegCalda] (3.35,3.15) circle (1.6pt);
+ \draw[->,PNSIntegCalda,thick] (3.35,2.99)--(3.35,1.4);
+ \node[PNSIntegCalda] at (3.35,1.05) {collasso};
+ \node[below] at (2.65,0) {$M_{B,\max}^{f}$};
+ \node[below] at (4.02,-0.42) {$M_{B,\max}^{i}$};
+ \node[PNSIntegCalda] at (1.15,2.8) {iniziale};
+ \node[PNSIntegFredda] at (1.1,0.45) {finale};
+\end{tikzpicture}
+\par\scriptsize La fascia evidenzia la finestra
+di metastabilit\`a. Schema senza dati numerici.
+\end{column}
+\begin{column}{0.54\textwidth}
+\textbf{1. $M_B<M_{B,\max}^{f}$}\par
+Esiste un possibile esito stabile freddo;
+va mantenuta la stabilit\`a lungo il percorso.
+
+\medskip
+\textbf{2. $M_{B,\max}^{f}<M_B<M_{B,\max}^{i}$}\par
+La PNS \`e inizialmente sostenibile, ma manca
+una configurazione fredda stabile con lo stesso $M_B$:
+\textbf{possibile collasso ritardato}.
+
+\medskip
+\textbf{3. $M_B>M_{B,\max}^{i}$}\par
+Il limite della sequenza iniziale \`e gi\`a superato:
+collasso precoce nel quadro considerato.
+\end{column}
+\end{columns}
+
+\medskip
+La perdita di energia fa diminuire $M_G$; la soglia
+$M_{B,\max}$ pu\`o scendere sotto il valore conservato di $M_B$. Nel secondo caso
+supernova e formazione ritardata di un BH sono compatibili.
+
+\pnsintegfonte{Bombaci (1996), \S 4.2.1, pp. 875--876 e figura 5;
+Prakash et al. (1997), \S 6.1. Diagramma qualitativo.}
+\end{frame}
+
+% FRAME 19
+\begin{frame}[t,label=pns-completa-19]{Che cosa pu\`o rivelare il segnale di neutrini?}
+\small\raggedright
+L'evoluzione modifica luminosit\`a, energie caratteristiche
+e composizione per sapore del flusso emesso.
+\medskip
+{\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{0.34\textwidth}|p{0.55\textwidth}|}
+\hline
+\textbf{Informazione} & \textbf{Legame fisico} \\
+\hline
+Energia totale emessa & Energia di legame e massa del residuo. \\
+\hline
+\raggedright Durata ed evoluzione di $L_\nu(t)$ & Dimensioni della PNS
+e opacit\`a della materia. \\
+\hline
+Evoluzione delle energie e dei sapori & Deleptonizzazione,
+raffreddamento e cambiamenti di composizione. \\
+\hline
+Brusca interruzione del segnale & Possibile formazione
+di un buco nero. \\
+\hline
+\end{tabular}}
+\medskip
+Nei modelli considerati, un'interruzione ritardata
+pu\`o segnalare la perdita di stabilit\`a della PNS.
+L'identificazione dell'EOS richiede per\`o il confronto
+con modelli di struttura e trasporto.
+\pnsintegfonte{Prakash et al. (1997), \S\S 6.1--6.4.}
+\end{frame}
+
+% FRAME 20
+\begin{frame}[t,label=pns-completa-20]{Il numero leptonico nel segnale di neutrini}
+\small\raggedright
+Il numero di neutrini emessi e il numero leptonico trasportato
+sono due bilanci distinti. Nel modello senza conversioni di
+sapore e senza scambi di barioni, all'emissione:
+\[
+ \boxed{N_{\nu_e}^{\mathrm{esc}}-N_{\bar\nu_e}^{\mathrm{esc}}
+ =N_B\left(\langle Y_{L_e}\rangle_i
+ -\langle Y_{L_e}\rangle_f\right)}.
+\]
+La media \`e pesata sul numero di barioni:
+$\langle Y_{L_e}\rangle=N_B^{-1}\int Y_{L_e}\,dN_B$.
+Con $Y_{L_e}^{i}=0.4$ uniforme e neutrini finali sfuggiti:
+\[
+ N_{\nu_e}^{\mathrm{esc}}-N_{\bar\nu_e}^{\mathrm{esc}}
+ =N_B\left(0.4-\langle Y_e\rangle_f\right).
+\]
+Le coppie $\nu_\alpha\bar\nu_\alpha$ trasportano energia,
+ma danno contributo nullo al numero leptonico netto.
+
+\medskip
+Nei modelli studiati, le componenti che riducono $Y_e$ finale
+possono aumentare l'eccesso netto di $\nu_e$.
+Il confronto con i conteggi osservati richiede anche
+propagazione e risposta del rivelatore.
+
+\pnsintegfonte{Prakash et al. (1997), \S 6.2, pp. 71--73;
+Bombaci (1996), pp. 876--877. Formula integrata: rielaborazione del bilancio leptonico.}
+\end{frame}
+
+% FRAME 21
+\begin{frame}[t,label=pns-completa-21]{Dopo la fase di protostella}
+\small\raggedright
+Raggiunta la trasparenza ai neutrini, la stella continua
+a evolvere termicamente.
+\begin{itemize}
+ \item Il nucleo perde energia mediante emissione di neutrini.
+ \item La crosta pu\`o rimanere temporaneamente pi\`u calda:
+ il rilassamento termico richiede tempi molto maggiori
+ dei primi secondi.
+ \item Nei modelli richiamati dal lavoro, questa fase pu\`o
+ estendersi fino a circa $10^2$ anni.
+ \item L'evoluzione successiva dipende dai canali di emissione
+ consentiti dalla composizione e dagli effetti della
+ superfluidit\`a.
+\end{itemize}
+Una configurazione \textbf{fredda ai fini dell'EOS}
+soddisfa approssimativamente
+\[
+ k_B T\ll E_F,
+\]
+pur potendo avere ancora una temperatura elevata in kelvin.
+\pnsintegfonte{Prakash et al. (1997), \S 1.
+Le scale temporali dipendono dai modelli termici.}
+\end{frame}
+
+% FRAME 22
+\begin{frame}[t,label=pns-completa-22]{Riferimenti e ambito della trattazione}
+\small\raggedright
+\textbf{M. Prakash, I. Bombaci, M. Prakash, P. J. Ellis,
+J. M. Lattimer, R. Knorren}\\
+\emph{Composition and structure of protoneutron stars},\\
+Physics Reports \textbf{280}, 1--77 (1997).\\
+DOI: \href{https://doi.org/10.1016/S0370-1573(96)00023-3}
+{10.1016/S0370-1573(96)00023-3}.
+
+\medskip
+\textbf{I. Bombaci}\\
+\emph{The maximum mass of a neutron star},\\
+Astronomy and Astrophysics \textbf{305}, 871--877 (1996).
+
+\medskip
+\begin{itemize}
+ \item Le sequenze illustrate riguardano modelli
+ sferici non rotanti.
+ \item I tempi e gli effetti quantitativi dipendono
+ da EOS, composizione e opacit\`a.
+ \item Le due possibilit\`a di evoluzione della massa massima
+ descrivono i casi discussi nei lavori.
+\end{itemize}
+\end{frame}

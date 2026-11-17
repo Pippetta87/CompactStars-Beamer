@@ -1,4 +1,4 @@
-\ProvidesPackage{beamersetup-barre}
+\ProvidesPackage{beamersetup-barre}[2026/11/13 v2.0 Barra compatta con gruppi annidati]
 %
 %%\makeatletter
 %%\newcommand\listframessec{\@starttoc{allframessec}}
@@ -543,6 +543,7 @@
       {Usare identificatori diversi per ogni voce della barra.}%
   \else
     \expandafter\gdef\csname bs@navparent@#2\endcsname{#2}%
+    \expandafter\gdef\csname bs@navrootof@#2\endcsname{#2}%
     \expandafter\gdef\csname bs@navroot@#2\endcsname{}%
     \expandafter\gdef\csname bs@navchildren@#2\endcsname{}%
     \g@addto@macro\bs@navitems{\bs@navgroup{#2}{#3}{#4}{#1}}%
@@ -550,29 +551,54 @@
 }
 
 % Sottovoce: [separatore successivo], identificatore del padre,
-% identificatore proprio, larghezza, testo. Il padre va dichiarato prima.
+% identificatore proprio, larghezza, testo. Il padre (principale o gruppo)
+% va dichiarato prima.
 % La larghezza della sottovoce e' accettata per compatibilita', ma non usata:
 % l'etichetta ha larghezza naturale e va a capo nel gruppo del padre.
 \newcommand{\barrazonasub}[5][]{%
-  \ifcsname bs@navroot@#2\endcsname
+  \ifcsname bs@navchildren@#2\endcsname
     \ifcsname bs@navparent@#3\endcsname
       \PackageError{beamersetup}{Destinazione della barra duplicata: #3}%
         {Usare identificatori diversi per ogni voce della barra.}%
     \else
       \expandafter\gdef\csname bs@navparent@#3\endcsname{#2}%
+      \expandafter\xdef\csname bs@navrootof@#3\endcsname{%
+        \csname bs@navrootof@#2\endcsname}%
       \expandafter\g@addto@macro\csname bs@navchildren@#2\endcsname{%
         \bs@navsubitem{#3}{#4}{#5}{#1}}%
     \fi
   \else
-    \PackageError{beamersetup}{Voce principale non dichiarata: #2}%
-      {Dichiarare prima il padre con \string\barrazona.}%
+    \PackageError{beamersetup-barre}{Padre non dichiarato o non raggruppabile: #2}%
+      {Dichiarare prima il padre con \string\barrazona\space o \string\barrazonagruppo.}%
+  \fi
+}
+
+% Gruppo annidato: [separatore dopo la parentesi chiusa], padre,
+% destinazione del gruppo, etichetta. Le parentesi sono automatiche e
+% restano fuori dai link. Le sottovoci usano l'ID del gruppo come padre.
+\newcommand{\barrazonagruppo}[4][]{%
+  \ifcsname bs@navchildren@#2\endcsname
+    \ifcsname bs@navparent@#3\endcsname
+      \PackageError{beamersetup-barre}{Destinazione della barra duplicata: #3}%
+        {Usare identificatori diversi per ogni voce della barra.}%
+    \else
+      \expandafter\gdef\csname bs@navparent@#3\endcsname{#2}%
+      \expandafter\xdef\csname bs@navrootof@#3\endcsname{%
+        \csname bs@navrootof@#2\endcsname}%
+      \expandafter\gdef\csname bs@navchildren@#3\endcsname{}%
+      \expandafter\g@addto@macro\csname bs@navchildren@#2\endcsname{%
+        \bs@navsubgroup{#3}{#4}{#1}}%
+    \fi
+  \else
+    \PackageError{beamersetup-barre}{Padre non dichiarato o non raggruppabile: #2}%
+      {Dichiarare prima il padre con \string\barrazona\space o \string\barrazonagruppo.}%
   \fi
 }
 
 % A capo esplicito: inserire tra le dichiarazioni delle sottovoci.
 % In sua assenza il ritorno a capo e' automatico.
 \newcommand{\barranuovariga}[1]{%
-  \ifcsname bs@navroot@#1\endcsname
+  \ifcsname bs@navchildren@#1\endcsname
     \expandafter\g@addto@macro\csname bs@navchildren@#1\endcsname{%
       \unskip\par\noindent\strut}%
   \else
@@ -596,7 +622,7 @@
 % Un collegamento a una keyword o a un singolo frame non cambia stato.
 \newcommand{\zonadalinkdest}[1]{%
   \ifcsname bs@navparent@#1\endcsname
-    \xdef\bs@navarea{\csname bs@navparent@#1\endcsname}%
+    \xdef\bs@navarea{\csname bs@navrootof@#1\endcsname}%
     \edef\bs@navtarget{#1}%
     \ifx\bs@navarea\bs@navtarget
       \gdef\bs@navsubarea{}%
@@ -645,6 +671,10 @@
 
 % Spazio normale tra le voci di uno stesso gruppo.
 \newcommand{\spaziovocibarra}{\space}
+% Il margine dei rettangoli cliccabili e' valutato quando viene spedita
+% la pagina: va quindi impostato fuori dalle singole scatole dei link.
+% Il testo e i separatori restano separati anche nell'area cliccabile.
+\hypersetup{pdflinkmargin=0pt}
 \newcommand{\bs@navbox}[4]{%
   \hbox{%
     {\bs@navfont%
@@ -676,10 +706,32 @@
     \bs@navbox{#1}{#2}{#3}{#4}%
   \endgroup
 }
+% Una voce e' attiva anche se e' antenata della sottovoce selezionata.
+% Le principali restano gestite separatamente da \bs@navitem.
+\newif\ifbs@naventryactive
+\newcommand{\bs@navcheckactive}[1]{%
+  \bs@naventryactivefalse
+  \def\bs@navwanted{#1}%
+  \edef\bs@navwalk{\bs@navsubarea}%
+  \ifx\bs@navwalk\@empty\else
+    \bs@navcheckparent
+  \fi
+}
+\newcommand{\bs@navcheckparent}{%
+  \ifx\bs@navwalk\bs@navwanted
+    \bs@naventryactivetrue
+  \else
+    \edef\bs@navnext{\csname bs@navparent@\bs@navwalk\endcsname}%
+    \ifx\bs@navwalk\bs@navnext\else
+      \let\bs@navwalk\bs@navnext
+      \bs@navcheckparent
+    \fi
+  \fi
+}
 \newcommand{\bs@navsubitem}[4]{%
   \begingroup
-    \def\bs@navtarget{#1}%
-    \ifx\bs@navsubarea\bs@navtarget
+    \bs@navcheckactive{#1}%
+    \ifbs@naventryactive
       \def\bs@navcolor{sottozona attiva in head/foot}%
       \def\bs@navfont{\usebeamerfont{sottozona attiva in head/foot}}%
       \let\bs@navformat\stilesottozonapdf
@@ -690,6 +742,17 @@
     \fi
     \bs@navbox{#1}{#2}{#3}{#4}%
   \endgroup
+}
+
+% TOV(d, e, f): nessuno spazio dopo '(' o prima di ')'. Il contenuto
+% puo' andare a capo tra le sottovoci; le parentesi non sono cliccabili.
+\newcommand{\bs@navsubgroup}[3]{%
+  \bs@navsubitem{#1}{0}{#2}{(}%
+  \unskip\nobreak
+  \csname bs@navchildren@#1\endcsname%
+  \unskip\nobreak
+  \hbox{\stileseparatorebarra{)#3}}%
+  \spaziovocibarra%
 }
 
 % Gruppi indipendenti, allineati in alto e con altezza naturale.
@@ -728,23 +791,64 @@
 % VOCI DELLA BARRA. L'ordine delle principali determina quello dei gruppi.
 % Le sottovoci sono raccolte nel proprio gruppo, nell'ordine dichiarato.
 % Le larghezze delle principali sono frazioni di \paperwidth.
+% Esempio di gruppo annidato, da inserire tra le sottovoci del padre:
+% \barrazonagruppo{genrel}{rg-tov}{TOV}
+% \barrazonasub[,]{rg-tov}{tov-d}{.05}{d}
+% \barrazonasub[,]{rg-tov}{tov-e}{.05}{e}
+% \barrazonasub{rg-tov}{tov-f}{.05}{f}
+% Le parentesi sono automatiche; con \linkdest{tov-d} sono attivi RG, TOV, d.
 % La somma delle larghezze dei gruppi, piu' .1 per il contatore, deve
 % rimanere entro 1. Le larghezze delle sottovoci non entrano nella somma.
 \barrazona{reglez25}{.07}{RL25}
+
 \barrazona{succo}{.07}{S}
-\barrazona[:]{genrel}{.22}{RG}
+
+\barrazona[:]{genrel}{.2}{RG}
 \barrazonasub[,]{genrel}{rgD}{.05}{D}
 \barrazonasub[,]{genrel}{rgEP}{.05}{EP}
 \barrazonasub[,]{genrel}{rggeodetiche}{.05}{$\tau$}
 \barrazonasub[,]{genrel}{rgeqgeo}{.05}{$\delta S$}
 \barrazonasub[,]{genrel}{rgriemann}{.05}{$R$}
 \barrazonasub[,]{genrel}{rgstokesconservation}{.05}{$\oint$}
+\barrazonasub[,]{genrel}{fieldeq}{.05}{$G{=}T$}
+\barrazonasub[,]{genrel}{schsolution}{.05}{$g_S$}
+\barrazonasub[,]{genrel}{energiaimpulso}{.05}{$T$}
+\barrazonasub[,]{genrel}{fluidoRG}{.05}{$\sim$}
+\barrazonagruppo{genrel}{TOV}{TOV}
+\barrazonasub[,]{TOV}{baryonpropergrav}{.05}{BPG}
+\barrazonasub{TOV}{Buchdahllimit}{.05}{Blim}
 % Esempi futuri: aggiungere le sottovoci qui, dopo il loro padre.
 % \barrazonasub[,]{genrel}{rg-geo}{.05}{Geo}
 % \barrazonasub{genrel}{rg-tov}{.05}{TOV}
-\barrazona{microphysics}{.07}{$\micro$p}
-\barrazona[:]{pulsar}{.1}{pulsar}
+
+\barrazona[:]{microphysics}{.2}{$\micro$p}
+\barrazonasub[,]{microphysics}{mpthermodynamicspotentials}{.05}{$\Omega$}
+\barrazonasub[,]{microphysics}{mpPnepsilon}{.05}{$Pn\varepsilon$}
+\barrazonasub[,]{microphysics}{mpchemicalpotential}{.05}{$\mu$}
+\barrazonasub[,]{microphysics}{mpnpe}{.05}{npe}
+\barrazonasub[,]{microphysics}{mp3eos}{.05}{$P_{\varepsilon}P_{n_B}\frac{E}{A}$}
+\barrazonasub[,]{microphysics}{mpgasfermi}{.05}{FD}
+\barrazonasub[,]{microphysics}{mppolitropic}{.05}{$P\propto x^n$}
+\barrazonasub[,]{microphysics}{mpsuperfluidity}{.05}{Sfluid}
+
+\barrazona[:]{pulsar}{.2}{pulsar}
+\barrazonasub[,]{pulsar}{rotationalequilibrium}{.05}{$\varpi$}
+\barrazonasub[,]{pulsar}{Pdot}{.05}{$\dot{P}$}
+\barrazonasub[,]{pulsar}{emissionmechanism}{.05}{\faSatelliteDish}
+\barrazonagruppo{pulsar}{RotationInertiaGWemission}{Rot}
+\barrazonasub[,]{RotationInertiaGWemission}{MInertia}{.05}{I}
+\barrazonasub[,]{RotationInertiaGWemission}{magneticdipole}{.05}{$vec{\mu}$}
+\barrazonasub[,]{RotationInertiaGWemission}{braking}{.05}{$\ddot{\Omega}$}
+\barrazonasub[,]{RotationInertiaGWemission}{GWemission}{.05}{GW}
+\barrazonasub[,]{pulsar}{PPdotdiagram}{.05}{$P\dot{P}$}
+\barrazonasub[,]{pulsar}{glitches}{.05}{$\delta\Omega$}
+\barrazonasub[,]{pulsar}{pulsarbinarie}{.05}{$01$}
+
 \barrazona[:]{densestars}{.12}{C*}
+\barrazonasub[,]{densestars}{pulsarbinarie}{.05}{$01$}
+\barrazonagruppo{densestars}{}{WD}
+\barrazonagruppo{densestars}{}{NS}
+
 \barrazona[:]{quarkhybrid}{.1}{qsb}
 
 \setbeamertemplate{navigation symbols}{}

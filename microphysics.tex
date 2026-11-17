@@ -1,21 +1,33 @@
-\section{Potenziali termodinamici}
+% Revisione 2026-11-14: indice coerente, politropiche fredde/isentropiche,
+% temperatura finita e interazioni ricavate da un potenziale consistente.
+% Il margine iniziale dei frame compensa gli spazi negativi del frametitle
+% nel setup corrente e tiene il contenuto separato dal titolo.
+\section{Potenziali termodinamici}\linkdest{mpthermodynamicspotentials}
 
 \begin{frame}[t]{Ambito e convenzioni}
+\vspace*{3mm}
 \small
 
-Il capitolo 3 descrive materia densa in equilibrio: potenziali, composizione in $\beta$-equilibrio, gas fermionici e politropiche. L'estensione finale tratta la \emph{superfluidit\`a neutronica}, non presente nel capitolo allegato.
+Il percorso parte dai potenziali termodinamici e dal $\beta$-equilibrio,
+passa ai gas fermionici e alle politropiche e si estende a temperatura
+finita, interazioni e \emph{superfluidit\`a neutronica}.
 \begin{itemize}
 \item Unita naturali $\hbar=c=k_B=1$ salvo indicazione contraria; $\varepsilon=U/V$.
 \item $N_i$ numero di particelle della specie $i$; $n_i=N_i/V$, $s=S/V$.
 \item $\mu_i$ include l'energia a riposo e si riferisce al numero conservato appropriato.
-\item Gli integrali dei gas liberi presuppongono particelle omogenee a $T=0$.
+\item Gli integrali con limite superiore $k_F$ descrivono gas liberi a $T=0$;
+a $T>0$ si usano le occupazioni di Fermi--Dirac.
+\item Le identita termodinamiche valgono anche con interazioni: devono
+essere applicate a un unico potenziale consistente e con vincoli espliciti.
 \end{itemize}
 Distinguere sistematicamente: $P(n)$, $P(\varepsilon)$ e $P(\mu)$ non contengono la stessa informazione termodinamica.
 \end{frame}
 
-\begin{frame}[t]{Primo principio e variabili naturali}
-\small
+\subsection{Primo principio e relazione di Eulero}
 
+\begin{frame}[t]{Primo principio e variabili naturali}
+\vspace*{3mm}
+\small
 \[
 dU=T\,dS-P\,dV+\sum_i\mu_i\,dN_i,
 \qquad U=U(S,V,\{N_i\}).
@@ -33,11 +45,10 @@ P=-\left.\frac{\partial U}{\partial V}\right|_{S,N_i},\quad
 La scelta di un potenziale \`e una trasformazione di Legendre, non un cambio di leggi fisiche.
 \end{frame}
 
-\zonapdf{microphysics}
 \begin{frame}[t]{Derivazione dell'equazione di Eulero}
+\vspace*{3mm}
 \small
-
-L'estensivit\`a impone, per un sistema omogeneo bulk,
+L'estensivit\'a impone, per un sistema omogeneo bulk,
 \[
 U(\lambda S,\lambda V,\{\lambda N_i\})=\lambda U(S,V,\{N_i\}).
 \]
@@ -53,9 +64,11 @@ Usando il primo principio,
 Validita: equilibrio estensivo; superfici, gravitazione auto-consistente e campi a lungo raggio possono richiedere cautela.
 \end{frame}
 
-\begin{frame}[t]{Ensemble canonico: trasformazione di Legendre}
-\small
+\subsection{Ensemble canonico e gran canonico}
 
+\begin{frame}[t]{Ensemble canonico: trasformazione di Legendre}
+\vspace*{3mm}
+\small
 \[
 F(T,V,N_i)=U-TS.
 \]
@@ -72,12 +85,11 @@ S=-\left.\frac{\partial F}{\partial T}\right|_{V,N_i},\quad
 \mu_i=\left.\frac{\partial F}{\partial N_i}\right|_{T,V,N_{j\ne i}}.
 \]
 Per uno stato uniforme $F/V=f(T,n_i)$ e $P=-f+\sum_i\mu_i n_i$.
-
 \end{frame}
 
 \begin{frame}[t]{Ensemble gran canonico: pressione come potenziale}
+\vspace*{3mm}
 \small
-
 \[
 \Omega(T,V,\mu_i)=F-\sum_i\mu_iN_i=U-TS-\sum_i\mu_iN_i.
 \]
@@ -96,9 +108,11 @@ n_i=\left.\frac{\partial P}{\partial\mu_i}\right|_{T,\mu_{j\ne i}}.
 In particolare $P(\mu,T)$, se termodinamicamente consistente, permette di ricostruire anche densita ed energia.
 \end{frame}
 
-\begin{frame}[t]{Limite termodinamico: identita fondamentali}
-\small
+\subsection{Limite termodinamico ed energia per particella}
 
+\begin{frame}[t]{Limite termodinamico: identita fondamentali}
+\vspace*{3mm}
+\small
 Per materia bulk omogenea:
 \[
 \varepsilon=\frac UV,\qquad s=\frac SV,\qquad n_i=\frac{N_i}{V}.
@@ -120,8 +134,8 @@ Quest'ultima deriva differenziando l'identita di Eulero e confrontando con il pr
 \end{frame}
 
 \begin{frame}[t]{Energia per particella e pressione}
+\vspace*{3mm}
 \small
-
 Con $T=0$, un numero conservato $N$ e $e(n)=\varepsilon(n)/n$:
 \[
 \frac{de}{dn}=
@@ -139,11 +153,13 @@ P=0\ \Longleftrightarrow\ \frac{de}{dn}=0\quad(n>0).
 Un minimo di $e(n)$ a densita finita e a pressione nulla individua materia autolegata; la stabilita richiede inoltre opportuna curvatura positiva.
 \end{frame}
 
+\subsection{EOS fredda: ricostruzione e  consistenza}\linkdest{mpPnepsilon}
+
 \begin{frame}[t]{Ricostruire l'EOS: da $P(n)$ a $P(\varepsilon)$}
+\vspace*{3mm}
 \small\raggedright
 A $T=0$, con un solo numero conservato, poniamo
 $e(n)=\varepsilon(n)/n$ e consideriamo $n>0$.
-
 \smallskip
 \textbf{1. Dalla pressione alla densit\`a di energia.}
 \[
@@ -159,10 +175,8 @@ e_*+\int_{n_*}^{n}\frac{P(n')}{n'^2}\,dn'
 \]
 Serve il dato $e_*=\varepsilon(n_*)/n_*$:
 $P(n)$ fissa la derivata di $e(n)$, ma non il suo valore a $n_*$.
-
 \medskip
 \textbf{2. La stessa EOS nella forma richiesta dalle TOV.}
-
 Ora ogni $n$ determina \textbf{sia} $\varepsilon(n)$ \textbf{sia} $P(n)$:
 i punti $(\varepsilon(n),P(n))$ tracciano la curva dell'EOS.
 Dove $\varepsilon(n)$ \`e invertibile, eliminiamo $n$:
@@ -173,11 +187,11 @@ Dove $\varepsilon(n)$ \`e invertibile, eliminiamo $n$:
 \end{frame}
 
 \begin{frame}[t]{Problema inverso: da $P(\varepsilon)$ a $n(\varepsilon)$}
+\vspace*{3mm}
 \small\raggedright
 \textbf{Ora conosciamo solo $P(\varepsilon)$}, sufficiente per le TOV,
 ma senza la corrispondenza fra $n$ ed $\varepsilon$.
 Cerchiamo anche la densit\`a di particelle, per esempio barionica.
-
 \medskip
 A $T=0$, con un solo numero conservato:
 \[
@@ -200,17 +214,16 @@ n(\varepsilon)=n_*\,\exp{
 \]
 Serve il dato $n_*=n(\varepsilon_*)>0$ alla densit\`a di energia
 di riferimento $\varepsilon_*$.
-
 \smallskip
 $P(\varepsilon)$ determina il \textbf{rapporto} $n(\varepsilon)/n_*$,
 ma non la costante moltiplicativa $n_*$.
-
 \smallskip
 Se conosci la tabella $(n,\varepsilon,P)$ del primo frame,
 questo dato \`e gi\`a fissato.
 \end{frame}
 
 \begin{frame}[t]{Caso canonico nel bulk: verifica}
+\vspace*{3mm}
 \small
 \[
 f(T,n_i)=\frac FV=\varepsilon-Ts.
@@ -227,14 +240,71 @@ Per una sola specie a $T=0$, $f=\varepsilon$ e
 \[
 P=n\frac{d\varepsilon}{dn}-\varepsilon.
 \]
-La seconda derivata di $\varepsilon(n)$ controlla la comprimibilita: $dP/dn=n\,d\mu/dn$.
+La seconda derivata di $\varepsilon(n)$ controlla la risposta alla compressione:
+$dP/dn=n\,d\mu/dn$. Queste identita non richiedono un gas libero.
 \end{frame}
 
+\subsection{Temperatura finita: energia libera ed entropia}
+
+\begin{frame}[t]{A temperatura finita: partire dall'energia libera}
+\vspace*{3mm}
+\small
+Per una componente, o un modello ridotto a un solo numero conservato,
+poniamo $f(T,n)=F/V$ e $a(T,n)=F/N=f/n$.
+\[
+df=-s\,dT+\mu\,dn,\qquad
+\varepsilon=f+Ts.
+\]
+\[
+\boxed{P=n\left.\frac{\partial f}{\partial n}\right|_T-f
+=n^2\left.\frac{\partial a}{\partial n}\right|_T,\qquad
+s=-\left.\frac{\partial f}{\partial T}\right|_n.}
+\]
+\[
+\boxed{\mu=\left.\frac{\partial f}{\partial n}\right|_T,
+\qquad \varepsilon=f-T\left.\frac{\partial f}{\partial T}\right|_n.}
+\]
+A $T>0$ una curva $P(n)$, senza specificare il percorso termico,
+non determina tutta l'EOS. Una funzione $f(T,n)$ consistente determina
+invece pressione, entropia, energia e potenziale chimico.
+\par\smallskip
+{\footnotesize Riferimento: CompOSE, sezioni 3.5 e 4.1.2.}
+\end{frame}
+
+\begin{frame}[t]{Energia per particella: quale variabile si mantiene fissa?}
+\vspace*{3mm}
+\small
+Per una componente definiamo $e=\varepsilon/n$ e $\sigma=s/n=S/N$.
+Da $d\varepsilon=T\,ds+\mu\,dn$ ed Eulero:
+\[
+\boxed{de=T\,d\sigma+\frac{P}{n^2}\,dn.}
+\]
+Quindi
+\[
+\boxed{P=n^2\left.\frac{\partial e}{\partial n}\right|_\sigma,
+\qquad T=\left.\frac{\partial e}{\partial\sigma}\right|_n.}
+\]
+\[
+\mu=e+\frac Pn-T\sigma,\qquad
+\left.\frac{\partial\varepsilon}{\partial n}\right|_\sigma
+=\frac{\varepsilon+P}{n}=\mu+T\sigma.
+\]
+\begin{itemize}
+\item A $T>0$ la derivata dell'energia a $\sigma$ fissata e la derivata
+dell'energia libera a $T$ fissata svolgono ruoli diversi.
+\item In una miscela $Y_i=n_i/n_B$ aggiunge termini $\sum_i\mu_i\,dY_i$
+al differenziale di $e=\varepsilon/n_B$; a composizione fissata si annullano.
+\end{itemize}
+\end{frame}
+
+\linkdest{mpchemicalpotential}
 \section{Equilibrio chimico}
 
-\begin{frame}[t]{Reazione chimica: condizione generale}
-\small
+\subsection{Equilibrio delle reazioni beta e dei fotoni}
 
+\begin{frame}[t]{Reazione chimica: condizione generale}
+\vspace*{3mm}
+\small
 Scriviamo una reazione con coefficienti stechiometrici $\nu_i$ (positivi per i prodotti):
 \[
 \sum_i\nu_i A_i=0,\qquad dN_i=\nu_i\,d\xi,
@@ -251,9 +321,9 @@ All'equilibrio chimico, consentendo variazioni $d\xi$ di entrambi i segni,
 Questa derivazione evita l'uso ambiguo di $dU=0$ senza esplicitare i vincoli termodinamici.
 \end{frame}
 
-\begin{frame}[t]{Equilibrio beta.}
+\begin{frame}[t]{Equilibrio beta: neutrini e potenziali chimici}
+\vspace*{3mm}
 \small
-
 Per la cattura elettronica
 \[
 p+e^-\ \rightleftharpoons\ n+\nu_e,
@@ -272,8 +342,11 @@ Per neutrini liberi che sfuggono da una stella fredda,
 \boxed{\mu_{\nu_e}=0\quad\Longrightarrow\quad\mu_n=\mu_p+\mu_e.}
 \]
 Per particella/antiparticella $\mu_{\bar i}=-\mu_i$ quando il potenziale e associato alle corrispondenti cariche.
+\end{frame}
 
-\textbf{Perché il potenziale chimico dei fotoni è nullo?}
+\begin{frame}[t]{Perche il potenziale chimico dei fotoni e nullo?}
+\vspace*{3mm}
+\small
 Il numero $N_\gamma$ può variare per emissione e assorbimento:
 in equilibrio chimico non costituisce un vincolo indipendente.
 Per esempio, la bremsstrahlung
@@ -287,9 +360,11 @@ La condizione dipende dalle reazioni che cambiano $N_\gamma$,
 non dalla massa nulla del fotone.
 \end{frame}
 
-\begin{frame}[t]{Potenziali chimici delle cariche conservate}
-\small
+\subsection{Potenziali chimici e quantit\'a conservate}
 
+\begin{frame}[t]{Potenziali chimici delle cariche conservate}
+\vspace*{3mm}
+\small
 Quando le reazioni rapide conservano $B,Q,L$:
 \[
 \boxed{\mu_i=B_i\mu_B+Q_i\mu_Q+L_i\mu_L.}
@@ -309,6 +384,7 @@ In proto-stelle con neutrini intrappolati si deve invece tenere conto delle fraz
 \end{frame}
 
 \begin{frame}[t]{Neutralita elettrica e composizione}
+\vspace*{3mm}
 \small
 
 Per $P=P(T,\mu_B,\mu_Q,\mu_L)$:
@@ -328,8 +404,8 @@ La soluzione per $\mu_Q$ dipende dall'EOS: in presenza di interazioni, $n_i$ e c
 \end{frame}
 
 \begin{frame}[t]{Esempio di vincoli: npe in equilibrio}
+\vspace*{3mm}
 \small
-
 Assumiamo $T=0$, neutrini liberi e gas ideale per ciascuna specie:
 \[
 \mu_n=\mu_p+\mu_e,\qquad n_p=n_e,\qquad n_B=n_n+n_p.
@@ -347,11 +423,14 @@ La neutralita implica $k_{F,p}=k_{F,e}$, ma i potenziali chimici restano diversi
 Il modello e didattico: non incorpora il legame nucleare ne le interazioni in materia densa.
 \end{frame}
 
+\linkdest{mpnpe}
 \section{Materia in beta-equilibrio}
 
-\begin{frame}[t]{Soglia di neutronizzazione nel gas libero}
-\small
+\subsection{Sistema npe}
 
+\begin{frame}[t]{Soglia di neutronizzazione nel gas libero}
+\vspace*{3mm}
+\small
 Prima della comparsa dei neutroni, $k_{F,n}=0$ e $k_{F,e}=k_{F,p}\equiv k_F$:
 \[
 \sqrt{k_F^2+m_e^2}+\sqrt{k_F^2+m_p^2}=m_n.
@@ -366,10 +445,11 @@ La densita critica (per elettroni o protoni) e
 \[
 \boxed{n_c\simeq\frac{[(m_n-m_p)^2-m_e^2]^{3/2}}{3\pi^2(\hbar c)^3}.}
 \]
-\emph{Correzione al sorgente:} sotto radice compare un segno meno, non piu. $m_n-m_p\simeq1.293\,\mathrm{MeV}$; $m_p\simeq938.272\,\mathrm{MeV}$.
+$m_n-m_p\simeq1.293\,\mathrm{MeV}$; $m_p\simeq938.272\,\mathrm{MeV}$.
 \end{frame}
 
 \begin{frame}[t]{Limite ad alta densita del gas libero npe}
+\vspace*{3mm}
 \small
 
 Nel limite formale $k_{F,i}\gg m_i$ per tutte le specie, non alla soglia,
@@ -388,9 +468,11 @@ k_{F,n}\simeq2k_{F,p},\qquad
 Questo \`e un limite matematico del gas libero, non una previsione affidabile della frazione protonica nel core reale: le interazioni nucleari e i muoni modificano la composizione.
 \end{frame}
 
-\begin{frame}[t]{Perche la materia reale forma nuclei?}
-\small
+\subsection{Formazione di nuclei n-arricchiti}
 
+\begin{frame}[t]{Perche la materia reale forma nuclei?}
+\vspace*{3mm}
+\small
 Nel gas libero si trascura il guadagno di energia dovuto al legame nucleare.
 \begin{itemize}
 \item In crosta esterna: nuclei ricchi di neutroni in reticolo coulombiano + elettroni degeneri.
@@ -402,8 +484,8 @@ La minimizzazione al numero barionico e alla neutralita fissati richiede confron
 \end{frame}
 
 \begin{frame}[t]{Strati della crosta: scale orientative}
+\vspace*{3mm}
 \small
-
 \begin{itemize}
 \item $\rho\lesssim10^4\,\mathrm{g\,cm^{-3}}$: atmosfere / materia atomica.
 \item $\rho\sim10^4\,\mathrm{g\,cm^{-3}}$: nuclei e elettroni; la cristallizzazione dipende anche dalla temperatura.
@@ -413,20 +495,24 @@ La minimizzazione al numero barionico e alla neutralita fissati richiede confron
 Nel testo il ruolo delle chiusure di shell ($N=50,82$) e rilevante; le soglie numeriche dipendono dai modelli nucleari e dalle condizioni termiche.
 \end{frame}
 
+\linkdest{mp3eos}
 \section{Equazione di stato}
 
-\begin{frame}[t]{Tre forme dell'equazione di stato}
-\small
+\subsection{Tre forme di EOS}
 
+\begin{frame}[t]{Tre forme dell'equazione di stato}
+\vspace*{3mm}
+\small
+Per materia fredda, con composizione fissata o determinata dall'equilibrio:
 \[
 P=P(\varepsilon),\qquad P=P(n_B),\qquad
 \frac EA(n_B)=\frac{\varepsilon(n_B)}{n_B}.
 \]
-L'energia di legame per barione e
+L'energia per barione rispetto alla massa di riferimento e
 \[
 \frac{E_b}{A}=\frac{\varepsilon}{n_B}-m_N
 \]
-(con la convenzione di riferimento per $m_N$ specificata).
+(qui $E_b/A<0$ per materia legata rispetto a $m_N$).
 \begin{itemize}
 \item TOV richiede $\varepsilon(P)$; $P(\varepsilon)$ e sufficiente per la massa e il raggio.
 \item Le grandezze barioniche e l'energia di legame richiedono anche $n_B$ e una normalizzazione dell'energia.
@@ -434,9 +520,12 @@ L'energia di legame per barione e
 \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Derivazione: P dalla energia per barione}
-\small
+\subsection{Relazione tra pressione ed energia per barione}
 
+\begin{frame}[t]{Derivazione: P dalla energia per barione}
+\vspace*{3mm}
+\small
+Consideriamo ancora $T=0$ e un solo numero conservato indipendente.
 Poniamo $e(n_B)=\varepsilon(n_B)/n_B$; allora
 \[
 \frac{de}{dn_B}
@@ -454,11 +543,71 @@ P=n_B^2\frac{d}{dn_B}\left(\frac{E_b}{A}\right).
 A saturazione della materia nucleare simmetrica $de/dn_B=0\Rightarrow P=0$; non e una proprieta generica della materia neutronica in equilibrio beta.
 \end{frame}
 
+\subsection{Interazioni: energia libera e consistenza}
+
+\begin{frame}[t]{Accendere le interazioni: cosa cambia nella termodinamica?}
+\vspace*{3mm}
+\small
+Per materia omogenea normale, scegliamo una densita di energia libera
+\[
+f(T,\{n_i\})=f_{\rm id}(T,\{n_i\})+f_{\rm int}(T,\{n_i\}).
+\]
+Tutte le correzioni si ricavano dallo stesso $f_{\rm int}$:
+\[
+\mu_i^{\rm int}=\left.\frac{\partial f_{\rm int}}{\partial n_i}
+\right|_{T,n_{j\ne i}},\qquad
+P_{\rm int}=\sum_i n_i\mu_i^{\rm int}-f_{\rm int},
+\]
+\[
+s_{\rm int}=-\left.\frac{\partial f_{\rm int}}{\partial T}\right|_{n_i},
+\qquad
+\varepsilon_{\rm int}=f_{\rm int}
+-T\left.\frac{\partial f_{\rm int}}{\partial T}\right|_{n_i}.
+\]
+\begin{itemize}
+\item Le identita di Eulero e del primo principio restano valide.
+\item Neutralita e $\beta$-equilibrio usano i potenziali chimici completi,
+quindi anche la composizione cambia.
+\item Nei modelli a campi medi si risolvono inoltre le equazioni dei campi;
+una massa efficace inserita nella sola pressione non definisce tutta l'EOS.
+\end{itemize}
+Il pairing introduce un ulteriore stato d'ordine, trattato nella parte BCS.
+\end{frame}
+
+\begin{frame}[t]{Esempio: interazione di densita e termini di riarrangiamento}
+\vspace*{3mm}
+\small
+Per una componente, prendiamo $f_{\rm int}=\tfrac12 A n^2$,
+con $A>0$ costante e indipendente da $T$:
+\[
+\boxed{\mu_{\rm int}=An,\qquad
+P_{\rm int}=\varepsilon_{\rm int}=\frac12 An^2.}
+\]
+Per questo modello, a $T=0$:
+\[
+\mu=\sqrt{k_F^2+m^2}+An;
+\qquad \text{a }T>0:\quad \mu=\mu_{\rm id}(T,n)+An.
+\]
+Se invece $A=A(n)$, derivare anche l'accoppiamento produce
+\[
+\mu_{\rm int}=An+\frac12 n^2 A'(n),\qquad
+P_{\rm int}=\frac12 An^2+\frac12 n^3 A'(n).
+\]
+Questi termini di \emph{riarrangiamento} sono necessari per la consistenza.
+\smallskip
+L'esempio modifica l'EOS fredda, ma non direttamente le differenze termiche
+a $n$ fissato. Nei modelli realistici contano anche lo spettro nel mezzo
+e la dipendenza termica dell'energia libera.
+\end{frame}
+
+\linkdest{mpgasfermi}
 \section{Gas di Fermi liberi}
 
-\begin{frame}[t]{Densita, energia e pressione dal gas degenere}
-\small
+\subsection{Densit\'a, energia e pressione a $T=0$}
 
+\begin{frame}[t]{Densita, energia e pressione dal gas degenere}
+\vspace*{3mm}
+\small
 Fermioni liberi isotropi, degenerazione $g$ e $T=0$:
 \[
 n=\frac{g}{(2\pi)^3}\int_{|\mathbf k|<k_F}d^3k=\frac{gk_F^3}{6\pi^2}.
@@ -473,9 +622,11 @@ Con $E(k)=\sqrt{k^2+m^2}$,
 Interpretazione microscopica: $P=\frac13\langle\mathbf p\cdot\mathbf v\rangle$ per distribuzione isotropa, con $\mathbf v=\partial E/\partial\mathbf p=\mathbf p/E$.
 \end{frame}
 
-\begin{frame}[t]{Gas non relativistico: esponente 5/3}
-\small
+\subsection{Gas non-relativistico ($T=0$)}
 
+\begin{frame}[t]{Gas non relativistico: esponente 5/3}
+\vspace*{3mm}
+\small
 Per $k_F\ll m$: $E\simeq m$, $v\simeq k/m$. Quindi
 \[
 P_{\rm NR}=\frac{g}{6\pi^2m}\int_0^{k_F}k^4\,dk
@@ -489,9 +640,9 @@ L'energia di massa domina $\varepsilon\simeq mn$ (piu una correzione cinetica $\
 \end{frame}
 
 \begin{frame}[t]{Nana bianca: elettroni NR e pressione}
+\vspace*{3mm}
 \small
-
-Neutralita per nuclei $(A,Z)$:
+Neutralit\'a per nuclei $(A,Z)$:
 \[
 n_e=Zn_A=\frac ZA n_B,\qquad \rho\simeq m_Nn_B.
 \]
@@ -506,9 +657,11 @@ P_e\simeq\frac1{5m_e}(3\pi^2)^{2/3}n_e^{5/3}
 La pressione e prevalentemente elettronica, mentre la massa/energia e prevalentemente nucleonica. Corretta la distinzione $\varepsilon\simeq m_A n_A\simeq m_N n_B$, non $m_A\rho_A$.
 \end{frame}
 
-\begin{frame}[t]{Elettroni ultrarelativistici: esponente 4/3}
-\small
+\subsection{Elettroni ultrarelativistici ($T=0$)}
 
+\begin{frame}[t]{Elettroni ultrarelativistici: esponente 4/3}
+\vspace*{3mm}
+\small
 Se $k_{F,e}\gg m_e$ ma i nuclei rimangono NR,
 \[
 P_e\simeq\frac{g_e}{6\pi^2}\int_0^{k_F}k^3\,dk
@@ -524,9 +677,11 @@ P\propto\rho^{4/3}.
 Qui $\varepsilon$ totale della materia e ancora dominata dalla massa a riposo dei nuclei, se le approssimazioni di composizione e regime restano applicabili.
 \end{frame}
 
-\begin{frame}[t]{Gas di neutroni liberi: limite NR}
-\small
+\subsection{Neutroni liberi: limiti non relativistico e ultrarelativistico}
 
+\begin{frame}[t]{Gas di neutroni liberi: limite NR}
+\vspace*{3mm}
+\small
 Con $g_n=2$:
 \[
 n_n=\frac{k_{F,n}^3}{3\pi^2},\qquad
@@ -542,8 +697,8 @@ Per una stella di neutroni reale il potenziale nucleone--nucleone non e trascura
 \end{frame}
 
 \begin{frame}[t]{Gas di neutroni liberi: limite UR}
+\vspace*{3mm}
 \small
-
 Nel limite \emph{formale} $k_{F,n}\gg m_n$:
 \[
 P_n^{\rm UR}=\frac{g_n}{6\pi^2}\int_0^{k_F}k^3\,dk
@@ -559,7 +714,10 @@ P_n^{\rm UR}=\frac{g_n}{6\pi^2}\int_0^{k_F}k^3\,dk
 Dunque $P\propto n^{4/3}$ ma $P\propto\varepsilon^1$, perche $\varepsilon$ non e piu proporzionale a $m_n n$.
 \end{frame}
 
+\subsection{Gas degenere relativistico ($T=0$)}
+
 \begin{frame}[t]{Gas relativistico completo: $P(k_F)$}
+\vspace*{3mm}
 \small
 
 Scriviamo $E_F=\sqrt{k_F^2+m^2}$ e $L=\ln[(k_F+E_F)/m]$.
@@ -575,10 +733,11 @@ Verifiche:
 P\xrightarrow{k_F\ll m}\frac{gk_F^5}{30\pi^2m},\qquad
 P\xrightarrow{k_F\gg m}\frac{gk_F^4}{24\pi^2}.
 \]
-Nel sorgente originale era errato il coefficiente della forma integrale per $P$, non l'idea dell'integrazione.
+La stessa espressione interpola fra i limiti non relativistico e ultrarelativistico.
 \end{frame}
 
 \begin{frame}[t]{Gas relativistico completo: energia e $n(k_F)$}
+\vspace*{3mm}
 \small
 
 \[
@@ -600,9 +759,61 @@ Per un gas ideale a $T=0$ si puo controllare
 L'EOS parametrica e la coppia $(\varepsilon(k_F),P(k_F))$.
 \end{frame}
 
-\begin{frame}[t]{Indici politropici: due definizioni da distinguere}
-\small
+\subsection{Temperatura finita: occupazioni e limiti del gas libero}
 
+\begin{frame}[t]{Gas libero a temperatura finita: Fermi--Dirac}
+\vspace*{3mm}
+\small
+Con $E(k)=\sqrt{k^2+m^2}$ e $g$ degenerazione di ciascuna specie,
+includiamo particelle e antiparticelle:
+\[
+f_\pm(k)=\frac1{\exp[(E(k)\mp\mu)/T]+1}.
+\]
+Il potenziale $\mu$ e associato al \emph{numero netto} conservato:
+\[
+n=\frac{g}{2\pi^2}\int_0^\infty k^2[f_+(k)-f_-(k)]\,dk,
+\]
+\[
+\varepsilon=\frac{g}{2\pi^2}\int_0^\infty k^2 E(k)[f_+(k)+f_-(k)]\,dk,
+\]
+\[
+P=\frac{g}{6\pi^2}\int_0^\infty\frac{k^4}{E(k)}[f_+(k)+f_-(k)]\,dk.
+\]
+Per $\mu>m$ e $T\to0$, $f_+\to\Theta(k_F-k)$ e $f_-\to0$:
+si recuperano gli integrali precedenti.
+\end{frame}
+
+\begin{frame}[t]{Gas non relativistico caldo: degenere o classico?}
+\vspace*{3mm}
+\small
+Definiamo la scala cinetica
+$T_F=E_F^{\rm kin}=k_F^2/(2m)$ e poniamo $t=T/T_F$.
+Per gas libero NR a densita fissata, $T\ll T_F$:
+\[
+P=P_0\left[1+\frac{5\pi^2}{12}t^2+O(t^4)\right],
+\]
+\[
+\mu=m+T_F\left[1-\frac{\pi^2}{12}t^2+O(t^4)\right].
+\]
+Qui $P_0=P(T=0,n)$: una temperatura non nulla non elimina
+automaticamente la degenerazione.
+\smallskip
+Nel limite classico diluito, $T_F\ll T\ll m$:
+\[
+\boxed{P=nT,\qquad \varepsilon=mn+\frac32 nT.}
+\]
+La relazione $\varepsilon-mn=3P/2$ vale per il gas ideale NR in entrambi
+i regimi. Il confronto $T\ll\mu$ da solo non misura la degenerazione NR,
+perche $\mu$ include anche $m$.
+\end{frame}
+
+\section{Politropiche}\linkdest{mppolitropic}
+
+\subsection{Indici pol itropici e scelta della densita}
+
+\begin{frame}[t]{Indici politropici: quale densita compare nell'EOS?}
+\vspace*{3mm}
+\small
 \[
 P\propto n^\Gamma,\qquad P\propto\varepsilon^\gamma.
 \]
@@ -614,34 +825,45 @@ P\propto n^\Gamma,\qquad P\propto\varepsilon^\gamma.
 \text{gas di una specie UR}&4/3&1\ (\varepsilon=3P)
 \end{array}
 \]
-Il rapporto $P/\varepsilon$ e l'indice $d\ln P/d\ln n$ sono concetti distinti. Il secondo puo variare con la densita e con la composizione.
+Qui sono riportati limiti freddi. In generale si usano indici locali:
+$\Gamma=d\ln P/d\ln n$ e $\gamma=d\ln P/d\ln\varepsilon$.
+\smallskip
+La densita di massa barionica $\rho=m_Bn_B$ e proporzionale a $n_B$,
+ma non coincide in generale con $\varepsilon$.
+L'indice di Lane--Emden e $n_{\rm pol}=1/(\Gamma-1)$, distinto dalla densita $n$.
 \end{frame}
 
-\section{Politropiche}
+\subsection{Politropiche fredde: ricostruzione e consistenza termodinamica}
 
-\begin{frame}[t]{Politropica: costruzione termodinamica}
+\begin{frame}[t]{Politropica fredda: costruzione termodinamicamente consistente}
+\vspace*{3mm}
 \small
-
-Partiamo da $P=Kn^\Gamma$ e dall'identita
+Assumiamo $T=0$, un solo numero conservato e $K,\Gamma$ costanti nel segmento.
+Una politropica e una parametrizzazione: puo approssimare anche materia interagente.
 \[
-P=n^2\frac{d}{dn}\left(\frac\varepsilon n\right).
+P=Kn^\Gamma=n^2\frac{d}{dn}\left(\frac\varepsilon n\right).
 \]
 Se $\Gamma\ne1$:
 \[
 \frac{d}{dn}\left(\frac\varepsilon n\right)=Kn^{\Gamma-2}
-\ \Longrightarrow\ \frac\varepsilon n=c+\frac{K}{\Gamma-1}n^{\Gamma-1}.
+\ \Longrightarrow\ \frac\varepsilon n=e_0+\frac{K}{\Gamma-1}n^{\Gamma-1},
 \]
 \[
-\boxed{\varepsilon(n)=cn+\frac{K}{\Gamma-1}n^\Gamma.}
+\boxed{\varepsilon(n)=e_0n+\frac{P(n)}{\Gamma-1}.}
 \]
-Per una politropica valida fino a $n\to0$ e $\Gamma>1$ si puo porre $c=m$; per segmenti raccordati a densita finita $c$ e fissata dal punto di raccordo, non automaticamente da $m$.
+$e_0$ e una costante con dimensioni di energia per particella.
+Per $\Gamma>1$, se si impone $\varepsilon/n\to m$ a $n\to0$, allora $e_0=m$;
+in un segmento a densita finita la costante e fissata dal raccordo.
+\smallskip
+Per $\Gamma=1$: $\varepsilon=n[e_*+K\ln(n/n_*)]$, con $n_*>0$ e $e_*=\varepsilon(n_*)/n_*$.
 \end{frame}
 
-\begin{frame}[t]{Potenziale chimico e velocita del suono}
+\begin{frame}[t]{Politropica fredda: potenziale chimico e derivata barotropica}
+\vspace*{3mm}
 \small
-
+Con $\Gamma\ne1$:
 \[
-\mu=\frac{d\varepsilon}{dn}=c+\frac{\Gamma K}{\Gamma-1}n^{\Gamma-1},
+\mu=\frac{d\varepsilon}{dn}=e_0+\frac{\Gamma K}{\Gamma-1}n^{\Gamma-1},
 \qquad P=Kn^\Gamma.
 \]
 \[
@@ -654,46 +876,235 @@ Percio
 =\frac{dP/dn}{d\varepsilon/dn}
 =\frac{\Gamma P}{\varepsilon+P}.}
 \]
-Nelle unita $c=1$, la condizione locale di causalita e $0\le c_s^2\le1$. Nel sorgente originale era scritto il prodotto delle derivate anziche il loro rapporto.
+La derivata e presa lungo la barotropa scelta. Per interpretarla come
+velocita del suono bisogna specificare se la composizione resta fissata
+o segue istantaneamente l'equilibrio durante la perturbazione.
+\smallskip
+Questa distinzione resta importante anche a $T=0$ se le reazioni deboli
+sono lente rispetto all'oscillazione.
 \end{frame}
 
-\begin{frame}[t]{Limite ad alta densita e cautela su Gamma=2}
-\small
+\subsection{Stabilita e causalita}
 
-Per $P=Kn^\Gamma$, $\varepsilon=cn+P/(\Gamma-1)$:
+\begin{frame}[t]{Limite ad alta densita e cautela su Gamma=2}
+\vspace*{3mm}
+\small
+Per $P=Kn^\Gamma$, $\varepsilon=e_0n+P/(\Gamma-1)$:
 \[
-c_s^2=\frac{\Gamma P}{cn+\Gamma P/(\Gamma-1)}.
+c_s^2=\frac{\Gamma P}{e_0n+\Gamma P/(\Gamma-1)}.
 \]
-Se $\Gamma>1$ e il termine $P$ domina su $cn$:
+Se $\Gamma>1$ e il termine $P$ domina su $e_0n$:
 \[
 \boxed{c_s^2\longrightarrow\Gamma-1.}
 \]
 Per $\Gamma>2$ la prosecuzione asintotica e acausale.
-Per $\Gamma=2$ si ha $c_s^2\to1$ \emph{nel limite} di alta densita; non $P=\varepsilon$ esattamente a densita finita, perche $\varepsilon=cn+P$.
+Per $\Gamma=2$ si ha $c_s^2\to1$ \emph{nel limite} di alta densita;
+a densita finita resta $\varepsilon=e_0n+P$.
 L'EOS di un gas di Fermi UR da invece $c_s^2=1/3$.
+\smallskip
+Ogni segmento deve comunque rispettare localmente stabilita meccanica
+e causalita: $dP/dn\ge0$ e $0\le c_s^2\le1$ nelle unita $c=1$.
 \end{frame}
 
-\begin{frame}[t]{Raccordo di politropiche e transizioni}
-\small
+\subsection{Politropiche a tratti: raccordi e transizioni}
 
-Per un raccordo liscio alla densita $n_*$ fra segmenti con diverso $\Gamma$:
+\begin{frame}[t]{Raccordo continuo fra segmenti politropici}
+\vspace*{3mm}
+\small
+Alla stessa densita $n_*$ imponiamo continuita di pressione ed energia:
 \[
 P_1(n_*)=P_2(n_*),\qquad
-\mu_1(n_*)=\mu_2(n_*).
+\varepsilon_1(n_*)=\varepsilon_2(n_*).
 \]
-Poiche $\varepsilon+P=n\mu$, segue la continuita di $\varepsilon$ nel raccordo a $n_*$.
+Per $\Gamma_1,\Gamma_2\ne1$, con $P_*=P(n_*)$:
+\[
+K_2=K_1n_*^{\Gamma_1-\Gamma_2},\qquad
+e_{0,2}=e_{0,1}+\frac{P_*}{n_*}
+\left(\frac1{\Gamma_1-1}-\frac1{\Gamma_2-1}\right).
+\]
+Da $\mu=(\varepsilon+P)/n$ segue anche la continuita di $\mu$.
+\smallskip
+Il raccordo e continuo, ma $dP/dn$ e $c_s^2$ possono saltare:
+non e necessariamente un raccordo liscio della pressione.
+\par\smallskip
+{\footnotesize Riferimento: Read et al., Phys. Rev. D 79, 124032 (2009), sezione III.}
+\end{frame}
+
+\begin{frame}[t]{Raccordo parametrico o transizione del primo ordine?}
+\vspace*{3mm}
+\small
+Un cambio di indice politropico a densita continua non implica
+una transizione di fase.
+\smallskip
+In una costruzione di Maxwell fredda, con un solo numero conservato,
+due fasi possono coesistere a
+\[
+P_1=P_2=P_*,\qquad \mu_1=\mu_2=\mu_*,\qquad n_1\ne n_2.
+\]
+L'identita di Eulero implica
+\[
+\boxed{\varepsilon_2-\varepsilon_1=\mu_*(n_2-n_1).}
+\]
 \begin{itemize}
-\item I parametri $K$ e le costanti $c$ sono determinati dal raccordo.
-\item Un salto di densita a $P$ e $\mu$ fissi (transizione del primo ordine) va trattato separatamente; non deriva da un raccordo liscio.
-\item Una curva $P(n)$ costruita a tratti richiede controlli di stabilita e causalita in ogni segmento.
+\item Il salto di densita va introdotto esplicitamente nell'EOS.
+\item In ciascuna fase si controllano stabilita e causalita.
+\item Con piu cariche conservate o a temperatura finita cambiano i
+vincoli di coesistenza: serve il potenziale termodinamico appropriato.
 \end{itemize}
 \end{frame}
 
-\section{Superfluidita neutronica}
+\subsection{Politropiche a temperatura finita: isentrope e suono}
+
+\begin{frame}[t]{Estensione termica consistente: una famiglia di isentrope}
+\vspace*{3mm}
+\small
+Per una componente, $\sigma=s/n$ e $de=T\,d\sigma+(P/n^2)\,dn$.
+Supponiamo, come modello, $\Gamma\ne1$ costante e
+\[
+P(n,\sigma)=K(\sigma)n^\Gamma.
+\]
+Integrando a $\sigma$ fissata si ottiene
+\[
+\boxed{e(n,\sigma)=C(\sigma)+
+\frac{K(\sigma)}{\Gamma-1}n^{\Gamma-1}.}
+\]
+La temperatura non e un parametro aggiunto indipendentemente:
+\[
+\boxed{T(n,\sigma)=C'(\sigma)+
+\frac{K'(\sigma)}{\Gamma-1}n^{\Gamma-1}.}
+\]
+Una singola curva $P(n)$ a entropia fissata non determina le funzioni
+$C(\sigma)$ e $K(\sigma)$, quindi non descrive tutta la risposta termica.
+La scelta di queste funzioni deve rispettare anche stabilita e $T\ge0$.
+\end{frame}
+
+\begin{frame}[t]{Gas ideali: isentropica e isoterma danno esponenti diversi}
+\vspace*{3mm}
+\small
+A entropia per particella fissata, nei limiti ideali omogenei:
+\[
+\begin{array}{c|c|c}
+\text{regime}&T(n,\sigma)&P(n,\sigma)\\\hline
+\text{NR, massa costante}&T\propto n^{2/3}&K(\sigma)n^{5/3}\\
+\text{UR, massa trascurabile}&T\propto n^{1/3}&K(\sigma)n^{4/3}
+\end{array}
+\]
+Queste leggi isentropiche non richiedono necessariamente $T=0$;
+si assume un numero conservato e si rimane nel regime indicato.
+\smallskip
+Per confronto, lungo un'\emph{isoterma} del gas classico NR:
+\[
+P=nT,\qquad e=m+\frac32T,\qquad
+\left.\frac{\partial e}{\partial n}\right|_T=0.
+\]
+La pressione non si annulla: la formula con $e$ richiede $\sigma$ fissata,
+mentre a $T$ fissata bisogna derivare $a=f/n$.
+Il percorso termico e parte della definizione della relazione $P(n)$.
+\end{frame}
+
+\begin{frame}[t]{Indice adiabatico e velocita del suono a temperatura finita}
+\vspace*{3mm}
+\small
+Per un fluido normale a composizione $Y$ fissata definiamo
+\[
+\Gamma_1=\left.\frac{\partial\ln P}{\partial\ln n}\right|_{\sigma,Y},
+\qquad
+\Gamma_T=\left.\frac{\partial\ln P}{\partial\ln n}\right|_{T,Y}.
+\]
+Da $\left.\partial\varepsilon/\partial n\right|_{\sigma,Y}
+=(\varepsilon+P)/n$ segue
+\[
+\boxed{c_s^2=\left.\frac{\partial P}{\partial\varepsilon}\right|_{\sigma,Y}
+=\frac{\Gamma_1 P}{\varepsilon+P}.}
+\]
+Per il gas classico NR: $\Gamma_T=1$, ma $\Gamma_1=5/3$.
+In generale nessuno dei due coincide con un esponente politropico
+scelto per interpolare una tabella.
+\smallskip
+Se le reazioni mantengono l'equilibrio durante la perturbazione,
+anche $Y$ varia: si deve usare la derivata lungo quel vincolo.
+Una fase superfluida richiede inoltre una descrizione idrodinamica adeguata.
+\end{frame}
+
+\subsection{Interazioni e contributo termico all'EOS}
+
+\begin{frame}[t]{EOS fredda piu contributo termico: il modello ibrido}
+\vspace*{3mm}
+\small
+A stessa densita e composizione $Y$ definiamo
+\[
+\varepsilon_{\rm th}(n,T,Y)=\varepsilon(n,T,Y)-\varepsilon(n,0,Y),
+\]
+\[
+P_{\rm th}(n,T,Y)=P(n,T,Y)-P(n,0,Y).
+\]
+Un'approssimazione frequente e
+\[
+P=P_{\rm cold}(n,Y)+(\Gamma_{\rm th}-1)\varepsilon_{\rm th},
+\qquad
+\Gamma_{\rm th}=1+\frac{P_{\rm th}}{\varepsilon_{\rm th}}.
+\]
+\begin{itemize}
+\item Per un gas ideale NR, $\Gamma_{\rm th}=5/3$; per un gas ideale
+UR massless, $\Gamma_{\rm th}=4/3$.
+\item Con interazioni il rapporto dipende in generale da densita,
+composizione e temperatura: un valore costante e una scelta di modello.
+\item Questa chiusura, da sola, non fornisce $T$, entropia e potenziali
+chimici: per una EOS termica completa serve un potenziale consistente.
+\end{itemize}
+Le differenze a $Y$ fissato non vanno confuse con il confronto fra due
+composizioni diverse in $\beta$-equilibrio.
+\end{frame}
+
+\begin{frame}[t]{Come le interazioni modificano l'indice termico}
+\vspace*{3mm}
+\small
+Esempio: materia neutronica normale, omogenea, fortemente degenere,
+con quasiparticelle non relativistiche e massa efficace di Landau $m^*(n)$.
+Al primo ordine termico non nullo della teoria di Fermi--liquido:
+\[
+\boxed{\Gamma_{\rm th}(n)\simeq\frac53-
+\frac{n}{m^*(n)}\frac{dm^*(n)}{dn}.}
+\]
+\begin{itemize}
+\item Nel limite libero $m^*=m$ costante si recupera $5/3$.
+\item Il segno e l'ampiezza di $dm^*/dn$ cambiano il rapporto fra
+pressione termica ed energia termica.
+\item La formula non e universale: miscele, regimi relativistici,
+alte temperature e pairing richiedono il modello appropriato.
+\end{itemize}
+Il risultato mostra perche una EOS fredda ben riprodotta non basta,
+da sola, a fissare la risposta termica della materia interagente.
+\par\smallskip
+{\footnotesize Constantinou et al., Phys. Rev. C 92, 025801 (2015),
+sezione VI.A, eq. (76).}
+\end{frame}
+
+\begin{frame}[t]{Riferimenti per EOS fredde e termiche}
+\vspace*{3mm}
+\small
+\begin{itemize}
+\item S. Typel et al., \emph{CompOSE Reference Manual}, sezioni 3.5--3.6
+e 4.1.2: potenziali, derivate, velocita del suono e consistenza.
+\href{https://compose.obspm.fr/download/pdf/manual_v3.00.pdf}{Manuale CompOSE}.
+\item J. S. Read et al., \emph{Constraints on a phenomenologically
+parameterized neutron-star equation of state}, Phys. Rev. D 79, 124032 (2009),
+sezione III: politropiche a tratti e ricostruzione dell'energia.
+\href{https://arxiv.org/abs/0812.2163}{arXiv:0812.2163}.
+\item C. Constantinou et al., \emph{Thermal properties of hot and dense
+matter with finite range interactions}, Phys. Rev. C 92, 025801 (2015),
+sezione VI: indice termico, massa efficace e limiti della chiusura ibrida.
+\href{https://arxiv.org/abs/1504.03982}{arXiv:1504.03982}.
+\end{itemize}
+\end{frame}
+
+\linkdest{mpsuperfluidity}
+\section{Superfluidit\'a neutronica}
 
 \subsection{Fenomenologia e canali di pairing}
 
 \begin{frame}[t]{Perche i neutroni possono essere superfluidi?}
+\vspace*{3mm}
 I neutroni sono fermioni neutri di spin $1/2$.
 Un canale attrattivo dell'interazione neutronica può favorire,
 sotto una temperatura critica $T_c$, la formazione di
@@ -704,8 +1115,6 @@ Nel canale ${}^1S_0$, per esempio, si accoppiano gli stati
 $(\mathbf k,\uparrow)$ e $(-\mathbf k,\downarrow)$:
 hanno impulsi e spin opposti e sono collegati
 dall'\textbf{inversione temporale}.
-
-\smallskip
 Indicando con $\hat a_{\mathbf k\sigma}$ l'operatore che
 annichila un neutrone nello stato $(\mathbf k,\sigma)$,
 nella descrizione BCS il condensato ha ampiezza di coppia
@@ -721,12 +1130,11 @@ nella descrizione BCS il condensato ha ampiezza di coppia
 $\Phi_{\mathbf k}$ è un'ampiezza quantistica complessa.
 La coerenza fra le coppie definisce una fase macroscopica
 del condensato.
-
 La scelta spontanea di questa fase rompe la simmetria
 globale di fase $U(1)_B$, associata al numero barionico,
 assunto conservato nel modello.
 \begin{itemize}
-\item Superfluidita: trasporto coerente del numero barionico e vortici quantizzati.
+\item Superfluidit\'a: trasporto coerente del numero barionico e vortici quantizzati.
 \item Non equivale a superconduttivita elettromagnetica: la coppia $nn$ e elettricamente neutra, quindi niente espulsione Meissner per il condensato neutronico.
 \item Nelle stelle di neutroni si distinguono pairing neutronico e pairing protonico; il secondo e carico ed e un problema distinto.
 \end{itemize}
@@ -734,9 +1142,12 @@ Lo stato BCS descrive il condensato fermionico, non un gas diluito di molecole $
 \end{frame}
 
 \begin{frame}[t]{Canali di pairing nel sistema nn}
+\vspace*{3mm}
 \small
 
-Per due neutroni identici, la funzione d'onda totale deve essere antisimmetrica allo scambio. Con isospin $T=1$ simmetrico, vale $(-1)^{L+S}=-1$.
+Per due neutroni identici, la funzione d'onda totale deve essere
+antisimmetrica allo scambio. Con isospin $I=1$ simmetrico,
+$(-1)^{L+S+I}=-1$ implica $(-1)^{L+S}=+1$: $L+S$ deve essere pari.
 \[
 {}^{2S+1}L_J:
 \quad {}^1S_0\ (L=0,S=0,J=0),\qquad {}^3P_2\ (L=1,S=1,J=2).
@@ -750,6 +1161,7 @@ Da qui in poi deriviamo l'equazione BCS prima per il canale singoletto isotropo.
 \end{frame}
 
 \begin{frame}[t]{Stato a due neutroni: simmetria spaziale e spin}
+\vspace*{3mm}
 \small
 
 Centro di massa $\mathbf K=\mathbf k_1+\mathbf k_2$, momento relativo $\mathbf k=(\mathbf k_1-\mathbf k_2)/2$:
@@ -774,6 +1186,7 @@ L'antisimmetria riguarda la funzione d'onda \emph{totale}.
 \subsection{Dal problema di Cooper alla teoria BCS}
 
 \begin{frame}[t]{Problema di Cooper: Hamiltoniana proiettata}
+\vspace*{3mm}
 \small
 
 Due neutroni sopra un mare di Fermi ideale, con $|\mathbf k|>k_F$:
@@ -794,6 +1207,7 @@ $V_{\mathbf k\mathbf k'}$ e un elemento di matrice di scattering di coppie nel c
 \end{frame}
 
 \begin{frame}[t]{Modello didattico: attrazione costante in una shell}
+\vspace*{3mm}
 \small
 
 Solo per illustrare l'instabilita di Cooper scegliamo
@@ -816,6 +1230,7 @@ Per $E_b\ll\omega_c$: $E_b\simeq2\omega_c e^{-2/[V_0N(0)]}$.
 \end{frame}
 
 \begin{frame}[t]{Limiti dell'analogia con i superconduttori}
+\vspace*{3mm}
 \small
 
 Nel modello elettronico elementare l'interazione attrattiva puo essere attiva in una finestra di energie associata ai fononi del reticolo.
@@ -828,6 +1243,7 @@ Il problema di una coppia aggiunta al mare di Fermi non e ancora la teoria BCS a
 \end{frame}
 
 \begin{frame}[t]{Seconda quantizzazione: operatori di coppia}
+\vspace*{3mm}
 \small
 
 Siano $a_{\mathbf k\sigma}^{\dagger}$ gli operatori che creano neutroni con impulso $\mathbf k$ e spin $\sigma$.
@@ -848,6 +1264,7 @@ Con una convenzione che evita il doppio conteggio dei momenti $\pm\mathbf k$; fa
 \end{frame}
 
 \begin{frame}[t]{Stato variazionale BCS}
+\vspace*{3mm}
 \small
 
 Su un insieme non duplicato di coppie di stati time-reversed:
@@ -869,6 +1286,7 @@ Lo stato BCS non ha $N$ fissato esattamente: descrive l'equilibrio gran canonico
 \end{frame}
 
 \begin{frame}[t]{Decoupling di campo medio e definizione del gap}
+\vspace*{3mm}
 \small
 
 Scriviamo $\xi_k=\epsilon_k-\mu_n$, includendo nella $\epsilon_k$ un eventuale spettro di particella singola efficace.
@@ -889,6 +1307,7 @@ $C$ rende coerente l'energia di campo medio; la convenzione di segno di $\Delta$
 \end{frame}
 
 \begin{frame}[t]{Diagonalizzazione Bogoliubov: matrice 2x2}
+\vspace*{3mm}
 \small
 
 Nella base di Nambu $\Psi_k=(a_{\mathbf k\uparrow},a_{-\mathbf k\downarrow}^{\dagger})^T$ compare
@@ -908,6 +1327,7 @@ Le eccitazioni elementari sono quasiparticelle di Bogoliubov, miscele coerenti d
 \end{frame}
 
 \begin{frame}[t]{Coefficienti di coerenza u e v}
+\vspace*{3mm}
 \small
 
 Dagli autovettori di $\mathcal H_k$ e dalla normalizzazione $|u_k|^2+|v_k|^2=1$ si trova
@@ -924,6 +1344,7 @@ A $T>0$ compare $1-2f(E_k)=\tanh(E_k/(2T))$.
 \end{frame}
 
 \begin{frame}[t]{Equazione di gap BCS: materia neutronica}
+\vspace*{3mm}
 \small
 
 Usando la media anomala a temperatura $T$:
@@ -945,6 +1366,7 @@ A $T=0$, $\tanh(E/2T)\to1$. La legge dipende dall'interazione di coppia neutroni
 \end{frame}
 
 \begin{frame}[t]{Proiezione sferica del canale 1S0}
+\vspace*{3mm}
 \small
 
 Se il sistema e isotropo e $\Delta(\mathbf k)=\Delta(k)$, si puo proiettare l'interazione su onde parziali:
@@ -963,6 +1385,7 @@ Il prefattore dipende dalla convenzione con cui si definisce $V_0$; l'equazione 
 \end{frame}
 
 \begin{frame}[t]{Equazione del numero e autoconsistenza}
+\vspace*{3mm}
 \small
 
 La densita dei neutroni va calcolata con la distribuzione BCS, non identificando $\mu_n$ a priori con $E_F$ di gas libero:
@@ -981,6 +1404,7 @@ La EOS della materia stellare deve inoltre rispettare neutralita e $\beta$-equil
 \end{frame}
 
 \begin{frame}[t]{Temperatura critica: modello debole isotropo}
+\vspace*{3mm}
 \small
 
 Nel modello BCS con attrazione costante e densita di stati per spin $N(0)$:
@@ -998,6 +1422,7 @@ La relazione non e universale nei canali anisotropi ${}^3P_2$ e puo cambiare per
 \end{frame}
 
 \begin{frame}[t]{Energia di condensazione e scala spaziale}
+\vspace*{3mm}
 \small
 
 Per accoppiamento debole, gas uniforme, $T=0$, gap isotropo:
@@ -1018,8 +1443,11 @@ La scala di coerenza della coppia e
 \end{frame}
 
 
+\subsection{Mezzo nucleare: shell, reticolo e pairing nel core}
+
 % --- Microfisica della crosta: collegamenti complementari ---
 \begin{frame}[t]{Livelli nucleonici, shell e correzioni alla descrizione semiclassica}
+\vspace*{3mm}
 \small
 \begin{itemize}
 \item La descrizione semiclassica sostituisce la somma su livelli discreti con un integrale sulla densità degli stati; la differenza oscillante è la correzione di shell.
@@ -1031,6 +1459,7 @@ La scala di coerenza della coppia e
 \end{frame}
 
 \begin{frame}[t]{Fononi del reticolo nucleare: modi collettivi}
+\vspace*{3mm}
 \small
 Per piccoli spostamenti $\mathbf u_i$ dei nuclei dalle posizioni di equilibrio, l'energia armonica è
 \[
@@ -1045,11 +1474,13 @@ U=U_0+\frac12\sum_{ij,ab}u_i^a D_{ij}^{ab}u_j^b.
 \end{frame}
 
 \begin{frame}[t]{Reticolo, neutroni superfluidi ed entrainment}
+\vspace*{3mm}
 \small
 \begin{itemize}
 \item I neutroni non legati della crosta interna si muovono in un potenziale periodico generato dai cluster; la loro mobilità dipende dalla struttura a bande.
 \item L'\emph{entrainment} indica che corrente di particelle e velocità delle diverse componenti non sono in generale proporzionali in modo indipendente.
-\item In una formulazione lineare a due componenti si può scrivere schematicamente
+\item Indicando con $\mathbf j_i$ le correnti di massa, in una formulazione
+lineare a due componenti si può scrivere schematicamente
 \[
 \mathbf j_n=\rho_{nn}\mathbf v_n+\rho_{np}\mathbf v_p,
 \qquad
@@ -1063,6 +1494,7 @@ U=U_0+\frac12\sum_{ij,ab}u_i^a D_{ij}^{ab}u_j^b.
 % --- fine integrazione microphysics ---
 
 \begin{frame}[t]{Neutroni 3P2 e complessita del core}
+\vspace*{3mm}
 \small
 
 Per accoppiamento tripletto in ${}^3P_2$ (con miscela ${}^3F_2$), il gap dipende in generale anche dalla direzione $\hat{\mathbf k}$:
@@ -1081,6 +1513,7 @@ Pertanto i frame ${}^1S_0$ precedenti costituiscono la derivazione BCS di riferi
 \subsection{Fase, vortici e osservabili}
 
 \begin{frame}[t]{Fase del condensato e velocita superfluida}
+\vspace*{3mm}
 \small
 
 L'ordine di coppia e complesso:
@@ -1105,6 +1538,7 @@ Questa e la firma idrodinamica di superfluidita neutronica; non coinvolge un cam
 \end{frame}
 
 \begin{frame}[t]{Vortici e rotazione delle stelle di neutroni}
+\vspace*{3mm}
 \small
 
 Una superfluidita irrotazionale in regioni prive di vortici:
@@ -1126,6 +1560,7 @@ con $n_v$ densita areale e $\Omega$ velocita angolare del superfluido.
 \end{frame}
 
 \begin{frame}[t]{Calore specifico, raffreddamento e pair breaking}
+\vspace*{3mm}
 \small
 
 Uno spettro isotropo con gap $\Delta>0$ riduce le eccitazioni termiche a $T\ll T_c$:
@@ -1145,6 +1580,7 @@ Per un confronto osservativo serve il profilo $\Delta(n,T)$ e un modello termico
 \subsection{Landau--Ginzburg neutra: utilita e limiti}
 
 \begin{frame}[t]{Perche una breve Landau--Ginzburg per neutroni?}
+\vspace*{3mm}
 \small
 
 La teoria microscopica BCS calcola pairing e quasiparticelle. Vicino a $T_c$ e su scale spaziali lunghe si puo invece usare un campo efficace complesso $\Psi(\mathbf r)$ associato all'ordine di coppia.
@@ -1161,6 +1597,7 @@ Applicazione: profili dell'ordine e struttura dei vortici vicino a $T_c$, non EO
 \end{frame}
 
 \begin{frame}[t]{Minimizzazione GL omogenea e lunghezza di coerenza}
+\vspace*{3mm}
 \small
 
 Per campo uniforme $\nabla\Psi=0$:
@@ -1183,6 +1620,7 @@ Una scala caratteristica del recupero spaziale e $\xi_{\rm GL}\sim\sqrt{K/|a(T)|
 \end{frame}
 
 \begin{frame}[t]{Validita relativa di BCS e GL per stelle di neutroni}
+\vspace*{3mm}
 \small
 
 \begin{itemize}
@@ -1194,19 +1632,23 @@ Una scala caratteristica del recupero spaziale e $\xi_{\rm GL}\sim\sqrt{K/|a(T)|
 Per questi motivi l'approfondimento GL e intenzionalmente breve e interamente formulato per \emph{superfluidita neutra}.
 \end{frame}
 
-\begin{frame}[t]{Ricapitolazione: dal capitolo 3 al pairing neutronico}
+\begin{frame}[t]{Ricapitolazione: dalla termodinamica al pairing neutronico}
+\vspace*{3mm}
 \small
 
 \[
 \begin{array}{lll}
-\text{Termodinamica}&\varepsilon+P=Ts+\sum_i\mu_in_i&\text{(cap. 3)}\\[3pt]
+\text{Termodinamica}&\varepsilon+P=Ts+\sum_i\mu_in_i&\text{bulk}\\[3pt]
 \text{Equilibrio beta}&\mu_n=\mu_p+\mu_e& (\mu_\nu=0)\\[3pt]
-\text{Gas degenere}&n=gk_F^3/(6\pi^2)&\text{gas libero}\\[3pt]
-\text{Politropica}&P=Kn^\Gamma&c_s^2=\Gamma P/(\varepsilon+P)\\[3pt]
+\text{Gas degenere}&n=gk_F^3/(6\pi^2)&\text{libero, }T=0\\[3pt]
+\text{EOS calda}&P=n^2\partial(f/n)/\partial n|_T&\text{una componente}\\[3pt]
+\text{Politropica fredda}&P=Kn^\Gamma&dP/d\varepsilon=\Gamma P/(\varepsilon+P)\\[3pt]
 \text{BCS neutronica}&E_k=\sqrt{\xi_k^2+|\Delta_k|^2}&V_{{}^1S_0}(k,k')\\[3pt]
 \text{Superfluidita}&\mathbf v_s=\hbar\nabla\theta/(2m_n)&\kappa=h/(2m_n)
 \end{array}
 \]
-La materia di neutroni e un fermigas \emph{interagente}: il modello libero del cap. 3 fornisce un riferimento, mentre il pairing BCS riguarda lo stato fondamentale corretto dalle interazioni attrattive nel canale appropriato.
+La materia neutronica e un sistema \emph{interagente}: il gas libero
+fornisce un riferimento; la parte normale dell'EOS e il contributo
+del pairing devono rispettare la stessa consistenza termodinamica.
 \end{frame}
 
