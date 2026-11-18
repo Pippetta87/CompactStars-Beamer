@@ -18,8 +18,8 @@ Il capitolo collega la microfisica di materia densa alle configurazioni di equil
 Convenzioni: $c=\hbar=1$ salvo indicazione; $G=m_{\rm Pl}^{-2}$ con massa di Planck \emph{non ridotta}.
 \end{frame}
 
-% Frame 2
-\begin{frame}[t]{Massa racchiusa in una sfera: equazioni (4.1)--(4.2)}
+\begin{frame}[t]{Equilibrio idrostatico}
+\begin{block}{Massa racchiusa in una sfera}
 \small
 Per una distribuzione sferica $\rho(r)$, la massa racchiusa nella sfera di raggio $r$ è
 \[
@@ -30,17 +30,15 @@ Il teorema fondamentale del calcolo fornisce
 \[
 \frac{dm}{dr}=4\pi r^2\rho(r),\qquad m(0)=0,\quad m(R)=M.
 \]
-$\rho$ è densità di massa in unità newtoniane; $m(r)$ è massa \emph{integrata}, non densità locale. La derivazione vale anche per $\rho$ non uniforme.
-\end{frame}
-
-% Frame 3
-\begin{frame}[t]{Equilibrio idrostatico: da forze a equazioni (4.3)--(4.7)}
+$\rho$ \'e densit\'a di massa in unità newtoniane; $m(r)$ \'e massa \emph{integrata}, non densit\'a locale. La derivazione vale anche per $\rho$ non uniforme.
+\end{block}
+\begin{block}{Equilibrio idrostatico}
 \small
 Consideriamo un elemento di fluido di area $A$ e spessore $dr$:
 \[
 dm=A\rho(r)\,dr,\quad dF_G=-\frac{Gm(r)}{r^2}\,A\rho(r)\,dr.
 \]
-La differenza fra le forze di pressione sulle facce opposte è
+La differenza fra le forze di pressione sulle facce opposte \'e
 \[
 dF_P=A\bigl[P(r)-P(r+dr)\bigr]=-A\,dP.
 \]
@@ -49,10 +47,8 @@ Ponendo $dF_P+dF_G=0$ (con versi opportuni):
 \frac{dP}{dr}=-\frac{Gm(r)\rho(r)}{r^2}.
 \]
 Condizioni tipiche: $P(0)=P_c$, $P(R)=0$ in un modello con superficie nel vuoto.
-\end{frame}
-
-% Frame 4
-\begin{frame}[t]{Che cosa chiude il sistema di equilibrio?}
+\end{block}
+\begin{block}{Che cosa chiude il sistema di equilibrio?}
 \small
 Le due equazioni
 \[
@@ -64,9 +60,10 @@ contengono le tre incognite $P(r)$, $m(r)$ e $\rho(r)$.
 Serve l'equazione di stato (EOS), ad esempio $P=P(\rho)$; fissando $P_c$ otteniamo una soluzione.
 \medskip
 La scelta dell'EOS è il punto in cui entrano i gradi di libertà microscopici (elettroni degeneri, neutroni, interazioni forti, quark, ecc.).
+\end{block}
 \end{frame}
 
-\subsection{Equilibrio relativistico}
+\subsection{Equilibrio relativistico}\linkdest{idrostaticorelativistico}
 
 % Frame 5
 \begin{frame}[t]{Fluido perfetto e conservazione in relatività generale}
@@ -206,8 +203,8 @@ M_{\max}\simeq0.71M_\odot,\qquad R_{\max}\simeq9.1\ \mathrm{km}.
 % Frame 13
 \begin{frame}[t]{Figura 4.1: massa e raggio contro densità centrale}
 \small
-\begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,width=0.95\textwidth]{Schaffner/M-R_Pc}\label{fig:Schaffner_M-R_Pc}\end{figure}
-La curva della massa raggiunge il primo massimo prima del primo minimo del raggio. La didascalia del libro parla di pressione centrale, ma l'ascissa tracciata è $\varepsilon_c/\varepsilon_0$.
+\begin{figure}[!ht]\includegraphics[trim={0cm 0cm 0 0},clip,keepaspectratio,height=0.9\textheight]{Schaffner/M-R_Pc}\label{fig:Schaffner_M-R_Pc}\end{figure}
+La curva della massa raggiunge il primo massimo prima del primo minimo del raggio. La didascalia del libro parla di pressione centrale, ma l'ascissa tracciata \'e $\varepsilon_c/\varepsilon_0$.
 \end{frame}
 
 % Frame 14
@@ -229,7 +226,7 @@ La linea inclinata delimita $R=2GM$.
 \end{frame}
 
 % Frame 15
-\begin{frame}[t]{Stabilità: che cosa dice il massimo di massa?}
+\begin{frame}[t]{Stabilit\'a: che cosa dice il massimo di massa?}
 \small
 Per una sequenza regolare con EOS fissata, il primo massimo della massa, al crescere di $P_c$, spesso segna la perdita della stabilità del modo radiale fondamentale:
 \[
@@ -240,7 +237,7 @@ Il criterio dei punti di inversione richiede ipotesi su famiglia di equilibri e 
 Il gas libero esibisce il comportamento più semplice: ramo stabile prima del massimo e instabile dopo di esso.
 \end{frame}
 
-\section{Masse massime}
+\section{Masse massime}\linkdest{massemassime}
 
 \subsection{Argomento di Landau}
 
@@ -398,14 +395,14 @@ La stima non determina l'EOS reale: interazioni, composizione, temperatura, rela
 Per le nane bianche il caso limite di elettroni ultrarelativistici è ben motivato; per le stelle di neutroni il gas libero è troppo semplice. L'argomento prepara piuttosto la legge di scala comune $m_{\rm Pl}^3/m_f^2$.
 \end{frame}
 
-\section{Leggi di scala}
+\section{Leggi di scala}\linkdest{adimensionalizzazione}
 
 \subsection{Adimensionalizzazione delle TOV}
 
 % Frame 25
 \begin{frame}[t]{Scala dimensionale delle equazioni TOV}
 \small
-Sia $\varepsilon_0$ una scala di densità di energia che compare nell'EOS. Introduciamo
+Sia $\varepsilon_0$ una scala di densit\'a di energia che compare nell'EOS. Introduciamo
 \[
 \varepsilon=\varepsilon_0\bar\varepsilon,\quad P=\varepsilon_0\bar P,
 \quad r=a\bar r,\quad m=b\bar m.
@@ -463,7 +460,7 @@ b=\frac{a}{G}=(G^3\varepsilon_0)^{-1/2}.
 \end{frame}
 
 % Frame 28
-\begin{frame}[t]{Le TOV adimensionali (4.51)--(4.52)}
+\begin{frame}[t]{Le TOV adimensionali}
 \small
 Con le scelte precedenti si ottiene
 \[
@@ -825,7 +822,7 @@ La legge $M,R\propto\varepsilon_0^{-1/2}$ è valida quando tutte le caratteristi
 In una EOS composta di crosta, core, transizioni e soglie di particelle, la riscalatura può non essere esatta.
 \end{frame}
 
-\section{Fermioni interagenti}
+\section{Fermioni interagenti}\linkdest{interactionssquared}
 
 \subsection{Interazione quadratica}
 

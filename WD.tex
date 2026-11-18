@@ -1,24 +1,25 @@
 % Convenzioni: c=hbar=k_B=1 se non diversamente indicato; G esplicita.
 
 \section{Nane bianche: materia degenere ed equilibrio}
+
 \subsection{Quadro fisico e storico}
 
 % 1
 \begin{frame}[t]{Capitolo 5: struttura e obiettivi}
 \small
-La nana bianca è il residuo stellare il cui sostegno alla gravità è dato soprattutto dalla \emph{pressione di degenerazione degli elettroni}. I nuclei determinano quasi tutta la massa.
+La nana bianca \'e il residuo stellare il cui sostegno alla gravit\'a \'e dato soprattutto dalla \emph{pressione di degenerazione degli elettroni}. I nuclei determinano quasi tutta la massa.
 \begin{enumerate}
-\item Dalle politropiche alla relazione massa--raggio (§5.2).
-\item Equazione differenziale e soluzioni di Lane--Emden (§5.3).
-\item Limite di Chandrasekhar (§5.4).
-\item Correzioni coulombiane e strati della nana bianca (§§5.5--5.6).
-\item Degenerazione termica, cristallizzazione e osservazioni (§§5.7--5.8).
+    \item Dalle politropiche alla relazione massa--raggio (\ref{ssec:politropicheMR}).
+    \item Equazione differenziale e soluzioni di Lane--Emden (\ref{ssec:laneemden}).
+    \item Limite di Chandrasekhar (\ref{ssec:eminusdegur}).
+    \item Correzioni coulombiane e strati della nana bianca (ref{ssec:wignerseitz}--\ref{ssec:WDstructuredensityth}).
+    \item Degenerazione termica, cristallizzazione e osservazioni (\ref{ssec:degeneratecoulomb}--\ref{ssec:MRatmo}).
 \end{enumerate}
-Convenzioni: unità naturali $c=\hbar=k_B=1$ se non esplicitato; $\rho$ è densità di \emph{massa} e $\varepsilon$ densità di energia. Nei calcoli newtoniani $\rho\simeq\varepsilon/c^2$.
+Convenzioni: unit\'a naturali $c=\hbar=k_B=1$ se non esplicitato; $\rho$ è densit\'a di \emph{massa} e $\varepsilon$ densit\'a di energia. Nei calcoli newtoniani $\rho\simeq\varepsilon/c^2$.
 \end{frame}
 
 % 2
-\begin{frame}[t]{§5.1: la scoperta e la spiegazione delle nane bianche}
+\begin{frame}[t]{Scoperta e spiegazione delle nane bianche}\label{ssec:WDhisto}
 \small
 Sirius B fu osservata nel 1862 come compagna di Sirius A. Nonostante una massa dell'ordine della massa solare, ha un raggio confrontabile con quello terrestre.
 \[
@@ -47,7 +48,7 @@ P\simeq P_e(n_e),\qquad \varepsilon\simeq\rho c^2
 finché nuclei non relativistici ed elettroni degeneri dominano, con effetti coulombiani, termici e composizionali come correzioni.
 \end{frame}
 
-\subsection{§5.2: politropiche e relazione massa--raggio}
+\subsection{Politropiche e relazione massa--raggio}\label{ssec:politropicheMR}\linkdest{polyMR}
 
 % 4
 \begin{frame}[t]{Polytropic EOS: dalla densità numerica alla densità di massa}
@@ -183,8 +184,9 @@ M=\frac{4\pi}3\rho R^3\quad\Longrightarrow\quad M\propto R^3.
 Una sfera incomprimibile ha densità spazialmente costante, ma ciò \emph{non implica da solo} che sia autolegata: occorre una microfisica che mantenga densità non nulla anche a $P=0$.
 \end{frame}
 
-\section{L'equazione di Lane--Emden}
-\subsection{§5.3: derivazione e soluzioni}
+\section{L'equazione di Lane--Emden}\linkdest{laneemdeneq}
+
+\subsection{Equazione L-E: derivazione e soluzioni}\label{ssec:laneemden}
 
 % 11
 \begin{frame}[t]{Eliminare la massa $m(r)$ dall'equilibrio}
@@ -416,13 +418,14 @@ Con $\Gamma=1+1/n$ otteniamo
 \[
 M^{2-\Gamma}R^{3\Gamma-4}=\mathrm{costante}.
 \]
-La stessa legge del ragionamento dimensionale §5.2 emerge ora \emph{esattamente}, con coefficiente numerico determinato da $\xi_1$ e $\omega_n$.
+La stessa legge del ragionamento dimensionale \ref{ssec:politropicheMR} emerge ora \emph{esattamente}, con coefficiente numerico determinato da $\xi_1$ e $\omega_n$.
 \medskip
 L'argomento è strettamente newtoniano e richiede una singola politropica valida nell'intera configurazione.
 \end{frame}
 
-\section{Massa di Chandrasekhar}
-\subsection{§5.4: elettroni degeneri ultrarelativistici}
+\section{Massa di Chandrasekhar}\linkdest{chandramass}
+
+\subsection{Elettroni degeneri ultrarelativistici}\label{ssec:eminusdegur}
 
 % 23
 \begin{frame}[t]{Quali indici servono per le nane bianche?}
@@ -526,7 +529,6 @@ Per $\mu_e=2$ (He, C, O): $M_{\rm Ch}\simeq1.46M_\odot$.
 % 28
 \begin{frame}[t]{Dipendenza dalla composizione nucleare}
 \small
-Il libro riassume la dipendenza nell'equazione (5.40):
 \[
 M_{\rm Ch}\simeq1.456M_\odot
 \left(\frac{2Z}{A}\right)^2\left(\frac{m_u}{m_A/A}\right)^2.
@@ -555,8 +557,9 @@ La deduzione usa assunzioni ideali:
 Una nana bianca ordinaria con elettroni solo parzialmente relativistici segue una curva $M(R)$ con $R$ decrescente all'aumentare della massa; gli effetti addizionali possono spostare la massa critica rispetto al valore ideale.
 \end{frame}
 
-\section{Correzioni coulombiane}
-\subsection{§5.5: cella di Wigner--Seitz}
+\section{Correzioni coulombiane}\linkdest{WDwignerseitz}
+
+\subsection{Cella di Wigner--Seitz}\label{ssec:wignerseitz}
 
 % 30
 \begin{frame}[t]{Perché la repulsione coulombiana modifica l'EOS?}
@@ -695,8 +698,9 @@ M\simeq\frac{4\pi}3\rho R^3
 \emph{Avvertenza}: una superficie a $P=0$ deriva qui da una microfisica di legame elettrico, non dalla sola approssimazione incomprimibile. Alle densità planetarie occorrono anche struttura atomica, ionizzazione parziale e proprietà dei solidi.
 \end{frame}
 
-\section{Struttura interna delle nane bianche}
-\subsection{§5.6: soglie di densità e spessore degli strati}
+\section{Struttura interna delle nane bianche}\linkdest{WDstructure}
+
+\subsection{Soglie di densit\'a e spessore degli strati}\label{ssec:WDstructuredensityth}
 
 % 38
 \begin{frame}[t]{Dalla superficie verso il centro}
@@ -901,8 +905,9 @@ A parità di $P_b/(\rho_bc^2)$, il secondo strato ha uno spessore relativo infer
 Il libro fornisce stime indicative di atmosfera della nana bianca da centinaia di metri a centinaia di km a seconda della composizione. Per stelle di neutroni le scale corrispondenti sono molto più ridotte; il calcolo dettagliato richiede un'EOS e un modello atmosferico realistici.
 \end{frame}
 
-\section{Effetti termici e cristallizzazione}
-\subsection{§5.7: gas degenere e plasma coulombiano}
+\section{Effetti termici e cristallizzazione}\linkdest{WDcrystallization}
+
+\subsection{Gas degenere e plasma coulombiano}\label{ssec:degeneratecoulomb}
 
 % 49
 \begin{frame}[t]{Due scale energetiche distinte: $k_BT$ e $E_F$}
@@ -1033,7 +1038,7 @@ L'aumento della densità favorisce la cristallizzazione a temperatura più alta.
 % 55
 \begin{frame}[t]{Cosa significa $\Gamma_C\simeq178$ per una nana bianca?}
 \small
-Il parametro Coulomb misura la competizione fra ordine elettrostatico e agitazione termica; non è l'indice politropico $\Gamma$ del §5.2.
+Il parametro Coulomb misura la competizione fra ordine elettrostatico e agitazione termica; non è l'indice politropico $\Gamma$ del \ref{ssec:politropicheMR}.
 \medskip
 Per $T<T_m(\rho)$ il materiale ionico tende a essere solido; per $T>T_m(\rho)$ può formare l'\emph{ocean} liquido sopra gli strati cristallizzati.
 \medskip
@@ -1042,8 +1047,9 @@ Le variabili termiche della nana bianca non sono uniformi: la temperatura intern
 Il risultato illustrato nel libro è soprattutto qualitativo: la presenza di un oceano e il fronte di cristallizzazione influenzano il raffreddamento e l'evoluzione termica, pur lasciando la pressione di degenerazione elettronica come sostegno principale.
 \end{frame}
 
-\section{Osservazioni delle nane bianche}
-\subsection{§5.8: massa, raggio e modelli atmosferici}
+\section{Osservazioni delle nane bianche}\linkdest{WDobservations}
+
+\subsection{Massa, raggio e modelli atmosferici}\label{ssec:MRatmo}
 
 % 56
 \begin{frame}[t]{Produzione stellare e tipi di nane bianche}
@@ -1255,6 +1261,6 @@ La massa di Chandrasekhar collega statistica quantistica, relatività speciale e
 \item Le correzioni coulombiane, la composizione e la temperatura sono esempi di ciò che una EOS puramente ideale non descrive.
 \end{itemize}
 \medskip
-\emph{Riferimento}: capitolo 5 di \emph{Compact Star Physics}, sezioni 5.1--5.8. I chiarimenti su segni, soglie di cattura elettronica ed evoluzione binaria sono esplicitati come precisazioni degli appunti.
+\emph{Riferimento}: capitolo 5 di \emph{Compact Star Physics}, sezioni \ref{ssec:WDhisto}--\ref{ssec:MRatmo}. I chiarimenti su segni, soglie di cattura elettronica ed evoluzione binaria sono esplicitati come precisazioni degli appunti.
 \end{frame}
 

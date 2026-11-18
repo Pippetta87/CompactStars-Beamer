@@ -799,11 +799,11 @@
 % Le parentesi sono automatiche; con \linkdest{tov-d} sono attivi RG, TOV, d.
 % La somma delle larghezze dei gruppi, piu' .1 per il contatore, deve
 % rimanere entro 1. Le larghezze delle sottovoci non entrano nella somma.
-\barrazona{reglez25}{.07}{RL25}
+\barrazona{reglez25}{.04}{RL25}
 
-\barrazona{succo}{.07}{S}
+\barrazona{succo}{.04}{S}
 
-\barrazona[:]{genrel}{.2}{RG}
+\barrazona[:]{genrel}{.15}{RG}
 \barrazonasub[,]{genrel}{rgD}{.05}{D}
 \barrazonasub[,]{genrel}{rgEP}{.05}{EP}
 \barrazonasub[,]{genrel}{rggeodetiche}{.05}{$\tau$}
@@ -821,7 +821,7 @@
 % \barrazonasub[,]{genrel}{rg-geo}{.05}{Geo}
 % \barrazonasub{genrel}{rg-tov}{.05}{TOV}
 
-\barrazona[:]{microphysics}{.2}{$\micro$p}
+\barrazona[:]{microphysics}{.19}{$\micro$p}
 \barrazonasub[,]{microphysics}{mpthermodynamicspotentials}{.05}{$\Omega$}
 \barrazonasub[,]{microphysics}{mpPnepsilon}{.05}{$Pn\varepsilon$}
 \barrazonasub[,]{microphysics}{mpchemicalpotential}{.05}{$\mu$}
@@ -831,25 +831,43 @@
 \barrazonasub[,]{microphysics}{mppolitropic}{.05}{$P\propto x^n$}
 \barrazonasub[,]{microphysics}{mpsuperfluidity}{.05}{Sfluid}
 
-\barrazona[:]{pulsar}{.2}{pulsar}
+\barrazona[:]{pulsar}{.15}{pulsar}
 \barrazonasub[,]{pulsar}{rotationalequilibrium}{.05}{$\varpi$}
 \barrazonasub[,]{pulsar}{Pdot}{.05}{$\dot{P}$}
 \barrazonasub[,]{pulsar}{emissionmechanism}{.05}{\faSatelliteDish}
 \barrazonagruppo{pulsar}{RotationInertiaGWemission}{Rot}
 \barrazonasub[,]{RotationInertiaGWemission}{MInertia}{.05}{I}
-\barrazonasub[,]{RotationInertiaGWemission}{magneticdipole}{.05}{$vec{\mu}$}
+\barrazonasub[,]{RotationInertiaGWemission}{magneticdipole}{.05}{$\vec{\mu}$}
 \barrazonasub[,]{RotationInertiaGWemission}{braking}{.05}{$\ddot{\Omega}$}
 \barrazonasub[,]{RotationInertiaGWemission}{GWemission}{.05}{GW}
 \barrazonasub[,]{pulsar}{PPdotdiagram}{.05}{$P\dot{P}$}
 \barrazonasub[,]{pulsar}{glitches}{.05}{$\delta\Omega$}
 \barrazonasub[,]{pulsar}{pulsarbinarie}{.05}{$01$}
 
-\barrazona[:]{densestars}{.12}{C*}
-\barrazonasub[,]{densestars}{pulsarbinarie}{.05}{$01$}
-\barrazonagruppo{densestars}{}{WD}
-\barrazonagruppo{densestars}{}{NS}
+\barrazona[:]{densestars}{.2}{C*}
+\barrazonasub[,]{densestars}{idrostaticorelativistico}{.05}{TOV}
+\barrazonasub[,]{densestars}{massemassime}{.05}{$M_{limit}$}
+\barrazonasub[,]{densestars}{adimensionalizzazione}{.05}{tov}
+\barrazonasub[,]{densestars}{interactionssquared}{.05}{int}
+\barrazonasub[,]{densestars}{bosonsstars}{.05}{b*}
+\barrazonagruppo{densestars}{whitedwarfs}{WD}
+\barrazonasub[,]{whitedwarfs}{polyMR}{.05}{MR}
+\barrazonasub[,]{whitedwarfs}{laneemdeneq}{.05}{LEeq}
+\barrazonasub[,]{whitedwarfs}{chandramass}{.05}{$M_{ch}$}
+\barrazonasub[,]{whitedwarfs}{WDwignerseitz}{.05}{WS}
+\barrazonasub[,]{whitedwarfs}{WDstructure}{.05}{str}
+\barrazonasub[,]{whitedwarfs}{WDcrystallization}{.05}{cryst}
+\barrazonasub[,]{whitedwarfs}{WDobservations}{.05}{obs}
+\barrazonagruppo{densestars}{neutronstars}{NS}
+\barrazonasub[,]{neutronstars}{NScrust}{.05}{crust}
+\barrazonasub[,]{neutronstars}{NScore}{.05}{core}
+\barrazonasub[,]{neutronstars}{massesdef}{.05}{$M/E$}
 
-\barrazona[:]{quarkhybrid}{.1}{qsb}
+\barrazona[:]{QCDquarkstars}{.1}{QCD-qs}
+\barrazonasub[,]{}{}{.05}{??}
+
+\barrazona[:]{hybridstars}{.1}{hybrid}
+\barrazonasub[,]{}{}{.05}{?}
 
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{headline}{%
