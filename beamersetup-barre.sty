@@ -801,9 +801,15 @@
 % rimanere entro 1. Le larghezze delle sottovoci non entrano nella somma.
 \barrazona{reglez25}{.04}{RL25}
 
-\barrazona{succo}{.04}{S}
+\barrazona[:]{succo}{.07}{S}
+\barrazonasub[,]{succo}{rgD}{.05}{1}
+\barrazonasub[,]{succo}{rga}{.05}{2}
+\barrazonasub[,]{succo}{rgb}{.05}{3}
+\barrazonasub[,]{succo}{rgc}{.05}{4}
+\barrazonasub[,]{succo}{rgv}{.05}{5}
+\barrazonasub[,]{succo}{rgb}{.05}{6}
 
-\barrazona[:]{genrel}{.15}{RG}
+\barrazona[:]{genrel}{.12}{RG}
 \barrazonasub[,]{genrel}{rgD}{.05}{D}
 \barrazonasub[,]{genrel}{rgEP}{.05}{EP}
 \barrazonasub[,]{genrel}{rggeodetiche}{.05}{$\tau$}
@@ -821,7 +827,7 @@
 % \barrazonasub[,]{genrel}{rg-geo}{.05}{Geo}
 % \barrazonasub{genrel}{rg-tov}{.05}{TOV}
 
-\barrazona[:]{microphysics}{.19}{$\micro$p}
+\barrazona[:]{microphysics}{.16}{$\micro$p}
 \barrazonasub[,]{microphysics}{mpthermodynamicspotentials}{.05}{$\Omega$}
 \barrazonasub[,]{microphysics}{mpPnepsilon}{.05}{$Pn\varepsilon$}
 \barrazonasub[,]{microphysics}{mpchemicalpotential}{.05}{$\mu$}
@@ -831,7 +837,7 @@
 \barrazonasub[,]{microphysics}{mppolitropic}{.05}{$P\propto x^n$}
 \barrazonasub[,]{microphysics}{mpsuperfluidity}{.05}{Sfluid}
 
-\barrazona[:]{pulsar}{.15}{pulsar}
+\barrazona[:]{pulsar}{.10}{pulsar}
 \barrazonasub[,]{pulsar}{rotationalequilibrium}{.05}{$\varpi$}
 \barrazonasub[,]{pulsar}{Pdot}{.05}{$\dot{P}$}
 \barrazonasub[,]{pulsar}{emissionmechanism}{.05}{\faSatelliteDish}
@@ -844,12 +850,14 @@
 \barrazonasub[,]{pulsar}{glitches}{.05}{$\delta\Omega$}
 \barrazonasub[,]{pulsar}{pulsarbinarie}{.05}{$01$}
 
-\barrazona[:]{densestars}{.2}{C*}
+\barrazona[:]{densestars}{.17}{C*}
 \barrazonasub[,]{densestars}{idrostaticorelativistico}{.05}{TOV}
 \barrazonasub[,]{densestars}{massemassime}{.05}{$M_{limit}$}
 \barrazonasub[,]{densestars}{adimensionalizzazione}{.05}{tov}
 \barrazonasub[,]{densestars}{interactionssquared}{.05}{int}
 \barrazonasub[,]{densestars}{bosonsstars}{.05}{b*}
+\barrazonasub[,]{densestars}{protoNS}{.05}{pNS}
+
 \barrazonagruppo{densestars}{whitedwarfs}{WD}
 \barrazonasub[,]{whitedwarfs}{polyMR}{.05}{MR}
 \barrazonasub[,]{whitedwarfs}{laneemdeneq}{.05}{LEeq}
@@ -863,11 +871,22 @@
 \barrazonasub[,]{neutronstars}{NScore}{.05}{core}
 \barrazonasub[,]{neutronstars}{massesdef}{.05}{$M/E$}
 
-\barrazona[:]{QCDquarkstars}{.1}{QCD-qs}
-\barrazonasub[,]{}{}{.05}{??}
+\barrazona[:]{QCDquarkstars}{.12}{QCD-qs}
+\barrazonasub[,]{QCDquarkstars}{Diracfield}{.05}{$\tensor{\gamma}{^{\mu}}$}
+\barrazonasub[,]{QCDquarkstars}{chiralsymmetry}{.05}{$\exv{\Pquark\APquark}$}
+\barrazonasub[,]{QCDquarkstars}{walecka}{.05}{$\sigma\omega$}
+\barrazonasub[,]{QCDquarkstars}{mesonfields}{.05}{$V_{NN}(r)$}
+\barrazonasub[,]{QCDquarkstars}{QCD}{.05}{QCD}
+\barrazonasub[,]{QCDquarkstars}{strangequarks}{.05}{qs}
+\barrazonasub[,]{QCDquarkstars}{MITEOS}{.05}{EOS(MIT)}
+\barrazonasub[,]{QCDquarkstars}{BodmerWitten}{.05}{BW}
+\barrazonasub[,]{QCDquarkstars}{pQCD}{.05}{pQCD}
+\barrazonasub[,]{QCDquarkstars}{MassaRaggioquarks}{.05}{MR(q)}
 
-\barrazona[:]{hybridstars}{.1}{hybrid}
-\barrazonasub[,]{}{}{.05}{?}
+\barrazona[:]{hybridstars}{.12}{hybridstars}
+\barrazonasub[,]{hybridstars}{MRhybrid}{.05}{MRh}
+\barrazonasub[,]{hybridstars}{thirdfamily}{.05}{3f}
+\barrazonasub[,]{hybridstars}{MRphasetransition}{.05}{MRpt}
 
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{headline}{%
