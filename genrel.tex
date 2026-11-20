@@ -25,12 +25,7 @@ Per uno studio futuro seguirei questi riferimenti.
 \begin{frame}[t]{Cambio di segnatura e fase dell'onda piana}
 \scriptsize\raggedright
 \begin{itemize}
-    \item \textbf{Cambio di metrica:}
-    \[
-    \eta_{\mu\nu}^{(-)}=-\eta_{\mu\nu}^{(+)},
-    \qquad
-    \eta^{\mu\nu}_{(-)}=-\eta^{\mu\nu}_{(+)}.
-    \]
+    \item \textbf{Cambio di metrica:} $\eta_{\mu\nu}^{(-)}=-\eta_{\mu\nu}^{(+)}$, $\eta^{\mu\nu}_{(-)}=-\eta^{\mu\nu}_{(+)}$.
     \item \textbf{Componenti tensoriali:}
     $x^\mu,p^\mu,\partial_\mu$ invariati;
     $x_\mu,p_\mu,\partial^\mu$ cambiano segno.
@@ -90,11 +85,11 @@ rimangono invariate.
 \begin{frame}{Effetto Doppler $(-+++)$}\linkdest{rgD}
         \begin{itemize}
             \item Onda EM piana: in RS la fase $\phi(\vec{x},t)=\scap{k}{x}-\omega t$ e definiamo $\tensor{k}{_{\mu}}=\tensor{\partial}{_{\mu}}\phi=(-\frac{\omega}{c},+\vec{k})$ con $\tensor{x}{^{\mu}}=(ct,\vec{x})$. Per onda EM nel vuoto $\tensor{k}{^{\mu}}\tensor{k}{_{\mu}}=0$.
-            \item L'osservatore segue linea di universo $\tensor{x}{^{\mu}}(\tau)$ e incontra la fase dell'onda $\phi_{obs}(\tau)=\phi(\tensor{x}{^{\mu}}(\tau))$ quindi $\omega_{obs}=-\TDy{\tau}{\phi_{obs}}=-\PDy{\phi}{\tensor{x}{^{\mu}}}\TDy{\tau}{\tensor{x}{^{\mu}}}=-\tensor{k}{_{\mu}}\tensor{x}{^{\mu}}$.
+            \item L'osservatore segue linea di universo $\tensor{x}{^{\mu}}(\tau)$ e incontra la fase dell'onda $\phi_{obs}(\tau)=\phi_0-\omega_{obs}\tau=\phi(\tensor{x}{^{\mu}}(\tau))$ quindi $\omega_{obs}=-\TDy{\tau}{\phi_{obs}}=-\PDy{\tensor{x}{^{\mu}}}{\phi}\TDy{\tau}{\tensor{x}{^{\mu}}}=-\tensor{k}{_{\mu}}\tensor{u}{^{\mu}}$.
             \item Verifica esplicita: $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{u}{^{\mu}}=-\gamma(-\omega+\scap{k}{v})=\gamma(\omega-\scap{k}{v})$. Per onda EM nel vuoto $\vec{k}=\frac{\omega}{c}\hat{n}$ da cui $\omega_{obs}=\gamma\omega(1-\frac{\hat{n}\cdot\vec{v}}{c})$, effetto Doppler relativistico.
             \item $\frac{\Delta \lambda}{\lambda}\approx \frac{\Delta v}{c}$ approx prim'ordine, $\Delta v>0$ quando si allontana.
             \item Un fotone ha quadrimpulso $\tensor{p}{^{\mu}}=\hbar\tensor{k}{^{\mu}}$, $\tensor{p}{^{\mu}}\tensor{p}{_{\mu}}=0$. Un osservatore con quadrivelocit\'a $\tensor{u}{^{\mu}}$ misura energia $E_{obs}=-\tensor{p}{_{\mu}}\tensor{u}{^{\mu}}$, quindi $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{u}{^{\mu}}$.
-            \item Per fotone emesso in e e rilevato in d: $\frac{\nu_d}{\nu_e}=\frac{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_d}{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_e}$.
+            \item Fotone emesso in $(e)$, rilevato in $(d)$: $\frac{\nu_d}{\nu_e}=\frac{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_d}{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_e}$.
             \item Fotone lungo $+x$: nel SI in cui $(e)$ \'e fermo $\tensor{p}{^{\mu}}=(\frac{E_e}{c},\frac{E_e}{c},0,0)$
             \item Rivelatore si allontana con $v>0$: $\tensor{u}{_d^{\mu}}=\gamma(c,v,0,0)$, $\gamma=\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}$. La frequenza misurata dal rivelatore si ottiene da $E_d=-\tensor{p}{_{\mu}}\tensor{u}{^{\mu}}=\gamma E_e(1-\frac{v}{c})$: $\frac{\nu_d}{\nu_e}=\gamma(1-\frac{v}{c})=\sqrt{\frac{1-\frac{v}{c}}{1+\frac{v}{c}}}$ - formula esatta Doppler longitudinale.
             \item $\lambda=\frac{\nu}{c}$: per le lunghezze d'onda misurate misurate nei riferimenti locali $\frac{\lambda_d}{\lambda_e}=\sqrt{\frac{1+\frac{v}{c}}{1-\frac{v}{c}}}$, per $\frac{v}{c}\ll1$ $\frac{\lambda_d}{\lambda_e}\approx1+\frac{v}{c}+O(\frac{v^2}{c^2})$ quindi $\frac{\Delta \lambda}{\lambda_e}\approx \frac{v}{c}$. 
@@ -106,19 +101,13 @@ Luce emessa dal fondo del razzo fermo e ricevuta all'altra estremit\'a in alto i
 \begin{itemize}
     \item $\Delta t\simeq\frac{h}{c}$ tempo impiegato dalla luce a raggiungere altra estremit\'a razzo con $\Delta v\simeq g\Delta t$ velocit\'a acquisita dal razzo.
     \item Effetto Doppler: $\frac{\Delta\lambda}{\lambda}\simeq\frac{\Delta v}{c}=\frac{gh}{c^2}$
-    \item Per principio equivalenza il razzo accelerato \'e localmente equivalente a a un laboratorio fermo in campo gravitazionale uniforme nel quale $\Delta\Phi=gh$ 
+    \item Principio equivalenza: razzo accelerato \'e localmente equivalente a laboratorio fermo in campo grav. unif. con $\Delta\Phi=gh$. 
 \end{itemize}
-Poiche' $\nu=c/\lambda$:
-\[
-\frac{\nu_d}{\nu_e}\simeq 1-\frac{\Delta\Phi}{c^2},
-\qquad z\equiv\frac{\lambda_d-\lambda_e}{\lambda_e}
-\simeq\frac{\Delta\Phi}{c^2}.
-\]
-Per luce emessa dalla superficie $R$ e ricevuta all'infinito, $\Phi(R)=-GM/R$ e $\Phi(\infty)=0$: $z\simeq\frac{GM}{Rc^2}$ (solo campo debole).
+Poich\'e ($\nu=c/\lambda$) $N\approx1+\frac{\Phi}{c^2}$, $\tensor{u}{^{\mu}}=\frac{c}{N}\tensor{\xi}{^{\mu}}$, $N=\sqrt{|\tensor{g}{_{00}}|}$, $\frac{\nu_d}{\nu_e}=\frac{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_d}{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_e}=\frac{\frac{c}{N_d}(\tensor{p}{_{\mu}}\tensor{\xi}{^{\mu}})_d}{\frac{c}{N_e}(\tensor{p}{_{\mu}}\tensor{\xi}{^{\mu}})_e}\frac{N_e}{N_d}$: $\frac{\nu_d}{\nu_e}\simeq 1-\frac{\Delta\Phi}{c^2}$, $z\equiv\frac{\lambda_d-\lambda_e}{\lambda_e}\simeq\frac{\Delta\Phi}{c^2}$. Per luce emessa dalla superficie $R$ e ricevuta all'infinito, $\Phi(R)=-GM/R$ e $\Phi(\infty)=0$: $z\simeq\frac{GM}{Rc^2}$ (solo campo debole).
 \begin{itemize}
-    \item Nel SR istantaneamente solidale con obs $\tensor{{u'}}{^{\mu}}=(c,0,0,0)$ e quadrimpulso particella $\tensor{{p'}}{^{\mu}}=(\frac{E'}{c},\vec{p'})$: $E'=c\tensor{{p'}}{^0}$.
-    \item $E_{obs}=E'=c\tensor{{p'}}{^0}$.
-    \item $\tensor{{p'}}{_{\mu}}\tensor{{u'}}{^{\mu}}=(-\frac{E'}{c})c+0=-E'$, $\tensor{{p'}}{_{\mu}}=\tensor{\eta}{_{\mu\nu}}\tensor{{p'}}{^{\nu}}$.
+    \item Nel SR istantaneamente solidale con obs $\tensor{u'}{^{\mu}}=(c,0,0,0)$ e quadrimpulso particella $\tensor{p'}{^{\mu}}=(\frac{E'}{c},\vec{p'})$: $E'=c\tensor{p'}{^0}$.
+    \item $E_{obs}=E'=c\tensor{p'}{^0}$.
+    \item $\tensor{p'}{_{\mu}}\tensor{u'}{^{\mu}}=(-\frac{E'}{c})c+0=-E'$, $\tensor{p'}{_{\mu}}=\tensor{\eta}{_{\mu\nu}}\tensor{p'}{^{\nu}}$.
     \item Infatti ritroviamo la formula di trasformazione $E_{obs}=-\tensor{p}{_{_\mu}}\tensor{u}{^{\mu}}=-[-\frac{E}{c}\gamma c+\gamma\scap{p}{v}]=\gamma(E-\scap{p}{v})$. 
 \end{itemize}
 RedShift gravitazionale:
@@ -126,23 +115,18 @@ RedShift gravitazionale:
     \item Metrica statica, segnatura $(-+++)$. Osservatore statico $\tensor{u}{^{\mu}}=(\frac{c}{\sqrt{-g_{00}}},0,0,0)$.
     \item Fotone si propaga lungo geodetica nulla in spazio-tempo statico: ha energia misurata da osservatore $E_{loc}=-\tensor{p}{_{\mu}}\tensor{u}{^{\mu}}=-\frac{c \tensor{p}{_0}}{\sqrt{-\tensor{g}{_{00}}}}$. $\tensor{p}{_0}$ \'e conservato quindi $E_{loc}\sqrt{-\tensor{g}{_{00}}}=\const{}$.
     \item Fotone emesso da stella a raggio $R$ e ricevuto a $\infty$: $\tensor{g}{_{00}}(\infty)=-1$, quindi $\frac{E_{\infty}}{E_R}=\sqrt{-\tensor{g}{_{00}}}(R)$
-    \item Con metrica di \sch: $\tensor{g}{_{00}}(R)=-(1-\frac{2GM}{Rc^2})$, quindi $1+z=\frac{E_R}{E_{\infty}}=(1-\frac{2GM}{Rc^2})\expy{-\frac{1}{2}}$.
-    \item Campo debole $\frac{GM}{Rc^2}/ll1$: $z\approx \frac{GM}{Rc^2}$
+    \item Con metrica di \sch: $\tensor{g}{_{00}}(R)=-(1-\frac{2GM}{Rc^2})$, quindi $1+z=\frac{E_R}{E_{\infty}}=(1-\frac{2GM}{Rc^2})\expy{-\frac{1}{2}}$. Campo debole $\frac{GM}{Rc^2}\ll1$: $z\approx \frac{GM}{Rc^2}$
 \end{itemize}
 \end{frame}
 
 \begin{frame}[t]{Redshift esatto in una metrica statica}
 \small\raggedright
 \begin{itemize}
-    \item In una metrica statica $ds^2=\tensor{g}{_{00}}(\vec{x})c^2dt^2+\tensor{g}{_{ij}}(\vec{x})\tensor{dx}{^i}\tensor{dx}{^j}$. Segnatura $(+---)$: $\tensor{g}{_{tt}}>0$. Segnatura $(-+++)$: $\tensor{g}{_{tt}}<0$.
-    \item Traiettoria temporale $ds^2=c^2d\tau^2=\tensor{g}{_{tt}}(r)c^2dt^2$: per osservatore futuro-diretto $d\tau=\sqrt{\tensor{g}{_{tt}}(r)}dt$, il tempo proprio dell'osservatore statico non coincide generalmente con tempo coordinato $t$.
-    \item Le componenti della quadrivelocit\'a sono $\tensor{u}{^{\mu}}=(\TDy{\tau}{(ct)},\TDy{\tau}{r},\TDy{\tau}{\theta},\TDy{\tau}{\phi})$, e per osservatore statico e simmetria sferica $\tensor{u}{^{\mu}}=(\frac{c}{\sqrt{\tensor{g}{_{tt}}(r)}})$ (normalizzazione: $\tensor{u}{^{\mu}}\tensor{u}{_{\mu}}=\tensor{g}{_{\mu\nu}}\tensor{u}{^{\mu}}\tensor{u}{^{\nu}}=\tensor{g}{_{tt}}\frac{c^2}{\tensor{g}{_{tt}}}=c^2$).
-    \item La simmetria temporale della metrica \'e descritta dal vettore di Killing $\xi^\mu=\delta^{\mu}_t=(1,0,0,0)$, la cui norma $\tensor{\xi}{_{\mu}}\tensor{\xi}{^{\mu}}=\tensor{g}{_{tt}}$. L'osservatore statico segue le linee della simmetria temporale $\tensor{u}{^{\mu}}\propto \tensor{\xi}{^{\mu}}$: imponendo normalizzazione $\tensor{u}{_{\mu}}\tensor{u}{^{\mu}}=c^2$ si ha $A^2 \tensor{g}{_{tt}}=c^2$ quindi $\tensor{u}{^{\mu}}=\frac{c \tensor{\xi}{^{\mu}}}{\sqrt{\tensor{g}{_{tt}}}}$.
-    \item Per un fotone, $p^\mu=\hbar k^\mu$ e $p^\mu p_\mu=0$. Lungo la geodetica nulla si conserva $E_\infty=-cp_\mu\xi^\mu=-cp_t=\hbar k_t$ poiche' $\xi^\mu$ \'e un vettore di Killing, ie lungo la geodetica del fotone $\tensor{p}{^{\nu}}\tensor{\nabla}{_{\nu}}(\tensor{p}{_{\mu}}\tensor{\xi}{^{\mu}})=0$; $E_{\infty}$ \'e energia del fotone misurata da osservatore statico a infinito in spazio-tempo statico e asintoticamente piatto. Consideriamo un'onda elettromagnetica descritta localmente dalla fase $\varphi(x)$: $A(x)=A_0(x)\cos\varphi(x)$. $\exp{+i \tensor{k}{_{\mu}}\tensor{x}{^{\mu}}}|_{(-+++)}=\exp{-i \tensor{k}{_{\mu}}\tensor{x}{^{\mu}}}|_{(+---)}=\exp{-i\omega t+i\scap{k}{x}}$. Con segnatura $(-+++)$: $\varphi=\vec{k}\cdot\vec{x}-\omega t$, $\tensor{k}{_\mu}=\partial_\mu\varphi$, localmente, in coordinate inerziali: $\tensor{k}{_{\mu}}=\left(-\frac{\omega}{c},\vec{k}\right).$.
+    \item In una metrica statica $ds^2=\tensor{g}{_{00}}(\vec{x})c^2dt^2+\tensor{g}{_{ij}}(\vec{x})\tensor{dx}{^i}\tensor{dx}{^j}$. Segnatura $(+---)$: $\tensor{g}{_{tt}}>0$. Segnatura $(-+++)$: $\tensor{g}{_{tt}}<0$. Traiettoria temporale $ds^2=c^2d\tau^2=\tensor{g}{_{tt}}(r)c^2dt^2$: per osservatore futuro-diretto $d\tau=\sqrt{\tensor{g}{_{tt}}(r)}dt$, il tempo proprio dell'osservatore statico non coincide generalmente con tempo coordinato $t$. Le componenti della quadrivelocit\'a sono $\tensor{u}{^{\mu}}=(\TDy{\tau}{(ct)},\TDy{\tau}{r},\TDy{\tau}{\theta},\TDy{\tau}{\phi})$, e per osservatore statico e simmetria sferica $\tensor{u}{^{\mu}}=(\frac{c}{\sqrt{\tensor{g}{_{tt}}(r)}})$ (normalizzazione: $\tensor{u}{^{\mu}}\tensor{u}{_{\mu}}=\tensor{g}{_{\mu\nu}}\tensor{u}{^{\mu}}\tensor{u}{^{\nu}}=\tensor{g}{_{tt}}\frac{c^2}{\tensor{g}{_{tt}}}=c^2$).
+    \item {\footnotesize Un \textbf{campo vettoriale di Killing} $\xi^\mu$ genera una trasformazione che lascia invariata la metrica: $\mathcal L_\xi g_{\mu\nu}=0$ quindi $\nabla_\mu\xi_\nu+\nabla_\nu\xi_\mu=0$. Nelle coordinate statiche adottate, $\partial_tg_{\mu\nu}=0$: il generatore della simmetria temporale \'e quindi $\xi=\partial_t$, $\xi^\mu=\frac{\partial x^\mu}{\partial t}=\delta^\mu_t=(1,0,0,0)$. Qui $\delta^\mu_t$ \'e il delta di Kronecker: vale $1$ per $\mu=t$ e $0$ per le componenti spaziali. La simmetria temporale della metrica \'e descritta dal vettore di Killing $\xi^\mu=\delta^{\mu}_t=(1,0,0,0)$, la cui norma $\tensor{\xi}{_{\mu}}\tensor{\xi}{^{\mu}}=\tensor{g}{_{tt}}$. L'osservatore statico segue le linee della simmetria temporale $\tensor{u}{^{\mu}}\propto \tensor{\xi}{^{\mu}}$: imponendo normalizzazione $\tensor{u}{_{\mu}}\tensor{u}{^{\mu}}=c^2$ si ha $A^2 \tensor{g}{_{tt}}=c^2$ quindi $\tensor{u}{^{\mu}}=\frac{c \tensor{\xi}{^{\mu}}}{\sqrt{\tensor{g}{_{tt}}}}$. Per un fotone, $p^\mu=\hbar k^\mu$ e $p^\mu p_\mu=0$. Lungo la geodetica nulla si conserva $E_\infty=-cp_\mu\xi^\mu=-cp_t=\hbar k_t$ poich\'e $\xi^\mu$ \'e un vettore di Killing, ie lungo la geodetica del fotone $\tensor{p}{^{\nu}}\tensor{\nabla}{_{\nu}}(\tensor{p}{_{\mu}}\tensor{\xi}{^{\mu}})=0$; $E_{\infty}$ \'e energia del fotone misurata da osservatore statico a infinito in spazio-tempo statico e asintoticamente piatto. Consideriamo un'onda elettromagnetica descritta localmente dalla fase $\varphi(x)$: $A(x)=A_0(x)\cos\varphi(x)$. Con segnatura $(-+++)$: $\varphi=\vec{k}\cdot\vec{x}-\omega t$, $\tensor{k}{_\mu}=\partial_\mu\varphi$, localmente, in coordinate inerziali: $\tensor{k}{_{\mu}}=\left(-\frac{\omega}{c},\vec{k}\right)$.\par}
+        %$\exp{+i \tensor{k}{_{\mu}}\tensor{x}{^{\mu}}}|_{(-+++)}=\exp{-i \tensor{k}{_{\mu}}\tensor{x}{^{\mu}}}|_{(+---)}=\exp{-i\omega t+i\scap{k}{x}}$.
     \item Per un osservatore statico $u^i=0$ e $u^t=c/\sqrt{-g_{tt}}$: $\omega_{\rm loc} =-k_tu^t=\frac{-c\,k_t}{\sqrt{-g_{tt}}}$. Con $p^\mu=\hbar k^\mu$ $E_{\rm loc}=\hbar\omega_{\rm loc}=-\tensor{p}{_\mu}\tensor{u}{^\mu}$.
-    \item Metrica statica: $k_t$ conservato tra emissione e rivelazione, $k_t(e)=k_t(d)$. $\frac{\nu_d}{\nu_e}=\sqrt{\frac{g_{tt}(e)}{g_{tt}(d)}}$, $1+z=\frac{\nu_e}{\nu_d}$.
-        \item Per una stella sferica non rotante, all'esterno: $ds^2=-\left(1-\frac{2GM}{rc^2}\right)c^2dt^2+\left(1-\frac{2GM}{rc^2}\right)^{-1}dr^2+r^2d\Omega^2$. La componente temporale della metrica \'e $g_{tt}(r)=-\left(1-\frac{2GM}{rc^2}\right).$. Per un fotone emesso dalla superficie $R$
-            e ricevuto all'infinito $\frac{\nu_\infty}{\nu_R}=\sqrt{\frac{-g_{tt}(R)}{-g_{tt}(\infty)}}=\sqrt{1-\frac{2GM}{Rc^2}}$. Definendo il redshift $1+z=\nu_R/\nu_\infty$: $1+z=\left(1-\frac{2GM}{Rc^2}\right)^{-1/2}$. Nel limite di campo debole, $GM/(Rc^2)\ll1$: $z\simeq\frac{GM}{Rc^2}$.
+    \item Metrica statica: $k_t$ conservato tra emissione e rivelazione, $k_t(e)=k_t(d)$. $\frac{\nu_d}{\nu_e}=\sqrt{\frac{g_{tt}(e)}{g_{tt}(d)}}$, $1+z=\frac{\nu_e}{\nu_d}$. Per una stella sferica non rotante, all'esterno: $ds^2=-\left(1-\frac{2GM}{rc^2}\right)c^2dt^2+\left(1-\frac{2GM}{rc^2}\right)^{-1}dr^2+r^2d\Omega^2$. La componente temporale della metrica \'e $g_{tt}(r)=-\left(1-\frac{2GM}{rc^2}\right).$. Per un fotone emesso dalla superficie $R$ e ricevuto all'infinito $\frac{\nu_\infty}{\nu_R}=\sqrt{\frac{-g_{tt}(R)}{-g_{tt}(\infty)}}=\sqrt{1-\frac{2GM}{Rc^2}}$. Definendo il redshift $1+z=\nu_R/\nu_\infty$: $1+z=\left(1-\frac{2GM}{Rc^2}\right)^{-1/2}$. Nel limite di campo debole: $GM/(Rc^2)\ll1$: $z\simeq\frac{GM}{Rc^2}$.
 \end{itemize}
 \end{frame}
 
@@ -191,7 +175,7 @@ ma in generale $\partial_\alpha\partial_\beta g_{\mu\nu}(p)\ne0$: la curvatura e
 \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Deflessione della luce e natura locale dell'EEP: \small in small enough region laws have same form in RS and RG}\small\raggedright
+\begin{frame}[t]{Deflessione della luce e natura locale dell'EEP: \small in small enough region laws have same form in RS and RG.}\small\raggedright
 \begin{itemize}
 \item Perch\'e l'EEP \'e locale? In un riferimento localmente inerziale: $g_{\mu\nu}(P)=\eta_{\mu\nu}$, $\Gamma^\rho_{\mu\nu}(P)=0$. La luce segue localmente una traiettoria rettilinea, ma la curvatura $R^\rho{}_{\sigma\mu\nu}$ non \'e in generale nulla.
 \item L'EEP spiega qualitativamente la deflessione osservata in un laboratorio accelerato; la deflessione gravitazionale complessiva richiede la metrica e l'integrazione delle geodetiche nulle.
@@ -233,30 +217,19 @@ Una metrica non costante nelle coordinate non implica necessariamente curvatura 
 
 \begin{frame}[t]{Tensore metrico: indici alti e bassi $(+---)$. Geodetiche.}\linkdest{rggeodetiche}\small\raggedright
     \begin{itemize}
-        \item $ds^2=g_{\mu\nu}(x)\,dx^\mu dx^\nu$, $g_{\mu\rho}g^{\rho\nu}=\delta_\mu{}^\nu$. Alzare e abbassare indici: $A_\mu=g_{\mu\nu}A^\nu$, $A^\mu=g^{\mu\nu}A_\nu$, $A_\mu B^\mu$ scalare. In Minkowski, se $A^\mu=(A^0,A^x,A^y,A^z)$, $A_\mu=(A^0,-A^x,-A^y,-A^z)$.
-    \item $g_{\mu\nu}$ e' simmetrico: 10 componenti indipendenti in quattro dimensioni; il suo determinante deve essere non nullo.
+        \item {\footnotesize $ds^2=g_{\mu\nu}(x)\,dx^\mu dx^\nu$, $g_{\mu\rho}g^{\rho\nu}=\delta_\mu{}^\nu$. Alzare e abbassare indici: $A_\mu=g_{\mu\nu}A^\nu$, $A^\mu=g^{\mu\nu}A_\nu$, $A_\mu B^\mu$ scalare. In Minkowski, se $A^\mu=(A^0,A^x,A^y,A^z)$, $A_\mu=(A^0,-A^x,-A^y,-A^z)$.\par}
+        \item {\footnotesize $g_{\mu\nu}$ e' simmetrico: 10 componenti indipendenti in quattro dimensioni; il suo determinante deve essere non nullo. Componenti indipendenti S: $\frac{D(D+1)}{2}$, A: $\frac{D(D-1)}{2}$.\par}
     \item \textbf{Geodetica e parametro affine.} Una curva \'e una geodetica se ammette un parametro \(\lambda\) per cui il vettore tangente \(v^\mu=dx^\mu/d\lambda\) \'e trasportato parallelamente lungo la curva. Un tale parametro \(\lambda\) si dice \emph{affine}. Abbassando l'indice della tangente, la condizione si scrive $v_\mu=g_{\mu\nu}v^\nu$, $\frac{dv_\mu}{d\lambda}=\frac12\,\partial_\mu g_{\alpha\beta}\,v^\alpha v^\beta$. Due parametri affini della stessa geodetica sono legati da \(\tilde\lambda=A\lambda+B\), con \(A\ne0\). Per una geodetica temporale si pu\'o scegliere \(\lambda=\tau\).
-    \item \textbf{Applicazione alle geodetiche.} Per una curva \(x^\mu(\lambda)\), il vettore tangente ha componenti \(v^\mu=dx^\mu/d\lambda\) e \(v_\mu=g_{\mu\nu}v^\nu\). La curva \'e una geodetica con parametro affine \(\lambda\) se $\frac{dv_\mu}{d\lambda}=\frac12\,\partial_\mu g_{\alpha\beta}\,v^\alpha v^\beta$.
+    \item \textbf{Applicazione alle geodetiche.} Per una curva \(x^\mu(\lambda)\), il vettore tangente ha componenti \(v^\mu=dx^\mu/d\lambda\) e \(v_\mu=g_{\mu\nu}v^\nu\). La curva \'e una geodetica con parametro affine \(\lambda\) se $\tensor{\TDy{\lambda}{v}}{_{\mu}}=\frac12\,\partial_\mu g_{\alpha\beta}\,v^\alpha v^\beta$.
+    \item Tempo proprio: una misura fisica - Il \textbf{tempo proprio} $\tau$ \'e il tempo misurato da un orologio che segue una \textbf{curva temporale}, anche se accelerata: $d\tau^2=\frac{|ds^2|}{c^2}, \qquad ds^2=g_{\mu\nu}\,dx^\mu dx^\nu$.
+Questa scrittura vale per entrambe le segnature $(+---)$ e $(-+++)$.
+\item Parametro affine: scelta di parametrizzazione - parametro $\lambda$ \'e \textbf{affine} lungo geodetica se il vettore tangente definito rispetto a esso viene \textbf{trasportato parallelamente} lungo la curva: $k^\mu\equiv\frac{dx^\mu}{d\lambda}$, $\frac{Dk^\mu}{d\lambda}\equiv k^\nu\nabla_\nu k^\mu=0$. Si usa per geodetiche \textbf{temporali, nulle o spaziali}.
+\item {\footnotesize Geodetica temporale: caduta libera - Il tempo proprio \'e un parametro affine: ponendo $u^\mu=dx^\mu/d\tau$, si ha $u^\nu\nabla_\nu u^\mu=0$. Tutti altri parametri affini della stessa geodetica sono $\boxed{\lambda=a\tau+b}$, $ a\ne0$, $a,b$ costanti. Libert\'a riguarda soltanto la \textbf{scala} e l'\textbf{origine} del parametro.\par}
+\item {\footnotesize \textbf{Osservatore accelerato:} possiede un tempo proprio, ma la traiettoria non \'e geodetica: $u^\nu\nabla_\nu u^\mu\ne0$. \textbf{Fotone nel vuoto:} segue una geodetica nulla, che ammette un parametro affine; essendo $ds^2=0$, il tempo proprio lungo la curva \'e costante e \textbf{non pu\'o parametrizzarla}.\par}
+\item {\footnotesize Per una traiettoria materiale: $d\tau=\sqrt{g_{\mu\nu}dx^\mu dx^\nu}$, $u^\mu\equiv\frac{dx^\mu}{d\tau}$, $g_{\mu\nu}u^\mu u^\nu=1$. In relativita' speciale, $d\tau=dt\sqrt{1-v^2}$ e $u^\mu=\gamma(1,\mathbf v)$, $u_\mu=\gamma(1,-\mathbf v)$, $\gamma=(1-v^2)^{-1/2}$.
+Il quadrimpulso di una particella libera e' $p^\mu=mu^\mu=(E,\mathbf p)$: $p^\mu p_\mu=m^2\quad\Longrightarrow\quad E^2=\mathbf p^2+m^2$.
+\textit{Le formule con $c\ne1$ hanno} $x^0=ct$, $u^\mu=dx^\mu/d\tau$ e $u^\mu u_\mu=c^2$.\par}
 \end{itemize}
-\end{frame}
-
-\begin{frame}[t]{Tempo proprio e quadrivelocita' $(+---)$}\small\raggedright
-Per una traiettoria materiale:
-\[
-d\tau=\sqrt{g_{\mu\nu}dx^\mu dx^\nu},\qquad
-u^\mu\equiv\frac{dx^\mu}{d\tau},\qquad g_{\mu\nu}u^\mu u^\nu=1.
-\]
-In relativita' speciale, $d\tau=dt\sqrt{1-v^2}$ e
-\[
-u^\mu=\gamma(1,\mathbf v),\quad
-u_\mu=\gamma(1,-\mathbf v),\quad
-\gamma=(1-v^2)^{-1/2}.
-\]
-Il quadrimpulso di una particella libera e' $p^\mu=mu^\mu=(E,\mathbf p)$:
-\[
-p^\mu p_\mu=m^2\quad\Longrightarrow\quad E^2=\mathbf p^2+m^2.
-\]
-\textit{Le formule con $c\ne1$ hanno} $x^0=ct$, $u^\mu=dx^\mu/d\tau$ e $u^\mu u_\mu=c^2$.
 \end{frame}
 
 \begin{frame}[t]{Dal potenziale newtoniano a $g_{tt}$ $(+---)$}\small\raggedright
@@ -277,6 +250,198 @@ Per la metrica con segnatura $+---$, $g_{ij}\simeq-\delta_{ij}$, dunque
 Questo determina la corretta normalizzazione del coefficiente $2$ nel termine temporale della metrica.
 \end{frame}
 
+% Sei frame da inserire nel documento Beamer al posto del frame originale.
+% Richiedono soltanto Beamer e amsmath (caricato da Beamer).
+% Convenzione principale: (+---), x^0=ct, g_{00} adimensionale.
+% Il coefficiente indicato con g_{tt} nel frame originale e' qui chiamato g_{00}.
+% Riferimenti per la derivazione del limite newtoniano:
+% S. M. Carroll, Lecture Notes on General Relativity, cap. 4, eq. (4.10)-(4.21).
+% https://preposterousuniverse.com/wp-content/uploads/grnotes-four.pdf
+
+\begin{frame}[t]{Limite newtoniano: ipotesi e notazione}
+\small\raggedright
+Usiamo la segnatura $(+---)$ e coordinate quasi cartesiane
+$x^\mu=(ct,x^1,x^2,x^3)$. Scriviamo
+\[
+ds^2=g_{00}c^2dt^2+2g_{0i}c\,dt\,dx^i+g_{ij}dx^i dx^j.
+\]
+Il coefficiente $g_{00}$ \`e adimensionale: corrisponde al $g_{tt}$
+usato nel frame originale quando il fattore $c^2$ \`e scritto esplicitamente.
+\begin{itemize}
+  \item \textbf{Campo debole:}
+  $g_{\mu\nu}=\eta_{\mu\nu}+h_{\mu\nu}$, $|h_{\mu\nu}|\ll1$,
+  con $\eta_{\mu\nu}=\operatorname{diag}(1,-1,-1,-1)$.
+  \item \textbf{Stazionariet\`a:} $\partial_tg_{\mu\nu}=0$.
+  \item \textbf{Moto lento:} $v^i\equiv dx^i/dt$, $|\mathbf v|/c\ll1$.
+\end{itemize}
+La regola della catena d\`a, esattamente,
+\[
+\frac{dx^i}{d\tau}=v^i\frac{dt}{d\tau},\qquad
+\frac{dx^0}{d\tau}=c\frac{dt}{d\tau},\qquad
+\boxed{\frac{dx^i/d\tau}{dx^0/d\tau}=\frac{v^i}{c}.}
+\]
+Quindi $|dx^i/d\tau|\ll|dx^0/d\tau|$: \`e l'ipotesi di moto lento
+riscritta tramite le componenti della quadrivelocit\`a.
+\end{frame}
+
+\begin{frame}[t]{Geodetica completa e limite di moto lento}
+\small\raggedright
+Per una particella libera massiva, il tempo proprio $\tau$ \`e un parametro affine:
+\[
+\frac{d^2x^\mu}{d\tau^2}
++\Gamma^\mu{}_{\alpha\beta}
+\frac{dx^\alpha}{d\tau}\frac{dx^\beta}{d\tau}=0.
+\]
+Separando gli indici temporali e spaziali, la componente $\mu=i$ diventa
+\[
+\begin{aligned}
+\frac{d^2x^i}{d\tau^2}={}&-c^2\Gamma^i{}_{00}
+\left(\frac{dt}{d\tau}\right)^2
+-2c\Gamma^i{}_{0j}\frac{dt}{d\tau}\frac{dx^j}{d\tau}
+-\Gamma^i{}_{jk}\frac{dx^j}{d\tau}\frac{dx^k}{d\tau}.
+\end{aligned}
+\]
+Gli indici $j,k=1,2,3$ sono sommati; il fattore $2$ segue da
+$\Gamma^i{}_{0j}=\Gamma^i{}_{j0}$ per la connessione di Levi-Civita.
+Sostituendo $dx^j/d\tau=v^j\,dt/d\tau$:
+\[
+\frac{d^2x^i/d\tau^2}{(dt/d\tau)^2}
+=-c^2\left[
+\Gamma^i{}_{00}
++2\Gamma^i{}_{0j}\frac{v^j}{c}
++\Gamma^i{}_{jk}\frac{v^jv^k}{c^2}\right].
+\]
+Nell'espansione newtoniana manteniamo il contributo dominante in $v/c$:
+\[
+\boxed{\frac{d^2x^i/d\tau^2}{(dt/d\tau)^2}
+\simeq-c^2\Gamma^i{}_{00}.}
+\]
+\end{frame}
+
+\begin{frame}[t]{Dal tempo proprio al tempo coordinato: regola della catena}
+\small\raggedright
+Poniamo $q\equiv dt/d\tau$ e $v^i\equiv dx^i/dt$. La derivata prima \`e
+\[
+\frac{dx^i}{d\tau}=qv^i.
+\]
+Derivando nuovamente, bisogna derivare \textbf{entrambi i fattori}:
+\[
+\frac{d^2x^i}{d\tau^2}
+=\frac{dq}{d\tau}v^i
++q\frac{dv^i}{dt}\frac{dt}{d\tau}
+=v^i\frac{d^2t}{d\tau^2}+q^2\frac{d^2x^i}{dt^2}.
+\]
+Pertanto l'identit\`a esatta \`e
+\[
+\boxed{
+\frac{d^2x^i/d\tau^2}{q^2}
+=\frac{d^2x^i}{dt^2}+F^i,
+\qquad
+F^i\equiv v^i\frac{d^2t/d\tau^2}{q^2}.}
+\]
+\begin{itemize}
+  \item Se $q$ \`e costante, $F^i=0$ e il cambio di parametro \`e affine.
+  \item Nel limite newtoniano basta mostrare che $F^i$ \`e di ordine
+  superiore rispetto ai contributi mantenuti.
+\end{itemize}
+La geodetica del frame precedente fornisce quindi
+\[
+\frac{d^2x^i}{dt^2}\simeq-c^2\Gamma^i{}_{00}-F^i.
+\]
+\end{frame}
+
+\begin{frame}[t]{Perch\'e la correzione temporale \`e trascurabile}
+\small\raggedright
+Da $x^0=ct$, la componente temporale \emph{completa} della geodetica d\`a
+\[
+\frac{d^2t/d\tau^2}{q^2}
+=-c\Gamma^0{}_{00}
+-2\Gamma^0{}_{0j}v^j
+-\frac1c\Gamma^0{}_{jk}v^jv^k.
+\]
+La stazionariet\`a e il campo debole implicano
+\[
+\Gamma^0{}_{00}=-\frac12g^{0j}\partial_jg_{00},
+\qquad g^{0j}=O(h),\quad \partial_jg_{00}=\partial_jh_{00}:
+\]
+il primo termine \`e un prodotto di due perturbazioni e si trascura
+al primo ordine nel campo. Inoltre, con segnatura $(+---)$,
+\[
+\Gamma^0{}_{0j}\simeq\frac12\partial_jh_{00}.
+\]
+Moltiplicando l'equazione temporale per $v^i$, il primo contributo
+lineare nel campo a $F^i$ \`e dunque
+\[
+F^i\simeq-v^iv^j\partial_jh_{00}.
+\]
+Rispetto al termine spaziale guida, dell'ordine di $c^2\nabla h_{00}$,
+questa correzione contiene il fattore $v^2/c^2$; il contributo con
+$\Gamma^0{}_{jk}$ contiene un'ulteriore potenza di $v/c$.
+All'ordine newtoniano:
+\[
+\boxed{F^i\simeq0,\qquad
+\frac{d^2x^i}{dt^2}\simeq-c^2\Gamma^i{}_{00}.}
+\]
+\end{frame}
+
+\begin{frame}[t]{Dal potenziale newtoniano a $g_{00}$ $(+---)$}
+\small\raggedright
+La connessione di Levi-Civita \`e
+\[
+\Gamma^i{}_{00}
+=\frac12g^{i\alpha}
+\left(2\partial_0g_{\alpha0}-\partial_\alpha g_{00}\right).
+\]
+La stazionariet\`a annulla le derivate temporali. Al primo ordine nel campo,
+$g^{ij}\simeq-\delta^{ij}$, quindi
+\[
+\Gamma^i{}_{00}=-\frac12g^{ij}\partial_jg_{00}
+\simeq\frac12\partial_i g_{00}.
+\]
+La geodetica lenta diventa
+\[
+\frac{d^2x^i}{dt^2}\simeq-\frac{c^2}{2}\partial_i g_{00}.
+\]
+Confrontiamo con la legge newtoniana $d^2x^i/dt^2=-\partial_i\Phi$:
+\[
+\partial_i g_{00}\simeq\frac{2}{c^2}\partial_i\Phi
+\quad\Longrightarrow\quad
+\boxed{g_{00}\simeq C+\frac{2\Phi}{c^2}.}
+\]
+Il fattore $2$ nasce dal fattore $1/2$ nella connessione.
+La costante $C$ si fissa scegliendo la normalizzazione del tempo.
+\end{frame}
+
+\begin{frame}[t]{Massa sferica: $g_{tt}\simeq1-2GM/(rc^2)$}
+\small\raggedright
+Per un sistema isolato scegliamo $\Phi(\infty)=0$ e normalizziamo il tempo
+affinch\'e, all'infinito, la metrica tenda a quella di Minkowski:
+\[
+g_{00}(\infty)=1\quad\Longrightarrow\quad C=1,
+\qquad
+\boxed{g_{00}\simeq1+\frac{2\Phi}{c^2}.}
+\]
+All'esterno di una massa sferica $M$, il potenziale newtoniano \`e
+\[
+\Phi(r)=-\frac{GM}{r}.
+\]
+Sostituendo:
+\[
+\boxed{g_{tt}\equiv g_{00}\simeq1-\frac{2GM}{rc^2}
+\qquad(+---).}
+\]
+Con la segnatura opposta cambia il segno della metrica:
+\[
+\boxed{g_{tt}\equiv g_{00}\simeq-\left(1-\frac{2GM}{rc^2}\right)
+\qquad(-+++).}
+\]
+\begin{itemize}
+  \item Il limite debole richiede $GM/(rc^2)\ll1$.
+  \item Queste formule usano $ds^2=g_{00}c^2dt^2+\cdots$.
+  Se si scrive invece $ds^2=g_{tt}^{\rm(coord)}dt^2+\cdots$,
+  il coefficiente \`e $g_{tt}^{\rm(coord)}=c^2g_{00}$.
+\end{itemize}
+\end{frame}
 \section{Geodesiche, connessione e curvatura}
 
 \subsection{Equazione geodetica}\linkdest{rgeqgeo}
@@ -681,9 +846,9 @@ Il tensore mareale e' l'Hessiano del potenziale; per una massa puntiforme $\Phi=
 
 \end{frame}
 
-\subsection{Stokes, corrente conservata e Killing}
+\subsection{Stokes, corrente conservata e Killing}\linkdest{rgstokesconservation}
 
-\begin{frame}[t]{Teorema di Stokes e divergenza covariante}\linkdest{rgstokesconservation}\small\raggedright
+\begin{frame}[t]{Teorema di Stokes e divergenza covariante}\small\raggedright
 
 Su una regione $\mathcal V$ orientata di una varieta' pseudo-riemanniana:
 \[
@@ -745,9 +910,11 @@ Per un fluido con $\nabla_\mu T^{\mu\nu}=0$:
 
 \end{frame}
 
-\section{Equazioni di Einstein e metrica di Schwarzschild}\subsection{Equazioni del campo}
+\section{Equazioni di Einstein e metrica di Schwarzschild}
 
-\begin{frame}[t]{Da Poisson a Einstein}\linkdest{fieldeq}\small\raggedright
+\subsection{Equazioni del campo}\linkdest{fieldeq}
+
+\begin{frame}[t]{Da Poisson a Einstein}\small\raggedright
 
 L'equazione newtoniana e'
 \[
@@ -794,9 +961,9 @@ Segue
 
 \end{frame}
 
-\subsection{Schwarzschild, coordinate areali e connessione}
+\subsection{Schwarzschild, coordinate areali e connessione}\linkdest{schsolution}
 
-\begin{frame}[t]{Metrica statica sferica e raggio areale $(+---)$}\linkdest{schsolution}\small\raggedright
+\begin{frame}[t]{Metrica statica sferica e raggio areale $(+---)$}\small\raggedright
 
 Una metrica statica sfericamente simmetrica, in opportune coordinate, si scrive
 \[
@@ -968,9 +1135,11 @@ La soluzione di Schwarzschild \'e stata ricavata assumendo staticit\'a e simmetr
 
 \end{frame}
 
-\section{Tensore energia--impulso: dalla RS alla RG}\subsection{Significato fisico del tensore energia--impulso}
+\section{Tensore energia--impulso: dalla RS alla RG}
 
-\begin{frame}[t]{Perche' un tensore energia--impulso?}\linkdest{energiaimpulso}\small\raggedright
+\subsection{Significato fisico del tensore energia--impulso}\linkdest{energiaimpulso}
+
+\begin{frame}[t]{Perche' un tensore energia--impulso?}\small\raggedright
 
 In RS l'energia e la quantita' di moto sono le quattro componenti del quadrimpulso $p^\mu=(E,\mathbf p)$. Un fluido trasporta questi quantitativi attraverso superfici spaziali e temporali.
 \medskip
@@ -1054,7 +1223,7 @@ Questo recupera il significato newtoniano di pressione come flusso di impulso e 
 \begin{frame}[t]{Forma covariante del fluido perfetto in RS}
 \small\raggedright
 Poniamo $c=1$: $\varepsilon$ e $P$ sono, rispettivamente,
-la densit\`a di energia e la pressione nel sistema comovente.
+la densit\'a di energia e la pressione nel sistema comovente.
 
 \medskip
 \begin{columns}[T,onlytextwidth]
@@ -1212,7 +1381,7 @@ Per un fluido senza scambi di energia o impulso con sorgenti esterne:
 \qquad\Longleftrightarrow\qquad
 \partial_tT^{0\nu}+\partial_iT^{i\nu}=0.
 \]
-La conservazione \`e una \textbf{legge fisica} che imponiamo al tensore
+La conservazione \'e una \textbf{legge fisica} che imponiamo al tensore
 energia--impulso del sistema.
 
 \medskip
@@ -1222,15 +1391,15 @@ Integrando su un volume spaziale \textbf{fisso} $V$ e applicando Gauss:
 =-\oint_{\partial V}T^{i\nu}n_i\,dS.
 \]
 Qui $n_i$ sono le componenti della normale spaziale uscente.
-La variazione del contenuto \`e l'opposto del flusso uscente.
+La variazione del contenuto \'e l'opposto del flusso uscente.
 
 \medskip
 \begin{itemize}
-\item $\nu=0$: $T^{00}$ \`e densit\`a di energia e $T^{i0}$ \`e flusso di energia.
-\item $\nu=j$: $T^{0j}$ \`e densit\`a di impulso lungo $j$ e $T^{ij}$
-\`e il suo flusso nella direzione $i$.
+\item $\nu=0$: $T^{00}$ \'e densit\'a di energia e $T^{i0}$ \'e flusso di energia.
+\item $\nu=j$: $T^{0j}$ \'e densit\'a di impulso lungo $j$ e $T^{ij}$
+\'e il suo flusso nella direzione $i$.
 \end{itemize}
-Se il flusso netto al contorno \`e nullo, l'integrale si conserva.
+Se il flusso netto al contorno \'e nullo, l'integrale si conserva.
 Gli indici $i,j$ vanno da $1$ a $3$.
 \end{frame}
 
@@ -1241,7 +1410,7 @@ Gli indici $i,j$ vanno da $1$ a $3$.
 \setlength{\abovedisplayshortskip}{0pt plus 1pt}
 \setlength{\belowdisplayshortskip}{2pt plus 1pt minus 1pt}
 Con segnatura $(+---)$, $u^\mu u_\mu=1$.
-La quadrivelocit\`a $u^\mu$ \`e tangente alla traiettoria di un elemento
+La quadrivelocit\'a $u^\mu$ \'e tangente alla traiettoria di un elemento
 di fluido e individua la sua \textbf{direzione temporale}.
 
 \medskip
@@ -1250,7 +1419,7 @@ Per il vettore $F^\nu\equiv\partial_\mu T^{\mu\nu}$ definiamo
 \Pi_\parallel^\alpha{}_\nu=u^\alpha u_\nu,\qquad
 \Delta^\alpha{}_\nu=\delta^\alpha{}_\nu-u^\alpha u_\nu.
 \]
-La decomposizione temporale e spaziale \`e
+La decomposizione temporale e spaziale \'e
 \[
 F^\alpha
 =\underbrace{u^\alpha(u_\nu F^\nu)}_{\text{parte parallela}}
@@ -1289,8 +1458,8 @@ D\equiv u^\mu\partial_\mu,\qquad
 a^\nu\equiv Du^\nu.
 \]
 $D$ deriva seguendo il fluido, $\theta$ misura l'espansione locale
-e $a^\nu$ \`e la quadriaccelerazione.
-La metrica $\eta^{\mu\nu}$ \`e costante nelle coordinate scelte.
+e $a^\nu$ \'e la quadriaccelerazione.
+La metrica $\eta^{\mu\nu}$ \'e costante nelle coordinate scelte.
 
 \medskip
 Applicando la regola del prodotto:
@@ -1329,7 +1498,7 @@ $u_\nu u^\nu=1$, $u_\nu a^\nu=0$ e $u_\nu\partial^\nu P=DP$:
 \boxed{D\varepsilon+(\varepsilon+P)\theta=0.}
 \end{gathered}
 \]
-\`E il bilancio dell'energia \textbf{nel riferimento del fluido}.
+\'E il bilancio dell'energia \textbf{nel riferimento del fluido}.
 
 \medskip
 Per un piccolo elemento \textbf{materiale} di volume proprio $V$:
@@ -1372,7 +1541,7 @@ Proiettando l'espansione di $\partial_\mu T^{\mu\nu}$:
 0=\Delta^\alpha{}_\nu\partial_\mu T^{\mu\nu}
 =(\varepsilon+P)a^\alpha-\Delta^{\alpha\nu}\partial_\nu P.
 \]
-Questa \`e l'\textbf{equazione di Eulero relativistica}:
+Questa \'e l'\textbf{equazione di Eulero relativistica}:
 \[
 \boxed{(\varepsilon+P)a^\alpha=\Delta^{\alpha\nu}\partial_\nu P.}
 \]
@@ -1386,7 +1555,7 @@ a^0=0,\qquad \Delta^{ij}=-\delta^{ij}
 \]
 Il gradiente di pressione accelera il fluido verso pressioni minori.
 L'entalpia per volume $\varepsilon+P$ determina l'inerzia.
-Ripristinando $c$, la densit\`a inerziale \`e $(\varepsilon+P)/c^2$.
+Ripristinando $c$, la densit\'a inerziale \'e $(\varepsilon+P)/c^2$.
 \end{frame}
 
 \begin{frame}[t]{RS: conservazione con segnatura $(-+++)$}
@@ -1424,7 +1593,7 @@ quindi vale ancora $d(\varepsilon V)=-P\,dV$.
 \boxed{(\varepsilon+P)a^\alpha=-\Delta^{\alpha\nu}\partial_\nu P.}
 \]
 Nel punto istantaneamente comovente ora $\Delta^{ij}=+\delta^{ij}$.
-Perci\`o, in entrambe le segnature:
+Perci\'o, in entrambe le segnature:
 \[
 \boxed{(\varepsilon+P)a^i=-\partial_iP.}
 \]
@@ -1451,9 +1620,9 @@ L'equazione di continuita' per la massa (o i barioni) e' indipendentemente
 
 \end{frame}
 
-\subsection{Fluido perfetto in relativit\'a generale} 
+\subsection{Fluido perfetto in relativit\'a generale}\linkdest{fluidoRG}
 
-\begin{frame}[t]{RG: generalizzazione covariante $(+---)$}\linkdest{fluidoRG}\small\raggedright
+\begin{frame}[t]{RG: generalizzazione covariante $(+---)$}\small\raggedright
 
 In uno spaziotempo curvo, con la \emph{stessa} convenzione $+---$:
 \[
@@ -1619,9 +1788,11 @@ Il principio di equivalenza assicura la forma \emph{localmente} relativistica de
 
 \end{frame}
 
-\section{Equazioni TOV, massa stellare e limiti}\subsection{Derivazione delle TOV}
+\section{Equazioni TOV, massa stellare e limiti}\linkdest{TOV}
 
-\begin{frame}[t]{Metrica interna di una stella non rotante $(+---)$}\linkdest{TOV}\small\raggedright
+\subsection{Derivazione delle TOV}
+
+\begin{frame}[t]{Metrica interna di una stella non rotante $(+---)$}\small\raggedright
 
 Assumiamo una configurazione statica, sferica e un fluido perfetto:
 \[
@@ -1722,12 +1893,9 @@ Con $(-+++)$, $h^{rr}$ cambia segno e la proiezione
 di Eulero contiene $-h^{rr}P'$, dando lo stesso risultato.    
         \end{column}
     \end{columns}
-    
-
 \end{frame}
 
 \begin{frame}[t]{TOV: separazione delle correzioni relativistiche}\small\raggedright
-
 In unita' $G=c=1$ la TOV si puo' fattorizzare:
 \[
 \frac{dP}{dr}=-\frac{Gm\varepsilon}{r^2}
@@ -1745,11 +1913,9 @@ Nel limite $P\ll\varepsilon$ e $2Gm/r\ll1$:
 \frac{dP}{dr}\simeq-\frac{Gm\varepsilon}{r^2},
 \]
 che, con $\varepsilon\simeq\rho c^2$ e $c$ ripristinato, diventa $dP/dr=-Gm\rho/r^2$.
-
 \end{frame}
 
 \begin{frame}[t]{TOV in unita' SI: fattori di $c$}\small\raggedright
-
 Se $\varepsilon$ e' una densita' di \emph{energia} (J/m$^3$), $P$ in Pa e $m$ in kg:
 \[
 \boxed{\frac{dm}{dr}=\frac{4\pi r^2}{c^2}\varepsilon(r).}
@@ -1763,11 +1929,9 @@ Se $\varepsilon$ e' una densita' di \emph{energia} (J/m$^3$), $P$ in Pa e $m$ in
 Controllo: $\varepsilon+P$ ha unita' J/m$^3$, il fattore fra parentesi contiene kg, il tutto restituisce Pa/m.
 \medskip
 Non si devono mescolare queste convenzioni con la forma in cui $\rho=\varepsilon/c^2$ e' invece la densita' di \emph{massa}.
-
 \end{frame}
 
 \begin{frame}[t]{Condizioni al centro, al bordo e integrazione numerica}\small\raggedright
-
 Scelto un valore di pressione centrale $P_c$ e una EOS $\varepsilon(P)$:
 \[
 P(0)=P_c,\qquad m(0)=0.
@@ -1787,9 +1951,9 @@ $e^{2\nu(R_*)}=1-2GM/(R_*c^2)$ se $t$ e' normalizzato all'infinito.
 
 \end{frame}
 
-\subsection{Baryon number, massa propria e massa gravitazionale}
+\subsection{Baryon number, massa propria e massa gravitazionale}\linkdest{baryonpropergrav}
 
-\begin{frame}[t]{Volume proprio dentro una stella TOV}\linkdest{baryonpropergrav}\small\raggedright
+\begin{frame}[t]{Volume proprio dentro una stella TOV}\small\raggedright
 
 Su una ipersuperficie $t=\mathrm{cost}$:
 \[
@@ -1846,9 +2010,9 @@ Serve inoltre una condizione di normalizzazione per $n_B$.
 
 \end{frame}
 
-\subsection{Soluzione incomprimibile e limite di Buchdahl}
+\subsection{Soluzione incomprimibile e limite di Buchdahl}\linkdest{Buchdahllimit}
 
-\begin{frame}[t]{Stella a densita' di energia costante}\linkdest{Buchdahllimit}\small\raggedright
+\begin{frame}[t]{Stella a densita' di energia costante}\small\raggedright
 
 Come esercizio analitico, scegliamo $\varepsilon(r)=\varepsilon_*$ per $0\leq r\leq R_*$ (con $G=c=1$).
 \[
