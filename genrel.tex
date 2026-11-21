@@ -90,8 +90,7 @@ rimangono invariate.
             \item $\frac{\Delta \lambda}{\lambda}\approx \frac{\Delta v}{c}$ approx prim'ordine, $\Delta v>0$ quando si allontana.
             \item Un fotone ha quadrimpulso $\tensor{p}{^{\mu}}=\hbar\tensor{k}{^{\mu}}$, $\tensor{p}{^{\mu}}\tensor{p}{_{\mu}}=0$. Un osservatore con quadrivelocit\'a $\tensor{u}{^{\mu}}$ misura energia $E_{obs}=-\tensor{p}{_{\mu}}\tensor{u}{^{\mu}}$, quindi $\omega_{obs}=-\tensor{k}{_{\mu}}\tensor{u}{^{\mu}}$.
             \item Fotone emesso in $(e)$, rilevato in $(d)$: $\frac{\nu_d}{\nu_e}=\frac{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_d}{(\tensor{p}{_{\mu}}\tensor{u}{^{\mu}})_e}$.
-            \item Fotone lungo $+x$: nel SI in cui $(e)$ \'e fermo $\tensor{p}{^{\mu}}=(\frac{E_e}{c},\frac{E_e}{c},0,0)$
-            \item Rivelatore si allontana con $v>0$: $\tensor{u}{_d^{\mu}}=\gamma(c,v,0,0)$, $\gamma=\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}$. La frequenza misurata dal rivelatore si ottiene da $E_d=-\tensor{p}{_{\mu}}\tensor{u}{^{\mu}}=\gamma E_e(1-\frac{v}{c})$: $\frac{\nu_d}{\nu_e}=\gamma(1-\frac{v}{c})=\sqrt{\frac{1-\frac{v}{c}}{1+\frac{v}{c}}}$ - formula esatta Doppler longitudinale.
+            \item Fotone lungo $+x$: nel SI in cui $(e)$ \'e fermo $\tensor{p}{^{\mu}}=(\frac{E_e}{c},\frac{E_e}{c},0,0)$. Rivelatore si allontana con $v>0$: $\tensor{u}{_d^{\mu}}=\gamma(c,v,0,0)$, $\gamma=\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}$. La frequenza misurata dal rivelatore si ottiene da $E_d=-\tensor{p}{_{\mu}}\tensor{u}{^{\mu}}=\gamma E_e(1-\frac{v}{c})$: $\frac{\nu_d}{\nu_e}=\gamma(1-\frac{v}{c})=\sqrt{\frac{1-\frac{v}{c}}{1+\frac{v}{c}}}$ - formula esatta Doppler longitudinale.
             \item $\lambda=\frac{\nu}{c}$: per le lunghezze d'onda misurate misurate nei riferimenti locali $\frac{\lambda_d}{\lambda_e}=\sqrt{\frac{1+\frac{v}{c}}{1-\frac{v}{c}}}$, per $\frac{v}{c}\ll1$ $\frac{\lambda_d}{\lambda_e}\approx1+\frac{v}{c}+O(\frac{v^2}{c^2})$ quindi $\frac{\Delta \lambda}{\lambda_e}\approx \frac{v}{c}$. 
         \end{itemize}
 \end{frame}
@@ -196,7 +195,7 @@ ma in generale $\partial_\alpha\partial_\beta g_{\mu\nu}(p)\ne0$: la curvatura e
 
 \subsection{Metrica, tempo proprio e indici}
 
-\begin{frame}[t]{Minkowski e classificazione degli intervalli $(+---)$}\small\raggedright
+\begin{frame}[t]{Minkowski, classificazione degli intervalli $(+---)$, normalizzazione quadrivelocit\'a (RG vs RS)}\small\raggedright
 
 In coordinate cartesiane inerziali e in unita' $c=1$:
 \[
@@ -207,21 +206,37 @@ ds^2=dt^2-dx^2-dy^2-dz^2.
 \item $ds^2>0$: intervallo timelike; una particella massiva puo' percorrerlo e $ds=d\tau$.
 \item $ds^2=0$: intervallo null, come una traiettoria luminosa.
 \item $ds^2<0$: intervallo spacelike; non corrisponde allo spostamento di una singola particella causale.
+    \item {\footnotesize Curva temporale (o di tipo tempo). Una curva $x^\mu(\lambda)$ nello spaziotempo \'e temporale se la sua
+tangente $V^\mu=dx^\mu/d\lambda$ soddisfa, in ogni punto, $g_{\mu\nu}V^\mu V^\nu
+\begin{cases}
+>0 & \text{con segnatura }(+---),\\
+<0 & \text{con segnatura }(-+++).
+\end{cases}$
+Fisicamente pu\'o rappresentare la traiettoria di un osservatore o di una particella massiva: la tangente si trova all'interno
+del cono di luce e la velocit\'a misurata localmente soddisfa $v<c$. Infatti, in un riferimento localmente inerziale, con segnatura $(+---)$, $ds^2=c^2dt^2-d\mathbf{x}^2=(c^2-v^2)\,dt^2>0$. Lungo la curva si definisce il tempo proprio $d\tau=\frac{\sqrt{|ds^2|}}{c}$, $u^\mu=\frac{dx^\mu}{d\tau}$, $g_{\mu\nu}u^\mu u^\nu=\begin{cases}
++c^2 & (+---),\\
+-c^2 & (-+++).
+\end{cases}$
+Una curva temporale pu\'o essere una geodetica, percorsa in caduta libera, oppure una traiettoria accelerata, come quella di un razzo.
+L'aggettivo ''temporale'' descrive la natura causale della tangente; la curva pu\'o comprendere anche movimento nello spazio.\par}
 \end{itemize}
 In coordinate sferiche, \emph{senza curvatura}:
 \[
 ds^2=dt^2-dr^2-r^2(d\theta^2+\sin^2\theta\,d\phi^2).
 \]
 Una metrica non costante nelle coordinate non implica necessariamente curvatura dello spaziotempo.
+\item \textbf{Velocit\'a coordinate e quadrivelocit\'a.}
+    Definiamo $v_{\rm p}^i=\frac{dx_{\rm p}^i}{dt}$, $v_{\rm o}^i=\frac{dx_{\rm o}^i}{dt}$, $q_{\rm p}=\frac{dt}{d\tau_{\rm p}}$, $q_{\rm o}=\frac{dt}{d\tau_{\rm o}}$. Con $x^0=ct$, la regola della catena fornisce esattamente $\boxed{u_{\rm p}^\mu=q_{\rm p}(c,\vec v_{\rm p})$, $U_{\rm o}^\mu=q_{\rm o}(c,\vec v_{\rm o})}$. Quindi $dx_{\rm p}^i/d\tau_{\rm p}=q_{\rm p}v_{\rm p}^i$ \'e una componente della quadrivelocit\'a. In RS, in coordinate inerziali: $q_{\rm p}=\gamma_{\rm p}=\frac{1}{\sqrt{1-v_{\rm p}^2/c^2}}$, $u_{\rm p}^\mu=\gamma_{\rm p}(c,\vec v_{\rm p})$.
+\item \textbf{Espressione generale di $dt/d\tau_{\rm p}$ in RG.} Poniamo $\sigma=+1$ per la segnatura $(+---)$ e $\sigma=-1$ per $(-+++)$. Dalla normalizzazione $g_{\mu\nu}u_{\rm p}^\mu u_{\rm p}^\nu=\sigma c^2$ segue, scegliendo $t$ crescente lungo la traiettoria, $q_{\rm p}=\frac{dt}{d\tau_{\rm p}}=\left[\sigma\left(g_{00}+2g_{0i}\frac{v_{\rm p}^i}{c}+g_{ij}\frac{v_{\rm p}^iv_{\rm p}^j}{c^2}\right)\right]^{-1/2}$. La metrica \'e valutata sulla traiettoria della particella. La stessa formula vale per l'osservatore, sostituendo $\vec v_{\rm p}$ con $\vec v_{\rm o}$ e valutando la metrica sulla sua traiettoria. Vale anche per metriche dipendenti dal tempo e moti accelerati.
 \end{frame}
 
 \begin{frame}[t]{Tensore metrico: indici alti e bassi $(+---)$. Geodetiche.}\linkdest{rggeodetiche}\small\raggedright
     \begin{itemize}
         \item {\footnotesize $ds^2=g_{\mu\nu}(x)\,dx^\mu dx^\nu$, $g_{\mu\rho}g^{\rho\nu}=\delta_\mu{}^\nu$. Alzare e abbassare indici: $A_\mu=g_{\mu\nu}A^\nu$, $A^\mu=g^{\mu\nu}A_\nu$, $A_\mu B^\mu$ scalare. In Minkowski, se $A^\mu=(A^0,A^x,A^y,A^z)$, $A_\mu=(A^0,-A^x,-A^y,-A^z)$.\par}
         \item {\footnotesize $g_{\mu\nu}$ e' simmetrico: 10 componenti indipendenti in quattro dimensioni; il suo determinante deve essere non nullo. Componenti indipendenti S: $\frac{D(D+1)}{2}$, A: $\frac{D(D-1)}{2}$.\par}
-    \item \textbf{Geodetica e parametro affine.} Una curva \'e una geodetica se ammette un parametro \(\lambda\) per cui il vettore tangente \(v^\mu=dx^\mu/d\lambda\) \'e trasportato parallelamente lungo la curva. Un tale parametro \(\lambda\) si dice \emph{affine}. Abbassando l'indice della tangente, la condizione si scrive $v_\mu=g_{\mu\nu}v^\nu$, $\frac{dv_\mu}{d\lambda}=\frac12\,\partial_\mu g_{\alpha\beta}\,v^\alpha v^\beta$. Due parametri affini della stessa geodetica sono legati da \(\tilde\lambda=A\lambda+B\), con \(A\ne0\). Per una geodetica temporale si pu\'o scegliere \(\lambda=\tau\).
-    \item \textbf{Applicazione alle geodetiche.} Per una curva \(x^\mu(\lambda)\), il vettore tangente ha componenti \(v^\mu=dx^\mu/d\lambda\) e \(v_\mu=g_{\mu\nu}v^\nu\). La curva \'e una geodetica con parametro affine \(\lambda\) se $\tensor{\TDy{\lambda}{v}}{_{\mu}}=\frac12\,\partial_\mu g_{\alpha\beta}\,v^\alpha v^\beta$.
-    \item Tempo proprio: una misura fisica - Il \textbf{tempo proprio} $\tau$ \'e il tempo misurato da un orologio che segue una \textbf{curva temporale}, anche se accelerata: $d\tau^2=\frac{|ds^2|}{c^2}, \qquad ds^2=g_{\mu\nu}\,dx^\mu dx^\nu$.
+        \item \textbf{Geodetica e parametro affine.} Una curva \'e una geodetica se ammette un parametro \(\lambda\) per cui il vettore tangente \(v^\mu=dx^\mu/d\lambda\) \'e trasportato parallelamente lungo la curva. Un tale parametro \(\lambda\) si dice \emph{affine}. Abbassando l'indice della tangente, la condizione si scrive $v_\mu=g_{\mu\nu}v^\nu$, $\frac{dv_\mu}{d\lambda}=\frac12\,\partial_\mu g_{\alpha\beta}\,v^\alpha v^\beta$. Due parametri affini della stessa geodetica sono legati da \(\tilde\lambda=A\lambda+B\), con \(A\ne0\). Per una geodetica temporale si pu\'o scegliere \(\lambda=\tau\).
+    \item \textbf{Applicazione alle geodetiche.} Per una curva \(x^\mu(\lambda)\), il vettore tangente ha componenti \(v^\mu=dx^\mu/d\lambda\) e \(v_\mu=g_{\mu\nu}v^\nu\). La curva \'e una geodetica con parametro affine \(\lambda\) se $\TDy{\lambda}{\tensor{v}{_{\mu}}}=\frac12\,\partial_\mu g_{\alpha\beta}\,v^\alpha v^\beta$.
+    \item Tempo proprio: una misura fisica - Il \textbf{tempo proprio} $\tau$ \'e il tempo misurato da un orologio che segue una \textbf{curva temporale}, anche se accelerata: $d\tau^2=\frac{|ds^2|}{c^2}$, $ds^2=g_{\mu\nu}\,dx^\mu dx^\nu$.
 Questa scrittura vale per entrambe le segnature $(+---)$ e $(-+++)$.
 \item Parametro affine: scelta di parametrizzazione - parametro $\lambda$ \'e \textbf{affine} lungo geodetica se il vettore tangente definito rispetto a esso viene \textbf{trasportato parallelamente} lungo la curva: $k^\mu\equiv\frac{dx^\mu}{d\lambda}$, $\frac{Dk^\mu}{d\lambda}\equiv k^\nu\nabla_\nu k^\mu=0$. Si usa per geodetiche \textbf{temporali, nulle o spaziali}.
 \item {\footnotesize Geodetica temporale: caduta libera - Il tempo proprio \'e un parametro affine: ponendo $u^\mu=dx^\mu/d\tau$, si ha $u^\nu\nabla_\nu u^\mu=0$. Tutti altri parametri affini della stessa geodetica sono $\boxed{\lambda=a\tau+b}$, $ a\ne0$, $a,b$ costanti. Libert\'a riguarda soltanto la \textbf{scala} e l'\textbf{origine} del parametro.\par}
@@ -265,28 +280,28 @@ $x^\mu=(ct,x^1,x^2,x^3)$. Scriviamo
 \[
 ds^2=g_{00}c^2dt^2+2g_{0i}c\,dt\,dx^i+g_{ij}dx^i dx^j.
 \]
-Il coefficiente $g_{00}$ \`e adimensionale: corrisponde al $g_{tt}$
-usato nel frame originale quando il fattore $c^2$ \`e scritto esplicitamente.
+Il coefficiente $g_{00}$ \'e adimensionale: corrisponde al $g_{tt}$
+usato nel frame originale quando il fattore $c^2$ \'e scritto esplicitamente.
 \begin{itemize}
   \item \textbf{Campo debole:}
   $g_{\mu\nu}=\eta_{\mu\nu}+h_{\mu\nu}$, $|h_{\mu\nu}|\ll1$,
   con $\eta_{\mu\nu}=\operatorname{diag}(1,-1,-1,-1)$.
-  \item \textbf{Stazionariet\`a:} $\partial_tg_{\mu\nu}=0$.
+  \item \textbf{Stazionariet\'a:} $\partial_tg_{\mu\nu}=0$.
   \item \textbf{Moto lento:} $v^i\equiv dx^i/dt$, $|\mathbf v|/c\ll1$.
 \end{itemize}
-La regola della catena d\`a, esattamente,
+La regola della catena d\'a, esattamente,
 \[
 \frac{dx^i}{d\tau}=v^i\frac{dt}{d\tau},\qquad
 \frac{dx^0}{d\tau}=c\frac{dt}{d\tau},\qquad
 \boxed{\frac{dx^i/d\tau}{dx^0/d\tau}=\frac{v^i}{c}.}
 \]
-Quindi $|dx^i/d\tau|\ll|dx^0/d\tau|$: \`e l'ipotesi di moto lento
-riscritta tramite le componenti della quadrivelocit\`a.
+Quindi $|dx^i/d\tau|\ll|dx^0/d\tau|$: \'e l'ipotesi di moto lento
+riscritta tramite le componenti della quadrivelocit\'a.
 \end{frame}
 
 \begin{frame}[t]{Geodetica completa e limite di moto lento}
 \small\raggedright
-Per una particella libera massiva, il tempo proprio $\tau$ \`e un parametro affine:
+Per una particella libera massiva, il tempo proprio $\tau$ \'e un parametro affine:
 \[
 \frac{d^2x^\mu}{d\tau^2}
 +\Gamma^\mu{}_{\alpha\beta}
@@ -320,7 +335,7 @@ Nell'espansione newtoniana manteniamo il contributo dominante in $v/c$:
 
 \begin{frame}[t]{Dal tempo proprio al tempo coordinato: regola della catena}
 \small\raggedright
-Poniamo $q\equiv dt/d\tau$ e $v^i\equiv dx^i/dt$. La derivata prima \`e
+Poniamo $q\equiv dt/d\tau$ e $v^i\equiv dx^i/dt$. La derivata prima \'e
 \[
 \frac{dx^i}{d\tau}=qv^i.
 \]
@@ -331,7 +346,7 @@ Derivando nuovamente, bisogna derivare \textbf{entrambi i fattori}:
 +q\frac{dv^i}{dt}\frac{dt}{d\tau}
 =v^i\frac{d^2t}{d\tau^2}+q^2\frac{d^2x^i}{dt^2}.
 \]
-Pertanto l'identit\`a esatta \`e
+Pertanto l'identit\'a esatta \'e
 \[
 \boxed{
 \frac{d^2x^i/d\tau^2}{q^2}
@@ -340,8 +355,8 @@ Pertanto l'identit\`a esatta \`e
 F^i\equiv v^i\frac{d^2t/d\tau^2}{q^2}.}
 \]
 \begin{itemize}
-  \item Se $q$ \`e costante, $F^i=0$ e il cambio di parametro \`e affine.
-  \item Nel limite newtoniano basta mostrare che $F^i$ \`e di ordine
+  \item Se $q$ \'e costante, $F^i=0$ e il cambio di parametro \'e affine.
+  \item Nel limite newtoniano basta mostrare che $F^i$ \'e di ordine
   superiore rispetto ai contributi mantenuti.
 \end{itemize}
 La geodetica del frame precedente fornisce quindi
@@ -350,27 +365,27 @@ La geodetica del frame precedente fornisce quindi
 \]
 \end{frame}
 
-\begin{frame}[t]{Perch\'e la correzione temporale \`e trascurabile}
+\begin{frame}[t]{Perch\'e la correzione temporale \'e trascurabile}
 \small\raggedright
-Da $x^0=ct$, la componente temporale \emph{completa} della geodetica d\`a
+Da $x^0=ct$, la componente temporale \emph{completa} della geodetica d\'a
 \[
 \frac{d^2t/d\tau^2}{q^2}
 =-c\Gamma^0{}_{00}
 -2\Gamma^0{}_{0j}v^j
 -\frac1c\Gamma^0{}_{jk}v^jv^k.
 \]
-La stazionariet\`a e il campo debole implicano
+La stazionariet\'a e il campo debole implicano
 \[
 \Gamma^0{}_{00}=-\frac12g^{0j}\partial_jg_{00},
 \qquad g^{0j}=O(h),\quad \partial_jg_{00}=\partial_jh_{00}:
 \]
-il primo termine \`e un prodotto di due perturbazioni e si trascura
+il primo termine \'e un prodotto di due perturbazioni e si trascura
 al primo ordine nel campo. Inoltre, con segnatura $(+---)$,
 \[
 \Gamma^0{}_{0j}\simeq\frac12\partial_jh_{00}.
 \]
 Moltiplicando l'equazione temporale per $v^i$, il primo contributo
-lineare nel campo a $F^i$ \`e dunque
+lineare nel campo a $F^i$ \'e dunque
 \[
 F^i\simeq-v^iv^j\partial_jh_{00}.
 \]
@@ -386,13 +401,13 @@ All'ordine newtoniano:
 
 \begin{frame}[t]{Dal potenziale newtoniano a $g_{00}$ $(+---)$}
 \small\raggedright
-La connessione di Levi-Civita \`e
+La connessione di Levi-Civita \'e
 \[
 \Gamma^i{}_{00}
 =\frac12g^{i\alpha}
 \left(2\partial_0g_{\alpha0}-\partial_\alpha g_{00}\right).
 \]
-La stazionariet\`a annulla le derivate temporali. Al primo ordine nel campo,
+La stazionariet\'a annulla le derivate temporali. Al primo ordine nel campo,
 $g^{ij}\simeq-\delta^{ij}$, quindi
 \[
 \Gamma^i{}_{00}=-\frac12g^{ij}\partial_jg_{00}
@@ -421,7 +436,7 @@ g_{00}(\infty)=1\quad\Longrightarrow\quad C=1,
 \qquad
 \boxed{g_{00}\simeq1+\frac{2\Phi}{c^2}.}
 \]
-All'esterno di una massa sferica $M$, il potenziale newtoniano \`e
+All'esterno di una massa sferica $M$, il potenziale newtoniano \'e
 \[
 \Phi(r)=-\frac{GM}{r}.
 \]
@@ -439,7 +454,7 @@ Con la segnatura opposta cambia il segno della metrica:
   \item Il limite debole richiede $GM/(rc^2)\ll1$.
   \item Queste formule usano $ds^2=g_{00}c^2dt^2+\cdots$.
   Se si scrive invece $ds^2=g_{tt}^{\rm(coord)}dt^2+\cdots$,
-  il coefficiente \`e $g_{tt}^{\rm(coord)}=c^2g_{00}$.
+  il coefficiente \'e $g_{tt}^{\rm(coord)}=c^2g_{00}$.
 \end{itemize}
 \end{frame}
 \section{Geodesiche, connessione e curvatura}
