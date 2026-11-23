@@ -195,45 +195,37 @@ ma in generale $\partial_\alpha\partial_\beta g_{\mu\nu}(p)\ne0$: la curvatura e
 
 \subsection{Metrica, tempo proprio e indici}
 
-\begin{frame}[t]{Minkowski, classificazione degli intervalli $(+---)$, normalizzazione quadrivelocit\'a (RG vs RS)}\small\raggedright
-
-In coordinate cartesiane inerziali e in unita' $c=1$:
-\[
-\eta_{\mu\nu}=\operatorname{diag}(1,-1,-1,-1),\qquad
-ds^2=dt^2-dx^2-dy^2-dz^2.
-\]
-\begin{itemize}
-\item $ds^2>0$: intervallo timelike; una particella massiva puo' percorrerlo e $ds=d\tau$.
-\item $ds^2=0$: intervallo null, come una traiettoria luminosa.
-\item $ds^2<0$: intervallo spacelike; non corrisponde allo spostamento di una singola particella causale.
-    \item {\footnotesize Curva temporale (o di tipo tempo). Una curva $x^\mu(\lambda)$ nello spaziotempo \'e temporale se la sua
-tangente $V^\mu=dx^\mu/d\lambda$ soddisfa, in ogni punto, $g_{\mu\nu}V^\mu V^\nu
-\begin{cases}
->0 & \text{con segnatura }(+---),\\
-<0 & \text{con segnatura }(-+++).
-\end{cases}$
-Fisicamente pu\'o rappresentare la traiettoria di un osservatore o di una particella massiva: la tangente si trova all'interno
-del cono di luce e la velocit\'a misurata localmente soddisfa $v<c$. Infatti, in un riferimento localmente inerziale, con segnatura $(+---)$, $ds^2=c^2dt^2-d\mathbf{x}^2=(c^2-v^2)\,dt^2>0$. Lungo la curva si definisce il tempo proprio $d\tau=\frac{\sqrt{|ds^2|}}{c}$, $u^\mu=\frac{dx^\mu}{d\tau}$, $g_{\mu\nu}u^\mu u^\nu=\begin{cases}
-+c^2 & (+---),\\
--c^2 & (-+++).
-\end{cases}$
-Una curva temporale pu\'o essere una geodetica, percorsa in caduta libera, oppure una traiettoria accelerata, come quella di un razzo.
-L'aggettivo ''temporale'' descrive la natura causale della tangente; la curva pu\'o comprendere anche movimento nello spazio.\par}
-\end{itemize}
-In coordinate sferiche, \emph{senza curvatura}:
-\[
-ds^2=dt^2-dr^2-r^2(d\theta^2+\sin^2\theta\,d\phi^2).
-\]
-Una metrica non costante nelle coordinate non implica necessariamente curvatura dello spaziotempo.
-\item \textbf{Velocit\'a coordinate e quadrivelocit\'a.}
-    Definiamo $v_{\rm p}^i=\frac{dx_{\rm p}^i}{dt}$, $v_{\rm o}^i=\frac{dx_{\rm o}^i}{dt}$, $q_{\rm p}=\frac{dt}{d\tau_{\rm p}}$, $q_{\rm o}=\frac{dt}{d\tau_{\rm o}}$. Con $x^0=ct$, la regola della catena fornisce esattamente $\boxed{u_{\rm p}^\mu=q_{\rm p}(c,\vec v_{\rm p})$, $U_{\rm o}^\mu=q_{\rm o}(c,\vec v_{\rm o})}$. Quindi $dx_{\rm p}^i/d\tau_{\rm p}=q_{\rm p}v_{\rm p}^i$ \'e una componente della quadrivelocit\'a. In RS, in coordinate inerziali: $q_{\rm p}=\gamma_{\rm p}=\frac{1}{\sqrt{1-v_{\rm p}^2/c^2}}$, $u_{\rm p}^\mu=\gamma_{\rm p}(c,\vec v_{\rm p})$.
-\item \textbf{Espressione generale di $dt/d\tau_{\rm p}$ in RG.} Poniamo $\sigma=+1$ per la segnatura $(+---)$ e $\sigma=-1$ per $(-+++)$. Dalla normalizzazione $g_{\mu\nu}u_{\rm p}^\mu u_{\rm p}^\nu=\sigma c^2$ segue, scegliendo $t$ crescente lungo la traiettoria, $q_{\rm p}=\frac{dt}{d\tau_{\rm p}}=\left[\sigma\left(g_{00}+2g_{0i}\frac{v_{\rm p}^i}{c}+g_{ij}\frac{v_{\rm p}^iv_{\rm p}^j}{c^2}\right)\right]^{-1/2}$. La metrica \'e valutata sulla traiettoria della particella. La stessa formula vale per l'osservatore, sostituendo $\vec v_{\rm p}$ con $\vec v_{\rm o}$ e valutando la metrica sulla sua traiettoria. Vale anche per metriche dipendenti dal tempo e moti accelerati.
-\end{frame}
-
-\begin{frame}[t]{Tensore metrico: indici alti e bassi $(+---)$. Geodetiche.}\linkdest{rggeodetiche}\small\raggedright
+\begin{frame}[t]{Tensore metrico e tempo proprio.}\linkdest{tempoproprio}\small\raggedright
     \begin{itemize}
         \item {\footnotesize $ds^2=g_{\mu\nu}(x)\,dx^\mu dx^\nu$, $g_{\mu\rho}g^{\rho\nu}=\delta_\mu{}^\nu$. Alzare e abbassare indici: $A_\mu=g_{\mu\nu}A^\nu$, $A^\mu=g^{\mu\nu}A_\nu$, $A_\mu B^\mu$ scalare. In Minkowski, se $A^\mu=(A^0,A^x,A^y,A^z)$, $A_\mu=(A^0,-A^x,-A^y,-A^z)$.\par}
         \item {\footnotesize $g_{\mu\nu}$ e' simmetrico: 10 componenti indipendenti in quattro dimensioni; il suo determinante deve essere non nullo. Componenti indipendenti S: $\frac{D(D+1)}{2}$, A: $\frac{D(D-1)}{2}$.\par}
+\item In coordinate sferiche, \emph{senza curvatura}: $ds^2=dt^2-dr^2-r^2(d\theta^2+\sin^2\theta\,d\phi^2)$. Una metrica non costante nelle coordinate non implica necessariamente curvatura dello spaziotempo.
+\item \textbf{Tempo proprio e coordinate.} Lungo una curva timelike, un orologio ideale misura $d\tau^2=|g_{\mu\nu}dx^\mu dx^\nu|$, anche se accelerato. Il tempo coordinato $t$ assegna date agli eventi. In RS, in coordinate inerziali, $d\tau=dt\sqrt{1-v^2}$. La caduta libera \`e invece caratterizzata da $\nabla_u u=0$: essere fermi nelle coordinate non garantisce inerzialit\`a.
+
+    \textbf{Tempo proprio in relativit\`a ristretta.} Il tempo proprio $\tau$ \`e quello misurato da un orologio ideale lungo la propria traiettoria timelike, anche se accelerata. In coordinate inerziali, con $\mathbf v=d\mathbf x/dt$, $d\tau=dt\sqrt{1-\frac{v^2}{c^2}}$, $\frac{dt}{d\tau}=\gamma=\frac{1}{\sqrt{1-v^2/c^2}}$. Il tempo coordinato $t$ \`e assegnato dagli orologi fermi e sincronizzati nel riferimento inerziale scelto. Per ciascuno di questi orologi $d\tau=dt$; per un orologio in moto la relazione dipende dalla sua velocit\`a, eventualmente variabile nel tempo.
+
+    \textbf{Tempo proprio in relativit\`a generale.} La stessa misura fisica \`e determinata dalla metrica lungo
+    la traiettoria dell'orologio: $d\tau^2=\frac{\sigma}{c^2}\,g_{\mu\nu}\,dx^\mu dx^\nu$, $\sigma=\begin{cases}+1,&(+---),\\-1,&(-+++)\end{cases}$. Il tempo accumulato $\Delta\tau=\int d\tau$ dipende dalla curva, ma non dalle coordinate usate per descriverla. Il tempo coordinato $t$ non coincide generalmente con la lettura di un orologio e non identifica automaticamente un osservatore inerziale. Con $x^0=ct$, lungo una traiettoria timelike a coordinate spaziali fisse: $dx^i=0$ quindi $d\tau=\sqrt{|g_{00}|}\,dt$.
+Un osservatore fermo nelle coordinate pu\`o essere accelerato; la caduta libera \`e invece caratterizzata da $u^\nu\nabla_\nu u^\mu=0$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Derivata covariante}\small\raggedright
+    \begin{itemize}
+\item La derivata covariante $\nabla_X V$ descrive la variazione del campo vettoriale $V$ nella direzione $X$, secondo una connessione scelta. In una base coordinata: $\nabla_\mu V^\nu=\partial_\mu V^\nu+\Gamma^\nu{}_{\mu\rho}V^\rho$, $\nabla_XV=X^\mu\nabla_\mu V$. Il termine con $\Gamma$ tiene conto della regola di confronto fra vettori in punti vicini. Per uno scalare, $\nabla_\mu f=\partial_\mu f$.
+
+\textbf{Dalla derivazione dei vettori di base.} Si scrive $V=V^\nu e_\nu$ e si definiscono i coefficienti della connessione mediante $\nabla_\mu e_\nu=\Gamma^\rho{}_{\mu\nu}e_\rho$. Applicando la regola del prodotto, si derivano sia le componenti $V^\nu$ sia i vettori di base: raccogliendo le componenti del risultato si ottiene l'espressione precedente.
+
+\textbf{Dalla richiesta di covarianza.} Si studia come cambia $\partial_\mu V^\nu$ sotto un cambio di coordinate. Compaiono termini aggiuntivi che impediscono la trasformazione tensoriale. Il termine con $\Gamma$ deve compensarli, rendendo $\nabla_\mu V^\nu$ un tensore. Questa richiesta determina la legge di trasformazione dei coefficienti, ma non sceglie un'unica connessione.
+
+\textbf{Dal trasporto parallelo.} Si trasporta il vettore del punto vicino nel punto iniziale, cos\`i da confrontare due vettori nello stesso spazio tangente. La loro differenza, divisa per il passo e passando al limite, definisce la derivata covariante lungo la curva. Scegliere la regola di trasporto equivale a scegliere la connessione.
+
+\item \textbf{Come si fissano i coefficienti in RG.} La connessione di Levi-Civita \`e individuata dalla compatibilit\`a metrica, $\nabla_\rho g_{\mu\nu}=0$, e dall'assenza di torsione. Espandendo la prima condizione e combinando tre permutazioni degli indici si ricava l'espressione dei simboli di Christoffel in termini della metrica e delle sue derivate prime.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Geodetiche.}\linkdest{rggeodetiche}\small\raggedright
+    \begin{itemize}
         \item \textbf{Geodetica e parametro affine.} Una curva \'e una geodetica se ammette un parametro \(\lambda\) per cui il vettore tangente \(v^\mu=dx^\mu/d\lambda\) \'e trasportato parallelamente lungo la curva. Un tale parametro \(\lambda\) si dice \emph{affine}. Abbassando l'indice della tangente, la condizione si scrive $v_\mu=g_{\mu\nu}v^\nu$, $\frac{dv_\mu}{d\lambda}=\frac12\,\partial_\mu g_{\alpha\beta}\,v^\alpha v^\beta$. Due parametri affini della stessa geodetica sono legati da \(\tilde\lambda=A\lambda+B\), con \(A\ne0\). Per una geodetica temporale si pu\'o scegliere \(\lambda=\tau\).
     \item \textbf{Applicazione alle geodetiche.} Per una curva \(x^\mu(\lambda)\), il vettore tangente ha componenti \(v^\mu=dx^\mu/d\lambda\) e \(v_\mu=g_{\mu\nu}v^\nu\). La curva \'e una geodetica con parametro affine \(\lambda\) se $\TDy{\lambda}{\tensor{v}{_{\mu}}}=\frac12\,\partial_\mu g_{\alpha\beta}\,v^\alpha v^\beta$.
     \item Tempo proprio: una misura fisica - Il \textbf{tempo proprio} $\tau$ \'e il tempo misurato da un orologio che segue una \textbf{curva temporale}, anche se accelerata: $d\tau^2=\frac{|ds^2|}{c^2}$, $ds^2=g_{\mu\nu}\,dx^\mu dx^\nu$.
@@ -244,6 +236,35 @@ Questa scrittura vale per entrambe le segnature $(+---)$ e $(-+++)$.
 \item {\footnotesize Per una traiettoria materiale: $d\tau=\sqrt{g_{\mu\nu}dx^\mu dx^\nu}$, $u^\mu\equiv\frac{dx^\mu}{d\tau}$, $g_{\mu\nu}u^\mu u^\nu=1$. In relativita' speciale, $d\tau=dt\sqrt{1-v^2}$ e $u^\mu=\gamma(1,\mathbf v)$, $u_\mu=\gamma(1,-\mathbf v)$, $\gamma=(1-v^2)^{-1/2}$.
 Il quadrimpulso di una particella libera e' $p^\mu=mu^\mu=(E,\mathbf p)$: $p^\mu p_\mu=m^2\quad\Longrightarrow\quad E^2=\mathbf p^2+m^2$.
 \textit{Le formule con $c\ne1$ hanno} $x^0=ct$, $u^\mu=dx^\mu/d\tau$ e $u^\mu u_\mu=c^2$.\par}
+\item In coordinate sferiche, \emph{senza curvatura}: $ds^2=dt^2-dr^2-r^2(d\theta^2+\sin^2\theta\,d\phi^2)$. Una metrica non costante nelle coordinate non implica necessariamente curvatura dello spaziotempo.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Minkowski, classificazione degli intervalli $(+---)$ e curve temporali.}\small\raggedright
+In coordinate cartesiane inerziali e in unita' $c=1$: $\eta_{\mu\nu}=\operatorname{diag}(1,-1,-1,-1)$, $ds^2=dt^2-dx^2-dy^2-dz^2$.
+\begin{itemize}
+\item $ds^2>0$: intervallo timelike; una particella massiva pu\'o percorrerlo e $ds=d\tau$, $ds^2=0$: intervallo null, come una traiettoria luminosa, $ds^2<0$: intervallo spacelike; non corrisponde allo spostamento di una singola particella causale.
+    \item Curva temporale (o di tipo tempo). Una curva $x^\mu(\lambda)$ nello spaziotempo \'e temporale se la sua
+tangente $V^\mu=dx^\mu/d\lambda$ soddisfa, in ogni punto, $g_{\mu\nu}V^\mu V^\nu
+\begin{cases}
+>0 & \text{con segnatura }(+---),\\
+<0 & \text{con segnatura }(-+++).
+\end{cases}$
+Fisicamente pu\'o rappresentare la traiettoria di un osservatore o di una particella massiva: la tangente si trova all'interno
+del cono di luce e la velocit\'a misurata localmente soddisfa $v<c$. Infatti, in un riferimento localmente inerziale, con segnatura $(+---)$, $ds^2=c^2dt^2-d\mathbf{x}^2=(c^2-v^2)\,dt^2>0$. Lungo la curva si definisce il tempo proprio $d\tau=\frac{\sqrt{|ds^2|}}{c}$, $u^\mu=\frac{dx^\mu}{d\tau}$, $g_{\mu\nu}u^\mu u^\nu=\begin{cases}
++c^2 & (+---),\\
+-c^2 & (-+++).
+\end{cases}$
+Una curva temporale pu\'o essere una geodetica, percorsa in caduta libera, oppure una traiettoria accelerata, come quella di un razzo. L'aggettivo ''temporale'' descrive la natura causale della tangente; la curva pu\'o comprendere anche movimento nello spazio.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Normalizzazione quadrivelocit\'a (RG vs RS)}\small\raggedright
+\begin{itemize}
+    \item \textbf{Scelta dell'osservatore e del riferimento.} Fissiamo un sistema di coordinate $S=\{x^\mu\}$, nel quale esprimiamo tutte le componenti: $u_{\rm p}^\mu$ descrive la particella $P$, mentre $U_{\rm o}^\mu$ descrive l'osservatore $O$. I pedici ${\rm p}$ e ${\rm o}$ identificano gli oggetti, non i sistemi di riferimento. La scelta di $O$ specifica \textbf{chi misura localmente il moto di $P$}: per esempio, un osservatore statico oppure uno in caduta libera. Nell'evento in cui $P$ passa accanto a $O$, possiamo usare il riferimento locale ortonormale solidale con $O$. Indicando queste componenti con indici $\hat a$: $U_{\rm o}^{\hat a}=(c,\vec 0)$, $u_{\rm p}^{\hat a}=\Gamma_{\rm rel}(c,\vec V_{\rm rel})$, $\Gamma_{\rm rel}=\frac{1}{\sqrt{1-V_{\rm rel}^2/c^2}}$. Qui $\vec V_{\rm rel}$ \'e la velocit\'a fisica misurata da $O$. Il fattore coordinato $q_{\rm p}=dt/d\tau_{\rm p}$ dipende invece dalle coordinate $S$ scelte e generalmente differisce da $\Gamma_{\rm rel}$. Per ricavare la normalizzazione di $u_{\rm p}^\mu$ bastano la traiettoria di $P$ e la metrica;
+l'osservatore $O$ interviene quando vogliamo descrivere le sue misure della particella.
+    \item \textbf{Velocit\'a coordinate e quadrivelocit\'a.} Definiamo $v_{\rm p}^i=\frac{dx_{\rm p}^i}{dt}$, $q_{\rm p}=\frac{dt}{d\tau_{\rm p}}$. Con $x^0=ct$, la regola della catena fornisce esattamente $u_{\rm p}^\mu=q_{\rm p}(c,\vec v_{\rm p})$. Quindi $dx_{\rm p}^i/d\tau_{\rm p}=q_{\rm p}v_{\rm p}^i$ \'e una componente della quadrivelocit\'a. In RS, in coordinate inerziali: $q_{\rm p}=\gamma_{\rm p}=\frac{1}{\sqrt{1-v_{\rm p}^2/c^2}}$, $u_{\rm p}^\mu=\gamma_{\rm p}(c,\vec v_{\rm p})$.
+\item \textbf{Espressione generale di $dt/d\tau_{\rm p}$ in RG.} Poniamo $\sigma=+1$ per la segnatura $(+---)$ e $\sigma=-1$ per $(-+++)$. Dalla normalizzazione $g_{\mu\nu}u_{\rm p}^\mu u_{\rm p}^\nu=\sigma c^2$ segue, scegliendo $t$ crescente lungo la traiettoria, $q_{\rm p}=\frac{dt}{d\tau_{\rm p}}=\left[\sigma\left(g_{00}+2g_{0i}\frac{v_{\rm p}^i}{c}+g_{ij}\frac{v_{\rm p}^iv_{\rm p}^j}{c^2}\right)\right]^{-1/2}$. La metrica \'e valutata sulla traiettoria della particella. La stessa formula vale per l'osservatore, sostituendo $\vec v_{\rm p}$ con $\vec v_{\rm o}$ e valutando la metrica sulla sua traiettoria. Vale anche per metriche dipendenti dal tempo e moti accelerati.
 \end{itemize}
 \end{frame}
 
@@ -457,9 +478,22 @@ Con la segnatura opposta cambia il segno della metrica:
   il coefficiente \'e $g_{tt}^{\rm(coord)}=c^2g_{00}$.
 \end{itemize}
 \end{frame}
+
 \section{Geodesiche, connessione e curvatura}
 
 \subsection{Equazione geodetica}\linkdest{rgeqgeo}
+
+\begin{frame}[t]{Levi-Civita e simboli di Christoffel}
+\small\raggedright
+\begin{itemize}
+\item \textbf{Connessione.} Fornisce una regola per derivare campi vettoriali e trasportare vettori lungo curve. In una base coordinata: $\nabla_\mu V^\rho=\partial_\mu V^\rho+\Gamma^\rho{}_{\mu\nu}V^\nu$. I $\Gamma^\rho{}_{\mu\nu}$ sono i coefficienti della connessione nella base scelta.
+\item \textbf{Connessione di Levi-Civita.} Data la metrica $g$, \'e l'unica connessione \textbf{compatibile con la metrica} e \textbf{senza torsione}: $\nabla_\rho g_{\mu\nu}=0$, $\Gamma^\rho{}_{\mu\nu}=\Gamma^\rho{}_{\nu\mu}$ in una base coordinata. La compatibilit\'a metrica garantisce che il trasporto parallelo conservi i prodotti scalari.
+\item \textbf{Simboli di Christoffel di seconda specie.} Le due condizioni precedenti determinano: $\Gamma^\rho{}_{\mu\nu}=\frac12g^{\rho\sigma}\left(\partial_\mu g_{\sigma\nu}+\partial_\nu g_{\sigma\mu}-\partial_\sigma g_{\mu\nu}\right)$. Questa \'e l'espressione dei coefficienti della connessione di Levi-Civita in termini della metrica e delle sue derivate prime.
+\item \textbf{Simboli di Christoffel di prima specie.} Si ottengono abbassando il primo indice: $\Gamma_{\rho\mu\nu}$.
+\equiv g_{\rho\sigma}\Gamma^\sigma{}_{\mu\nu}.
+\end{itemize}
+\textbf{Distinzione:} la connessione \'e l'oggetto geometrico; i simboli di Christoffel la rappresentano nella base coordinata. I $\Gamma^\rho{}_{\mu\nu}$ dipendono dalle coordinate e \textbf{non sono componenti di un tensore}.
+\end{frame}
 
 \begin{frame}[t]{Derivate covarianti e simboli di Christoffel}\small\raggedright
     \textbf{Simboli di Christoffel.} Sia \(e_\mu=\partial/\partial x^\mu\) la base coordinata. I simboli di Christoffel sono i coefficienti della derivata covariante dei vettori di base, $\nabla_{e_\mu}e_\nu=\Gamma^\rho{}_{\mu\nu}\,e_\rho$.
@@ -470,29 +504,31 @@ Una derivata ordinaria di un vettore non \'e, in generale, un tensore sotto camb
 \qquad
 \nabla_\mu A_\nu=\partial_\mu A_\nu-\Gamma^\lambda{}_{\mu\nu}A_\lambda.
 \]
-\textbf{Connessione di Levi-Civita.} \'E l'unica connessione compatibile con la metrica \(g\) e priva di torsione. In una base coordinata, le due condizioni si scrivono
+\textbf{Connessione di Levi-Civita.} \'E l'unica connessione compatibile con la metrica \(g\) e priva di torsione. In una base coordinata, le due condizioni si scrivono $\nabla_\sigma g_{\mu\nu}=0$, $\Gamma^\rho{}_{\mu\nu}=\Gamma^\rho{}_{\nu\mu}$. Per la connessione di Levi-Civita: assenza di torsione e compatibilit\'a metrica, $\Gamma^\rho{}_{\mu\nu}=\Gamma^\rho{}_{\nu\mu}$, $\nabla_\lambda g_{\mu\nu}=0$. Segue $\Gamma^\rho{}_{\mu\nu}=\frac12 g^{\rho\sigma}(\partial_\mu g_{\sigma\nu}+\partial_\nu g_{\sigma\mu}-\partial_\sigma g_{\mu\nu})$. I simboli $\Gamma$ \emph{non} sono le componenti di un tensore; in coordinate localmente inerziali si annullano in un punto. \textbf{Derivazione della connessione di Levi-Civita.} In una base coordinata imponiamo compatibilit\'a metrica e torsione nulla: $\nabla_\mu g_{\nu\rho}=0$, $\Gamma^\lambda{}_{\mu\nu}=\Gamma^\lambda{}_{\nu\mu}$. Espandendo la derivata covariante della metrica:
 \[
-\nabla_\sigma g_{\mu\nu}=0,\qquad
-\Gamma^\rho{}_{\mu\nu}=\Gamma^\rho{}_{\nu\mu}.
+0=\partial_\mu g_{\nu\rho}
+-\Gamma^\lambda{}_{\mu\nu}g_{\lambda\rho}
+-\Gamma^\lambda{}_{\mu\rho}g_{\nu\lambda}.
 \]
-Per la connessione di Levi-Civita: assenza di torsione e compatibilit\'a metrica,
+Definiamo $\Gamma_{\rho\mu\nu}\equiv g_{\rho\lambda}\Gamma^\lambda{}_{\mu\nu}$. La torsione nulla implica la simmetria negli ultimi due indici: $\Gamma_{\rho\mu\nu}=\Gamma_{\rho\nu\mu}$.
+Scrivendo tre permutazioni della compatibilit\'a metrica:
 \[
-\Gamma^\rho{}_{\mu\nu}=\Gamma^\rho{}_{\nu\mu},\qquad
-\nabla_\lambda g_{\mu\nu}=0.
+\begin{aligned}
+\partial_\mu g_{\nu\rho}
+&=\Gamma_{\rho\mu\nu}+\Gamma_{\nu\mu\rho},\\
+\partial_\nu g_{\mu\rho}
+&=\Gamma_{\rho\nu\mu}+\Gamma_{\mu\nu\rho},\\
+\partial_\rho g_{\mu\nu}
+&=\Gamma_{\nu\rho\mu}+\Gamma_{\mu\rho\nu}.
+\end{aligned}
 \]
-Segue
-\[
-\Gamma^\rho{}_{\mu\nu}=
-\frac12 g^{\rho\sigma}
-(\partial_\mu g_{\sigma\nu}+\partial_\nu g_{\sigma\mu}-\partial_\sigma g_{\mu\nu}).
-\]
-I simboli $\Gamma$ \emph{non} sono le componenti di un tensore; in coordinate localmente inerziali si annullano in un punto.
+Sommiamo la prima e la seconda, sottraendo la terza. Poich\'e $\Gamma_{\nu\mu\rho}=\Gamma_{\nu\rho\mu}$ e $\Gamma_{\mu\nu\rho}=\Gamma_{\mu\rho\nu}$, questi termini si cancellano e rimane $\partial_\mu g_{\nu\rho}+\partial_\nu g_{\mu\rho}-\partial_\rho g_{\mu\nu}=2\Gamma_{\rho\mu\nu}$. Moltiplicando per $g^{\alpha\rho}$ e usando $g^{\alpha\rho}g_{\rho\lambda}=\delta^\alpha{}_\lambda$: $\Gamma^\alpha{}_{\mu\nu}=\frac12g^{\alpha\rho}\left(\partial_\mu g_{\nu\rho}+\partial_\nu g_{\mu\rho}-\partial_\rho g_{\mu\nu}\right)$. L'espressione \'e \textbf{unica}, perch\'e ogni connessione che soddisfa le due condizioni deve avere questi coefficienti. Viceversa, la formula ottenuta \'e simmetrica in $\mu,\nu$ e soddisfa $\Gamma_{\rho\mu\nu}+\Gamma_{\nu\mu\rho}=\partial_\mu g_{\nu\rho}$, quindi riproduce la compatibilit\'a metrica.
 \end{frame}
 
 \begin{frame}[t]{Geodesiche: principio variazionale (I)}
 \small\raggedright
 Per una curva temporale \(x^\mu(\lambda)\) con \(\dot x^\mu=dx^\mu/d\lambda\),
-il tempo proprio totale in unità \(c=1\) è
+il tempo proprio totale in unità \(c=1\)
 \(\mathcal S[x]=\int_{\lambda_A}^{\lambda_B}d\tau\).
 \begin{columns}[T,onlytextwidth]
   \begin{column}{0.48\textwidth}
@@ -519,8 +555,8 @@ il tempo proprio totale in unità \(c=1\) è
   \end{column}
 \end{columns}
 \begin{itemize}
-    \item Consideriamo una curva timelike $x^\mu(\lambda)$ fra due eventi fissati. Il tempo proprio e' $\mathcal S[x]=\int_{\lambda_A}^{\lambda_B}\sqrt{g_{\mu\nu}(x)\dot x^\mu\dot x^\nu}\,d\lambda,\qquad\dot x^\mu=\frac{dx^\mu}{d\lambda}$. Una geodesica rende stazionario $\mathcal S$ per variazioni che si annullano agli estremi. \textbf{Non} ogni geodesica massimizza globalmente il tempo proprio: puo' essere un massimo locale.
-    \item Per una particella massiva $S=-mc\int_{\lambda_A}^{\lambda_B}\sqrt{g_{\mu\nu}\dot x^\mu\dot x^\nu}\,d\lambda=-mc^2\Delta\tau$. La condizione $\delta S=0$, con estremi fissati, determina la geodetica.
+    \item Caratterizzazione della curva - Consideriamo una curva timelike $x^\mu(\lambda)$ fra due eventi fissati. Il tempo proprio e' $\mathcal S[x]=\int_{\lambda_A}^{\lambda_B}\sqrt{g_{\mu\nu}(x)\dot x^\mu\dot x^\nu}\,d\lambda$, $\dot x^\mu=\frac{dx^\mu}{d\lambda}$. Una geodesica rende stazionario $\mathcal S$ per variazioni che si annullano agli estremi. \textbf{Non} ogni geodesica massimizza globalmente il tempo proprio: pu\'o essere un massimo locale.
+    \item Caratterizzazione del moto della particella - Per una particella massiva $S=-mc\int_{\lambda_A}^{\lambda_B}\sqrt{g_{\mu\nu}\dot x^\mu\dot x^\nu}\,d\lambda=-mc^2\Delta\tau$. La condizione $\delta S=0$, con estremi fissati, determina la geodetica.
     \item $\dot x^\mu=dx^\mu/d\lambda$ \'e il vettore tangente alla curva. L'integrale in $d\lambda$ somma gli elementi infinitesimi di lunghezza temporale lungo la traiettoria: $ds=\sqrt{g_{\mu\nu}\dot x^\mu\dot x^\nu}\,d\lambda=c\,d\tau$
     \item Fra due eventi fissati, la geodetica soddisfa \(\delta\mathcal S[x]=0\). Su tratti sufficientemente brevi massimizza localmente il tempo proprio.
     \item Con parametro affine \(\lambda\), si pu\'o usare la lagrangiana quadratica $L=\tfrac{1}{2}g_{\mu\nu}(x)\dot x^\mu\dot x^\nu$, $\frac{d}{d\lambda}\frac{\partial L}{\partial\dot x^\rho}
@@ -641,6 +677,227 @@ g^{\alpha\rho}g_{\rho\nu}\ddot x^\nu
 \end{columns}
 \end{frame}
 
+% Frammento Beamer: inserire nel documento con
+% \input{risolvere-equazione-geodetica}
+% Richiede Beamer e amsmath; non definisce macro, sezioni o destinazioni.
+% Convenzioni: segnatura (-+++), salvo confronto esplicito; x^0=ct.
+% Riferimenti:
+% https://www.damtp.cam.ac.uk/user/tong/gr/grhtml/S1.html
+% https://www.damtp.cam.ac.uk/user/tong/gr/grhtml/S3.html
+
+\begin{frame}[t]{Risolvere l'equazione geodetica: il problema}
+\small\raggedright
+Assegnata la metrica $g_{\mu\nu}(x)$, cerchiamo le quattro funzioni
+$x^\mu(\lambda)$ che descrivono la traiettoria nello spaziotempo:
+\[
+\boxed{
+\frac{d^2x^\mu}{d\lambda^2}
+=-\Gamma^\mu{}_{\alpha\beta}\bigl(x(\lambda)\bigr)
+\frac{dx^\alpha}{d\lambda}\frac{dx^\beta}{d\lambda}.}
+\]
+\begin{itemize}
+\item Sono quattro equazioni differenziali ordinarie del secondo ordine,
+generalmente accoppiate e non lineari.
+\item I coefficienti si ricavano dalla metrica:
+\[
+\Gamma^\mu{}_{\alpha\beta}
+=\frac12g^{\mu\nu}
+\left(\partial_\alpha g_{\nu\beta}
++\partial_\beta g_{\nu\alpha}
+-\partial_\nu g_{\alpha\beta}\right).
+\]
+Durante l'integrazione vanno valutati sulla traiettoria $x(\lambda)$.
+\item Il parametro $\lambda$ deve essere \textbf{affine}.
+Per una geodetica timelike possiamo scegliere $\lambda=\tau$, il tempo proprio.
+Il tempo coordinato $t$ non \`e, in generale, un parametro affine.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Dati iniziali e tipo di geodetica}
+\small\raggedright
+Poniamo $w^\mu=dx^\mu/d\lambda$. Per determinare una soluzione assegniamo
+\[
+\boxed{x^\mu(\lambda_0)=x_0^\mu,\qquad
+w^\mu(\lambda_0)=w_0^\mu:}
+\]
+un \textbf{evento iniziale} e una \textbf{tangente iniziale}.
+Per un moto fisico scegliamo la tangente diretta verso il futuro.
+\begin{itemize}
+\item \textbf{Particella massiva.} Scegliendo $\lambda=\tau$,
+$w^\mu=u^\mu=dx^\mu/d\tau$. La normalizzazione \`e
+\[
+g_{\mu\nu}u^\mu u^\nu=
+\begin{cases}
+-c^2,&\text{segnatura }(-+++),\\
++c^2,&\text{segnatura }(+---).
+\end{cases}
+\]
+\item \textbf{Fotone.} Si usa un parametro affine, distinto dal tempo proprio,
+con tangente non nulla e $g_{\mu\nu}w^\mu w^\nu=0$.
+\item \textbf{Conservazione del tipo causale.} La compatibilit\`a metrica
+della connessione di Levi-Civita e l'equazione geodetica implicano
+\[
+\frac{d}{d\lambda}g(w,w)
+=2g\bigl(\nabla_w w,w\bigr)=0.
+\]
+La normalizzazione imposta inizialmente si conserva lungo la soluzione.
+Questo significa che una geodetica inizialmente timelike rimane
+timelike, una nulla rimane nulla e una spacelike rimane spacelike.
+La tangente viene trasportata parallelamente e la compatibilit\`a
+metrica ne conserva la norma quadrata
+$g_{\mu\nu}w^\mu w^\nu$, quindi anche il segno.
+Le singole componenti $w^\mu$ possono comunque cambiare lungo
+la traiettoria.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Esempio: geodetiche in Minkowski}
+\small\raggedright
+In coordinate cartesiane inerziali la metrica \`e costante:
+\[
+g_{\mu\nu}=\eta_{\mu\nu}=\operatorname{diag}(-1,1,1,1),
+\qquad \Gamma^\mu{}_{\alpha\beta}=0.
+\]
+L'equazione geodetica si integra due volte:
+\[
+\frac{d^2x^\mu}{d\lambda^2}=0
+\quad\Longrightarrow\quad
+\frac{dx^\mu}{d\lambda}=w_0^\mu
+\quad\Longrightarrow\quad
+\boxed{x^\mu(\lambda)=x_0^\mu+w_0^\mu(\lambda-\lambda_0).}
+\]
+\begin{itemize}
+\item La soluzione \`e una \textbf{retta nello spaziotempo}.
+\item Per una particella massiva, scegliendo $\lambda=\tau$,
+\[
+t(\tau)=t_0+\gamma(\tau-\tau_0),\qquad
+\mathbf{x}(\tau)=\mathbf{x}_0+\gamma\mathbf{v}(\tau-\tau_0),
+\]
+con $\mathbf v$ costante, $|\mathbf v|<c$ e
+$\gamma=(1-v^2/c^2)^{-1/2}$: moto rettilineo uniforme.
+\item Per una geodetica nulla la stessa soluzione lineare soddisfa
+$\eta_{\mu\nu}w_0^\mu w_0^\nu=0$; la velocit\`a spaziale ha modulo $c$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Schwarzschild: usare una quantit\`a conservata}
+\small\raggedright
+Consideriamo una particella massiva in \textbf{caduta radiale}, nella regione
+esterna con $f(r)>0$. Gli angoli restano costanti; con segnatura $(-+++)$:
+\[
+ds^2=-f(r)c^2dt^2+\frac{dr^2}{f(r)},\qquad
+f(r)=1-\frac{2GM}{rc^2}.
+\]
+Il punto indica ora $d/d\tau$. Per ricavare le equazioni geodetiche
+possiamo usare la lagrangiana quadratica
+\[
+\mathcal L=\frac12\left[-f(r)c^2\dot t^{\,2}
++\frac{\dot r^{\,2}}{f(r)}\right],
+\]
+imponendo poi la normalizzazione della quadrivelocit\`a.
+Poich\'e $\mathcal L$ non dipende esplicitamente da $t$,
+\[
+\frac{d}{d\tau}\frac{\partial\mathcal L}{\partial\dot t}=0
+\quad\Longrightarrow\quad
+-f(r)c^2\dot t=\text{costante}.
+\]
+Definiamo la costante adimensionale
+\[
+\boxed{e=f(r)\dot t,\qquad \dot t=\frac{e}{f(r)}.}
+\]
+Per una particella di massa $m$, $e=E/(mc^2)$, dove $E$ \`e l'energia
+conservata associata alla simmetria per traslazioni temporali.
+\end{frame}
+
+\begin{frame}[t]{Schwarzschild: integrare la caduta radiale}
+\small\raggedright
+La normalizzazione $g_{\mu\nu}u^\mu u^\nu=-c^2$ fornisce
+\[
+-fc^2\dot t^{\,2}+\frac{\dot r^{\,2}}{f}=-c^2.
+\]
+Sostituendo $\dot t=e/f$ e moltiplicando per $f$:
+\[
+-c^2e^2+\dot r^{\,2}=-c^2f
+\quad\Longrightarrow\quad
+\boxed{\dot r=\pm c\sqrt{e^2-f(r)},\qquad
+\dot t=\frac{e}{f(r)}.}
+\]
+\begin{itemize}
+\item $e$ \`e fissata dai dati iniziali. Il segno meno descrive il ramo
+di caduta verso raggi minori; il segno pi\`u quello verso raggi maggiori.
+\item Su un tratto con $r$ monotono, la prima equazione si integra come
+\[
+\boxed{\tau-\tau_0=\pm\frac1c\int_{r_0}^{r}
+\frac{dr'}{\sqrt{e^2-f(r')}}.}
+\]
+Invertendo questa relazione otteniamo $r(\tau)$.
+\item Si ricostruisce poi il tempo coordinato:
+\[
+t(\tau)=t_0+\int_{\tau_0}^{\tau}
+\frac{e}{f[r(\tau')]}\,d\tau'.
+\]
+La coppia $\bigl(t(\tau),r(\tau)\bigr)$ descrive la traiettoria radiale.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Integrazione numerica delle geodetiche}
+\small\raggedright
+Quando non si dispone di una soluzione analitica, si riscrive il problema
+come un sistema del primo ordine. Introducendo
+\[
+w^\mu=\frac{dx^\mu}{d\lambda},
+\]
+le quattro equazioni del secondo ordine diventano otto equazioni:
+\[
+\boxed{
+\begin{aligned}
+\frac{dx^\mu}{d\lambda}&=w^\mu,\\[3pt]
+\frac{dw^\mu}{d\lambda}
+&=-\Gamma^\mu{}_{\alpha\beta}(x)w^\alpha w^\beta.
+\end{aligned}}
+\]
+\begin{itemize}
+\item Si assegnano $x_0^\mu$ e $w_0^\mu$, con la normalizzazione appropriata.
+\item A ogni passo si valutano i coefficienti $\Gamma^\mu{}_{\alpha\beta}$
+nella posizione corrente e si aggiornano posizione e tangente.
+\item Un integratore, per esempio Runge--Kutta con passo adattativo,
+costruisce progressivamente $x^\mu(\lambda)$ e $w^\mu(\lambda)$.
+\item La conservazione di $g_{\mu\nu}w^\mu w^\nu$ e delle eventuali
+quantit\`a conservate fornisce un controllo dell'errore numerico.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Dati iniziali e condizioni agli estremi}
+\small\raggedright
+Le stesse equazioni geodetiche possono essere affrontate con due tipi
+di dati assegnati.
+\begin{itemize}
+\item \textbf{Problema ai dati iniziali: evolvere un moto.}
+\[
+x^\mu(\lambda_0)=x_0^\mu,\qquad
+\dot x^\mu(\lambda_0)=w_0^\mu.
+\]
+Si conoscono l'evento di partenza e la tangente iniziale.
+In una regione regolare, questi dati determinano una soluzione locale unica.
+\item \textbf{Problema con condizioni al contorno: collegare due eventi.}
+\[
+x^\mu(\lambda_A)=x_A^\mu,\qquad
+x^\mu(\lambda_B)=x_B^\mu.
+\]
+Si cercano le geodetiche che collegano gli eventi assegnati.
+La tangente iniziale deve essere determinata come parte della soluzione;
+globalmente possono esistere pi\`u geodetiche fra gli stessi eventi.
+\item \textbf{Collegamento con il principio variazionale.}
+Nel calcolo di $\delta S=0$ si fissano gli eventi estremi e si varia
+la curva. Una volta ricavata l'equazione geodetica, la si pu\`o integrare
+con dati iniziali oppure con condizioni al contorno.
+\end{itemize}
+\medskip
+{\scriptsize Riferimenti: D.~Tong, \emph{General Relativity},
+\href{https://www.damtp.cam.ac.uk/user/tong/gr/grhtml/S1.html}{\S\S\,1.2--1.3}
+e \href{https://www.damtp.cam.ac.uk/user/tong/gr/grhtml/S3.html}{\S\,3.3.1}.}
+\end{frame}
+
 \begin{frame}[t]{Equazione geodetica e accelerazione quadrivettoriale}\small\raggedright
 Con il tempo proprio come parametro affine:
 \[
@@ -648,11 +905,17 @@ Con il tempo proprio come parametro affine:
 +\Gamma^\mu{}_{\alpha\beta}
 \frac{dx^\alpha}{d\tau}\frac{dx^\beta}{d\tau}=0.
 \]
-In termini del campo tangente $u^\mu$:
+In termini del campo tangente $u^\mu$: $u^\nu\nabla_\nu u^\mu=\frac{du^\mu}{d\tau}+\Gamma^\mu{}_{\alpha\beta}u^\alpha u^\beta=0$.
+Ponendo $u^\mu=dx^\mu/d\lambda$, con $\lambda$ affine, e descrivendo localmente la tangente come campo $u^\mu(x)$, la regola della catena fornisce $du^\mu/d\lambda=u^\nu\partial_\nu u^\mu$. Dalla definizione di derivata covariante segue
 \[
 u^\nu\nabla_\nu u^\mu
-=\frac{du^\mu}{d\tau}+\Gamma^\mu{}_{\alpha\beta}u^\alpha u^\beta=0.
+=\frac{du^\mu}{d\lambda}
++\Gamma^\mu{}_{\nu\rho}u^\nu u^\rho
+=\frac{d^2x^\mu}{d\lambda^2}
++\Gamma^\mu{}_{\nu\rho}
+\frac{dx^\nu}{d\lambda}\frac{dx^\rho}{d\lambda}=0.
 \]
+L'equazione geodetica si scrive quindi $\nabla_u u=0$: la tangente viene trasportata parallelamente lungo la curva stessa. Usando inoltre la compatibilit\`a metrica, $\nabla_\rho g_{\mu\nu}=0$, $\frac{d}{d\lambda}(g_{\mu\nu}u^\mu u^\nu)=u^\rho\nabla_\rho(g_{\mu\nu}u^\mu u^\nu)=2g_{\mu\nu}u^\mu u^\rho\nabla_\rho u^\nu=0$. La norma quadrata della tangente, e dunque il suo tipo causale, rimane costante lungo la geodetica.
 \begin{itemize}
 \item Per un corpo libero (pressioni/forze non gravitazionali nulle) l'accelerazione propria e' zero.
 \item In coordinate arbitrarie $d^2x^\mu/d\tau^2$ puo' essere non nullo anche in caduta libera: non e' un quadrivettore isolatamente.
@@ -662,7 +925,6 @@ u^\nu\nabla_\nu u^\mu
 \end{frame}
 
 \begin{frame}[t]{Esempio: simboli di Christoffel anche nello spazio piatto}\small\raggedright
-
 Sul piano euclideo in coordinate polari, $dl^2=dr^2+r^2d\phi^2$:
 \[
 \Gamma^r{}_{\phi\phi}=-r,\qquad
@@ -674,12 +936,10 @@ Equazioni geodetiche:
 \ddot\phi+\frac2r\dot r\dot\phi=0.
 \]
 Sono le equazioni di una retta in coordinate polari: connessione non nulla non implica necessariamente curvatura.
-\medskip
 In uno spaziotempo curvo, invece, non si possono annullare tutti i simboli di Christoffel in un'intera regione se $R^\rho{}_{\sigma\mu\nu}\ne0$.
-
 \end{frame}
 
-\subsection{Trasporto parallelo, Riemann e deviazione geodetica}\linkdest{rgriemann}
+\subsection{Trasporto parallelo, Riemann e deviazione geodetica} \linkdest{rgriemann}
 
 \begin{frame}[t]{Campi vettoriali e commutatore di Lie}
 \small\raggedright
@@ -717,6 +977,122 @@ Con \(F'=2M/r^2\) e \(\partial_r\partial_t=\partial_t\partial_r\),
 \]
 Il passo radiale cambia \(dt/d\tau\), da cui
 \([\partial_r,u]=-M u/(r^2F)\).
+\end{frame}
+
+\begin{frame}[t]{Campi vettoriali e commutatore di Lie: esempi}
+\small\raggedright
+
+\textbf{Campo, derivata e flusso.}
+Un campo vettoriale assegna una tangente a ogni punto:
+\[
+X=X^\mu(x)\partial_\mu,\qquad
+X(f)=X^\mu\partial_\mu f.
+\]
+Le sue curve integrali soddisfano $dx^\mu/ds=X^\mu[x(s)]$:
+seguire il flusso significa muoversi lungo queste curve.
+
+\textbf{Commutatore.}
+Confrontando i due ordini di derivazione:
+\[
+\begin{aligned}
+[X,Y](f)&=X(Y(f))-Y(X(f)),\\
+[X,Y]^\nu&=X^\mu\partial_\mu Y^\nu
+           -Y^\mu\partial_\mu X^\nu.
+\end{aligned}
+\]
+Le derivate seconde di $f$ si cancellano:
+il risultato \`e ancora un campo vettoriale.
+
+\begin{itemize}
+\item \textbf{Traslazioni che commutano.}
+Nel piano cartesiano, $X=\partial_x$ e $Y=\partial_y$:
+\[
+[X,Y](f)=\partial_x\partial_y f-\partial_y\partial_x f=0.
+\]
+Partendo da $(x,y)$, un passo $a$ lungo $X$ e uno $b$ lungo $Y$
+portano a $(x+a,y+b)$ in entrambi gli ordini.
+
+\item \textbf{Flussi che non commutano.}
+Scegliamo $X=\partial_x$ e $Y=x\partial_y$:
+\[
+[X,Y](f)=\partial_x(x\partial_y f)
+-x\partial_y\partial_x f=\partial_y f,
+\qquad \boxed{[X,Y]=\partial_y}.
+\]
+Il flusso di $Y$ produce uno spostamento verticale proporzionale a $x$:
+\[
+\begin{aligned}
+\text{prima }X\text{, poi }Y &: (x+a,\ y+b(x+a)),\\
+\text{prima }Y\text{, poi }X &: (x+a,\ y+bx).
+\end{aligned}
+\]
+I punti finali differiscono di $(0,ab)$: cambiare prima $x$
+modifica il successivo spostamento verticale.
+\end{itemize}
+
+\textbf{Significato geometrico.}
+Il commutatore descrive la noncommutativit\`a dei flussi.
+Non richiede metrica o connessione e pu\`o essere non nullo
+anche nel piano piatto: non misura direttamente la curvatura.
+\end{frame}
+
+\begin{frame}[t]{Commutatore di Lie: l'esempio di Schwarzschild}
+\small\raggedright
+In unit\`a $G=c=1$, nella regione esterna:
+\[
+F(r)=1-\frac{2M}{r},\qquad r>2M,\qquad |g_{tt}|=F(r).
+\]
+
+\begin{itemize}
+\item \textbf{Il campo degli osservatori statici.}
+Ogni osservatore rimane a $r,\theta,\phi$ costanti.
+Il suo orologio misura
+\[
+d\tau=\sqrt F\,dt,\qquad
+u=\frac{dx^\mu}{d\tau}\partial_\mu
+=\frac{dt}{d\tau}\partial_t
+=F^{-1/2}\partial_t.
+\]
+Il campo $u$ descrive una famiglia di osservatori statici:
+il fattore $dt/d\tau$ varia da un raggio all'altro.
+La relazione per $d\tau$ vale per entrambe le segnature.
+
+\item \textbf{Calcolo del commutatore.}
+Per un qualunque campo scalare $f$, usando
+$[\partial_r,\partial_t]=0$ e $F'=2M/r^2$:
+\[
+\begin{aligned}
+[\partial_r,u](f)
+&=\partial_r(F^{-1/2}\partial_t f)
+  -F^{-1/2}\partial_t\partial_r f\\
+&=\partial_r(F^{-1/2})\,\partial_t f\\
+&=-\frac{M}{r^2F^{3/2}}\,\partial_t f.
+\end{aligned}
+\]
+Poich\'e vale per ogni $f$,
+\[
+\boxed{[\partial_r,u]=-\frac{M}{r^2F}\,u.}
+\]
+
+\item \textbf{Interpretazione mediante i flussi.}
+Un passo radiale $\delta r$ passa da un osservatore statico
+a un altro. Avanzare poi del tempo proprio $\delta\tau$
+produce un intervallo coordinato
+$\delta t=\delta\tau/\sqrt{F(r+\delta r)}$.
+Invertendo l'ordine, si usa invece $F(r)$.
+La differenza fra le date finali \`e
+\[
+\Delta t\simeq
+\delta r\,\delta\tau\,\partial_r(F^{-1/2})
+=-\frac{M\,\delta r\,\delta\tau}{r^2F^{3/2}}.
+\]
+Il commutatore esprime questa differenza fra i due ordini.
+\end{itemize}
+
+Gli osservatori statici sono sostenuti, quindi accelerati:
+$\nabla_u u\ne0$.
+Il commutatore di Lie confronta i flussi scelti;
+non misura direttamente la curvatura.
 \end{frame}
 
 \begin{frame}[t]{Commutatore covariante: definizione di Riemann}
